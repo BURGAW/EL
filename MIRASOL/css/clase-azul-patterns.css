@@ -1,0 +1,222 @@
+/* El Mirasol — Clase Azul bottle · luxurious Fibonacci pattern system
+   Tile sizes: 233, 144, 377 (Fibonacci) · φ grid · golden spiral · phyllotaxis */
+
+body.site-clase-azul,
+body.menu-page.site-clase-azul {
+  --phi: 1.6180339887;
+  --azul-pat-size: 233px;
+  --azul-pat-size-lg: 377px;
+  --azul-pat-dense: 144px;
+  --azul-pat-strip-h: 34px;
+  --azul-pattern-cobalt: url("../assets/patterns/mirasol-fibo-cobalt.svg");
+  --azul-pattern-cream: url("../assets/patterns/mirasol-fibo-cream.svg");
+  --azul-pattern-dense: url("../assets/patterns/mirasol-fibo-dense.svg");
+  --azul-pattern-pinstrip: url("../assets/patterns/mirasol-fibo-pinstrip.svg");
+}
+
+/* ── Full-page fixed pattern layers ── */
+body.site-clase-azul.pattern::before,
+body.menu-page.site-clase-azul.pattern::before {
+  display: block !important;
+  opacity: 0.82 !important;
+  background-image: var(--azul-pattern-cream) !important;
+  background-size: var(--azul-pat-size) var(--azul-pat-size) !important;
+  background-repeat: repeat !important;
+  z-index: 0 !important;
+}
+
+body.site-clase-azul.pattern::after,
+body.menu-page.site-clase-azul.pattern::after {
+  display: block !important;
+  opacity: 0.52 !important;
+  background-image: var(--azul-pattern-cream) !important;
+  background-size: var(--azul-pat-size) var(--azul-pat-size) !important;
+  background-position: calc(var(--azul-pat-size) / var(--phi)) calc(var(--azul-pat-size) / var(--phi)) !important;
+  background-repeat: repeat !important;
+  z-index: 0 !important;
+}
+
+/* ── Page base — cobalt wash over cream porcelain ── */
+body.site-clase-azul.pattern,
+body.menu-page.site-clase-azul.pattern {
+  background-image:
+    var(--azul-pattern-cream),
+    radial-gradient(ellipse 80% 55% at 8% 0%, rgba(58, 111, 154, 0.12) 0%, transparent 58%),
+    radial-gradient(ellipse 70% 48% at 95% 8%, rgba(30, 77, 115, 0.09) 0%, transparent 55%),
+    linear-gradient(180deg, #faf8f3 0%, #ffffff 40%, #f4efe6 72%, #ebe4d8 100%) !important;
+  background-size:
+    var(--azul-pat-size-lg) var(--azul-pat-size-lg),
+    100% 100%,
+    100% 100%,
+    100% 100% !important;
+}
+
+/* ── Cobalt bottle bands ── */
+body.site-clase-azul .feat-ribbon,
+body.site-clase-azul .footer,
+body.site-clase-azul footer.footer--slim,
+body.site-clase-azul.site-worldcup .wc-promo {
+  background-image: var(--azul-pattern-dense), linear-gradient(180deg, var(--azul-night), var(--azul-deep)) !important;
+  background-size: var(--azul-pat-dense) var(--azul-pat-dense), 100% 100% !important;
+}
+
+body.site-clase-azul .burgaw-town-band {
+  background-image:
+    var(--azul-pattern-cream),
+    linear-gradient(90deg, var(--azul-ivory), #fff, var(--azul-cream)) !important;
+  background-size: 144px 144px, 100% 100% !important;
+}
+
+body.site-clase-azul .social-topbar {
+  background-image: var(--azul-pattern-cobalt), linear-gradient(90deg, var(--azul-night) 0%, var(--azul-deep) 35%, var(--azul-cobalt) 68%, var(--azul-cobalt-mid) 100%) !important;
+  background-size: var(--azul-pat-size) var(--azul-pat-size), 100% 100% !important;
+}
+
+body.site-clase-azul .feat-ribbon {
+  background-image: var(--azul-pattern-cobalt), linear-gradient(90deg, var(--azul-night), var(--azul-deep), var(--azul-cobalt), var(--azul-gold-deep)) !important;
+  background-size: var(--azul-pat-size) var(--azul-pat-size), 100% 100% !important;
+}
+
+/* ── Header & promo strips ── */
+body.site-clase-azul .header {
+  background-image:
+    var(--azul-pattern-cream),
+    linear-gradient(180deg, rgba(255, 253, 249, 0.97), rgba(250, 248, 243, 0.98)) !important;
+  background-size: 144px 144px, 100% 100% !important;
+}
+
+body.site-clase-azul:not(.site-worldcup) .wc-promo {
+  background-image:
+    var(--azul-pattern-cream),
+    linear-gradient(180deg, rgba(58, 111, 154, 0.08) 0%, transparent 100%),
+    linear-gradient(90deg, #fff, var(--azul-ivory), #fff) !important;
+  background-size: 144px 144px, 100% 100%, 100% 100% !important;
+}
+
+body.site-clase-azul.site-worldcup .wc-promo {
+  background-image: var(--azul-pattern-cobalt), linear-gradient(90deg, #15324a, #3a6f9a, #c4a962) !important;
+  background-size: var(--azul-pat-dense) var(--azul-pat-dense), 100% 100% !important;
+}
+
+/* ── Hero — cobalt ceramic glaze + φ spiral tile ── */
+body.site-clase-azul .hero-overlay {
+  background-image:
+    var(--azul-pattern-cobalt),
+    linear-gradient(180deg, rgba(90, 158, 201, 0.44) 0%, rgba(30, 77, 115, 0.66) 42%, rgba(21, 50, 74, 0.88) 100%),
+    linear-gradient(135deg, rgba(212, 185, 122, 0.16) 0%, transparent 55%) !important;
+  background-size: var(--azul-pat-size-lg) var(--azul-pat-size-lg), 100% 100%, 100% 100% !important;
+}
+
+/* ── Content sections ── */
+body.site-clase-azul main .section:not(.hero) {
+  background-image:
+    var(--azul-pattern-cream),
+    linear-gradient(180deg, rgba(255, 253, 249, 0.88), rgba(250, 248, 243, 0.9)) !important;
+  background-size: var(--azul-pat-size) var(--azul-pat-size), 100% 100% !important;
+}
+
+body.site-clase-azul .favorites-showcase,
+body.site-clase-azul .feat-stats,
+body.site-clase-azul .reviews-section,
+body.site-clase-azul .story-spin-section {
+  background-image:
+    var(--azul-pattern-cream),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(244, 239, 230, 0.85)) !important;
+  background-size: var(--azul-pat-size) var(--azul-pat-size), 100% 100% !important;
+}
+
+/* ── Cards & panels — φ motif through porcelain ── */
+body.site-clase-azul .visit-card,
+body.site-clase-azul .story-spin__frame,
+body.site-clase-azul .review-card,
+body.site-clase-azul .reviews-stat,
+body.site-clase-azul .fiesta-card,
+body.site-clase-azul .feature,
+body.site-clase-azul .extras-card,
+body.site-clase-azul .info-card,
+body.site-clase-azul .visit-grid > .map-wrap,
+body.site-clase-azul .fiesta-pickup {
+  background-image:
+    var(--azul-pattern-cream),
+    linear-gradient(165deg, rgba(255, 253, 249, 0.94), rgba(250, 248, 243, 0.96)) !important;
+  background-size: 144px 144px, 100% 100% !important;
+}
+
+/* fav-card overlay: gradient only — never solid cobalt tile (hides photos) */
+
+/* ── Mobile bar ── */
+body.site-clase-azul .mobile-cta {
+  background-image:
+    var(--azul-pattern-cream),
+    linear-gradient(180deg, rgba(250, 248, 243, 0.97), rgba(255, 253, 249, 0.98)) !important;
+  background-size: 144px 144px, 100% 100% !important;
+}
+
+/* ── Menu page ── */
+body.menu-page.site-clase-azul .menu-hero-vivid__bg {
+  background-image:
+    var(--azul-pattern-cobalt),
+    linear-gradient(125deg, var(--azul-night) 0%, var(--azul-deep) 28%, var(--azul-cobalt) 62%, var(--azul-gold-deep) 100%) !important;
+  background-size: var(--azul-pat-size-lg) var(--azul-pat-size-lg), 100% 100% !important;
+}
+
+body.menu-page.site-clase-azul .menu-compact-bar,
+body.menu-page.site-clase-azul .menu-compact-bar--online {
+  background-image:
+    var(--azul-pattern-cream),
+    linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(250, 248, 243, 0.98)) !important;
+  background-size: 144px 144px, 100% 100% !important;
+}
+
+body.menu-page.site-clase-azul .menu-card {
+  background-image:
+    var(--azul-pattern-cream),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(250, 248, 243, 0.97)) !important;
+  background-size: 89px 89px, 100% 100% !important;
+}
+
+body.menu-page.site-clase-azul .menu-online__toolbar {
+  background-image:
+    var(--azul-pattern-cream),
+    linear-gradient(180deg, rgba(250, 248, 243, 0.98), rgba(244, 239, 230, 0.98)) !important;
+  background-size: 89px 89px, 100% 100% !important;
+}
+
+/* ── Accent surfaces ── */
+body.site-clase-azul .specials-banner,
+body.site-clase-azul .vibe-marquee,
+body.site-clase-azul .follow-band,
+body.site-clase-azul .google-review-tab {
+  background-image: var(--azul-pattern-cobalt), linear-gradient(135deg, var(--azul-deep), var(--azul-cobalt)) !important;
+  background-size: var(--azul-pat-dense) var(--azul-pat-dense), 100% 100% !important;
+}
+
+body.site-clase-azul .hero-snap__paper {
+  background-image:
+    var(--azul-pattern-cream),
+    linear-gradient(165deg, #ffffff 0%, var(--azul-ivory, #faf8f3) 100%) !important;
+  background-size: 89px 89px, 89px 89px, 100% 100% !important;
+}
+
+body.site-clase-azul .btn-primary,
+body.site-clase-azul .nav-menu-cta {
+  background-image: var(--azul-pattern-dense), linear-gradient(180deg, var(--azul-cobalt-light), var(--azul-cobalt), var(--azul-deep)) !important;
+  background-size: 55px 55px, 100% 100% !important;
+}
+
+/* ── Silver-cap trim — Fibonacci cadence pin strip ── */
+.coast-wave-trim,
+.coast-papel-strip {
+  background-image: var(--azul-pattern-pinstrip), linear-gradient(90deg, var(--azul-deep), var(--azul-cobalt), var(--azul-gold-deep)) !important;
+  background-size: 233px var(--azul-pat-strip-h), 100% 100% !important;
+  background-repeat: repeat-x, no-repeat !important;
+}
+
+@media (max-width: 768px) {
+  body.site-clase-azul,
+  body.menu-page.site-clase-azul {
+    --azul-pat-size: 144px;
+    --azul-pat-size-lg: 233px;
+    --azul-pat-dense: 89px;
+  }
+}

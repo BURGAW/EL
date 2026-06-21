@@ -1,0 +1,398 @@
+/* Menu Vivid — readable type, bold color, festive Oaxacan + Burgaw artwork
+   Loaded last on menu.html; wins over boujee / burgaw / vibe menu overrides */
+
+body.site-menu-vivid {
+  --menu-ink: #1a1816;
+  --menu-ink-mid: #3d342c;
+  --menu-ink-soft: #5c5248;
+  --menu-red: #ff1744;
+  --menu-red-deep: #d50000;
+  --menu-gold: #ff9100;
+  --menu-gold-light: #ffab40;
+  --menu-terracotta: #ff6d00;
+  --menu-green: #3d7a45;
+  --menu-blue: #3b5f7a;
+  --menu-blue-deep: #1d3343;
+  --menu-cream: #fff9f0;
+  --menu-card: #ffffff;
+  --menu-display: 'Cormorant Garamond', Georgia, serif;
+  --menu-body: 'Plus Jakarta Sans', 'Montserrat', system-ui, sans-serif;
+  --oax-papel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='24' viewBox='0 0 120 24'%3E%3Cpath d='M0 0h15v8c0 4-3 8-7 8s-8-4-8-8V0zm15 0h15v6c0 5-4 9-9 9s-9-4-9-9V0zm30 0h15v10c0 3-3 6-6 6s-6-3-6-6V0zm15 0h15v7c0 4-4 8-8 8s-8-4-8-8V0zm30 0h15v9c0 4-4 8-8 8s-8-4-8-8V0zm15 0h15v6c0 5-4 9-9 9s-9-4-9-9V0z' fill='%23d42b3a' fill-opacity='0.85'/%3E%3Cpath d='M0 16h15v8H0zm15 0h15v8H15zm30 0h15v8H45zm15 0h15v8H60zm30 0h15v8H90zm15 0h15v8h-15z' fill='%23e8a020' fill-opacity='0.9'/%3E%3C/svg%3E");
+}
+
+body.site-menu-vivid.pattern:not(.site-oaxaca),
+body.site-menu-vivid.site-fiesta.pattern:not(.site-oaxaca) {
+  background-color: var(--menu-cream) !important;
+  background-image:
+    radial-gradient(ellipse 70% 45% at 5% 0%, rgba(168, 30, 44, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(201, 162, 39, 0.05) 0%, transparent 55%) !important;
+  background-size: auto !important;
+}
+
+body.site-menu-vivid.pattern::before,
+body.site-menu-vivid.pattern::after {
+  display: none !important;
+}
+
+/* ── Hero banner with artwork ── */
+.menu-hero-vivid {
+  position: relative;
+  margin-top: calc(var(--header-h) + var(--topbar-h));
+  overflow: visible;
+  min-height: 0;
+}
+
+.menu-hero-vivid__papel {
+  height: 18px;
+  background: var(--oax-papel) repeat-x center;
+  background-size: 120px 18px;
+  filter: drop-shadow(0 2px 4px rgba(26, 24, 22, 0.12));
+}
+
+.menu-hero-vivid__bg {
+  position: absolute;
+  inset: 18px 0 0;
+  z-index: 0;
+  background:
+    linear-gradient(125deg, rgba(213, 0, 0, 0.9) 0%, rgba(255, 23, 68, 0.88) 50%, rgba(255, 109, 0, 0.85) 100%);
+  pointer-events: none;
+}
+
+.menu-hero-vivid__photos {
+  position: absolute;
+  inset: 18px 0 0;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.menu-hero-vivid__photos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-hero-vivid__photos img:nth-child(2) {
+  object-position: center 30%;
+}
+
+.menu-hero-vivid__trim {
+  position: relative;
+  z-index: 2;
+  height: 5px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--menu-red) 0 20px,
+    var(--menu-gold) 20px 40px,
+    var(--menu-green) 40px 60px,
+    var(--menu-blue) 60px 80px
+  );
+}
+
+body.site-menu-vivid .menu-compact-bar--online,
+body.site-menu-vivid .menu-compact-bar {
+  position: relative;
+  z-index: 1;
+  margin-top: 0 !important;
+  padding: 1rem clamp(0.75rem, 3vw, 1.5rem) 1.1rem !important;
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+body.site-menu-vivid .menu-compact-bar__inner {
+  max-width: 1280px;
+}
+
+body.site-menu-vivid .menu-compact-bar__logo {
+  width: 52px !important;
+  height: 52px !important;
+  border: 3px solid var(--menu-gold) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+body.site-menu-vivid .menu-compact-bar h1 {
+  font-family: var(--menu-display) !important;
+  font-size: clamp(1.5rem, 5vw, 2.1rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  color: #fff !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  margin: 0 0 0.25rem !important;
+}
+
+body.site-menu-vivid .menu-compact-bar p {
+  display: block !important;
+  font-family: var(--menu-body) !important;
+  font-size: clamp(0.82rem, 2.5vw, 0.95rem) !important;
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  line-height: 1.45 !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  max-width: 36rem;
+}
+
+body.site-menu-vivid .menu-compact-bar__actions .btn-primary {
+  background: var(--menu-gold) !important;
+  color: var(--menu-ink) !important;
+  border-color: var(--menu-gold) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+body.site-menu-vivid .lang-toggle-btn {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 2px solid rgba(255, 255, 255, 0.55) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  border-radius: 100px !important;
+}
+
+body.site-menu-vivid .lang-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.28) !important;
+  border-color: #fff !important;
+}
+
+/* ── View tabs (Breakfast / Lunch / Dinner) ── */
+body.site-menu-vivid .menu-view-tabs {
+  background: var(--menu-card) !important;
+  border: 2px solid var(--menu-gold) !important;
+  border-radius: 14px !important;
+  padding: 0.4rem !important;
+  box-shadow: 0 6px 20px rgba(212, 43, 58, 0.1) !important;
+  gap: 0.35rem !important;
+}
+
+body.site-menu-vivid .menu-view-tab {
+  font-family: var(--menu-body) !important;
+  font-size: clamp(0.78rem, 2.2vw, 0.9rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  color: var(--menu-ink-mid) !important;
+  border-radius: 10px !important;
+  padding: 0.7rem 0.6rem !important;
+  min-height: 44px;
+}
+
+body.site-menu-vivid .menu-view-tab:hover {
+  background: var(--menu-gold-light) !important;
+  color: var(--menu-ink) !important;
+}
+
+body.site-menu-vivid .menu-view-tab.is-active {
+  background: linear-gradient(135deg, var(--menu-blue-deep), var(--menu-blue)) !important;
+  border-color: var(--menu-blue) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(59, 95, 122, 0.35) !important;
+}
+
+/* ── Category pills ── */
+body.site-menu-vivid .menu-online__toolbar {
+  background: rgba(255, 249, 240, 0.97) !important;
+  border-bottom: 2px solid rgba(232, 160, 32, 0.35) !important;
+}
+
+body.site-menu-vivid .menu-online-tab {
+  font-family: var(--menu-body) !important;
+  font-size: clamp(0.72rem, 2vw, 0.82rem) !important;
+  font-weight: 700 !important;
+  color: var(--menu-ink-mid) !important;
+  background: #fff !important;
+  border: 2px solid #e8dfd0 !important;
+  border-radius: 100px !important;
+  padding: 0.5rem 0.9rem !important;
+  min-height: 40px;
+}
+
+body.site-menu-vivid .menu-online-tab:hover {
+  border-color: var(--menu-terracotta) !important;
+  color: var(--menu-red-deep) !important;
+}
+
+body.site-menu-vivid .menu-online-tab.is-active {
+  background: var(--menu-red) !important;
+  border-color: var(--menu-red) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(212, 43, 58, 0.3) !important;
+  border-radius: 100px !important;
+}
+
+/* ── Section heading ── */
+body.site-menu-vivid .menu-online__heading h2 {
+  font-family: var(--menu-display) !important;
+  font-size: clamp(1.25rem, 3.5vw, 1.55rem) !important;
+  font-weight: 700 !important;
+  color: var(--menu-blue-deep) !important;
+}
+
+body.site-menu-vivid .menu-online__note {
+  font-size: 0.85rem !important;
+  color: var(--menu-terracotta) !important;
+  font-weight: 600 !important;
+}
+
+/* ── Menu cards — the readability fix ── */
+body.site-menu-vivid .menu-card {
+  background: var(--menu-card) !important;
+  border: 2px solid #ede4d6 !important;
+  border-left: 4px solid var(--menu-gold) !important;
+  border-radius: 12px !important;
+  padding: 0.65rem 0.7rem 0.7rem !important;
+  box-shadow: 0 2px 8px rgba(26, 24, 22, 0.06) !important;
+}
+
+body.site-menu-vivid .menu-card--btn:hover,
+body.site-menu-vivid .menu-card--btn:focus-visible {
+  border-left-color: var(--menu-red) !important;
+  border-color: rgba(212, 43, 58, 0.35) !important;
+  box-shadow: 0 6px 18px rgba(212, 43, 58, 0.12) !important;
+  transform: translateY(-2px) !important;
+}
+
+body.site-menu-vivid .menu-card__name {
+  font-family: var(--menu-display) !important;
+  font-size: clamp(0.95rem, 2.8vw, 1.08rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  color: var(--menu-ink) !important;
+  letter-spacing: 0 !important;
+}
+
+body.site-menu-vivid .menu-card__price {
+  font-family: var(--menu-body) !important;
+  font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
+  font-weight: 800 !important;
+  color: var(--menu-red) !important;
+}
+
+body.site-menu-vivid .menu-card__desc {
+  font-size: clamp(0.78rem, 2.2vw, 0.85rem) !important;
+  line-height: 1.45 !important;
+  color: var(--menu-ink-soft) !important;
+  -webkit-line-clamp: 3;
+}
+
+body.site-menu-vivid .menu-card__meats {
+  font-size: 0.75rem !important;
+  color: var(--menu-ink-mid) !important;
+  opacity: 1 !important;
+}
+
+body.site-menu-vivid .menu-card__hint {
+  font-size: 0.52rem !important;
+  font-weight: 600 !important;
+  color: var(--menu-ink-mid) !important;
+}
+
+body.site-menu-vivid .menu-online__grid {
+  gap: 0.55rem !important;
+}
+
+@media (min-width: 640px) {
+  body.site-menu-vivid .menu-online__grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    gap: 0.65rem !important;
+  }
+}
+
+/* ── Photo slideshow ── */
+body.site-menu-vivid .menu-photo-slideshow__title {
+  color: var(--menu-blue-deep) !important;
+  font-size: clamp(1.1rem, 3vw, 1.35rem) !important;
+}
+
+body.site-menu-vivid .menu-photo-slideshow__viewport {
+  border: 3px solid var(--menu-gold) !important;
+  background: linear-gradient(165deg, #2a2218 0%, #1a1816 100%) !important;
+}
+
+/* ── Reviews footnote ── */
+body.site-menu-vivid .menu-reviews-block--compact {
+  background: none !important;
+  border: none !important;
+  border-top: 1px solid rgba(42, 24, 16, 0.08) !important;
+  border-radius: 0 !important;
+}
+
+body.site-menu-vivid .menu-reviews-strip__line {
+  color: var(--menu-ink-soft) !important;
+}
+
+/* ── Fine print & CTA ── */
+body.site-menu-vivid .menu-online__fine {
+  font-size: 0.75rem !important;
+  color: var(--menu-ink-soft) !important;
+  opacity: 1 !important;
+}
+
+body.site-menu-vivid .menu-online__call .btn-red {
+  background: var(--menu-red) !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  padding: 0.65rem 1.5rem !important;
+}
+
+/* ── Item modal ── */
+body.site-menu-vivid .item-modal__title {
+  font-family: var(--menu-display) !important;
+  color: var(--menu-ink) !important;
+  font-size: 1.4rem !important;
+}
+
+body.site-menu-vivid .item-modal__price {
+  color: var(--menu-red) !important;
+  font-size: 1.15rem !important;
+}
+
+body.site-menu-vivid .item-modal__desc {
+  color: var(--menu-ink-soft) !important;
+  font-size: 0.92rem !important;
+}
+
+/* ── Decorative chili accents (CSS art) ── */
+.menu-vivid-accent {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0 0.15rem;
+  pointer-events: none;
+}
+
+.menu-vivid-accent span {
+  display: block;
+  width: 12px;
+  height: 20px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform: rotate(-12deg);
+  box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.menu-vivid-accent span:nth-child(1) { background: #d42b3a; transform: rotate(-18deg); }
+.menu-vivid-accent span:nth-child(2) { background: #3d7a45; transform: rotate(8deg); }
+.menu-vivid-accent span:nth-child(3) { background: #e8a020; transform: rotate(-6deg); }
+.menu-vivid-accent span:nth-child(4) { background: #3b5f7a; transform: rotate(14deg); }
+.menu-vivid-accent span:nth-child(5) { background: #d4622a; transform: rotate(-10deg); }
+
+@media (min-width: 480px) and (max-width: 767px) {
+  body.site-menu-vivid .menu-online__grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-hero-vivid__photos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .menu-hero-vivid__photos img:last-child {
+    display: none;
+  }
+
+  body.site-menu-vivid .menu-compact-bar__actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

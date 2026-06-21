@@ -1,0 +1,428 @@
+/* Town of Burgaw — civic theme (visitburgawnc.com palette)
+   Primary: #3B5F7A · Slogan: "Good Town Year Round" · Blueberry Town */
+
+body.site-burgaw {
+  --burgaw-blue: #3b5f7a;
+  --burgaw-blue-dark: #2d4a5f;
+  --burgaw-blue-deep: #1d3343;
+  --burgaw-berry: #4a6fa5;
+  --burgaw-berry-light: #6b8fc4;
+  --burgaw-sand: #f4f0e8;
+  --burgaw-cream: #faf8f4;
+  --burgaw-brick: #9a5c42;
+  --burgaw-rail: #5c4a3a;
+  --burgaw-green: #3d6b4a;
+  --font-display: 'Dancing Script', 'Pinyon Script', cursive;
+  --font-body: 'Montserrat', 'Plus Jakarta Sans', sans-serif;
+  --gold: var(--burgaw-berry-light);
+  --cream: var(--burgaw-cream);
+  --oaxaca-cream: var(--burgaw-cream);
+}
+
+body.site-burgaw.pattern:not(.site-oaxaca) {
+  background-color: var(--burgaw-cream) !important;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 10% 0%, rgba(59, 95, 122, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 95% 10%, rgba(74, 111, 165, 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, var(--burgaw-sand) 0%, var(--burgaw-cream) 120px) !important;
+}
+
+body.site-burgaw.pattern::before,
+body.site-burgaw.pattern::after {
+  display: none !important;
+}
+
+/* ── Burgaw — compact community ribbon (visitburgawnc.com palette) ── */
+.burgaw-town-band {
+  padding: 0 clamp(0.75rem, 3vw, 1.5rem);
+  background: var(--burgaw-sand, #f4f0e8);
+  border-top: 1px solid rgba(59, 95, 122, 0.14);
+  border-bottom: 1px solid rgba(59, 95, 122, 0.14);
+}
+
+.burgaw-town-band__strip {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.55rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.burgaw-town-band__icon {
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+.burgaw-town-band__line {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--burgaw-blue-dark, #2d4a5f);
+  letter-spacing: 0.01em;
+}
+
+.burgaw-town-band__line strong {
+  font-weight: 700;
+  color: var(--burgaw-blue-deep, #1d3343);
+}
+
+.burgaw-town-band__sub {
+  display: inline;
+  color: rgba(45, 74, 95, 0.72);
+  font-weight: 500;
+}
+
+.burgaw-town-band__sub::before {
+  content: ' · ';
+  opacity: 0.55;
+}
+
+.burgaw-town-band__links {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.burgaw-town-band__link {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.32rem 0.65rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.burgaw-town-band__link {
+  color: #fff;
+  background: var(--burgaw-blue, #3b5f7a);
+  border: 1px solid var(--burgaw-blue-dark, #2d4a5f);
+}
+
+.burgaw-town-band__link:hover {
+  background: var(--burgaw-blue-dark, #2d4a5f);
+  color: #fff;
+}
+
+.burgaw-town-band__link--town {
+  color: var(--burgaw-blue-dark, #2d4a5f);
+  background: var(--burgaw-cream, #faf8f4);
+  border-color: rgba(59, 95, 122, 0.28);
+}
+
+.burgaw-town-band__link--town:hover {
+  background: #fff;
+  border-color: var(--burgaw-blue, #3b5f7a);
+  color: var(--burgaw-blue, #3b5f7a);
+}
+
+/* ── Override boujee with Burgaw civic colors ── */
+body.site-burgaw .social-topbar {
+  background: var(--burgaw-blue-deep) !important;
+  border-bottom: 2px solid var(--burgaw-berry) !important;
+  font-family: var(--font-body) !important;
+  letter-spacing: 0.14em !important;
+}
+
+body.site-burgaw .header {
+  background: rgba(250, 248, 244, 0.96) !important;
+  border-bottom: 2px solid var(--burgaw-blue) !important;
+}
+
+body.site-burgaw .logo {
+  font-family: var(--font-display) !important;
+  color: var(--burgaw-blue-deep) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: none !important;
+}
+
+body.site-burgaw .logo span {
+  font-family: var(--font-body) !important;
+  color: var(--burgaw-blue) !important;
+  font-size: 0.58rem !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 600 !important;
+}
+
+body.site-burgaw .nav a.active,
+body.site-burgaw .nav a:hover {
+  color: var(--burgaw-blue) !important;
+}
+
+body.site-burgaw .nav-cta {
+  background: var(--burgaw-blue) !important;
+  border-color: var(--burgaw-blue) !important;
+  font-family: var(--font-body) !important;
+}
+
+body.site-burgaw .nav-cta:hover {
+  background: var(--burgaw-blue-dark) !important;
+}
+
+body.site-burgaw .hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(29, 51, 67, 0.35) 0%, rgba(59, 95, 122, 0.5) 50%, rgba(29, 51, 67, 0.82) 100%),
+    linear-gradient(135deg, rgba(74, 111, 165, 0.15) 0%, transparent 45%) !important;
+}
+
+body.site-burgaw .hero-badge {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  background: rgba(59, 95, 122, 0.35) !important;
+  font-family: var(--font-body) !important;
+}
+
+body.site-burgaw .hero-eyebrow {
+  font-family: var(--font-display) !important;
+  color: #e8eef5 !important;
+}
+
+body.site-burgaw .hero h1 {
+  font-family: var(--font-display) !important;
+  letter-spacing: 0.06em !important;
+  text-transform: none !important;
+}
+
+body.site-burgaw .hero-sub {
+  font-family: var(--font-body) !important;
+}
+
+body.site-burgaw .hero-rating-pill strong,
+body.site-burgaw .hero-rating-pill__stars {
+  color: var(--burgaw-berry-light) !important;
+}
+
+body.site-burgaw .btn-primary {
+  background: var(--burgaw-blue) !important;
+  color: #fff !important;
+  border-color: var(--burgaw-blue) !important;
+  font-family: var(--font-body) !important;
+  box-shadow: 0 4px 20px rgba(59, 95, 122, 0.35) !important;
+}
+
+body.site-burgaw .btn-primary:hover {
+  background: var(--burgaw-blue-dark) !important;
+  border-color: var(--burgaw-blue-dark) !important;
+}
+
+body.site-burgaw .btn-red {
+  background: var(--burgaw-brick) !important;
+  border-color: var(--burgaw-brick) !important;
+}
+
+body.site-burgaw .btn-outline:hover {
+  border-color: var(--burgaw-berry-light) !important;
+  background: rgba(59, 95, 122, 0.2) !important;
+}
+
+body.site-burgaw .feat-ribbon {
+  background: var(--burgaw-blue-dark);
+  border-bottom: 2px solid var(--burgaw-berry);
+}
+
+body.site-burgaw .feat-ribbon__meal,
+body.site-burgaw .feat-ribbon__specials {
+  color: #c5d8eb;
+}
+
+body.site-burgaw .food-wall__banner {
+  background: var(--burgaw-blue) !important;
+  border-bottom: 2px solid var(--burgaw-berry) !important;
+}
+
+body.site-burgaw .food-wall {
+  background: var(--burgaw-blue-deep) !important;
+}
+
+body.site-burgaw .feat-stat {
+  background: #fff;
+  border-bottom: 3px solid var(--burgaw-blue);
+}
+
+body.site-burgaw .feat-stat__num {
+  color: var(--burgaw-blue) !important;
+}
+
+body.site-burgaw .section-tag {
+  color: var(--burgaw-blue) !important;
+  font-family: var(--font-body) !important;
+}
+
+body.site-burgaw .section h2 {
+  font-family: var(--font-display) !important;
+  color: var(--burgaw-blue-deep) !important;
+}
+
+body.site-burgaw .section h2 em {
+  font-family: var(--font-display) !important;
+  color: var(--burgaw-blue) !important;
+}
+
+body.site-burgaw .favorites-showcase {
+  background: var(--burgaw-sand) !important;
+}
+
+body.site-burgaw .fav-card__tag {
+  color: var(--burgaw-berry-light) !important;
+  border-color: rgba(107, 143, 196, 0.5) !important;
+}
+
+body.site-burgaw .feat-playground {
+  background: var(--burgaw-blue-deep) !important;
+  border-top: 3px solid var(--burgaw-berry) !important;
+}
+
+body.site-burgaw .feat-tab.is-active,
+body.site-burgaw .feat-tab:hover {
+  background: var(--burgaw-blue) !important;
+  color: #fff !important;
+  border-color: var(--burgaw-blue) !important;
+}
+
+body.site-burgaw .feat-chip.is-selected,
+body.site-burgaw .feat-chip:hover {
+  background: var(--burgaw-berry) !important;
+  color: #fff !important;
+}
+
+body.site-burgaw .family-band {
+  background: var(--burgaw-blue-deep) !important;
+  border-color: var(--burgaw-berry) !important;
+}
+
+body.site-burgaw .family-pillars {
+  background: var(--burgaw-blue) !important;
+}
+
+body.site-burgaw .family-pillars li {
+  background: var(--burgaw-blue-dark) !important;
+}
+
+body.site-burgaw .family-pillars strong {
+  color: #c5d8eb !important;
+  font-family: var(--font-display) !important;
+  font-size: 1.2rem !important;
+  text-transform: none !important;
+}
+
+body.site-burgaw .reviews-section {
+  background: var(--burgaw-sand) !important;
+}
+
+body.site-burgaw .reviews-stat {
+  border-color: rgba(59, 95, 122, 0.25) !important;
+}
+
+body.site-burgaw .reviews-stat strong {
+  color: var(--burgaw-blue) !important;
+}
+
+body.site-burgaw .specials-banner {
+  background: linear-gradient(135deg, var(--burgaw-blue) 0%, var(--burgaw-blue-dark) 100%) !important;
+}
+
+body.site-burgaw .footer {
+  background: var(--burgaw-blue-deep) !important;
+  border-top: 3px solid var(--burgaw-berry) !important;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body.site-burgaw .footer .logo {
+  color: #fff !important;
+}
+
+body.site-burgaw .footer .logo span {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+body.site-burgaw .footer h4 {
+  color: var(--burgaw-berry-light) !important;
+}
+
+body.site-burgaw .footer a:hover {
+  color: #fff !important;
+}
+
+body.site-burgaw .mobile-cta .cta-menu {
+  background: var(--burgaw-blue) !important;
+}
+
+body.site-burgaw .feat-scroll-progress {
+  background: linear-gradient(90deg, var(--burgaw-blue), var(--burgaw-berry-light));
+}
+
+body.site-burgaw .feat-concierge__toggle {
+  border-color: var(--burgaw-blue);
+  color: var(--burgaw-blue);
+}
+
+body.site-burgaw .feat-concierge__toggle:hover,
+body.site-burgaw .feat-concierge.is-open .feat-concierge__toggle {
+  background: var(--burgaw-blue);
+  color: #fff;
+}
+
+/* Menu page */
+body.site-burgaw.menu-online-layout {
+  background: var(--burgaw-cream) !important;
+}
+
+body.site-burgaw .menu-compact-bar--online,
+body.site-burgaw .menu-compact-bar {
+  background: var(--burgaw-sand);
+  border-bottom: 2px solid var(--burgaw-blue);
+}
+
+body.site-burgaw .menu-compact-bar h1 {
+  font-family: var(--font-display) !important;
+  color: var(--burgaw-blue-deep) !important;
+}
+
+body.site-burgaw .menu-view-tab.is-active {
+  background: var(--burgaw-blue) !important;
+  border-color: var(--burgaw-blue) !important;
+}
+
+body.site-burgaw .menu-card {
+  border-left-color: var(--burgaw-blue) !important;
+}
+
+body.site-burgaw .menu-card__price {
+  color: var(--burgaw-blue) !important;
+}
+
+@media (max-width: 640px) {
+  .burgaw-town-band__strip {
+    gap: 0.45rem;
+    padding: 0.5rem 0;
+  }
+
+  .burgaw-town-band__sub {
+    display: block;
+    margin-top: 0.12rem;
+    font-size: 0.68rem;
+  }
+
+  .burgaw-town-band__sub::before {
+    content: none;
+  }
+
+  .burgaw-town-band__links {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

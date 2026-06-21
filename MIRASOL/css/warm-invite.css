@@ -1,0 +1,419 @@
+/* Warm, inviting family restaurant — artwork & guest love */
+
+/* ── Decorative art (inline SVG backgrounds) ── */
+.oax-art {
+  pointer-events: none;
+  user-select: none;
+}
+
+.oax-art--floral {
+  width: clamp(72px, 14vw, 140px);
+  height: auto;
+  opacity: 0.92;
+}
+
+.oax-art--sun {
+  width: clamp(100px, 18vw, 180px);
+  opacity: 0.85;
+}
+
+/* Papel picado bunting */
+.papel-band {
+  height: 14px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #e8192e 0 36px,
+      #e8a020 36px 72px,
+      #2c4a7c 72px 108px,
+      #3d6b4a 108px 144px,
+      #d4623a 144px 180px
+    );
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='14'%3E%3Cpath d='M0 0h15v8l-7.5 6-7.5-6zm15 0h15v8l-7.5 6-7.5-6zm15 0h15v8l-7.5 6-7.5-6zm15 0h15v8l-7.5 6-7.5-6z' fill='%23000'/%3E%3C/svg%3E");
+  mask-size: 60px 14px;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='14'%3E%3Cpath d='M0 0h15v8l-7.5 6-7.5-6zm15 0h15v8l-7.5 6-7.5-6zm15 0h15v8l-7.5 6-7.5-6zm15 0h15v8l-7.5 6-7.5-6z' fill='%23000'/%3E%3C/svg%3E");
+  -webkit-mask-size: 60px 14px;
+}
+
+/* ── Warmer global touches ── */
+body.site-warm .hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(158, 27, 46, 0.25) 0%, rgba(26, 22, 20, 0.45) 40%, rgba(26, 22, 20, 0.72) 100%),
+    linear-gradient(135deg, rgba(232, 160, 32, 0.2) 0%, transparent 50%) !important;
+}
+
+body.site-warm .hero-bg {
+  filter: saturate(1.2) contrast(1.04) brightness(0.94) !important;
+}
+
+body.site-warm .btn {
+  border-radius: 8px !important;
+}
+
+body.site-warm .btn-primary {
+  box-shadow: 0 6px 24px rgba(232, 25, 46, 0.35) !important;
+}
+
+body.site-warm .feature,
+body.site-warm .info-card,
+body.site-warm .review-card {
+  border-radius: 14px !important;
+}
+
+body.site-warm .family-band {
+  border-image: none !important;
+  background: linear-gradient(160deg, #2c1810 0%, #1a1614 40%, #1e3358 100%) !important;
+}
+
+body.site-warm .family-pillars li {
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* ── Welcome band — family collage ── */
+.welcome-band {
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  background:
+    linear-gradient(135deg, #fff8f0 0%, #fde8d0 35%, #fad4b8 100%);
+  overflow: hidden;
+}
+
+.welcome-band::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 160, 32, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.welcome-band__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.welcome-band__collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(158, 27, 46, 0.18);
+  border: 4px solid #fff;
+  transform: rotate(-1.5deg);
+}
+
+.welcome-band__collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 110px;
+}
+
+.welcome-band__collage img:first-child {
+  grid-row: span 2;
+  min-height: 220px;
+}
+
+.welcome-band__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--oax-red, #e8192e);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+.welcome-band__badge svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.welcome-band h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  color: #2a1810;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.welcome-band h2 em {
+  display: block;
+  font-family: var(--font-decor);
+  font-size: 0.55em;
+  color: var(--oax-terracotta, #d4623a);
+  font-style: normal;
+  margin-bottom: 0.2rem;
+}
+
+.welcome-band p {
+  color: #5c4a3a;
+  line-height: 1.8;
+  font-size: 1.02rem;
+  margin-bottom: 1.25rem;
+}
+
+.welcome-band__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+}
+
+.welcome-band__chips li {
+  background: #fff;
+  border: 1px solid rgba(232, 25, 46, 0.2);
+  color: #8b3344;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+.welcome-band__art {
+  position: absolute;
+  opacity: 0.15;
+}
+
+.welcome-band__art--left {
+  left: 1%;
+  bottom: 8%;
+  width: 90px;
+}
+
+/* ── Reviews section ── */
+.reviews-section {
+  position: relative;
+  padding: clamp(3rem, 7vw, 5rem) clamp(1rem, 4vw, 2rem);
+  background:
+    linear-gradient(180deg, #fff 0%, #fff9f2 50%, #ffedd8 100%);
+  overflow: hidden;
+}
+
+.reviews-section__art {
+  position: absolute;
+  z-index: 0;
+}
+
+.reviews-section__art--tl {
+  top: 1.5rem;
+  left: 2%;
+}
+
+.reviews-section__art--br {
+  bottom: 1rem;
+  right: 2%;
+  transform: scaleX(-1);
+}
+
+.reviews-section__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.reviews-section .section-tag::after {
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.reviews-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.reviews-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem 1.25rem;
+  margin: 1.25rem auto 2rem;
+}
+
+.reviews-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #fff;
+  border: 2px solid rgba(232, 25, 46, 0.15);
+  border-radius: 12px;
+  padding: 0.65rem 1.1rem;
+  box-shadow: 0 4px 16px rgba(44, 36, 32, 0.06);
+  font-size: 0.88rem;
+  color: #3a3632;
+}
+
+.reviews-stat strong {
+  font-size: 1.35rem;
+  color: var(--oax-red, #e8192e);
+  line-height: 1;
+}
+
+.reviews-stat__google {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.15rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.review-card {
+  background: #fff;
+  border: 1px solid rgba(232, 25, 46, 0.12);
+  border-radius: 14px;
+  padding: 1.35rem 1.25rem 1.15rem;
+  box-shadow: 0 6px 24px rgba(158, 27, 46, 0.07);
+  position: relative;
+}
+
+.review-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 1;
+  color: rgba(232, 25, 46, 0.12);
+}
+
+.review-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.review-stars {
+  color: #e8a020;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+}
+
+.review-card__tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--oax-indigo, #2c4a7c);
+  background: rgba(44, 74, 124, 0.08);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.review-card__quote {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #3a3632;
+  margin: 0 0 0.85rem;
+  font-style: normal;
+}
+
+.review-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.65rem;
+  border-top: 1px dashed rgba(232, 25, 46, 0.15);
+  padding-top: 0.65rem;
+}
+
+.review-card__name {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: #2a1810;
+  font-style: normal;
+}
+
+.review-card__via {
+  font-size: 0.72rem;
+  color: #8a7f74;
+}
+
+.reviews-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Menu page — quiet rating footnote (not a marketing banner) */
+.menu-reviews-block--compact {
+  margin-top: 0.65rem;
+  padding: 0.55rem 0 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  border-top: 1px solid rgba(42, 24, 16, 0.08);
+}
+
+.menu-reviews-strip__line {
+  margin: 0;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: #7a7268;
+  text-align: center;
+  font-weight: 500;
+}
+
+.menu-reviews-strip__line strong {
+  font-weight: 700;
+  color: #5c554d;
+}
+
+.menu-reviews-strip__link {
+  color: #5c6f8a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu-reviews-strip__link:hover,
+.menu-reviews-strip__link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .welcome-band__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-band__collage {
+    transform: none;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}

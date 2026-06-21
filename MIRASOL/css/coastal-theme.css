@@ -1,0 +1,1238 @@
+/* El Mirasol — Coastal Carolina + Mexican kitchen
+   Main colors: fire red #FF1744 · fire orange #FF6D00
+   Coastal: sea blues, sand, foam white */
+
+body.site-coastal,
+body.menu-page.site-coastal {
+  /* Coastal palette */
+  --coast-sea: #0077b6;
+  --coast-sea-mid: #0096c7;
+  --coast-sea-light: #48cae4;
+  --coast-foam: #f0f9ff;
+  --coast-sand: #f5e6d3;
+  --coast-sand-deep: #e8d4bc;
+  --coast-drift: #dce9f2;
+
+  /* Fire accents (primary) */
+  --fire-red: #ff1744;
+  --fire-red-deep: #d50000;
+  --fire-orange: #ff6d00;
+  --fire-orange-bright: #ff9100;
+  --fire-glow: #ffab40;
+
+  /* Mexican accent */
+  --mex-tile: #0096c7;
+  --mex-mint: #2e9e4f;
+  --mex-marigold: #ffb300;
+
+  --bg-clean: #ffffff;
+  --bg-soft: var(--coast-foam);
+  --bg-tint: #fff8f4;
+  --ink: #0f1c2e;
+  --ink-soft: #3d4f63;
+
+  /* Site token map */
+  --oaxaca-red: var(--fire-red);
+  --oaxaca-deep: var(--fire-red-deep);
+  --terracotta: var(--fire-orange);
+  --adobe: var(--fire-orange-bright);
+  --oaxaca-green: var(--mex-mint);
+  --oaxaca-cream: var(--bg-clean);
+  --oaxaca-sand: var(--coast-foam);
+  --red: var(--fire-red);
+  --red-dark: var(--fire-red-deep);
+  --gold: var(--fire-orange-bright);
+  --gold-light: var(--fire-glow);
+  --cream: var(--bg-clean);
+  --cream-dark: var(--coast-foam);
+  --indigo: var(--coast-sea-mid);
+  --charm-honey: var(--fire-orange-bright);
+  --charm-honey-light: var(--fire-glow);
+  --charm-linen: var(--coast-foam);
+
+  --bou-noir: var(--coast-sea);
+  --bou-charcoal: var(--fire-red-deep);
+  --bou-pearl: var(--bg-clean);
+  --bou-gold: var(--fire-orange-bright);
+  --bou-gold-light: var(--fire-glow);
+  --bou-ink: var(--ink);
+
+  --fiesta-red: var(--fire-red);
+  --fiesta-red-deep: var(--fire-red-deep);
+  --fiesta-gold: var(--fire-orange-bright);
+  --fiesta-gold-light: var(--fire-glow);
+  --fiesta-terracotta: var(--fire-orange);
+  --fiesta-green: var(--mex-mint);
+  --fiesta-indigo: var(--coast-sea);
+  --fiesta-cream: var(--coast-foam);
+
+  --tex-red: var(--fire-red);
+  --tex-red-deep: var(--fire-red-deep);
+  --tex-gold: var(--fire-orange-bright);
+  --tex-gold-light: var(--fire-glow);
+  --tex-cream: var(--bg-clean);
+  --tex-ink: var(--ink);
+  --tex-body: var(--ink-soft);
+
+  --menu-red: var(--fire-red);
+  --menu-red-deep: var(--fire-red-deep);
+  --menu-gold: var(--fire-orange-bright);
+  --menu-gold-light: var(--fire-glow);
+  --menu-terracotta: var(--fire-orange);
+  --menu-cream: var(--bg-clean);
+  --menu-card: #ffffff;
+  --menu-ink: var(--ink);
+  --menu-ink-mid: #243447;
+  --menu-ink-soft: var(--ink-soft);
+
+  --textile: repeating-linear-gradient(
+    90deg,
+    var(--coast-sea-mid) 0 10px,
+    var(--fire-red) 10px 20px,
+    var(--fire-orange) 20px 30px,
+    var(--mex-marigold) 30px 40px,
+    var(--mex-tile) 40px 50px
+  );
+
+  font-size: 1.1rem;
+  line-height: 1.68;
+  color: var(--ink);
+}
+
+/* ── Page background: ocean foam + sand + red/orange glow ── */
+body.site-coastal.pattern,
+body.menu-page.site-coastal.pattern {
+  background-color: var(--coast-foam) !important;
+  background-image:
+    radial-gradient(ellipse 85% 55% at 0% 0%, rgba(0, 150, 199, 0.14) 0%, transparent 58%),
+    radial-gradient(ellipse 70% 45% at 100% 6%, rgba(255, 23, 68, 0.09) 0%, transparent 55%),
+    radial-gradient(ellipse 75% 40% at 50% 100%, rgba(255, 109, 0, 0.11) 0%, transparent 52%),
+    linear-gradient(180deg, #f0f9ff 0%, #ffffff 42%, #fff8f4 72%, #f5e6d3 100%) !important;
+}
+
+body.site-coastal.pattern::before,
+body.site-coastal.pattern::after {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+body.site-coastal .fiesta-gold-dust {
+  display: none !important;
+}
+
+/* ── Mexican coastal trim (replaces Oaxacan strips) ── */
+.coast-wave-trim {
+  height: 10px;
+  background:
+    linear-gradient(90deg, var(--coast-sea), var(--coast-sea-light), var(--coast-sea));
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 24' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0 12 Q150 0 300 12 T600 12 T900 12 T1200 12 V24 H0Z'/%3E%3C/svg%3E");
+  mask-size: 100% 100%;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 24' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0 12 Q150 0 300 12 T600 12 T900 12 T1200 12 V24 H0Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+}
+
+.coast-papel-strip {
+  height: 8px;
+  background: var(--textile);
+  box-shadow: 0 2px 0 rgba(0, 119, 182, 0.15);
+}
+
+/* ── Header & topbar ── */
+body.site-coastal .social-topbar {
+  background: linear-gradient(
+    90deg,
+    var(--coast-sea) 0%,
+    var(--coast-sea-mid) 28%,
+    var(--fire-red) 62%,
+    var(--fire-orange) 100%
+  ) !important;
+  color: #fff !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  border: none !important;
+  box-shadow: 0 2px 12px rgba(0, 119, 182, 0.2) !important;
+}
+
+body.site-coastal .social-topbar::after {
+  display: none !important;
+}
+
+body.site-coastal .header {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-bottom: 3px solid transparent !important;
+  border-image: linear-gradient(90deg, var(--coast-sea-light), var(--fire-red), var(--fire-orange)) 1 !important;
+  box-shadow: 0 4px 20px rgba(0, 119, 182, 0.08) !important;
+}
+
+body.site-coastal .logo {
+  font-size: 1.65rem !important;
+  color: var(--fire-red-deep) !important;
+}
+
+body.site-coastal .logo span:not(.logo__text):not(.logo__title),
+body.site-coastal .logo__sub {
+  font-size: 0.72rem !important;
+  color: var(--coast-sea) !important;
+  letter-spacing: 0.1em !important;
+}
+
+body.site-coastal .logo__title {
+  font-size: inherit !important;
+  color: var(--fire-red-deep) !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  margin-top: 0 !important;
+}
+
+body.site-coastal .nav a {
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  color: var(--ink-soft) !important;
+}
+
+body.site-coastal .nav a.active,
+body.site-coastal .nav a:hover {
+  color: var(--fire-red) !important;
+}
+
+body.site-coastal .nav-menu-cta {
+  background: linear-gradient(135deg, var(--fire-red), var(--fire-orange)) !important;
+  color: #fff !important;
+  padding: 0.6rem 1.25rem !important;
+  border-radius: 4px !important;
+  letter-spacing: 0.06em !important;
+  border: none !important;
+}
+
+body.site-coastal .nav-menu-cta::after {
+  display: none !important;
+}
+
+body.site-coastal .nav-menu-cta:hover,
+body.site-coastal .nav-menu-cta.active {
+  background: linear-gradient(135deg, var(--fire-orange), var(--fire-orange-bright)) !important;
+  color: #fff !important;
+}
+
+@media (max-width: 768px) {
+  body.site-coastal .nav-menu-cta,
+  body.site-coastal .nav-menu-cta:hover,
+  body.site-coastal .nav-menu-cta.active {
+    background: linear-gradient(135deg, var(--fire-red), var(--fire-orange)) !important;
+    color: #fff !important;
+  }
+}
+
+body.site-coastal .nav-cta {
+  background: none !important;
+  color: var(--ink-soft) !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+body.site-coastal .nav-cta::after {
+  display: block !important;
+}
+
+body.site-coastal .nav-cta:hover {
+  background: none !important;
+  color: var(--fire-red) !important;
+  transform: none !important;
+}
+
+@media (max-width: 768px) {
+  body.site-coastal .nav-cta {
+    margin-top: 0 !important;
+    text-align: inherit;
+    justify-content: flex-start;
+    border-radius: var(--radius) !important;
+  }
+}
+
+/* ── Hero ── */
+body.site-coastal .hero {
+  min-height: min(92dvh, 820px);
+}
+
+.hero-rotator {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-rotator__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.2s ease, transform 6s ease;
+}
+
+.hero-rotator__slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+body.site-coastal .hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(0, 119, 182, 0.38) 0%, rgba(15, 28, 46, 0.55) 45%, rgba(213, 0, 0, 0.62) 100%),
+    linear-gradient(135deg, rgba(255, 109, 0, 0.32) 0%, transparent 55%) !important;
+  z-index: 1;
+}
+
+body.site-coastal .hero h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(2.4rem, 7vw, 3.6rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  color: #fff !important;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.45), 0 0 30px rgba(255, 109, 0, 0.35) !important;
+}
+
+body.site-coastal .hero-eyebrow {
+  font-family: 'Dancing Script', cursive !important;
+  font-size: clamp(1.6rem, 5vw, 2.2rem) !important;
+  color: var(--fire-glow) !important;
+}
+
+body.site-coastal .hero-deck {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(1.12rem, 2.8vw, 1.42rem) !important;
+  color: var(--fire-glow) !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.site-coastal .hero-sub {
+  font-size: 1.12rem !important;
+  color: #fff !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  max-width: 34rem;
+}
+
+body.site-coastal .fiesta-pickup {
+  margin-top: 1.25rem !important;
+  padding: 0.85rem 1.5rem !important;
+  font-size: clamp(1.02rem, 2.6vw, 1.16rem) !important;
+  background: #ffffff !important;
+  border-color: var(--fire-red-deep) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.38) !important;
+}
+
+body.site-coastal .fiesta-pickup__call {
+  color: var(--fire-red-deep) !important;
+}
+
+body.site-coastal .fiesta-pickup__arrow {
+  color: var(--fire-orange) !important;
+}
+
+body.site-coastal .fiesta-pickup__eta {
+  color: #152535 !important;
+}
+
+body.site-coastal .fiesta-pickup__time {
+  color: var(--fire-orange-bright) !important;
+}
+
+body.site-coastal .hero-badge {
+  background: linear-gradient(135deg, var(--coast-sea-mid), var(--coast-sea-light)) !important;
+  color: #fff !important;
+  border: 2px solid rgba(255, 255, 255, 0.35) !important;
+  font-weight: 700 !important;
+}
+
+body.site-coastal .hero-rating-pill {
+  background: rgba(255, 255, 255, 0.97) !important;
+  color: var(--ink) !important;
+  border: 2px solid rgba(0, 150, 199, 0.25);
+}
+
+body.site-coastal .hero-rating-pill__stars {
+  color: var(--fire-orange-bright) !important;
+}
+
+body.site-coastal .hero-rating-pill strong {
+  color: var(--fire-red) !important;
+}
+
+body.site-coastal .btn-primary {
+  background: linear-gradient(135deg, var(--fire-orange), var(--fire-orange-bright)) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 4px 18px rgba(255, 109, 0, 0.4) !important;
+}
+
+body.site-coastal .btn-primary:hover {
+  box-shadow: 0 6px 24px rgba(255, 23, 68, 0.35) !important;
+}
+
+body.site-coastal .btn-red {
+  background: linear-gradient(135deg, var(--fire-red-deep), var(--fire-red)) !important;
+  color: #fff !important;
+  border-color: var(--fire-red) !important;
+}
+
+body.site-coastal .btn-red:hover {
+  background: linear-gradient(135deg, var(--fire-red), var(--fire-orange)) !important;
+  border-color: var(--fire-orange) !important;
+}
+
+body.site-coastal .reviews-cta .btn-social--facebook,
+body.site-coastal .visit-grid .btn-social--directions,
+body.site-coastal .contact-social .social-btn--facebook,
+body.site-coastal .footer .social-btn--facebook,
+body.site-coastal .btn-social--facebook,
+body.site-coastal .social-btn--facebook,
+body.site-coastal a[href*="facebook.com/elmirasolburgaw"].btn {
+  background: #1877f2 !important;
+  border-color: #1877f2 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.35) !important;
+}
+
+body.site-coastal .reviews-cta .btn-social--facebook:hover,
+body.site-coastal .visit-grid .btn-social--directions:hover,
+body.site-coastal .contact-social .social-btn--facebook:hover,
+body.site-coastal .footer .social-btn--facebook:hover,
+body.site-coastal .btn-social--facebook:hover,
+body.site-coastal .social-btn--facebook:hover,
+body.site-coastal a[href*="facebook.com/elmirasolburgaw"].btn:hover {
+  background: #0d65d9 !important;
+  border-color: #0d65d9 !important;
+  color: #fff !important;
+}
+
+body.site-coastal .visit-grid .btn-social--directions,
+body.site-coastal .btn-social--directions,
+body.site-coastal .mobile-cta .cta-directions,
+body.site-coastal .mobile-quick .quick-link--directions,
+body.site-coastal a[href*="google.com/maps/dir"].btn {
+  background: linear-gradient(135deg, var(--coast-sea), var(--coast-sea-mid)) !important;
+  border-color: var(--coast-sea-mid) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(0, 119, 182, 0.35) !important;
+}
+
+body.site-coastal .visit-grid .btn-social--directions:hover,
+body.site-coastal .btn-social--directions:hover,
+body.site-coastal .mobile-cta .cta-directions:hover,
+body.site-coastal .mobile-quick .quick-link--directions:hover,
+body.site-coastal a[href*="google.com/maps/dir"].btn:hover {
+  background: linear-gradient(135deg, var(--coast-sea-mid), var(--coast-sea-light)) !important;
+  border-color: var(--coast-sea-light) !important;
+  color: #fff !important;
+}
+
+body.site-coastal .btn-outline {
+  border-color: rgba(255, 255, 255, 0.85) !important;
+  color: #fff !important;
+}
+
+body.site-coastal .section:not(.hero) .btn-outline {
+  border-color: var(--coast-sea-mid) !important;
+  color: var(--coast-sea) !important;
+}
+
+/* ── Ribbon & promos ── */
+body.site-coastal .feat-ribbon {
+  background: linear-gradient(
+    90deg,
+    var(--coast-sea),
+    var(--fire-red-deep),
+    var(--fire-red),
+    var(--fire-orange)
+  ) !important;
+  border-bottom: 3px solid var(--fire-glow) !important;
+  color: #fff !important;
+  font-size: 1rem !important;
+}
+
+body.site-coastal .feat-ribbon__specials {
+  color: var(--fire-glow) !important;
+}
+
+body.site-coastal:not(.site-worldcup) .wc-promo {
+  background:
+    linear-gradient(180deg, rgba(0, 150, 199, 0.08) 0%, transparent 100%),
+    linear-gradient(90deg, #fff, var(--coast-foam), #fff) !important;
+  border-bottom: 2px solid rgba(255, 23, 68, 0.2) !important;
+  color: var(--ink-soft) !important;
+}
+
+body.site-coastal:not(.site-worldcup) .wc-promo__text strong {
+  color: var(--fire-red) !important;
+}
+
+/* ── Typography & sections ── */
+body.site-coastal h2,
+body.site-coastal .section-lead {
+  color: var(--ink) !important;
+}
+
+body.site-coastal .section-tag {
+  color: var(--coast-sea) !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+body.site-coastal p,
+body.site-coastal li {
+  color: var(--ink-soft) !important;
+}
+
+/* ── Signature plates layout ── */
+.favorites-showcase {
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+}
+
+.favorites-showcase__head {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.favorites-showcase__head h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.85rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.favorites-showcase__head p {
+  margin-top: 0.5rem;
+}
+
+.fav-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .fav-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fav-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s ease;
+}
+
+.fav-card__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.fav-card:hover .fav-card__bg {
+  transform: scale(1.06);
+}
+
+.fav-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    0deg,
+    rgba(15, 28, 46, 0.96) 0%,
+    rgba(15, 28, 46, 0.72) 42%,
+    rgba(15, 28, 46, 0.28) 72%,
+    transparent 100%
+  );
+}
+
+.fav-card__body {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem;
+  color: #fff;
+  width: 100%;
+}
+
+.fav-card__tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.fav-card h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.fav-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+body.site-coastal .favorites-showcase {
+  background: linear-gradient(180deg, #fff 0%, var(--coast-foam) 100%) !important;
+}
+
+body.site-coastal .favorites-showcase__head h2 {
+  color: var(--fire-red-deep) !important;
+}
+
+body.site-coastal .favorites-showcase__head p {
+  color: var(--ink-soft) !important;
+  font-size: 1.02rem !important;
+  line-height: 1.55 !important;
+}
+
+body.site-coastal .fav-card__body h3 {
+  color: #fff !important;
+  font-size: clamp(1.45rem, 4vw, 1.75rem) !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+body.site-coastal .fav-card__body p {
+  color: rgba(255, 255, 255, 0.96) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Cards & panels ── */
+body.site-coastal .feature,
+body.site-coastal .review-card,
+body.site-coastal .extras-card,
+body.site-coastal .fiesta-card,
+body.site-coastal .info-card,
+body.site-coastal .visit-grid > .map-wrap {
+  background: #fff !important;
+  border: 2px solid rgba(0, 150, 199, 0.18) !important;
+  border-left: 4px solid var(--fire-red) !important;
+  box-shadow: 0 6px 22px rgba(0, 119, 182, 0.08), 0 2px 8px rgba(255, 109, 0, 0.06) !important;
+}
+
+body.site-coastal .visit-card {
+  background: linear-gradient(165deg, #ffffff 0%, var(--coast-foam) 42%, #fff8f4 100%) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 14px 42px rgba(0, 119, 182, 0.11),
+    0 4px 14px rgba(255, 109, 0, 0.07) !important;
+}
+
+body.site-coastal .visit-card::before {
+  background: linear-gradient(90deg, var(--coast-sea-light), var(--fire-red), var(--fire-orange)) !important;
+}
+
+body.site-coastal .visit-card__eyebrow {
+  font-family: 'Dancing Script', cursive !important;
+  color: var(--fire-orange) !important;
+}
+
+body.site-coastal .visit-card__title {
+  color: var(--fire-red-deep) !important;
+}
+
+body.site-coastal .visit-card__label {
+  background: linear-gradient(135deg, var(--fire-red), var(--fire-orange)) !important;
+  box-shadow: 0 2px 10px rgba(255, 109, 0, 0.28) !important;
+}
+
+body.site-coastal .visit-card__toolbar .btn-outline {
+  background: #fff !important;
+  border-color: var(--coast-sea-mid) !important;
+  color: var(--coast-sea) !important;
+  box-shadow: 0 2px 8px rgba(0, 119, 182, 0.1) !important;
+}
+
+body.site-coastal .visit-card__toolbar .btn-outline:hover {
+  background: var(--coast-foam) !important;
+  border-color: var(--coast-sea) !important;
+  color: var(--coast-sea) !important;
+}
+
+body.site-coastal .visit-contact__icon {
+  color: var(--coast-sea-mid) !important;
+}
+
+body.site-coastal .visit-contact__text a {
+  color: var(--coast-sea) !important;
+}
+
+body.site-coastal .visit-contact__text a:hover {
+  color: var(--fire-red) !important;
+}
+
+body.site-coastal .visit-hours li.closed span {
+  color: var(--fire-red) !important;
+}
+
+body.site-coastal .visit-hours li span:first-child {
+  color: var(--ink) !important;
+}
+
+body.site-coastal .visit-grid > .map-wrap {
+  border-left-color: var(--coast-blue, #0077b6) !important;
+  overflow: hidden !important;
+}
+
+body.site-coastal .map-wrap__frame {
+  background: var(--coast-foam) !important;
+}
+
+body.site-coastal .fav-card__tag {
+  background: linear-gradient(135deg, var(--fire-red), var(--fire-orange)) !important;
+  color: #fff !important;
+}
+
+body.site-coastal .feature h3,
+body.site-coastal .extras-card h3 {
+  color: var(--fire-red-deep) !important;
+}
+
+/* ── Stats band ── */
+body.site-coastal .feat-stats {
+  background: linear-gradient(
+    180deg,
+    var(--coast-foam) 0%,
+    #fff 50%,
+    var(--coast-sand) 100%
+  ) !important;
+  border-top: 3px solid var(--coast-sea-light) !important;
+  border-bottom: 3px solid var(--fire-orange) !important;
+}
+
+body.site-coastal .feat-stat {
+  border-color: rgba(0, 150, 199, 0.15) !important;
+}
+
+body.site-coastal .feat-stat__num {
+  color: var(--fire-red-deep) !important;
+}
+
+body.site-coastal .feat-stat__num--text {
+  color: var(--fire-red) !important;
+}
+
+body.site-coastal .feat-stat__label {
+  color: var(--coast-sea) !important;
+}
+
+body.site-coastal .feat-stat__hint {
+  color: var(--fire-orange) !important;
+  font-size: 0.62rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* ── Burgaw / community band ── */
+.burgaw-town-band {
+  padding: 0 clamp(0.75rem, 3vw, 1.5rem);
+}
+
+.burgaw-town-band__strip {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.55rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.burgaw-town-band__icon {
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.burgaw-town-band__line {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.burgaw-town-band__sub {
+  display: inline;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.burgaw-town-band__sub::before {
+  content: ' · ';
+  opacity: 0.55;
+}
+
+.burgaw-town-band__links {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.burgaw-town-band__link {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+body.site-coastal .burgaw-town-band {
+  background: linear-gradient(90deg, var(--coast-foam), #fff, var(--coast-sand)) !important;
+  border-top: 2px solid var(--coast-sea-light) !important;
+  border-bottom: 2px solid var(--fire-orange) !important;
+}
+
+body.site-coastal .burgaw-town-band__line strong {
+  color: var(--fire-red) !important;
+}
+
+body.site-coastal .burgaw-town-band__link {
+  color: var(--coast-sea) !important;
+  border-color: var(--coast-sea-light) !important;
+}
+
+body.site-coastal .burgaw-town-band__link:hover {
+  color: var(--fire-red) !important;
+  border-color: var(--fire-orange) !important;
+}
+
+/* ── Reviews — easy read ── */
+body.site-coastal .reviews-section {
+  background: linear-gradient(180deg, #fff 0%, var(--coast-foam) 100%) !important;
+  padding-top: clamp(1.75rem, 4vw, 2.5rem) !important;
+  padding-bottom: clamp(1.5rem, 3vw, 2rem) !important;
+}
+
+body.site-coastal .reviews-section .section-lead {
+  font-family: var(--font-body) !important;
+  font-size: clamp(1rem, 2.4vw, 1.12rem) !important;
+  line-height: 1.75 !important;
+  color: var(--ink-soft) !important;
+  margin-bottom: 0.65rem !important;
+}
+
+body.site-coastal .reviews-stats {
+  margin: 0.5rem auto 0.75rem !important;
+}
+
+body.site-coastal .reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.15rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+body.site-coastal .review-card {
+  padding: 1.35rem 1.3rem 1.2rem !important;
+  font-family: var(--font-body) !important;
+}
+
+body.site-coastal .reviews-carousel__track .review-card {
+  flex: 0 0 200px;
+  width: 200px;
+  padding: 0.6rem 0.7rem 0.55rem !important;
+  border: 1px solid rgba(14, 116, 144, 0.14) !important;
+  border-radius: 9px !important;
+  box-shadow: 0 2px 10px rgba(14, 116, 144, 0.07) !important;
+}
+
+body.site-coastal .review-card__quote {
+  font-family: var(--font-body) !important;
+  font-size: clamp(1rem, 2.5vw, 1.1rem) !important;
+  line-height: 1.8 !important;
+  color: var(--ink) !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.015em;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.site-coastal .reviews-carousel__track .review-card__quote {
+  font-size: 0.76rem !important;
+  line-height: 1.35 !important;
+  color: var(--ink-soft) !important;
+}
+
+body.site-coastal .review-card__name--head {
+  font-family: var(--font-body) !important;
+  font-size: clamp(0.95rem, 2.2vw, 1.02rem) !important;
+  font-weight: 700 !important;
+  color: var(--coast-sea) !important;
+  line-height: 1.35 !important;
+}
+
+body.site-coastal .reviews-carousel__track .review-card__name--head {
+  font-size: 0.7rem !important;
+  color: var(--coast-sea) !important;
+}
+
+body.site-coastal .review-stars {
+  font-size: 1.05rem !important;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+body.site-coastal .reviews-carousel-wrap {
+  margin: 0.5rem 0 0.75rem;
+}
+
+body.site-coastal .reviews-stat {
+  font-family: var(--font-body) !important;
+  font-size: clamp(0.92rem, 2.2vw, 1rem) !important;
+  line-height: 1.45 !important;
+}
+
+body.site-coastal .reviews-stat strong {
+  font-size: clamp(1.15rem, 3vw, 1.3rem) !important;
+  font-weight: 700 !important;
+}
+
+body.site-coastal .google-review-tab__num {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+}
+
+/* ── Footer ── */
+body.site-coastal .footer,
+body.site-coastal footer.footer--slim {
+  background: linear-gradient(
+    180deg,
+    var(--coast-sea) 0%,
+    #005f8a 40%,
+    var(--fire-red-deep) 100%
+  ) !important;
+  color: #fff !important;
+}
+
+body.site-coastal .footer .logo {
+  color: #fff !important;
+}
+
+body.site-coastal .footer .logo__sub,
+body.site-coastal .footer .logo__sub--footer {
+  color: rgba(255, 255, 255, 0.94) !important;
+  font-size: 0.84rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+body.site-coastal .footer h4 {
+  color: #fff !important;
+}
+
+body.site-coastal .footer-brand p,
+body.site-coastal .footer-links p,
+body.site-coastal .footer-hours,
+body.site-coastal .footer-hours p {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+body.site-coastal .footer a {
+  color: rgba(255, 255, 255, 0.94) !important;
+}
+
+body.site-coastal .footer-bottom,
+body.site-coastal .footer-bottom span {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+body.site-coastal .footer-bottom {
+  border-top-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+body.site-coastal footer a:hover {
+  color: var(--fire-glow) !important;
+}
+
+/* ── Mobile CTA bar ── */
+body.site-coastal .mobile-cta {
+  background: rgba(240, 249, 255, 0.96) !important;
+  border-top: 2px solid var(--coast-sea-light) !important;
+}
+
+body.site-coastal .mobile-cta .cta-menu {
+  background: linear-gradient(135deg, var(--fire-orange), var(--fire-orange-bright)) !important;
+}
+
+/* ── Dish roulette (on-page section) ── */
+body.site-coastal .story-spin-section {
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(0, 150, 199, 0.05) 38%, rgba(255, 109, 0, 0.04) 100%);
+}
+
+body.site-coastal .story-spin__frame {
+  position: relative;
+  border-color: rgba(0, 150, 199, 0.18) !important;
+  box-shadow:
+    0 16px 44px rgba(0, 119, 182, 0.11),
+    0 0 0 1px rgba(255, 255, 255, 0.65) inset !important;
+}
+
+body.site-coastal .story-spin__frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--coast-sea-light), var(--fire-red), var(--fire-orange));
+  z-index: 2;
+  pointer-events: none;
+}
+
+body.site-coastal .dish-roulette-section {
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(0, 150, 199, 0.06) 40%, rgba(255, 109, 0, 0.05) 100%);
+}
+
+body.site-coastal .story-spin__img {
+  border-left: 4px solid var(--fire-red) !important;
+}
+
+body.site-coastal .fiesta-card--roulette-inline {
+  border-color: rgba(0, 119, 182, 0.22) !important;
+  box-shadow: 0 12px 36px rgba(0, 119, 182, 0.11) !important;
+}
+
+body.site-coastal .fiesta-card--roulette-inline::after {
+  background: linear-gradient(90deg, var(--coast-sea-light), var(--fire-red), var(--fire-orange)) !important;
+}
+
+body.site-coastal .story-spin__roulette-label {
+  border-color: rgba(0, 150, 199, 0.2) !important;
+}
+
+body.site-coastal .story-spin__roulette-eyebrow {
+  color: var(--coast-sea) !important;
+}
+
+body.site-coastal .story-spin__roulette-title {
+  color: var(--fire-red-deep) !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+}
+
+body.site-coastal .map-pin-label__text {
+  background: linear-gradient(135deg, var(--coast-sea), var(--fire-red), var(--fire-orange)) !important;
+  font-weight: 700 !important;
+}
+
+body.site-coastal .map-pin-label--highlight .map-pin-label__text {
+  background: linear-gradient(135deg, #ffca28, var(--fire-orange), var(--fire-orange-bright)) !important;
+  box-shadow: 0 0 0 3px rgba(255, 202, 40, 0.5) !important;
+}
+
+body.site-coastal .map-pin-label--highlight .map-pin-label__pointer {
+  border-top-color: var(--fire-orange-bright) !important;
+}
+
+body.site-coastal .map-area-promos__item--primary .map-area-promos__link,
+body.site-coastal .map-area-promos__item--highlight .map-area-promos__link {
+  border-color: rgba(255, 23, 68, 0.4) !important;
+}
+
+body.site-coastal .map-area-promos__item--highlight .map-area-promos__link {
+  background: linear-gradient(135deg, rgba(255, 202, 40, 0.24), rgba(255, 109, 0, 0.16)) !important;
+}
+
+body.site-coastal .fiesta-card--roulette-inline h3 {
+  color: var(--fire-red-deep) !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 1.65rem !important;
+}
+
+body.site-coastal .fiesta-card--roulette-hero .fiesta-spin-btn {
+  background: linear-gradient(135deg, var(--fire-red), var(--fire-orange)) !important;
+}
+
+/* ── Roulette & concierge accents ── */
+body.site-coastal .roulette-fab {
+  border-color: rgba(255, 23, 68, 0.4) !important;
+  color: var(--fire-red-deep) !important;
+}
+
+body.site-coastal .roulette-panel__inner {
+  border-color: rgba(0, 150, 199, 0.3) !important;
+}
+
+body.site-coastal .fiesta-spin-btn,
+body.site-coastal .fiesta-stamp-btn {
+  background: linear-gradient(135deg, var(--fire-red), var(--fire-orange)) !important;
+}
+
+body.site-coastal .feat-concierge__toggle {
+  background: var(--coast-sea) !important;
+  border-color: var(--fire-orange-bright) !important;
+  color: #fff !important;
+}
+
+body.site-coastal .google-review-tab {
+  border-color: rgba(0, 150, 199, 0.2) !important;
+  background: rgba(240, 249, 255, 0.96) !important;
+}
+
+body.site-coastal .google-review-tab__icon {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+body.site-coastal .google-review-tab__rating {
+  font-family: var(--font-body) !important;
+  color: var(--ink-soft) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(66, 133, 244, 0.12) 0%,
+    rgba(52, 168, 83, 0.09) 35%,
+    rgba(251, 188, 5, 0.09) 65%,
+    rgba(234, 67, 53, 0.07) 100%
+  ) !important;
+  border-color: rgba(0, 150, 199, 0.14) !important;
+}
+
+body.site-coastal .reviews-stat__google {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* ── Menu page ── */
+body.menu-page.site-coastal .menu-hero-vivid__bg {
+  background: linear-gradient(
+    125deg,
+    var(--coast-sea) 0%,
+    var(--coast-sea-mid) 30%,
+    var(--fire-red) 65%,
+    var(--fire-orange) 100%
+  ) !important;
+}
+
+body.menu-page.site-coastal .menu-compact-bar,
+body.menu-page.site-coastal .menu-compact-bar--online {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-bottom: 2px solid var(--coast-sea-light) !important;
+}
+
+body.menu-page.site-coastal .menu-compact-bar h1 {
+  color: var(--ink) !important;
+}
+
+body.menu-page.site-coastal .menu-compact-bar p {
+  color: var(--ink-soft) !important;
+}
+
+body.menu-page.site-coastal .menu-view-tab.is-active {
+  background: linear-gradient(135deg, var(--fire-orange), var(--fire-orange-bright)) !important;
+  color: #fff !important;
+  border-color: var(--fire-orange) !important;
+  box-shadow: 0 4px 14px rgba(255, 109, 0, 0.35) !important;
+}
+
+body.menu-page.site-coastal .menu-online-tab.is-active {
+  background: var(--fire-orange-bright) !important;
+  border-color: var(--fire-orange) !important;
+  color: #fff !important;
+}
+
+body.menu-page.site-coastal .menu-online__heading h2 {
+  color: var(--fire-red-deep) !important;
+}
+
+body.menu-page.site-coastal .menu-online__note {
+  font-size: 0.9rem !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  color: var(--ink) !important;
+  line-height: 1.55 !important;
+}
+
+body.menu-page.site-coastal .menu-online__fine {
+  font-size: 0.8rem !important;
+  color: var(--ink-soft) !important;
+  opacity: 1 !important;
+}
+
+body.menu-page.site-coastal .menu-reviews-strip__line,
+body.menu-page.site-coastal .menu-reviews-strip__line strong {
+  font-size: 0.78rem !important;
+  color: var(--ink-soft) !important;
+}
+
+body.menu-page.site-coastal .menu-reviews-strip__link {
+  color: var(--coast-sea) !important;
+}
+
+body.menu-page.site-coastal .menu-card__hint {
+  font-size: 0.62rem !important;
+  color: var(--ink-soft) !important;
+}
+
+body.menu-page.site-coastal .menu-card {
+  background: #fff !important;
+  border: 2px solid rgba(0, 150, 199, 0.15) !important;
+  border-left: 4px solid var(--fire-orange) !important;
+}
+
+body.menu-page.site-coastal .menu-card__price {
+  color: var(--fire-red) !important;
+}
+
+body.menu-page.site-coastal .menu-online__toolbar {
+  background: rgba(240, 249, 255, 0.98) !important;
+  border-bottom-color: rgba(255, 109, 0, 0.25) !important;
+}
+
+body.menu-page.site-coastal .cart-fab {
+  background: linear-gradient(135deg, var(--fire-red), var(--fire-orange)) !important;
+}
+
+body.menu-page.site-coastal .wc-menu-hint {
+  color: var(--coast-sea) !important;
+}
+
+/* ── World Cup strip (subtle coastal fit) ── */
+body.site-coastal .wc-bunting {
+  filter: saturate(1.1);
+}
+
+/* ── Facebook & Directions — final override (beats btn-red / terracotta) ── */
+body.site-coastal .btn-red.btn-social--facebook,
+body.site-coastal .reviews-cta .btn-social--facebook,
+body.site-coastal .contact-social .social-btn--facebook,
+body.site-coastal .footer .social-btn--facebook {
+  background: #1877f2 !important;
+  border-color: #1877f2 !important;
+  color: #fff !important;
+}
+
+body.site-coastal .btn-red.btn-social--directions,
+body.site-coastal .visit-grid .btn-social--directions,
+body.site-coastal .mobile-cta .cta-directions {
+  background: linear-gradient(135deg, #0077b6, #0096c7) !important;
+  border-color: #0096c7 !important;
+  color: #fff !important;
+}

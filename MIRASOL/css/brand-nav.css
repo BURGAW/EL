@@ -1,0 +1,113 @@
+/* Logo + horizontal Home/Menu nav; reliable page scroll */
+
+html {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+body:not(.nav-open):not(.roulette-open):not(.modal-open) {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Header: El Mirasol lockup, then Home | Menu scrolling horizontally */
+.header {
+  justify-content: flex-start;
+  gap: 0.25rem;
+  padding-right: 0.75rem;
+}
+
+.header .logo {
+  flex: 0 0 auto;
+  max-width: min(58vw, 300px);
+  min-width: 0;
+}
+
+.header .menu-btn {
+  display: none !important;
+}
+
+.header .nav-backdrop {
+  display: none !important;
+}
+
+.header .nav {
+  position: static !important;
+  transform: none !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto !important;
+  height: auto !important;
+  max-height: none !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-left: 0.15rem;
+  padding: 0 0.35rem 0 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.header .nav::-webkit-scrollbar {
+  display: none;
+}
+
+.header .nav a {
+  flex: 0 0 auto;
+  width: auto !important;
+  min-height: 40px;
+  padding: 0.45rem 0.7rem !important;
+  white-space: nowrap;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem !important;
+  letter-spacing: 0.06em;
+}
+
+.header .nav a:hover,
+.header .nav a.active {
+  background: rgba(255, 109, 0, 0.08);
+}
+
+/* Menu page: Breakfast / Lunch / Dinner tabs align under brand row */
+body.menu-page .menu-view-tabs {
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-left: 0;
+  scroll-padding-left: 0.5rem;
+}
+
+body.menu-page .menu-view-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+body.menu-page .menu-view-tab {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-left: 0.75rem;
+  }
+
+  .header .logo {
+    max-width: min(62vw, 260px);
+    font-size: 1.1rem !important;
+  }
+
+  .header .nav a {
+    min-height: 44px;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.8rem !important;
+  }
+}

@@ -1,0 +1,1006 @@
+/* El Mirasol — Oaxacan textile theme: red, white & gold only */
+
+body.site-oaxaca {
+  --tex-red: #ff1744;
+  --tex-red-deep: #d50000;
+  --tex-gold: #ff9100;
+  --tex-gold-light: #ffab40;
+  --tex-white: #ffffff;
+  --tex-cream: #f8f4ec;
+  --tex-ink: #2a2220;
+  --tex-body: #3d3632;
+  /* Accent bars — smooth red-to-gold (no checkered bands) */
+  --tex-stripe: linear-gradient(
+    90deg,
+    var(--tex-red-deep) 0%,
+    var(--tex-red) 38%,
+    var(--tex-gold) 72%,
+    var(--tex-gold-light) 100%
+  );
+  /* Warm mercado wash — soft glow, no grid or diamonds */
+  --tex-weave:
+    radial-gradient(ellipse 75% 55% at 8% 12%, rgba(201, 162, 39, 0.11) 0%, transparent 58%),
+    radial-gradient(ellipse 65% 50% at 92% 8%, rgba(168, 30, 44, 0.08) 0%, transparent 52%),
+    radial-gradient(ellipse 80% 45% at 50% 100%, rgba(201, 162, 39, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 35% at 72% 68%, rgba(168, 30, 44, 0.05) 0%, transparent 55%);
+  /* Papel picado scallop trim */
+  --tex-border: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='10' viewBox='0 0 80 10'%3E%3Crect width='80' height='7' fill='%237a1520'/%3E%3Cpath d='M0 7h8v3c0 2-2 3-4 3s-4-1-4-3V7zm8 0h8v2c0 3-3 4-5 4s-5-1-5-4V7zm8 0h8v3c0 1-1 2-3 2s-3-1-3-2V7zm8 0h8v2c0 2-2 3-4 3s-4-1-4-3V7zm8 0h8v3c0 2-2 3-4 3s-4-1-4-3V7zm8 0h8v2c0 3-3 4-5 4s-5-1-5-4V7zm8 0h8v3c0 1-1 2-3 2s-3-1-3-2V7zm8 0h8v2c0 2-2 3-4 3s-4-1-4-3V7zm8 0h8v3c0 2-2 3-4 3s-4-1-4-3V7z' fill='%23c9a227'/%3E%3Crect y='9' width='80' height='1' fill='%23e2c56a'/%3E%3C/svg%3E");
+  --oax-red: var(--tex-red);
+  --oax-red-deep: var(--tex-red-deep);
+  --oax-maize: var(--tex-gold);
+  --oax-maize-light: var(--tex-gold-light);
+  --oax-cream: var(--tex-white);
+  --oax-sand: var(--tex-cream);
+  --oax-barro: var(--tex-ink);
+  --oax-textile: var(--tex-stripe);
+  --gold: var(--tex-gold);
+  --cream: var(--tex-white);
+  --oaxaca-cream: var(--tex-white);
+  --oaxaca-red: var(--tex-red);
+  --charm-honey: var(--tex-gold);
+}
+
+/* Page background — warm cream with soft color washes */
+body.site-oaxaca.pattern,
+body.site-oaxaca.site-menu-vivid.pattern,
+body.site-oaxaca.menu-page.pattern {
+  background-color: var(--tex-cream) !important;
+  background-image: var(--tex-weave) !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+}
+
+body.site-vibe.site-oaxaca.pattern {
+  background: var(--tex-cream) !important;
+  background-image: var(--tex-weave) !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+}
+
+body.site-oaxaca.pattern::before,
+body.site-oaxaca.pattern::after,
+body.site-oaxaca.site-menu-vivid.pattern::before,
+body.site-oaxaca.site-menu-vivid.pattern::after {
+  display: none !important;
+}
+
+/* Festive trim — papel picado scallops */
+.oax-textile-trim {
+  height: 10px;
+  background: var(--tex-border) repeat-x center;
+  background-size: 80px 10px;
+}
+
+.oax-textile-trim--wide {
+  height: 12px;
+  background-size: 80px 12px;
+}
+
+/* Papel picado — red & gold only */
+body.site-oaxaca .oax-papel-strip {
+  height: 18px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='18' viewBox='0 0 100 18'%3E%3Cpath d='M0 0h10v6c0 3-2 6-5 6s-5-3-5-6V0zm10 0h10v5c0 4-3 7-7 7s-7-3-7-7V0zm20 0h10v7c0 2-2 4-4 4s-4-2-4-4V0zm10 0h10v5c0 3-3 6-6 6s-6-3-6-6V0zm20 0h10v7c0 3-3 6-6 6s-6-3-6-6V0zm10 0h10v5c0 4-3 7-7 7s-7-3-7-7V0z' fill='%23a81e2c'/%3E%3Cpath d='M0 12h10v6H0zm10 0h10v6H10zm20 0h10v6H30zm10 0h10v6H40zm20 0h10v6H60zm10 0h10v6H70z' fill='%23c9a227'/%3E%3C/svg%3E") repeat-x center;
+  background-size: 100px 18px;
+  border: none;
+  box-shadow: none;
+}
+
+/* Top bar */
+body.site-oaxaca .social-topbar,
+body.site-vibe.site-oaxaca .social-topbar {
+  background: var(--tex-red-deep) !important;
+  border-bottom: 3px solid var(--tex-gold) !important;
+  box-shadow: none !important;
+}
+
+body.site-oaxaca .social-topbar::after {
+  content: '';
+  display: block;
+  height: 5px;
+  background: var(--tex-stripe);
+}
+
+/* Header */
+body.site-oaxaca .header,
+body.site-vibe.site-oaxaca .header {
+  background: #fff !important;
+  border-bottom: none !important;
+  box-shadow: 0 1px 0 rgba(28, 20, 18, 0.08) !important;
+}
+
+body.site-oaxaca .header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--tex-stripe);
+}
+
+body.site-oaxaca .logo,
+body.site-vibe.site-oaxaca .logo {
+  color: var(--tex-red) !important;
+  text-shadow: none !important;
+}
+
+body.site-oaxaca .logo span {
+  color: var(--tex-gold) !important;
+}
+
+body.site-oaxaca .nav a.active,
+body.site-oaxaca .nav a:hover {
+  color: var(--tex-red) !important;
+}
+
+/* Hero — light overlay so photos & text read clearly */
+body.site-oaxaca .hero-overlay,
+body.site-oaxaca.site-fiesta .hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(168, 30, 44, 0.18) 0%, rgba(42, 34, 32, 0.32) 100%),
+    linear-gradient(135deg, rgba(201, 162, 39, 0.08) 0%, transparent 55%) !important;
+}
+
+body.site-oaxaca .hero-bg,
+body.site-oaxaca .hero-rotator,
+body.site-oaxaca .hero-rotator img {
+  filter: brightness(1.18) saturate(1.08) contrast(1.02) !important;
+}
+
+body.site-oaxaca .hero::before,
+body.site-oaxaca .hero::after {
+  display: none !important;
+}
+
+body.site-oaxaca .hero h1,
+body.site-oaxaca.site-fiesta .hero h1 {
+  color: #fff !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  filter: none !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35) !important;
+  font-size: inherit !important;
+}
+
+body.site-oaxaca .hero-eyebrow,
+body.site-oaxaca.site-fiesta .hero-eyebrow {
+  color: #fff !important;
+  font-size: clamp(1.35rem, 3.5vw, 2rem) !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45) !important;
+}
+
+body.site-oaxaca .hero-sub,
+body.site-oaxaca.site-fiesta .hero-sub,
+body.site-oaxaca.site-boujee .hero-sub {
+  color: #fff !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5) !important;
+  font-size: 1.15rem !important;
+  line-height: 1.65 !important;
+}
+
+body.site-oaxaca .hero-badge {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 2px solid var(--tex-gold) !important;
+  color: var(--tex-red-deep) !important;
+  box-shadow: none !important;
+  font-weight: 700 !important;
+}
+
+body.site-oaxaca .hero-rating-pill {
+  border-color: var(--tex-gold) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  color: var(--tex-ink) !important;
+}
+
+/* Buttons */
+body.site-oaxaca .btn-primary,
+body.site-vibe.site-oaxaca .btn-primary,
+body.site-oaxaca.site-fiesta .btn-primary {
+  background: var(--tex-red) !important;
+  color: #fff !important;
+  border: 2px solid var(--tex-gold) !important;
+  box-shadow: 0 4px 16px rgba(168, 30, 44, 0.25) !important;
+}
+
+body.site-oaxaca .btn-primary:hover {
+  background: var(--tex-red-deep) !important;
+  transform: translateY(-1px);
+}
+
+body.site-oaxaca .btn-outline {
+  border-color: rgba(255, 255, 255, 0.75) !important;
+  color: #fff !important;
+}
+
+/* Ribbon & marquee */
+body.site-oaxaca .feat-ribbon,
+body.site-oaxaca.site-fiesta .feat-ribbon {
+  background: var(--tex-red) !important;
+  border-bottom: 3px solid var(--tex-gold) !important;
+  color: #fff !important;
+}
+
+body.site-oaxaca .feat-ribbon__inner,
+body.site-oaxaca .feat-ribbon__status,
+body.site-oaxaca .feat-ribbon__meal,
+body.site-oaxaca .feat-ribbon__clock {
+  color: #fff !important;
+}
+
+body.site-oaxaca .feat-ribbon__specials {
+  color: var(--tex-gold-light) !important;
+}
+
+body.site-oaxaca .vibe-marquee,
+body.site-oaxaca.site-fiesta .vibe-marquee {
+  background: var(--tex-red) !important;
+  border-bottom: 4px solid var(--tex-gold) !important;
+  padding: 0.75rem 0 !important;
+}
+
+body.site-oaxaca .vibe-marquee__track {
+  font-size: 1.15rem !important;
+  animation-duration: 32s !important;
+}
+
+body.site-oaxaca .vibe-marquee__track span {
+  color: var(--tex-white) !important;
+  background: none !important;
+  text-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Sections */
+body.site-oaxaca .section-tag {
+  color: var(--tex-red) !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  letter-spacing: 0.16em !important;
+  font-weight: 600 !important;
+}
+
+body.site-oaxaca .section-tag::before {
+  content: none !important;
+}
+
+body.site-oaxaca .section-tag::after {
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin: 0.45rem auto 0;
+  background: var(--tex-stripe);
+  border-radius: 2px;
+}
+
+body.site-oaxaca .section:nth-of-type(even),
+body.site-oaxaca .section:nth-of-type(odd) {
+  background: transparent !important;
+  border: none !important;
+}
+
+body.site-oaxaca .section h2 {
+  color: var(--tex-ink) !important;
+  text-shadow: none !important;
+}
+
+body.site-oaxaca .section-lead,
+body.site-oaxaca .section p,
+body.site-oaxaca .section li,
+body.site-oaxaca.site-boujee .section-lead,
+body.site-oaxaca.site-boujee .about-text p,
+body.site-oaxaca .fiesta-card__lead,
+body.site-oaxaca .fiesta-card p,
+body.site-oaxaca .fiesta-hub__head p {
+  color: var(--tex-body) !important;
+  opacity: 1 !important;
+}
+
+body.site-oaxaca .fiesta-card h3 {
+  color: var(--tex-ink) !important;
+}
+
+/* Fiesta hub */
+body.site-oaxaca .fiesta-hub {
+  background: #fff !important;
+  border: 2px solid rgba(201, 162, 39, 0.45) !important;
+  border-top: none !important;
+  box-shadow:
+    0 8px 28px rgba(28, 20, 18, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8) !important;
+  border-radius: 12px;
+}
+
+body.site-oaxaca .fiesta-hub::before {
+  height: 4px !important;
+  background: var(--tex-stripe) !important;
+}
+
+body.site-oaxaca .fiesta-card {
+  border: 1px solid rgba(201, 162, 39, 0.35) !important;
+  background: var(--tex-white) !important;
+  box-shadow: 0 4px 16px rgba(28, 20, 18, 0.05) !important;
+  margin-top: 0 !important;
+}
+
+body.site-oaxaca .fiesta-card::before,
+body.site-oaxaca .fiesta-card .fiesta-card__icon::after {
+  content: none !important;
+  display: none !important;
+}
+
+body.site-oaxaca .fiesta-spin-btn,
+body.site-oaxaca .fiesta-stamp-btn:not(:disabled) {
+  background: var(--tex-red) !important;
+  border: 2px solid var(--tex-gold) !important;
+  color: #fff !important;
+}
+
+body.site-oaxaca .fiesta-urgency {
+  background: var(--tex-red-deep) !important;
+  border: 2px solid var(--tex-gold) !important;
+}
+
+body.site-oaxaca .fiesta-social-bar {
+  border-color: rgba(201, 162, 39, 0.5) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Food wall & features */
+body.site-oaxaca .food-wall__banner {
+  background: var(--tex-red) !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 1.75rem !important;
+}
+
+body.site-oaxaca .food-wall__banner p {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+body.site-oaxaca .food-wall__banner h2::before {
+  content: none !important;
+}
+
+body.site-oaxaca .feature {
+  background: #fff !important;
+  border-top: 4px solid var(--tex-red) !important;
+  box-shadow: 0 4px 16px rgba(28, 20, 18, 0.05) !important;
+}
+
+body.site-oaxaca .feature:nth-child(2) {
+  border-top-color: var(--tex-gold) !important;
+}
+
+body.site-oaxaca .feature:nth-child(3) {
+  border-top-color: var(--tex-red-deep) !important;
+}
+
+body.site-oaxaca .family-band {
+  background: var(--tex-cream) !important;
+}
+
+body.site-oaxaca .family-band .section-tag {
+  color: var(--tex-red) !important;
+}
+
+body.site-oaxaca .family-band h2,
+body.site-oaxaca .family-band p,
+body.site-oaxaca .family-band li,
+body.site-oaxaca .family-band__lead {
+  color: var(--tex-body) !important;
+}
+
+body.site-oaxaca .family-band h2 em {
+  color: var(--tex-red) !important;
+}
+
+body.site-oaxaca .specials-banner {
+  background: linear-gradient(135deg, var(--tex-red), #c42a3a) !important;
+  color: #fff !important;
+}
+
+body.site-oaxaca .specials-banner p,
+body.site-oaxaca .specials-banner h2 {
+  color: #fff !important;
+}
+
+body.site-oaxaca .specials-banner .btn-primary {
+  background: var(--tex-gold) !important;
+  color: var(--tex-ink) !important;
+  border-color: var(--tex-white) !important;
+}
+
+body.site-oaxaca .charm-trim,
+body.site-oaxaca .burgaw-trim {
+  background: var(--tex-stripe) !important;
+  height: 4px !important;
+}
+
+/* Footer */
+body.site-oaxaca .footer {
+  background: var(--tex-red-deep) !important;
+}
+
+body.site-oaxaca .footer,
+body.site-oaxaca .footer p,
+body.site-oaxaca .footer a,
+body.site-oaxaca .footer .logo {
+  color: #fff !important;
+}
+
+body.site-oaxaca .footer .logo span,
+body.site-oaxaca .footer h4 {
+  color: var(--tex-gold-light) !important;
+}
+
+body.site-oaxaca .footer-bottom {
+  border-top: 2px solid var(--tex-gold);
+}
+
+/* Menu */
+body.site-oaxaca.menu-page .menu-hero-vivid__bg {
+  background: linear-gradient(125deg, rgba(168, 30, 44, 0.88) 0%, rgba(168, 30, 44, 0.75) 50%, rgba(201, 162, 39, 0.7) 100%) !important;
+}
+
+body.site-oaxaca.menu-page .menu-compact-bar {
+  background: rgba(255, 255, 255, 0.96) !important;
+}
+
+body.site-oaxaca .menu-compact-bar h1 {
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-oaxaca .menu-compact-bar p {
+  color: var(--tex-body) !important;
+}
+
+body.site-oaxaca.menu-page .menu-hero-vivid__papel {
+  height: 18px !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='18' viewBox='0 0 100 18'%3E%3Cpath d='M0 0h10v6c0 3-2 6-5 6s-5-3-5-6V0zm10 0h10v5c0 4-3 7-7 7s-7-3-7-7V0zm20 0h10v7c0 2-2 4-4 4s-4-2-4-4V0zm10 0h10v5c0 3-3 6-6 6s-6-3-6-6V0zm20 0h10v7c0 3-3 6-6 6s-6-3-6-6V0zm10 0h10v5c0 4-3 7-7 7s-7-3-7-7V0z' fill='%23a81e2c'/%3E%3Cpath d='M0 12h10v6H0zm10 0h10v6H10zm20 0h10v6H30zm10 0h10v6H40zm20 0h10v6H60zm10 0h10v6H70z' fill='%23c9a227'/%3E%3C/svg%3E") repeat-x center !important;
+  background-size: 100px 18px !important;
+}
+
+body.site-oaxaca .menu-compact-bar::after {
+  background: var(--tex-stripe) !important;
+  height: 4px !important;
+}
+
+
+
+body.site-oaxaca .menu-section {
+  border-left: 6px solid var(--tex-gold) !important;
+  background: transparent !important;
+}
+
+body.site-oaxaca .menu-section h2::before {
+  content: none !important;
+}
+
+body.site-oaxaca .menu-section h2::after {
+  background: var(--tex-stripe) !important;
+}
+
+body.site-oaxaca .menu-card {
+  border-left: 3px solid var(--tex-gold) !important;
+  border-top: none !important;
+  background: #fff !important;
+}
+
+body.site-oaxaca .menu-card__name {
+  color: var(--tex-ink) !important;
+}
+
+body.site-oaxaca .menu-card__desc,
+body.site-oaxaca .menu-card__meats,
+body.site-oaxaca .menu-card__hint {
+  color: var(--tex-body) !important;
+}
+
+body.site-oaxaca .menu-section h2 {
+  color: var(--tex-ink) !important;
+}
+
+body.site-oaxaca .menu-card__price {
+  color: var(--tex-red) !important;
+}
+
+body.site-oaxaca .menu-view-tab.is-active {
+  background: var(--tex-red) !important;
+  border-color: var(--tex-red) !important;
+}
+
+body.site-oaxaca .menu-online-tab.is-active {
+  background: var(--tex-gold) !important;
+  border-color: var(--tex-gold) !important;
+  color: var(--tex-ink) !important;
+}
+
+/* Hide scream-era decorations if any remain in DOM */
+.oax-marigold-petals,
+.oax-marigold-edge,
+.oax-marigold-garland,
+.oax-corn-garland,
+.oax-scream-chant,
+.oax-scream-watermark,
+.oax-corner-bloom,
+.oax-corner-cob {
+  display: none !important;
+}
+
+/* ── Stability: stop layered themes from fighting ── */
+
+/* One background only — beat vibe / boujee / burgaw / base .pattern */
+body.site-oaxaca.pattern,
+body.site-oaxaca.site-vibe.pattern,
+body.site-oaxaca.site-boujee.pattern,
+body.site-oaxaca.site-burgaw.pattern,
+body.site-oaxaca.site-fiesta.pattern,
+body.site-oaxaca.site-vibe.site-boujee.site-burgaw.site-fiesta.pattern,
+body.site-oaxaca.site-menu-vivid.pattern,
+body.site-oaxaca.menu-page.pattern {
+  background-color: var(--tex-cream) !important;
+  background-image: var(--tex-weave) !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+}
+
+/* Kill ALL fixed pattern overlays (main glitch source) */
+body.site-oaxaca.pattern::before,
+body.site-oaxaca.pattern::after,
+body.pattern.site-oaxaca::before,
+body.pattern.site-oaxaca::after {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Gold-dust canvas was covering the page at z-index 9990 */
+body.site-oaxaca .fiesta-gold-dust {
+  display: none !important;
+}
+
+/* border-image + repeating gradients renders broken in many browsers */
+body.site-oaxaca *,
+body.site-oaxaca *::before,
+body.site-oaxaca *::after {
+  border-image: none !important;
+}
+
+body.site-oaxaca .family-band {
+  border-top: 4px solid var(--tex-gold) !important;
+  border-bottom: 4px solid var(--tex-red) !important;
+}
+
+body.site-oaxaca .footer {
+  border-top: 4px solid var(--tex-gold) !important;
+}
+
+body.site-oaxaca .specials-banner {
+  border-top: 4px solid var(--tex-gold) !important;
+  border-bottom: 4px solid var(--tex-red) !important;
+}
+
+/* Restore fiesta card top stripe (was hidden and broke layout) */
+body.site-oaxaca .fiesta-card::before {
+  content: '' !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: auto !important;
+  height: 5px !important;
+  background: var(--tex-stripe) !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+body.site-oaxaca .fiesta-card .fiesta-card__icon::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Keep header / topbar above content */
+body.site-oaxaca .social-topbar {
+  z-index: 210 !important;
+}
+
+body.site-oaxaca .header {
+  z-index: 200 !important;
+}
+
+body.site-oaxaca .mobile-cta {
+  z-index: 190 !important;
+}
+
+/* Boujee layer was hiding fiesta elements on the same body */
+body.site-oaxaca.site-boujee .vibe-marquee,
+body.site-oaxaca.site-boujee .hero-floaters {
+  display: block !important;
+}
+
+body.site-oaxaca.site-boujee .vibe-marquee {
+  overflow: hidden;
+}
+
+/* Social topbar stripe — don't duplicate broken ::after stacks */
+body.site-oaxaca .social-topbar::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* ── Readability: light content panels on woven bg ── */
+body.site-oaxaca main .section:not(.hero):not(.family-band):not(.specials-banner) {
+  background: rgba(255, 255, 255, 0.96) !important;
+}
+
+body.site-oaxaca .fiesta-urgency {
+  background: var(--tex-red) !important;
+  color: #fff !important;
+}
+
+body.site-oaxaca .fiesta-urgency p,
+body.site-oaxaca .fiesta-urgency h3 {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+body.site-oaxaca .fiesta-social-bar {
+  color: var(--tex-ink) !important;
+}
+
+body.site-oaxaca .feature p {
+  color: var(--tex-body) !important;
+}
+
+body.site-oaxaca .logo span {
+  color: var(--tex-red-deep) !important;
+}
+
+/* ── Readability pass 2: beat boujee / fiesta / menu-vivid dark layers ── */
+
+body.site-oaxaca .nav a {
+  color: var(--tex-ink) !important;
+}
+
+body.site-oaxaca.site-boujee .nav-cta {
+  background: var(--tex-red) !important;
+  border-color: var(--tex-gold) !important;
+  color: #fff !important;
+}
+
+body.site-oaxaca.site-boujee .nav-cta:hover {
+  background: var(--tex-red-deep) !important;
+}
+
+body.site-oaxaca .feature h3,
+body.site-oaxaca.site-boujee .feature h3 {
+  color: var(--tex-ink) !important;
+}
+
+/* Family pillars — cream cards, dark text (not charcoal barro) */
+body.site-oaxaca .family-pillars,
+body.site-oaxaca.site-boujee .family-pillars,
+body.site-oaxaca.site-vibe .family-pillars {
+  background: rgba(201, 162, 39, 0.2) !important;
+  border: none !important;
+  gap: 0.65rem !important;
+}
+
+body.site-oaxaca .family-pillars li,
+body.site-oaxaca.site-boujee .family-pillars li,
+body.site-oaxaca.site-vibe .family-pillars li {
+  background: var(--tex-white) !important;
+  border: 1px solid rgba(168, 30, 44, 0.12) !important;
+}
+
+body.site-oaxaca .family-pillars strong,
+body.site-oaxaca.site-boujee .family-pillars strong {
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-oaxaca .family-pillars span,
+body.site-oaxaca.site-boujee .family-pillars span {
+  color: var(--tex-body) !important;
+  opacity: 1 !important;
+}
+
+body.site-oaxaca .family-band::before {
+  display: none !important;
+}
+
+/* Gallery — light frame, readable captions */
+body.site-oaxaca .gallery-section--wide,
+body.site-oaxaca.site-boujee .gallery-section--wide {
+  background: var(--tex-white) !important;
+}
+
+body.site-oaxaca .gallery-slideshow,
+body.site-oaxaca.site-boujee .gallery-slideshow {
+  background: var(--tex-white) !important;
+  border: 2px solid rgba(201, 162, 39, 0.45) !important;
+}
+
+body.site-oaxaca .gallery-slide figcaption,
+body.site-oaxaca.site-boujee .gallery-slide figcaption {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.72) 70%, transparent 100%) !important;
+  color: var(--tex-ink) !important;
+  text-shadow: none !important;
+}
+
+body.site-oaxaca .gallery-slideshow__btn,
+body.site-oaxaca.site-boujee .gallery-slideshow__btn {
+  background: rgba(255, 255, 255, 0.92) !important;
+  color: var(--tex-red-deep) !important;
+  border: 2px solid var(--tex-gold) !important;
+}
+
+/* Reviews & follow bands */
+body.site-oaxaca .reviews-section,
+body.site-oaxaca.site-boujee .reviews-section {
+  background: var(--tex-white) !important;
+}
+
+body.site-oaxaca .review-card,
+body.site-oaxaca .review-card__quote,
+body.site-oaxaca .reviews-stat strong {
+  color: var(--tex-ink) !important;
+}
+
+body.site-oaxaca .follow-band,
+body.site-oaxaca.site-boujee .follow-band {
+  background: var(--tex-cream) !important;
+}
+
+body.site-oaxaca .follow-band h2,
+body.site-oaxaca .follow-band p {
+  color: var(--tex-ink) !important;
+}
+
+/* Fiesta marketing blocks */
+body.site-oaxaca .fiesta-share-band {
+  background: linear-gradient(135deg, var(--tex-red) 0%, var(--tex-red-deep) 100%) !important;
+  color: #fff !important;
+}
+
+body.site-oaxaca .trust-ladder__head h2,
+body.site-oaxaca .trust-pillar__tag,
+body.site-oaxaca .trust-proof-bar span {
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-oaxaca .trust-pillar p,
+body.site-oaxaca .trust-ladder__cite {
+  color: var(--tex-body) !important;
+}
+
+body.site-oaxaca .fav-card {
+  background: var(--tex-white) !important;
+}
+
+body.site-oaxaca .fav-card h3,
+body.site-oaxaca .fav-card p {
+  color: var(--tex-ink) !important;
+}
+
+body.site-oaxaca .fiesta-pickup {
+  border-color: var(--tex-red-deep) !important;
+}
+
+body.site-oaxaca .fiesta-pickup__call {
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-oaxaca .fiesta-pickup__time {
+  color: var(--tex-gold) !important;
+}
+
+body.site-oaxaca .fiesta-menu-nudge {
+  color: var(--tex-red-deep) !important;
+  background: rgba(201, 162, 39, 0.18) !important;
+}
+
+/* Menu page — white bar & panels over vivid hero */
+body.site-oaxaca.menu-page .menu-hero-vivid__bg {
+  background: linear-gradient(125deg, rgba(168, 30, 44, 0.62) 0%, rgba(168, 30, 44, 0.48) 50%, rgba(201, 162, 39, 0.45) 100%) !important;
+}
+
+body.site-oaxaca.menu-page.site-menu-vivid .menu-compact-bar,
+body.site-oaxaca.menu-page.site-menu-vivid .menu-compact-bar--online {
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 4px 20px rgba(28, 20, 18, 0.08) !important;
+}
+
+body.site-oaxaca.menu-page.site-menu-vivid .menu-compact-bar h1,
+body.site-oaxaca.menu-page.site-menu-vivid .menu-compact-bar--online h1 {
+  color: var(--tex-red-deep) !important;
+  text-shadow: none !important;
+}
+
+body.site-oaxaca.menu-page.site-menu-vivid .menu-compact-bar p,
+body.site-oaxaca.menu-page.site-menu-vivid .menu-compact-bar--online p {
+  color: var(--tex-body) !important;
+  text-shadow: none !important;
+}
+
+body.site-oaxaca.menu-page.site-menu-vivid .lang-toggle-btn {
+  background: var(--tex-white) !important;
+  border: 2px solid var(--tex-red) !important;
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-oaxaca.menu-page .menu-section {
+  background: rgba(255, 255, 255, 0.96) !important;
+  padding: 1.5rem clamp(1rem, 3vw, 2rem) !important;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+}
+
+body.site-oaxaca.menu-page .menu-online-main,
+body.site-oaxaca.menu-page .menu-pro-wrap {
+  background: transparent !important;
+}
+
+/* Food wall — light canvas (boujee noir was unreadable) */
+body.site-oaxaca .food-wall,
+body.site-oaxaca.site-boujee .food-wall {
+  background: var(--tex-cream) !important;
+}
+
+body.site-oaxaca .food-wall__banner,
+body.site-oaxaca.site-boujee .food-wall__banner {
+  background: var(--tex-red) !important;
+  color: #fff !important;
+}
+
+body.site-oaxaca .food-wall__banner h2,
+body.site-oaxaca .food-wall__banner p {
+  color: #fff !important;
+}
+
+body.site-oaxaca .food-wall__label {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.55) 55%, transparent 100%) !important;
+  color: var(--tex-ink) !important;
+  font-weight: 600 !important;
+}
+
+/* Favorite cards — readable overlay text */
+body.site-oaxaca .favorites-showcase,
+body.site-oaxaca.site-boujee .favorites-showcase {
+  background: var(--tex-white) !important;
+}
+
+body.site-oaxaca .favorites-showcase__head h2,
+body.site-oaxaca .favorites-showcase__head p {
+  color: var(--tex-ink) !important;
+}
+
+body.site-oaxaca .fav-card__overlay,
+body.site-oaxaca.site-boujee .fav-card__overlay {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.72) 45%, transparent 100%) !important;
+}
+
+body.site-oaxaca .fav-card h3,
+body.site-oaxaca.site-boujee .fav-card h3 {
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-oaxaca .fav-card p,
+body.site-oaxaca.site-boujee .fav-card p {
+  color: var(--tex-body) !important;
+}
+
+body.site-oaxaca .fav-card__tag {
+  color: var(--tex-red-deep) !important;
+  border-color: var(--tex-gold) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Playground / oracle — light panel + dark UI chrome */
+body.site-oaxaca .feat-playground,
+body.site-oaxaca.site-fiesta .feat-playground {
+  background: linear-gradient(180deg, #fff 0%, var(--tex-cream) 100%) !important;
+  color: var(--tex-ink) !important;
+  border-top: 4px solid var(--tex-gold) !important;
+  border-bottom: 4px solid var(--tex-red) !important;
+}
+
+body.site-oaxaca .feat-playground__head h2 {
+  color: var(--tex-ink) !important;
+}
+
+body.site-oaxaca .feat-playground__head p {
+  color: var(--tex-body) !important;
+}
+
+body.site-oaxaca .feat-tab {
+  color: var(--tex-body) !important;
+  border-color: rgba(168, 30, 44, 0.25) !important;
+  background: var(--tex-white) !important;
+}
+
+body.site-oaxaca .feat-tab.is-active,
+body.site-oaxaca .feat-tab:hover {
+  background: var(--tex-red) !important;
+  color: #fff !important;
+  border-color: var(--tex-red) !important;
+}
+
+body.site-oaxaca .feat-mood-btn,
+body.site-oaxaca .feat-chip {
+  background: var(--tex-white) !important;
+  color: var(--tex-ink) !important;
+  border: 2px solid rgba(201, 162, 39, 0.45) !important;
+}
+
+body.site-oaxaca .feat-mood-btn:hover,
+body.site-oaxaca .feat-chip.is-selected,
+body.site-oaxaca .feat-chip:hover {
+  background: var(--tex-gold) !important;
+  color: var(--tex-ink) !important;
+  border-color: var(--tex-gold) !important;
+}
+
+body.site-oaxaca .feat-oracle__result {
+  background: var(--tex-white) !important;
+  border: 2px solid rgba(201, 162, 39, 0.4) !important;
+}
+
+body.site-oaxaca .feat-oracle__result h3 {
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-oaxaca .feat-oracle__result p {
+  color: var(--tex-body) !important;
+}
+
+body.site-oaxaca .feat-marg__group h4 {
+  color: var(--tex-red-deep) !important;
+}
+
+/* Visit / info cards */
+body.site-oaxaca .info-card,
+body.site-oaxaca.site-boujee .info-card {
+  background: var(--tex-white) !important;
+}
+
+body.site-oaxaca .info-card h3,
+body.site-oaxaca .info-card p,
+body.site-oaxaca .info-card a {
+  color: var(--tex-body) !important;
+}
+
+body.site-oaxaca .info-card h3 {
+  color: var(--tex-ink) !important;
+}
+
+/* Google review tab — visible peek, on-brand */
+body.site-oaxaca .google-review-tab {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: var(--tex-red) !important;
+  border-width: 2px !important;
+  box-shadow: -4px 4px 16px rgba(122, 21, 32, 0.12) !important;
+}
+
+body.site-oaxaca .google-review-tab:hover,
+body.site-oaxaca .google-review-tab:focus-visible {
+  border-color: var(--tex-gold) !important;
+  box-shadow: -5px 5px 20px rgba(122, 21, 32, 0.16) !important;
+}
+
+body.site-oaxaca .google-review-tab__rating {
+  color: var(--tex-red-deep) !important;
+  background: rgba(201, 162, 39, 0.2) !important;
+}
+
+body.site-oaxaca .google-review-tab__text {
+  color: var(--tex-ink) !important;
+}
+

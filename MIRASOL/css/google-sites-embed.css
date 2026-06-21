@@ -1,0 +1,296 @@
+/* Google Sites iframe embed — compact, mobile-safe, no double chrome
+   Tested layout targets: iPhone Safari, Android Chrome, Samsung Internet */
+
+html.gsites-embed {
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html.gsites-embed,
+body.gsites-embed {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body.gsites-embed {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: 0;
+  height: auto !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: auto;
+}
+
+html.gsites-embed {
+  height: auto !important;
+  overflow-y: auto !important;
+}
+
+html.gsites-embed body.has-topbar,
+body.gsites-embed.has-topbar {
+  padding-top: 0 !important;
+}
+
+body.gsites-embed.has-mobile-cta {
+  padding-bottom: 0 !important;
+}
+
+body.gsites-embed.pattern::before,
+body.gsites-embed.pattern::after {
+  opacity: 0.35;
+}
+
+/* Hide duplicate chrome (Google Sites already has site nav) */
+body.gsites-embed .social-topbar,
+body.gsites-embed .mobile-cta,
+body.gsites-embed .google-review-tab,
+body.gsites-embed #google-review-tab,
+body.gsites-embed .roulette-fab,
+body.gsites-embed .cart-fab,
+body.gsites-embed .feat-concierge,
+body.gsites-embed .hero-scroll,
+body.gsites-embed .extras-saved-fab,
+body.gsites-embed .extras-saved-panel,
+body.gsites-embed .feat-toast-wrap,
+body.gsites-embed .skip-link,
+body.gsites-embed .feat-cmd {
+  display: none !important;
+}
+
+/* Header scrolls with content — avoids double-scroll in Google Sites iframe */
+body.gsites-embed .header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 200;
+}
+
+body.gsites-embed.has-topbar .header {
+  top: 0 !important;
+}
+
+/* Home hero — fits iframe height on phone */
+body.gsites-embed .hero {
+  min-height: 0 !important;
+  padding: 1.75rem 1rem 2.25rem !important;
+}
+
+body.gsites-embed.has-topbar .hero,
+body.gsites-embed.site-worldcup.has-topbar .hero,
+html.gsites-embed body.has-topbar .hero,
+html.gsites-embed body.has-topbar.site-worldcup .hero {
+  padding-top: 1.75rem !important;
+}
+
+body.gsites-embed .hero h1 {
+  font-size: clamp(2.15rem, 10vw, 3.25rem);
+}
+
+body.gsites-embed .hero-sub {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+body.gsites-embed .hero-btns {
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+body.gsites-embed .hero-btns .btn {
+  min-height: 44px;
+  flex: 1 1 auto;
+}
+
+body.gsites-embed .wc-promo--compact {
+  padding: 0.4rem 0.65rem;
+  font-size: 0.64rem;
+}
+
+/* Menu page */
+body.gsites-embed.menu-page .menu-online-shell {
+  margin-top: 0 !important;
+  padding-top: 0.5rem;
+  padding-left: 0.65rem;
+  padding-right: 0.65rem;
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+}
+
+body.gsites-embed .menu-online__toolbar {
+  top: calc(var(--header-h) + var(--safe-top) - 1px) !important;
+  z-index: 180;
+}
+
+body.gsites-embed .menu-view-tabs {
+  gap: 0.3rem;
+  padding: 0.3rem;
+}
+
+body.gsites-embed .menu-view-tab,
+body.gsites-embed .menu-online-tab {
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+body.gsites-embed .menu-card {
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+body.gsites-embed .menu-extras-bar {
+  font-size: 0.72rem;
+  margin-top: 0.35rem;
+}
+
+body.gsites-embed.menu-page .footer {
+  margin-top: 0.75rem;
+  padding-top: 2rem;
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
+}
+
+body.gsites-embed .footer {
+  padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
+}
+
+/* Sections & grids */
+body.gsites-embed .section,
+body.gsites-embed .favorites-showcase,
+body.gsites-embed .reviews-section {
+  padding-left: 0.85rem;
+  padding-right: 0.85rem;
+}
+
+body.gsites-embed .visit-grid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+body.gsites-embed .map-wrap__frame {
+  height: 280px;
+}
+
+body.gsites-embed .story-spin__frame {
+  grid-template-columns: 1fr;
+}
+
+body.gsites-embed .fav-cards {
+  gap: 0.85rem;
+}
+
+/* Prevent horizontal bleed in narrow iframe */
+body.gsites-embed img,
+body.gsites-embed video,
+body.gsites-embed iframe,
+body.gsites-embed .map-wrap,
+body.gsites-embed .menu-online__tabs,
+body.gsites-embed .menu-view-tabs,
+body.gsites-embed .menu-photo-strip {
+  max-width: 100%;
+}
+
+body.gsites-embed .menu-online__tabs,
+body.gsites-embed .menu-photo-strip {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Inline Home | Menu nav in iframe (same as standalone site) */
+body.gsites-embed .header .nav a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Modals stay inside iframe */
+body.gsites-embed .item-modal,
+body.gsites-embed .lightbox {
+  position: fixed;
+  inset: 0;
+}
+
+body.gsites-embed .item-modal__dialog {
+  max-height: min(88dvh, calc(100% - 1rem));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Tap feedback — iOS / Android */
+body.gsites-embed .btn,
+body.gsites-embed .menu-view-tab,
+body.gsites-embed .menu-online-tab,
+body.gsites-embed .menu-card--btn {
+  -webkit-tap-highlight-color: rgba(255, 109, 0, 0.12);
+}
+
+@media (max-width: 768px) {
+  body.gsites-embed .logo {
+    font-size: 1.15rem;
+    max-width: calc(100% - 52px);
+    gap: 0.5rem;
+  }
+
+  body.gsites-embed .logo__sub {
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+  }
+
+  body.gsites-embed .logo-img--lockup {
+    width: 38px;
+    height: 38px;
+    max-width: 38px;
+  }
+
+  body.gsites-embed .header {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  body.gsites-embed .hero {
+    padding: 1.35rem 0.85rem 2rem !important;
+  }
+
+  body.gsites-embed .feat-ribbon__inner {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.6rem;
+  }
+
+  body.gsites-embed .menu-view-tab {
+    font-size: 0.64rem;
+    padding: 0.45rem 0.3rem;
+    letter-spacing: 0.03em;
+  }
+
+  body.gsites-embed .menu-online__grid {
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)) !important;
+  }
+
+  body.gsites-embed .map-wrap__frame {
+    height: 240px;
+  }
+}
+
+@media (max-width: 380px) {
+  body.gsites-embed .logo__title {
+    font-size: 1.05rem;
+  }
+
+  body.gsites-embed .logo__sub {
+    font-size: 0.5rem;
+    letter-spacing: 0.06em;
+  }
+
+  body.gsites-embed .logo-img--lockup {
+    width: 34px;
+    height: 34px;
+    max-width: 34px;
+  }
+
+  body.gsites-embed .menu-view-tab {
+    font-size: 0.56rem;
+    letter-spacing: 0.02em;
+  }
+
+  body.gsites-embed .menu-online__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}

@@ -1,0 +1,258 @@
+/* No Cutoff — prevent clipped menu items, labels, and section text */
+
+/* ── Menu hero: title, subtitle, buttons must not clip ── */
+.menu-hero-vivid {
+  overflow: visible !important;
+  min-height: 0 !important;
+}
+
+.menu-hero-vivid__photos,
+.menu-hero-vivid__bg {
+  bottom: 0;
+}
+
+body.site-menu-vivid .menu-compact-bar__inner {
+  flex-wrap: wrap;
+}
+
+/* ── Menu cards: show full names, prices, descriptions ── */
+body.menu-page .menu-card {
+  overflow: visible;
+  height: auto;
+  min-height: auto;
+}
+
+body.menu-page .menu-card__head {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.25rem 0.5rem;
+}
+
+body.menu-page .menu-card__name {
+  flex: 1 1 60%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: visible;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.3;
+}
+
+body.menu-page .menu-card__price {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+body.menu-page .menu-card__desc,
+body.menu-page .menu-card__meats {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+body.site-menu-vivid .menu-card__desc {
+  -webkit-line-clamp: unset;
+}
+
+/* Grid: avoid squished two-column cells on phones */
+@media (max-width: 767px) {
+  body.menu-page .menu-online__grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  body.menu-page .menu-online__grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+  }
+}
+
+/* Breakfast / lunch compact grid */
+body.menu-page .menu-online__grid--solo {
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)) !important;
+}
+
+@media (max-width: 479px) {
+  body.menu-page .menu-online__grid--solo {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.menu-page .menu-online__grid--solo .menu-card__name {
+    font-size: 0.88rem !important;
+  }
+}
+
+/* Tabs: full labels, wrap if needed */
+body.menu-page .menu-view-tabs {
+  flex-wrap: wrap;
+  height: auto;
+}
+
+body.menu-page .menu-view-tab {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+  min-height: 44px;
+  height: auto;
+  flex: 1 1 30%;
+  min-width: 5.5rem;
+}
+
+body.menu-page .menu-online-tab {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+  min-height: 40px;
+  height: auto;
+}
+
+body.menu-page .menu-online__tabs {
+  flex-wrap: wrap;
+  overflow-x: visible;
+  row-gap: 0.35rem;
+}
+
+@media (max-width: 767px) {
+  body.menu-page .menu-online__toolbar {
+    position: relative;
+    top: auto;
+  }
+
+  body.menu-page .menu-online__tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+  }
+}
+
+/* Show menu subtitle on all screen sizes */
+body.menu-page .menu-compact-bar--online p,
+body.menu-page .menu-compact-bar p {
+  display: block !important;
+}
+
+/* ── Kitchen ribbon: don't ellipsis specials ── */
+.feat-ribbon {
+  overflow: visible;
+}
+
+.feat-ribbon__inner {
+  justify-content: space-between;
+}
+
+.feat-ribbon__specials {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  line-height: 1.35;
+  flex: 1 1 100%;
+  min-width: 0;
+  padding: 0.15rem 0;
+}
+
+@media (min-width: 900px) {
+  .feat-ribbon__specials {
+    flex: 1 1 40%;
+  }
+}
+
+.feat-ribbon__right {
+  flex-shrink: 0;
+}
+
+.feat-ribbon__meal,
+.feat-ribbon__clock {
+  white-space: normal;
+  flex-shrink: 0;
+}
+
+/* ── Fiesta social bar ── */
+.fiesta-social-bar {
+  flex-wrap: wrap;
+  border-radius: 14px;
+  max-width: 100%;
+  text-align: center;
+  line-height: 1.45;
+  padding: 0.75rem 1rem;
+}
+
+.fiesta-social-bar #fiesta-social-text {
+  flex: 1 1 100%;
+  min-width: 0;
+  word-break: break-word;
+}
+
+/* ── Fiesta / trust cards ── */
+.fiesta-card,
+.fiesta-urgency,
+.trust-pillar {
+  overflow: visible;
+}
+
+.fiesta-builder__chips,
+.fiesta-chip {
+  white-space: normal;
+  text-align: center;
+}
+
+/* ── Homepage sections ── */
+.hero-content,
+.fav-card__body,
+.feat-oracle__result,
+.feat-tonight__card {
+  overflow: visible;
+}
+
+.fav-card__body h3,
+.fav-card__body p {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ── Item detail modal: full text ── */
+.item-modal__desc,
+.item-modal__title {
+  overflow: visible;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.item-modal__dialog {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ── Marquee: ensure track not clipped vertically ── */
+.vibe-marquee {
+  overflow: visible;
+  padding: 0.35rem 0;
+}
+
+.vibe-marquee__track span {
+  line-height: 1.4;
+  padding: 0.15rem 0;
+}
+
+/* ── Logo tagline on mobile: wrap instead of ellipsis ── */
+@media (max-width: 768px) {
+  .logo span:not(.logo__text):not(.logo__title),
+  .logo__sub {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    line-height: 1.3;
+  }
+
+  body.menu-page .menu-online__grid {
+    gap: 0.65rem !important;
+  }
+
+  .logo {
+    max-width: calc(100vw - 100px);
+  }
+}

@@ -1,0 +1,1164 @@
+/* El Mirasol — Clase Azul tequila bottle · luxurious Fibonacci ceramic
+   φ spirals · phyllotaxis · hand-painted cobalt · cream ivory · silver · gold */
+
+body.site-clase-azul,
+body.menu-page.site-clase-azul {
+  /* Clase Azul ceramic palette */
+  --azul-cobalt: #3a6f9a;
+  --azul-cobalt-mid: #4b86b4;
+  --azul-cobalt-light: #6ba3c9;
+  --azul-deep: #1e4d73;
+  --azul-night: #15324a;
+  --azul-glaze: #5a9ec9;
+  --azul-cream: #f4efe6;
+  --azul-ivory: #faf8f3;
+  --azul-porcelain: #fffdf9;
+  --azul-silver: #b8bcc4;
+  --azul-silver-light: #d4d8de;
+  --azul-gold: #c4a962;
+  --azul-gold-light: #dbc98a;
+  --azul-gold-deep: #a68b4b;
+
+  /* Mapped site tokens */
+  --coast-sea: var(--azul-deep);
+  --coast-sea-mid: var(--azul-cobalt);
+  --coast-sea-light: var(--azul-cobalt-light);
+  --coast-foam: var(--azul-ivory);
+  --coast-sand: var(--azul-cream);
+  --coast-sand-deep: #e8e0d4;
+  --coast-drift: #dce6ef;
+
+  --fire-red: var(--azul-cobalt);
+  --fire-red-deep: var(--azul-deep);
+  --fire-orange: var(--azul-gold);
+  --fire-orange-bright: var(--azul-gold-light);
+  --fire-glow: var(--azul-gold-light);
+
+  --mex-tile: var(--azul-cobalt-mid);
+  --mex-mint: #5a8f7a;
+  --mex-marigold: var(--azul-gold);
+
+  --bg-clean: var(--azul-porcelain);
+  --bg-soft: var(--azul-ivory);
+  --bg-tint: #f7f3ec;
+  --ink: #1a2f42;
+  --ink-soft: #3d5166;
+
+  /* Site token map */
+  --oaxaca-red: var(--fire-red);
+  --oaxaca-deep: var(--fire-red-deep);
+  --terracotta: var(--fire-orange);
+  --adobe: var(--fire-orange-bright);
+  --oaxaca-green: var(--mex-mint);
+  --oaxaca-cream: var(--bg-clean);
+  --oaxaca-sand: var(--coast-foam);
+  --red: var(--fire-red);
+  --red-dark: var(--fire-red-deep);
+  --gold: var(--fire-orange-bright);
+  --gold-light: var(--fire-glow);
+  --cream: var(--bg-clean);
+  --cream-dark: var(--coast-foam);
+  --indigo: var(--coast-sea-mid);
+  --charm-honey: var(--fire-orange-bright);
+  --charm-honey-light: var(--fire-glow);
+  --charm-linen: var(--coast-foam);
+
+  --bou-noir: var(--coast-sea);
+  --bou-charcoal: var(--fire-red-deep);
+  --bou-pearl: var(--bg-clean);
+  --bou-gold: var(--fire-orange-bright);
+  --bou-gold-light: var(--fire-glow);
+  --bou-ink: var(--ink);
+
+  --fiesta-red: var(--fire-red);
+  --fiesta-red-deep: var(--fire-red-deep);
+  --fiesta-gold: var(--fire-orange-bright);
+  --fiesta-gold-light: var(--fire-glow);
+  --fiesta-terracotta: var(--fire-orange);
+  --fiesta-green: var(--mex-mint);
+  --fiesta-indigo: var(--coast-sea);
+  --fiesta-cream: var(--coast-foam);
+
+  --tex-red: var(--fire-red);
+  --tex-red-deep: var(--fire-red-deep);
+  --tex-gold: var(--fire-orange-bright);
+  --tex-gold-light: var(--fire-glow);
+  --tex-cream: var(--bg-clean);
+  --tex-ink: var(--ink);
+  --tex-body: var(--ink-soft);
+
+  --menu-red: var(--fire-red);
+  --menu-red-deep: var(--fire-red-deep);
+  --menu-gold: var(--fire-orange-bright);
+  --menu-gold-light: var(--fire-glow);
+  --menu-terracotta: var(--fire-orange);
+  --menu-cream: var(--bg-clean);
+  --menu-card: #ffffff;
+  --menu-ink: var(--ink);
+  --menu-ink-mid: #243447;
+  --menu-ink-soft: var(--ink-soft);
+
+  /* Fibonacci stripe cadence: 8 · 13 · 21 · 34 · 55 px — bottle band */
+  --textile: repeating-linear-gradient(
+    90deg,
+    var(--azul-deep) 0 8px,
+    var(--azul-cobalt) 8px 21px,
+    var(--azul-gold-deep) 21px 34px,
+    var(--azul-silver) 34px 38px,
+    var(--azul-cobalt-light) 38px 55px,
+    var(--azul-cobalt) 55px 89px
+  );
+
+
+
+  font-size: 1.1rem;
+  line-height: 1.68;
+  color: var(--ink);
+}
+
+/* Page + fixed pattern layers — see clase-azul-patterns.css */
+
+body.site-clase-azul .fiesta-gold-dust {
+  display: none !important;
+}
+
+/* ── Fibonacci pin-strip trim (pattern in clase-azul-patterns.css) ── */
+.coast-wave-trim {
+  height: 10px;
+  box-shadow: 0 1px 0 var(--azul-silver-light);
+}
+
+.coast-papel-strip {
+  height: 8px;
+  box-shadow: 0 2px 0 rgba(30, 77, 115, 0.15);
+}
+
+/* ── Header & topbar ── */
+body.site-clase-azul .social-topbar {
+  background: linear-gradient(
+    90deg,
+    var(--azul-night) 0%,
+    var(--azul-deep) 35%,
+    var(--azul-cobalt) 68%,
+    var(--azul-cobalt-mid) 100%
+  ) !important;
+  color: #fff !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  border: none !important;
+  border-bottom: 2px solid var(--azul-silver) !important;
+  box-shadow: 0 2px 14px rgba(21, 50, 74, 0.28) !important;
+}
+
+body.site-clase-azul .social-topbar::after {
+  display: none !important;
+}
+
+body.site-clase-azul .header {
+  background: rgba(255, 253, 249, 0.98) !important;
+  border-bottom: 3px solid transparent !important;
+  border-image: linear-gradient(90deg, var(--azul-silver), var(--azul-cobalt), var(--azul-gold)) 1 !important;
+  box-shadow: 0 4px 22px rgba(30, 77, 115, 0.1) !important;
+}
+
+body.site-clase-azul .logo {
+  font-size: 1.65rem !important;
+  color: var(--azul-deep) !important;
+}
+
+body.site-clase-azul .logo span {
+  font-size: 0.72rem !important;
+  color: var(--azul-cobalt) !important;
+  letter-spacing: 0.1em !important;
+}
+
+body.site-clase-azul .nav a {
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  color: var(--ink-soft) !important;
+}
+
+body.site-clase-azul .nav a.active,
+body.site-clase-azul .nav a:hover {
+  color: var(--azul-cobalt) !important;
+}
+
+body.site-clase-azul .nav-menu-cta {
+  background: linear-gradient(180deg, var(--azul-cobalt-light), var(--azul-cobalt), var(--azul-deep)) !important;
+  color: #fff !important;
+  padding: 0.6rem 1.25rem !important;
+  border-radius: 4px !important;
+  letter-spacing: 0.06em !important;
+  border: 1px solid var(--azul-silver-light) !important;
+  box-shadow: 0 4px 16px rgba(30, 77, 115, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+body.site-clase-azul .nav-menu-cta::after {
+  display: none !important;
+}
+
+body.site-clase-azul .nav-menu-cta:hover,
+body.site-clase-azul .nav-menu-cta.active {
+  background: linear-gradient(180deg, var(--azul-glaze), var(--azul-cobalt-mid), var(--azul-cobalt)) !important;
+  color: #fff !important;
+}
+
+@media (max-width: 768px) {
+  body.site-clase-azul .nav-menu-cta,
+  body.site-clase-azul .nav-menu-cta:hover,
+  body.site-clase-azul .nav-menu-cta.active {
+    background: linear-gradient(180deg, var(--azul-cobalt-light), var(--azul-cobalt), var(--azul-deep)) !important;
+    color: #fff !important;
+  }
+}
+
+body.site-clase-azul .nav-cta {
+  background: none !important;
+  color: var(--ink-soft) !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+body.site-clase-azul .nav-cta::after {
+  display: block !important;
+}
+
+body.site-clase-azul .nav-cta:hover {
+  background: none !important;
+  color: var(--azul-gold-deep) !important;
+  transform: none !important;
+}
+
+@media (max-width: 768px) {
+  body.site-clase-azul .nav-cta {
+    margin-top: 0 !important;
+    text-align: inherit;
+    justify-content: flex-start;
+    border-radius: var(--radius) !important;
+  }
+}
+
+/* ── Hero ── */
+body.site-clase-azul .hero {
+  min-height: min(92dvh, 820px);
+}
+
+.hero-rotator {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-rotator__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.2s ease, transform 6s ease;
+}
+
+.hero-rotator__slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+body.site-clase-azul .hero-overlay {
+  z-index: 1;
+}
+
+body.site-clase-azul .hero h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(2.4rem, 7vw, 3.6rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  color: #fff !important;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.45), 0 0 28px rgba(196, 169, 98, 0.35) !important;
+}
+
+body.site-clase-azul .hero-eyebrow {
+  font-family: 'Dancing Script', cursive !important;
+  font-size: clamp(1.6rem, 5vw, 2.2rem) !important;
+  color: var(--azul-gold-light) !important;
+}
+
+body.site-clase-azul .hero-deck {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(1.12rem, 2.8vw, 1.42rem) !important;
+  color: var(--fire-glow) !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.site-clase-azul .hero-sub {
+  font-size: 1.12rem !important;
+  color: #fff !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  max-width: 34rem;
+}
+
+body.site-clase-azul .fiesta-pickup {
+  margin-top: 1.25rem !important;
+  padding: 0.85rem 1.5rem !important;
+  font-size: clamp(1.02rem, 2.6vw, 1.16rem) !important;
+  background: var(--azul-porcelain) !important;
+  border-color: var(--azul-cobalt) !important;
+  box-shadow: 0 12px 32px rgba(21, 50, 74, 0.32) !important;
+}
+
+body.site-clase-azul .fiesta-pickup__call {
+  color: var(--azul-deep) !important;
+}
+
+body.site-clase-azul .fiesta-pickup__arrow {
+  color: var(--azul-gold) !important;
+}
+
+body.site-clase-azul .fiesta-pickup__eta {
+  color: #1a2f42 !important;
+}
+
+body.site-clase-azul .fiesta-pickup__time {
+  color: var(--azul-gold-deep) !important;
+}
+
+body.site-clase-azul .hero-badge {
+  background: linear-gradient(135deg, var(--coast-sea-mid), var(--coast-sea-light)) !important;
+  color: #fff !important;
+  border: 2px solid rgba(255, 255, 255, 0.35) !important;
+  font-weight: 700 !important;
+}
+
+body.site-clase-azul .hero-rating-pill {
+  background: rgba(255, 255, 255, 0.97) !important;
+  color: var(--ink) !important;
+  border: 2px solid rgba(0, 150, 199, 0.25);
+}
+
+body.site-clase-azul .hero-rating-pill__stars {
+  color: var(--fire-orange-bright) !important;
+}
+
+body.site-clase-azul .hero-rating-pill strong {
+  color: var(--fire-red) !important;
+}
+
+body.site-clase-azul .btn-primary {
+  background: linear-gradient(180deg, var(--azul-cobalt-light), var(--azul-cobalt), var(--azul-deep)) !important;
+  color: #fff !important;
+  border: 1px solid var(--azul-silver-light) !important;
+  box-shadow: 0 4px 20px rgba(30, 77, 115, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+}
+
+body.site-clase-azul .btn-primary:hover {
+  box-shadow: 0 6px 26px rgba(21, 50, 74, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+}
+
+body.site-clase-azul .btn-red {
+  background: linear-gradient(180deg, var(--azul-gold-light), var(--azul-gold), var(--azul-gold-deep)) !important;
+  color: var(--azul-night) !important;
+  border-color: var(--azul-gold-deep) !important;
+}
+
+body.site-clase-azul .btn-red:hover {
+  background: linear-gradient(180deg, var(--azul-gold), var(--azul-gold-deep), #8f7340) !important;
+  border-color: var(--azul-gold-deep) !important;
+}
+
+body.site-clase-azul .reviews-cta .btn-social--facebook,
+body.site-clase-azul .visit-grid .btn-social--directions,
+body.site-clase-azul .contact-social .social-btn--facebook,
+body.site-clase-azul .footer .social-btn--facebook,
+body.site-clase-azul .btn-social--facebook,
+body.site-clase-azul .social-btn--facebook,
+body.site-clase-azul a[href*="facebook.com/elmirasolburgaw"].btn {
+  background: #1877f2 !important;
+  border-color: #1877f2 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.35) !important;
+}
+
+body.site-clase-azul .reviews-cta .btn-social--facebook:hover,
+body.site-clase-azul .visit-grid .btn-social--directions:hover,
+body.site-clase-azul .contact-social .social-btn--facebook:hover,
+body.site-clase-azul .footer .social-btn--facebook:hover,
+body.site-clase-azul .btn-social--facebook:hover,
+body.site-clase-azul .social-btn--facebook:hover,
+body.site-clase-azul a[href*="facebook.com/elmirasolburgaw"].btn:hover {
+  background: #0d65d9 !important;
+  border-color: #0d65d9 !important;
+  color: #fff !important;
+}
+
+body.site-clase-azul .visit-grid .btn-social--directions,
+body.site-clase-azul .btn-social--directions,
+body.site-clase-azul .mobile-cta .cta-directions,
+body.site-clase-azul .mobile-quick .quick-link--directions,
+body.site-clase-azul a[href*="google.com/maps/dir"].btn {
+  background: linear-gradient(135deg, var(--coast-sea), var(--coast-sea-mid)) !important;
+  border-color: var(--coast-sea-mid) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(0, 119, 182, 0.35) !important;
+}
+
+body.site-clase-azul .visit-grid .btn-social--directions:hover,
+body.site-clase-azul .btn-social--directions:hover,
+body.site-clase-azul .mobile-cta .cta-directions:hover,
+body.site-clase-azul .mobile-quick .quick-link--directions:hover,
+body.site-clase-azul a[href*="google.com/maps/dir"].btn:hover {
+  background: linear-gradient(135deg, var(--coast-sea-mid), var(--coast-sea-light)) !important;
+  border-color: var(--coast-sea-light) !important;
+  color: #fff !important;
+}
+
+body.site-clase-azul .btn-outline {
+  border-color: rgba(255, 255, 255, 0.85) !important;
+  color: #fff !important;
+}
+
+body.site-clase-azul .section:not(.hero) .btn-outline {
+  border-color: var(--coast-sea-mid) !important;
+  color: var(--coast-sea) !important;
+}
+
+/* ── Ribbon & promos ── */
+body.site-clase-azul .feat-ribbon {
+  background: linear-gradient(
+    90deg,
+    var(--azul-night),
+    var(--azul-deep),
+    var(--azul-cobalt),
+    var(--azul-gold-deep)
+  ) !important;
+  border-bottom: 3px solid var(--azul-silver) !important;
+  color: #fff !important;
+  font-size: 1rem !important;
+}
+
+body.site-clase-azul .feat-ribbon__specials {
+  color: var(--azul-gold-light) !important;
+}
+
+body.site-clase-azul:not(.site-worldcup) .wc-promo {
+  background:
+    linear-gradient(180deg, rgba(58, 111, 154, 0.1) 0%, transparent 100%),
+    linear-gradient(90deg, #fff, var(--azul-ivory), #fff) !important;
+  border-bottom: 2px solid rgba(30, 77, 115, 0.18) !important;
+  color: var(--ink-soft) !important;
+}
+
+body.site-clase-azul:not(.site-worldcup) .wc-promo__text strong {
+  color: var(--azul-deep) !important;
+}
+
+/* ── Typography & sections ── */
+body.site-clase-azul h2,
+body.site-clase-azul .section-lead {
+  color: var(--ink) !important;
+}
+
+body.site-clase-azul .section-tag {
+  color: var(--azul-cobalt) !important;
+  border-bottom-color: var(--azul-gold) !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+body.site-clase-azul p,
+body.site-clase-azul li {
+  color: var(--ink-soft) !important;
+}
+
+/* ── Signature plates layout ── */
+.favorites-showcase {
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+}
+
+.favorites-showcase__head {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.favorites-showcase__head h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.85rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.favorites-showcase__head p {
+  margin-top: 0.5rem;
+}
+
+.fav-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .fav-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fav-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s ease;
+}
+
+.fav-card__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.fav-card:hover .fav-card__bg {
+  transform: scale(1.06);
+}
+
+.fav-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    0deg,
+    rgba(15, 28, 46, 0.92) 0%,
+    rgba(0, 119, 182, 0.25) 55%,
+    transparent 100%
+  );
+}
+
+.fav-card__body {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem;
+  color: #fff;
+  width: 100%;
+}
+
+.fav-card__tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.fav-card h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.fav-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+body.site-clase-azul .favorites-showcase {
+  background: linear-gradient(180deg, #fff 0%, var(--azul-ivory) 100%) !important;
+}
+
+body.site-clase-azul .favorites-showcase__head h2 {
+  color: var(--azul-deep) !important;
+}
+
+body.site-clase-azul .fav-card__overlay {
+  background: linear-gradient(
+    0deg,
+    rgba(21, 50, 74, 0.92) 0%,
+    rgba(58, 111, 154, 0.28) 55%,
+    transparent 100%
+  ) !important;
+}
+
+/* ── Cards & panels (flat cards only — not photo fav-cards) ── */
+body.site-clase-azul .feature,
+body.site-clase-azul .review-card,
+body.site-clase-azul .extras-card,
+body.site-clase-azul .fiesta-card,
+body.site-clase-azul .info-card,
+body.site-clase-azul .visit-grid > .map-wrap {
+  background: var(--azul-porcelain) !important;
+  border: 2px solid rgba(58, 111, 154, 0.18) !important;
+  border-left: 4px solid var(--azul-cobalt) !important;
+  box-shadow: 0 6px 22px rgba(30, 77, 115, 0.1), 0 2px 8px rgba(196, 169, 98, 0.06) !important;
+}
+
+body.site-clase-azul .fav-card {
+  background: transparent !important;
+  border: none !important;
+  border-left: none !important;
+  box-shadow: 0 10px 28px rgba(21, 50, 74, 0.22) !important;
+}
+
+body.site-clase-azul .fav-card__bg {
+  z-index: 0;
+}
+
+body.site-clase-azul .visit-card {
+  background: linear-gradient(165deg, #ffffff 0%, var(--azul-ivory) 42%, var(--azul-cream) 100%) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 14px 42px rgba(30, 77, 115, 0.12),
+    0 4px 14px rgba(196, 169, 98, 0.08) !important;
+}
+
+body.site-clase-azul .visit-card::before {
+  background: linear-gradient(90deg, var(--azul-cobalt-light), var(--azul-cobalt), var(--azul-gold)) !important;
+}
+
+body.site-clase-azul .visit-card__eyebrow {
+  font-family: 'Dancing Script', cursive !important;
+  color: var(--azul-gold) !important;
+}
+
+body.site-clase-azul .visit-card__title {
+  color: var(--azul-deep) !important;
+}
+
+body.site-clase-azul .visit-card__label {
+  background: linear-gradient(180deg, var(--azul-cobalt-light), var(--azul-cobalt)) !important;
+  box-shadow: 0 2px 10px rgba(30, 77, 115, 0.28) !important;
+}
+
+body.site-clase-azul .visit-card__toolbar .btn-outline {
+  background: #fff !important;
+  border-color: var(--coast-sea-mid) !important;
+  color: var(--coast-sea) !important;
+  box-shadow: 0 2px 8px rgba(0, 119, 182, 0.1) !important;
+}
+
+body.site-clase-azul .visit-card__toolbar .btn-outline:hover {
+  background: var(--coast-foam) !important;
+  border-color: var(--coast-sea) !important;
+  color: var(--coast-sea) !important;
+}
+
+body.site-clase-azul .visit-contact__icon {
+  color: var(--coast-sea-mid) !important;
+}
+
+body.site-clase-azul .visit-contact__text a {
+  color: var(--coast-sea) !important;
+}
+
+body.site-clase-azul .visit-contact__text a:hover {
+  color: var(--azul-gold-deep) !important;
+}
+
+body.site-clase-azul .visit-hours li.closed span {
+  color: var(--azul-cobalt) !important;
+}
+
+body.site-clase-azul .visit-hours li span:first-child {
+  color: var(--ink) !important;
+}
+
+body.site-clase-azul .visit-grid > .map-wrap {
+  border-left-color: var(--coast-blue, #0077b6) !important;
+  overflow: hidden !important;
+}
+
+body.site-clase-azul .map-wrap__frame {
+  background: var(--coast-foam) !important;
+}
+
+body.site-clase-azul .fav-card__tag {
+  background: linear-gradient(180deg, var(--azul-cobalt), var(--azul-deep)) !important;
+  color: #fff !important;
+}
+
+body.site-clase-azul .fav-card__body h3,
+body.site-clase-azul .feature h3,
+body.site-clase-azul .extras-card h3 {
+  color: var(--fire-red-deep) !important;
+}
+
+/* ── Stats band ── */
+body.site-clase-azul .feat-stats {
+  background: linear-gradient(
+    180deg,
+    var(--azul-ivory) 0%,
+    #fff 50%,
+    var(--azul-cream) 100%
+  ) !important;
+  border-top: 3px solid var(--azul-silver-light) !important;
+  border-bottom: 3px solid var(--azul-cobalt) !important;
+}
+
+body.site-clase-azul .feat-stat {
+  border-color: rgba(0, 150, 199, 0.15) !important;
+}
+
+body.site-clase-azul .feat-stat__num {
+  color: var(--fire-red-deep) !important;
+}
+
+body.site-clase-azul .feat-stat__num--text {
+  color: var(--fire-red) !important;
+}
+
+body.site-clase-azul .feat-stat__label {
+  color: var(--coast-sea) !important;
+}
+
+body.site-clase-azul .feat-stat__hint {
+  color: var(--fire-orange) !important;
+  font-size: 0.62rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* ── Burgaw / community band ── */
+.burgaw-town-band {
+  padding: 0 clamp(0.75rem, 3vw, 1.5rem);
+}
+
+.burgaw-town-band__strip {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.55rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.burgaw-town-band__icon {
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.burgaw-town-band__line {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.burgaw-town-band__sub {
+  display: inline;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.burgaw-town-band__sub::before {
+  content: ' · ';
+  opacity: 0.55;
+}
+
+.burgaw-town-band__links {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.burgaw-town-band__link {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+body.site-clase-azul .burgaw-town-band {
+  background: linear-gradient(90deg, var(--coast-foam), #fff, var(--coast-sand)) !important;
+  border-top: 2px solid var(--coast-sea-light) !important;
+  border-bottom: 2px solid var(--fire-orange) !important;
+}
+
+body.site-clase-azul .burgaw-town-band__line strong {
+  color: var(--fire-red) !important;
+}
+
+body.site-clase-azul .burgaw-town-band__link {
+  color: var(--coast-sea) !important;
+  border-color: var(--coast-sea-light) !important;
+}
+
+body.site-clase-azul .burgaw-town-band__link:hover {
+  color: var(--fire-red) !important;
+  border-color: var(--fire-orange) !important;
+}
+
+/* ── Reviews — easy read ── */
+body.site-clase-azul .reviews-section {
+  background: linear-gradient(180deg, #fff 0%, var(--coast-foam) 100%) !important;
+  padding-top: clamp(1.75rem, 4vw, 2.5rem) !important;
+  padding-bottom: clamp(1.5rem, 3vw, 2rem) !important;
+}
+
+body.site-clase-azul .reviews-section .section-lead {
+  font-family: var(--font-body) !important;
+  font-size: clamp(1rem, 2.4vw, 1.12rem) !important;
+  line-height: 1.75 !important;
+  color: var(--ink-soft) !important;
+  margin-bottom: 0.65rem !important;
+}
+
+body.site-clase-azul .reviews-stats {
+  margin: 0.5rem auto 0.75rem !important;
+}
+
+body.site-clase-azul .reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.15rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+body.site-clase-azul .review-card {
+  padding: 1.35rem 1.3rem 1.2rem !important;
+  font-family: var(--font-body) !important;
+}
+
+body.site-clase-azul .reviews-carousel__track .review-card {
+  flex: 0 0 200px;
+  width: 200px;
+  padding: 0.6rem 0.7rem 0.55rem !important;
+  border: 1px solid rgba(14, 116, 144, 0.14) !important;
+  border-radius: 9px !important;
+  box-shadow: 0 2px 10px rgba(14, 116, 144, 0.07) !important;
+}
+
+body.site-clase-azul .review-card__quote {
+  font-family: var(--font-body) !important;
+  font-size: clamp(1rem, 2.5vw, 1.1rem) !important;
+  line-height: 1.8 !important;
+  color: var(--ink) !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.015em;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.site-clase-azul .reviews-carousel__track .review-card__quote {
+  font-size: 0.76rem !important;
+  line-height: 1.35 !important;
+  color: var(--ink-soft) !important;
+}
+
+body.site-clase-azul .review-card__name--head {
+  font-family: var(--font-body) !important;
+  font-size: clamp(0.95rem, 2.2vw, 1.02rem) !important;
+  font-weight: 700 !important;
+  color: var(--coast-sea) !important;
+  line-height: 1.35 !important;
+}
+
+body.site-clase-azul .reviews-carousel__track .review-card__name--head {
+  font-size: 0.7rem !important;
+  color: var(--coast-sea) !important;
+}
+
+body.site-clase-azul .review-stars {
+  font-size: 1.05rem !important;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+body.site-clase-azul .reviews-carousel-wrap {
+  margin: 0.5rem 0 0.75rem;
+}
+
+body.site-clase-azul .reviews-stat {
+  font-family: var(--font-body) !important;
+  font-size: clamp(0.92rem, 2.2vw, 1rem) !important;
+  line-height: 1.45 !important;
+}
+
+body.site-clase-azul .reviews-stat strong {
+  font-size: clamp(1.15rem, 3vw, 1.3rem) !important;
+  font-weight: 700 !important;
+}
+
+body.site-clase-azul .google-review-tab__num {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+}
+
+/* ── Footer ── */
+body.site-clase-azul .footer,
+body.site-clase-azul footer.footer--slim {
+  background: linear-gradient(180deg, var(--azul-night), var(--azul-deep)) !important;
+  border-top: 3px solid var(--azul-silver) !important;
+  color: #fff !important;
+}
+
+body.site-clase-azul footer a:hover {
+  color: var(--azul-gold-light) !important;
+}
+
+/* ── Mobile CTA bar ── */
+body.site-clase-azul .mobile-cta {
+  background: rgba(250, 248, 243, 0.96) !important;
+  border-top: 2px solid var(--azul-silver) !important;
+}
+
+body.site-clase-azul .mobile-cta .cta-menu {
+  background: linear-gradient(180deg, var(--azul-cobalt-light), var(--azul-cobalt), var(--azul-deep)) !important;
+}
+
+/* ── Dish roulette (on-page section) ── */
+body.site-clase-azul .story-spin-section {
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(58, 111, 154, 0.06) 38%, rgba(196, 169, 98, 0.05) 100%);
+}
+
+body.site-clase-azul .story-spin__frame {
+  position: relative;
+  border-color: rgba(0, 150, 199, 0.18) !important;
+  box-shadow:
+    0 16px 44px rgba(0, 119, 182, 0.11),
+    0 0 0 1px rgba(255, 255, 255, 0.65) inset !important;
+}
+
+body.site-clase-azul .story-spin__frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--azul-silver), var(--azul-cobalt), var(--azul-gold));
+  z-index: 2;
+  pointer-events: none;
+}
+
+body.site-clase-azul .dish-roulette-section {
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(0, 150, 199, 0.06) 40%, rgba(255, 109, 0, 0.05) 100%);
+}
+
+body.site-clase-azul .story-spin__img {
+  border-left: 4px solid var(--azul-cobalt) !important;
+}
+
+body.site-clase-azul .fiesta-card--roulette-inline {
+  border-color: rgba(0, 119, 182, 0.22) !important;
+  box-shadow: 0 12px 36px rgba(0, 119, 182, 0.11) !important;
+}
+
+body.site-clase-azul .fiesta-card--roulette-inline::after {
+  background: linear-gradient(90deg, var(--coast-sea-light), var(--fire-red), var(--fire-orange)) !important;
+}
+
+body.site-clase-azul .story-spin__roulette-label {
+  border-color: rgba(0, 150, 199, 0.2) !important;
+}
+
+body.site-clase-azul .story-spin__roulette-eyebrow {
+  color: var(--coast-sea) !important;
+}
+
+body.site-clase-azul .story-spin__roulette-title {
+  color: var(--fire-red-deep) !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+}
+
+body.site-clase-azul .map-pin-label__text {
+  background: linear-gradient(135deg, var(--coast-sea), var(--fire-red), var(--fire-orange)) !important;
+  font-weight: 700 !important;
+}
+
+body.site-clase-azul .map-pin-label--highlight .map-pin-label__text {
+  background: linear-gradient(135deg, #ffca28, var(--fire-orange), var(--fire-orange-bright)) !important;
+  box-shadow: 0 0 0 3px rgba(255, 202, 40, 0.5) !important;
+}
+
+body.site-clase-azul .map-pin-label--highlight .map-pin-label__pointer {
+  border-top-color: var(--fire-orange-bright) !important;
+}
+
+body.site-clase-azul .map-area-promos__item--primary .map-area-promos__link,
+body.site-clase-azul .map-area-promos__item--highlight .map-area-promos__link {
+  border-color: rgba(58, 111, 154, 0.4) !important;
+}
+
+body.site-clase-azul .map-area-promos__item--highlight .map-area-promos__link {
+  background: linear-gradient(135deg, rgba(255, 202, 40, 0.24), rgba(255, 109, 0, 0.16)) !important;
+}
+
+body.site-clase-azul .fiesta-card--roulette-inline h3 {
+  color: var(--fire-red-deep) !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 1.65rem !important;
+}
+
+body.site-clase-azul .fiesta-card--roulette-hero .fiesta-spin-btn {
+  background: linear-gradient(180deg, var(--azul-cobalt-light), var(--azul-cobalt), var(--azul-deep)) !important;
+  border: 1px solid var(--azul-silver-light) !important;
+}
+
+body.site-clase-azul .fiesta-spin-btn,
+body.site-clase-azul .fiesta-stamp-btn {
+  background: linear-gradient(180deg, var(--azul-cobalt-light), var(--azul-cobalt), var(--azul-deep)) !important;
+  border: 1px solid var(--azul-silver-light) !important;
+}
+
+/* ── Roulette & concierge accents ── */
+body.site-clase-azul .roulette-fab {
+  border-color: rgba(58, 111, 154, 0.4) !important;
+  color: var(--azul-deep) !important;
+}
+
+body.site-clase-azul .roulette-panel__inner {
+  border-color: rgba(58, 111, 154, 0.3) !important;
+}
+
+body.site-clase-azul .feat-concierge__toggle {
+  background: var(--azul-cobalt) !important;
+  border-color: var(--azul-gold) !important;
+  color: #fff !important;
+}
+
+body.site-clase-azul .google-review-tab {
+  border-color: rgba(0, 150, 199, 0.2) !important;
+  background: rgba(240, 249, 255, 0.96) !important;
+}
+
+body.site-clase-azul .google-review-tab__icon {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+body.site-clase-azul .google-review-tab__rating {
+  font-family: var(--font-body) !important;
+  color: var(--ink-soft) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(66, 133, 244, 0.12) 0%,
+    rgba(52, 168, 83, 0.09) 35%,
+    rgba(251, 188, 5, 0.09) 65%,
+    rgba(234, 67, 53, 0.07) 100%
+  ) !important;
+  border-color: rgba(0, 150, 199, 0.14) !important;
+}
+
+body.site-clase-azul .reviews-stat__google {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* ── Menu page ── */
+body.menu-page.site-clase-azul .menu-hero-vivid__bg {
+  background: linear-gradient(
+    125deg,
+    var(--azul-night) 0%,
+    var(--azul-deep) 28%,
+    var(--azul-cobalt) 62%,
+    var(--azul-gold-deep) 100%
+  ) !important;
+}
+
+body.menu-page.site-clase-azul .menu-compact-bar,
+body.menu-page.site-clase-azul .menu-compact-bar--online {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-bottom: 2px solid var(--coast-sea-light) !important;
+}
+
+body.menu-page.site-clase-azul .menu-compact-bar h1 {
+  color: var(--ink) !important;
+}
+
+body.menu-page.site-clase-azul .menu-compact-bar p {
+  color: var(--ink-soft) !important;
+}
+
+body.menu-page.site-clase-azul .menu-view-tab.is-active {
+  background: linear-gradient(135deg, var(--fire-orange), var(--fire-orange-bright)) !important;
+  color: #fff !important;
+  border-color: var(--fire-orange) !important;
+  box-shadow: 0 4px 14px rgba(255, 109, 0, 0.35) !important;
+}
+
+body.menu-page.site-clase-azul .menu-online-tab.is-active {
+  background: var(--fire-orange-bright) !important;
+  border-color: var(--fire-orange) !important;
+  color: #fff !important;
+}
+
+body.menu-page.site-clase-azul .menu-online__heading h2 {
+  color: var(--fire-red-deep) !important;
+}
+
+body.menu-page.site-clase-azul .menu-card {
+  background: #fff !important;
+  border: 2px solid rgba(0, 150, 199, 0.15) !important;
+  border-left: 4px solid var(--fire-orange) !important;
+}
+
+body.menu-page.site-clase-azul .menu-card__price {
+  color: var(--fire-red) !important;
+}
+
+body.menu-page.site-clase-azul .menu-online__toolbar {
+  background: rgba(240, 249, 255, 0.98) !important;
+  border-bottom-color: rgba(255, 109, 0, 0.25) !important;
+}
+
+body.menu-page.site-clase-azul .cart-fab {
+  background: linear-gradient(135deg, var(--fire-red), var(--fire-orange)) !important;
+}
+
+body.menu-page.site-clase-azul .wc-menu-hint {
+  color: var(--coast-sea) !important;
+}
+
+/* ── World Cup strip (subtle coastal fit) ── */
+body.site-clase-azul .wc-bunting {
+  filter: saturate(1.1);
+}
+
+/* ── Facebook & Directions — final override (beats btn-red / terracotta) ── */
+body.site-clase-azul .btn-red.btn-social--facebook,
+body.site-clase-azul .reviews-cta .btn-social--facebook,
+body.site-clase-azul .contact-social .social-btn--facebook,
+body.site-clase-azul .footer .social-btn--facebook {
+  background: #1877f2 !important;
+  border-color: #1877f2 !important;
+  color: #fff !important;
+}
+
+body.site-clase-azul .btn-red.btn-social--directions,
+body.site-clase-azul .visit-grid .btn-social--directions,
+body.site-clase-azul .mobile-cta .cta-directions {
+  background: linear-gradient(180deg, var(--azul-cobalt-light), var(--azul-cobalt), var(--azul-deep)) !important;
+  border-color: var(--azul-cobalt) !important;
+  color: #fff !important;
+}
+
+/* ── Ceramic glaze on section headings ── */
+body.site-clase-azul h2 em {
+  color: var(--azul-gold) !important;
+}
+

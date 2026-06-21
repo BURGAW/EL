@@ -1,0 +1,360 @@
+/* El Mirasol — Fire red & neon orange (no brown) */
+
+body.site-fiesta,
+body.menu-page.site-fiesta {
+  --fire-red: #ff1744;
+  --fire-red-deep: #d50000;
+  --fire-red-hot: #ff0033;
+  --neon-orange: #ff6d00;
+  --neon-orange-bright: #ff9100;
+  --neon-glow: #ffab40;
+  --bg-clean: #ffffff;
+  --bg-soft: #fafafa;
+  --bg-tint: #fff8f6;
+  --ink: #111111;
+  --ink-soft: #505050;
+  --sun-green: #2e9e4f;
+
+  /* Map site tokens */
+  --oaxaca-red: var(--fire-red);
+  --oaxaca-deep: var(--fire-red-deep);
+  --terracotta: var(--neon-orange);
+  --adobe: var(--neon-orange-bright);
+  --oaxaca-green: var(--sun-green);
+  --oaxaca-cream: var(--bg-clean);
+  --oaxaca-sand: var(--bg-soft);
+  --red: var(--fire-red);
+  --red-dark: var(--fire-red-deep);
+  --gold: var(--neon-orange-bright);
+  --gold-light: var(--neon-glow);
+  --cream: var(--bg-clean);
+  --cream-dark: var(--bg-soft);
+  --charm-honey: var(--neon-orange-bright);
+  --charm-honey-light: var(--neon-glow);
+  --charm-linen: var(--bg-soft);
+
+  /* Boujee */
+  --bou-noir: var(--fire-red-deep);
+  --bou-charcoal: var(--fire-red);
+  --bou-pearl: var(--bg-clean);
+  --bou-gold: var(--neon-orange-bright);
+  --bou-gold-light: var(--neon-glow);
+  --bou-ink: var(--ink);
+
+  /* Fiesta */
+  --fiesta-red: var(--fire-red);
+  --fiesta-red-deep: var(--fire-red-deep);
+  --fiesta-gold: var(--neon-orange-bright);
+  --fiesta-gold-light: var(--neon-glow);
+  --fiesta-terracotta: var(--neon-orange);
+  --fiesta-cream: var(--bg-soft);
+
+  /* Oaxacan textile */
+  --tex-red: var(--fire-red);
+  --tex-red-deep: var(--fire-red-deep);
+  --tex-gold: var(--neon-orange-bright);
+  --tex-gold-light: var(--neon-glow);
+  --tex-cream: var(--bg-clean);
+  --tex-white: #ffffff;
+  --tex-ink: var(--ink);
+  --tex-body: var(--ink-soft);
+
+  /* Menu vivid */
+  --menu-ink: var(--ink);
+  --menu-ink-mid: #333333;
+  --menu-ink-soft: var(--ink-soft);
+  --menu-red: var(--fire-red);
+  --menu-red-deep: var(--fire-red-deep);
+  --menu-gold: var(--neon-orange-bright);
+  --menu-gold-light: var(--neon-glow);
+  --menu-terracotta: var(--neon-orange);
+  --menu-cream: var(--bg-clean);
+  --menu-card: #ffffff;
+
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+/* Clean white base with red/orange glow */
+body.site-fiesta.pattern,
+body.menu-page.site-fiesta.pattern {
+  background-color: var(--bg-clean) !important;
+  background-image:
+    radial-gradient(ellipse 85% 55% at 8% 0%, rgba(255, 23, 68, 0.1) 0%, transparent 58%),
+    radial-gradient(ellipse 70% 45% at 95% 6%, rgba(255, 109, 0, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(255, 145, 0, 0.08) 0%, transparent 52%),
+    linear-gradient(180deg, #ffffff 0%, #fafafa 100%) !important;
+}
+
+body.site-fiesta.pattern::before {
+  opacity: 0.2 !important;
+}
+
+body.site-fiesta p,
+body.menu-page.site-fiesta p,
+body.site-fiesta li,
+body.menu-page.site-fiesta li {
+  font-size: 1.12rem !important;
+  line-height: 1.7 !important;
+  color: var(--ink-soft) !important;
+}
+
+body.site-fiesta .logo {
+  font-size: 1.7rem !important;
+  color: var(--fire-red-deep) !important;
+}
+
+body.site-fiesta .logo span {
+  font-size: 0.78rem !important;
+  color: var(--neon-orange) !important;
+}
+
+body.site-fiesta .nav a {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: var(--ink-soft) !important;
+}
+
+body.site-fiesta .nav a.active,
+body.site-fiesta .nav a:hover {
+  color: var(--fire-red) !important;
+}
+
+body.site-fiesta .header {
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 2px 16px rgba(255, 23, 68, 0.08) !important;
+}
+
+body.site-fiesta .social-topbar {
+  background: linear-gradient(90deg, var(--fire-red-deep), var(--fire-red), var(--neon-orange)) !important;
+  font-size: 1.08rem !important;
+}
+
+body.site-fiesta .hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(255, 23, 68, 0.42) 0%, rgba(213, 0, 0, 0.65) 100%),
+    linear-gradient(135deg, rgba(255, 109, 0, 0.35) 0%, transparent 50%) !important;
+}
+
+body.site-fiesta .hero h1 {
+  font-size: clamp(2.2rem, 6.5vw, 3.35rem) !important;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.4), 0 0 28px rgba(255, 109, 0, 0.45) !important;
+}
+
+body.site-fiesta .hero-sub {
+  font-size: 1.2rem !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+body.site-fiesta .hero-badge {
+  background: linear-gradient(135deg, var(--fire-red), var(--neon-orange)) !important;
+  border-color: var(--neon-glow) !important;
+}
+
+body.site-fiesta .btn-primary {
+  background: linear-gradient(135deg, var(--neon-orange), var(--neon-orange-bright)) !important;
+  color: #ffffff !important;
+  font-size: 1.1rem !important;
+  box-shadow: 0 4px 18px rgba(255, 109, 0, 0.45) !important;
+}
+
+body.site-fiesta .btn-outline {
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  color: #fff !important;
+  font-size: 1.05rem !important;
+}
+
+body.site-fiesta .feat-ribbon {
+  background: linear-gradient(90deg, var(--fire-red-deep), var(--fire-red), var(--neon-orange)) !important;
+  border-bottom-color: var(--neon-orange-bright) !important;
+  font-size: 1.1rem !important;
+}
+
+body.site-fiesta .wc-promo {
+  background:
+    linear-gradient(180deg, rgba(255, 109, 0, 0.08) 0%, transparent 100%),
+    linear-gradient(90deg, #ffffff, #fff8f6, #ffffff) !important;
+  border-bottom-color: rgba(255, 23, 68, 0.25) !important;
+  color: var(--ink-soft) !important;
+}
+
+body.site-fiesta .wc-promo__text {
+  color: var(--ink) !important;
+}
+
+body.site-fiesta .wc-promo__text strong {
+  color: var(--fire-red) !important;
+}
+
+body.site-fiesta h2,
+body.site-fiesta .section-lead {
+  color: var(--ink) !important;
+}
+
+body.site-fiesta .section-tag {
+  color: var(--fire-red) !important;
+  font-size: 1.05rem !important;
+}
+
+body.site-fiesta .fav-card,
+body.site-fiesta .feature,
+body.site-fiesta .review-card,
+body.site-fiesta .visit-card,
+body.site-fiesta .extras-card,
+body.site-fiesta .fiesta-card,
+body.site-fiesta .trust-pillar {
+  background: #ffffff !important;
+  border-color: rgba(255, 23, 68, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(255, 109, 0, 0.1) !important;
+}
+
+body.site-fiesta .fav-card__body h3,
+body.site-fiesta .feature h3,
+body.site-fiesta .extras-card h3 {
+  color: var(--fire-red-deep) !important;
+}
+
+body.site-boujee.site-fiesta .food-wall {
+  background: linear-gradient(160deg, #ffffff 0%, #fff0f0 50%, #ffe8dc 100%) !important;
+  border-top: 3px solid var(--neon-orange) !important;
+  border-bottom: 3px solid var(--fire-red) !important;
+}
+
+body.site-boujee.site-fiesta .food-wall__banner h2 {
+  color: var(--ink) !important;
+}
+
+body.site-boujee.site-fiesta .food-wall__banner p {
+  color: var(--ink-soft) !important;
+}
+
+body.site-boujee.site-fiesta .food-wall__label {
+  background: rgba(213, 0, 0, 0.88) !important;
+  color: #ffffff !important;
+}
+
+body.site-fiesta .fiesta-hub {
+  background: linear-gradient(180deg, var(--bg-clean), var(--bg-soft)) !important;
+}
+
+body.site-fiesta .fiesta-social-bar {
+  background: #ffffff !important;
+  border-color: rgba(255, 109, 0, 0.45) !important;
+  color: var(--ink) !important;
+  font-size: 1.1rem !important;
+}
+
+body.site-boujee.site-fiesta .footer,
+body.site-fiesta footer {
+  background: linear-gradient(180deg, var(--fire-red-deep), #b71c1c) !important;
+  color: #ffffff !important;
+}
+
+body.site-fiesta footer a:hover {
+  color: var(--neon-glow) !important;
+}
+
+body.menu-page.site-fiesta .menu-hero-vivid__bg {
+  background: linear-gradient(125deg, rgba(213, 0, 0, 0.9) 0%, rgba(255, 23, 68, 0.88) 45%, rgba(255, 109, 0, 0.85) 100%) !important;
+}
+
+body.menu-page.site-fiesta .menu-compact-bar--online,
+body.menu-page.site-fiesta .menu-compact-bar {
+  background: rgba(255, 255, 255, 0.98) !important;
+}
+
+body.menu-page.site-fiesta .menu-compact-bar h1 {
+  color: var(--ink) !important;
+  font-size: clamp(1.65rem, 4.5vw, 2.15rem) !important;
+}
+
+body.menu-page.site-fiesta .menu-compact-bar p {
+  color: var(--ink-soft) !important;
+  font-size: 1.12rem !important;
+}
+
+body.menu-page.site-fiesta .menu-view-tabs {
+  background: #ffffff !important;
+  border-color: rgba(255, 109, 0, 0.35) !important;
+}
+
+body.menu-page.site-fiesta .menu-view-tab {
+  font-size: 1.08rem !important;
+  color: var(--ink-soft) !important;
+}
+
+body.menu-page.site-fiesta .menu-view-tab.is-active {
+  background: linear-gradient(135deg, var(--fire-red), var(--neon-orange)) !important;
+  border-color: var(--fire-red) !important;
+  color: #ffffff !important;
+}
+
+body.menu-page.site-fiesta .menu-online-tab {
+  font-size: 1rem !important;
+  color: var(--ink-soft) !important;
+}
+
+body.menu-page.site-fiesta .menu-online-tab.is-active {
+  background: var(--fire-red) !important;
+  border-color: var(--fire-red) !important;
+  color: #ffffff !important;
+}
+
+body.menu-page.site-fiesta .menu-online__heading h2 {
+  color: var(--fire-red-deep) !important;
+  font-size: 1.35rem !important;
+}
+
+body.menu-page.site-fiesta .menu-card {
+  background: #ffffff !important;
+  border-color: rgba(255, 23, 68, 0.18) !important;
+}
+
+body.menu-page.site-fiesta .menu-card__name {
+  font-size: 1.28rem !important;
+  color: var(--ink) !important;
+}
+
+body.menu-page.site-fiesta .menu-card__price {
+  font-size: 1.15rem !important;
+  color: var(--fire-red) !important;
+}
+
+body.menu-page.site-fiesta .menu-card__desc {
+  font-size: 1.08rem !important;
+  color: var(--ink-soft) !important;
+}
+
+body.menu-page.site-fiesta .menu-card__hint {
+  font-size: 0.68rem !important;
+  color: #777777 !important;
+}
+
+body.menu-page.site-fiesta .menu-online__toolbar {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-bottom-color: rgba(255, 109, 0, 0.25) !important;
+}
+
+body.menu-page.site-fiesta .wc-menu-hint {
+  color: var(--ink-soft) !important;
+  font-size: 0.72rem !important;
+}
+
+body.site-fiesta.site-depth .depth-vignette {
+  opacity: 0.1 !important;
+}
+
+/* Override fiesta-alive maroon ribbon */
+body.site-fiesta .feat-ribbon__specials {
+  color: var(--neon-glow) !important;
+}
+
+body.site-fiesta .feat-stat__num {
+  color: var(--fire-red-deep) !important;
+}
+
+body.site-fiesta .feat-stat__num--text {
+  color: var(--fire-red) !important;
+}

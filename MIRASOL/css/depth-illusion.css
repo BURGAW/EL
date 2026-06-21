@@ -1,0 +1,613 @@
+/* ═══════════════════════════════════════════════════════════════
+   El Mirasol — Depth Illusion System
+   Layered shadows, perspective stages, embossed edges, faux 3D
+   ═══════════════════════════════════════════════════════════════ */
+
+body.site-depth {
+  --depth-persp: 1100px;
+  --depth-lift: 14px;
+  --depth-shadow-near: 0 2px 4px rgba(20, 14, 10, 0.12);
+  --depth-shadow-mid: 0 12px 28px rgba(20, 14, 10, 0.16);
+  --depth-shadow-far: 0 28px 56px rgba(20, 14, 10, 0.2);
+  --depth-shadow-ambient: 0 48px 90px rgba(20, 14, 10, 0.14);
+  --depth-edge-hi: rgba(255, 255, 255, 0.72);
+  --depth-edge-lo: rgba(0, 0, 0, 0.22);
+  --depth-light-x: 50%;
+  --depth-light-y: 28%;
+}
+
+/* ── Ambient light wash (position driven by JS) ── */
+.depth-ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9994;
+  background:
+    radial-gradient(
+      ellipse 55% 45% at var(--depth-light-x) var(--depth-light-y),
+      rgba(255, 228, 160, 0.11) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 40% 35% at calc(100% - var(--depth-light-x)) calc(100% - var(--depth-light-y)),
+      rgba(168, 30, 44, 0.05) 0%,
+      transparent 55%
+    );
+  mix-blend-mode: soft-light;
+  transition: opacity 0.35s ease;
+}
+
+.depth-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9993;
+  background: radial-gradient(ellipse 85% 75% at 50% 45%, transparent 42%, rgba(14, 10, 8, 0.18) 100%);
+  opacity: 0.55;
+}
+
+/* ── Shared depth primitives ── */
+body.site-depth .depth-float {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+body.site-depth .depth-cast {
+  position: relative;
+}
+
+body.site-depth .depth-cast::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: -0.65rem;
+  height: 1.25rem;
+  background: radial-gradient(ellipse 80% 100% at 50% 0%, rgba(0, 0, 0, 0.28) 0%, transparent 72%);
+  transform: translateZ(-1px) scale(0.94);
+  filter: blur(6px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+body.site-depth .depth-cast:hover::after,
+body.site-depth .depth-cast.depth-tilt-active::after {
+  opacity: 0.75;
+  transform: translateZ(-2px) scale(1.02);
+}
+
+body.site-depth .depth-bevel {
+  box-shadow:
+    var(--depth-shadow-near),
+    var(--depth-shadow-mid),
+    var(--depth-shadow-far),
+    inset 0 1px 0 var(--depth-edge-hi),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.06);
+}
+
+body.site-depth .depth-recess {
+  box-shadow:
+    inset 0 3px 10px rgba(0, 0, 0, 0.35),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* ── Header — floating signboard ── */
+body.site-depth .header {
+  transform: translateZ(24px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 14px 36px rgba(20, 14, 10, 0.14),
+    0 4px 12px rgba(20, 14, 10, 0.08) !important;
+}
+
+body.site-depth .header::before {
+  content: '';
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  bottom: -10px;
+  height: 14px;
+  background: radial-gradient(ellipse 100% 100% at 50% 0%, rgba(0, 0, 0, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── Hero — layered stage ── */
+body.site-depth .hero {
+  perspective: var(--depth-persp);
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+body.site-depth .hero-rotator {
+  transform: translateZ(-80px) scale(1.08);
+  transition: transform 0.12s ease-out;
+}
+
+body.site-depth .hero-overlay {
+  transform: translateZ(-40px);
+  background:
+    linear-gradient(180deg, rgba(18, 12, 10, 0.35) 0%, rgba(18, 12, 10, 0.78) 100%),
+    radial-gradient(ellipse 90% 60% at var(--depth-light-x) 20%, rgba(201, 162, 39, 0.12) 0%, transparent 55%) !important;
+}
+
+body.site-depth .hero-content {
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  transition: transform 0.14s ease-out;
+}
+
+body.site-depth .hero-content > * {
+  transform-style: preserve-3d;
+}
+
+body.site-depth .hero-rating-pill { transform: translateZ(32px); }
+body.site-depth .hero-badge { transform: translateZ(48px); }
+body.site-depth .hero-eyebrow,
+body.site-depth .wc-hero-pill { transform: translateZ(56px); }
+body.site-depth .hero h1 {
+  transform: translateZ(88px);
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.45),
+    0 18px 40px rgba(0, 0, 0, 0.35);
+}
+body.site-depth .hero-sub { transform: translateZ(64px); }
+body.site-depth .hero-btns { transform: translateZ(72px); }
+body.site-depth .mobile-quick { transform: translateZ(40px); }
+body.site-depth .hero-scroll { transform: translateZ(24px); }
+
+body.site-depth .hero-floaters {
+  transform-style: preserve-3d;
+  transform: translateZ(96px);
+}
+
+body.site-depth .hero-floater,
+body.site-depth .hero-floater--snap {
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.45)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+}
+
+body.site-depth .hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 28%;
+  background: linear-gradient(0deg, rgba(8, 6, 5, 0.55) 0%, transparent 100%);
+  transform: translateZ(120px);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ── Buttons — physical press ── */
+body.site-depth .btn-primary,
+body.site-depth .btn-red {
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 6px 0 rgba(0, 0, 0, 0.18),
+    0 10px 24px rgba(0, 0, 0, 0.22) !important;
+  transition: transform 0.12s ease, box-shadow 0.12s ease !important;
+}
+
+body.site-depth .btn-primary:hover,
+body.site-depth .btn-red:hover {
+  transform: translateY(-3px) translateZ(8px) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 9px 0 rgba(0, 0, 0, 0.16),
+    0 16px 32px rgba(0, 0, 0, 0.26) !important;
+}
+
+body.site-depth .btn-primary:active,
+body.site-depth .btn-red:active {
+  transform: translateY(4px) translateZ(2px) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2) inset,
+    0 2px 0 rgba(0, 0, 0, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.18) !important;
+}
+
+body.site-depth .btn-outline {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.65) inset,
+    0 8px 20px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+/* ── Food wall — mosaic with staggered depth ── */
+body.site-depth .food-wall__grid {
+  perspective: 900px;
+  transform-style: preserve-3d;
+}
+
+body.site-depth .food-wall__cell {
+  transform-style: preserve-3d;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+body.site-depth .food-wall__cell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, transparent 42%, rgba(0, 0, 0, 0.18) 100%);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+}
+
+body.site-depth .food-wall__cell:hover {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 22px 44px rgba(0, 0, 0, 0.45),
+    0 8px 16px rgba(201, 162, 39, 0.12);
+  z-index: 4;
+}
+
+body.site-depth .food-wall__cell:hover::before {
+  opacity: 0.35;
+}
+
+body.site-depth .food-wall__banner {
+  position: relative;
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.2),
+    inset 0 2px 0 rgba(255, 255, 255, 0.25);
+}
+
+body.site-depth .food-wall__banner::after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -12px;
+  height: 16px;
+  background: radial-gradient(ellipse 100% 100% at 50% 0%, rgba(0, 0, 0, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Signature fav cards — flat & stable (no 3D / gloss; uses .reveal only) ── */
+body.site-depth .fav-card {
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(20, 14, 10, 0.14);
+}
+
+body.site-depth .fav-card.depth-enter {
+  opacity: 1;
+  transform: none;
+}
+
+body.site-depth .fav-card::before {
+  display: none;
+}
+
+body.site-depth .fav-card__bg,
+body.site-depth .fav-card__body,
+body.site-depth .fav-card__tag {
+  transform: none;
+}
+
+body.site-depth .fav-card:hover .fav-card__bg {
+  transform: scale(1.08);
+}
+
+/* ── Fiesta cards ── */
+body.site-depth .fiesta-hub__grid {
+  perspective: var(--depth-persp);
+}
+
+body.site-depth .fiesta-card {
+  transform-style: preserve-3d;
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.8) inset,
+    var(--depth-shadow-mid),
+    var(--depth-shadow-far);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.site-depth .fiesta-card::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: calc(18px - 3px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.site-depth .fiesta-card__icon {
+  display: inline-block;
+  transform: translateZ(36px);
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+}
+
+body.site-depth .fiesta-roulette__wheel-wrap {
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.22));
+}
+
+body.site-depth .fiesta-roulette__wheel-wrap::after {
+  content: '';
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: -8%;
+  height: 18%;
+  background: radial-gradient(ellipse 100% 100% at 50% 0%, rgba(0, 0, 0, 0.28) 0%, transparent 68%);
+  transform: translateZ(-20px);
+  pointer-events: none;
+}
+
+body.site-depth .fiesta-roulette__wheel {
+  box-shadow:
+    inset 0 4px 16px rgba(0, 0, 0, 0.2),
+    inset 0 -2px 8px rgba(255, 255, 255, 0.35),
+    0 0 0 6px rgba(201, 162, 39, 0.35),
+    0 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Trust pillars — pedestals ── */
+body.site-depth .trust-ladder__grid {
+  perspective: var(--depth-persp);
+}
+
+body.site-depth .trust-pillar {
+  transform-style: preserve-3d;
+  box-shadow:
+    0 1px 0 #fff inset,
+    0 10px 0 -4px rgba(201, 162, 39, 0.25),
+    var(--depth-shadow-mid),
+    var(--depth-shadow-ambient);
+  border-bottom-width: 4px;
+}
+
+body.site-depth .trust-pillar::after {
+  content: '';
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: -0.85rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0, 0, 0, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+body.site-depth .trust-pillar__icon {
+  transform: translateZ(40px);
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.12));
+}
+
+body.site-depth .trust-pillar.is-active {
+  transform: translateY(-8px) translateZ(16px);
+  box-shadow:
+    0 1px 0 #fff inset,
+    0 14px 0 -4px rgba(232, 25, 46, 0.2),
+    0 20px 40px rgba(232, 25, 46, 0.14),
+    var(--depth-shadow-far);
+}
+
+/* ── Feature / about cards ── */
+body.site-depth .feature {
+  transform-style: preserve-3d;
+  position: relative;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    var(--depth-shadow-mid);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.site-depth .feature-icon {
+  transform: translateZ(24px);
+  filter: drop-shadow(0 6px 10px rgba(168, 30, 44, 0.15));
+}
+
+body.site-depth .about-img {
+  transform-style: preserve-3d;
+  border-radius: 14px;
+  box-shadow:
+    var(--depth-shadow-mid),
+    var(--depth-shadow-far),
+    var(--depth-shadow-ambient);
+}
+
+body.site-depth .about-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.18) 0%, transparent 45%, rgba(0, 0, 0, 0.12) 100%);
+  pointer-events: none;
+}
+
+body.site-depth .about-img img {
+  transform: translateZ(8px);
+}
+
+/* ── Extras / playground ── */
+body.site-depth .extras-card,
+body.site-depth .feat-panel {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.85) inset,
+    var(--depth-shadow-mid),
+    var(--depth-shadow-far);
+  transform-style: preserve-3d;
+}
+
+body.site-depth .extras-card__icon,
+body.site-depth .feat-card__icon {
+  transform: translateZ(30px);
+  display: inline-block;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.12));
+}
+
+body.site-depth .feat-tabs {
+  box-shadow:
+    inset 0 2px 8px rgba(0, 0, 0, 0.06),
+    0 6px 18px rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  padding: 0.35rem;
+}
+
+body.site-depth .feat-tab.is-active {
+  box-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.08),
+    0 8px 18px rgba(168, 30, 44, 0.18);
+  transform: translateY(-2px) translateZ(6px);
+}
+
+
+
+/* ── Menu cards (menu page) ── */
+body.site-depth .menu-card {
+  transform-style: preserve-3d;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.75) inset,
+    0 6px 16px rgba(20, 14, 10, 0.1),
+    0 2px 4px rgba(20, 14, 10, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.site-depth .menu-card:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.85) inset,
+    0 14px 32px rgba(20, 14, 10, 0.16),
+    0 4px 10px rgba(201, 162, 39, 0.1);
+}
+
+body.site-depth .menu-hero-vivid {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Scroll depth layers ── */
+body.site-depth [data-depth] {
+  will-change: transform;
+  transition: transform 0.08s linear;
+}
+
+body.site-depth .depth-layer-back { --depth-scroll: 0.35; }
+body.site-depth .depth-layer-mid { --depth-scroll: 0.55; }
+body.site-depth .depth-layer-front { --depth-scroll: 0.75; }
+
+/* ── Enter animation ── */
+body.site-depth .depth-enter {
+  opacity: 0;
+  transform: translateY(36px) rotateX(8deg) scale(0.96);
+  transform-origin: center bottom;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.site-depth .depth-enter.is-visible {
+  opacity: 1;
+  transform: translateY(0) rotateX(0) scale(1);
+}
+
+/* ── Promo / ribbon lift ── */
+body.site-depth .wc-promo,
+body.site-depth .feat-ribbon {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+body.site-depth .vibe-marquee {
+  box-shadow:
+    0 6px 0 rgba(0, 0, 0, 0.12),
+    0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Review cards — stacked notes ── */
+body.site-depth .review-card {
+  transform-style: preserve-3d;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 3px 0 rgba(201, 162, 39, 0.15),
+    var(--depth-shadow-mid),
+    var(--depth-shadow-far);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.site-depth .review-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, transparent 100%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+body.site-depth .review-card:hover {
+  transform: translateY(-6px) translateZ(12px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 6px 0 rgba(201, 162, 39, 0.12),
+    0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
+/* ── Cart FAB — floating chip ── */
+body.site-depth .cart-fab {
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.25) inset,
+    0 8px 0 rgba(0, 0, 0, 0.12),
+    0 16px 36px rgba(168, 30, 44, 0.35) !important;
+}
+
+body.site-depth .cart-fab:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+/* ── Lightbox — floating frame ── */
+body.site-depth .lightbox img {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 24px 80px rgba(0, 0, 0, 0.65),
+    0 8px 24px rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  body.site-depth .hero h1,
+  body.site-depth .hero-content > * {
+    transform: none;
+  }
+
+  body.site-depth .hero-rotator {
+    transform: scale(1.05);
+  }
+
+  body.site-depth .depth-vignette {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.site-depth .depth-ambient,
+  body.site-depth .depth-vignette {
+    display: none;
+  }
+
+  body.site-depth [data-depth],
+  body.site-depth .depth-enter {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  body.site-depth .fav-card__bg,
+  body.site-depth .hero-rotator,
+  body.site-depth .hero-content {
+    transform: none !important;
+  }
+}

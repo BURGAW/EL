@@ -1,0 +1,428 @@
+/* El Mirasol — Heavy Oaxacan theme layer */
+
+body.site-oaxaca {
+  --oax-red: #ff1744;
+  --oax-red-deep: #d50000;
+  --oax-red-bright: #ff0033;
+  --oax-indigo: #ff1744;
+  --oax-indigo-deep: #d50000;
+  --oax-maize: #ff9100;
+  --oax-maize-light: #ffab40;
+  --oax-terracotta: #ff6d00;
+  --oax-zapotec: #ff9100;
+  --oax-barro: #111111;
+  --oax-cream: #ffffff;
+  --oax-sand: #fafafa;
+  --oax-textile: repeating-linear-gradient(
+    90deg,
+    var(--oax-red) 0 16px,
+    var(--oax-cream) 16px 32px,
+    var(--oax-maize) 32px 48px,
+    var(--oax-cream) 48px 64px
+  );
+  --oax-zapotec-pattern: url("data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' fill='%23faf8f4'/%3E%3Cpath d='M32 0 L64 32 L32 64 L0 32 Z' fill='none' stroke='%23a81e2c' stroke-width='1' opacity='.1'/%3E%3Cpath d='M32 8 L56 32 L32 56 L8 32 Z' fill='%23c9a227' opacity='.06'/%3E%3Cpath d='M32 16 L48 32 L32 48 L16 32 Z' fill='none' stroke='%23a81e2c' stroke-width='1' opacity='.08'/%3E%3C/svg%3E");
+  --oaxaca-red: var(--oax-red);
+  --oaxaca-deep: var(--oax-indigo-deep);
+  --oaxaca-green: var(--oax-zapotec);
+  --charm-honey: var(--oax-maize);
+  --gold: var(--oax-maize);
+  --cream: var(--oax-cream);
+  --oaxaca-cream: var(--oax-cream);
+}
+
+/* Woven background */
+body.site-oaxaca.pattern {
+  background-color: var(--oax-cream);
+  background-image: var(--oax-zapotec-pattern);
+  background-size: 64px 64px;
+}
+
+body.site-oaxaca.pattern::before,
+body.site-oaxaca.pattern::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Textile stripe utility */
+body.site-oaxaca .social-topbar {
+  background: var(--oax-barro);
+  border-bottom: none;
+  box-shadow: none;
+}
+
+body.site-oaxaca .social-topbar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--oax-textile);
+}
+
+body.site-oaxaca .header {
+  border-bottom: none;
+  box-shadow: 0 1px 0 rgba(44, 74, 124, 0.12);
+}
+
+body.site-oaxaca .header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--oax-textile);
+}
+
+body.site-oaxaca .logo span {
+  color: var(--oax-indigo);
+}
+
+body.site-oaxaca .nav a.active,
+body.site-oaxaca .nav a:hover {
+  color: var(--oax-red);
+}
+
+/* Hero — mercado warmth */
+body.site-oaxaca .hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(30, 51, 88, 0.35) 0%, rgba(158, 27, 46, 0.5) 40%, rgba(26, 22, 20, 0.78) 100%),
+    linear-gradient(135deg, rgba(232, 160, 32, 0.15) 0%, transparent 40%);
+}
+
+body.site-oaxaca .hero-bg {
+  filter: saturate(1.05) contrast(1.02) brightness(1.08);
+}
+
+body.site-oaxaca .hero-badge {
+  background: rgba(44, 74, 124, 0.45);
+  border: 1px solid var(--oax-maize);
+  color: var(--oax-maize-light);
+}
+
+body.site-oaxaca .hero-eyebrow {
+  color: var(--oax-maize-light);
+  font-family: var(--font-decor);
+  font-size: clamp(2rem, 5.5vw, 3.25rem);
+  letter-spacing: 0.02em;
+}
+
+body.site-oaxaca .hero h1::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 3px;
+  margin: 0.75rem auto 0;
+  background: var(--oax-textile);
+}
+
+body.site-oaxaca .btn-primary {
+  background: var(--oax-red);
+  border-color: var(--oax-red);
+  box-shadow: 0 4px 20px rgba(232, 25, 46, 0.4);
+}
+
+body.site-oaxaca .btn-primary:hover {
+  background: var(--oax-terracotta);
+  border-color: var(--oax-terracotta);
+}
+
+body.site-oaxaca .btn-red {
+  background: var(--oax-indigo);
+  border-color: var(--oax-indigo);
+}
+
+body.site-oaxaca .btn-red:hover {
+  background: var(--oax-indigo-deep);
+  border-color: var(--oax-indigo-deep);
+}
+
+/* Section tags — Zapotec palette */
+body.site-oaxaca .section-tag {
+  color: var(--oax-indigo);
+}
+
+body.site-oaxaca .section-tag::after {
+  width: 3rem;
+  height: 3px;
+  background: var(--oax-textile);
+}
+
+body.site-oaxaca .section h2 em {
+  color: var(--oax-terracotta);
+  font-family: var(--font-decor);
+  font-size: 0.65em;
+  letter-spacing: 0.02em;
+}
+
+body.site-oaxaca .about-img::before {
+  border-color: var(--oax-maize);
+  border-width: 3px;
+}
+
+body.site-oaxaca .about-img::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  width: 40%;
+  height: 6px;
+  background: var(--oax-textile);
+  z-index: 2;
+}
+
+body.site-oaxaca .feature {
+  border: 1px solid rgba(44, 74, 124, 0.15);
+  border-top-width: 4px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+body.site-oaxaca .feature:nth-child(1) {
+  border-top-color: var(--oax-red);
+}
+
+body.site-oaxaca .feature:nth-child(2) {
+  border-top-color: var(--oax-indigo);
+}
+
+body.site-oaxaca .feature:nth-child(3) {
+  border-top-color: var(--oax-maize);
+}
+
+body.site-oaxaca .feature-icon {
+  color: var(--oax-red);
+}
+
+body.site-oaxaca .feature:nth-child(2) .feature-icon {
+  color: var(--oax-indigo);
+}
+
+body.site-oaxaca .feature:nth-child(3) .feature-icon {
+  color: var(--oax-maize);
+}
+
+/* Family band — barro negro + textile */
+body.site-oaxaca .family-band {
+  background: var(--oax-barro);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-image: var(--oax-textile) 6;
+  position: relative;
+}
+
+body.site-oaxaca .family-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image: var(--oax-zapotec-pattern);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+body.site-oaxaca .family-band .section-tag {
+  color: var(--oax-maize);
+}
+
+body.site-oaxaca .family-band h2 em {
+  color: var(--oax-maize-light) !important;
+  font-family: var(--font-decor);
+}
+
+body.site-oaxaca .family-pillars {
+  background: var(--oax-textile);
+  border: none;
+  gap: 2px;
+}
+
+body.site-oaxaca .family-pillars li {
+  background: var(--oax-indigo-deep);
+}
+
+body.site-oaxaca .family-pillars li:nth-child(1) strong { color: var(--oax-red-bright); }
+body.site-oaxaca .family-pillars li:nth-child(2) strong { color: var(--oax-maize); }
+body.site-oaxaca .family-pillars li:nth-child(3) strong { color: #7ec99a; }
+
+body.site-oaxaca .family-pillars strong {
+  color: var(--oax-maize);
+}
+
+/* Textile dividers */
+body.site-oaxaca .charm-trim {
+  height: 8px;
+  opacity: 1;
+  background: var(--oax-textile);
+}
+
+body.site-oaxaca .charm-trim--thick {
+  height: 10px;
+}
+
+/* Gallery */
+body.site-oaxaca .gallery-slideshow {
+  border: 3px solid transparent;
+  border-image: var(--oax-textile) 3;
+}
+
+body.site-oaxaca .gallery-slide figcaption {
+  background: linear-gradient(0deg, rgba(30, 51, 88, 0.88) 0%, transparent 100%);
+}
+
+body.site-oaxaca .gallery-slideshow__btn:hover {
+  background: var(--oax-indigo);
+}
+
+/* CTA — mercado sunset */
+body.site-oaxaca .specials-banner {
+  background: linear-gradient(135deg, var(--oax-indigo-deep) 0%, var(--oax-red-deep) 45%, var(--oax-terracotta) 100%);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-image: var(--oax-textile) 5;
+}
+
+body.site-oaxaca .specials-banner .btn-primary {
+  background: var(--oax-maize);
+  color: var(--oax-barro);
+  border-color: var(--oax-maize);
+}
+
+body.site-oaxaca .specials-banner .btn-primary:hover {
+  background: var(--oax-maize-light);
+  color: var(--oax-barro);
+}
+
+/* Info cards */
+body.site-oaxaca .info-card {
+  border-top: 4px solid var(--oax-red);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+body.site-oaxaca .visit-grid > .map-wrap {
+  border-top: 4px solid var(--oax-indigo);
+}
+
+body.site-oaxaca .hours-list li.closed span:last-child {
+  color: var(--oax-red);
+}
+
+/* Footer */
+body.site-oaxaca .footer {
+  background: var(--oax-barro);
+  border-top: 6px solid transparent;
+  border-image: var(--oax-textile) 6;
+}
+
+body.site-oaxaca .footer .logo span {
+  color: var(--oax-maize);
+}
+
+body.site-oaxaca .footer h4 {
+  color: var(--oax-maize);
+}
+
+body.site-oaxaca .footer strong[style] {
+  color: var(--oax-maize) !important;
+}
+
+/* ── Menu page ── */
+body.site-oaxaca.menu-online-layout {
+  background-color: var(--oax-cream);
+  background-image: var(--oax-zapotec-pattern);
+  background-size: 48px 48px;
+}
+
+body.site-oaxaca .menu-compact-bar--online,
+body.site-oaxaca .menu-compact-bar {
+  background: var(--oax-sand);
+  border-bottom: none;
+}
+
+body.site-oaxaca .menu-compact-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--oax-textile);
+}
+
+body.site-oaxaca .menu-compact-bar--online,
+body.site-oaxaca .menu-compact-bar {
+  position: relative;
+}
+
+body.site-oaxaca .menu-view-tabs {
+  border: 2px solid transparent;
+  border-image: var(--oax-textile) 2;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+body.site-oaxaca .menu-view-tab.is-active {
+  background: var(--oax-indigo);
+  border-color: var(--oax-indigo);
+}
+
+body.site-oaxaca .menu-online-tab.is-active {
+  background: var(--oax-red);
+  border-color: var(--oax-red);
+}
+
+body.site-oaxaca .menu-card {
+  border-left: 3px solid var(--oax-maize);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+body.site-oaxaca .menu-card--btn:hover,
+body.site-oaxaca .menu-card--btn:focus-visible {
+  border-left-color: var(--oax-red);
+}
+
+body.site-oaxaca .menu-card__price {
+  color: var(--oax-red);
+}
+
+body.site-oaxaca .menu-photo-slideshow {
+  border: 3px solid transparent;
+  border-image: var(--oax-textile) 3;
+}
+
+body.site-oaxaca .menu-photo-slideshow__title {
+  color: var(--oax-indigo);
+}
+
+body.site-oaxaca .menu-online__heading h2::after {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin-top: 0.4rem;
+  background: var(--oax-textile);
+}
+
+body.site-oaxaca .item-modal__dialog {
+  border-top: 4px solid var(--oax-red);
+  border-left: 4px solid var(--oax-indigo);
+}
+
+body.site-oaxaca .item-modal__price {
+  color: var(--oax-red);
+}
+
+body.site-oaxaca .google-review-tab {
+  border: 2px solid var(--oax-maize);
+}
+
+body.site-oaxaca .google-review-tab__rating {
+  color: var(--oax-maize);
+}
+
+body.site-oaxaca .mobile-cta {
+  border-top: 3px solid transparent;
+  border-image: var(--oax-textile) 3;
+}
+
+body.site-oaxaca .mobile-cta .cta-call {
+  color: var(--oax-maize);
+}

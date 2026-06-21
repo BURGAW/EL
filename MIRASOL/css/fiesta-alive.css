@@ -1,0 +1,1761 @@
+/* El Mirasol — Fiesta Alive: Oaxacan textiles, gold dust, festive marketing UI */
+
+body.site-fiesta {
+  --fiesta-red: #ff1744;
+  --fiesta-red-deep: #d50000;
+  --fiesta-gold: #ff9100;
+  --fiesta-gold-light: #ffab40;
+  --fiesta-gold-dust: #ff6d00;
+  --fiesta-indigo: #2c4a7c;
+  --fiesta-green: #2e9e4f;
+  --fiesta-terracotta: #ff6d00;
+  --fiesta-cream: #fafafa;
+  --fiesta-textile: repeating-linear-gradient(
+    90deg,
+    #a81e2c 0 16px,
+    #faf8f4 16px 32px,
+    #c9a227 32px 48px,
+    #faf8f4 48px 64px
+  );
+  --fiesta-zapotec: url("data:image/svg+xml,%3Csvg width='48' height='48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 24h12l6-12 6 12h12L24 36zm0 0l12-12 12 12-12 12z' fill='%239e1b2e' fill-opacity='0.1'/%3E%3Cpath d='M24 0l6 6-6 6-6-6zm0 36l6 6-6 6-6-6z' fill='%232c4a7c' fill-opacity='0.09'/%3E%3C/svg%3E");
+}
+
+/* Layer Oaxacan weave over Burgaw cream — home only (menu uses menu-vivid) */
+body.site-fiesta:not(.menu-page):not(.site-oaxaca).site-burgaw.pattern {
+  background-image:
+    var(--fiesta-zapotec),
+    radial-gradient(ellipse 80% 55% at 0% 0%, rgba(201, 162, 39, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 50% at 100% 5%, rgba(168, 30, 44, 0.08) 0%, transparent 50%) !important;
+  background-size: 48px 48px, auto, auto !important;
+}
+
+/* Gold dust canvas */
+.fiesta-gold-dust {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+  opacity: 0.22;
+}
+
+body.site-fiesta .feat-scroll-progress {
+  height: 4px;
+  background: var(--fiesta-textile);
+}
+
+/* Papel picado strip */
+.oax-papel-strip {
+  height: 22px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='22' viewBox='0 0 120 22'%3E%3Cpath d='M0 0h12v7c0 4-3 8-7 8s-8-4-8-8V0zm12 0h12v5c0 5-4 9-9 9s-9-4-9-9V0zm24 0h12v8c0 3-3 6-6 6s-6-3-6-6V0zm12 0h12v6c0 4-4 8-8 8s-8-4-8-8V0zm24 0h12v8c0 4-4 8-8 8s-8-4-8-8V0zm12 0h12v5c0 5-4 9-9 9s-9-4-9-9V0z' fill='%23e8192e' fill-opacity='0.9'/%3E%3Cpath d='M0 14h12v8H0zm12 0h12v8H12zm24 0h12v8H36zm12 0h12v8H48zm24 0h12v8H72zm12 0h12v8H84z' fill='%23e8a020' fill-opacity='0.95'/%3E%3C/svg%3E") repeat-x center;
+  background-size: 120px 22px;
+  filter: drop-shadow(0 3px 6px rgba(26, 22, 20, 0.15));
+}
+
+/* Hero — más fiesta */
+body.site-fiesta .hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(122, 21, 32, 0.45) 0%, rgba(28, 20, 18, 0.72) 100%),
+    linear-gradient(135deg, rgba(201, 162, 39, 0.14) 0%, transparent 45%) !important;
+}
+
+body.site-fiesta .hero h1 {
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.35), 0 0 40px rgba(232, 160, 32, 0.25);
+}
+
+body.site-fiesta .hero-badge {
+  background: linear-gradient(135deg, var(--fiesta-red), var(--fiesta-terracotta)) !important;
+  border: 2px solid var(--fiesta-gold) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(232, 25, 46, 0.35);
+}
+
+body.site-fiesta .hero-rating-pill {
+  border: 2px solid var(--fiesta-gold) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(8px);
+}
+
+body.site-fiesta .btn-primary {
+  background: linear-gradient(135deg, var(--fiesta-gold), #f5c842) !important;
+  color: var(--fiesta-red-deep) !important;
+  border: 2px solid rgba(255, 255, 255, 0.35) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 20px rgba(232, 160, 32, 0.4) !important;
+}
+
+body.site-fiesta .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(232, 160, 32, 0.5) !important;
+}
+
+/* Festive ribbon */
+body.site-fiesta .feat-ribbon {
+  background: linear-gradient(90deg, #d50000, #ff1744, #ff6d00) !important;
+  border-bottom: 3px solid #ff9100 !important;
+}
+
+body.site-fiesta .feat-ribbon__specials {
+  color: var(--fiesta-gold-light) !important;
+  font-weight: 600;
+}
+
+/* Marquee — full color */
+body.site-fiesta .vibe-marquee {
+  background: var(--fiesta-textile) !important;
+  padding: 0.15rem 0;
+}
+
+body.site-fiesta .vibe-marquee__track span {
+  color: #fff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  font-weight: 800 !important;
+}
+
+/* Social proof bar */
+.fiesta-social-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.15rem;
+  margin: 0 auto 1.25rem;
+  max-width: 640px;
+  background: linear-gradient(135deg, rgba(44, 74, 124, 0.08), rgba(232, 25, 46, 0.06));
+  border: 2px solid rgba(232, 160, 32, 0.45);
+  border-radius: 100px;
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #1e2a44;
+  box-shadow: 0 4px 16px rgba(232, 160, 32, 0.15);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fiesta-social-bar.is-updating {
+  opacity: 0.6;
+  transform: scale(0.98);
+}
+
+.fiesta-social-bar__pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.7);
+  animation: fiestaPulse 2s ease infinite;
+  flex-shrink: 0;
+}
+
+.fiesta-social-bar__viewers {
+  color: var(--fiesta-red);
+  font-weight: 800;
+}
+
+@keyframes fiestaPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* Urgency banner */
+.fiesta-urgency {
+  margin: 0 clamp(1rem, 3vw, 2rem) 2rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, var(--fiesta-red-deep) 0%, var(--fiesta-red) 50%, var(--fiesta-terracotta) 100%);
+  border-radius: 16px;
+  border: 3px solid var(--fiesta-gold);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(158, 27, 46, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.fiesta-urgency::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--fiesta-zapotec);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.fiesta-urgency__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.fiesta-urgency__tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--fiesta-gold);
+  color: var(--fiesta-red-deep);
+  padding: 0.2rem 0.65rem;
+  border-radius: 100px;
+  margin-bottom: 0.45rem;
+}
+
+.fiesta-urgency h3 {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-size: clamp(1.2rem, 3.5vw, 1.55rem);
+  margin: 0 0 0.35rem;
+}
+
+.fiesta-urgency p {
+  margin: 0 0 0.75rem;
+  font-size: 0.88rem;
+  opacity: 0.92;
+  line-height: 1.45;
+}
+
+.fiesta-urgency__timer {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--fiesta-gold-light);
+}
+
+.fiesta-urgency .btn {
+  margin-top: 0.5rem;
+}
+
+/* Fiesta Hub */
+.fiesta-hub {
+  padding: 2.5rem clamp(1rem, 3vw, 2rem) 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.fiesta-hub::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background: var(--fiesta-textile);
+  border-radius: 2px;
+}
+
+.fiesta-hub__head {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.fiesta-hub__head h2 {
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  font-size: clamp(1.65rem, 4.5vw, 2.15rem);
+  font-weight: 700;
+  color: var(--fiesta-red-deep);
+  margin: 0.35rem 0 0.5rem;
+  line-height: 1.25;
+}
+
+.fiesta-hub__head p {
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  font-size: 1.1rem;
+  color: #2e2e2e;
+  line-height: 1.55;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.fiesta-hub__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .fiesta-hub__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fiesta-hub--no-stamps .fiesta-hub__grid {
+  grid-template-columns: 1fr;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+/* Fiesta cards */
+.fiesta-card {
+  background: #fff;
+  border: 2px solid rgba(232, 160, 32, 0.35);
+  border-radius: 18px;
+  padding: 1.15rem 1.2rem 1.25rem;
+  box-shadow: 0 8px 24px rgba(44, 74, 124, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.fiesta-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--fiesta-textile);
+}
+
+.fiesta-card__icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.fiesta-card h3 {
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #1e2a44;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.fiesta-card__lead {
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  font-size: 1.05rem;
+  color: #2e2e2e;
+  margin: 0 0 0.85rem;
+  line-height: 1.55;
+}
+
+/* Fiesta Pass — compact loyalty card */
+.fiesta-card--stamps[hidden] {
+  display: none !important;
+}
+
+.fiesta-card--stamps {
+  padding: 0.75rem 0.8rem 0.85rem;
+  max-width: 300px;
+  margin-inline: auto;
+}
+
+.fiesta-card--stamps .fiesta-card__icon {
+  font-size: 1.2rem;
+  margin-bottom: 0.15rem;
+}
+
+.fiesta-card--stamps h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.fiesta-card--stamps .fiesta-card__lead {
+  font-size: 0.82rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.fiesta-card--stamps .fiesta-stamps__pass {
+  margin-bottom: 0.55rem;
+  padding: 0.55rem 0.65rem 0.5rem;
+  border-radius: 10px;
+}
+
+.fiesta-card--stamps .fiesta-stamps__pass--preview {
+  margin-bottom: 0.65rem;
+}
+
+.fiesta-card--stamps .fiesta-stamps__pass-head {
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.3rem;
+}
+
+.fiesta-card--stamps .fiesta-stamps__pass-brand {
+  font-size: 0.92rem;
+}
+
+.fiesta-card--stamps .fiesta-stamps__pass-type,
+.fiesta-card--stamps .fiesta-stamps__pass-foot {
+  font-size: 0.54rem;
+}
+
+.fiesta-card--stamps .fiesta-stamps__row {
+  gap: 0.3rem;
+}
+
+.fiesta-card--stamps .fiesta-stamp-slot {
+  width: 36px;
+  height: 36px;
+}
+
+.fiesta-card--stamps .fiesta-stamp-slot__core {
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+}
+
+.fiesta-card--stamps .fiesta-stamp-slot__reward {
+  font-size: 0.5rem;
+}
+
+.fiesta-card--stamps .fiesta-stamp-slot__num {
+  font-size: 0.46rem;
+}
+
+.fiesta-card--stamps .fiesta-stamps__reward {
+  font-size: 0.88rem;
+  margin-bottom: 0.45rem;
+}
+
+.fiesta-card--stamps .fiesta-stamps__reward.is-unlocked {
+  font-size: 0.92rem;
+}
+
+.fiesta-card--stamps .fiesta-stamps__account {
+  font-size: 0.68rem;
+  margin-bottom: 0.45rem;
+}
+
+.fiesta-card--stamps .fiesta-stamps__form {
+  gap: 0.45rem;
+}
+
+.fiesta-card--stamps .fiesta-stamps__field label {
+  font-size: 0.62rem;
+  margin-bottom: 0.2rem;
+}
+
+.fiesta-card--stamps .fiesta-stamps__field input {
+  padding: 0.45rem 0.55rem;
+  font-size: 0.88rem;
+  border-radius: 8px;
+}
+
+.fiesta-card--stamps .fiesta-stamp-btn {
+  padding: 0.55rem 0.75rem;
+  font-size: 0.82rem;
+}
+
+.fiesta-card--stamps .fiesta-stamps__toggle,
+.fiesta-card--stamps .fiesta-stamps__signout {
+  font-size: 0.78rem;
+  padding: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+/* Roulette */
+.fiesta-roulette__wheel-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 0.85rem;
+}
+
+.fiesta-roulette__wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid var(--fiesta-gold);
+  background: conic-gradient(
+    var(--fiesta-red) 0deg 45deg,
+    var(--fiesta-gold) 45deg 90deg,
+    var(--fiesta-green) 90deg 135deg,
+    var(--fiesta-indigo) 135deg 180deg,
+    var(--fiesta-terracotta) 180deg 225deg,
+    var(--fiesta-red) 225deg 270deg,
+    var(--fiesta-gold) 270deg 315deg,
+    var(--fiesta-green) 315deg 360deg
+  );
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  will-change: transform;
+}
+
+.fiesta-roulette__pointer {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 18px solid var(--fiesta-gold);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  z-index: 2;
+}
+
+.fiesta-roulette__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--fiesta-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fiesta-roulette__result {
+  text-align: center;
+  min-height: 4.5rem;
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+}
+
+.fiesta-roulette__tag {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #9a6610;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 0.35rem;
+}
+
+.fiesta-roulette__meta {
+  font-size: 1rem;
+  color: #444;
+  margin: 0.5rem 0 0;
+  line-height: 1.45;
+}
+
+.fiesta-roulette__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+  margin-top: 0.65rem;
+}
+
+.fiesta-roulette__menu-link {
+  flex: 1 1 8rem;
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif) !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  padding: 0.65rem 1rem !important;
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fiesta-roulette__result strong {
+  display: block;
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--fiesta-red-deep);
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.fiesta-roulette__result p {
+  font-size: 1.05rem;
+  color: #2e2e2e;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.fiesta-spin-btn {
+  display: block;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--fiesta-red), var(--fiesta-terracotta));
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  min-height: 52px;
+}
+
+.fiesta-spin-btn:hover:not([aria-busy="true"]) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(232, 25, 46, 0.35);
+}
+
+.fiesta-spin-btn[aria-busy="true"] {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.fiesta-stamp-btn {
+  display: block;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--fiesta-red), var(--fiesta-terracotta));
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  min-height: 52px;
+}
+
+.fiesta-stamp-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(232, 25, 46, 0.35);
+}
+
+.fiesta-stamp-btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* Fiesta Pass — luxury hole-punch loyalty card */
+.fiesta-stamps__pass {
+  position: relative;
+  margin: 0 0 0.85rem;
+  padding: 0.85rem 0.95rem 0.75rem;
+  border-radius: 14px;
+  background:
+    linear-gradient(155deg, rgba(255, 252, 245, 0.92) 0%, rgba(245, 236, 218, 0.98) 48%, rgba(232, 218, 192, 1) 100%);
+  border: 1px solid rgba(176, 138, 62, 0.42);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -1px 0 rgba(120, 90, 40, 0.08),
+    0 10px 28px rgba(42, 24, 16, 0.14),
+    0 0 0 1px rgba(42, 24, 16, 0.04);
+  overflow: hidden;
+}
+
+.fiesta-stamps__pass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: repeating-linear-gradient(
+    -12deg,
+    transparent,
+    transparent 3px,
+    rgba(255, 255, 255, 0.045) 3px,
+    rgba(255, 255, 255, 0.045) 6px
+  );
+  pointer-events: none;
+}
+
+.fiesta-stamps__pass::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.55), transparent);
+  pointer-events: none;
+}
+
+.fiesta-stamps__pass--preview {
+  opacity: 0.92;
+  margin-bottom: 1rem;
+}
+
+.fiesta-stamps--active .fiesta-stamps__pass--preview {
+  display: none;
+}
+
+.fiesta-stamps__pass-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid rgba(176, 138, 62, 0.22);
+}
+
+.fiesta-stamps__pass-brand {
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #2a1810;
+  line-height: 1.1;
+}
+
+.fiesta-stamps__pass-type {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(120, 90, 40, 0.85);
+}
+
+.fiesta-stamps__pass-foot {
+  margin: 0.55rem 0 0;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(90, 75, 55, 0.72);
+  font-weight: 600;
+}
+
+.fiesta-stamps__row {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 0.15rem 0;
+}
+
+.fiesta-stamp-slot {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.fiesta-stamp-slot__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #faf5ea, #ebe0cc);
+  border: 1.5px solid rgba(160, 125, 58, 0.4);
+  box-shadow:
+    0 2px 5px rgba(42, 24, 16, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.fiesta-stamp-slot__core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 58%, #4a4038 0%, #221c16 55%, #0e0b08 100%);
+  box-shadow:
+    inset 0 4px 9px rgba(0, 0, 0, 0.65),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  transition:
+    background 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fiesta-stamp-slot.is-punched .fiesta-stamp-slot__core {
+  background: radial-gradient(circle at 30% 26%, #fff9e8 0%, #f0d878 18%, #c9a227 48%, #8b6914 78%, #5c4210 100%);
+  box-shadow:
+    inset 0 -2px 5px rgba(60, 40, 10, 0.35),
+    inset 0 2px 7px rgba(255, 255, 255, 0.55),
+    0 0 14px rgba(201, 162, 39, 0.45);
+  transform: scale(1.06);
+  animation: fiesta-punch-in 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fiesta-stamp-slot.is-punched .fiesta-stamp-slot__ring {
+  border-color: rgba(176, 138, 62, 0.72);
+  box-shadow:
+    0 0 0 1px rgba(201, 162, 39, 0.2),
+    0 4px 14px rgba(176, 138, 62, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.fiesta-stamp-slot__reward {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+  z-index: 2;
+  font-size: 0.62rem;
+  line-height: 1;
+  color: rgba(30, 24, 18, 0.45);
+  pointer-events: none;
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+.fiesta-stamp-slot.is-reward .fiesta-stamp-slot__ring {
+  border-color: rgba(176, 138, 62, 0.55);
+}
+
+.fiesta-stamp-slot.is-punched.is-reward .fiesta-stamp-slot__reward {
+  color: #4a3410;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.fiesta-stamp-slot__num {
+  position: absolute;
+  bottom: -0.05rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: rgba(100, 82, 58, 0.62);
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  line-height: 1;
+}
+
+.fiesta-stamp-slot.is-punched .fiesta-stamp-slot__num {
+  color: rgba(90, 65, 28, 0.88);
+}
+
+@keyframes fiesta-punch-in {
+  0% { transform: scale(0.72); opacity: 0.4; }
+  55% { transform: scale(1.12); }
+  100% { transform: scale(1.06); opacity: 1; }
+}
+
+.fiesta-stamps__reward {
+  text-align: center;
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.05rem;
+  color: #3a3028;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.02em;
+}
+
+.fiesta-stamps__reward.is-unlocked {
+  color: #6b3d18;
+  font-size: 1.12rem;
+}
+
+.fiesta-stamps__account {
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #5c554d;
+  text-align: center;
+  margin: 0 0 0.65rem;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  letter-spacing: 0.02em;
+}
+
+.fiesta-card--stamps.fiesta-stamps--coming-soon .fiesta-stamp-btn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+.fiesta-stamp-btn:disabled,
+.fiesta-stamp-btn[aria-disabled="true"] {
+  opacity: 0.72;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.fiesta-stamps__form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.fiesta-stamps__field label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1e2a44;
+  margin-bottom: 0.3rem;
+}
+
+.fiesta-stamps__field input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(232, 160, 32, 0.45);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  background: #fff;
+  color: #1e2a44;
+}
+
+.fiesta-stamps__field input:focus {
+  outline: 2px solid var(--fiesta-gold);
+  outline-offset: 1px;
+  border-color: var(--fiesta-gold);
+}
+
+.fiesta-stamps--sign-in .fiesta-stamps__field--register {
+  display: none;
+}
+
+.fiesta-stamps__form-error {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--fiesta-red-deep, #8b1530);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.fiesta-stamps__toggle,
+.fiesta-stamps__signout {
+  display: block;
+  width: 100%;
+  margin-top: 0.45rem;
+  padding: 0.55rem;
+  border: none;
+  background: transparent;
+  color: var(--fiesta-red-deep, #8b1530);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+}
+
+.fiesta-stamps__toggle:hover,
+.fiesta-stamps__signout:hover {
+  color: var(--fiesta-red, #e8192e);
+}
+
+.fiesta-stamps__member[hidden],
+.fiesta-stamps__auth[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 420px) {
+  .fiesta-stamps__row {
+    gap: 0.35rem;
+  }
+
+  .fiesta-stamp-slot {
+    width: 44px;
+    height: 44px;
+  }
+
+  .fiesta-stamp-slot__core {
+    width: 22px;
+    height: 22px;
+    margin: -11px 0 0 -11px;
+  }
+
+  .fiesta-stamps__pass {
+    padding: 0.75rem 0.65rem 0.65rem;
+  }
+}
+
+/* Plate builder */
+.fiesta-builder__group {
+  margin-bottom: 0.65rem;
+}
+
+.fiesta-builder__group h4 {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fiesta-terracotta);
+  margin: 0 0 0.35rem;
+}
+
+.fiesta-builder__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.fiesta-chip {
+  border: 2px solid #e8dfd0;
+  background: var(--fiesta-cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.fiesta-chip:hover {
+  border-color: var(--fiesta-terracotta);
+}
+
+.fiesta-chip.is-selected {
+  background: var(--fiesta-indigo);
+  border-color: var(--fiesta-indigo);
+  color: #fff;
+}
+
+.fiesta-builder__order {
+  margin-top: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  background: linear-gradient(135deg, rgba(232, 160, 32, 0.12), rgba(44, 74, 124, 0.08));
+  border-radius: 10px;
+  border-left: 4px solid var(--fiesta-gold);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.fiesta-builder__order em {
+  color: var(--fiesta-red);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Heat seeker */
+.fiesta-heat__meter {
+  display: flex;
+  gap: 0.35rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.fiesta-heat__level {
+  flex: 1;
+  max-width: 52px;
+  padding: 0.55rem 0.25rem;
+  border: 2px solid #e8dfd0;
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.fiesta-heat__level span {
+  display: block;
+  font-size: 0.52rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  margin-top: 0.15rem;
+}
+
+.fiesta-heat__level:hover {
+  border-color: var(--fiesta-terracotta);
+  transform: translateY(-2px);
+}
+
+.fiesta-heat__level.is-active {
+  border-color: var(--fiesta-red);
+  background: linear-gradient(180deg, #fff5f5, #ffe0e0);
+  box-shadow: 0 4px 12px rgba(232, 25, 46, 0.2);
+}
+
+.fiesta-heat__pick {
+  text-align: center;
+  min-height: 3rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.fiesta-heat__pick strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--fiesta-red);
+  margin-bottom: 0.15rem;
+}
+
+/* Fav cards — trending badge */
+.fav-card__trending {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 3;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--fiesta-red);
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 100px;
+}
+
+/* Share & earn band */
+.fiesta-share-band {
+  margin: 2rem clamp(1rem, 3vw, 2rem);
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--fiesta-indigo) 0%, var(--fiesta-indigo-deep, #1e3358) 100%);
+  border-radius: 20px;
+  border: 3px solid var(--fiesta-gold);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.fiesta-share-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--fiesta-zapotec);
+  opacity: 0.1;
+}
+
+.fiesta-share-band__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.fiesta-share-band h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 4vw, 1.75rem);
+  margin: 0 0 0.4rem;
+}
+
+.fiesta-share-band p {
+  font-size: 0.88rem;
+  opacity: 0.9;
+  margin: 0 0 1rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fiesta-share-band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.fiesta-share-band .btn-outline {
+  border-color: var(--fiesta-gold) !important;
+  color: var(--fiesta-gold-light) !important;
+}
+
+/* Food wall & sections — textile accents */
+body.site-fiesta .food-wall__banner {
+  border-bottom: 4px solid transparent;
+  border-image: var(--fiesta-textile) 1;
+}
+
+body.site-fiesta .fav-card {
+  border: 2px solid rgba(232, 160, 32, 0.3) !important;
+}
+
+body.site-fiesta .feat-playground {
+  border: 3px solid var(--fiesta-gold) !important;
+  background: linear-gradient(180deg, #fff, var(--fiesta-cream)) !important;
+}
+
+body.site-fiesta .specials-banner {
+  background: linear-gradient(135deg, var(--fiesta-red-deep), var(--fiesta-indigo)) !important;
+  border: 3px solid var(--fiesta-gold) !important;
+}
+
+/* Pickup estimator */
+.fiesta-pickup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0.65rem;
+  margin-top: 1.1rem;
+  padding: 0.82rem 1.4rem;
+  background: #ffffff;
+  border: 2px solid #d50000;
+  border-radius: 100px;
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  font-size: clamp(1rem, 2.5vw, 1.14rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #1a2332;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.fiesta-pickup:hover {
+  transform: translateY(-2px);
+  background: #fff8f0;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.36);
+}
+
+.fiesta-pickup__action,
+.fiesta-pickup__eta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.fiesta-pickup__action {
+  padding-right: 0.65rem;
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.fiesta-pickup__icon {
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+.fiesta-pickup__call {
+  font-weight: 800;
+  color: #b71c1c;
+  letter-spacing: 0.02em;
+}
+
+.fiesta-pickup__arrow {
+  color: #e65100;
+  font-weight: 800;
+}
+
+.fiesta-pickup__eta {
+  color: #1a2332;
+  font-weight: 600;
+}
+
+.fiesta-pickup__time {
+  font-weight: 800;
+  color: #d84315;
+}
+
+/* Menu page fiesta touches */
+body.site-fiesta.site-menu-vivid .menu-hero-vivid__papel {
+  height: 24px;
+}
+
+body.site-fiesta .fiesta-menu-nudge {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--fiesta-indigo);
+  background: linear-gradient(90deg, transparent, rgba(232, 160, 32, 0.15), transparent);
+}
+
+/* HBS Trust Triangle — research-backed credibility section */
+.trust-ladder {
+  padding: 2.5rem clamp(1rem, 3vw, 2rem);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.trust-ladder__head {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.trust-ladder__head h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+  color: var(--fiesta-indigo);
+  margin: 0.35rem 0 0.5rem;
+}
+
+.trust-ladder__cite {
+  font-size: 0.72rem;
+  color: var(--ink-soft, #6e6256);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.trust-ladder__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .trust-ladder__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trust-pillar {
+  background: #fff;
+  border: 2px solid rgba(232, 160, 32, 0.35);
+  border-radius: 16px;
+  padding: 1.15rem 1.2rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.trust-pillar.is-active {
+  border-color: var(--fiesta-red);
+  box-shadow: 0 8px 24px rgba(232, 25, 46, 0.12);
+  transform: translateY(-3px);
+}
+
+.trust-pillar__icon {
+  font-size: 2rem;
+  margin-bottom: 0.35rem;
+}
+
+.trust-pillar h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  color: var(--fiesta-red-deep);
+  margin: 0 0 0.35rem;
+}
+
+.trust-pillar__tag {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fiesta-indigo);
+  margin-bottom: 0.45rem;
+}
+
+.trust-pillar p {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.trust-proof-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem 1.25rem;
+  margin-top: 1.25rem;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(135deg, rgba(44, 74, 124, 0.06), rgba(232, 160, 32, 0.1));
+  border-radius: 12px;
+  border: 1px solid rgba(232, 160, 32, 0.3);
+}
+
+.trust-proof-bar span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--fiesta-indigo);
+}
+
+.trust-proof-bar strong {
+  color: var(--fiesta-red);
+}
+
+/* Readable display fonts over burgaw script leak */
+body.site-fiesta .hero h1,
+body.site-fiesta .fiesta-hub__head h2,
+body.site-fiesta .fav-card h3,
+body.site-fiesta .trust-ladder__head h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fiesta-gold-dust,
+  .fiesta-social-bar__pulse,
+  .fav-card__trending {
+    animation: none !important;
+  }
+
+}
+
+/* ── Dish roulette — on-page section (home) ── */
+.dish-roulette-section {
+  text-align: center;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.fiesta-card--roulette-inline {
+  max-width: 440px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fiesta-card--roulette-inline .fiesta-roulette__wheel-wrap {
+  width: 196px;
+  height: 196px;
+  margin-bottom: 1rem;
+}
+
+.fiesta-card--roulette-inline .fiesta-roulette__center {
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.65rem;
+}
+
+.fiesta-card--roulette-inline .fiesta-spin-btn {
+  max-width: 280px;
+  margin-inline: auto;
+}
+
+/* ── Story + Roulette hero card (home merged section) ── */
+.fiesta-card--roulette-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(1rem, 2vw, 1.35rem) clamp(1rem, 2.2vw, 1.5rem) clamp(1rem, 2vw, 1.35rem);
+  text-align: left;
+  overflow: hidden;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.fiesta-card--roulette-hero::after {
+  display: none;
+}
+
+.story-spin__roulette-label {
+  position: absolute;
+  left: clamp(0.85rem, 2vw, 1.15rem);
+  bottom: clamp(0.85rem, 2vw, 1.1rem);
+  z-index: 4;
+  max-width: 10.5rem;
+  padding: 0.5rem 0.65rem 0.55rem;
+  border-radius: 11px;
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.97), rgba(232, 246, 255, 0.9));
+  border: 1px solid rgba(0, 150, 199, 0.2);
+  box-shadow:
+    0 8px 22px rgba(0, 119, 182, 0.14),
+    0 1px 0 rgba(255, 255, 255, 0.85) inset;
+  backdrop-filter: blur(6px);
+}
+
+.story-spin__roulette-eyebrow {
+  display: block;
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--coast-sea, var(--fiesta-indigo));
+  margin-bottom: 0.1rem;
+}
+
+.story-spin__roulette-title {
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.25rem, 2.2vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.02;
+  color: var(--oaxaca-deep, var(--fiesta-red-deep));
+  margin: 0;
+}
+
+.story-spin__roulette-hint {
+  margin: 0.18rem 0 0;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft, #3d4f63);
+}
+
+.story-spin__roulette-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.85rem, 2vw, 1.35rem);
+  flex: 1;
+  min-height: clamp(340px, 38vw, 420px);
+  padding: 0.25rem 0.15rem 4.25rem;
+}
+
+.story-spin__roulette-wheel {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-spin__roulette-panel {
+  flex: 1 1 11rem;
+  min-width: 0;
+  max-width: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.story-spin__roulette-teaser {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.42;
+  color: var(--ink-soft, #3d4f63);
+}
+
+.fiesta-card--roulette-hero .fiesta-roulette__wheel-wrap {
+  flex-shrink: 0;
+  width: clamp(260px, 28vw, 340px);
+  height: clamp(260px, 28vw, 340px);
+  margin: 0;
+}
+
+.fiesta-card--roulette-hero .fiesta-roulette__wheel {
+  border-width: 5px;
+  box-shadow:
+    0 10px 32px rgba(0, 119, 182, 0.16),
+    inset 0 0 24px rgba(255, 255, 255, 0.22);
+}
+
+.fiesta-card--roulette-hero .fiesta-roulette__center {
+  width: clamp(3.75rem, 5.5vw, 4.75rem);
+  height: clamp(3.75rem, 5.5vw, 4.75rem);
+  font-size: clamp(1.9rem, 3.2vw, 2.35rem);
+  border-width: 4px;
+}
+
+.fiesta-card--roulette-hero .fiesta-roulette__pointer {
+  top: -12px;
+  border-left-width: 14px;
+  border-right-width: 14px;
+  border-top-width: 24px;
+}
+
+.fiesta-card--roulette-hero .fiesta-roulette__result {
+  text-align: left;
+  min-height: 3rem;
+}
+
+.fiesta-card--roulette-hero .fiesta-roulette__result p {
+  font-size: 0.86rem;
+  line-height: 1.38;
+}
+
+.fiesta-card--roulette-hero .fiesta-roulette__result strong {
+  font-size: 1.12rem;
+}
+
+.fiesta-card--roulette-hero .fiesta-spin-btn {
+  width: 100%;
+  margin-top: 0;
+  padding: 0.68rem 1rem;
+  font-size: 0.9rem;
+  min-height: 44px;
+}
+
+.fiesta-card--roulette-hero .fiesta-roulette__menu-link {
+  min-height: 40px;
+  font-size: 0.86rem !important;
+  padding: 0.5rem 0.8rem !important;
+}
+
+/* Home: inline roulette on the page — hide floating FAB */
+body:not(.menu-page) .roulette-widget {
+  display: none !important;
+}
+
+/* ── Dish roulette — compact floating access (menu page) ── */
+.roulette-widget {
+  position: relative;
+  z-index: 210;
+}
+
+.roulette-fab {
+  --roulette-fab-peek: 2.85rem;
+  position: fixed;
+  left: 0;
+  top: 42%;
+  transform: translateY(-50%);
+  z-index: 210;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.45rem 0.7rem 0.45rem 0.55rem;
+  border: 2px solid rgba(255, 23, 68, 0.32);
+  border-left: none;
+  border-radius: 0 100px 100px 0;
+  background: rgba(255, 255, 255, 0.97);
+  color: var(--fiesta-red-deep, #c62828);
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 2px 4px 16px rgba(42, 31, 24, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.roulette-fab__icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.roulette-fab:hover,
+.roulette-fab:focus-visible,
+.roulette-fab[aria-expanded="true"] {
+  transform: translateY(-50%) translateX(0);
+  background: #fff;
+  box-shadow: 3px 6px 20px rgba(255, 23, 68, 0.18);
+  outline: none;
+}
+
+@media (min-width: 769px) and (hover: hover) {
+  .roulette-fab {
+    transform: translateY(-50%) translateX(calc(-100% + var(--roulette-fab-peek)));
+  }
+
+  .roulette-fab:hover,
+  .roulette-fab:focus-visible,
+  .roulette-fab[aria-expanded="true"] {
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+.roulette-panel {
+  position: fixed;
+  left: max(0.75rem, env(safe-area-inset-left));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 260;
+  width: min(300px, calc(100vw - 1.5rem));
+  max-height: min(78vh, 520px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.roulette-panel__inner {
+  position: relative;
+  background: #fff;
+  border: 2px solid rgba(255, 23, 68, 0.22);
+  border-radius: 16px;
+  padding: 0.85rem 0.9rem 0.95rem;
+  box-shadow: 0 14px 40px rgba(42, 31, 24, 0.18);
+}
+
+.roulette-panel__close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.45rem;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  color: #444;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.roulette-panel__close:hover,
+.roulette-panel__close:focus-visible {
+  background: rgba(255, 23, 68, 0.1);
+  color: var(--fiesta-red-deep, #c62828);
+  outline: none;
+}
+
+.roulette-panel__title {
+  margin: 0 1.75rem 0.2rem 0;
+  font-family: var(--font-body, 'Montserrat', 'Segoe UI', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--fiesta-red-deep, #c62828);
+  line-height: 1.25;
+}
+
+.roulette-panel__lead {
+  margin: 0 0 0.65rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #444;
+}
+
+.roulette-panel__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 255;
+  background: rgba(20, 16, 14, 0.35);
+  backdrop-filter: blur(2px);
+}
+
+.fiesta-card--roulette-compact {
+  padding: 0.65rem 0.55rem 0.7rem;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.fiesta-card--roulette-compact::after {
+  display: none;
+}
+
+.fiesta-card--roulette-compact .fiesta-roulette__wheel-wrap {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 0.55rem;
+}
+
+.fiesta-card--roulette-compact .fiesta-roulette__center {
+  width: 28px;
+  height: 28px;
+  font-size: 0.9rem;
+  border-width: 2px;
+}
+
+.fiesta-card--roulette-compact .fiesta-roulette__result {
+  min-height: 3.25rem;
+}
+
+.fiesta-card--roulette-compact .fiesta-roulette__result strong {
+  font-size: 1.1rem;
+}
+
+.fiesta-card--roulette-compact .fiesta-roulette__result p,
+.fiesta-card--roulette-compact .fiesta-roulette__meta {
+  font-size: 0.82rem;
+}
+
+.fiesta-card--roulette-compact .fiesta-roulette__tag {
+  font-size: 0.72rem;
+  margin-bottom: 0.2rem;
+}
+
+.fiesta-card--roulette-compact .fiesta-roulette__menu-link {
+  font-size: 0.88rem !important;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem !important;
+}
+
+.fiesta-card--roulette-compact .fiesta-spin-btn {
+  margin-top: 0.55rem;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.95rem;
+  min-height: 44px;
+}
+
+body.roulette-open .roulette-fab {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.roulette-open .google-review-tab,
+body.roulette-open .feat-concierge {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .roulette-fab {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.45rem 0.75rem 0.45rem 0.6rem;
+    font-size: 0.82rem;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .roulette-panel {
+    left: 50%;
+    top: auto;
+    transform: translateX(-50%);
+    width: min(320px, calc(100% - 1.25rem));
+    max-height: min(62dvh, 420px);
+  }
+
+  .roulette-panel__backdrop {
+    touch-action: none;
+  }
+}
