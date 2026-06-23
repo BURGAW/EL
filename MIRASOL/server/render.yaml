@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: mirasol-clover-pickup
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: CLOVER_MERCHANT_ID
+        value: 0BQTHJMTQ5MP1
+      - key: CLOVER_SANDBOX
+        value: "0"
+      - key: ALLOWED_ORIGINS
+        value: https://burgaw.github.io
+      - key: CLOVER_ECOMM_PRIVATE_TOKEN
+        sync: false
+      - key: CLOVER_PLATFORM_TOKEN
+        sync: false
+      - key: CLOVER_KITCHEN_DEVICE_ID
+        sync: false

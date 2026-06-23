@@ -67,10 +67,10 @@ window.SITE_CONFIG = {
        *   and host Clover's file at /.well-known/apple-developer-merchantid-domain-association
        */
       ecommerce: {
-        enabled: false,
+        enabled: true,
         mode: 'iframe',
         /** Public key from Dashboard → Ecommerce API Tokens → Hosted iFrame + API/SDK */
-        publicKey: '',
+        publicKey: '35d43a78498708c551c0de1a1cba1010',
         /** Production SDK; set sandbox: true only for Clover sandbox merchants */
         sandbox: false,
         applePayDomain: 'burgaw.github.io',
