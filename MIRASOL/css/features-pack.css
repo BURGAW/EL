@@ -95,6 +95,10 @@
   white-space: nowrap;
 }
 
+.feat-ribbon__meal[hidden] {
+  display: none !important;
+}
+
 /* ── Hero caption ── */
 .feat-hero-caption {
   position: absolute;

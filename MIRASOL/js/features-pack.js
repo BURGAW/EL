@@ -94,6 +94,10 @@
     return { open: true, label: 'Kitchen open now', sub: `${minsLeft} min until close` };
   }
 
+  function isTuesday() {
+    return nowInBurgaw().getDay() === 2;
+  }
+
   function getMealPeriod() {
     const h = nowInBurgaw().getHours();
     if (h < 11) return 'Breakfast';
@@ -209,7 +213,15 @@
       if (statusEl) statusEl.textContent = status.label;
       if (dot) dot.classList.toggle('feat-ribbon__dot--closed', !status.open);
       if (clockEl) clockEl.textContent = formatTime(nowInBurgaw()) + ' · Burgaw';
-      if (mealEl) mealEl.textContent = `Now serving: ${getMealPeriod()}`;
+      if (mealEl) {
+        if (isTuesday()) {
+          mealEl.hidden = true;
+          mealEl.textContent = '';
+        } else {
+          mealEl.hidden = false;
+          mealEl.textContent = `Now serving: ${getMealPeriod()}`;
+        }
+      }
       if (specialEl && !specialEl.dataset.wcDone) {
         specialEl.textContent = SPECIALS[specialIdx % SPECIALS.length];
       }
