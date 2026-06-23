@@ -61,6 +61,7 @@ body.cart-open {
   z-index: 220;
   display: flex;
   justify-content: flex-end;
+  overflow: hidden;
 }
 
 body.has-topbar .cart-drawer {
@@ -84,7 +85,10 @@ body.has-topbar .cart-drawer {
   display: flex;
   flex-direction: column;
   width: min(100%, 420px);
+  height: 100%;
   max-height: 100%;
+  min-height: 0;
+  overflow: hidden;
   background: var(--white, #fff);
   box-shadow: -8px 0 32px rgba(0, 0, 0, 0.18);
   animation: cartSlideIn 0.22s ease;
@@ -99,8 +103,22 @@ body.has-topbar .cart-drawer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-shrink: 0;
   padding: 0.85rem 1rem;
   border-bottom: 1px solid var(--cream-dark, #e8dfd0);
+}
+
+#cart-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#cart-view[hidden],
+#cart-checkout-panel[hidden] {
+  display: none !important;
 }
 
 .cart-drawer__title {
@@ -122,12 +140,18 @@ body.has-topbar .cart-drawer {
 
 .cart-drawer__body {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
   padding: 0.85rem 1rem 1rem;
   background: linear-gradient(180deg, var(--oaxaca-cream, #faf6f0) 0%, var(--white, #fff) 18%);
 }
 
 .cart-drawer__foot {
+  flex-shrink: 0;
   padding: 0.85rem 1rem 1.1rem;
   border-top: 1px solid var(--cream-dark);
   background: var(--oaxaca-cream, #faf6f0);
@@ -374,9 +398,16 @@ body.has-topbar .cart-drawer {
 }
 
 #cart-checkout-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
   padding: 0.85rem 1rem 1.25rem;
   overflow-y: auto;
-  flex: 1;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
 }
 
 .cart-checkout__form {
@@ -509,8 +540,9 @@ body.has-topbar .cart-drawer {
 
   .cart-drawer__panel {
     width: 100%;
+    height: 100%;
     max-height: 100%;
-    align-self: flex-end;
+    align-self: stretch;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   }
 }
