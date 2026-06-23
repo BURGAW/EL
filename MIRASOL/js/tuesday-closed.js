@@ -3,8 +3,17 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v5';
+  const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v6';
+  const MODAL_VERSION = '6';
   const isMenu = document.body.classList.contains('menu-page');
+
+  function isPreviewMode() {
+    try {
+      return /[?&]tuesday(=1)?(?=&|$)/i.test(window.location.search);
+    } catch {
+      return false;
+    }
+  }
 
   function easternWeekday() {
     return new Intl.DateTimeFormat('en-US', { timeZone: TZ, weekday: 'short' }).format(new Date());
@@ -35,6 +44,7 @@
   }
 
   function shouldShowTuesdayPopup() {
+    if (isPreviewMode()) return true;
     if (!isTuesdayEastern()) return false;
     try {
       return localStorage.getItem(TUESDAY_POPUP_KEY) !== easternDateKey();
@@ -76,7 +86,8 @@
     const logo = brand.logo || 'assets/images/facebook/logo.jpg?v=brand1';
 
     let modal = document.getElementById('tuesday-closed-modal');
-    if (modal) return modal;
+    if (modal && modal.dataset.version === MODAL_VERSION) return modal;
+    if (modal) modal.remove();
 
     const menuAction = isMenu
       ? `<button type="button" class="btn btn-outline tuesday-closed-modal__btn tuesday-closed-modal__btn--menu" data-tuesday-close>Browse the menu anyway</button>`
@@ -85,6 +96,7 @@
     modal = document.createElement('div');
     modal.id = 'tuesday-closed-modal';
     modal.className = 'tuesday-closed-modal';
+    modal.dataset.version = MODAL_VERSION;
     modal.setAttribute('aria-hidden', 'true');
     modal.innerHTML =
       `<div class="tuesday-closed-modal__backdrop" data-tuesday-close tabindex="-1"></div>` +
