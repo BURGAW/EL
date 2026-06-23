@@ -37,6 +37,16 @@ window.SITE_CONFIG = {
       useStorefront: false,
       openIn: 'tab',
       /**
+       * Kitchen Station Duo only — tickets route here, not the front register.
+       * serial = label on device; deviceId = Clover UUID from Dashboard → Devices (for API print target).
+       */
+      kitchenDevice: {
+        role: 'kitchen',
+        model: 'Station Duo (WiFi)',
+        serial: 'C153UQ22840459',
+        deviceId: '',
+      },
+      /**
        * Future: small server posts cart → Clover Orders API (needs merchant API token on server only).
        * baseUrl: 'https://your-api.example.com'
        */
