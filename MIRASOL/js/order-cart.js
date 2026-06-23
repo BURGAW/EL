@@ -104,16 +104,23 @@
     return t('Small', 'Chico');
   }
 
-  function lookupNameFromMenuData(itemKey, selections) {
+  function menuSections() {
+    return (isEs() ? window.MENU_DATA_ES : window.MENU_DATA) || [];
+  }
+
+  function parseItemKey(itemKey) {
     const match = String(itemKey || '').match(/^(.+)-(\d+)$/);
-    if (!match) return '';
+    if (!match) return null;
+    return { sectionId: match[1], index: parseInt(match[2], 10) };
+  }
 
-    const sectionId = match[1];
-    const index = parseInt(match[2], 10);
-    const sections = isEs() ? window.MENU_DATA_ES : window.MENU_DATA;
-    const item = (sections || []).find((s) => s.id === sectionId)?.items?.[index];
+  function catalogItem(sectionId, index) {
+    if (!sectionId || Number.isNaN(index)) return null;
+    return menuSections().find((s) => s.id === sectionId)?.items?.[index] || null;
+  }
+
+  function formatCatalogName(item, selections) {
     if (!item?.name) return '';
-
     if (item.sizeSmallLarge && item.sizePrices) {
       const pickId = selections?.size || 'Small';
       return `${item.name} (${sizeLabel(pickId)})`;
@@ -121,14 +128,53 @@
     return item.name;
   }
 
+  function lookupNameBySku(sku, selections) {
+    if (!sku) return '';
+    for (const section of menuSections()) {
+      const index = (section.items || []).findIndex((it) => it.sku === sku);
+      if (index >= 0) return formatCatalogName(section.items[index], selections);
+    }
+    return '';
+  }
+
+  function lookupNameFromCatalog(line) {
+    const selections = line?.selections || {};
+    const parsed = parseItemKey(line?.itemKey);
+    const sectionIds = [];
+
+    if (parsed) sectionIds.push(parsed.sectionId);
+    if (line?.sectionId) sectionIds.push(line.sectionId);
+
+    for (const sectionId of sectionIds) {
+      const index = parsed?.index;
+      const name = formatCatalogName(catalogItem(sectionId, index), selections);
+      if (name) return name;
+    }
+
+    const fromSku = lookupNameBySku(line?.sku, selections);
+    if (fromSku) return fromSku;
+
+    const fromMenu = window.MenuOrder?.resolveLineName?.(line?.itemKey, selections, '');
+    if (fromMenu?.trim()) return fromMenu.trim();
+
+    return '';
+  }
+
+  function isWeakStoredName(name, line) {
+    const n = String(name || '').trim();
+    if (!n) return true;
+    if (line?.sku && n === line.sku) return true;
+    if (line?.itemKey && n === line.itemKey) return true;
+    if (/^[a-z][a-z0-9]*(-[a-z0-9]+)+$/i.test(n) && !/\s/.test(n)) return true;
+    return false;
+  }
+
   function resolveLineName(line) {
-    if (line?.name?.trim()) return line.name.trim();
+    const fromCatalog = lookupNameFromCatalog(line);
+    if (fromCatalog) return fromCatalog;
 
-    const fromMenu = window.MenuOrder?.resolveLineName?.(line?.itemKey, line?.selections, '');
-    if (fromMenu) return fromMenu;
-
-    const fromData = lookupNameFromMenuData(line?.itemKey, line?.selections);
-    if (fromData) return fromData;
+    const stored = String(line?.name || '').trim();
+    if (stored && !isWeakStoredName(stored, line)) return stored;
 
     if (line?.sku) return line.sku;
     return t('Menu item', 'Platillo');
@@ -198,6 +244,15 @@
     const existing = items.find((it) => lineSignature(it) === sig);
     if (existing) {
       existing.qty = (existing.qty || 1) + (line.qty || 1);
+      Object.assign(
+        existing,
+        hydrateLine({
+          ...existing,
+          unitPrice: line.unitPrice ?? existing.unitPrice,
+          selections: line.selections || existing.selections,
+          modifierLines: line.modifierLines || existing.modifierLines,
+        })
+      );
     } else {
       items.push(
         hydrateLine({
@@ -370,9 +425,11 @@
       return;
     }
 
+    hydrateAllItems(false);
+
     list.innerHTML = items
       .map((it) => {
-        const name = resolveLineName(it);
+        const name = resolveLineName(it) || t('Menu item', 'Platillo');
         const qtyBadge = it.qty > 1 ? `<span class="cart-line__qty">×${it.qty}</span>` : '';
         const lineTotal = formatMoney(it.unitPrice * it.qty);
         const price =

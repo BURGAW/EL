@@ -596,15 +596,18 @@
   }
 
   function resolveLineName(key, selections, storedName) {
-    if (storedName?.trim()) return storedName.trim();
-
     const entry = itemRegistry[key] || lookupItemByKey(key);
-    if (!entry) return '';
+    if (entry) {
+      const { item, sectionId } = entry;
+      const groups = getItemModifierGroups(sectionId, item);
+      const sel = selections || {};
+      const resolved = hasDualSize(item) ? cartLineName(item, groups, sel) : item.name || '';
+      if (resolved) return resolved;
+    }
 
-    const { item, sectionId } = entry;
-    const groups = getItemModifierGroups(sectionId, item);
-    const sel = selections || {};
-    return hasDualSize(item) ? cartLineName(item, groups, sel) : item.name || '';
+    const stored = String(storedName || '').trim();
+    if (stored) return stored;
+    return '';
   }
 
   window.MenuOrder = {
