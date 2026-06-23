@@ -51,14 +51,34 @@ window.SITE_CONFIG = {
        * baseUrl: 'https://your-api.example.com'
        */
       api: {
+        /** Your secure server URL — set when backend is deployed */
         baseUrl: '',
         submitPath: '/v1/orders/pickup',
+        checkoutPath: '/v1/checkout/pickup',
+      },
+      /**
+       * Clover Ecommerce — Visa, Mastercard, Apple Pay (all via Clover, not stored on this site).
+       * Dashboard → Settings → Ecommerce API Tokens → create token type:
+       *   "Hosted iFrame + API/SDK" (best: pay on MIRASOL checkout)
+       *   or "Hosted Checkout" (redirect to Clover pay page)
+       * Apple Pay: Dashboard → Ecommerce Payments → verify domain burgaw.github.io
+       *   and host Clover's file at /.well-known/apple-developer-merchantid-domain-association
+       */
+      ecommerce: {
+        enabled: false,
+        mode: 'hosted_checkout',
+        publicKey: '',
+        applePayDomain: 'burgaw.github.io',
       },
     },
 
     payment: {
-      provider: 'stripe',
-      publishableKey: '',
+      provider: 'clover',
+      mode: 'hosted_checkout',
+      apiBaseUrl: '',
+      checkoutPath: '/v1/checkout/pickup',
+      methods: ['visa', 'mastercard', 'apple_pay'],
+      payAtPickupFallback: true,
     },
 
     comingSoonLabel: 'Order from our menu',

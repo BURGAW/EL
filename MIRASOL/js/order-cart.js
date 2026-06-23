@@ -67,7 +67,19 @@
       review: t('Review & checkout', 'Revisar y pagar'),
       back: t('Back', 'Atrás'),
       required: t('Please enter your name and phone.', 'Ingrese su nombre y teléfono.'),
+      payNow: t('Pay with card or Apple Pay', 'Pagar con tarjeta o Apple Pay'),
+      payAtPickup: t('Place order — pay at pickup', 'Enviar pedido — pagar al recoger'),
+      processing: t('Opening secure payment…', 'Abriendo pago seguro…'),
+      paymentError: t('Could not start payment. Please call us to order.', 'No se pudo iniciar el pago. Llámenos para ordenar.'),
     };
+  }
+
+  function paymentUi() {
+    return window.CloverCheckout || null;
+  }
+
+  function canPayOnline() {
+    return paymentUi()?.isPaymentLive?.() === true;
   }
 
   function escapeHtml(s) {
@@ -500,7 +512,12 @@
       `<label class="cart-field"><span>${escapeHtml(L.phone)}</span><input type="tel" name="phone" required autocomplete="tel" inputmode="tel"></label>` +
       fulfillmentBlock +
       `<label class="cart-field"><span>${escapeHtml(L.notes)}</span><textarea name="notes" rows="2"></textarea></label>` +
-      `<button type="submit" class="btn btn-primary cart-place-btn">${escapeHtml(L.placeOrder)}</button>` +
+      (paymentUi()?.paymentBadgesHtml?.() || '') +
+      (paymentUi()?.paymentNoteHtml?.() || '') +
+      (canPayOnline()
+        ? `<button type="button" class="btn btn-primary cart-pay-btn" id="cart-pay-clover">${escapeHtml(L.payNow)}</button>` +
+          `<button type="submit" class="btn btn-outline cart-place-btn cart-place-btn--secondary">${escapeHtml(L.payAtPickup)}</button>`
+        : `<button type="submit" class="btn btn-primary cart-place-btn">${escapeHtml(L.placeOrder)}</button>`) +
       `</form>` +
       `<div class="cart-confirm" id="cart-confirm" hidden>` +
       `<p class="cart-confirm__title">${escapeHtml(L.orderPlaced)}</p>` +
@@ -546,16 +563,13 @@
       }
     });
 
-    drawer.addEventListener('submit', (e) => {
-      const form = e.target.closest('#cart-checkout-form');
-      if (!form) return;
-      e.preventDefault();
+    function readCheckoutForm(form) {
       const fd = new FormData(form);
       const name = String(fd.get('name') || '').trim();
       const phone = String(fd.get('phone') || '').trim();
       if (!name || !phone) {
         showToast(labels().required);
-        return;
+        return null;
       }
       const orderInfo = {
         name,
@@ -563,13 +577,42 @@
         fulfillment: fd.get('fulfillment') || 'pickup',
         notes: String(fd.get('notes') || '').trim(),
       };
-      const text = buildOrderText(orderInfo);
+      orderInfo.orderText = buildOrderText(orderInfo);
+      return orderInfo;
+    }
+
+    function showOrderConfirm(form, orderInfo) {
       const confirm = document.getElementById('cart-confirm');
       const confirmText = document.getElementById('cart-confirm-text');
-      if (confirmText) confirmText.textContent = text;
+      if (confirmText) confirmText.textContent = orderInfo.orderText;
       form.hidden = true;
       confirm?.removeAttribute('hidden');
-      window._lastOrderText = text;
+      window._lastOrderText = orderInfo.orderText;
+    }
+
+    drawer.addEventListener('click', async (e) => {
+      if (e.target.id !== 'cart-pay-clover') return;
+      const form = document.getElementById('cart-checkout-form');
+      if (!form || !canPayOnline()) return;
+      const orderInfo = readCheckoutForm(form);
+      if (!orderInfo) return;
+      const payBtn = e.target;
+      payBtn.disabled = true;
+      showToast(labels().processing);
+      const result = await paymentUi().startCheckout(orderInfo, getSnapshot());
+      payBtn.disabled = false;
+      if (!result?.ok && !result?.redirect) {
+        showToast(labels().paymentError);
+      }
+    });
+
+    drawer.addEventListener('submit', (e) => {
+      const form = e.target.closest('#cart-checkout-form');
+      if (!form) return;
+      e.preventDefault();
+      const orderInfo = readCheckoutForm(form);
+      if (!orderInfo) return;
+      showOrderConfirm(form, orderInfo);
     });
 
     drawer.addEventListener('click', (e) => {

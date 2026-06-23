@@ -374,6 +374,97 @@ body.has-topbar .cart-drawer {
   padding: 0.35rem;
 }
 
+.cart-pay-methods {
+  margin: 0 0 0.85rem;
+  padding: 0.7rem 0.75rem;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid rgba(15, 28, 46, 0.08);
+  text-align: center;
+}
+
+.cart-pay-methods__label {
+  margin: 0 0 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft, #3d4f63);
+}
+
+.cart-pay-methods__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 0 0 0.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cart-pay-methods__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.1rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid rgba(15, 28, 46, 0.1);
+  box-shadow: 0 1px 4px rgba(15, 28, 46, 0.06);
+}
+
+.cart-pay-methods__icon {
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.cart-pay-methods__item--visa .cart-pay-methods__icon {
+  color: #1a1f71;
+  font-size: 0.72rem;
+}
+
+.cart-pay-methods__item--mc .cart-pay-methods__icon {
+  color: #eb001b;
+  font-size: 0.7rem;
+}
+
+.cart-pay-methods__item--apple {
+  background: #000;
+  border-color: #000;
+}
+
+.cart-pay-methods__icon--apple {
+  color: #fff;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.cart-pay-methods__secure {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--ink-soft, #3d4f63);
+}
+
+.cart-pay-note {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ink-soft, #3d4f63);
+  text-align: center;
+}
+
+.cart-pay-btn {
+  margin-bottom: 0.45rem;
+}
+
+.cart-place-btn--secondary {
+  min-height: 44px;
+}
+
 .cart-checkout__pickup-only {
   margin: 0 0 0.85rem;
   padding: 0.55rem 0.75rem;
