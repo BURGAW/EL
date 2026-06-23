@@ -3,15 +3,17 @@
 .tuesday-closed-modal {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 10050;
   display: none;
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  pointer-events: none;
 }
 
 .tuesday-closed-modal.is-open {
   display: flex;
+  pointer-events: auto;
 }
 
 .tuesday-closed-modal.is-open .tuesday-closed-modal__backdrop {
@@ -27,7 +29,7 @@
   inset: 0;
   background: rgba(8, 20, 38, 0.68);
   backdrop-filter: blur(8px);
-  opacity: 0;
+  opacity: 1;
 }
 
 .tuesday-closed-modal__dialog {
@@ -44,7 +46,12 @@
     0 28px 70px rgba(15, 28, 46, 0.32),
     0 0 0 1px rgba(255, 255, 255, 0.15) inset,
     0 0 80px rgba(255, 109, 0, 0.12);
-  opacity: 0;
+  opacity: 1;
+}
+
+.tuesday-closed-modal.is-open .tuesday-closed-modal__dialog,
+.tuesday-closed-modal.is-open .tuesday-closed-modal__backdrop {
+  opacity: 1;
 }
 
 /* ── Hero ── */

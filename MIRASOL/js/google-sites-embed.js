@@ -64,7 +64,10 @@
     body.style.overflowY = 'auto';
     body.style.height = 'auto';
     body.style.minHeight = '0';
-    body.classList.remove('nav-open', 'roulette-open', 'modal-open');
+    body.classList.remove('nav-open', 'roulette-open');
+    if (!document.getElementById('tuesday-closed-modal')?.classList.contains('is-open')) {
+      body.classList.remove('modal-open', 'tuesday-modal-open');
+    }
     body.style.overflow = '';
   }
 

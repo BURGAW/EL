@@ -1,18 +1,13 @@
 /**
- * Tuesday closed notice — home page only
+ * Tuesday closed notice — home + menu
  */
 (function () {
-  if (document.body.classList.contains('menu-page')) return;
-
   const TZ = 'America/New_York';
-  const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-home-v2';
-
-  function easternNow() {
-    return new Date();
-  }
+  const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v3';
+  const isMenu = document.body.classList.contains('menu-page');
 
   function easternWeekday() {
-    return new Intl.DateTimeFormat('en-US', { timeZone: TZ, weekday: 'short' }).format(easternNow());
+    return new Intl.DateTimeFormat('en-US', { timeZone: TZ, weekday: 'short' }).format(new Date());
   }
 
   function easternDateKey() {
@@ -21,12 +16,12 @@
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
-    }).formatToParts(easternNow());
+    }).formatToParts(new Date());
     const get = (type) => parts.find((p) => p.type === type)?.value || '';
     return `${get('year')}-${get('month')}-${get('day')}`;
   }
 
-  function isTuesdayLocal() {
+  function isTuesdayEastern() {
     return easternWeekday() === 'Tue';
   }
 
@@ -40,7 +35,7 @@
   }
 
   function shouldShowTuesdayPopup() {
-    if (!isTuesdayLocal()) return false;
+    if (!isTuesdayEastern()) return false;
     try {
       return localStorage.getItem(TUESDAY_POPUP_KEY) !== easternDateKey();
     } catch {
@@ -58,15 +53,17 @@
     if (!modal || !modal.classList.contains('is-open')) return;
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('tuesday-modal-open');
     document.body.classList.remove('modal-open');
   }
 
   function openTuesdayPopup(modal) {
-    if (!modal) return;
+    if (!modal || modal.classList.contains('is-open')) return;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('tuesday-modal-open');
     document.body.classList.add('modal-open');
-    modal.querySelector('.tuesday-closed-modal__close')?.focus();
+    modal.querySelector('.tuesday-closed-modal__close')?.focus({ preventScroll: true });
   }
 
   function buildTuesdayPopup() {
@@ -79,6 +76,10 @@
 
     let modal = document.getElementById('tuesday-closed-modal');
     if (modal) return modal;
+
+    const menuAction = isMenu
+      ? `<button type="button" class="btn btn-outline tuesday-closed-modal__btn tuesday-closed-modal__btn--menu" data-tuesday-close>Browse the menu anyway</button>`
+      : `<a href="menu.html" class="btn btn-outline tuesday-closed-modal__btn tuesday-closed-modal__btn--menu">Browse the menu anyway</a>`;
 
     modal = document.createElement('div');
     modal.id = 'tuesday-closed-modal';
@@ -138,7 +139,7 @@
       `Pro tip: peek the menu now, dream about birria, place your order Wednesday. 🌶️` +
       `</p>` +
       `<div class="tuesday-closed-modal__actions">` +
-      `<a href="menu.html" class="btn btn-outline tuesday-closed-modal__btn tuesday-closed-modal__btn--menu">Browse the menu anyway</a>` +
+      menuAction +
       `<button type="button" class="btn btn-primary tuesday-closed-modal__btn tuesday-closed-modal__btn--primary" data-tuesday-close>See you Wednesday! 👋</button>` +
       `</div></div></div>`;
     document.body.appendChild(modal);
@@ -164,19 +165,27 @@
     return modal;
   }
 
-  function initTuesdayClosedPopup() {
+  let openTimer = null;
+
+  function scheduleTuesdayPopup() {
     if (!shouldShowTuesdayPopup()) return;
     const modal = buildTuesdayPopup();
-    window.setTimeout(() => openTuesdayPopup(modal), 800);
+    if (openTimer) window.clearTimeout(openTimer);
+    openTimer = window.setTimeout(() => openTuesdayPopup(modal), 600);
   }
 
   function boot() {
-    initTuesdayClosedPopup();
+    if (!isTuesdayEastern()) return;
+    scheduleTuesdayPopup();
   }
 
-  if (document.readyState === 'complete') {
-    boot();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot, { once: true });
   } else {
-    window.addEventListener('load', boot, { once: true });
+    boot();
   }
+
+  window.addEventListener('load', () => {
+    window.setTimeout(scheduleTuesdayPopup, 400);
+  }, { once: true });
 })();
