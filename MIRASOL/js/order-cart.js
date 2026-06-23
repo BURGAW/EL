@@ -97,6 +97,25 @@
     return t(`Pick up in ${minutes} min`, `Recoger en ${minutes} min`);
   }
 
+  function resolveLineDesc(line) {
+    if (line?.desc) return line.desc;
+
+    const entry = window.MenuOrder?.getEntry?.(line?.itemKey);
+    if (entry?.item?.desc) return entry.item.desc;
+
+    const key = line?.itemKey;
+    if (!key) return '';
+
+    const match = String(key).match(/^(.+)-(\d+)$/);
+    if (!match) return '';
+
+    const sectionId = match[1];
+    const index = parseInt(match[2], 10);
+    const sections = isEs() ? window.MENU_DATA_ES : window.MENU_DATA;
+    const section = (sections || []).find((s) => s.id === sectionId);
+    return section?.items?.[index]?.desc || '';
+  }
+
   function load() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -186,7 +205,8 @@
     lines.push('—'.repeat(28));
     items.forEach((it) => {
       let row = `${it.qty}x ${it.name} — ${formatMoney(it.unitPrice * it.qty)}`;
-      if (it.desc) row += `\n   ${it.desc}`;
+      const desc = resolveLineDesc(it);
+      if (desc) row += `\n   ${desc}`;
       if (it.modifierLines?.length) {
         it.modifierLines.forEach((m) => {
           row += `\n   · ${m}`;
@@ -312,8 +332,9 @@
 
     list.innerHTML = items
       .map((it) => {
-        const desc = it.desc ?
-          `<p class="cart-line__desc">${escapeHtml(it.desc)}</p>`
+        const descText = resolveLineDesc(it);
+        const desc = descText ?
+          `<p class="cart-line__desc">${escapeHtml(descText)}</p>`
         : '';
         const mods =
           it.modifierLines?.length ?
