@@ -584,8 +584,32 @@
     });
   }
 
+  function lookupItemByKey(key) {
+    const match = String(key || '').match(/^(.+)-(\d+)$/);
+    if (!match) return null;
+    const sectionId = match[1];
+    const index = parseInt(match[2], 10);
+    const sections = getSections() || [];
+    const section = sections.find((s) => s.id === sectionId);
+    const item = section?.items?.[index];
+    return item ? { sectionId, item, index } : null;
+  }
+
+  function resolveLineName(key, selections, storedName) {
+    if (storedName?.trim()) return storedName.trim();
+
+    const entry = itemRegistry[key] || lookupItemByKey(key);
+    if (!entry) return '';
+
+    const { item, sectionId } = entry;
+    const groups = getItemModifierGroups(sectionId, item);
+    const sel = selections || {};
+    return hasDualSize(item) ? cartLineName(item, groups, sel) : item.name || '';
+  }
+
   window.MenuOrder = {
     buildLineItem,
+    resolveLineName,
     getModalState: () => ({ ...modalState }),
     getEntry: (key) => itemRegistry[key] || null,
     customizationEnabled,

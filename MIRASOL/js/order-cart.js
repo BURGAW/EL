@@ -38,6 +38,7 @@
       total: t('Total', 'Total'),
       qty: t('Qty', 'Cant'),
       remove: t('Remove', 'Quitar'),
+      each: t('ea', 'c/u'),
       addToCart: t('Add to Cart', 'Agregar al carrito'),
       added: t('Added to cart', 'Agregado al carrito'),
       continueShopping: t('Keep ordering', 'Seguir ordenando'),
@@ -97,11 +98,25 @@
     return t(`Pick up in ${minutes} min`, `Recoger en ${minutes} min`);
   }
 
+  function resolveLineName(line) {
+    const fromMenu = window.MenuOrder?.resolveLineName?.(line?.itemKey, line?.selections, line?.name);
+    if (fromMenu) return fromMenu;
+    if (line?.name?.trim()) return line.name.trim();
+    if (line?.sku) return line.sku;
+    return t('Menu item', 'Platillo');
+  }
+
+  function hydrateLine(line) {
+    const name = resolveLineName(line);
+    return name && name !== line.name ? { ...line, name } : line;
+  }
+
   function load() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       items = raw ? JSON.parse(raw) : [];
       if (!Array.isArray(items)) items = [];
+      items = items.map(hydrateLine);
     } catch {
       items = [];
     }
@@ -145,11 +160,13 @@
     if (existing) {
       existing.qty = (existing.qty || 1) + (line.qty || 1);
     } else {
-      items.push({
-        ...line,
-        id: line.id || `li-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-        qty: line.qty || 1,
-      });
+      items.push(
+        hydrateLine({
+          ...line,
+          id: line.id || `li-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+          qty: line.qty || 1,
+        })
+      );
     }
     save();
     showToast(labels().added);
@@ -189,7 +206,8 @@
     lines.push(`MIRASOL — ${L.yourOrder}`);
     lines.push('—'.repeat(28));
     items.forEach((it) => {
-      let row = `${it.qty}x ${it.name} — ${formatMoney(it.unitPrice * it.qty)}`;
+      const name = resolveLineName(it);
+      let row = `${it.qty}x ${name} — ${formatMoney(it.unitPrice * it.qty)}`;
       if (it.modifierLines?.length) {
         it.modifierLines.forEach((m) => {
           row += `\n   · ${m}`;
@@ -315,20 +333,30 @@
 
     list.innerHTML = items
       .map((it) => {
+        const name = resolveLineName(it);
+        const qtyBadge = it.qty > 1 ? `<span class="cart-line__qty">×${it.qty}</span>` : '';
+        const lineTotal = formatMoney(it.unitPrice * it.qty);
+        const price =
+          it.qty > 1 ?
+            `<span class="cart-line__price-total">${escapeHtml(lineTotal)}</span>` +
+            `<span class="cart-line__price-each">${escapeHtml(formatMoney(it.unitPrice))} ${escapeHtml(L.each)}</span>`
+          : `<span class="cart-line__price-total">${escapeHtml(formatMoney(it.unitPrice))}</span>`;
+
         return (
           `<article class="cart-line" data-line-id="${escapeHtml(it.id)}">` +
-          `<div class="cart-line__top">` +
-          `<span class="cart-line__name">${escapeHtml(it.name)}</span>` +
-          `<span class="cart-line__price">${escapeHtml(formatMoney(it.unitPrice))}</span>` +
+          `<div class="cart-line__card">` +
+          `<div class="cart-line__head">` +
+          `<p class="cart-line__name">${escapeHtml(name)}${qtyBadge}</p>` +
+          `<div class="cart-line__price">${price}</div>` +
           `</div>` +
-          `<div class="cart-line__controls">` +
+          `<div class="cart-line__foot">` +
           `<div class="qty-stepper qty-stepper--sm">` +
           `<button type="button" class="qty-stepper__btn" data-cart-qty-minus="${escapeHtml(it.id)}" aria-label="Decrease">−</button>` +
           `<span class="qty-stepper__val">${it.qty}</span>` +
           `<button type="button" class="qty-stepper__btn" data-cart-qty-plus="${escapeHtml(it.id)}" aria-label="Increase">+</button>` +
           `</div>` +
           `<button type="button" class="cart-line__remove" data-cart-remove="${escapeHtml(it.id)}">${escapeHtml(L.remove)}</button>` +
-          `</div></article>`
+          `</div></div></article>`
         );
       })
       .join('');
