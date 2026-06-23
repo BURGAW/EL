@@ -1,4 +1,4 @@
-/* Tuesday closed popup — clean, professional notice */
+/* Tuesday closed popup — warm coastal, friendly (not corporate) */
 
 .tuesday-closed-modal {
   position: fixed;
@@ -17,170 +17,221 @@
 }
 
 .tuesday-closed-modal.is-open .tuesday-closed-modal__backdrop {
-  animation: tuesdayFadeIn 0.28s ease forwards;
+  animation: tuesdayFadeIn 0.3s ease forwards;
 }
 
 .tuesday-closed-modal.is-open .tuesday-closed-modal__dialog {
-  animation: tuesdaySlideIn 0.32s ease forwards;
+  animation: tuesdayPopIn 0.45s cubic-bezier(0.22, 1.2, 0.36, 1) forwards;
 }
 
 .tuesday-closed-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(15, 20, 28, 0.55);
+  background: rgba(12, 18, 32, 0.62);
   backdrop-filter: blur(6px);
 }
 
 .tuesday-closed-modal__dialog {
   position: relative;
   z-index: 1;
-  width: min(100%, 420px);
-  max-height: min(90vh, 560px);
+  width: min(100%, 440px);
+  max-height: min(92vh, 600px);
   overflow: hidden;
   overflow-y: auto;
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(15, 28, 46, 0.22);
+  border-radius: 22px;
+  box-shadow:
+    0 24px 60px rgba(15, 28, 46, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset;
 }
 
-/* ── Header ── */
+/* ── Hero ── */
 .tuesday-closed-modal__hero {
   position: relative;
-  padding: 1.35rem 1.25rem 1.15rem;
+  padding: 1.5rem 1.25rem 1.2rem;
   text-align: center;
   color: #fff;
-  background: linear-gradient(160deg, #1c1412 0%, #2a3f4f 48%, #1e4d3a 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(ellipse 100% 70% at 50% -10%, rgba(255, 255, 255, 0.18) 0%, transparent 55%),
+    linear-gradient(145deg, #0077b6 0%, #e63946 52%, #ff6d00 100%);
+  overflow: hidden;
+}
+
+.tuesday-closed-modal__hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='1.5' fill='%23fff' fill-opacity='0.12'/%3E%3Ccircle cx='32' cy='22' r='1' fill='%23fff' fill-opacity='0.1'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.tuesday-closed-modal__hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .tuesday-closed-modal__close {
   position: absolute;
   top: 0.55rem;
   right: 0.55rem;
-  z-index: 2;
-  width: 2rem;
-  height: 2rem;
+  z-index: 3;
+  width: 2.1rem;
+  height: 2.1rem;
   border: none;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
   color: #fff;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   line-height: 1;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .tuesday-closed-modal__close:hover,
 .tuesday-closed-modal__close:focus-visible {
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.32);
   outline: none;
+  transform: scale(1.06);
 }
 
 .tuesday-closed-modal__badge {
-  display: inline-block;
-  margin-bottom: 0.55rem;
-  padding: 0.28rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.6rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 100px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   font-family: var(--font-body, 'Montserrat', sans-serif);
-  font-size: 0.65rem;
-  font-weight: 700;
+  font-size: 0.67rem;
+  font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.tuesday-closed-modal__brand {
-  margin: 0 0 0.45rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
+.tuesday-closed-modal__badge-dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: #ffb703;
+  animation: tuesdayPulse 1.8s ease-in-out infinite;
+}
+
+.tuesday-closed-modal__icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.15));
+  animation: tuesdayIconBob 3s ease-in-out infinite;
 }
 
 .tuesday-closed-modal__title {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.3rem;
   font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(1.35rem, 5vw, 1.65rem);
+  font-size: clamp(1.45rem, 5.5vw, 1.85rem);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.12;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
 }
 
 .tuesday-closed-modal__tagline {
   margin: 0;
-  font-family: var(--font-body, 'Montserrat', sans-serif);
-  font-size: 0.84rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.45;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.1rem, 4.5vw, 1.35rem);
+  font-weight: 600;
+  color: #fff8e7;
+  line-height: 1.25;
 }
 
 /* ── Body ── */
 .tuesday-closed-modal__body {
-  padding: 1.1rem 1.2rem 1.2rem;
+  padding: 1.1rem 1.15rem 1.2rem;
   text-align: center;
-  background: #fff;
+  background: linear-gradient(180deg, #faf6f0 0%, #fff 35%);
 }
 
 .tuesday-closed-modal__lead {
-  margin: 0 0 0.75rem;
-  font-size: 0.88rem;
+  margin: 0 0 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.55;
   color: var(--ink-soft, #3d4f63);
   text-align: left;
 }
 
 .tuesday-closed-modal__lead strong {
-  color: var(--ink, #0f1c2e);
+  color: var(--fire-red-deep, #d50000);
   font-weight: 700;
 }
 
-.tuesday-closed-modal__reopen {
-  margin: 0 0 0.9rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  background: rgba(30, 107, 66, 0.08);
-  border: 1px solid rgba(30, 107, 66, 0.18);
-  font-size: 0.78rem;
+.tuesday-closed-modal__countdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.95rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 100px;
+  background: rgba(0, 119, 182, 0.08);
+  border: 1px dashed rgba(0, 119, 182, 0.25);
+  font-size: 0.8rem;
   font-weight: 700;
-  color: #1e6b42;
-  letter-spacing: 0.02em;
+  color: var(--coast-sea, #0077b6);
+}
+
+.tuesday-closed-modal__countdown-icon {
+  font-size: 1rem;
 }
 
 .tuesday-closed-modal__cards {
   display: grid;
-  gap: 0.5rem;
-  margin-bottom: 0.85rem;
+  gap: 0.55rem;
+  margin-bottom: 0.95rem;
   text-align: left;
 }
 
 .tuesday-closed-modal__card {
-  padding: 0.7rem 0.8rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.65rem;
+  align-items: start;
+  padding: 0.75rem 0.85rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(0, 119, 182, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 119, 182, 0.06);
+}
+
+.tuesday-closed-modal__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
   border-radius: 10px;
-  background: #f8f9fb;
-  border: 1px solid rgba(15, 28, 46, 0.08);
+  background: linear-gradient(145deg, rgba(255, 183, 3, 0.2), rgba(255, 23, 68, 0.1));
+  font-size: 1.1rem;
+  line-height: 1;
 }
 
 .tuesday-closed-modal__card-label {
-  margin: 0 0 0.2rem;
-  font-size: 0.65rem;
-  font-weight: 700;
+  margin: 0 0 0.15rem;
+  font-size: 0.67rem;
+  font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-soft, #5a6b7d);
+  color: var(--coast-sea, #0077b6);
 }
 
 .tuesday-closed-modal__card-text {
   margin: 0;
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   line-height: 1.5;
   color: var(--ink, #0f1c2e);
 }
 
 .tuesday-closed-modal__card-text a {
-  color: var(--oaxaca-red, #a81e2c);
-  font-weight: 600;
+  color: var(--fire-red-deep, #d50000);
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -190,42 +241,48 @@
 
 .tuesday-closed-modal__closed-pill {
   display: inline-block;
-  margin-top: 0.35rem;
-  padding: 0.12rem 0.5rem;
+  margin-top: 0.3rem;
+  padding: 0.14rem 0.5rem;
   border-radius: 100px;
-  background: rgba(168, 30, 44, 0.08);
-  color: var(--oaxaca-red, #a81e2c);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  background: rgba(255, 23, 68, 0.1);
+  color: var(--fire-red-deep, #d50000);
+  font-size: 0.7rem;
+  font-weight: 800;
 }
 
-.tuesday-closed-modal__note {
+.tuesday-closed-modal__fun-fact {
   margin: 0 0 1rem;
-  font-size: 0.78rem;
-  line-height: 1.45;
-  color: var(--ink-soft, #5a6b7d);
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff8e7 0%, #fff3d6 100%);
+  border: 1px solid rgba(255, 183, 3, 0.3);
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #8b5a00;
 }
 
 .tuesday-closed-modal__actions {
   display: grid;
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 
 .tuesday-closed-modal__btn {
   width: 100%;
-  min-height: 44px;
-  border-radius: 10px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.01em;
-}
-
-.tuesday-closed-modal__btn--menu {
-  min-height: 42px;
+  min-height: 48px;
+  border-radius: 100px !important;
+  font-weight: 700 !important;
 }
 
 .tuesday-closed-modal__btn--primary {
-  box-shadow: none !important;
+  box-shadow: 0 4px 16px rgba(255, 23, 68, 0.3) !important;
+}
+
+.tuesday-closed-modal__btn--menu {
+  min-height: 44px;
+  border-style: dashed !important;
+  border-width: 2px !important;
 }
 
 @keyframes tuesdayFadeIn {
@@ -233,20 +290,32 @@
   to { opacity: 1; }
 }
 
-@keyframes tuesdaySlideIn {
-  from {
+@keyframes tuesdayPopIn {
+  0% {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(20px) scale(0.96);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
+}
+
+@keyframes tuesdayPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.65; transform: scale(0.88); }
+}
+
+@keyframes tuesdayIconBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .tuesday-closed-modal.is-open .tuesday-closed-modal__backdrop,
-  .tuesday-closed-modal.is-open .tuesday-closed-modal__dialog {
+  .tuesday-closed-modal.is-open .tuesday-closed-modal__dialog,
+  .tuesday-closed-modal__icon,
+  .tuesday-closed-modal__badge-dot {
     animation: none !important;
   }
 }
@@ -260,7 +329,7 @@
   .tuesday-closed-modal__dialog {
     width: 100%;
     max-width: none;
-    border-radius: 16px 16px 0 0;
+    border-radius: 22px 22px 0 0;
   }
 
   .tuesday-closed-modal__body {
