@@ -98,17 +98,56 @@
     return t(`Pick up in ${minutes} min`, `Recoger en ${minutes} min`);
   }
 
+  function sizeLabel(pickId) {
+    if (pickId === 'Large') return t('Large', 'Grande');
+    if (pickId === 'Both') return t('Both', 'Ambos');
+    return t('Small', 'Chico');
+  }
+
+  function lookupNameFromMenuData(itemKey, selections) {
+    const match = String(itemKey || '').match(/^(.+)-(\d+)$/);
+    if (!match) return '';
+
+    const sectionId = match[1];
+    const index = parseInt(match[2], 10);
+    const sections = isEs() ? window.MENU_DATA_ES : window.MENU_DATA;
+    const item = (sections || []).find((s) => s.id === sectionId)?.items?.[index];
+    if (!item?.name) return '';
+
+    if (item.sizeSmallLarge && item.sizePrices) {
+      const pickId = selections?.size || 'Small';
+      return `${item.name} (${sizeLabel(pickId)})`;
+    }
+    return item.name;
+  }
+
   function resolveLineName(line) {
-    const fromMenu = window.MenuOrder?.resolveLineName?.(line?.itemKey, line?.selections, line?.name);
-    if (fromMenu) return fromMenu;
     if (line?.name?.trim()) return line.name.trim();
+
+    const fromMenu = window.MenuOrder?.resolveLineName?.(line?.itemKey, line?.selections, '');
+    if (fromMenu) return fromMenu;
+
+    const fromData = lookupNameFromMenuData(line?.itemKey, line?.selections);
+    if (fromData) return fromData;
+
     if (line?.sku) return line.sku;
     return t('Menu item', 'Platillo');
   }
 
   function hydrateLine(line) {
     const name = resolveLineName(line);
-    return name && name !== line.name ? { ...line, name } : line;
+    return name ? { ...line, name } : line;
+  }
+
+  function hydrateAllItems(persist) {
+    const next = items.map(hydrateLine);
+    const changed = next.some((it, i) => it.name !== items[i]?.name);
+    items = next;
+    if (changed && persist) save();
+    else if (changed) {
+      updateFab();
+      renderDrawer();
+    }
   }
 
   function load() {
@@ -552,7 +591,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', init);
+  window.addEventListener('elmirasol:menu-rendered', () => hydrateAllItems(true));
   window.addEventListener('elmirasol:lang-change', () => {
+    hydrateAllItems(false);
     renderDrawer();
     updateFab();
   });
