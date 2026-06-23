@@ -4,7 +4,7 @@
 (function () {
   const TZ = 'America/New_York';
   const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v10';
-  const MODAL_VERSION = '11';
+  const MODAL_VERSION = '12';
   const isMenu = document.body.classList.contains('menu-page');
 
   function isPreviewMode() {
