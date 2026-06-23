@@ -73,13 +73,9 @@
     const g = getGoogle();
     const rating = g.rating || '4.8';
     const count = g.reviewCount ? `${g.reviewCount} Google reviews` : 'Google reviews';
-    const shown = getReviews().length;
-    const url = g.reviewUrl || '#';
     strip.innerHTML =
       `<p class="menu-reviews-strip__line">` +
-      `<strong>${rating}</strong> ★ · ${count} · ` +
-      `${shown} shown (${getMinRating()}★+) · ` +
-      `<a href="${url}" class="menu-reviews-strip__link" target="_blank" rel="noopener noreferrer">Read on Google</a>` +
+      `<strong>${rating}</strong> ★ · ${count}` +
       `</p>`;
   }
 
