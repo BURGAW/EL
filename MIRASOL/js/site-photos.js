@@ -231,27 +231,31 @@
     return hit ? { src: hit.image, alt: itemName } : null;
   }
 
+  function photoResult(photo, fallbackAlt) {
+    if (!photo?.src) return null;
+    const out = { src: photo.src, alt: photo.alt || fallbackAlt || '' };
+    if (photo.crop) out.crop = photo.crop;
+    return out;
+  }
+
   /** Photo for item detail modal — verified matches only; otherwise blank */
   function resolveItemPhoto(sectionId, item) {
     if (!item) return null;
     if (noPhotoSections.has(sectionId)) return null;
-    if (item.image) return { src: item.image, alt: item.name || '' };
+    if (item.image) return photoResult({ src: item.image, alt: item.name }, item.name);
 
     if (item.sku && skuPhotos[item.sku]?.src) {
-      const skuPhoto = skuPhotos[item.sku];
-      return { src: skuPhoto.src, alt: skuPhoto.alt || item.name || '' };
+      return photoResult(skuPhotos[item.sku], item.name);
     }
 
     const mapped = itemPhotos[photoKey(sectionId, item.name)];
-    if (mapped?.src) return { src: mapped.src, alt: mapped.alt || item.name || '' };
+    if (mapped?.src) return photoResult(mapped, item.name);
 
     const featured = lookupFeaturedPhoto(sectionId, item.name);
-    if (featured?.src) return featured;
+    if (featured?.src) return photoResult(featured, item.name);
 
     const sectionPhoto = sectionDefaultPhotos[sectionId];
-    if (sectionPhoto?.src) {
-      return { src: sectionPhoto.src, alt: item.name || sectionPhoto.alt || '' };
-    }
+    if (sectionPhoto?.src) return photoResult(sectionPhoto, item.name || sectionPhoto.alt);
 
     return null;
   }
