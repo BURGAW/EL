@@ -1,36 +1,38 @@
-# Push MIRASOL to GitHub and enable Pages.
-# Run after: gh auth login
+# Sync MIRASOL site files and push to GitHub Pages (burgaw.github.io/EL/MIRASOL/)
 $ErrorActionPreference = 'Stop'
 $env:Path = "C:\Program Files\Git\cmd;C:\Program Files\GitHub CLI;" + $env:Path
-Set-Location $PSScriptRoot
 
-$repoName = 'EL'
-$status = gh auth status 2>&1
-if ($LASTEXITCODE -ne 0) {
-  Write-Host "First run: gh auth login"
-  gh auth login
+$src = 'C:\Users\gregs\MIRASOL'
+$repo = 'C:\Users\gregs\EL'
+$dst = Join-Path $repo 'MIRASOL'
+
+if (-not (Test-Path $src)) {
+  Write-Error "Source not found: $src"
+}
+if (-not (Test-Path $repo)) {
+  Write-Error "Deploy repo not found: $repo"
 }
 
-$user = gh api user -q .login
-$exists = gh repo view "$user/$repoName" 2>$null
-if (-not $exists) {
-  gh repo create $repoName --public --source . --remote origin --push
+Write-Host 'MIRASOL publish - BURGAW/EL' -ForegroundColor Cyan
+Write-Host 'Copying site files...' -ForegroundColor Gray
+
+robocopy $src $dst /MIR /XD .git /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
+if ($LASTEXITCODE -ge 8) { throw "robocopy failed with exit code $LASTEXITCODE" }
+
+Set-Location $repo
+$status = git status --porcelain MIRASOL
+if ($status) {
+  git add MIRASOL
+  git commit -m 'Update MIRASOL site'
+  Write-Host 'Committed MIRASOL updates.' -ForegroundColor Green
 } else {
-  if (-not (git remote get-url origin 2>$null)) {
-    git remote add origin "https://github.com/$user/$repoName.git"
-  }
-  git push -u origin main
+  Write-Host 'No MIRASOL file changes to commit.' -ForegroundColor Gray
 }
 
-gh api -X POST "repos/$user/$repoName/pages" `
-  -f "build_type=legacy" `
-  -f "source[branch]=main" `
-  -f "source[path]=/" 2>$null
+Write-Host 'Pushing to GitHub...' -ForegroundColor Cyan
+git push origin main
 
-Write-Host ""
-Write-Host "Done. Enable Pages if needed:"
-Write-Host "  https://github.com/$(gh api user -q .login)/$repoName/settings/pages"
-Write-Host "  Branch: main, folder: / (root)"
-Write-Host ""
-Write-Host "Site URL (after 1-2 min):"
-Write-Host "  https://$(gh api user -q .login).github.io/$repoName/"
+Write-Host ''
+Write-Host 'Done. Live in 1-2 minutes:' -ForegroundColor Green
+Write-Host '  https://burgaw.github.io/EL/MIRASOL/'
+Write-Host ''
