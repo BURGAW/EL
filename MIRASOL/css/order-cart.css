@@ -457,6 +457,81 @@ body.has-topbar .cart-drawer {
   text-align: center;
 }
 
+/* Clover Hosted iFrame — card fields in checkout drawer */
+.clover-iframe {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.75rem;
+  border: 1px solid var(--cream-dark);
+  border-radius: var(--radius-sm, 8px);
+  background: var(--oaxaca-cream, #faf6ef);
+}
+
+.clover-iframe__title {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.clover-iframe__status {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  min-height: 1rem;
+}
+
+.clover-iframe__status--error {
+  color: #b42318;
+}
+
+.clover-iframe__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.clover-iframe__row {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.clover-iframe__field--half {
+  flex: 1;
+  min-width: 0;
+}
+
+.clover-iframe__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.clover-iframe__mount {
+  min-height: 42px;
+  border-radius: var(--radius-sm, 8px);
+  background: var(--white);
+}
+
+.clover-iframe__error,
+.clover-iframe__response {
+  font-size: 0.72rem;
+  color: #b42318;
+  min-height: 0.9rem;
+}
+
+.clover-iframe__apple {
+  min-height: 44px;
+  margin-top: 0.15rem;
+}
+
+.clover-iframe__apple iframe {
+  width: 100% !important;
+  min-height: 40px;
+}
+
 .cart-pay-btn {
   margin-bottom: 0.45rem;
 }

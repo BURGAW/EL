@@ -54,7 +54,9 @@ window.SITE_CONFIG = {
         /** Your secure server URL — set when backend is deployed */
         baseUrl: '',
         submitPath: '/v1/orders/pickup',
+        /** iFrame flow: POST clv_ token + cart → charge + kitchen ticket */
         checkoutPath: '/v1/checkout/pickup',
+        chargePath: '/v1/charges/pickup',
       },
       /**
        * Clover Ecommerce — Visa, Mastercard, Apple Pay (all via Clover, not stored on this site).
@@ -66,17 +68,22 @@ window.SITE_CONFIG = {
        */
       ecommerce: {
         enabled: false,
-        mode: 'hosted_checkout',
+        mode: 'iframe',
+        /** Public key from Dashboard → Ecommerce API Tokens → Hosted iFrame + API/SDK */
         publicKey: '',
+        /** Production SDK; set sandbox: true only for Clover sandbox merchants */
+        sandbox: false,
         applePayDomain: 'burgaw.github.io',
       },
     },
 
     payment: {
       provider: 'clover',
-      mode: 'hosted_checkout',
+      /** iframe = card fields on MIRASOL checkout; hosted_checkout = redirect to Clover */
+      mode: 'iframe',
       apiBaseUrl: '',
       checkoutPath: '/v1/checkout/pickup',
+      chargePath: '/v1/charges/pickup',
       methods: ['visa', 'mastercard', 'apple_pay'],
       payAtPickupFallback: true,
     },

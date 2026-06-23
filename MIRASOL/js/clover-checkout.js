@@ -23,8 +23,22 @@
     return clover().api?.checkoutPath || payment().checkoutPath || '/v1/checkout/pickup';
   }
 
+  function isIframeMode() {
+    const pay = payment();
+    const ecom = clover().ecommerce || {};
+    return pay.mode === 'iframe' || ecom.mode === 'iframe';
+  }
+
+  function hasPublicKey() {
+    return Boolean((clover().ecommerce?.publicKey || '').trim());
+  }
+
   function isPaymentLive() {
     return Boolean(apiBase());
+  }
+
+  function showIframeFields() {
+    return isIframeMode() && hasPublicKey();
   }
 
   function siteOrigin() {
@@ -142,13 +156,23 @@
     return `<p class="cart-pay-note">${L.connecting}</p>`;
   }
 
+  async function payWithIframe(orderInfo, cart) {
+    const iframe = window.CloverIframe;
+    if (!iframe?.payWithCard) return { ok: false, reason: 'iframe_not_ready' };
+    return iframe.payWithCard(orderInfo, cart);
+  }
+
   window.CloverCheckout = {
     isPaymentLive,
+    isIframeMode,
+    hasPublicKey,
+    showIframeFields,
     labels,
     paymentBadgesHtml,
     paymentNoteHtml,
     buildCheckoutPayload,
     startCheckout,
+    payWithIframe,
     acceptedMethods: ['visa', 'mastercard', 'apple_pay'],
   };
 })();

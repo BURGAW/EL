@@ -71,6 +71,8 @@
       payAtPickup: t('Place order — pay at pickup', 'Enviar pedido — pagar al recoger'),
       processing: t('Opening secure payment…', 'Abriendo pago seguro…'),
       paymentError: t('Could not start payment. Please call us to order.', 'No se pudo iniciar el pago. Llámenos para ordenar.'),
+      paid: t('Payment received — thank you!', '¡Pago recibido — gracias!'),
+      paidSub: t('We\'re preparing your order for pickup.', 'Estamos preparando su pedido para recoger.'),
     };
   }
 
@@ -79,7 +81,16 @@
   }
 
   function canPayOnline() {
-    return paymentUi()?.isPaymentLive?.() === true;
+    const pay = paymentUi();
+    if (!pay?.isPaymentLive?.()) return false;
+    if (pay.isIframeMode?.()) {
+      return pay.hasPublicKey?.() === true;
+    }
+    return true;
+  }
+
+  function showIframeFields() {
+    return paymentUi()?.showIframeFields?.() === true;
   }
 
   function escapeHtml(s) {
@@ -512,6 +523,7 @@
       `<label class="cart-field"><span>${escapeHtml(L.phone)}</span><input type="tel" name="phone" required autocomplete="tel" inputmode="tel"></label>` +
       fulfillmentBlock +
       `<label class="cart-field"><span>${escapeHtml(L.notes)}</span><textarea name="notes" rows="2"></textarea></label>` +
+      (showIframeFields() && window.CloverIframe?.fieldsHtml ? window.CloverIframe.fieldsHtml() : '') +
       (paymentUi()?.paymentBadgesHtml?.() || '') +
       (paymentUi()?.paymentNoteHtml?.() || '') +
       (canPayOnline()
@@ -528,6 +540,59 @@
       `<button type="button" class="btn btn-outline" id="cart-copy-order">${escapeHtml(L.copyOrder)}</button>` +
       `<button type="button" class="btn btn-outline" id="cart-done">${escapeHtml(L.continueShopping)}</button>` +
       `</div></div>`;
+
+    if (showIframeFields()) {
+      window.CloverIframe?.unmount?.();
+      window.CloverIframe?.afterCheckoutRender?.(total, async (token) => {
+        const form = document.getElementById('cart-checkout-form');
+        if (!form) return false;
+        const orderInfo = readCheckoutFormFromPanel(form);
+        if (!orderInfo) return false;
+        const result = await paymentUi()?.chargeToken?.(token, orderInfo, getSnapshot())
+          || window.CloverIframe?.chargeToken?.(token, orderInfo, getSnapshot());
+        if (result?.ok) {
+          showPaidConfirm(form, orderInfo);
+          clear();
+          return true;
+        }
+        showToast(labels().paymentError);
+        return false;
+      });
+    }
+  }
+
+  function readCheckoutFormFromPanel(form) {
+    const fd = new FormData(form);
+    const name = String(fd.get('name') || '').trim();
+    const phone = String(fd.get('phone') || '').trim();
+    if (!name || !phone) {
+      showToast(labels().required);
+      return null;
+    }
+    const orderInfo = {
+      name,
+      phone,
+      fulfillment: fd.get('fulfillment') || 'pickup',
+      notes: String(fd.get('notes') || '').trim(),
+    };
+    orderInfo.orderText = buildOrderText(orderInfo);
+    return orderInfo;
+  }
+
+  function showPaidConfirm(form, orderInfo) {
+    const L = labels();
+    const confirm = document.getElementById('cart-confirm');
+    const confirmText = document.getElementById('cart-confirm-text');
+    if (confirmText) confirmText.textContent = orderInfo.orderText;
+    form.hidden = true;
+    if (confirm) {
+      confirm.removeAttribute('hidden');
+      const title = confirm.querySelector('.cart-confirm__title');
+      const sub = confirm.querySelector('.cart-confirm__sub');
+      if (title) title.textContent = L.paid;
+      if (sub) sub.textContent = L.paidSub;
+    }
+    window._lastOrderText = orderInfo.orderText;
   }
 
   function bindDrawerEvents() {
@@ -599,7 +664,18 @@
       const payBtn = e.target;
       payBtn.disabled = true;
       showToast(labels().processing);
-      const result = await paymentUi().startCheckout(orderInfo, getSnapshot());
+
+      let result;
+      if (paymentUi()?.isIframeMode?.()) {
+        result = await paymentUi().payWithIframe(orderInfo, getSnapshot());
+        if (result?.ok) {
+          showPaidConfirm(form, orderInfo);
+          clear();
+        }
+      } else {
+        result = await paymentUi().startCheckout(orderInfo, getSnapshot());
+      }
+
       payBtn.disabled = false;
       if (!result?.ok && !result?.redirect) {
         showToast(labels().paymentError);
@@ -618,6 +694,7 @@
     drawer.addEventListener('click', (e) => {
       if (e.target.id === 'cart-checkout-back') {
         checkoutOpen = false;
+        window.CloverIframe?.unmount?.();
         renderDrawer();
       }
       if (e.target.id === 'cart-copy-order' && window._lastOrderText) {
