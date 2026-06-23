@@ -169,10 +169,10 @@ body.site-coastal .logo {
   color: var(--fire-red-deep) !important;
 }
 
-body.site-coastal .logo span:not(.logo__text):not(.logo__title),
-body.site-coastal .logo__sub {
+body.site-coastal .header .logo span:not(.logo__text):not(.logo__title),
+body.site-coastal .header .logo__sub {
   font-size: 0.72rem !important;
-  color: var(--coast-sea) !important;
+  color: var(--fire-orange) !important;
   letter-spacing: 0.1em !important;
 }
 
@@ -936,11 +936,11 @@ body.site-coastal .footer .logo {
 
 body.site-coastal .footer .logo__sub,
 body.site-coastal .footer .logo__sub--footer {
-  color: rgba(255, 255, 255, 0.94) !important;
+  color: var(--fire-glow) !important;
   font-size: 0.84rem !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   letter-spacing: 0.02em !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+  text-shadow: 0 1px 3px rgba(15, 28, 46, 0.28);
 }
 
 body.site-coastal .footer h4 {
