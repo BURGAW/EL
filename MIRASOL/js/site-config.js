@@ -31,7 +31,7 @@ window.SITE_CONFIG = {
      * useStorefront: false keeps guests on MIRASOL; set true only if you want Clover's ordering page.
      */
     clover: {
-      merchantId: '',
+      merchantId: '0BQTHJMTQ5MP1',
       storeUrl: 'https://el-mirasol-burgaw.cloveronline.com/',
       pickupOnly: true,
       useStorefront: false,
