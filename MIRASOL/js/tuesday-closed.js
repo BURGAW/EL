@@ -3,7 +3,7 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v3';
+  const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v4';
   const isMenu = document.body.classList.contains('menu-page');
 
   function easternWeekday() {
@@ -73,13 +73,14 @@
     const phone = brand.phone || '(910) 789-1154';
     const phoneTel = brand.phoneTel || '9107891154';
     const address = location.address || '211 U.S. Hwy 117 S, Burgaw, NC 28425';
+    const brandName = brand.name || 'MIRASOL';
 
     let modal = document.getElementById('tuesday-closed-modal');
     if (modal) return modal;
 
     const menuAction = isMenu
-      ? `<button type="button" class="btn btn-outline tuesday-closed-modal__btn tuesday-closed-modal__btn--menu" data-tuesday-close>Browse the menu anyway</button>`
-      : `<a href="menu.html" class="btn btn-outline tuesday-closed-modal__btn tuesday-closed-modal__btn--menu">Browse the menu anyway</a>`;
+      ? `<button type="button" class="btn btn-outline tuesday-closed-modal__btn tuesday-closed-modal__btn--menu" data-tuesday-close>View menu</button>`
+      : `<a href="menu.html" class="btn btn-outline tuesday-closed-modal__btn tuesday-closed-modal__btn--menu">View menu</a>`;
 
     modal = document.createElement('div');
     modal.id = 'tuesday-closed-modal';
@@ -89,58 +90,34 @@
       `<div class="tuesday-closed-modal__backdrop" data-tuesday-close tabindex="-1"></div>` +
       `<div class="tuesday-closed-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="tuesday-closed-title">` +
       `<header class="tuesday-closed-modal__hero">` +
-      `<div class="tuesday-closed-modal__floaters" aria-hidden="true">` +
-      `<span class="tuesday-closed-modal__floater tuesday-closed-modal__floater--1">✨</span>` +
-      `<span class="tuesday-closed-modal__floater tuesday-closed-modal__floater--2">🌙</span>` +
-      `<span class="tuesday-closed-modal__floater tuesday-closed-modal__floater--3">⭐</span>` +
-      `<span class="tuesday-closed-modal__floater tuesday-closed-modal__floater--4">🍹</span>` +
-      `<span class="tuesday-closed-modal__floater tuesday-closed-modal__floater--5">💤</span>` +
-      `</div>` +
       `<button type="button" class="tuesday-closed-modal__close" data-tuesday-close aria-label="Close">&times;</button>` +
-      `<span class="tuesday-closed-modal__badge">` +
-      `<span class="tuesday-closed-modal__badge-dot" aria-hidden="true"></span>` +
-      `Kitchen day off` +
-      `</span>` +
-      `<div class="tuesday-closed-modal__emoji-stage" aria-hidden="true">` +
-      `<span class="tuesday-closed-modal__zzz">z z z</span>` +
-      `<span class="tuesday-closed-modal__emoji">😴</span>` +
-      `<span class="tuesday-closed-modal__emoji-alt">🌮</span>` +
-      `</div>` +
-      `<h2 class="tuesday-closed-modal__title" id="tuesday-closed-title">Taco Tuesday? Not today, amigo.</h2>` +
-      `<p class="tuesday-closed-modal__tagline">Even the tortillas are napping.</p>` +
+      `<span class="tuesday-closed-modal__badge">Closed today</span>` +
+      `<p class="tuesday-closed-modal__brand">${escapeHtml(brandName)} · Burgaw</p>` +
+      `<h2 class="tuesday-closed-modal__title" id="tuesday-closed-title">We&rsquo;re closed on Tuesdays</h2>` +
+      `<p class="tuesday-closed-modal__tagline">Our weekly rest day for the team and kitchen.</p>` +
       `</header>` +
       `<div class="tuesday-closed-modal__body">` +
-      `<p class="tuesday-closed-modal__lead">Our family takes every <strong>Tuesday</strong> to recharge the griddle ` +
-      `and refill the salsa bowls. We&rsquo;ll be back <strong>Wednesday at 8&nbsp;AM</strong> with hot plates and cold margaritas.</p>` +
-      `<p class="tuesday-closed-modal__countdown">` +
-      `<span class="tuesday-closed-modal__countdown-icon" aria-hidden="true">🔥</span>` +
-      `Doors swing open tomorrow morning` +
-      `</p>` +
+      `<p class="tuesday-closed-modal__lead">` +
+      `${escapeHtml(brandName)} is closed every <strong>Tuesday</strong> so our family and staff can rest. ` +
+      `We reopen <strong>Wednesday at 8&nbsp;AM</strong> with full service.</p>` +
+      `<p class="tuesday-closed-modal__reopen">Opens tomorrow · 8:00&nbsp;AM</p>` +
       `<div class="tuesday-closed-modal__cards">` +
       `<article class="tuesday-closed-modal__card">` +
-      `<span class="tuesday-closed-modal__card-icon" aria-hidden="true">🕐</span>` +
-      `<div>` +
-      `<p class="tuesday-closed-modal__card-label">When we&rsquo;re open</p>` +
+      `<p class="tuesday-closed-modal__card-label">Hours</p>` +
       `<p class="tuesday-closed-modal__card-text">Mon, Wed&ndash;Sun: 8&nbsp;AM &ndash; 9&nbsp;PM<br>` +
       `Fri &amp; Sat: until 9:30&nbsp;PM<br>` +
-      `<span class="tuesday-closed-modal__closed-pill">` +
-      `<span aria-hidden="true">🚪</span> Closed every Tuesday` +
-      `</span></p>` +
-      `</div></article>` +
+      `<span class="tuesday-closed-modal__closed-pill">Closed Tuesdays</span></p>` +
+      `</article>` +
       `<article class="tuesday-closed-modal__card">` +
-      `<span class="tuesday-closed-modal__card-icon" aria-hidden="true">📍</span>` +
-      `<div>` +
-      `<p class="tuesday-closed-modal__card-label">Find us in Burgaw</p>` +
+      `<p class="tuesday-closed-modal__card-label">Location</p>` +
       `<p class="tuesday-closed-modal__card-text">${escapeHtml(address)}<br>` +
       `<a href="tel:${escapeHtml(phoneTel)}">${escapeHtml(phone)}</a></p>` +
-      `</div></article>` +
+      `</article>` +
       `</div>` +
-      `<p class="tuesday-closed-modal__fun-fact">` +
-      `Pro tip: peek the menu now, dream about birria, place your order Wednesday. 🌶️` +
-      `</p>` +
+      `<p class="tuesday-closed-modal__note">You may still browse our menu online and plan your next visit.</p>` +
       `<div class="tuesday-closed-modal__actions">` +
       menuAction +
-      `<button type="button" class="btn btn-primary tuesday-closed-modal__btn tuesday-closed-modal__btn--primary" data-tuesday-close>See you Wednesday! 👋</button>` +
+      `<button type="button" class="btn btn-primary tuesday-closed-modal__btn tuesday-closed-modal__btn--primary" data-tuesday-close>Understood</button>` +
       `</div></div></div>`;
     document.body.appendChild(modal);
 
