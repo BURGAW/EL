@@ -186,6 +186,7 @@
     lines.push('—'.repeat(28));
     items.forEach((it) => {
       let row = `${it.qty}x ${it.name} — ${formatMoney(it.unitPrice * it.qty)}`;
+      if (it.desc) row += `\n   ${it.desc}`;
       if (it.modifierLines?.length) {
         it.modifierLines.forEach((m) => {
           row += `\n   · ${m}`;
@@ -311,6 +312,9 @@
 
     list.innerHTML = items
       .map((it) => {
+        const desc = it.desc ?
+          `<p class="cart-line__desc">${escapeHtml(it.desc)}</p>`
+        : '';
         const mods =
           it.modifierLines?.length ?
             `<ul class="cart-line__mods">${it.modifierLines.map((m) => `<li>${escapeHtml(m)}</li>`).join('')}</ul>`
@@ -320,7 +324,7 @@
           `<div class="cart-line__top">` +
           `<span class="cart-line__name">${escapeHtml(it.name)}</span>` +
           `<span class="cart-line__price">${escapeHtml(formatMoney(it.unitPrice * it.qty))}</span>` +
-          `</div>${mods}` +
+          `</div>${desc}${mods}` +
           `<div class="cart-line__controls">` +
           `<div class="qty-stepper qty-stepper--sm">` +
           `<button type="button" class="qty-stepper__btn" data-cart-qty-minus="${escapeHtml(it.id)}" aria-label="Decrease">−</button>` +

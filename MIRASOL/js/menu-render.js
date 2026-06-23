@@ -385,6 +385,7 @@
     return {
       itemKey: key,
       name: item.name,
+      desc: item.desc || '',
       sectionId,
       sku: item.sku || '',
       qty: Math.max(1, Math.min(99, qty || 1)),

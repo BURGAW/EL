@@ -170,6 +170,13 @@ body.cart-open {
   white-space: nowrap;
 }
 
+.cart-line__desc {
+  margin: 0.25rem 0 0;
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
 .cart-line__mods {
   margin: 0.3rem 0 0.45rem;
   padding: 0 0 0 0.85rem;
