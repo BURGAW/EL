@@ -374,6 +374,22 @@ body.has-topbar .cart-drawer {
   padding: 0.35rem;
 }
 
+.cart-checkout__pickup-only {
+  margin: 0 0 0.85rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(45, 143, 71, 0.1), rgba(0, 119, 182, 0.08));
+  border: 1px solid rgba(45, 143, 71, 0.22);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--ink, #0f1c2e);
+  text-align: center;
+}
+
+.cart-checkout__pickup-icon {
+  font-size: 1.05rem;
+}
+
 .cart-checkout__title {
   margin: 0 0 0.35rem;
   font-family: var(--font-display);

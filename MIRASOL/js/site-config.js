@@ -16,29 +16,34 @@ window.SITE_CONFIG = {
     enabled: true,
 
     /**
-     * Provider: 'toast' | 'square' | 'clover' | 'chownow' | 'custom' | 'native'
-     * clover = Clover Online Ordering (pickup). native cart stays on until storeUrl is set.
+     * native = MIRASOL menu + cart on this site (what guests see now).
+     * clover + useStorefront = send guests to Clover's hosted store (off by default).
      */
-    provider: 'clover',
+    provider: 'native',
 
     /** Pickup only — no delivery on this site */
     pickupOnly: true,
 
-    /** Clover store URL (also used as orderUrl when provider is clover) */
     orderUrl: '',
 
     /**
-     * Clover Online Ordering — pickup only
-     * 1. Clover Dashboard → Online Ordering → enable In-store pickup, disable Delivery
-     * 2. Copy your store link (e.g. https://www.clover.com/online-ordering/your-store)
-     * 3. Paste it in storeUrl below — site switches from native cart to Clover automatically
+     * Clover POS — kitchen sync later via API backend (not the cloveronline.com storefront).
+     * useStorefront: false keeps guests on MIRASOL; set true only if you want Clover's ordering page.
      */
     clover: {
       merchantId: '',
-      storeUrl: '',
+      storeUrl: 'https://el-mirasol-burgaw.cloveronline.com/',
       pickupOnly: true,
-      /** 'tab' opens Clover in a new tab (recommended). 'embed' = iframe modal. 'same' = redirect. */
+      useStorefront: false,
       openIn: 'tab',
+      /**
+       * Future: small server posts cart → Clover Orders API (needs merchant API token on server only).
+       * baseUrl: 'https://your-api.example.com'
+       */
+      api: {
+        baseUrl: '',
+        submitPath: '/v1/orders/pickup',
+      },
     },
 
     payment: {
@@ -46,8 +51,8 @@ window.SITE_CONFIG = {
       publishableKey: '',
     },
 
-    comingSoonLabel: 'Pickup ordering',
-    comingSoonSub: 'Online pickup ordering is being connected to Clover — call ahead for now.',
+    comingSoonLabel: 'Order from our menu',
+    comingSoonSub: 'Build your cart here — pickup only. Call to confirm your order.',
 
     fulfillment: ['pickup'],
 

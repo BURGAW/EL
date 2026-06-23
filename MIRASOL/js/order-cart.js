@@ -469,11 +469,28 @@
       `<button type="button" class="cart-clear-btn" id="cart-clear">${escapeHtml(L.clearCart)}</button>`;
   }
 
+  function pickupOnly() {
+    const c = cfg();
+    return c.pickupOnly === true || (Array.isArray(c.fulfillment) && c.fulfillment.length === 1 && c.fulfillment[0] === 'pickup');
+  }
+
   function renderCheckoutForm() {
     const panel = document.getElementById('cart-checkout-panel');
     if (!panel) return;
     const L = labels();
     const { total } = calcTotals();
+    const onlyPickup = pickupOnly();
+    const fulfillmentBlock = onlyPickup
+      ? `<p class="cart-checkout__pickup-only">` +
+        `<span class="cart-checkout__pickup-icon" aria-hidden="true">🥡</span> ` +
+        `${escapeHtml(L.pickup)} · ${escapeHtml(t('No delivery', 'Sin entregas'))}` +
+        `</p>` +
+        `<input type="hidden" name="fulfillment" value="pickup">`
+      : `<fieldset class="cart-field cart-field--radio">` +
+        `<legend>${escapeHtml(L.fulfillment)}</legend>` +
+        `<label><input type="radio" name="fulfillment" value="pickup" checked> ${escapeHtml(L.pickup)}</label>` +
+        `<label><input type="radio" name="fulfillment" value="dine-in"> ${escapeHtml(L.dineIn)}</label>` +
+        `</fieldset>`;
     panel.innerHTML =
       `<button type="button" class="cart-back-btn" id="cart-checkout-back">← ${escapeHtml(L.back)}</button>` +
       `<h3 class="cart-checkout__title">${escapeHtml(L.checkout)}</h3>` +
@@ -481,11 +498,7 @@
       `<form class="cart-checkout__form" id="cart-checkout-form">` +
       `<label class="cart-field"><span>${escapeHtml(L.name)}</span><input type="text" name="name" required autocomplete="name"></label>` +
       `<label class="cart-field"><span>${escapeHtml(L.phone)}</span><input type="tel" name="phone" required autocomplete="tel" inputmode="tel"></label>` +
-      `<fieldset class="cart-field cart-field--radio">` +
-      `<legend>${escapeHtml(L.fulfillment)}</legend>` +
-      `<label><input type="radio" name="fulfillment" value="pickup" checked> ${escapeHtml(L.pickup)}</label>` +
-      `<label><input type="radio" name="fulfillment" value="dine-in"> ${escapeHtml(L.dineIn)}</label>` +
-      `</fieldset>` +
+      fulfillmentBlock +
       `<label class="cart-field"><span>${escapeHtml(L.notes)}</span><textarea name="notes" rows="2"></textarea></label>` +
       `<button type="submit" class="btn btn-primary cart-place-btn">${escapeHtml(L.placeOrder)}</button>` +
       `</form>` +

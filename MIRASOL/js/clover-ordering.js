@@ -20,8 +20,17 @@
     return url;
   }
 
+  function useStorefront() {
+    return clover().useStorefront === true;
+  }
+
   function isLive() {
-    return ordering().enabled && ordering().provider === 'clover' && Boolean(storeUrl());
+    return (
+      ordering().enabled &&
+      useStorefront() &&
+      ordering().provider === 'clover' &&
+      Boolean(storeUrl())
+    );
   }
 
   function pickupOnly() {
@@ -220,7 +229,7 @@
   }
 
   function init() {
-    if (!ordering().enabled || ordering().provider !== 'clover') return;
+    if (!ordering().enabled || !useStorefront() || ordering().provider !== 'clover') return;
 
     injectMenuToolbarBtn();
     injectHeroBtn();

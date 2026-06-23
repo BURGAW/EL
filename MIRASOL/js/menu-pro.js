@@ -21,10 +21,11 @@
     return (ordering.clover?.storeUrl || ordering.orderUrl || '').trim();
   }
 
-  function cloverLive() {
+  function cloverStorefrontLive() {
     return Boolean(
       ordering.enabled &&
       ordering.provider === 'clover' &&
+      ordering.clover?.useStorefront &&
       cloverStoreUrl()
     );
   }
@@ -32,13 +33,13 @@
   function orderingLive() {
     return Boolean(
       ordering.enabled &&
-      (ordering.provider === 'native' || cloverLive() || ordering.orderUrl)
+      (ordering.provider === 'native' || cloverStorefrontLive() || ordering.orderUrl)
     );
   }
 
   function initOrdering() {
     const enabled = orderingLive();
-    const cloverPending = ordering.enabled && ordering.provider === 'clover' && !cloverStoreUrl();
+    const cloverPending = false;
     document.body.classList.toggle('ordering-enabled', enabled);
     document.body.classList.toggle('ordering-clover-pending', cloverPending);
 
@@ -52,35 +53,43 @@
       if (enabled) {
         strip.classList.add('is-live');
         strip.classList.remove('is-pending');
+        const pickupOnly = ordering.pickupOnly !== false;
         if (badge) {
-          badge.textContent = ordering.provider === 'clover'
-            ? (isEs() ? 'Clover · Para llevar' : 'Clover · Pickup')
+          badge.textContent = pickupOnly
+            ? (isEs() ? 'Para llevar' : 'Pickup')
             : (isEs() ? 'Pedidos en línea' : 'Order Online');
         }
-        if (title) title.textContent = isEs() ? 'Pida para recoger' : 'Order for Pickup';
+        if (title) {
+          title.textContent = pickupOnly
+            ? (isEs() ? 'Arme su pedido para recoger' : 'Build your pickup order')
+            : (isEs() ? 'Pida en línea' : 'Order online');
+        }
         if (sub) {
-          sub.textContent = ordering.provider === 'clover'
+          sub.textContent = pickupOnly
             ? (isEs()
-              ? 'Pague en línea con Clover — recoja en el mostrador. Sin entregas.'
-              : 'Pay online with Clover — pick up at the counter. No delivery.')
+              ? 'Agregue platillos de nuestro menú — llamamos para confirmar. Sin entregas.'
+              : 'Add items from our menu — we\'ll call to confirm. Pickup only, no delivery.')
             : (isEs()
-              ? 'Ordene directamente — pague en línea de forma segura.'
-              : 'Order directly from our menu — pay securely online.');
+              ? 'Ordene directamente desde nuestro menú.'
+              : 'Order directly from our menu.');
         }
         if (btn) {
           btn.classList.add('is-live');
           btn.classList.remove('is-disabled');
           btn.removeAttribute('disabled');
-          btn.textContent = orderBtnLabel();
+          btn.textContent = pickupOnly
+            ? (isEs() ? 'Abrir carrito' : 'Open cart')
+            : orderBtnLabel();
           btn.removeAttribute('href');
           btn.removeAttribute('target');
+          btn.removeAttribute('data-clover-order');
           if (ordering.provider === 'native') {
             btn.setAttribute('href', '#order-cart');
             btn.addEventListener('click', (e) => {
               e.preventDefault();
               window.dispatchEvent(new CustomEvent('elmirasol:open-cart'));
             });
-          } else if (ordering.provider === 'clover' && cloverLive()) {
+          } else if (ordering.provider === 'clover' && cloverStorefrontLive()) {
             btn.setAttribute('data-clover-order', '1');
             btn.addEventListener('click', (e) => {
               e.preventDefault();
