@@ -676,6 +676,10 @@
     return '$' + Number(amount).toFixed(2);
   }
 
+  function hasDualSize(item) {
+    return Boolean(item?.sizeSmallLarge && item?.sizePrices);
+  }
+
   function buildSizeGroup(defs, item, lang) {
     const base = defs.sizeSmallLarge;
     const prices = item.sizePrices;
@@ -685,6 +689,7 @@
     const largePrice = prices.Large ?? prices.large ?? smallPrice;
     const smallLabel = lang === 'es' ? 'Chico' : 'Small';
     const largeLabel = lang === 'es' ? 'Grande' : 'Large';
+    const bothLabel = lang === 'es' ? 'Ambos' : 'Both';
 
     return {
       id: 'size',
@@ -694,6 +699,11 @@
       options: [
         { id: 'Small', label: `${smallLabel} (${formatMoney(smallPrice)})`, price: 0 },
         { id: 'Large', label: `${largeLabel} (${formatMoney(largePrice)})`, price: Math.max(0, largePrice - smallPrice) },
+        {
+          id: 'Both',
+          label: `${bothLabel} (${formatMoney(smallPrice)} + ${formatMoney(largePrice)})`,
+          price: largePrice,
+        },
       ],
     };
   }
@@ -870,5 +880,6 @@
   window.MenuModifiers = {
     getModifierDefs,
     getModifiersForItem,
+    hasDualSize,
   };
 })();

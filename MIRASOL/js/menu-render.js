@@ -111,23 +111,31 @@
     return window.SITE_CONFIG?.menu?.customizationEnabled === true;
   }
 
+  function hasDualSize(item) {
+    return window.MenuModifiers?.hasDualSize?.(item) === true;
+  }
+
   function getItemModifierGroups(sectionId, item) {
-    if (!customizationEnabled()) return [];
-    return window.MenuModifiers
-      ? window.MenuModifiers.getModifiersForItem(sectionId, item)
-      : [];
+    if (!window.MenuModifiers) return [];
+    const all = window.MenuModifiers.getModifiersForItem(sectionId, item);
+    if (customizationEnabled()) return all;
+    if (hasDualSize(item)) return all.filter((g) => g.id === 'size');
+    return [];
   }
 
   function itemHasModifiers(sectionId, item) {
+    if (hasDualSize(item)) return true;
     return getItemModifierGroups(sectionId, item).length > 0;
   }
 
   function renderCard(sectionId, item, index) {
-    const { tagLabels, detailsHint } = getData();
+    const { tagLabels, detailsHint, customizeHint } = getData();
     const key = itemKey(sectionId, index);
     itemRegistry[key] = { sectionId, item, index };
+    const dualSize = hasDualSize(item);
     const customizable = itemHasModifiers(sectionId, item);
     const hasDesc = Boolean(item.desc);
+    const hint = customizable ? customizeHint : detailsHint;
 
     const p = parseBasePrice(item.price, item);
     const attrs = [];
@@ -135,14 +143,15 @@
     if (p) attrs.push(`data-price="${p.toFixed(2)}"`);
     if (customizable) attrs.push('data-customizable="true"');
     if (hasDesc) attrs.push('data-has-desc="true"');
+    if (dualSize) attrs.push('data-dual-size="true"');
 
-    const ariaLabel = [item.name, item.price, detailsHint].filter(Boolean).join(' — ');
+    const ariaLabel = [item.name, dualSize ? null : item.price, hint].filter(Boolean).join(' — ');
     attrs.push(`aria-label="${escapeHtml(ariaLabel)}"`);
 
     let html = `<button type="button" class="menu-card menu-card--btn menu-item${customizable ? ' menu-card--customizable' : ''}" data-item-key="${escapeHtml(key)}"${attrs.length ? ' ' + attrs.join(' ') : ''}>`;
     html += '<div class="menu-card__head">';
     html += `<span class="menu-card__name">${escapeHtml(item.name)}</span>`;
-    if (item.price) {
+    if (item.price && !dualSize) {
       html += `<span class="menu-card__price">${escapeHtml(item.price)}</span>`;
     }
     html += '</div>';
@@ -150,7 +159,7 @@
     if (item.tag && tagLabels[item.tag]) {
       html += `<span class="menu-card__badge menu-badge menu-badge--${escapeHtml(item.tag)}">${escapeHtml(tagLabels[item.tag])}</span>`;
     }
-    html += `<span class="menu-card__hint">${escapeHtml(detailsHint)}</span>`;
+    html += `<span class="menu-card__hint">${escapeHtml(hint)}</span>`;
     html += '</div>';
     html += '</button>';
     return html;
@@ -492,13 +501,14 @@
       descEl.textContent = item.desc || noDesc;
     }
     if (modHeading) {
-      modHeading.textContent = modifiersLabel;
+      const sizeOnly = groups.length === 1 && groups[0].id === 'size';
+      modHeading.textContent = sizeOnly ? groups[0].label : modifiersLabel;
       modHeading.hidden = !groups.length;
     }
 
     refreshModalContent();
 
-    if (priceEl && !groups.length && item.price) {
+    if (priceEl && !groups.length && item.price && !hasDualSize(item)) {
       priceEl.textContent = item.price;
     }
 
