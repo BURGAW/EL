@@ -182,3 +182,35 @@ window.SITE_CONFIG = {
    */
   reviews: [],
 };
+
+/** Random pickup ETA within ordering.pickupEta min–max (stable per browser session). */
+window.SITE_CONFIG.getRandomPickupMinutes = function getRandomPickupMinutes(opts) {
+  const eta = (opts && opts.eta) || window.SITE_CONFIG.ordering?.pickupEta || {};
+  const min = Math.max(1, parseInt(eta.min, 10) || 8);
+  const max = Math.max(min, parseInt(eta.max, 10) || 14);
+  const storageKey = (opts && opts.storageKey) || 'elmirasol:pickup-eta-min';
+
+  if (!opts || opts.stable !== false) {
+    try {
+      const stored = sessionStorage.getItem(storageKey);
+      if (stored) {
+        const n = parseInt(stored, 10);
+        if (n >= min && n <= max) return n;
+      }
+    } catch (_) {
+      /* ignore */
+    }
+  }
+
+  const minutes = Math.floor(Math.random() * (max - min + 1)) + min;
+
+  if (!opts || opts.stable !== false) {
+    try {
+      sessionStorage.setItem(storageKey, String(minutes));
+    } catch (_) {
+      /* ignore */
+    }
+  }
+
+  return minutes;
+};

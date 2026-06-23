@@ -93,11 +93,8 @@
   }
 
   function pickupEtaLabel() {
-    const eta = cfg().pickupEta || {};
-    const min = Math.max(1, parseInt(eta.min, 10) || 8);
-    const max = Math.max(min, parseInt(eta.max, 10) || 14);
-    const range = min === max ? `${min} min` : `${min}\u2013${max} min`;
-    return t(`Pick up in ${range}`, `Recoger en ${range}`);
+    const minutes = window.SITE_CONFIG?.getRandomPickupMinutes?.() ?? 10;
+    return t(`Pick up in ${minutes} min`, `Recoger en ${minutes} min`);
   }
 
   function load() {
