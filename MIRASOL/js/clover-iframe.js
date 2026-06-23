@@ -62,13 +62,13 @@
     return {
       body: {
         fontFamily: 'Montserrat, system-ui, sans-serif',
-        fontSize: '16px',
+        fontSize: '14px',
       },
       input: {
-        fontSize: '16px',
-        padding: '10px 12px',
-        border: '1px solid #e8dcc8',
-        borderRadius: '8px',
+        fontSize: '14px',
+        padding: '8px 10px',
+        border: '1px solid #e0d6c8',
+        borderRadius: '6px',
         backgroundColor: '#fff',
         color: '#1a1a1a',
       },
@@ -97,29 +97,24 @@
     const L = labels();
     return (
       `<div class="clover-iframe" id="clover-iframe-root">` +
-      `<p class="clover-iframe__title">${L.cardDetails}</p>` +
       `<div class="clover-iframe__status" id="clover-iframe-status" aria-live="polite"></div>` +
-      `<div class="clover-iframe__field">` +
-      `<label class="clover-iframe__label">${L.cardNumber}</label>` +
-      `<div id="clover-card-number" class="clover-iframe__mount"></div>` +
+      `<div class="clover-iframe__field clover-iframe__field--card">` +
+      `<div id="clover-card-number" class="clover-iframe__mount" aria-label="${L.cardNumber}"></div>` +
       `<div class="clover-iframe__error" id="clover-card-number-errors" role="alert"></div>` +
       `</div>` +
-      `<div class="clover-iframe__row">` +
-      `<div class="clover-iframe__field clover-iframe__field--half">` +
-      `<label class="clover-iframe__label">${L.expiry}</label>` +
-      `<div id="clover-card-date" class="clover-iframe__mount"></div>` +
+      `<div class="clover-iframe__row clover-iframe__row--3">` +
+      `<div class="clover-iframe__field">` +
+      `<div id="clover-card-date" class="clover-iframe__mount" aria-label="${L.expiry}"></div>` +
       `<div class="clover-iframe__error" id="clover-card-date-errors" role="alert"></div>` +
       `</div>` +
-      `<div class="clover-iframe__field clover-iframe__field--half">` +
-      `<label class="clover-iframe__label">${L.cvv}</label>` +
-      `<div id="clover-card-cvv" class="clover-iframe__mount"></div>` +
+      `<div class="clover-iframe__field">` +
+      `<div id="clover-card-cvv" class="clover-iframe__mount" aria-label="${L.cvv}"></div>` +
       `<div class="clover-iframe__error" id="clover-card-cvv-errors" role="alert"></div>` +
       `</div>` +
-      `</div>` +
       `<div class="clover-iframe__field">` +
-      `<label class="clover-iframe__label">${L.postal}</label>` +
-      `<div id="clover-card-postal" class="clover-iframe__mount"></div>` +
+      `<div id="clover-card-postal" class="clover-iframe__mount" aria-label="${L.postal}"></div>` +
       `<div class="clover-iframe__error" id="clover-card-postal-errors" role="alert"></div>` +
+      `</div>` +
       `</div>` +
       `<div id="clover-apple-pay" class="clover-iframe__apple" hidden></div>` +
       `<div class="clover-iframe__response" id="clover-card-response" role="alert"></div>` +

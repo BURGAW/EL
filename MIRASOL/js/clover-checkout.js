@@ -135,19 +135,28 @@
   function paymentBadgesHtml() {
     const L = labels();
     return (
-      `<div class="cart-pay-methods" aria-label="${L.payMethods}">` +
-      `<p class="cart-pay-methods__label">${L.payMethods}</p>` +
+      `<div class="cart-pay-methods cart-pay-methods--compact" aria-label="${L.payMethods}">` +
       `<ul class="cart-pay-methods__list">` +
       `<li class="cart-pay-methods__item cart-pay-methods__item--visa" title="Visa">` +
       `<span class="cart-pay-methods__icon" aria-hidden="true">VISA</span></li>` +
       `<li class="cart-pay-methods__item cart-pay-methods__item--mc" title="Mastercard">` +
       `<span class="cart-pay-methods__icon" aria-hidden="true">MC</span></li>` +
       `<li class="cart-pay-methods__item cart-pay-methods__item--apple" title="Apple Pay">` +
-      `<span class="cart-pay-methods__icon cart-pay-methods__icon--apple" aria-hidden="true">Apple&nbsp;Pay</span></li>` +
+      `<span class="cart-pay-methods__icon cart-pay-methods__icon--apple" aria-hidden="true">Pay</span></li>` +
       `</ul>` +
       `<p class="cart-pay-methods__secure">${L.secure}</p>` +
       `</div>`
     );
+  }
+
+  function paymentTrustLineHtml() {
+    const L = labels();
+    return `<p class="cart-checkout__trust" aria-label="${L.payMethods}">` +
+      `<span class="cart-checkout__trust-badge">VISA</span>` +
+      `<span class="cart-checkout__trust-badge cart-checkout__trust-badge--mc">MC</span>` +
+      `<span class="cart-checkout__trust-badge cart-checkout__trust-badge--apple">Pay</span>` +
+      `<span class="cart-checkout__trust-dot" aria-hidden="true">·</span>` +
+      `<span>${L.secure}</span></p>`;
   }
 
   function paymentNoteHtml() {
@@ -169,6 +178,7 @@
     showIframeFields,
     labels,
     paymentBadgesHtml,
+    paymentTrustLineHtml,
     paymentNoteHtml,
     buildCheckoutPayload,
     startCheckout,

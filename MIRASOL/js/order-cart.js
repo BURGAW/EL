@@ -504,9 +504,8 @@
     const { total } = calcTotals();
     const onlyPickup = pickupOnly();
     const fulfillmentBlock = onlyPickup
-      ? `<p class="cart-checkout__pickup-only">` +
-        `<span class="cart-checkout__pickup-icon" aria-hidden="true">🥡</span> ` +
-        `${escapeHtml(L.pickup)} · ${escapeHtml(t('No delivery', 'Sin entregas'))}` +
+      ? `<p class="cart-checkout__pickup-chip">` +
+        `<span aria-hidden="true">🥡</span>${escapeHtml(L.pickup)}` +
         `</p>` +
         `<input type="hidden" name="fulfillment" value="pickup">`
       : `<fieldset class="cart-field cart-field--radio">` +
@@ -514,23 +513,34 @@
         `<label><input type="radio" name="fulfillment" value="pickup" checked> ${escapeHtml(L.pickup)}</label>` +
         `<label><input type="radio" name="fulfillment" value="dine-in"> ${escapeHtml(L.dineIn)}</label>` +
         `</fieldset>`;
+    const iframeOn = showIframeFields() && window.CloverIframe?.fieldsHtml;
+    const payBadges = iframeOn ? '' : paymentUi()?.paymentBadgesHtml?.() || '';
+    const payNote = paymentUi()?.paymentNoteHtml?.() || '';
+
     panel.innerHTML =
+      `<div class="cart-checkout__head">` +
       `<button type="button" class="cart-back-btn" id="cart-checkout-back">← ${escapeHtml(L.back)}</button>` +
+      `<div class="cart-checkout__head-main">` +
       `<h3 class="cart-checkout__title">${escapeHtml(L.checkout)}</h3>` +
-      `<p class="cart-checkout__total">${escapeHtml(L.total)}: <strong>${formatMoney(total)}</strong></p>` +
+      `<p class="cart-checkout__total"><span>${escapeHtml(L.total)}</span> <strong>${formatMoney(total)}</strong></p>` +
+      `</div></div>` +
       `<form class="cart-checkout__form" id="cart-checkout-form">` +
-      `<label class="cart-field"><span>${escapeHtml(L.name)}</span><input type="text" name="name" required autocomplete="name"></label>` +
-      `<label class="cart-field"><span>${escapeHtml(L.phone)}</span><input type="tel" name="phone" required autocomplete="tel" inputmode="tel"></label>` +
       fulfillmentBlock +
-      `<label class="cart-field"><span>${escapeHtml(L.notes)}</span><textarea name="notes" rows="2"></textarea></label>` +
-      (showIframeFields() && window.CloverIframe?.fieldsHtml ? window.CloverIframe.fieldsHtml() : '') +
-      (paymentUi()?.paymentBadgesHtml?.() || '') +
-      (paymentUi()?.paymentNoteHtml?.() || '') +
+      `<div class="cart-checkout__contact">` +
+      `<label class="cart-field cart-field--compact"><span>${escapeHtml(L.name)}</span><input type="text" name="name" required autocomplete="name"></label>` +
+      `<label class="cart-field cart-field--compact"><span>${escapeHtml(L.phone)}</span><input type="tel" name="phone" required autocomplete="tel" inputmode="tel"></label>` +
+      `</div>` +
+      `<label class="cart-field cart-field--compact cart-field--notes"><span>${escapeHtml(L.notes)}</span><textarea name="notes" rows="1" placeholder="${escapeHtml(t('Optional', 'Opcional'))}"></textarea></label>` +
+      (iframeOn ? `<div class="cart-checkout__pay">${window.CloverIframe.fieldsHtml()}</div>` : '') +
+      payBadges +
+      payNote +
+      `<div class="cart-checkout__actions">` +
       (canPayOnline()
         ? `<button type="button" class="btn btn-primary cart-pay-btn" id="cart-pay-clover">${escapeHtml(L.payNow)}</button>` +
           `<button type="submit" class="btn btn-outline cart-place-btn cart-place-btn--secondary">${escapeHtml(L.payAtPickup)}</button>`
         : `<button type="submit" class="btn btn-primary cart-place-btn">${escapeHtml(L.placeOrder)}</button>`) +
-      `</form>` +
+      (iframeOn ? paymentUi()?.paymentTrustLineHtml?.() || '' : '') +
+      `</div></form>` +
       `<div class="cart-confirm" id="cart-confirm" hidden>` +
       `<p class="cart-confirm__title">${escapeHtml(L.orderPlaced)}</p>` +
       `<p class="cart-confirm__sub">${escapeHtml(L.orderPlacedSub)}</p>` +
