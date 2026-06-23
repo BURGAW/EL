@@ -1309,7 +1309,7 @@ body.roulette-open .roulette-panel {
   }
 
   .cart-drawer__panel {
-    max-height: 92dvh !important;
+    max-height: 100% !important;
     padding-bottom: calc(1rem + var(--safe-bottom)) !important;
   }
 

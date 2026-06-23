@@ -56,10 +56,15 @@ body.cart-open {
 
 .cart-drawer {
   position: fixed;
-  inset: 0;
-  z-index: 210;
+  inset: auto 0 0 0;
+  top: calc(var(--header-h, 64px) + var(--safe-top, 0px));
+  z-index: 220;
   display: flex;
   justify-content: flex-end;
+}
+
+body.has-topbar .cart-drawer {
+  top: calc(var(--topbar-h, 36px) + var(--header-h, 64px) + var(--safe-top, 0px));
 }
 
 .cart-drawer[hidden] {
@@ -504,7 +509,7 @@ body.cart-open {
 
   .cart-drawer__panel {
     width: 100%;
-    max-height: 92vh;
+    max-height: 100%;
     align-self: flex-end;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   }
