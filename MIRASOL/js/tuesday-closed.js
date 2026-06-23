@@ -4,7 +4,7 @@
 (function () {
   const TZ = 'America/New_York';
   const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v10';
-  const MODAL_VERSION = '12';
+  const MODAL_VERSION = '13';
   const isMenu = document.body.classList.contains('menu-page');
 
   function isPreviewMode() {
@@ -103,7 +103,9 @@
       `<div class="tuesday-closed-modal__backdrop" data-tuesday-close tabindex="-1"></div>` +
       `<div class="tuesday-closed-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="tuesday-closed-title">` +
       `<header class="tuesday-closed-modal__hero">` +
+      `<div class="tuesday-closed-modal__hero-top">` +
       `<button type="button" class="tuesday-closed-modal__close" data-tuesday-close aria-label="Close">&times;</button>` +
+      `</div>` +
       `<span class="tuesday-closed-modal__badge">` +
       `<span class="tuesday-closed-modal__badge-dot" aria-hidden="true"></span>` +
       `Closed today` +
@@ -111,7 +113,7 @@
       `<div class="tuesday-closed-modal__logo-stage" aria-hidden="true">` +
       `<div class="tuesday-closed-modal__logo-ring">` +
       `<div class="tuesday-closed-modal__logo-wrap">` +
-      `<img src="${escapeHtml(logo)}" alt="${escapeHtml(brandName)}" class="tuesday-closed-modal__logo" width="88" height="88">` +
+      `<img src="${escapeHtml(logo)}" alt="${escapeHtml(brandName)}" class="tuesday-closed-modal__logo" width="72" height="72">` +
       `</div></div></div>` +
       `<h2 class="tuesday-closed-modal__title" id="tuesday-closed-title">We&rsquo;re taking Tuesday off</h2>` +
       `<p class="tuesday-closed-modal__tagline">Family rest day &mdash; the griddle gets a break too.</p>` +
@@ -124,19 +126,17 @@
       `<div class="tuesday-closed-modal__cards">` +
       `<article class="tuesday-closed-modal__card">` +
       `<span class="tuesday-closed-modal__card-icon" aria-hidden="true">🕐</span>` +
-      `<div>` +
       `<p class="tuesday-closed-modal__card-label">When we&rsquo;re open</p>` +
       `<p class="tuesday-closed-modal__card-text">Mon, Wed&ndash;Sun: 8&nbsp;AM &ndash; 9&nbsp;PM<br>` +
-      `Fri &amp; Sat: until 9:30&nbsp;PM<br>` +
-      `<span class="tuesday-closed-modal__closed-pill">Closed every Tuesday</span></p>` +
-      `</div></article>` +
+      `Fri &amp; Sat: until 9:30&nbsp;PM</p>` +
+      `<span class="tuesday-closed-modal__closed-pill">Closed every Tuesday</span>` +
+      `</article>` +
       `<article class="tuesday-closed-modal__card">` +
       `<span class="tuesday-closed-modal__card-icon" aria-hidden="true">📍</span>` +
-      `<div>` +
       `<p class="tuesday-closed-modal__card-label">Find us in Burgaw</p>` +
-      `<p class="tuesday-closed-modal__card-text">${escapeHtml(address)}<br>` +
-      `<a href="tel:${escapeHtml(phoneTel)}">${escapeHtml(phone)}</a></p>` +
-      `</div></article>` +
+      `<p class="tuesday-closed-modal__card-text">${escapeHtml(address)}</p>` +
+      `<a class="tuesday-closed-modal__card-link" href="tel:${escapeHtml(phoneTel)}">${escapeHtml(phone)}</a>` +
+      `</article>` +
       `</div>` +
       `<p class="tuesday-closed-modal__fun-fact">` +
       `Peek the menu now, pick your favorites, and swing by Wednesday! 🌶️` +
