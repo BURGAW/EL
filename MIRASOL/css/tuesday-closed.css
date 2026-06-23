@@ -1,4 +1,4 @@
-/* Tuesday closed popup — home page */
+/* Tuesday closed popup — home page, fiesta nap edition */
 
 .tuesday-closed-modal {
   position: fixed;
@@ -14,106 +14,462 @@
   display: flex;
 }
 
+.tuesday-closed-modal.is-open .tuesday-closed-modal__backdrop {
+  animation: tuesdayFadeIn 0.35s ease forwards;
+}
+
+.tuesday-closed-modal.is-open .tuesday-closed-modal__dialog {
+  animation: tuesdayBounceIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
 .tuesday-closed-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(20, 14, 10, 0.55);
-  backdrop-filter: blur(4px);
+  background: rgba(8, 20, 38, 0.68);
+  backdrop-filter: blur(8px);
+  opacity: 0;
 }
 
 .tuesday-closed-modal__dialog {
   position: relative;
   z-index: 1;
-  width: min(100%, 400px);
-  max-height: min(90vh, 520px);
+  width: min(100%, 440px);
+  max-height: min(92vh, 620px);
+  overflow: hidden;
   overflow-y: auto;
-  background: var(--white, #fff);
-  border: 2px solid rgba(255, 109, 0, 0.35);
-  border-radius: 16px;
-  padding: 1.35rem 1.15rem 1.15rem;
-  box-shadow: 0 16px 42px rgba(15, 28, 46, 0.2);
+  background: #fff;
+  border: none;
+  border-radius: 26px;
+  box-shadow:
+    0 28px 70px rgba(15, 28, 46, 0.32),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 0 80px rgba(255, 109, 0, 0.12);
+  opacity: 0;
+}
+
+/* ── Hero ── */
+.tuesday-closed-modal__hero {
+  position: relative;
+  padding: 1.65rem 1.35rem 1.35rem;
   text-align: center;
+  color: #fff;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(255, 255, 255, 0.22) 0%, transparent 55%),
+    linear-gradient(145deg, #005f8a 0%, #0077b6 22%, #e63946 58%, #ff6d00 88%, #ffb703 100%);
+  overflow: hidden;
+}
+
+.tuesday-closed-modal__hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='2' fill='%23fff' fill-opacity='0.14'/%3E%3Ccircle cx='45' cy='28' r='1.5' fill='%23fff' fill-opacity='0.1'/%3E%3Ccircle cx='68' cy='12' r='1.8' fill='%23fff' fill-opacity='0.16'/%3E%3Ccircle cx='22' cy='55' r='1.2' fill='%23fff' fill-opacity='0.12'/%3E%3C/svg%3E");
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.tuesday-closed-modal__hero::after {
+  content: '';
+  position: absolute;
+  inset: -50% -20%;
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.08) 48%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.08) 52%,
+    transparent 62%
+  );
+  animation: tuesdayShimmer 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.tuesday-closed-modal__floaters {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.tuesday-closed-modal__floater {
+  position: absolute;
+  font-size: 1.1rem;
+  opacity: 0.35;
+  animation: tuesdayFloat 6s ease-in-out infinite;
+}
+
+.tuesday-closed-modal__floater--1 { top: 12%; left: 8%; animation-delay: 0s; font-size: 0.95rem; }
+.tuesday-closed-modal__floater--2 { top: 18%; right: 10%; animation-delay: -1.2s; }
+.tuesday-closed-modal__floater--3 { bottom: 28%; left: 6%; animation-delay: -2.4s; font-size: 0.85rem; }
+.tuesday-closed-modal__floater--4 { bottom: 22%; right: 8%; animation-delay: -3.6s; font-size: 1.25rem; }
+.tuesday-closed-modal__floater--5 { top: 42%; left: 14%; animation-delay: -0.8s; font-size: 0.75rem; opacity: 0.25; }
+
+.tuesday-closed-modal__hero > *:not(.tuesday-closed-modal__floaters) {
+  position: relative;
+  z-index: 1;
 }
 
 .tuesday-closed-modal__close {
   position: absolute;
-  top: 0.45rem;
-  right: 0.5rem;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 3;
+  width: 2.25rem;
+  height: 2.25rem;
   border: none;
-  background: transparent;
-  font-size: 1.6rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  font-size: 1.4rem;
   line-height: 1;
-  color: var(--ink-soft, #3d4f63);
   cursor: pointer;
-  padding: 0.15rem 0.4rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tuesday-closed-modal__close:hover,
+.tuesday-closed-modal__close:focus-visible {
+  background: rgba(255, 255, 255, 0.38);
+  outline: none;
+  transform: scale(1.08) rotate(90deg);
+}
+
+.tuesday-closed-modal__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.7rem;
+  padding: 0.32rem 0.85rem;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.tuesday-closed-modal__badge-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #ffb703;
+  animation: tuesdayPulse 1.8s ease-in-out infinite;
+}
+
+.tuesday-closed-modal__emoji-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  margin-bottom: 0.55rem;
+  min-height: 4rem;
 }
 
 .tuesday-closed-modal__emoji {
-  margin: 0 0 0.35rem;
-  font-size: 2.5rem;
+  font-size: 3.1rem;
   line-height: 1;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+  animation: tuesdaySnooze 3s ease-in-out infinite;
+}
+
+.tuesday-closed-modal__emoji-alt {
+  font-size: 2.15rem;
+  line-height: 1;
+  opacity: 0.92;
+  transform: rotate(-14deg) translateY(6px);
+  animation: tuesdayTacoBob 2.4s ease-in-out infinite;
+}
+
+.tuesday-closed-modal__zzz {
+  position: absolute;
+  top: 0.15rem;
+  right: calc(50% - 3.2rem);
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.05em;
+  animation: tuesdayZzz 2.2s ease-in-out infinite;
 }
 
 .tuesday-closed-modal__title {
-  margin: 0 0 0.45rem;
-  font-family: var(--font-display, Georgia, serif);
-  font-size: 1.35rem;
-  color: var(--oaxaca-deep, #1c1412);
+  margin: 0 0 0.3rem;
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.5rem, 5.5vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.12;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.22);
+}
+
+.tuesday-closed-modal__tagline {
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.2rem, 4.8vw, 1.45rem);
+  font-weight: 600;
+  color: #fff8e7;
+  line-height: 1.25;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Body ── */
+.tuesday-closed-modal__body {
+  padding: 1.15rem 1.2rem 1.25rem;
+  text-align: center;
+  background: linear-gradient(180deg, #fafcff 0%, #fff 28%);
 }
 
 .tuesday-closed-modal__lead {
-  margin: 0 0 1rem;
-  font-size: 0.88rem;
-  line-height: 1.5;
+  margin: 0 0 0.85rem;
+  font-size: 0.92rem;
+  line-height: 1.58;
   color: var(--ink-soft, #3d4f63);
 }
 
-.tuesday-closed-modal__details {
-  margin-bottom: 1rem;
-  padding: 0.85rem 0.75rem;
-  border-radius: 12px;
-  background: linear-gradient(180deg, var(--oaxaca-cream, #faf6f0) 0%, #fff 100%);
-  border: 1px solid rgba(240, 184, 74, 0.35);
+.tuesday-closed-modal__lead strong {
+  color: var(--fire-red-deep, #d50000);
+  font-weight: 700;
+}
+
+.tuesday-closed-modal__countdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+  padding: 0.55rem 1rem;
+  border-radius: 100px;
+  background: linear-gradient(135deg, rgba(0, 119, 182, 0.08), rgba(255, 109, 0, 0.1));
+  border: 1px dashed rgba(0, 119, 182, 0.28);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--coast-sea, #0077b6);
+  letter-spacing: 0.02em;
+}
+
+.tuesday-closed-modal__countdown-icon {
+  font-size: 1.1rem;
+  animation: tuesdayTacoBob 1.8s ease-in-out infinite;
+}
+
+.tuesday-closed-modal__cards {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1.15rem;
   text-align: left;
 }
 
-.tuesday-closed-modal__label {
-  margin: 0 0 0.3rem;
-  font-size: 0.72rem;
+.tuesday-closed-modal__card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  padding: 0.8rem 0.9rem;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(0, 119, 182, 0.12);
+  box-shadow:
+    0 3px 14px rgba(0, 119, 182, 0.07),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tuesday-closed-modal.is-open .tuesday-closed-modal__card:nth-child(1) {
+  animation: tuesdayCardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+.tuesday-closed-modal.is-open .tuesday-closed-modal__card:nth-child(2) {
+  animation: tuesdayCardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both;
+}
+
+.tuesday-closed-modal__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 119, 182, 0.12);
+}
+
+.tuesday-closed-modal__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(255, 183, 3, 0.22), rgba(255, 23, 68, 0.14));
+  font-size: 1.2rem;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(255, 109, 0, 0.12);
+}
+
+.tuesday-closed-modal__card-label {
+  margin: 0 0 0.18rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
-  color: var(--oaxaca-red, #a81e2c);
+  color: var(--coast-sea, #0077b6);
 }
 
-.tuesday-closed-modal__label + .tuesday-closed-modal__text {
-  margin-top: 0;
-}
-
-.tuesday-closed-modal__label:not(:first-child) {
-  margin-top: 0.75rem;
-}
-
-.tuesday-closed-modal__text {
+.tuesday-closed-modal__card-text {
   margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.55;
+  font-size: 0.87rem;
+  line-height: 1.52;
   color: var(--ink, #0f1c2e);
 }
 
-.tuesday-closed-modal__text a {
-  color: var(--oaxaca-red, #a81e2c);
+.tuesday-closed-modal__card-text a {
+  color: var(--fire-red-deep, #d50000);
   font-weight: 700;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.tuesday-closed-modal__text a:hover {
+.tuesday-closed-modal__card-text a:hover {
+  color: var(--fire-red, #ff1744);
   text-decoration: underline;
+}
+
+.tuesday-closed-modal__closed-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 100px;
+  background: linear-gradient(135deg, rgba(255, 23, 68, 0.12), rgba(255, 109, 0, 0.1));
+  color: var(--fire-red-deep, #d50000);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.tuesday-closed-modal__fun-fact {
+  margin: 0 0 1.1rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff8e7 0%, #fff3d6 100%);
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #8b5a00;
+}
+
+.tuesday-closed-modal__actions {
+  display: grid;
+  gap: 0.55rem;
 }
 
 .tuesday-closed-modal__btn {
   width: 100%;
-  min-height: 48px;
+  min-height: 50px;
+  border-radius: 100px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.tuesday-closed-modal__btn:hover {
+  transform: translateY(-1px);
+}
+
+.tuesday-closed-modal__btn--primary {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(255, 23, 68, 0.35) !important;
+}
+
+.tuesday-closed-modal__btn--menu {
+  min-height: 46px;
+  border-style: dashed !important;
+  border-width: 2px !important;
+}
+
+/* ── Animations ── */
+@keyframes tuesdayFadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes tuesdayBounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes tuesdayShimmer {
+  0%, 100% { transform: translateX(-30%) rotate(0deg); }
+  50% { transform: translateX(30%) rotate(0deg); }
+}
+
+@keyframes tuesdayFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(6deg); }
+}
+
+@keyframes tuesdayPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+@keyframes tuesdaySnooze {
+  0%, 100% { transform: rotate(-4deg) scale(1); }
+  50% { transform: rotate(4deg) scale(1.04); }
+}
+
+@keyframes tuesdayTacoBob {
+  0%, 100% { transform: rotate(-14deg) translateY(6px); }
+  50% { transform: rotate(-8deg) translateY(0); }
+}
+
+@keyframes tuesdayZzz {
+  0%, 100% { opacity: 0.5; transform: translateY(0) scale(0.9); }
+  50% { opacity: 1; transform: translateY(-6px) scale(1.05); }
+}
+
+@keyframes tuesdayCardIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tuesday-closed-modal.is-open .tuesday-closed-modal__backdrop,
+  .tuesday-closed-modal.is-open .tuesday-closed-modal__dialog,
+  .tuesday-closed-modal.is-open .tuesday-closed-modal__card,
+  .tuesday-closed-modal__emoji,
+  .tuesday-closed-modal__emoji-alt,
+  .tuesday-closed-modal__zzz,
+  .tuesday-closed-modal__floater,
+  .tuesday-closed-modal__badge-dot,
+  .tuesday-closed-modal__countdown-icon,
+  .tuesday-closed-modal__hero::after {
+    animation: none !important;
+  }
+
+  .tuesday-closed-modal__dialog {
+    opacity: 1;
+  }
+
+  .tuesday-closed-modal__backdrop {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {
@@ -125,7 +481,14 @@
   .tuesday-closed-modal__dialog {
     width: 100%;
     max-width: none;
-    border-radius: 16px 16px 0 0;
-    padding-bottom: calc(1.15rem + env(safe-area-inset-bottom, 0px));
+    border-radius: 26px 26px 0 0;
+  }
+
+  .tuesday-closed-modal__body {
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .tuesday-closed-modal__emoji {
+    font-size: 2.75rem;
   }
 }
