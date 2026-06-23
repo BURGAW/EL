@@ -767,23 +767,16 @@ body.site-boujee .feat-share-row .btn-outline:hover {
 
 @media (max-width: 520px) {
   .feat-ribbon__inner {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0.45rem;
-    padding: 0.55rem 0.85rem;
+    gap: 0.4rem;
+    padding: 0.55rem 0.75rem;
   }
 
   .feat-ribbon__specials {
-    flex: 1 1 100%;
-    font-size: 0.6rem;
-    line-height: 1.35;
-    white-space: normal;
+    font-size: clamp(0.58rem, 2.6vw, 0.64rem);
+    line-height: 1.4;
   }
 
   .feat-ribbon__right {
-    margin-left: 0;
-    width: 100%;
-    justify-content: flex-end;
-    gap: 0.45rem 0.65rem;
+    gap: 0.35rem 0.55rem;
   }
 }

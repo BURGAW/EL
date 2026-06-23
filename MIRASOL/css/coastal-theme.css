@@ -455,6 +455,50 @@ body.site-coastal .feat-ribbon__specials {
   color: var(--fire-glow) !important;
 }
 
+@media (max-width: 768px) {
+  body.site-coastal .feat-ribbon__inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 0.45rem !important;
+    padding: 0.6rem 0.85rem !important;
+  }
+
+  body.site-coastal .feat-ribbon__specials,
+  body.site-coastal .feat-ribbon__specials.wc-ribbon-special {
+    width: 100% !important;
+    text-align: center !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  body.site-coastal .feat-ribbon__right {
+    width: 100% !important;
+    margin-left: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem 0.75rem !important;
+  }
+
+  body.site-coastal .feat-ribbon__status {
+    justify-content: center !important;
+  }
+
+  body.site-coastal .feat-ribbon__meal,
+  body.site-coastal .feat-ribbon__clock,
+  body.site-coastal .feat-ribbon__status {
+    font-size: clamp(0.58rem, 2.5vw, 0.68rem) !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+  }
+
+  body.site-coastal .feat-ribbon__clock {
+    min-width: 0 !important;
+  }
+}
+
 body.site-coastal:not(.site-worldcup) .wc-promo {
   background:
     linear-gradient(180deg, rgba(0, 150, 199, 0.08) 0%, transparent 100%),
