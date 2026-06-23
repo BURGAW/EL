@@ -52,7 +52,7 @@ window.SITE_CONFIG = {
        */
       api: {
         /** Your secure server URL — set when backend is deployed */
-        baseUrl: '',
+        baseUrl: 'https://el-mirsol.onrender.com',
         submitPath: '/v1/orders/pickup',
         /** iFrame flow: POST clv_ token + cart → charge + kitchen ticket */
         checkoutPath: '/v1/checkout/pickup',
@@ -81,7 +81,7 @@ window.SITE_CONFIG = {
       provider: 'clover',
       /** iframe = card fields on MIRASOL checkout; hosted_checkout = redirect to Clover */
       mode: 'iframe',
-      apiBaseUrl: '',
+      apiBaseUrl: 'https://el-mirsol.onrender.com',
       checkoutPath: '/v1/checkout/pickup',
       chargePath: '/v1/charges/pickup',
       methods: ['visa', 'mastercard', 'apple_pay'],
