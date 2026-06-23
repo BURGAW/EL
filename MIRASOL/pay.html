@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <script>
+    (function(){try{var e=window.self!==window.top||/[?&](embed|gsites)(=1)?(?=&|$)/i.test(location.search);if(e)document.documentElement.classList.add('gsites-embed');}catch(x){}})();
+  </script>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#ff1744">
+  <title>Secure payment | MIRASOL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=brandtext1">
+  <link rel="stylesheet" href="css/coastal-theme.css?v=burgawcolor1">
+  <link rel="stylesheet" href="css/order-cart.css?v=compact2">
+  <link rel="stylesheet" href="css/pay-checkout.css?v=pay1">
+  <link rel="stylesheet" href="css/google-sites-embed.css?v=scrollnav1">
+  <link rel="icon" href="assets/images/facebook/logo.jpg?v=brand1" type="image/jpeg">
+</head>
+<body class="site-coastal pay-page">
+  <main id="main" class="pay-shell">
+    <header class="pay-head">
+      <a href="menu.html" class="pay-back" id="pay-back" data-pay-back>← Back to menu</a>
+      <div class="pay-brand">
+        <h1 class="pay-title">Secure payment</h1>
+        <p class="pay-sub" id="pay-pickup-label">Pickup order</p>
+      </div>
+    </header>
+
+    <section class="pay-summary" id="pay-summary" aria-label="Order summary"></section>
+
+    <section class="pay-card" aria-label="Card payment">
+      <h2 class="pay-card__title">Card details</h2>
+      <div id="pay-iframe-mount"></div>
+      <p class="pay-card__hint" id="pay-hint" hidden></p>
+      <button type="button" class="btn btn-primary pay-submit" id="pay-submit" disabled>Pay now</button>
+      <p class="cart-checkout__trust" id="pay-trust" hidden></p>
+    </section>
+
+    <section class="pay-success" id="pay-success" hidden>
+      <p class="pay-success__title" id="pay-success-title">Payment received — thank you!</p>
+      <p class="pay-success__sub" id="pay-success-sub">We're preparing your order for pickup.</p>
+      <a href="menu.html" class="btn btn-primary" id="pay-success-menu" data-pay-back>Back to menu</a>
+    </section>
+  </main>
+
+  <script src="js/site-config.js?v=compact2"></script>
+  <script src="js/clover-checkout.js?v=compact2"></script>
+  <script src="js/clover-iframe.js?v=compact2"></script>
+  <script src="js/pay-checkout.js?v=pay1"></script>
+  <script src="js/google-sites-embed.js?v=tuesdayfix1"></script>
+</body>
+</html>

@@ -645,6 +645,14 @@ body.has-topbar .cart-drawer {
   margin: 0.1rem 0 0;
 }
 
+.cart-checkout__next-step {
+  margin: 0;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
 .cart-checkout__actions {
   display: flex;
   flex-direction: column;

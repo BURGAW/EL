@@ -4,6 +4,7 @@
  */
 (function () {
   const STORAGE_KEY = 'elmirasol-cart-v1';
+  const CHECKOUT_DRAFT_KEY = 'elmirasol-checkout-draft';
   const listeners = new Set();
 
   let items = [];
@@ -68,6 +69,8 @@
       back: t('Back', 'Atrás'),
       required: t('Please enter your name and phone.', 'Ingrese su nombre y teléfono.'),
       payNow: t('Pay with card or Apple Pay', 'Pagar con tarjeta o Apple Pay'),
+      continueToPay: t('Continue to payment', 'Continuar al pago'),
+      payOnNextPage: t('Card & Apple Pay on the next screen', 'Tarjeta y Apple Pay en la siguiente pantalla'),
       payAtPickup: t('Place order — pay at pickup', 'Enviar pedido — pagar al recoger'),
       processing: t('Opening secure payment…', 'Abriendo pago seguro…'),
       paymentError: t('Could not start payment. Please call us to order.', 'No se pudo iniciar el pago. Llámenos para ordenar.'),
@@ -90,7 +93,42 @@
   }
 
   function showIframeFields() {
-    return paymentUi()?.showIframeFields?.() === true;
+    return false;
+  }
+
+  function usePaymentPage() {
+    return paymentUi()?.showIframeFields?.() === true && canPayOnline();
+  }
+
+  function embedSuffix() {
+    try {
+      if (/[?&](embed|gsites)(=1)?(?=&|$)/i.test(window.location.search)) return '?embed=1';
+      if (document.documentElement.classList.contains('gsites-embed')) return '?embed=1';
+    } catch {
+      /* ignore */
+    }
+    return '';
+  }
+
+  function saveCheckoutDraft(orderInfo) {
+    try {
+      sessionStorage.setItem(
+        CHECKOUT_DRAFT_KEY,
+        JSON.stringify({ ...orderInfo, savedAt: Date.now() })
+      );
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  function goToPaymentPage(orderInfo) {
+    if (!saveCheckoutDraft(orderInfo)) {
+      showToast(labels().paymentError);
+      return;
+    }
+    closeDrawer();
+    window.location.href = `pay.html${embedSuffix()}`;
   }
 
   function escapeHtml(s) {
@@ -513,9 +551,9 @@
         `<label><input type="radio" name="fulfillment" value="pickup" checked> ${escapeHtml(L.pickup)}</label>` +
         `<label><input type="radio" name="fulfillment" value="dine-in"> ${escapeHtml(L.dineIn)}</label>` +
         `</fieldset>`;
-    const iframeOn = showIframeFields() && window.CloverIframe?.fieldsHtml;
-    const payBadges = iframeOn ? '' : paymentUi()?.paymentBadgesHtml?.() || '';
-    const payNote = paymentUi()?.paymentNoteHtml?.() || '';
+    const paymentPage = usePaymentPage();
+    const payBadges = paymentPage ? '' : paymentUi()?.paymentBadgesHtml?.() || '';
+    const payNote = paymentPage ? '' : paymentUi()?.paymentNoteHtml?.() || '';
 
     panel.innerHTML =
       `<div class="cart-checkout__head">` +
@@ -531,15 +569,17 @@
       `<label class="cart-field cart-field--compact"><span>${escapeHtml(L.phone)}</span><input type="tel" name="phone" required autocomplete="tel" inputmode="tel"></label>` +
       `</div>` +
       `<label class="cart-field cart-field--compact cart-field--notes"><span>${escapeHtml(L.notes)}</span><textarea name="notes" rows="1" placeholder="${escapeHtml(t('Optional', 'Opcional'))}"></textarea></label>` +
-      (iframeOn ? `<div class="cart-checkout__pay">${window.CloverIframe.fieldsHtml()}</div>` : '') +
       payBadges +
       payNote +
+      (paymentPage ? `<p class="cart-checkout__next-step">${escapeHtml(L.payOnNextPage)}</p>` : '') +
       `<div class="cart-checkout__actions">` +
-      (canPayOnline()
-        ? `<button type="button" class="btn btn-primary cart-pay-btn" id="cart-pay-clover">${escapeHtml(L.payNow)}</button>` +
+      (paymentPage
+        ? `<button type="button" class="btn btn-primary cart-pay-btn" id="cart-pay-clover">${escapeHtml(L.continueToPay)}</button>` +
           `<button type="submit" class="btn btn-outline cart-place-btn cart-place-btn--secondary">${escapeHtml(L.payAtPickup)}</button>`
-        : `<button type="submit" class="btn btn-primary cart-place-btn">${escapeHtml(L.placeOrder)}</button>`) +
-      (iframeOn ? paymentUi()?.paymentTrustLineHtml?.() || '' : '') +
+        : canPayOnline()
+          ? `<button type="button" class="btn btn-primary cart-pay-btn" id="cart-pay-clover">${escapeHtml(L.payNow)}</button>` +
+            `<button type="submit" class="btn btn-outline cart-place-btn cart-place-btn--secondary">${escapeHtml(L.payAtPickup)}</button>`
+          : `<button type="submit" class="btn btn-primary cart-place-btn">${escapeHtml(L.placeOrder)}</button>`) +
       `</div></form>` +
       `<div class="cart-confirm" id="cart-confirm" hidden>` +
       `<p class="cart-confirm__title">${escapeHtml(L.orderPlaced)}</p>` +
@@ -551,24 +591,6 @@
       `<button type="button" class="btn btn-outline" id="cart-done">${escapeHtml(L.continueShopping)}</button>` +
       `</div></div>`;
 
-    if (showIframeFields()) {
-      window.CloverIframe?.unmount?.();
-      window.CloverIframe?.afterCheckoutRender?.(total, async (token) => {
-        const form = document.getElementById('cart-checkout-form');
-        if (!form) return false;
-        const orderInfo = readCheckoutFormFromPanel(form);
-        if (!orderInfo) return false;
-        const result = await paymentUi()?.chargeToken?.(token, orderInfo, getSnapshot())
-          || window.CloverIframe?.chargeToken?.(token, orderInfo, getSnapshot());
-        if (result?.ok) {
-          showPaidConfirm(form, orderInfo);
-          clear();
-          return true;
-        }
-        showToast(labels().paymentError);
-        return false;
-      });
-    }
   }
 
   function readCheckoutFormFromPanel(form) {
@@ -671,21 +693,16 @@
       if (!form || !canPayOnline()) return;
       const orderInfo = readCheckoutForm(form);
       if (!orderInfo) return;
+
+      if (usePaymentPage()) {
+        goToPaymentPage(orderInfo);
+        return;
+      }
+
       const payBtn = e.target;
       payBtn.disabled = true;
       showToast(labels().processing);
-
-      let result;
-      if (paymentUi()?.isIframeMode?.()) {
-        result = await paymentUi().payWithIframe(orderInfo, getSnapshot());
-        if (result?.ok) {
-          showPaidConfirm(form, orderInfo);
-          clear();
-        }
-      } else {
-        result = await paymentUi().startCheckout(orderInfo, getSnapshot());
-      }
-
+      const result = await paymentUi().startCheckout(orderInfo, getSnapshot());
       payBtn.disabled = false;
       if (!result?.ok && !result?.redirect) {
         showToast(labels().paymentError);
