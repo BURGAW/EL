@@ -3,8 +3,8 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v6';
-  const MODAL_VERSION = '9';
+  const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v10';
+  const MODAL_VERSION = '10';
   const isMenu = document.body.classList.contains('menu-page');
 
   function isPreviewMode() {
@@ -179,7 +179,7 @@
   }
 
   function boot() {
-    if (!isTuesdayEastern()) return;
+    if (!isTuesdayEastern() && !isPreviewMode()) return;
     scheduleTuesdayPopup();
   }
 
