@@ -375,6 +375,19 @@
     return lines;
   }
 
+  function cartLineName(item, groups, selections) {
+    let name = item.name;
+    const sizeGroup = groups.find((g) => g.id === 'size');
+    if (!sizeGroup) return name;
+
+    const pickId = selections.size || sizeGroup.default || 'Small';
+    const sizeLabel =
+      pickId === 'Large' ? (getLang() === 'es' ? 'Grande' : 'Large')
+      : pickId === 'Both' ? (getLang() === 'es' ? 'Ambos' : 'Both')
+      : getLang() === 'es' ? 'Chico' : 'Small';
+    return `${name} (${sizeLabel})`;
+  }
+
   function buildLineItem(key, selections, qty) {
     const entry = itemRegistry[key];
     if (!entry) return null;
@@ -382,9 +395,10 @@
     const groups = getItemModifierGroups(sectionId, item);
     const base = parseBasePrice(item.price, item);
     const unitPrice = calcTotal(base, groups, selections);
+    const name = hasDualSize(item) ? cartLineName(item, groups, selections) : item.name;
     return {
       itemKey: key,
-      name: item.name,
+      name,
       sectionId,
       sku: item.sku || '',
       qty: Math.max(1, Math.min(99, qty || 1)),

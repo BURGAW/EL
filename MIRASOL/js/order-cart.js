@@ -159,7 +159,11 @@
   function updateQty(id, qty) {
     const it = items.find((x) => x.id === id);
     if (!it) return;
-    it.qty = Math.max(1, Math.min(99, qty));
+    if (qty < 1) {
+      removeLine(id);
+      return;
+    }
+    it.qty = Math.min(99, qty);
     save();
   }
 
@@ -315,7 +319,7 @@
           `<article class="cart-line" data-line-id="${escapeHtml(it.id)}">` +
           `<div class="cart-line__top">` +
           `<span class="cart-line__name">${escapeHtml(it.name)}</span>` +
-          `<span class="cart-line__price">${escapeHtml(formatMoney(it.unitPrice * it.qty))}</span>` +
+          `<span class="cart-line__price">${escapeHtml(formatMoney(it.unitPrice))}</span>` +
           `</div>` +
           `<div class="cart-line__controls">` +
           `<div class="qty-stepper qty-stepper--sm">` +
