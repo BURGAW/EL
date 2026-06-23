@@ -74,7 +74,7 @@
       'daily-lunch': null,
       appetizers: { src: menu('IMG_0399'), alt: 'Mexican street corn' },
       tacos: { src: menu('IMG_0335'), alt: 'Birria tacos with consommé' },
-      burritos: { src: menu('IMG_1670'), alt: 'Burrito plate with rice and queso' },
+      burritos: null,
       chimichangas: { src: menu('IMG_0440'), alt: 'Chimichanga with rice and beans' },
       quesadillas: { src: menu('IMG_1964'), alt: 'Quesadilla with fresh salad' },
       tortas: { src: menu('IMG_2920'), alt: 'Torta on a wooden table' },
@@ -147,11 +147,6 @@
     [photoKey('tacos', 'Tacos Albañil')]: plate1902('left', 'Tacos albañil with chorizo and eggs'),
     [photoKey('tacos', 'Tacos Albanil')]: plate1902('left', 'Tacos albañil with chorizo and eggs'),
 
-    /* burritos */
-    [photoKey('burritos', 'Burrito Meal')]: { src: menu('IMG_1670'), alt: 'Burrito plate' },
-    [photoKey('burritos', 'Shrimp Burrito')]: { src: menu('IMG_1670'), alt: 'Shrimp burrito' },
-    [photoKey('burritos', 'Burrito de Camarones')]: { src: menu('IMG_1670'), alt: 'Burrito de camarones' },
-
     /* chimichangas */
     [photoKey('chimichangas', 'Chimichanga Meal')]: { src: menu('IMG_0440'), alt: 'Chimichanga plate' },
     [photoKey('chimichangas', 'Shrimp Chimichanga')]: { src: menu('IMG_0440'), alt: 'Shrimp chimichanga' },
@@ -182,6 +177,8 @@
     [photoKey('enchiladas', 'Enchiladas Campechanas')]: plate1902('right', 'Enchiladas campechanas'),
 
     /* platters */
+    [photoKey('platters', "Davey's Special")]: { src: menu('IMG_1670'), alt: "Davey's Special — chicken, chorizo, and queso sauce" },
+    [photoKey('platters', 'Especial de Davey')]: { src: menu('IMG_1670'), alt: 'Especial de Davey — pollo, chorizo y queso' },
     [photoKey('platters', 'Nachos')]: { src: fb('nachos.jpg'), alt: 'Loaded nachos' },
     [photoKey('platters', 'Carne Asada')]: { src: menu('IMG_1541'), alt: 'Carne asada plate' },
     [photoKey('platters', 'Chilaquiles')]: { src: menu('IMG_0335'), alt: 'Chilaquiles platter' },
