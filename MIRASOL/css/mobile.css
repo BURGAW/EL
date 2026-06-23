@@ -1017,6 +1017,7 @@ body.roulette-open .roulette-panel {
   }
 
   body.modal-open .google-review-tab,
+  body.cart-open .google-review-tab,
   body.roulette-open .google-review-tab,
   body:has(.lightbox.open) .google-review-tab,
   body:has(.feat-cmd.is-open) .google-review-tab {
