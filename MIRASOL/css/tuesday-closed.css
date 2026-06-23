@@ -118,12 +118,20 @@
   animation: tuesdayPulse 1.8s ease-in-out infinite;
 }
 
-.tuesday-closed-modal__icon {
-  font-size: 2.4rem;
-  line-height: 1;
-  margin-bottom: 0.35rem;
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.15));
-  animation: tuesdayIconBob 3s ease-in-out infinite;
+.tuesday-closed-modal__logo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.45rem;
+}
+
+.tuesday-closed-modal__logo {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  animation: tuesdayLogoBob 3s ease-in-out infinite;
 }
 
 .tuesday-closed-modal__title {
@@ -306,7 +314,7 @@
   50% { opacity: 0.65; transform: scale(0.88); }
 }
 
-@keyframes tuesdayIconBob {
+@keyframes tuesdayLogoBob {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-4px); }
 }
@@ -314,7 +322,7 @@
 @media (prefers-reduced-motion: reduce) {
   .tuesday-closed-modal.is-open .tuesday-closed-modal__backdrop,
   .tuesday-closed-modal.is-open .tuesday-closed-modal__dialog,
-  .tuesday-closed-modal__icon,
+  .tuesday-closed-modal__logo,
   .tuesday-closed-modal__badge-dot {
     animation: none !important;
   }

@@ -73,6 +73,7 @@
     const phone = brand.phone || '(910) 789-1154';
     const phoneTel = brand.phoneTel || '9107891154';
     const address = location.address || '211 U.S. Hwy 117 S, Burgaw, NC 28425';
+    const logo = brand.logo || 'assets/images/facebook/logo.jpg?v=brand1';
 
     let modal = document.getElementById('tuesday-closed-modal');
     if (modal) return modal;
@@ -94,7 +95,9 @@
       `<span class="tuesday-closed-modal__badge-dot" aria-hidden="true"></span>` +
       `Closed today` +
       `</span>` +
-      `<div class="tuesday-closed-modal__icon" aria-hidden="true">☀️</div>` +
+      `<div class="tuesday-closed-modal__logo-wrap">` +
+      `<img src="${escapeHtml(logo)}" alt="" class="tuesday-closed-modal__logo" width="72" height="72">` +
+      `</div>` +
       `<h2 class="tuesday-closed-modal__title" id="tuesday-closed-title">We&rsquo;re taking Tuesday off</h2>` +
       `<p class="tuesday-closed-modal__tagline">Family rest day &mdash; the griddle gets a break too.</p>` +
       `</header>` +
