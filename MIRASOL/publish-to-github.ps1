@@ -1,10 +1,10 @@
-# Push El Mirasol to GitHub and enable Pages.
+# Push MIRASOL to GitHub and enable Pages.
 # Run after: gh auth login
 $ErrorActionPreference = 'Stop'
 $env:Path = "C:\Program Files\Git\cmd;C:\Program Files\GitHub CLI;" + $env:Path
 Set-Location $PSScriptRoot
 
-$repoName = 'el-mirasol'
+$repoName = 'EL'
 $status = gh auth status 2>&1
 if ($LASTEXITCODE -ne 0) {
   Write-Host "First run: gh auth login"

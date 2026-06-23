@@ -92,6 +92,14 @@
     return typeof cfg().taxRate === 'number' ? cfg().taxRate : 0.0675;
   }
 
+  function pickupEtaLabel() {
+    const eta = cfg().pickupEta || {};
+    const min = Math.max(1, parseInt(eta.min, 10) || 8);
+    const max = Math.max(min, parseInt(eta.max, 10) || 14);
+    const range = min === max ? `${min} min` : `${min}\u2013${max} min`;
+    return t(`Pick up in ${range}`, `Recoger en ${range}`);
+  }
+
   function load() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -197,6 +205,7 @@
       lines.push(`${L.name}: ${orderInfo.name}`);
       lines.push(`${L.phone}: ${orderInfo.phone}`);
       lines.push(`${L.fulfillment}: ${orderInfo.fulfillment === 'dine-in' ? L.dineIn : L.pickup}`);
+      if (orderInfo.fulfillment !== 'dine-in') lines.push(pickupEtaLabel());
       if (orderInfo.notes) lines.push(`${L.notes}: ${orderInfo.notes}`);
     }
     lines.push(`\n${phoneDisplay()}`);

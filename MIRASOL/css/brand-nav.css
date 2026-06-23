@@ -10,19 +10,7 @@ body:not(.nav-open):not(.roulette-open):not(.modal-open) {
   overflow-y: auto;
 }
 
-/* Header: El Mirasol lockup, then Home | Menu scrolling horizontally */
-.header {
-  justify-content: flex-start;
-  gap: 0.25rem;
-  padding-right: 0.75rem;
-}
-
-.header .logo {
-  flex: 0 0 auto;
-  max-width: min(58vw, 300px);
-  min-width: 0;
-}
-
+/* Inline nav on all sizes — no hamburger drawer */
 .header .menu-btn {
   display: none !important;
 }
@@ -36,43 +24,102 @@ body:not(.nav-open):not(.roulette-open):not(.modal-open) {
   transform: none !important;
   opacity: 1 !important;
   pointer-events: auto !important;
-  flex: 1 1 auto;
-  min-width: 0;
   width: auto !important;
   height: auto !important;
   max-height: none !important;
   flex-direction: row !important;
   align-items: center;
-  justify-content: flex-start;
-  gap: 0.5rem;
-  margin-left: 0.15rem;
-  padding: 0 0.35rem 0 0 !important;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  padding: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
-}
-
-.header .nav::-webkit-scrollbar {
-  display: none;
 }
 
 .header .nav a {
   flex: 0 0 auto;
   width: auto !important;
-  min-height: 40px;
-  padding: 0.45rem 0.7rem !important;
   white-space: nowrap;
   border-radius: var(--radius-sm);
-  font-size: 0.78rem !important;
   letter-spacing: 0.06em;
+}
+
+.header .nav a::after {
+  display: none;
 }
 
 .header .nav a:hover,
 .header .nav a.active {
   background: rgba(255, 109, 0, 0.08);
+}
+
+/* Mobile — logo then Home | Menu (unchanged) */
+@media (max-width: 768px) {
+  .header {
+    justify-content: flex-start;
+    gap: 0.25rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .header .logo {
+    flex: 0 0 auto;
+    max-width: min(62vw, 260px);
+    min-width: 0;
+    font-size: 1.1rem !important;
+  }
+
+  .header .nav {
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-left: 0.15rem;
+    padding-right: 0.35rem !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .header .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .header .nav a {
+    min-height: 44px;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Desktop — logo left, Home | Menu right */
+@media (min-width: 769px) {
+  .header {
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .header .logo {
+    flex: 0 0 auto;
+    max-width: 320px;
+    min-width: 0;
+    margin-right: auto;
+  }
+
+  .header .nav {
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    gap: 0.65rem;
+    margin-left: 1rem;
+    overflow: visible;
+  }
+
+  .header .nav a {
+    min-height: 44px;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.88rem !important;
+  }
 }
 
 /* Menu page: Breakfast / Lunch / Dinner tabs align under brand row */
@@ -93,21 +140,4 @@ body.menu-page .menu-view-tabs::-webkit-scrollbar {
 body.menu-page .menu-view-tab {
   flex: 0 0 auto;
   white-space: nowrap;
-}
-
-@media (max-width: 768px) {
-  .header {
-    padding-left: 0.75rem;
-  }
-
-  .header .logo {
-    max-width: min(62vw, 260px);
-    font-size: 1.1rem !important;
-  }
-
-  .header .nav a {
-    min-height: 44px;
-    padding: 0.5rem 0.75rem !important;
-    font-size: 0.8rem !important;
-  }
 }

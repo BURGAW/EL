@@ -554,11 +554,51 @@ body.modal-open {
   margin: 0 0 0.65rem;
 }
 
+.item-modal__photo {
+  margin: 0 0 0.85rem;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--oaxaca-cream);
+  border: 1px solid rgba(240, 184, 74, 0.28);
+  box-shadow: 0 4px 16px rgba(42, 24, 16, 0.08);
+}
+
+.item-modal__photo[hidden] {
+  display: none !important;
+}
+
+.item-modal__photo-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* IMG_1902 two-plate photo — zoom to left (tacos) or right (enchiladas) half */
+.item-modal__photo-img--crop-left {
+  object-position: 24% 48%;
+  transform: scale(1.95);
+  transform-origin: 24% 48%;
+}
+
+.item-modal__photo-img--crop-right {
+  object-position: 76% 48%;
+  transform: scale(1.95);
+  transform-origin: 76% 48%;
+}
+
 .item-modal__desc {
   font-size: 0.85rem;
   line-height: 1.55;
   color: var(--ink-soft);
   margin: 0 0 0.85rem;
+}
+
+.item-modal__dialog:not(.item-modal__dialog--has-photo) .item-modal__desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-top: 0.15rem;
 }
 
 .item-modal__mod-heading {
@@ -635,6 +675,27 @@ body.modal-open {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .item-modal__dialog {
+    max-height: 92dvh;
+    padding: 0.85rem 0.85rem 1.1rem;
+  }
+
+  .item-modal__photo-img {
+    aspect-ratio: 5 / 4;
+    min-height: 210px;
+    max-height: 42dvh;
+  }
+
+  .item-modal__title {
+    font-size: 1.15rem;
+  }
+
+  .item-modal__desc {
+    font-size: 0.9rem;
+  }
+}
+
 @media (min-width: 640px) {
   .item-modal {
     align-items: center;
@@ -644,6 +705,10 @@ body.modal-open {
   .item-modal__dialog {
     border-radius: var(--radius-lg);
     max-height: 85vh;
+  }
+
+  .item-modal__photo-img {
+    max-height: 280px;
   }
 }
 

@@ -156,25 +156,43 @@
     return html;
   }
 
-  function renderCategoryPhoto(section) {
-    const fig = document.getElementById('menu-category-photo');
-    const img = document.getElementById('menu-category-photo-img');
+  function setModalPhoto(sectionId, item) {
+    const fig = document.getElementById('item-modal-photo');
+    const img = document.getElementById('item-modal-photo-img');
+    const dialog = document.querySelector('#item-modal .item-modal__dialog');
     if (!fig || !img) return;
 
-    const photo = window.SITE_PHOTOS?.categorySpotlight?.[activeCategory];
+    const photo = window.SITE_PHOTOS?.resolveItemPhoto?.(sectionId, item);
     if (!photo?.src) {
       fig.hidden = true;
+      img.removeAttribute('src');
+      img.alt = '';
+      dialog?.classList.remove('item-modal__dialog--has-photo');
       return;
     }
 
     fig.hidden = false;
-    const alt = photo.alt || section?.title || '';
-    if (img.src !== photo.src) {
-      img.src = photo.src;
-      img.alt = alt;
-    } else if (img.alt !== alt) {
-      img.alt = alt;
+    dialog?.classList.add('item-modal__dialog--has-photo');
+    const alt = photo.alt || item.name || '';
+    const src = photo.src;
+    if (img.getAttribute('src') !== src) img.src = src;
+    img.alt = alt;
+    img.classList.remove('item-modal__photo-img--crop-left', 'item-modal__photo-img--crop-right');
+    if (photo.crop === 'left') img.classList.add('item-modal__photo-img--crop-left');
+    if (photo.crop === 'right') img.classList.add('item-modal__photo-img--crop-right');
+  }
+
+  function clearModalPhoto() {
+    const fig = document.getElementById('item-modal-photo');
+    const img = document.getElementById('item-modal-photo-img');
+    const dialog = document.querySelector('#item-modal .item-modal__dialog');
+    if (fig) fig.hidden = true;
+    if (img) {
+      img.removeAttribute('src');
+      img.alt = '';
+      img.classList.remove('item-modal__photo-img--crop-left', 'item-modal__photo-img--crop-right');
     }
+    dialog?.classList.remove('item-modal__dialog--has-photo');
   }
 
   function bindViewTabs() {
@@ -286,8 +304,6 @@
         noteEl.hidden = true;
       }
     }
-
-    renderCategoryPhoto(section);
 
     const items = section.items || [];
     const { emptyLabel } = getData();
@@ -452,7 +468,7 @@
     const modal = document.getElementById('item-modal');
     if (!entry || !modal) return;
 
-    const { item, sectionId } = entry;
+    const { item, sectionId, index } = entry;
     const { noDesc, modifiersLabel } = getData();
     const groups = getItemModifierGroups(sectionId, item);
 
@@ -471,6 +487,7 @@
     const modHeading = document.getElementById('item-modal-mod-heading');
 
     if (title) title.textContent = item.name;
+    setModalPhoto(sectionId, item);
     if (descEl) {
       descEl.textContent = item.desc || noDesc;
     }
@@ -503,6 +520,7 @@
     modal.hidden = true;
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
+    clearModalPhoto();
     modalState = { key: null, selections: {}, qty: 1 };
   }
 

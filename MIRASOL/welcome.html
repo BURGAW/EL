@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ff1744">
+  <title>Welcome | MIRASOL</title>
+  <link rel="icon" href="assets/images/facebook/logo.jpg?v=brand1" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      background: rgba(15, 28, 46, 0.72);
+      color: #0f1c2e;
+    }
+    .popup-backdrop {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 1.25rem;
+    }
+    .popup {
+      width: min(100%, 420px);
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      padding: 2rem 1.75rem 1.75rem;
+      text-align: center;
+      animation: pop-in 0.45s ease;
+    }
+    @keyframes pop-in {
+      from { opacity: 0; transform: scale(0.92) translateY(12px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .popup__logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ff6d00;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+    .popup__eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #ff1744;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+    }
+    .popup__title {
+      font-family: Montserrat, sans-serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin: 0 0 0.35rem;
+    }
+    .popup__sub {
+      font-size: 0.95rem;
+      color: #3d4f63;
+      margin: 0 0 1.25rem;
+      line-height: 1.5;
+    }
+    .popup__btn {
+      display: block;
+      width: 100%;
+      min-height: 52px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff1744, #ff6d00);
+      color: #fff;
+      font-family: Montserrat, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      line-height: 52px;
+      cursor: pointer;
+      touch-action: manipulation;
+      box-shadow: 0 8px 24px rgba(255, 23, 68, 0.35);
+    }
+    .popup__btn:hover { filter: brightness(1.05); }
+    .popup__btn:active { transform: scale(0.98); }
+    .popup__countdown {
+      margin: 1rem 0 0;
+      font-size: 0.82rem;
+      color: #3d4f63;
+    }
+    .popup__link {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: #0077b6;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup-backdrop" role="presentation">
+    <div class="popup" role="dialog" aria-labelledby="popup-title" aria-modal="true">
+      <img class="popup__logo" src="assets/images/facebook/logo.jpg?v=brand1" alt="" width="72" height="72">
+      <p class="popup__eyebrow">We&rsquo;ve moved</p>
+      <h1 class="popup__title" id="popup-title">MIRASOL</h1>
+      <p class="popup__sub">Our new website is ready &mdash; menu, hours, reviews &amp; more. Same family kitchen in Burgaw.</p>
+      <a class="popup__btn" id="popup-enter" href="index.html">Enter our new website</a>
+      <p class="popup__countdown" id="popup-countdown" hidden></p>
+      <a class="popup__link" id="popup-url" href="index.html"></a>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var embed = /[?&](embed|gsites)(=1)?(?=&|$)/i.test(location.search) || (function () {
+        try { return window.self !== window.top; } catch (e) { return true; }
+      })();
+      var target = new URL('index.html', location.href);
+      if (embed) target.searchParams.set('embed', '1');
+      var href = target.pathname + target.search;
+      var enter = document.getElementById('popup-enter');
+      var urlLine = document.getElementById('popup-url');
+      var countdown = document.getElementById('popup-countdown');
+      var full = new URL(href, location.href).href;
+      enter.href = href;
+      urlLine.href = href;
+      urlLine.textContent = full;
+      var sec = 6;
+      countdown.hidden = false;
+      countdown.textContent = 'Opening automatically in ' + sec + ' seconds\u2026';
+      var tick = setInterval(function () {
+        sec -= 1;
+        if (sec <= 0) {
+          clearInterval(tick);
+          location.replace(href);
+          return;
+        }
+        countdown.textContent = 'Opening automatically in ' + sec + ' seconds\u2026';
+      }, 1000);
+      enter.addEventListener('click', function () { clearInterval(tick); });
+    })();
+  </script>
+</body>
+</html>

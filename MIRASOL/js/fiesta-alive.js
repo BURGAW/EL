@@ -455,31 +455,41 @@
     });
   }
 
+  function getPickupEta() {
+    const eta = window.SITE_CONFIG?.ordering?.pickupEta || {};
+    const min = Math.max(1, parseInt(eta.min, 10) || 8);
+    const max = Math.max(min, parseInt(eta.max, 10) || 14);
+    return { min, max };
+  }
+
   /* ── Pickup time estimator (operational transparency) ── */
   function initPickupEstimator() {
     const hero = document.querySelector('.hero-btns');
     if (!hero || document.getElementById('fiesta-pickup')) return;
 
-    const h = nowLocal().getHours();
     const day = nowLocal().getDay();
     if (day === 2) return;
 
-    let mins = 15;
-    if (h >= 11 && h < 14) mins = 22;
-    if (h >= 17 && h < 20) mins = 28;
+    const { min, max } = getPickupEta();
+    const rangeLabel = min === max ? `${min} min` : `${min}\u2013${max} min`;
 
     const el = document.createElement('a');
     el.className = 'fiesta-pickup';
     el.id = 'fiesta-pickup';
     el.href = 'tel:9107891154';
-    el.setAttribute('aria-label', `Call now for pickup in about ${mins} minutes`);
+    el.setAttribute(
+      'aria-label',
+      min === max
+        ? `Call now for pickup in about ${min} minutes`
+        : `Call now for pickup in ${min} to ${max} minutes`
+    );
     el.innerHTML =
       `<span class="fiesta-pickup__action">` +
       `<span class="fiesta-pickup__icon" aria-hidden="true">📞</span>` +
       `<strong class="fiesta-pickup__call">Call now</strong>` +
       `<span class="fiesta-pickup__arrow" aria-hidden="true">→</span>` +
       `</span>` +
-      `<span class="fiesta-pickup__eta">Pick up in ~<strong class="fiesta-pickup__time">${mins} min</strong></span>`;
+      `<span class="fiesta-pickup__eta">Pick up in <strong class="fiesta-pickup__time">${rangeLabel}</strong></span>`;
     hero.after(el);
   }
 

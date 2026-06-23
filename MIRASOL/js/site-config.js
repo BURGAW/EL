@@ -38,6 +38,9 @@ window.SITE_CONFIG = {
     /** Pickup / dine-in options for future native cart */
     fulfillment: ['pickup', 'dine-in'],
 
+    /** Estimated pickup window shown on site and in cart orders */
+    pickupEta: { min: 8, max: 14 },
+
     /** Tax rate (NC) — used by future cart */
     taxRate: 0.0675,
   },
