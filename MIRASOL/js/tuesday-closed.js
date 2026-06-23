@@ -4,7 +4,7 @@
 (function () {
   const TZ = 'America/New_York';
   const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v6';
-  const MODAL_VERSION = '6';
+  const MODAL_VERSION = '7';
   const isMenu = document.body.classList.contains('menu-page');
 
   function isPreviewMode() {
@@ -84,6 +84,7 @@
     const phoneTel = brand.phoneTel || '9107891154';
     const address = location.address || '211 U.S. Hwy 117 S, Burgaw, NC 28425';
     const logo = brand.logo || 'assets/images/facebook/logo.jpg?v=brand1';
+    const brandName = brand.name || 'MIRASOL';
 
     let modal = document.getElementById('tuesday-closed-modal');
     if (modal && modal.dataset.version === MODAL_VERSION) return modal;
@@ -107,19 +108,19 @@
       `<span class="tuesday-closed-modal__badge-dot" aria-hidden="true"></span>` +
       `Closed today` +
       `</span>` +
+      `<div class="tuesday-closed-modal__logo-stage" aria-hidden="true">` +
+      `<div class="tuesday-closed-modal__logo-ring">` +
       `<div class="tuesday-closed-modal__logo-wrap">` +
-      `<img src="${escapeHtml(logo)}" alt="" class="tuesday-closed-modal__logo" width="72" height="72">` +
-      `</div>` +
+      `<img src="${escapeHtml(logo)}" alt="${escapeHtml(brandName)}" class="tuesday-closed-modal__logo" width="88" height="88">` +
+      `</div></div></div>` +
+      `<p class="tuesday-closed-modal__brand-name">${escapeHtml(brandName)}</p>` +
       `<h2 class="tuesday-closed-modal__title" id="tuesday-closed-title">We&rsquo;re taking Tuesday off</h2>` +
       `<p class="tuesday-closed-modal__tagline">Family rest day &mdash; the griddle gets a break too.</p>` +
       `</header>` +
       `<div class="tuesday-closed-modal__body">` +
       `<p class="tuesday-closed-modal__lead">Every <strong>Tuesday</strong> we close so our crew can recharge. ` +
       `We&rsquo;ll be back <strong>Wednesday at 8&nbsp;AM</strong> with hot plates and cold drinks waiting for you.</p>` +
-      `<p class="tuesday-closed-modal__countdown">` +
-      `<span class="tuesday-closed-modal__countdown-icon" aria-hidden="true">🚪</span>` +
-      `Doors open tomorrow morning` +
-      `</p>` +
+      `<p class="tuesday-closed-modal__countdown">Doors open tomorrow morning</p>` +
       `<div class="tuesday-closed-modal__cards">` +
       `<article class="tuesday-closed-modal__card">` +
       `<span class="tuesday-closed-modal__card-icon" aria-hidden="true">🕐</span>` +
@@ -138,7 +139,7 @@
       `</div></article>` +
       `</div>` +
       `<p class="tuesday-closed-modal__fun-fact">` +
-      `Peek the menu now, pick your favorites, and swing by Wednesday. 🌶️` +
+      `Browse the menu now and plan your visit for Wednesday.` +
       `</p>` +
       `<div class="tuesday-closed-modal__actions">` +
       menuAction +
