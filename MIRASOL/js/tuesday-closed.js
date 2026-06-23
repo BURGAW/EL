@@ -4,7 +4,7 @@
 (function () {
   const TZ = 'America/New_York';
   const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v6';
-  const MODAL_VERSION = '8';
+  const MODAL_VERSION = '9';
   const isMenu = document.body.classList.contains('menu-page');
 
   function isPreviewMode() {
@@ -117,6 +117,7 @@
       `<h2 class="tuesday-closed-modal__title" id="tuesday-closed-title">We&rsquo;re taking Tuesday off</h2>` +
       `<p class="tuesday-closed-modal__tagline">Family rest day &mdash; the griddle gets a break too.</p>` +
       `</header>` +
+      `<div class="tuesday-closed-modal__trim" aria-hidden="true"></div>` +
       `<div class="tuesday-closed-modal__body">` +
       `<p class="tuesday-closed-modal__lead">Every <strong>Tuesday</strong> we close so our crew can recharge. ` +
       `We&rsquo;ll be back <strong>Wednesday at 8&nbsp;AM</strong> with hot plates and cold drinks waiting for you.</p>` +
