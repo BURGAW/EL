@@ -136,7 +136,7 @@
     }
     if (isClosed) {
       return {
-        tip: 'Kitchen may be closed — call <a href="tel:9107891154">(910) 789-1154</a> to confirm.',
+        tip: 'Maybe open :) — call <a href="tel:9107891154">(910) 789-1154</a> to confirm.',
         closed: false,
         show: true,
       };
