@@ -4,7 +4,7 @@
 (function () {
   const TZ = 'America/New_York';
   const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v6';
-  const MODAL_VERSION = '7';
+  const MODAL_VERSION = '8';
   const isMenu = document.body.classList.contains('menu-page');
 
   function isPreviewMode() {
@@ -139,7 +139,7 @@
       `</div></article>` +
       `</div>` +
       `<p class="tuesday-closed-modal__fun-fact">` +
-      `Browse the menu now and plan your visit for Wednesday.` +
+      `Peek the menu now, pick your favorites, and swing by Wednesday! 🌶️` +
       `</p>` +
       `<div class="tuesday-closed-modal__actions">` +
       menuAction +
