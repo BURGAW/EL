@@ -967,26 +967,24 @@ body.roulette-open .roulette-panel {
     z-index: 197 !important;
   }
 
-  .roulette-fab {
-    top: auto !important;
-    left: 0.65rem !important;
+  /* Roulette: left-edge peek tab — mid-screen, away from cart / checkout chrome */
+  body.menu-page .roulette-fab {
+    top: 42% !important;
+    left: 0 !important;
     right: auto !important;
-    transform: none !important;
-    bottom: calc(
-      var(--chrome-above-cta) + var(--chrome-concierge-h) + (var(--chrome-gap) * 2)
-    ) !important;
+    bottom: auto !important;
+    transform: translateY(-50%) translateX(calc(-100% + var(--roulette-fab-peek, 2.85rem))) !important;
     z-index: 198 !important;
     border: 2px solid rgba(255, 23, 68, 0.32) !important;
-    border-radius: 100px !important;
-    box-shadow: 0 4px 14px rgba(42, 31, 24, 0.14);
+    border-left: none !important;
+    border-radius: 0 100px 100px 0 !important;
+    box-shadow: 2px 4px 14px rgba(42, 31, 24, 0.14);
   }
 
-  body.menu-page .roulette-fab {
-    left: auto !important;
-    right: 0.65rem !important;
-    bottom: calc(
-      var(--chrome-above-cta) + var(--chrome-cart-h) + (var(--chrome-gap) * 2)
-    ) !important;
+  body.menu-page .roulette-fab:active,
+  body.menu-page .roulette-fab:focus-visible,
+  body.menu-page .roulette-fab[aria-expanded="true"] {
+    transform: translateY(-50%) translateX(0) !important;
   }
 
   .cart-fab {
@@ -1013,9 +1011,15 @@ body.roulette-open .roulette-panel {
 
   .feat-toast-wrap {
     bottom: calc(
-      var(--chrome-above-cta) + var(--chrome-roulette-h) + (var(--chrome-gap) * 2)
+      var(--chrome-above-cta) + var(--chrome-cart-h) + (var(--chrome-gap) * 2)
     ) !important;
     z-index: 300 !important;
+  }
+
+  body.cart-open .roulette-fab,
+  body.modal-open .roulette-fab {
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 
   body.modal-open .google-review-tab,

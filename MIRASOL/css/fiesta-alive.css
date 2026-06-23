@@ -1726,7 +1726,8 @@ body:not(.menu-page) .roulette-widget {
   min-height: 44px;
 }
 
-body.roulette-open .roulette-fab {
+body.roulette-open .roulette-fab,
+body.cart-open .roulette-fab {
   opacity: 0;
   pointer-events: none;
 }
