@@ -65,8 +65,10 @@
     body.style.height = 'auto';
     body.style.minHeight = '0';
     body.classList.remove('nav-open', 'roulette-open');
-    if (!document.getElementById('tuesday-closed-modal')?.classList.contains('is-open')) {
-      body.classList.remove('modal-open', 'tuesday-modal-open');
+    const tuesdayOpen = document.getElementById('tuesday-closed-modal')?.classList.contains('is-open');
+    const cloverOpen = document.getElementById('clover-order-modal')?.classList.contains('is-open');
+    if (!tuesdayOpen && !cloverOpen) {
+      body.classList.remove('modal-open', 'tuesday-modal-open', 'clover-order-open');
     }
     body.style.overflow = '';
   }

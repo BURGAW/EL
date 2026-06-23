@@ -13,35 +13,46 @@ window.SITE_CONFIG = {
   },
 
   ordering: {
-    /** Native cart — set false to hide cart UI */
     enabled: true,
 
     /**
      * Provider: 'toast' | 'square' | 'clover' | 'chownow' | 'custom' | 'native'
-     * native = first-party cart (js/order-cart.js)
+     * clover = Clover Online Ordering (pickup). native cart stays on until storeUrl is set.
      */
-    provider: 'native',
+    provider: 'clover',
 
-    /** External ordering URL — used when provider is not 'native' */
+    /** Pickup only — no delivery on this site */
+    pickupOnly: true,
+
+    /** Clover store URL (also used as orderUrl when provider is clover) */
     orderUrl: '',
 
-    /** Payment processor for native cart (future) */
+    /**
+     * Clover Online Ordering — pickup only
+     * 1. Clover Dashboard → Online Ordering → enable In-store pickup, disable Delivery
+     * 2. Copy your store link (e.g. https://www.clover.com/online-ordering/your-store)
+     * 3. Paste it in storeUrl below — site switches from native cart to Clover automatically
+     */
+    clover: {
+      merchantId: '',
+      storeUrl: '',
+      pickupOnly: true,
+      /** 'tab' opens Clover in a new tab (recommended). 'embed' = iframe modal. 'same' = redirect. */
+      openIn: 'tab',
+    },
+
     payment: {
-      provider: 'stripe', // 'stripe' | 'square' | 'paypal'
+      provider: 'stripe',
       publishableKey: '',
     },
 
-    /** Copy shown while ordering is disabled */
-    comingSoonLabel: 'Order from our menu',
-    comingSoonSub: 'Build your cart on the menu page — pickup or dine in.',
+    comingSoonLabel: 'Pickup ordering',
+    comingSoonSub: 'Online pickup ordering is being connected to Clover — call ahead for now.',
 
-    /** Pickup / dine-in options for future native cart */
-    fulfillment: ['pickup', 'dine-in'],
+    fulfillment: ['pickup'],
 
-    /** Estimated pickup window shown on site and in cart orders */
     pickupEta: { min: 8, max: 14 },
 
-    /** Tax rate (NC) — used by future cart */
     taxRate: 0.0675,
   },
 

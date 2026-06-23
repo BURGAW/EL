@@ -1,0 +1,192 @@
+/* Clover pickup ordering */
+
+.ordering-clover-live .cart-fab,
+.ordering-clover-live #menu-cart-btn {
+  display: none !important;
+}
+
+.clover-pickup-btn {
+  flex-shrink: 0;
+  padding: 0.45rem 0.9rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2d8f47 0%, #1b6b34 100%);
+  color: #fff;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(45, 143, 71, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clover-pickup-btn:hover,
+.clover-pickup-btn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(45, 143, 71, 0.42);
+  outline: none;
+}
+
+.order-strip--clover {
+  margin: 0 0 0.85rem;
+}
+
+.order-strip--clover .order-strip__badge::before {
+  content: '🥡';
+  margin-right: 0.35rem;
+}
+
+.order-strip--clover.is-pending .order-strip__badge::before {
+  content: '⏳';
+}
+
+.order-strip--clover.is-pending {
+  border-style: dashed;
+  opacity: 0.92;
+}
+
+/* Embed modal */
+.clover-order-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10060;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+}
+
+.clover-order-modal.is-open {
+  display: flex;
+}
+
+.clover-order-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 20, 38, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.clover-order-modal__dialog {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 520px);
+  max-height: min(94vh, 780px);
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(15, 28, 46, 0.28);
+}
+
+.clover-order-modal__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem 0.7rem;
+  background: linear-gradient(135deg, #0f5c2e 0%, #2d8f47 55%, #4caf50 100%);
+  color: #fff;
+}
+
+.clover-order-modal__badge {
+  margin: 0 0 0.2rem;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.clover-order-modal__title {
+  margin: 0;
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.clover-order-modal__sub {
+  margin: 0.25rem 0 0;
+  font-size: 0.78rem;
+  opacity: 0.92;
+}
+
+.clover-order-modal__close {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.clover-order-modal__frame-wrap {
+  flex: 1;
+  min-height: 0;
+  background: #f4f7fa;
+}
+
+.clover-order-modal__frame {
+  display: block;
+  width: 100%;
+  height: min(68vh, 560px);
+  border: none;
+  background: #fff;
+}
+
+.clover-order-modal__foot {
+  padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid rgba(15, 28, 46, 0.08);
+  text-align: center;
+}
+
+.clover-order-modal__tab {
+  width: 100%;
+  min-height: 44px;
+}
+
+.quick-clover-order {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .clover-order-modal {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .clover-order-modal__dialog {
+    width: 100%;
+    max-height: 96vh;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .clover-order-modal__frame {
+    height: min(72vh, 620px);
+  }
+
+  .menu-online__toolbar {
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .clover-pickup-btn {
+    width: 100%;
+    min-height: 42px;
+  }
+}

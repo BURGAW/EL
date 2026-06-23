@@ -16,6 +16,8 @@
 
   function enabled() {
     const c = cfg();
+    if (window.CloverOrdering?.blocksNativeCart?.()) return false;
+    if (c.provider === 'clover' && (c.clover?.storeUrl || c.orderUrl)) return false;
     return c.enabled && (c.provider === 'native' || c.cartEnabled);
   }
 

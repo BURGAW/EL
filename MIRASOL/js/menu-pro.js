@@ -10,11 +10,37 @@
     return window.MENU_LANG === 'es' || document.documentElement.lang === 'es';
   }
 
-  const orderBtnLabel = () => (isEs() ? 'Ordenar en línea' : 'Order Online');
+  const orderBtnLabel = () => {
+    if (ordering.provider === 'clover') {
+      return isEs() ? 'Ordenar para recoger' : 'Order Pickup Online';
+    }
+    return isEs() ? 'Ordenar en línea' : 'Order Online';
+  };
+
+  function cloverStoreUrl() {
+    return (ordering.clover?.storeUrl || ordering.orderUrl || '').trim();
+  }
+
+  function cloverLive() {
+    return Boolean(
+      ordering.enabled &&
+      ordering.provider === 'clover' &&
+      cloverStoreUrl()
+    );
+  }
+
+  function orderingLive() {
+    return Boolean(
+      ordering.enabled &&
+      (ordering.provider === 'native' || cloverLive() || ordering.orderUrl)
+    );
+  }
 
   function initOrdering() {
-    const enabled = Boolean(ordering.enabled && (ordering.orderUrl || ordering.provider === 'native'));
+    const enabled = orderingLive();
+    const cloverPending = ordering.enabled && ordering.provider === 'clover' && !cloverStoreUrl();
     document.body.classList.toggle('ordering-enabled', enabled);
+    document.body.classList.toggle('ordering-clover-pending', cloverPending);
 
     const strips = document.querySelectorAll('[data-order-strip]');
     strips.forEach((strip) => {
@@ -25,29 +51,61 @@
 
       if (enabled) {
         strip.classList.add('is-live');
-        if (badge) badge.textContent = isEs() ? 'Pedidos en línea' : 'Order Online';
+        strip.classList.remove('is-pending');
+        if (badge) {
+          badge.textContent = ordering.provider === 'clover'
+            ? (isEs() ? 'Clover · Para llevar' : 'Clover · Pickup')
+            : (isEs() ? 'Pedidos en línea' : 'Order Online');
+        }
         if (title) title.textContent = isEs() ? 'Pida para recoger' : 'Order for Pickup';
         if (sub) {
-          sub.textContent = isEs()
-            ? 'Ordene directamente — pague en línea de forma segura.'
-            : 'Order directly from our menu — pay securely online.';
+          sub.textContent = ordering.provider === 'clover'
+            ? (isEs()
+              ? 'Pague en línea con Clover — recoja en el mostrador. Sin entregas.'
+              : 'Pay online with Clover — pick up at the counter. No delivery.')
+            : (isEs()
+              ? 'Ordene directamente — pague en línea de forma segura.'
+              : 'Order directly from our menu — pay securely online.');
         }
         if (btn) {
           btn.classList.add('is-live');
           btn.classList.remove('is-disabled');
           btn.removeAttribute('disabled');
           btn.textContent = orderBtnLabel();
+          btn.removeAttribute('href');
+          btn.removeAttribute('target');
           if (ordering.provider === 'native') {
             btn.setAttribute('href', '#order-cart');
             btn.addEventListener('click', (e) => {
               e.preventDefault();
               window.dispatchEvent(new CustomEvent('elmirasol:open-cart'));
             });
+          } else if (ordering.provider === 'clover' && cloverLive()) {
+            btn.setAttribute('data-clover-order', '1');
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              window.CloverOrdering?.open?.();
+            });
           } else if (ordering.orderUrl) {
             btn.setAttribute('href', ordering.orderUrl);
             btn.setAttribute('target', '_blank');
             btn.setAttribute('rel', 'noopener noreferrer');
           }
+        }
+      } else if (cloverPending) {
+        strip.classList.add('is-pending');
+        strip.classList.remove('is-live');
+        if (badge) badge.textContent = isEs() ? 'Clover en camino' : 'Clover coming soon';
+        if (title) title.textContent = isEs() ? 'Pronto: pedidos para recoger' : 'Pickup ordering — coming soon';
+        if (sub) {
+          sub.textContent = isEs()
+            ? 'Estamos conectando Clover para pedidos en línea solo para recoger. Llame mientras tanto.'
+            : (ordering.comingSoonSub || 'Connecting Clover for pickup-only online orders. Call ahead for now.');
+        }
+        if (btn) {
+          btn.classList.add('is-disabled');
+          btn.setAttribute('disabled', 'disabled');
+          btn.textContent = orderBtnLabel();
         }
       } else {
         if (badge) badge.textContent = ordering.comingSoonLabel || (isEs() ? 'Próximamente' : 'Coming Soon');

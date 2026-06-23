@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="css/coastal-theme.css?v=burgawcolor1">
   <link rel="stylesheet" href="css/google-review-tab.css?v=cartcompact1">
   <link rel="stylesheet" href="css/site-spacing.css?v=compact1">
+  <link rel="stylesheet" href="css/clover-ordering.css?v=clover1">
   <link rel="stylesheet" href="css/tuesday-closed.css?v=home5">
   <link rel="stylesheet" href="css/google-sites-embed.css?v=scrollnav1">
   <link rel="icon" href="assets/images/facebook/logo.jpg?v=brand1" type="image/jpeg">
@@ -68,6 +69,15 @@
 
   <main id="main" class="menu-shell menu-online-shell">
     <div class="menu-online">
+      <section class="order-strip order-strip--clover" data-order-strip aria-label="Online ordering">
+        <span class="order-strip__badge" data-order-badge>Pickup ordering</span>
+        <h2 data-order-title>Order for Pickup</h2>
+        <p data-order-sub>Pay online with Clover — pick up at the counter. No delivery.</p>
+        <div class="order-strip__actions">
+          <button type="button" class="btn-order" data-order-btn data-clover-order>Order Pickup Online</button>
+        </div>
+        <p class="order-strip__hint" data-i18n="orderPickupHint">Pickup only · Closed Tuesdays</p>
+      </section>
       <nav class="menu-view-tabs" id="menu-view-tabs" role="tablist" data-i18n-aria="viewNavAria">
         <button type="button" class="menu-view-tab" data-view="breakfast" role="tab" id="view-tab-breakfast" data-i18n="viewBreakfast">Breakfast</button>
         <button type="button" class="menu-view-tab" data-view="daily-lunch" role="tab" id="view-tab-daily-lunch" data-i18n="viewDailyLunch">Daily Lunch</button>
@@ -170,7 +180,8 @@
     <a href="menu.html" class="cta-menu" data-i18n="navMenu">Menu</a>
     <a href="https://www.google.com/maps/dir/?api=1&amp;destination=34.551919,-77.913414" class="cta-directions" data-i18n="dirBtn">Directions</a>
   </div>
-  <script src="js/site-config.js?v=randometa1"></script>
+  <script src="js/site-config.js?v=clover1"></script>
+  <script src="js/clover-ordering.js?v=clover1"></script>
   <script src="js/google-reviews-data.js?v=rev4plus1"></script>
   <script src="js/site-reviews.js?v=revstrip1"></script>
   <script src="js/slideshow-fit.js?v=fiesta3"></script>
@@ -182,7 +193,7 @@
   <script src="js/order-cart.js?v=cartname3"></script>
   <script src="js/menu-render.js?v=cartname3"></script>
   <script src="js/restaurant-extras.js?v=nomenuetue1"></script>
-  <script src="js/menu-pro.js?v=nodishes1"></script>
+  <script src="js/menu-pro.js?v=clover1"></script>
   <script src="js/vibe.js?v=classicsnap1"></script>
   <script src="js/features-pack.js?v=nopopups1"></script>
   <script src="js/fiesta-alive.js?v=nopopups1"></script>
