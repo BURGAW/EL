@@ -120,44 +120,9 @@
     root.querySelector('#extras-drive-result')?.remove();
   }
 
-  /* ── Menu page bar (view-aware; daily lunch tips only on Daily Lunch tab) ── */
-  function getMenuBarTip(view) {
-    const d = nowLocal();
-    const day = d.getDay();
-    const h = d.getHours() + d.getMinutes() / 60;
-    const isTuesday = day === 2;
-    const isClosed = day === 2 || h < 8 || h >= (day === 5 || day === 6 ? 21.5 : 21);
-
-    if (isTuesday) {
-      return { tip: '', closed: false, show: false };
-    }
-    if (isClosed) {
-      return {
-        tip: 'Kitchen maybe open :) — call <a href="tel:9107891154">(910) 789-1154</a> to confirm.',
-        closed: false,
-        show: true,
-      };
-    }
-
-    if (view === 'daily-lunch') {
-      return {
-        tip: '<strong>Daily Lunch 10 AM–3 PM</strong> — seasonal specials, prepared fresh daily.',
-        closed: false,
-        show: true,
-      };
-    }
-    if (view === 'breakfast') {
-      return {
-        tip: '<strong>Breakfast</strong> — served until 11 AM. Chilaquiles, burritos & morning plates.',
-        closed: false,
-        show: true,
-      };
-    }
-    return {
-      tip: '<strong>Dinner service</strong> — full evening menu with birria, fajitas & platters.',
-      closed: false,
-      show: true,
-    };
+  /* Menu tip bar hidden — Tuesday closed uses its own popup only */
+  function getMenuBarTip() {
+    return { tip: '', closed: false, show: false };
   }
 
   function updateMenuBar() {
@@ -443,20 +408,7 @@
     });
   }
 
-  /* ── First-visit welcome ── */
-  function initFirstVisit() {
-    let count = parseInt(localStorage.getItem(VISIT_KEY) || '0', 10) || 0;
-    count++;
-    localStorage.setItem(VISIT_KEY, String(count));
-    if (count === 1) {
-      setTimeout(() => {
-        const msg = isMenu
-          ? '👋 First time here? Tap any dish for details. Press <kbd>?</kbd> for shortcuts.'
-          : '👋 First time? Press <kbd>?</kbd> for shortcuts.';
-        toast(msg);
-      }, 4500);
-    }
-  }
+  function initFirstVisit() {}
 
   function init() {
     initSideOrder();

@@ -481,25 +481,10 @@
     hero.after(el);
   }
 
-  /* ── Welcome toast (first-visit engagement) ── */
-  function initWelcome() {
-    if (sessionStorage.getItem(WELCOME_KEY)) return;
-    sessionStorage.setItem(WELCOME_KEY, '1');
-    setTimeout(() => {
-      toast('Welcome! Scroll to <strong>Dish Roulette</strong> or tap Spin the Wheel to pick a plate.', 'review');
-    }, 2200);
-  }
+  /* Welcome / menu nudge toasts disabled — Tuesday closed popup only */
+  function initWelcome() {}
 
-  /* ── Menu page nudge ── */
-  function initMenuNudge() {
-    if (isHome) return;
-    const main = document.querySelector('.menu-online');
-    if (!main || document.querySelector('.fiesta-menu-nudge')) return;
-    const nudge = document.createElement('p');
-    nudge.className = 'fiesta-menu-nudge';
-    nudge.textContent = '🔥 Birria is the #1 order today — tap any dish for details';
-    main.prepend(nudge);
-  }
+  function initMenuNudge() {}
 
   /* ── Expose toast for other scripts ── */
   window.featToast = toast;

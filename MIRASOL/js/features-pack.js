@@ -192,6 +192,7 @@
   }
 
   function initRibbon() {
+    if (document.body.classList.contains('menu-page')) return;
     ensureRibbon();
     const el = document.getElementById('feat-ribbon');
     if (!el) return;
