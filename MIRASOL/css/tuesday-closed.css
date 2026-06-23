@@ -3,15 +3,15 @@
 .tuesday-closed-modal {
   position: fixed;
   inset: 0;
-  z-index: 220;
-  display: flex;
+  z-index: 9999;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 1rem;
 }
 
-.tuesday-closed-modal[hidden] {
-  display: none !important;
+.tuesday-closed-modal.is-open {
+  display: flex;
 }
 
 .tuesday-closed-modal__backdrop {
