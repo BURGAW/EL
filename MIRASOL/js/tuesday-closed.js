@@ -3,7 +3,7 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const MODAL_VERSION = '26';
+  const MODAL_VERSION = '27';
   const TUESDAY_POPUP_KEY = `elmirasol-tuesday-v${MODAL_VERSION}`;
   function isPreviewMode() {
     try {
@@ -102,8 +102,7 @@
       `<span class="tuesday-closed-modal__selvedge tuesday-closed-modal__selvedge--right" aria-hidden="true"></span>` +
       `<div class="tuesday-closed-modal__craft-top" aria-hidden="true">` +
       `<div class="tuesday-closed-modal__craft-top__shine"></div>` +
-      `<div class="tuesday-closed-modal__craft-top__papel"></div>` +
-      `<div class="tuesday-closed-modal__craft-top__zigzag"></div>` +
+      `<div class="tuesday-closed-modal__craft-top__band"></div>` +
       `</div>` +
       `<header class="tuesday-closed-modal__hero">` +
       `<div class="tuesday-closed-modal__logo-stage" aria-hidden="true">` +
@@ -150,7 +149,7 @@
       `<button type="button" class="btn btn-primary tuesday-closed-modal__btn tuesday-closed-modal__btn--primary" data-tuesday-close>Got it</button>` +
       `</div></div>` +
       `<div class="tuesday-closed-modal__craft-foot" aria-hidden="true">` +
-      `<div class="tuesday-closed-modal__craft-foot__papel"></div>` +
+      `<div class="tuesday-closed-modal__craft-foot__band"></div>` +
       `<div class="tuesday-closed-modal__craft-foot__shine"></div>` +
       `</div></div></div>`;
     document.body.appendChild(modal);
