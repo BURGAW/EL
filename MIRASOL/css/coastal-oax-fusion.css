@@ -376,6 +376,235 @@ body.site-coastal.site-oax-craft .visit-hours--compact li.closed .visit-hours__t
   color: var(--red) !important;
 }
 
+/* ── Visit section — compact editorial layout ── */
+body.site-coastal.site-oax-craft .visit-section--compact {
+  padding-top: 1.1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+body.site-coastal.site-oax-craft .visit-section__head {
+  text-align: center;
+  margin-bottom: 0.35rem;
+}
+
+body.site-coastal.site-oax-craft .visit-section__title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.45rem 0.65rem;
+  margin-bottom: 0.2rem;
+}
+
+body.site-coastal.site-oax-craft .visit-section__title-row h2 {
+  margin: 0 !important;
+}
+
+body.site-coastal.site-oax-craft .visit-section__chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.14rem 0.55rem;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--coast-sea);
+  background: rgba(0, 150, 199, 0.08);
+  border: 1px solid rgba(0, 150, 199, 0.16);
+}
+
+body.site-coastal.site-oax-craft .visit-section--compact .section-tag {
+  margin-bottom: 0.18rem !important;
+  padding-bottom: 0.18rem !important;
+}
+
+body.site-coastal.site-oax-craft .visit-section--compact .visit-share-lead {
+  max-width: 28rem;
+  margin: 0 auto !important;
+  font-size: 0.82rem !important;
+  line-height: 1.4 !important;
+}
+
+body.site-coastal.site-oax-craft .feat-share-row--compact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem !important;
+  margin: 0.3rem auto 0.45rem !important;
+  max-width: 22rem;
+}
+
+body.site-coastal.site-oax-craft .feat-share-row--compact .btn--chip {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 30px !important;
+  padding: 0.32rem 0.65rem !important;
+  font-size: 0.62rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  border-radius: 999px !important;
+}
+
+body.site-coastal.site-oax-craft .visit-grid--compact {
+  margin-top: 0.45rem !important;
+  gap: 0.55rem !important;
+  align-items: stretch;
+}
+
+body.site-coastal.site-oax-craft .visit-card--compact {
+  box-shadow:
+    0 0 0 1px rgba(212, 168, 75, 0.18) inset,
+    0 4px 16px rgba(0, 119, 182, 0.06) !important;
+}
+
+body.site-coastal.site-oax-craft .visit-card--compact .visit-card__glow {
+  display: none;
+}
+
+body.site-coastal.site-oax-craft .visit-card__body--compact {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 0;
+  padding: 0.55rem 0.65rem 0.6rem !important;
+}
+
+body.site-coastal.site-oax-craft .visit-card--compact .visit-card__col--hours {
+  padding-right: 0.55rem;
+}
+
+body.site-coastal.site-oax-craft .visit-card--compact .visit-card__col--contact {
+  padding-left: 0.55rem;
+}
+
+body.site-coastal.site-oax-craft .visit-card--compact .visit-card__label {
+  margin-bottom: 0.28rem !important;
+  padding: 0.14rem 0.42rem !important;
+  font-size: 0.52rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+body.site-coastal.site-oax-craft .visit-card--compact .visit-hours--compact {
+  gap: 0.06rem !important;
+  padding: 0.12rem 0.2rem !important;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(0, 150, 199, 0.08);
+}
+
+body.site-coastal.site-oax-craft .visit-card--compact .visit-hours--compact li {
+  padding: 0.1rem 0.22rem !important;
+  font-size: 0.66rem !important;
+  border-radius: 4px;
+}
+
+body.site-coastal.site-oax-craft .visit-card--compact .visit-hours__days {
+  font-size: 0.64rem !important;
+  line-height: 1.15 !important;
+}
+
+body.site-coastal.site-oax-craft .visit-card--compact .visit-hours__time {
+  font-size: 0.62rem !important;
+}
+
+body.site-coastal.site-oax-craft .visit-contact--compact .visit-contact__line {
+  gap: 0.38rem !important;
+  margin-bottom: 0.28rem !important;
+  font-size: 0.68rem !important;
+  line-height: 1.3 !important;
+}
+
+body.site-coastal.site-oax-craft .visit-contact--compact .visit-contact__line:last-child {
+  margin-bottom: 0 !important;
+}
+
+body.site-coastal.site-oax-craft .visit-contact--compact .visit-contact__icon-wrap {
+  width: 1.35rem !important;
+  height: 1.35rem !important;
+  box-shadow: none;
+}
+
+body.site-coastal.site-oax-craft .visit-contact--compact .visit-contact__icon {
+  width: 0.72rem !important;
+  height: 0.72rem !important;
+}
+
+body.site-coastal.site-oax-craft .visit-contact--compact .visit-contact__text {
+  padding-top: 0.05rem !important;
+}
+
+body.site-coastal.site-oax-craft .visit-card__toolbar--compact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28rem !important;
+  margin-top: 0.38rem !important;
+  padding: 0.32rem !important;
+  border-radius: 8px;
+  background: rgba(240, 249, 255, 0.65);
+  border: 1px solid rgba(0, 150, 199, 0.1);
+  box-shadow: none;
+}
+
+body.site-coastal.site-oax-craft .visit-card__toolbar--compact .btn,
+body.site-coastal.site-oax-craft .visit-card__toolbar--compact .visit-card__social {
+  flex: 1 1 calc(50% - 0.14rem);
+  min-width: 0;
+  min-height: 28px !important;
+  padding: 0.28rem 0.4rem !important;
+  font-size: 0.6rem !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+body.site-coastal.site-oax-craft .visit-card__toolbar--compact .visit-card__social {
+  letter-spacing: 0.06em;
+}
+
+body.site-coastal.site-oax-craft .map-wrap--compact .map-wrap__frame {
+  min-height: 0 !important;
+  height: clamp(150px, 26vw, 190px) !important;
+}
+
+body.site-coastal.site-oax-craft .map-wrap--compact .map-wrap__toolbar {
+  padding: 0.22rem 0.35rem !important;
+}
+
+body.site-coastal.site-oax-craft .map-wrap--compact .map-wrap__type {
+  padding: 0.2rem 0.5rem !important;
+  font-size: 0.62rem !important;
+}
+
+@media (max-width: 900px) {
+  body.site-coastal.site-oax-craft .visit-card__body--compact {
+    grid-template-columns: 1fr;
+  }
+
+  body.site-coastal.site-oax-craft .visit-card--compact .visit-card__col--hours {
+    padding-right: 0;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid rgba(0, 150, 199, 0.1);
+  }
+
+  body.site-coastal.site-oax-craft .visit-card--compact .visit-card__col--hours::after {
+    display: none;
+  }
+
+  body.site-coastal.site-oax-craft .visit-card--compact .visit-card__col--contact {
+    padding-left: 0;
+    padding-top: 0.45rem;
+  }
+
+  body.site-coastal.site-oax-craft .map-wrap--compact .map-wrap__frame {
+    height: clamp(160px, 42vw, 200px) !important;
+  }
+
+  body.site-coastal.site-oax-craft .feat-share-row--compact .btn--chip {
+    min-height: 36px !important;
+    font-size: 0.68rem !important;
+  }
+}
+
 body.site-coastal.site-oax-craft .visit-contact__icon {
   color: var(--coast-sea-mid) !important;
 }
@@ -990,13 +1219,13 @@ body.site-coastal.site-oax-craft .reviews-cta {
   gap: 0.4rem !important;
 }
 
-body.site-coastal.site-oax-craft .feat-share-row {
+body.site-coastal.site-oax-craft .feat-share-row:not(.feat-share-row--compact) {
   margin-top: 0.45rem !important;
   margin-bottom: 0.55rem !important;
   gap: 0.45rem !important;
 }
 
-body.site-coastal.site-oax-craft .visit-grid {
+body.site-coastal.site-oax-craft .visit-grid:not(.visit-grid--compact) {
   margin-top: 0.85rem !important;
   gap: 0.75rem !important;
 }
@@ -1022,7 +1251,7 @@ body.site-coastal.site-oax-craft .visit-card__body {
   gap: 0.55rem !important;
 }
 
-body.site-coastal.site-oax-craft .map-wrap__frame {
+body.site-coastal.site-oax-craft .map-wrap:not(.map-wrap--compact) .map-wrap__frame {
   min-height: 220px !important;
   height: clamp(200px, 32vw, 260px) !important;
 }
@@ -1871,15 +2100,20 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
     -webkit-backdrop-filter: blur(8px);
   }
 
-  body.site-coastal.site-oax-craft .feat-share-row .btn {
+  body.site-coastal.site-oax-craft .feat-share-row:not(.feat-share-row--compact) .btn {
     min-height: 48px !important;
     font-size: 0.85rem !important;
     padding: 0.75rem 1rem !important;
   }
 
-  body.site-coastal.site-oax-craft .visit-card__toolbar .btn,
-  body.site-coastal.site-oax-craft .visit-card__social {
+  body.site-coastal.site-oax-craft .visit-card__toolbar:not(.visit-card__toolbar--compact) .btn,
+  body.site-coastal.site-oax-craft .visit-card__toolbar:not(.visit-card__toolbar--compact) .visit-card__social {
     min-height: 44px !important;
+  }
+
+  body.site-coastal.site-oax-craft .visit-card__toolbar--compact .btn,
+  body.site-coastal.site-oax-craft .visit-card__toolbar--compact .visit-card__social {
+    min-height: 36px !important;
   }
 
   body.site-coastal.site-oax-craft .reviews-section__inner {
