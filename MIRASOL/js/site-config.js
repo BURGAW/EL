@@ -199,12 +199,9 @@ window.SITE_CONFIG = {
   /** Site map — activeId selects which location pin/embed to show */
   map: {
     activeId: 'el-mirasol',
-    /**
-     * Zoom 17, north offset: southern edge stays above Burgaw Milling (305)
-     * even when the sidebar map stretches tall. El Mirasol cid only.
-     */
-    center: { lat: 34.553, lng: -77.913414 },
-    zoom: 17,
+    featureId: 'el-mirasol',
+    center: { lat: 34.551919, lng: -77.913414 },
+    zoom: 18,
     locations: [
       {
         id: 'el-mirasol',

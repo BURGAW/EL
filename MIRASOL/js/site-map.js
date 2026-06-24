@@ -3,8 +3,8 @@
  */
 (function () {
   const MAP_TYPES = {
-    roadmap: { t: 'm', useCid: true },
-    satellite: { t: 'k', useCid: false },
+    roadmap: { t: 'm' },
+    satellite: { t: 'k' },
   };
 
   let currentMapType = 'roadmap';
@@ -42,25 +42,22 @@
 
   function buildEmbedUrl(loc, mapType) {
     const type = MAP_TYPES[mapType] || MAP_TYPES.roadmap;
-    const center = mapCenter(loc);
-    if (!loc || !center) return '';
+    if (!loc) return '';
 
     const zoom = mapZoom(loc);
-    const featured = featuredLocation();
     const params = new URLSearchParams({
-      ll: `${center.lat},${center.lng}`,
-      z: String(zoom),
       hl: 'en',
+      z: String(zoom),
       output: 'embed',
       t: type.t,
     });
 
-    if (type.useCid && loc.cid) {
+    // Center on El Mirasol and show the Google Business listing pin
+    params.set('ll', `${loc.lat},${loc.lng}`);
+    if (loc.cid) {
       params.set('cid', loc.cid);
-    } else if (featured) {
-      params.set('q', `${featured.name}, ${featured.address}`);
     } else {
-      params.set('q', loc.address || `${loc.lat},${loc.lng}`);
+      params.set('q', `El Mirasol, ${loc.address}`);
     }
 
     return `https://maps.google.com/maps?${params.toString()}`;
