@@ -673,9 +673,7 @@ body.site-coastal.site-oax-craft .oax-craft-band--section .oax-craft-band__shine
 }
 
 body.site-coastal.site-oax-craft .social-topbar {
-  padding-top: 0.42rem !important;
-  padding-bottom: 0.42rem !important;
-  font-size: 1rem !important;
+  font-size: 0.95rem !important;
 }
 
 body.site-coastal.site-oax-craft .social-topbar::after {
@@ -1378,5 +1376,60 @@ body.site-coastal.site-oax-craft:not(.menu-page).has-topbar .hero {
 
 body.gsites-embed.site-coastal.site-oax-craft:not(.menu-page) .hero {
   min-height: min(72dvh, 640px) !important;
-  padding: calc(var(--header-h) + 0.85rem) var(--compact-section-x) 1.5rem !important;
+  margin-top: var(--topbar-stack, calc(var(--topbar-h) + var(--safe-top))) !important;
+  padding: calc(var(--header-h) + 0.2rem) var(--compact-section-x) 1.5rem !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Flush topbar — Follow us banner at viewport top, tighter stack
+   ═══════════════════════════════════════════════════════════════ */
+
+body.site-coastal.site-oax-craft.has-topbar {
+  --topbar-stack: calc(var(--topbar-h) + var(--safe-top));
+  padding-top: 0 !important;
+}
+
+body.site-coastal.site-oax-craft .social-topbar {
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 !important;
+  height: auto !important;
+  min-height: var(--topbar-stack) !important;
+  padding-top: var(--safe-top) !important;
+  padding-bottom: 0.32rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+body.site-coastal.site-oax-craft.has-topbar .header {
+  top: var(--topbar-stack) !important;
+}
+
+body.site-coastal.site-oax-craft.has-topbar .header + .hero {
+  margin-top: var(--topbar-stack) !important;
+  padding-top: calc(var(--header-h) + 0.2rem) !important;
+}
+
+body.site-coastal.site-oax-craft.has-topbar .header + .oax-craft-band,
+body.site-coastal.site-oax-craft.has-topbar .header + main,
+body.site-coastal.site-oax-craft.has-topbar .header + #main {
+  margin-top: var(--topbar-stack) !important;
+}
+
+body.site-coastal.site-oax-craft.has-topbar .menu-online-shell {
+  padding-top: 0.25rem !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page).has-topbar .hero {
+  padding-top: calc(var(--header-h) + 0.2rem) !important;
+}
+
+@media (max-width: 768px) {
+  body.site-coastal.site-oax-craft.has-topbar .header + .hero,
+  body.site-coastal.site-oax-craft:not(.menu-page).has-topbar .hero {
+    padding-top: calc(var(--header-h) + 0.15rem) !important;
+  }
 }
