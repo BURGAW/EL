@@ -1588,53 +1588,37 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 }
 
-/* Mobile + tablet — row under title */
+/* Mobile + tablet — title & description first, polaroids below */
 @media (max-width: 900px) {
   body.site-coastal.site-oax-craft:not(.menu-page) .hero {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: center !important;
   }
 
   body.site-coastal.site-oax-craft:not(.menu-page) .hero-content {
-    display: contents !important;
-  }
-
-  body.site-coastal.site-oax-craft:not(.menu-page) .hero-eyebrow {
-    order: 1;
-    width: 100%;
-    padding: 0 1rem;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     text-align: center !important;
+    position: relative !important;
+    z-index: 5 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1rem !important;
   }
 
   body.site-coastal.site-oax-craft:not(.menu-page) .hero h1 {
-    order: 2;
-    width: 100%;
-    margin-bottom: 0.2rem !important;
-    padding: 0 1rem;
-    text-align: center !important;
-  }
-
-  body.site-coastal.site-oax-craft:not(.menu-page) .hero-sub {
-    order: 4;
-    width: 100%;
-    padding: 0 1rem;
-    text-align: center !important;
-  }
-
-  body.site-coastal.site-oax-craft:not(.menu-page) .mobile-quick {
-    order: 5;
-    width: 100%;
-    padding: 0 1rem;
+    margin-bottom: 0.35rem !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floaters {
-    order: 3;
     position: relative !important;
     inset: auto !important;
     width: min(100%, 19rem) !important;
     height: auto !important;
-    margin: 0.35rem auto 0.4rem !important;
+    margin: 0.65rem auto 0.25rem !important;
     padding: 0 0.2rem !important;
     display: flex !important;
     flex-direction: row !important;
@@ -1698,7 +1682,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 
   body.site-coastal.site-oax-craft .hero-content {
-    z-index: 4;
+    z-index: 5 !important;
     max-width: 100% !important;
   }
 
