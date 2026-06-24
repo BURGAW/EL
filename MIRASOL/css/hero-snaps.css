@@ -74,19 +74,6 @@
   filter: saturate(1.04) contrast(1.05) brightness(1.01);
 }
 
-.hero-snap__caption {
-  display: block;
-  margin-top: 5px;
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(0.54rem, 1.7vw, 0.74rem);
-  font-weight: 600;
-  color: rgba(38, 32, 26, 0.58);
-  text-align: center;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-  user-select: none;
-}
-
 /* Ground contact shadow */
 .hero-snap__shadow {
   position: absolute;
