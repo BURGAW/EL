@@ -1,36 +1,35 @@
-/* Tuesday closed — Oaxacan rest-day card
-   Logo red + sun gold · Zapotec star · zigzag · papel picado · huipil dots (no checker) */
+/* Tuesday closed — modern Oaxacan editorial card
+   Ivory · champagne gold · logo red · single craft accents */
 
 .tuesday-closed-modal {
   --tue-red: #c8102e;
   --tue-red-deep: #a50f24;
-  --tue-gold: #f4c430;
-  --tue-gold-warm: #ffd866;
-  --tue-gold-soft: #ffe494;
-  --tue-cream: #faf8f4;
-  --tue-paper: #fffdf9;
-  --tue-ink: #2a2220;
-  --tue-muted: #5c534e;
-  --tue-stripe: linear-gradient(
+  --tue-gold: #d4a84b;
+  --tue-gold-light: #e8c878;
+  --tue-gold-hair: rgba(212, 168, 75, 0.42);
+  --tue-ivory: #fdfcfa;
+  --tue-pearl: #f8f6f2;
+  --tue-ink: #1a1816;
+  --tue-muted: #6b6560;
+  --tue-line: rgba(26, 24, 22, 0.08);
+  --tue-accent: linear-gradient(
     90deg,
-    var(--tue-red-deep) 0%,
-    var(--tue-red) 40%,
-    var(--tue-gold) 76%,
-    var(--tue-gold-warm) 100%
+    transparent 0%,
+    var(--tue-gold-light) 22%,
+    var(--tue-red) 50%,
+    var(--tue-gold-light) 78%,
+    transparent 100%
   );
-  /* Zapotec eight-point star — Teotitlán rug motif */
-  --tue-star: url("data:image/svg+xml,%3Csvg width='56' height='56' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28 2l3.8 9.1L41.2 6.1l-1.4 11.9 10.8 3.1-8.4 8L43.5 42l-10.1-3.8L28 48.1l-6.4-9.9L11.4 42l5.1-12.6L8 20.1l10.8-3.1L16.6 6.1l9.4 3.1z' fill='%23c8102e' fill-opacity='0.045'/%3E%3Cpath d='M28 10l2.3 5.3L35.6 13l-4.1 4.1L33.6 26l-5.6-3.5L22.4 26l1.2-8.9L19.5 13l5.3-.6z' fill='%23f4c430' fill-opacity='0.05'/%3E%3C/svg%3E");
-  /* Zapotec lightning zigzag — rug border */
-  --tue-zigzag: url("data:image/svg+xml,%3Csvg width='48' height='14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 7 L6 2 L12 7 L18 2 L24 7 L30 2 L36 7 L42 2 L48 7' fill='none' stroke='%23c8102e' stroke-width='1.35' stroke-opacity='0.42'/%3E%3Cpath d='M0 11 L6 6 L12 11 L18 6 L24 11 L30 6 L36 11 L42 6 L48 11' fill='none' stroke='%23f4c430' stroke-width='1.1' stroke-opacity='0.48'/%3E%3C/svg%3E");
-  /* Huipil mirror embroidery — soft dotted flores */
-  --tue-flores: url("data:image/svg+xml,%3Csvg width='72' height='28' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='14' r='2.1' fill='%23c8102e' fill-opacity='0.06'/%3E%3Ccircle cx='24' cy='10' r='1.4' fill='%23f4c430' fill-opacity='0.07'/%3E%3Ccircle cx='38' cy='17' r='1.8' fill='%23c8102e' fill-opacity='0.05'/%3E%3Ccircle cx='52' cy='11' r='1.5' fill='%23f4c430' fill-opacity='0.06'/%3E%3Ccircle cx='66' cy='15' r='1.3' fill='%23c8102e' fill-opacity='0.055'/%3E%3Cpath d='M10 14 Q17 9 24 10 T38 17 T52 11 T66 15' fill='none' stroke='%23f4c430' stroke-opacity='0.05' stroke-width='0.9'/%3E%3C/svg%3E");
-  /* Papel picado — red & gold scallops only */
-  --tue-papel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='16' viewBox='0 0 100 16'%3E%3Crect width='100' height='10' fill='%23a50f24'/%3E%3Cpath d='M0 10h10v6c0 3-3 6-6 6s-6-3-6-6v-6zm10 0h10v4c0 4-4 8-8 8s-8-4-8-8v-4zm20 0h10v6c0 2-2 4-4 4s-4-2-4-4v-6zm10 0h10v5c0 3-3 6-6 6s-6-3-6-6v-5zm20 0h10v6c0 3-3 6-6 6s-6-3-6-6v-6zm10 0h10v4c0 4-4 8-8 8s-8-4-8-8v-4z' fill='%23f4c430'/%3E%3Crect y='14' width='100' height='2' fill='%23ffd866'/%3E%3C/svg%3E");
-  --tue-wash:
-    radial-gradient(ellipse 78% 58% at 10% 8%, rgba(244, 196, 48, 0.13) 0%, transparent 58%),
-    radial-gradient(ellipse 68% 52% at 92% 6%, rgba(200, 16, 46, 0.07) 0%, transparent 54%),
-    radial-gradient(ellipse 82% 48% at 50% 100%, rgba(244, 196, 48, 0.08) 0%, transparent 52%);
-  --tue-shadow: 0 26px 58px rgba(42, 34, 32, 0.22), 0 0 0 1px rgba(244, 196, 48, 0.16);
+  /* Zapotec star — single watermark, not tiled */
+  --tue-star-mark: url("data:image/svg+xml,%3Csvg width='120' height='120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 6l8.2 19.4L89.8 15.2l-3 24.8 23.2 6.6-18 17.2L93.2 90l-21.7-8.2L60 103.2l-13.8-21.2L24.8 90l11-27.4L17.8 46.6l23.2-6.6L37 15.2l20.2 10.2z' fill='%23c8102e' fill-opacity='0.028'/%3E%3Cpath d='M60 22l4.8 11.2L76.4 28l-8.2 8.2L74.4 58l-12-7.4L50 58l3-20.6L44.8 28l11.2-1.2z' fill='%23d4a84b' fill-opacity='0.035'/%3E%3C/svg%3E");
+  /* Zapotec lightning — hairline divider only */
+  --tue-zigzag: url("data:image/svg+xml,%3Csvg width='64' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4 L8 1 L16 4 L24 1 L32 4 L40 1 L48 4 L56 1 L64 4' fill='none' stroke='%23d4a84b' stroke-width='0.85' stroke-opacity='0.55'/%3E%3Cpath d='M0 6 L8 3 L16 6 L24 3 L32 6 L40 3 L48 6 L56 3 L64 6' fill='none' stroke='%23c8102e' stroke-width='0.65' stroke-opacity='0.28'/%3E%3C/svg%3E");
+  /* Refined papel picado — one accent band */
+  --tue-papel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='11' viewBox='0 0 120 11'%3E%3Crect width='120' height='7' fill='%23a50f24' fill-opacity='0.92'/%3E%3Cpath d='M0 7h12v4c0 2.5-2.5 5-6 5s-6-2.5-6-5V7zm12 0h12v3c0 3.5-3.5 6.5-7 6.5S10 13.5 10 10V7zm24 0h12v4.5c0 1.8-1.8 3.5-3.5 3.5S34.5 13.3 34.5 11.5V7zm12 0h12v3.5c0 2.8-2.8 5.5-5.5 5.5S47.5 13.3 47.5 10.5V7zm24 0h12v4.5c0 2.5-2.5 5-5 5s-5-2.5-5-5V7zm12 0h12v3c0 3.5-3.5 6.5-7 6.5S82 13.5 82 10V7z' fill='%23d4a84b'/%3E%3Crect y='10' width='120' height='1' fill='%23e8c878'/%3E%3C/svg%3E");
+  --tue-shadow:
+    0 1px 2px rgba(26, 24, 22, 0.04),
+    0 12px 32px rgba(26, 24, 22, 0.1),
+    0 28px 64px rgba(26, 24, 22, 0.14);
 
   position: fixed;
   inset: 0;
@@ -38,7 +37,7 @@
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem;
+  padding: 1.5rem;
   pointer-events: none;
 }
 
@@ -48,46 +47,57 @@
 }
 
 .tuesday-closed-modal.is-open .tuesday-closed-modal__backdrop {
-  animation: tuesdayFadeIn 0.32s ease forwards;
+  animation: tuesdayFadeIn 0.42s ease forwards;
 }
 
 .tuesday-closed-modal.is-open .tuesday-closed-modal__dialog {
-  animation: tuesdayLiftIn 0.46s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: tuesdayReveal 0.58s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .tuesday-closed-modal__backdrop {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 75% 55% at 15% 12%, rgba(244, 196, 48, 0.1) 0%, transparent 58%),
-    radial-gradient(ellipse 65% 48% at 88% 18%, rgba(200, 16, 46, 0.09) 0%, transparent 55%),
-    rgba(42, 34, 32, 0.52);
-  backdrop-filter: blur(9px);
+    radial-gradient(ellipse 70% 50% at 50% 38%, rgba(253, 252, 250, 0.06) 0%, transparent 62%),
+    rgba(26, 24, 22, 0.46);
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
 }
 
 .tuesday-closed-modal__dialog {
   position: relative;
   z-index: 1;
-  width: min(100%, 334px);
+  width: min(100%, 328px);
   overflow: hidden;
-  border-radius: 20px;
-  background: var(--tue-cream);
-  border: 2px solid rgba(244, 196, 48, 0.38);
+  border-radius: 22px;
+  background: var(--tue-ivory);
+  border: 1px solid var(--tue-gold-hair);
   box-shadow: var(--tue-shadow);
 }
 
 .tuesday-closed-modal__dialog::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background:
-    var(--tue-wash),
-    var(--tue-star),
-    var(--tue-flores);
-  background-size: 100% 100%, 56px 56px, 72px 28px;
-  opacity: 0.9;
+  top: -18px;
+  right: -22px;
+  width: 120px;
+  height: 120px;
+  background: var(--tue-star-mark) no-repeat center / contain;
   pointer-events: none;
   z-index: 0;
+  opacity: 0.9;
+}
+
+.tuesday-closed-modal__dialog::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1.25rem;
+  right: 1.25rem;
+  height: 1px;
+  background: var(--tue-accent);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .tuesday-closed-modal__dialog > * {
@@ -95,29 +105,14 @@
   z-index: 1;
 }
 
-/* ── Oaxacan trims ── */
-.tuesday-closed-modal__trim {
+/* ── Craft accent — single papel band ── */
+.tuesday-closed-modal__craft {
   display: block;
+  height: 10px;
+  background: var(--tue-papel) repeat-x center bottom;
+  background-size: 120px 11px;
   flex-shrink: 0;
   pointer-events: none;
-}
-
-.tuesday-closed-modal__trim--papel {
-  height: 14px;
-  background: var(--tue-papel) repeat-x center;
-  background-size: 100px 16px;
-}
-
-.tuesday-closed-modal__trim--zigzag {
-  height: 12px;
-  background: var(--tue-zigzag) repeat-x center;
-  background-size: 48px 14px;
-  background-color: rgba(255, 253, 249, 0.65);
-}
-
-.tuesday-closed-modal__trim--stripe {
-  height: 4px;
-  background: var(--tue-stripe);
 }
 
 /* ── Header ── */
@@ -125,12 +120,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.48rem;
-  padding: 0.95rem 1.15rem 0.75rem;
+  gap: 0.62rem;
+  padding: 1.35rem 1.5rem 1.1rem;
   text-align: center;
-  background:
-    radial-gradient(ellipse 82% 95% at 50% -18%, rgba(255, 216, 102, 0.28) 0%, transparent 64%),
-    linear-gradient(180deg, rgba(255, 253, 249, 0.92) 0%, rgba(250, 248, 244, 0.55) 100%);
 }
 
 .tuesday-closed-modal__logo-stage {
@@ -138,44 +130,33 @@
   justify-content: center;
 }
 
-.tuesday-closed-modal__logo-sun {
-  position: relative;
+.tuesday-closed-modal__logo-frame {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 0.72rem;
-  border-radius: 14px;
+  padding: 0.62rem 0.88rem;
+  border-radius: 16px;
   background: #fff;
-  border: 2px solid var(--tue-gold-warm);
+  border: 1px solid var(--tue-gold-hair);
   box-shadow:
-    0 8px 22px rgba(42, 34, 32, 0.11),
-    0 0 0 4px rgba(244, 196, 48, 0.16);
-}
-
-.tuesday-closed-modal__logo-sun::before {
-  content: '';
-  position: absolute;
-  inset: -12px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 216, 102, 0.32) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: -1;
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 6px 18px rgba(26, 24, 22, 0.07);
 }
 
 .tuesday-closed-modal__logo {
   display: block;
-  width: 5.6rem;
+  width: 5.25rem;
   height: auto;
-  max-height: 3.3rem;
+  max-height: 3rem;
   object-fit: contain;
 }
 
 .tuesday-closed-modal__eyebrow {
   margin: 0;
   font-family: var(--font-body, 'Plus Jakarta Sans', 'Montserrat', sans-serif);
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--tue-red);
 }
@@ -183,65 +164,46 @@
 .tuesday-closed-modal__title {
   margin: 0;
   font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(1.44rem, 5.2vw, 1.64rem);
-  font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: 0.01em;
+  font-size: clamp(1.52rem, 5.4vw, 1.72rem);
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.015em;
   color: var(--tue-ink);
 }
 
-.tuesday-closed-modal__title-em {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.12em;
-  font-weight: 600;
+.tuesday-closed-modal__title em {
+  font-style: italic;
+  font-weight: 400;
   color: var(--tue-red-deep);
 }
 
-/* ── Embroidered divider ── */
-.tuesday-closed-modal__rule {
+/* ── Hairline divider ── */
+.tuesday-closed-modal__divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.42rem;
-  padding: 0.15rem 1.15rem 0;
-  color: var(--tue-gold);
+  gap: 0.55rem;
+  margin: 0 1.5rem;
+  padding: 0.1rem 0;
 }
 
-.tuesday-closed-modal__rule::before,
-.tuesday-closed-modal__rule::after {
+.tuesday-closed-modal__divider::before,
+.tuesday-closed-modal__divider::after {
   content: '';
   flex: 1;
-  height: 2px;
+  height: 8px;
   background: var(--tue-zigzag) repeat-x center;
-  background-size: 48px 14px;
-  opacity: 0.55;
+  background-size: 64px 8px;
+  opacity: 0.72;
 }
 
-.tuesday-closed-modal__rule-knot {
-  display: flex;
-  align-items: center;
-  gap: 0.22rem;
-  flex-shrink: 0;
-}
-
-.tuesday-closed-modal__rule-knot span {
-  display: block;
+.tuesday-closed-modal__divider-gem {
+  width: 0.34rem;
+  height: 0.34rem;
   border-radius: 50%;
   background: var(--tue-gold);
-}
-
-.tuesday-closed-modal__rule-knot span:nth-child(1),
-.tuesday-closed-modal__rule-knot span:nth-child(3) {
-  width: 0.28rem;
-  height: 0.28rem;
-  opacity: 0.55;
-}
-
-.tuesday-closed-modal__rule-knot span:nth-child(2) {
-  width: 0.42rem;
-  height: 0.42rem;
-  background: linear-gradient(135deg, var(--tue-gold), var(--tue-red));
-  opacity: 0.88;
+  box-shadow: 0 0 0 3px rgba(212, 168, 75, 0.14);
+  flex-shrink: 0;
 }
 
 /* ── Body ── */
@@ -249,114 +211,135 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.78rem;
-  padding: 0.55rem 1.15rem 0.95rem;
+  gap: 0.9rem;
+  padding: 0.15rem 1.5rem 1.35rem;
   text-align: center;
-  background: rgba(255, 253, 249, 0.72);
 }
 
 .tuesday-closed-modal__lead {
   margin: 0;
-  max-width: 28ch;
+  max-width: 30ch;
   font-family: var(--font-body, 'Plus Jakarta Sans', 'Montserrat', sans-serif);
-  font-size: 0.86rem;
-  font-weight: 500;
-  line-height: 1.55;
+  font-size: 0.84rem;
+  font-weight: 400;
+  line-height: 1.62;
   color: var(--tue-muted);
 }
 
 .tuesday-closed-modal__reopen {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 0.18rem;
   margin: 0;
-  padding: 0.44rem 0.9rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(250, 248, 244, 0.98));
-  border: 1px solid rgba(200, 16, 46, 0.18);
-  box-shadow: inset 0 0 0 1px rgba(244, 196, 48, 0.28);
+  padding: 0.55rem 1.1rem;
+  min-width: 11.5rem;
+  border-radius: 14px;
+  background: var(--tue-pearl);
+  border: 1px solid var(--tue-line);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset;
+}
+
+.tuesday-closed-modal__reopen-label {
   font-family: var(--font-body, 'Plus Jakarta Sans', 'Montserrat', sans-serif);
-  font-size: 0.78rem;
+  font-size: 0.58rem;
   font-weight: 600;
-  line-height: 1.35;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--tue-muted);
+}
+
+.tuesday-closed-modal__reopen-time {
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
   color: var(--tue-ink);
 }
 
-.tuesday-closed-modal__reopen strong {
+.tuesday-closed-modal__reopen-time span {
   color: var(--tue-red);
-  font-weight: 800;
 }
 
 .tuesday-closed-modal__details {
   width: 100%;
   margin: 0;
-  padding: 0.72rem 0.82rem;
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(250, 248, 244, 0.88) 100%);
-  border: 1px solid rgba(244, 196, 48, 0.28);
-  border-top: 3px solid transparent;
-  border-image: var(--tue-stripe) 1;
+  padding: 0.85rem 0 0;
+  border-top: 1px solid var(--tue-line);
   text-align: center;
 }
 
 .tuesday-closed-modal__detail {
   margin: 0;
   font-family: var(--font-body, 'Plus Jakarta Sans', 'Montserrat', sans-serif);
-  font-size: 0.74rem;
+  font-size: 0.73rem;
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
   color: var(--tue-muted);
 }
 
 .tuesday-closed-modal__detail + .tuesday-closed-modal__detail {
-  margin-top: 0.3rem;
+  margin-top: 0.28rem;
 }
 
 .tuesday-closed-modal__info-link {
   display: inline-block;
-  margin-top: 0.2rem;
+  margin-top: 0.35rem;
   color: var(--tue-red);
   font-family: var(--font-body, 'Plus Jakarta Sans', 'Montserrat', sans-serif);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .tuesday-closed-modal__info-link:hover {
-  text-decoration: underline;
+  color: var(--tue-red-deep);
 }
 
 .tuesday-closed-modal__actions {
   width: 100%;
-  padding-top: 0.08rem;
+  padding-top: 0.15rem;
 }
 
 .tuesday-closed-modal__btn {
   width: 100%;
-  min-height: 44px;
-  border-radius: 11px !important;
+  min-height: 46px;
+  border-radius: 13px !important;
   font-family: var(--font-body, 'Plus Jakarta Sans', 'Montserrat', sans-serif) !important;
-  font-size: 0.84rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.05em;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .tuesday-closed-modal__btn--primary {
-  background: var(--tue-stripe) !important;
-  border: 1px solid rgba(165, 15, 36, 0.45) !important;
-  box-shadow: 0 6px 20px rgba(200, 16, 46, 0.26) !important;
+  background: var(--tue-ink) !important;
+  border: 1px solid rgba(26, 24, 22, 0.08) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 8px 20px rgba(26, 24, 22, 0.18) !important;
   color: #fff !important;
-  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  transition: background 0.22s ease, transform 0.15s ease, box-shadow 0.22s ease;
 }
 
 .tuesday-closed-modal__btn--primary:hover {
-  filter: brightness(1.04);
-  box-shadow: 0 8px 24px rgba(200, 16, 46, 0.32) !important;
+  background: var(--tue-red-deep) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 10px 26px rgba(200, 16, 46, 0.22) !important;
 }
 
 .tuesday-closed-modal__btn--primary:active {
-  transform: scale(0.99);
+  transform: scale(0.992);
+}
+
+.tuesday-closed-modal__btn--primary:focus-visible {
+  outline: 2px solid var(--tue-gold-light);
+  outline-offset: 2px;
 }
 
 @keyframes tuesdayFadeIn {
@@ -364,10 +347,10 @@
   to { opacity: 1; }
 }
 
-@keyframes tuesdayLiftIn {
+@keyframes tuesdayReveal {
   0% {
     opacity: 0;
-    transform: translateY(14px) scale(0.98);
+    transform: translateY(18px) scale(0.97);
   }
   100% {
     opacity: 1;
@@ -384,15 +367,27 @@
 
 @media (max-width: 768px) {
   .tuesday-closed-modal {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 1rem;
   }
 
   .tuesday-closed-modal__dialog {
-    width: min(90vw, 314px);
-    border-radius: 18px;
+    width: min(92vw, 308px);
+    border-radius: 20px;
+  }
+
+  .tuesday-closed-modal__hero {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .tuesday-closed-modal__body {
-    padding-bottom: calc(0.95rem + env(safe-area-inset-bottom, 0px));
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: calc(1.35rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .tuesday-closed-modal__divider {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
   }
 }
