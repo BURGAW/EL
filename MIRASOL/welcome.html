@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#ff1744">
-  <title>Welcome | MIRASOL</title>
+  <meta name="theme-color" content="#c8102e">
+  <title>Welcome | El Mirasol</title>
   <link rel="icon" href="assets/images/facebook/logo.jpg?v=brand1" type="image/jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,10 @@
       margin: 0;
       min-height: 100%;
       font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-      background: rgba(15, 28, 46, 0.72);
+      background:
+        radial-gradient(ellipse 80% 55% at 0% 0%, rgba(0, 150, 199, 0.14) 0%, transparent 58%),
+        radial-gradient(ellipse 70% 45% at 100% 100%, rgba(212, 168, 75, 0.1) 0%, transparent 55%),
+        rgba(15, 28, 46, 0.74);
       color: #0f1c2e;
     }
     .popup-backdrop {
@@ -26,9 +29,12 @@
     }
     .popup {
       width: min(100%, 420px);
-      background: #fff;
+      background: linear-gradient(180deg, #fdfcfa 0%, #fff 55%, #f4fafd 100%);
       border-radius: 20px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(212, 168, 75, 0.28);
+      box-shadow:
+        0 0 0 1px rgba(212, 168, 75, 0.12) inset,
+        0 24px 60px rgba(0, 0, 0, 0.35);
       padding: 2rem 1.75rem 1.75rem;
       text-align: center;
       animation: pop-in 0.45s ease;
@@ -42,7 +48,7 @@
       height: 72px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #ff6d00;
+      border: 3px solid #d4a84b;
       margin: 0 auto 1rem;
       display: block;
     }
@@ -50,7 +56,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #ff1744;
+      color: #c8102e;
       font-weight: 700;
       margin: 0 0 0.5rem;
     }
@@ -73,7 +79,7 @@
       min-height: 52px;
       border: 0;
       border-radius: 999px;
-      background: linear-gradient(135deg, #ff1744, #ff6d00);
+      background: linear-gradient(135deg, #a50f24, #c8102e 55%, #d4a84b);
       color: #fff;
       font-family: Montserrat, sans-serif;
       font-size: 1rem;
@@ -83,7 +89,7 @@
       line-height: 52px;
       cursor: pointer;
       touch-action: manipulation;
-      box-shadow: 0 8px 24px rgba(255, 23, 68, 0.35);
+      box-shadow: 0 8px 24px rgba(200, 16, 46, 0.32), 0 2px 10px rgba(212, 168, 75, 0.2);
     }
     .popup__btn:hover { filter: brightness(1.05); }
     .popup__btn:active { transform: scale(0.98); }
@@ -106,7 +112,7 @@
     <div class="popup" role="dialog" aria-labelledby="popup-title" aria-modal="true">
       <img class="popup__logo" src="assets/images/facebook/logo.jpg?v=brand1" alt="" width="72" height="72">
       <p class="popup__eyebrow">We&rsquo;ve moved</p>
-      <h1 class="popup__title" id="popup-title">MIRASOL</h1>
+      <h1 class="popup__title" id="popup-title">El Mirasol</h1>
       <p class="popup__sub">Our new website is ready &mdash; menu, hours, reviews &amp; more. Same family kitchen in Burgaw.</p>
       <a class="popup__btn" id="popup-enter" href="index.html">Enter our new website</a>
       <p class="popup__countdown" id="popup-countdown" hidden></p>

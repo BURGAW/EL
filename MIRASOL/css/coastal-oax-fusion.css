@@ -1,0 +1,537 @@
+/* Coastal × Oaxacan Craft — editorial fusion
+   Burgaw sea structure · Oaxacan red + champagne gold craft
+   Loads after coastal-theme + oaxacan-craft (both body classes required) */
+
+body.site-coastal.site-oax-craft,
+body.menu-page.site-coastal.site-oax-craft {
+  /* Bridge coastal tokens → craft palette (cascades site-wide) */
+  --fire-red: var(--oax-red);
+  --fire-red-deep: var(--oax-red-deep);
+  --fire-orange: var(--oax-gold);
+  --fire-orange-bright: var(--oax-gold-light);
+  --fire-glow: var(--oax-gold-pale);
+
+  --oaxaca-red: var(--oax-red);
+  --oaxaca-deep: var(--oax-red-deep);
+  --terracotta: var(--oax-gold);
+  --adobe: var(--oax-gold-light);
+  --gold: var(--oax-gold);
+  --gold-light: var(--oax-gold-light);
+
+  --fiesta-red: var(--oax-red);
+  --fiesta-red-deep: var(--oax-red-deep);
+  --fiesta-gold: var(--oax-gold);
+  --fiesta-gold-light: var(--oax-gold-light);
+  --fiesta-terracotta: var(--oax-gold);
+
+  --menu-red: var(--oax-red);
+  --menu-red-deep: var(--oax-red-deep);
+  --menu-gold: var(--oax-gold);
+  --menu-gold-light: var(--oax-gold-light);
+  --menu-terracotta: var(--oax-gold);
+
+  --tex-red: var(--oax-red);
+  --tex-gold: var(--oax-gold);
+  --tex-gold-light: var(--oax-gold-light);
+
+  --bou-gold: var(--oax-gold);
+  --bou-gold-light: var(--oax-gold-light);
+  --bou-charcoal: var(--oax-red-deep);
+
+  --bg-soft: #f5f9fc;
+  --bg-tint: #fdfcfa;
+  --charm-honey: var(--oax-gold);
+  --charm-honey-light: var(--oax-gold-light);
+
+  --fusion-sea-wash: rgba(0, 150, 199, 0.09);
+  --fusion-gold-wash: rgba(212, 168, 75, 0.07);
+}
+
+/* ── Page canvas: ivory editorial + coastal mist + craft warmth ── */
+body.site-coastal.site-oax-craft.pattern,
+body.menu-page.site-coastal.site-oax-craft.pattern {
+  background-color: var(--oax-ivory) !important;
+  background-image:
+    radial-gradient(ellipse 85% 55% at 0% 0%, var(--fusion-sea-wash) 0%, transparent 58%),
+    radial-gradient(ellipse 72% 46% at 100% 5%, rgba(200, 16, 46, 0.055) 0%, transparent 54%),
+    radial-gradient(ellipse 118% 78% at 50% 100%, var(--fusion-gold-wash) 0%, transparent 56%),
+    radial-gradient(ellipse 92% 48% at 50% 0%, rgba(240, 249, 255, 0.14) 0%, transparent 68%),
+    linear-gradient(180deg, #fdfcfa 0%, #ffffff 36%, #f4fafd 58%, #f8f6f2 100%) !important;
+}
+
+body.site-coastal.site-oax-craft.pattern::before,
+body.site-coastal.site-oax-craft.pattern::after {
+  display: block !important;
+  opacity: 0.36 !important;
+}
+
+/* ── Topbar: sea entry → craft serape finish ── */
+body.site-coastal.site-oax-craft .social-topbar {
+  background: linear-gradient(
+    90deg,
+    var(--coast-sea) 0%,
+    var(--coast-sea-mid) 20%,
+    var(--oax-red-deep) 52%,
+    var(--oax-red) 70%,
+    var(--oax-gold) 100%
+  ) !important;
+  box-shadow: 0 2px 14px rgba(0, 119, 182, 0.18), 0 1px 0 rgba(232, 200, 120, 0.22) inset !important;
+}
+
+body.site-coastal.site-oax-craft .social-topbar::after {
+  display: block !important;
+  height: 3px !important;
+  background: var(--oax-serape) !important;
+  box-shadow: 0 1px 0 rgba(232, 200, 120, 0.32) inset !important;
+}
+
+/* ── Header: pearl glass + craft zigzag (from oax) + gold hairline ── */
+body.site-coastal.site-oax-craft .header {
+  background: rgba(253, 252, 250, 0.97) !important;
+  border-bottom: none !important;
+  border-image: none !important;
+  box-shadow:
+    0 4px 22px rgba(0, 119, 182, 0.06),
+    0 1px 0 var(--oax-gold-hair) inset !important;
+}
+
+body.site-coastal.site-oax-craft .logo__title {
+  color: var(--oax-red-deep) !important;
+}
+
+body.site-coastal.site-oax-craft .header .logo__sub {
+  color: var(--oax-gold) !important;
+  letter-spacing: 0.12em !important;
+}
+
+body.site-coastal.site-oax-craft .nav-menu-cta,
+body.site-coastal.site-oax-craft .nav-menu-cta:hover,
+body.site-coastal.site-oax-craft .nav-menu-cta.active {
+  background: linear-gradient(135deg, var(--oax-red-deep), var(--oax-red) 55%, var(--oax-gold)) !important;
+  box-shadow: 0 4px 16px rgba(200, 16, 46, 0.28) !important;
+}
+
+/* ── Craft bands: slightly richer editorial presence ── */
+body.site-coastal.site-oax-craft .oax-craft-band__serape {
+  height: 6px;
+  box-shadow: 0 1px 0 rgba(232, 200, 120, 0.24) inset;
+}
+
+body.site-coastal.site-oax-craft .oax-craft-band__zigzag {
+  opacity: 0.82;
+}
+
+body.site-coastal.site-oax-craft .oax-craft-band__shine {
+  height: 2px;
+}
+
+/* ── Hero: coastal depth + champagne warmth ── */
+body.site-coastal.site-oax-craft .hero-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 119, 182, 0.36) 0%,
+      rgba(15, 28, 46, 0.5) 40%,
+      rgba(165, 15, 36, 0.56) 100%
+    ),
+    linear-gradient(135deg, rgba(212, 168, 75, 0.26) 0%, transparent 52%) !important;
+}
+
+body.site-coastal.site-oax-craft .hero h1 {
+  text-shadow:
+    0 3px 22px rgba(0, 0, 0, 0.48),
+    0 0 28px rgba(212, 168, 75, 0.28) !important;
+}
+
+body.site-coastal.site-oax-craft .hero-eyebrow {
+  color: var(--oax-gold-light) !important;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35) !important;
+}
+
+body.site-coastal.site-oax-craft .hero-sub {
+  color: rgba(255, 255, 255, 0.96) !important;
+}
+
+body.site-coastal.site-oax-craft .btn-primary {
+  background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
+  box-shadow: 0 4px 18px rgba(200, 16, 46, 0.32), 0 2px 8px rgba(212, 168, 75, 0.22) !important;
+}
+
+body.site-coastal.site-oax-craft .btn-primary:hover {
+  box-shadow: 0 6px 24px rgba(200, 16, 46, 0.38), 0 3px 12px rgba(212, 168, 75, 0.28) !important;
+}
+
+body.site-coastal.site-oax-craft .btn-red {
+  background: linear-gradient(135deg, var(--oax-red-deep), var(--oax-red)) !important;
+  border-color: var(--oax-red) !important;
+}
+
+body.site-coastal.site-oax-craft .btn-red:hover {
+  background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
+  border-color: var(--oax-gold) !important;
+}
+
+body.site-coastal.site-oax-craft .hero-badge {
+  background: linear-gradient(135deg, var(--coast-sea-mid), var(--coast-sea-light)) !important;
+  border-color: rgba(232, 200, 120, 0.45) !important;
+}
+
+body.site-coastal.site-oax-craft .hero-rating-pill {
+  border-color: rgba(212, 168, 75, 0.28) !important;
+}
+
+body.site-coastal.site-oax-craft .hero-rating-pill__stars {
+  color: var(--oax-gold) !important;
+}
+
+/* ── Live ribbon: sea→red→gold with huipil texture ── */
+body.site-coastal.site-oax-craft .feat-ribbon {
+  background:
+    var(--oax-flores),
+    linear-gradient(
+      90deg,
+      var(--coast-sea) 0%,
+      var(--oax-red-deep) 26%,
+      var(--oax-red) 50%,
+      var(--oax-gold) 78%,
+      var(--oax-gold-light) 100%
+    ) !important;
+  background-size: 88px 32px, 100% 100% !important;
+  border-bottom: 2px solid rgba(232, 200, 120, 0.55) !important;
+  color: #fff !important;
+}
+
+body.site-coastal.site-oax-craft .feat-ribbon__specials {
+  color: var(--oax-gold-pale) !important;
+}
+
+body.site-coastal.site-oax-craft .feat-ribbon__dot {
+  background: var(--oax-gold-light) !important;
+  box-shadow: 0 0 6px rgba(232, 200, 120, 0.65) !important;
+}
+
+/* ── Section typography: sea labels, gold rules ── */
+body.site-coastal.site-oax-craft .section-tag {
+  color: var(--coast-sea-mid) !important;
+  letter-spacing: 0.14em !important;
+}
+
+body.site-coastal.site-oax-craft h2 em {
+  color: var(--oax-gold) !important;
+}
+
+/* ── Stats band: foam → pearl with dual trim ── */
+body.site-coastal.site-oax-craft .feat-stats {
+  position: relative;
+  background: linear-gradient(180deg, var(--coast-foam) 0%, #fff 48%, var(--oax-pearl) 100%) !important;
+  border-top: 2px solid rgba(0, 150, 199, 0.22) !important;
+  border-bottom: none !important;
+}
+
+body.site-coastal.site-oax-craft .feat-stats::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--coast-sea-light), var(--oax-gold), var(--oax-red));
+  pointer-events: none;
+}
+
+body.site-coastal.site-oax-craft .feat-stat__num,
+body.site-coastal.site-oax-craft .feat-stat__num--text {
+  color: var(--oax-red-deep) !important;
+}
+
+body.site-coastal.site-oax-craft .feat-stat__label {
+  color: var(--coast-sea) !important;
+}
+
+body.site-coastal.site-oax-craft .feat-stat__hint {
+  color: var(--oax-gold) !important;
+}
+
+/* ── Signature cards ── */
+body.site-coastal.site-oax-craft .favorites-showcase {
+  background: linear-gradient(180deg, #fff 0%, var(--coast-foam) 55%, var(--oax-pearl) 100%) !important;
+}
+
+body.site-coastal.site-oax-craft .favorites-showcase__head h2 {
+  color: var(--oax-red-deep) !important;
+}
+
+body.site-coastal.site-oax-craft .fav-card__tag {
+  background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
+}
+
+body.site-coastal.site-oax-craft .fav-card__overlay {
+  background: linear-gradient(
+    0deg,
+    rgba(15, 28, 46, 0.95) 0%,
+    rgba(15, 28, 46, 0.68) 44%,
+    rgba(165, 15, 36, 0.18) 78%,
+    transparent 100%
+  ) !important;
+}
+
+/* ── Shared cards: gold frame + coastal accent ── */
+body.site-coastal.site-oax-craft .feature,
+body.site-coastal.site-oax-craft .review-card,
+body.site-coastal.site-oax-craft .extras-card,
+body.site-coastal.site-oax-craft .fiesta-card,
+body.site-coastal.site-oax-craft .info-card,
+body.site-coastal.site-oax-craft .visit-grid > .map-wrap,
+body.site-coastal.site-oax-craft .fav-card,
+body.site-coastal.site-oax-craft .visit-card,
+body.site-coastal.site-oax-craft .story-spin__frame,
+body.site-coastal.site-oax-craft .menu-card,
+body.site-coastal.site-oax-craft .order-strip {
+  border-color: rgba(212, 168, 75, 0.24) !important;
+  box-shadow:
+    0 0 0 1px var(--oax-gold-hair) inset,
+    0 6px 22px rgba(0, 119, 182, 0.07),
+    0 8px 22px rgba(26, 24, 22, 0.06) !important;
+}
+
+body.site-coastal.site-oax-craft .feature,
+body.site-coastal.site-oax-craft .review-card,
+body.site-coastal.site-oax-craft .extras-card,
+body.site-coastal.site-oax-craft .fiesta-card,
+body.site-coastal.site-oax-craft .info-card,
+body.site-coastal.site-oax-craft .visit-grid > .map-wrap,
+body.menu-page.site-coastal.site-oax-craft .menu-card {
+  border-left: 4px solid var(--oax-red) !important;
+}
+
+body.site-coastal.site-oax-craft .visit-card {
+  background: linear-gradient(165deg, #ffffff 0%, var(--coast-foam) 38%, var(--oax-pearl) 100%) !important;
+}
+
+body.site-coastal.site-oax-craft .visit-card::before {
+  background: linear-gradient(90deg, var(--coast-sea-light), var(--oax-red), var(--oax-gold)) !important;
+}
+
+body.site-coastal.site-oax-craft .visit-card__eyebrow {
+  color: var(--oax-gold) !important;
+}
+
+body.site-coastal.site-oax-craft .visit-card__title {
+  color: var(--oax-red-deep) !important;
+}
+
+body.site-coastal.site-oax-craft .visit-card__label {
+  background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
+}
+
+body.site-coastal.site-oax-craft .visit-contact__icon {
+  color: var(--coast-sea-mid) !important;
+}
+
+body.site-coastal.site-oax-craft .visit-contact__text a {
+  color: var(--coast-sea) !important;
+}
+
+body.site-coastal.site-oax-craft .visit-contact__text a:hover {
+  color: var(--oax-red) !important;
+}
+
+/* ── Story + roulette ── */
+body.site-coastal.site-oax-craft .story-spin-section {
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(0, 150, 199, 0.04) 36%, rgba(212, 168, 75, 0.04) 100%) !important;
+}
+
+body.site-coastal.site-oax-craft .story-spin__frame::before {
+  background: linear-gradient(90deg, var(--coast-sea-light), var(--oax-red), var(--oax-gold)) !important;
+  border: none !important;
+  height: 3px !important;
+}
+
+body.site-coastal.site-oax-craft .story-spin__img {
+  border-left-color: var(--oax-red) !important;
+}
+
+body.site-coastal.site-oax-craft .story-spin__roulette-eyebrow {
+  color: var(--coast-sea) !important;
+}
+
+body.site-coastal.site-oax-craft .story-spin__roulette-title,
+body.site-coastal.site-oax-craft .fiesta-card--roulette-inline h3 {
+  color: var(--oax-red-deep) !important;
+}
+
+body.site-coastal.site-oax-craft .fiesta-spin-btn,
+body.site-coastal.site-oax-craft .fiesta-stamp-btn {
+  background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
+}
+
+/* ── Reviews ── */
+body.site-coastal.site-oax-craft .reviews-section {
+  background: linear-gradient(180deg, #fff 0%, var(--coast-foam) 62%, var(--oax-pearl) 100%) !important;
+}
+
+body.site-coastal.site-oax-craft .review-card__name--head {
+  color: var(--coast-sea-mid) !important;
+}
+
+body.site-coastal.site-oax-craft .review-stars {
+  color: var(--oax-gold) !important;
+}
+
+/* ── Footer: sea depth rising into craft red + serape crown (oax ::before) ── */
+body.site-coastal.site-oax-craft .footer,
+body.site-coastal.site-oax-craft footer.footer--slim {
+  background: linear-gradient(
+    180deg,
+    var(--coast-sea) 0%,
+    #005f8a 34%,
+    var(--oax-red-deep) 72%,
+    #7a0e1c 100%
+  ) !important;
+}
+
+body.site-coastal.site-oax-craft .footer .logo__sub,
+body.site-coastal.site-oax-craft .footer .logo__sub--footer {
+  color: var(--oax-gold-light) !important;
+}
+
+body.site-coastal.site-oax-craft footer a:hover {
+  color: var(--oax-gold-pale) !important;
+}
+
+/* ── Mobile bar ── */
+body.site-coastal.site-oax-craft .mobile-cta {
+  background: rgba(253, 252, 250, 0.96) !important;
+  border-top: 2px solid rgba(212, 168, 75, 0.35) !important;
+  box-shadow: 0 -4px 18px rgba(0, 119, 182, 0.06) !important;
+}
+
+body.site-coastal.site-oax-craft .mobile-cta .cta-menu {
+  background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
+}
+
+body.site-coastal.site-oax-craft .google-review-tab {
+  background: rgba(253, 252, 250, 0.96) !important;
+  border-color: rgba(212, 168, 75, 0.22) !important;
+}
+
+body.site-coastal.site-oax-craft .google-review-tab__rating {
+  border-color: rgba(0, 150, 199, 0.14) !important;
+}
+
+/* ── Menu page ── */
+body.menu-page.site-coastal.site-oax-craft .menu-compact-bar,
+body.menu-page.site-coastal.site-oax-craft .menu-compact-bar--online {
+  background:
+    var(--oax-flores),
+    linear-gradient(180deg, #fff 0%, var(--coast-foam) 55%, var(--oax-pearl) 100%) !important;
+  background-size: 88px 32px, 100% 100% !important;
+  border-bottom: 1px solid rgba(212, 168, 75, 0.22) !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .menu-view-tab.is-active {
+  background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
+  border-color: var(--oax-gold) !important;
+  box-shadow: 0 4px 14px rgba(200, 16, 46, 0.28) !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .menu-online-tab.is-active {
+  background: var(--oax-gold) !important;
+  border-color: var(--oax-red) !important;
+  color: #fff !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .menu-online__heading h2 {
+  color: var(--oax-red-deep) !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .menu-card__price {
+  color: var(--oax-red) !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .menu-online__toolbar {
+  background: rgba(245, 249, 252, 0.98) !important;
+  border-bottom-color: rgba(212, 168, 75, 0.28) !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .cart-fab {
+  background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .order-strip {
+  background: linear-gradient(165deg, #fff 0%, var(--coast-foam) 42%, var(--oax-pearl) 100%) !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .order-strip__badge {
+  background: linear-gradient(135deg, var(--coast-sea-mid), var(--coast-sea-light)) !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .btn-order {
+  background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .item-modal__dialog {
+  border: 1px solid rgba(212, 168, 75, 0.3);
+  box-shadow:
+    0 0 0 1px var(--oax-gold-hair) inset,
+    0 20px 50px rgba(15, 28, 46, 0.18);
+}
+
+body.menu-page.site-coastal.site-oax-craft .item-modal__title {
+  color: var(--oax-red-deep) !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .item-modal__price {
+  color: var(--oax-red) !important;
+}
+
+/* ── Pay page (when craft classes present) ── */
+body.pay-page.site-coastal.site-oax-craft {
+  background:
+    radial-gradient(ellipse 80% 50% at 0% 0%, var(--fusion-sea-wash) 0%, transparent 58%),
+    radial-gradient(ellipse 70% 45% at 100% 100%, var(--fusion-gold-wash) 0%, transparent 55%),
+    linear-gradient(165deg, var(--oax-ivory) 0%, #fff 48%, var(--coast-foam) 100%) !important;
+}
+
+body.pay-page.site-coastal.site-oax-craft .pay-summary,
+body.pay-page.site-coastal.site-oax-craft .pay-card {
+  border-color: rgba(212, 168, 75, 0.26) !important;
+  box-shadow:
+    0 0 0 1px var(--oax-gold-hair) inset,
+    0 4px 18px rgba(0, 119, 182, 0.06) !important;
+}
+
+body.pay-page.site-coastal.site-oax-craft .pay-back {
+  color: var(--oax-red) !important;
+}
+
+body.pay-page.site-coastal.site-oax-craft .pay-title {
+  color: var(--oax-red-deep) !important;
+}
+
+/* ── World Cup promo harmonized with fusion ── */
+body.site-coastal.site-oax-craft.site-worldcup .wc-promo {
+  background:
+    var(--oax-flores),
+    linear-gradient(90deg, var(--coast-sea), var(--oax-red-deep), var(--oax-gold)) !important;
+  background-size: 88px 32px, 100% 100% !important;
+  border-bottom-color: rgba(232, 200, 120, 0.4) !important;
+}
+
+body.site-coastal.site-oax-craft.site-worldcup .wc-promo__text strong {
+  color: var(--oax-gold-pale) !important;
+}
+
+@media (max-width: 768px) {
+  body.site-coastal.site-oax-craft .oax-craft-band__serape {
+    height: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.site-coastal.site-oax-craft.pattern::before,
+  body.site-coastal.site-oax-craft.pattern::after {
+    opacity: 0.22 !important;
+  }
+}
