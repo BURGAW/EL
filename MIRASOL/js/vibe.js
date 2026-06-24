@@ -5,10 +5,10 @@
   const HERO_IMAGE = 'assets/images/hero/el-mirasol-hero.jpg?v=storefront1';
 
   const FLOATERS = [
-    'assets/images/facebook/nachos.jpg?v=vibe1',
-    'assets/images/facebook/margarita-mango.jpg?v=vibe1',
-    'assets/images/menu/IMG_1514.jpg?v=vibe1',
-    'assets/images/facebook/pozole.jpg?v=vibe1',
+    { src: 'assets/images/facebook/nachos.jpg?v=vibe1', caption: 'Nachos', alt: 'Loaded nachos' },
+    { src: 'assets/images/facebook/margarita-mango.jpg?v=vibe1', caption: 'Mango Margarita', alt: 'Mango margarita' },
+    { src: 'assets/images/menu/IMG_1514.jpg?v=vibe1', caption: 'Street Tacos', alt: 'Street tacos' },
+    { src: 'assets/images/facebook/pozole.jpg?v=vibe1', caption: 'Pozole', alt: 'Pozole rojo' },
   ];
 
   function initHeroRotator() {
@@ -24,13 +24,14 @@
     if (!root) return;
 
     root.innerHTML = FLOATERS.map(
-      (src, i) =>
+      (item, i) =>
         `<div class="hero-floater hero-floater--snap" style="--snap-i:${i}">` +
         `<article class="hero-snap">` +
         `<div class="hero-snap__paper">` +
         `<div class="hero-snap__photo">` +
-        `<img src="${src}" alt="" loading="lazy" width="140" height="140">` +
+        `<img src="${item.src}" alt="${item.alt}" loading="lazy" width="140" height="140">` +
         `</div>` +
+        `<span class="hero-snap__caption">${item.caption}</span>` +
         `</div>` +
         `<span class="hero-snap__shadow" aria-hidden="true"></span>` +
         `</article>` +
