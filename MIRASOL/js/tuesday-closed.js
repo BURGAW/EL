@@ -3,7 +3,7 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const MODAL_VERSION = '30';
+  const MODAL_VERSION = '31';
   const TUESDAY_POPUP_KEY = `elmirasol-tuesday-v${MODAL_VERSION}`;
   function isPreviewMode() {
     try {
@@ -109,7 +109,7 @@
       `<div class="tuesday-closed-modal__logo-stage" aria-hidden="true">` +
       `<div class="tuesday-closed-modal__logo-halo">` +
       `<div class="tuesday-closed-modal__logo-frame">` +
-      `<img src="${escapeHtml(logo)}" alt="${escapeHtml(brandName)}" class="tuesday-closed-modal__logo" width="92" height="54">` +
+      `<img src="${escapeHtml(logo)}" alt="${escapeHtml(brandName)}" class="tuesday-closed-modal__logo" width="116" height="68">` +
       `</div></div></div>` +
       `<p class="tuesday-closed-modal__eyebrow">` +
       `<span class="tuesday-closed-modal__eyebrow-dot" aria-hidden="true"></span>Tuesday` +
