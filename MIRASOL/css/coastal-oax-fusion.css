@@ -1535,6 +1535,8 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
 /* Desktop — grid corners across full hero (not the text box) */
 @media (min-width: 901px) {
   body.site-coastal.site-oax-craft:not(.menu-page) .hero-floaters {
+    --snap-pull-x: min(15cm, 22vw);
+    --snap-pull-y: min(15cm, 18vh);
     position: absolute !important;
     inset: 0 !important;
     width: 100% !important;
@@ -1557,7 +1559,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
     grid-row: 1;
     align-self: end;
     justify-self: start;
-    transform: rotate(-4deg) !important;
+    transform: rotate(-4deg) translate(var(--snap-pull-x), var(--snap-pull-y)) !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(2) {
@@ -1565,7 +1567,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
     grid-row: 1;
     align-self: start;
     justify-self: end;
-    transform: rotate(3deg) !important;
+    transform: rotate(3deg) translate(calc(-1 * var(--snap-pull-x)), var(--snap-pull-y)) !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(3) {
@@ -1573,7 +1575,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
     grid-row: 3;
     align-self: start;
     justify-self: start;
-    transform: rotate(-2deg) !important;
+    transform: rotate(-2deg) translate(var(--snap-pull-x), calc(-1 * var(--snap-pull-y))) !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(4) {
@@ -1581,7 +1583,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
     grid-row: 3;
     align-self: end;
     justify-self: end;
-    transform: rotate(4deg) !important;
+    transform: rotate(4deg) translate(calc(-1 * var(--snap-pull-x)), calc(-1 * var(--snap-pull-y))) !important;
   }
 }
 
