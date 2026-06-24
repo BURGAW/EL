@@ -3,7 +3,7 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const MODAL_VERSION = '28';
+  const MODAL_VERSION = '29';
   const TUESDAY_POPUP_KEY = `elmirasol-tuesday-v${MODAL_VERSION}`;
   function isPreviewMode() {
     try {
@@ -108,7 +108,7 @@
       `<div class="tuesday-closed-modal__logo-stage" aria-hidden="true">` +
       `<div class="tuesday-closed-modal__logo-halo">` +
       `<div class="tuesday-closed-modal__logo-frame">` +
-      `<img src="${escapeHtml(logo)}" alt="${escapeHtml(brandName)}" class="tuesday-closed-modal__logo" width="72" height="42">` +
+      `<img src="${escapeHtml(logo)}" alt="${escapeHtml(brandName)}" class="tuesday-closed-modal__logo" width="58" height="34">` +
       `</div></div></div>` +
       `<p class="tuesday-closed-modal__eyebrow">` +
       `<span class="tuesday-closed-modal__eyebrow-dot" aria-hidden="true"></span>Tuesday` +
@@ -120,10 +120,9 @@
       `<span class="tuesday-closed-modal__divider-star"></span>` +
       `</div>` +
       `<div class="tuesday-closed-modal__body">` +
-      `<p class="tuesday-closed-modal__lead">Kitchen rests on Tuesdays&mdash;back Wednesday.</p>` +
       `<p class="tuesday-closed-modal__reopen-pill">Back <span>Wednesday</span> &middot; 8&nbsp;AM</p>` +
       `<div class="tuesday-closed-modal__details">` +
-      `<p class="tuesday-closed-modal__detail-line">Mon, Wed&ndash;Sun 8&ndash;9&nbsp;PM &middot; Fri &amp; Sat 9:30</p>` +
+      `<p class="tuesday-closed-modal__detail-line">Wed&ndash;Sun 8&ndash;9&nbsp;PM &middot; Fri/Sat 9:30</p>` +
       `<p class="tuesday-closed-modal__detail-line">${escapeHtml(address)}</p>` +
       `<p class="tuesday-closed-modal__detail-line">` +
       `<a class="tuesday-closed-modal__info-link" href="tel:${escapeHtml(phoneTel)}">${escapeHtml(phone)}</a>` +
