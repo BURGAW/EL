@@ -1,8 +1,12 @@
 /* Site-wide spacing polish — compact rhythm, no overlap */
 
 /* ── Hero: body padding already clears topbar ── */
-body.has-topbar .hero {
+body.has-topbar:not(.site-oax-craft) .hero {
   padding-top: calc(var(--header-h) + 2.25rem);
+}
+
+body.has-topbar.site-coastal.site-oax-craft .hero {
+  padding-top: calc(var(--topbar-h) + var(--header-h));
 }
 
 body.has-topbar .page-hero {
