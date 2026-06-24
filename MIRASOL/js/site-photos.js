@@ -1,8 +1,8 @@
 /** Kitchen + menu photos (groky-import → assets/images/menu/groky/) */
 (function () {
-  const GROKY_V = '?v=groky1';
-  const FB_V = '?v=groky1';
-  const MENU_V = '?v=groky1';
+  const GROKY_V = '?v=groky2';
+  const FB_V = '?v=groky2';
+  const MENU_V = '?v=groky2';
 
   function groky(slug) {
     return 'assets/images/menu/groky/' + slug + '.jpg' + GROKY_V;
