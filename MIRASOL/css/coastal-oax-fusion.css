@@ -1497,7 +1497,7 @@ body.site-coastal.site-oax-craft .hero-snap__paper img {
 }
 
 body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
-  top: 14%;
+  top: 26%;
   right: auto;
   bottom: auto;
   left: 2%;
@@ -1505,7 +1505,7 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
 }
 
 body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
-  top: 12%;
+  top: 24%;
   left: auto;
   bottom: auto;
   right: 2%;
@@ -1585,13 +1585,13 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
   }
 
   body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
-    top: 9%;
+    top: 18%;
     bottom: auto;
     left: 0.15rem;
   }
 
   body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
-    top: 7%;
+    top: 16%;
     bottom: auto;
     right: 0.15rem;
   }
