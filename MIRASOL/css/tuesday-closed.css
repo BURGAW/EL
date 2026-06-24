@@ -383,6 +383,7 @@
 
 .tuesday-closed-modal__btn {
   position: relative;
+  isolation: isolate;
   width: 100%;
   min-height: 36px;
   overflow: hidden;
@@ -392,36 +393,83 @@
   font-weight: 600 !important;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
 }
 
 .tuesday-closed-modal__btn--primary {
-  background: linear-gradient(180deg, #2a2724 0%, var(--tue-ink) 48%, #121110 100%) !important;
-  border: 1px solid rgba(26, 24, 22, 0.15) !important;
+  background:
+    radial-gradient(ellipse 82% 58% at 50% 0%, rgba(212, 168, 75, 0.16) 0%, transparent 72%),
+    linear-gradient(180deg, #34312d 0%, var(--tue-ink) 44%, #0e0d0c 100%) !important;
+  border: 1px solid rgba(212, 168, 75, 0.34) !important;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.07) inset,
-    0 0 0 1px rgba(212, 168, 75, 0.18) inset,
-    0 6px 18px rgba(26, 24, 22, 0.16) !important;
+    0 0 0 1px rgba(26, 24, 22, 0.5),
+    0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 0 0 1px rgba(212, 168, 75, 0.2) inset,
+    inset 0 -1px 0 rgba(212, 168, 75, 0.2),
+    0 6px 18px rgba(26, 24, 22, 0.18),
+    0 0 22px rgba(212, 168, 75, 0.09) !important;
   color: #fff !important;
-  transition: background 0.24s ease, transform 0.15s ease, box-shadow 0.24s ease;
+  transition:
+    background 0.28s ease,
+    border-color 0.28s ease,
+    transform 0.15s ease,
+    box-shadow 0.28s ease,
+    text-shadow 0.28s ease;
 }
 
 .tuesday-closed-modal__btn--primary::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 10%;
-  right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(232, 200, 120, 0.45), transparent);
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 245, 210, 0.15) 0%, transparent 42%),
+    linear-gradient(90deg, transparent 8%, rgba(232, 200, 120, 0.62) 50%, transparent 92%);
+  background-size: 100% 100%, 100% 1px;
+  background-position: center, center top;
+  background-repeat: no-repeat;
   pointer-events: none;
+  z-index: 0;
+}
+
+.tuesday-closed-modal__btn--primary::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    108deg,
+    transparent 28%,
+    rgba(255, 240, 190, 0) 40%,
+    rgba(255, 236, 178, 0.38) 50%,
+    rgba(255, 240, 190, 0) 60%,
+    transparent 72%
+  );
+  transform: translateX(-135%) skewX(-14deg);
+  opacity: 0;
+  transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .tuesday-closed-modal__btn--primary:hover {
-  background: linear-gradient(180deg, var(--tue-red-deep) 0%, var(--tue-red) 100%) !important;
+  background:
+    radial-gradient(ellipse 88% 62% at 50% 0%, rgba(255, 220, 140, 0.2) 0%, transparent 72%),
+    linear-gradient(180deg, var(--tue-red-deep) 0%, var(--tue-red) 100%) !important;
+  border-color: rgba(232, 200, 120, 0.5) !important;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.1) inset,
-    0 0 0 1px rgba(212, 168, 75, 0.24) inset,
-    0 8px 22px rgba(200, 16, 46, 0.2) !important;
+    0 0 0 1px rgba(212, 168, 75, 0.38),
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 0 0 1px rgba(255, 236, 178, 0.22) inset,
+    inset 0 -1px 0 rgba(212, 168, 75, 0.3),
+    0 8px 24px rgba(200, 16, 46, 0.22),
+    0 0 30px rgba(212, 168, 75, 0.16) !important;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18), 0 0 10px rgba(255, 236, 178, 0.22);
+}
+
+.tuesday-closed-modal__btn--primary:hover::after {
+  opacity: 1;
+  transform: translateX(135%) skewX(-14deg);
 }
 
 .tuesday-closed-modal__btn--primary:active {
@@ -469,6 +517,10 @@
   .tuesday-closed-modal.is-open .tuesday-closed-modal__backdrop,
   .tuesday-closed-modal.is-open .tuesday-closed-modal__dialog {
     animation: none !important;
+  }
+
+  .tuesday-closed-modal__btn--primary::after {
+    display: none;
   }
 }
 
