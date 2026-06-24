@@ -1547,7 +1547,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
     padding: clamp(1rem, 3vh, 2rem) clamp(0.85rem, 2.5vw, 1.75rem) !important;
     display: grid !important;
     grid-template-columns: minmax(3.5rem, 1fr) minmax(0, 2.6fr) minmax(3.5rem, 1fr);
-    grid-template-rows: minmax(3.5rem, 1fr) minmax(0, 1.4fr) minmax(3.5rem, 1fr);
+    grid-template-rows: minmax(0, 2.1fr) minmax(0, 0.75fr) minmax(3.5rem, 1.15fr);
     box-sizing: border-box;
   }
 
@@ -1557,18 +1557,18 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(1) {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 2;
     align-self: end;
     justify-self: start;
-    transform: rotate(-4deg) translate(var(--snap-pull-x), var(--snap-pull-y)) !important;
+    transform: rotate(-4deg) translate(var(--snap-pull-x), 0) !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(2) {
     grid-column: 3;
-    grid-row: 1;
-    align-self: start;
+    grid-row: 2;
+    align-self: end;
     justify-self: end;
-    transform: rotate(3deg) translate(calc(-1 * var(--snap-pull-x)), var(--snap-pull-y)) !important;
+    transform: rotate(3deg) translate(calc(-1 * var(--snap-pull-x)), 0) !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(3) {
