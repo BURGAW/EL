@@ -333,6 +333,27 @@ body.site-coastal.site-oax-craft .visit-card__label {
   background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
 }
 
+body.site-coastal.site-oax-craft .visit-hours--compact {
+  padding: 0.2rem 0.3rem !important;
+}
+
+body.site-coastal.site-oax-craft .visit-hours--compact li {
+  padding: 0.18rem 0.32rem !important;
+  font-size: 0.72rem !important;
+  gap: 0.35rem !important;
+}
+
+body.site-coastal.site-oax-craft .visit-hours--compact li span:first-child {
+  font-size: 0.74rem !important;
+  min-width: 0 !important;
+  line-height: 1.25 !important;
+}
+
+body.site-coastal.site-oax-craft .visit-hours--compact li span:last-child {
+  font-size: 0.68rem !important;
+  flex-shrink: 0;
+}
+
 body.site-coastal.site-oax-craft .visit-contact__icon {
   color: var(--coast-sea-mid) !important;
 }

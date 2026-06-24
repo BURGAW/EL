@@ -134,7 +134,7 @@
       `<div class="tuesday-closed-modal__body">` +
       `<p class="tuesday-closed-modal__reopen-pill">Back <span>Wednesday</span> &middot; 8&nbsp;AM</p>` +
       `<div class="tuesday-closed-modal__details">` +
-      `<p class="tuesday-closed-modal__detail-line">Wed&ndash;Sun 8&ndash;9&nbsp;PM &middot; Fri/Sat 9:30</p>` +
+      `<p class="tuesday-closed-modal__detail-line">Mon, Wed&ndash;Thu &amp; Sun 8&ndash;9&nbsp;PM &middot; Fri&ndash;Sat 9:30</p>` +
       `<p class="tuesday-closed-modal__detail-line">${escapeHtml(address)}</p>` +
       `<p class="tuesday-closed-modal__detail-line">` +
       `<a class="tuesday-closed-modal__info-link" href="tel:${escapeHtml(phoneTel)}">${escapeHtml(phone)}</a>` +
