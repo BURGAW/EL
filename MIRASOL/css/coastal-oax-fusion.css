@@ -1484,7 +1484,7 @@ body.site-coastal.site-oax-craft .hero-floater {
 }
 
 body.site-coastal.site-oax-craft .hero-floater--snap {
-  --snap-w: clamp(64px, 5vw, 88px);
+  --snap-w: clamp(48px, 3.8vw, 68px);
   height: auto !important;
   animation: none !important;
 }
@@ -1498,7 +1498,7 @@ body.site-coastal.site-oax-craft .hero-snap {
 body.site-coastal.site-oax-craft .hero-snap__paper {
   overflow: visible;
   border-color: #ddd5c8;
-  padding: 5px 5px 14px;
+  padding: 4px 4px 10px;
 }
 
 body.site-coastal.site-oax-craft .hero-snap__photo {
@@ -1546,7 +1546,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: clamp(68px, 4.8vw, 92px);
+    --snap-w: clamp(52px, 3.6vw, 72px);
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(1) {
@@ -1574,13 +1574,13 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 
   body.site-coastal.site-oax-craft .hero-snap__paper {
-    padding: 6px 6px 16px;
+    padding: 5px 5px 12px;
   }
 }
 
 @media (min-width: 1280px) {
   body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: clamp(72px, 4.4vw, 96px);
+    --snap-w: clamp(56px, 3.4vw, 76px);
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(1) {
@@ -1767,7 +1767,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: clamp(50px, 15.5vw, 64px);
+    --snap-w: clamp(40px, 12.5vw, 52px);
     --snap-h: auto;
     animation: none !important;
   }
@@ -1803,11 +1803,11 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 
   body.site-coastal.site-oax-craft .hero-snap__paper {
-    padding: 4px 4px 12px;
+    padding: 3px 3px 9px;
   }
 
   body.site-coastal.site-oax-craft .hero-snap__paper img {
-    transform: scale(1.1);
+    transform: scale(1.08);
   }
 
   body.menu-page.site-coastal.site-oax-craft .menu-view-tabs {
@@ -1890,7 +1890,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: clamp(48px, 15vw, 60px) !important;
+    --snap-w: clamp(36px, 11.5vw, 46px) !important;
   }
 
   body.site-coastal.site-oax-craft .google-review-tab {
