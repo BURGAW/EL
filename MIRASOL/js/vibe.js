@@ -3,7 +3,7 @@
  */
 (function () {
   const HERO_IMAGES = [
-    'assets/images/facebook/shrimp-plate.jpg?v=vibe1',
+    'assets/images/hero/campechanas-skillet.jpg?v=hero1',
     'assets/images/facebook/pozole.jpg?v=vibe1',
     'assets/images/facebook/nachos.jpg?v=vibe1',
     'assets/images/facebook/menudo.jpg?v=vibe1',
@@ -28,7 +28,7 @@
     { src: 'assets/images/menu/IMG_2876.jpg?v=sharpfix1', label: 'Fajitas', wide: true },
     { src: 'assets/images/menu/IMG_2920.jpg?v=vibe1', label: 'Breakfast' },
     { src: 'assets/images/facebook/margarita-pineapple.jpg?v=vibe1', label: 'Margaritas' },
-    { src: 'assets/images/facebook/shrimp-plate.jpg?v=vibe1', label: 'Shrimp' },
+    { src: 'assets/images/hero/campechanas-skillet.jpg?v=hero1', label: 'Campechanas' },
     { src: 'assets/images/menu/IMG_2751.jpg?v=vibe1', label: 'Cocktails' },
     { src: 'assets/images/facebook/beers.jpg?v=vibe1', label: 'Cervezas' },
   ];
