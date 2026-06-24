@@ -3,10 +3,8 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const MODAL_VERSION = '15';
+  const MODAL_VERSION = '16';
   const TUESDAY_POPUP_KEY = `elmirasol-tuesday-v${MODAL_VERSION}`;
-  const isMenu = document.body.classList.contains('menu-page');
-
   function isPreviewMode() {
     try {
       return /[?&]tuesday(=1)?(?=&|$)/i.test(window.location.search);
@@ -74,7 +72,7 @@
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('tuesday-modal-open');
     document.body.classList.add('modal-open');
-    modal.querySelector('.tuesday-closed-modal__close')?.focus({ preventScroll: true });
+    modal.querySelector('.tuesday-closed-modal__btn--primary')?.focus({ preventScroll: true });
   }
 
   function buildTuesdayPopup() {
@@ -91,22 +89,15 @@
     if (modal && modal.dataset.version === MODAL_VERSION) return modal;
     if (modal) modal.remove();
 
-    const menuAction = isMenu
-      ? `<button type="button" class="btn btn-outline tuesday-closed-modal__btn tuesday-closed-modal__btn--menu" data-tuesday-close>Browse menu</button>`
-      : `<a href="menu.html" class="btn btn-outline tuesday-closed-modal__btn tuesday-closed-modal__btn--menu">Browse menu</a>`;
-
     modal = document.createElement('div');
     modal.id = 'tuesday-closed-modal';
     modal.className = 'tuesday-closed-modal';
     modal.dataset.version = MODAL_VERSION;
     modal.setAttribute('aria-hidden', 'true');
     modal.innerHTML =
-      `<div class="tuesday-closed-modal__backdrop" data-tuesday-close tabindex="-1"></div>` +
+      `<div class="tuesday-closed-modal__backdrop" tabindex="-1" aria-hidden="true"></div>` +
       `<div class="tuesday-closed-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="tuesday-closed-title">` +
       `<header class="tuesday-closed-modal__hero">` +
-      `<div class="tuesday-closed-modal__hero-top">` +
-      `<button type="button" class="tuesday-closed-modal__close" data-tuesday-close aria-label="Close">&times;</button>` +
-      `</div>` +
       `<span class="tuesday-closed-modal__badge">` +
       `<span class="tuesday-closed-modal__badge-dot" aria-hidden="true"></span>` +
       `Closed today` +
@@ -127,7 +118,6 @@
       `<a class="tuesday-closed-modal__info-link" href="tel:${escapeHtml(phoneTel)}">${escapeHtml(phone)}</a>` +
       `</div>` +
       `<div class="tuesday-closed-modal__actions">` +
-      menuAction +
       `<button type="button" class="btn btn-primary tuesday-closed-modal__btn tuesday-closed-modal__btn--primary" data-tuesday-close>See you Wednesday!</button>` +
       `</div></div></div>`;
     document.body.appendChild(modal);
@@ -137,17 +127,6 @@
         markTuesdayPopupSeen();
         closeTuesdayPopup(modal);
       });
-    });
-
-    modal.querySelector('.tuesday-closed-modal__btn--menu')?.addEventListener('click', () => {
-      markTuesdayPopupSeen();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-        markTuesdayPopupSeen();
-        closeTuesdayPopup(modal);
-      }
     });
 
     return modal;

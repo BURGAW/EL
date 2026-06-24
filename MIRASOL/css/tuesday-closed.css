@@ -130,37 +130,6 @@
   z-index: 1;
 }
 
-.tuesday-closed-modal__hero-top {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  min-height: 1.65rem;
-  flex-shrink: 0;
-}
-
-.tuesday-closed-modal__close {
-  position: static;
-  flex-shrink: 0;
-  width: 1.75rem;
-  height: 1.75rem;
-  font-size: 1.2rem;
-  border: 1px solid rgba(255, 228, 148, 0.45);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
-  line-height: 1;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.tuesday-closed-modal__close:hover,
-.tuesday-closed-modal__close:focus-visible {
-  background: rgba(255, 228, 148, 0.28);
-  outline: none;
-  transform: scale(1.05);
-}
-
 .tuesday-closed-modal__badge {
   display: inline-flex;
   align-items: center;
@@ -356,15 +325,6 @@
   background: linear-gradient(145deg, var(--tue-red) 0%, var(--tue-red-deep) 100%) !important;
   border-color: var(--tue-red-deep) !important;
   box-shadow: 0 4px 16px rgba(204, 23, 24, 0.28) !important;
-}
-
-.tuesday-closed-modal__btn--menu {
-  min-height: 36px;
-  border-style: dashed !important;
-  border-width: 2px !important;
-  border-color: rgba(255, 216, 102, 0.55) !important;
-  color: var(--tue-red-deep) !important;
-  background: rgba(255, 255, 255, 0.7) !important;
 }
 
 @keyframes tuesdayFadeIn {
