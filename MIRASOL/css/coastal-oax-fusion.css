@@ -1458,3 +1458,35 @@ body.gsites-embed.site-coastal.site-oax-craft:not(.menu-page) .hero {
     --topbar-stack: 40px;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   Hero polaroids — clustered group (bottom-center)
+   ═══════════════════════════════════════════════════════════════ */
+
+body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
+  top: auto;
+  right: auto;
+  bottom: 22%;
+  left: 34%;
+}
+
+body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
+  top: auto;
+  right: auto;
+  bottom: 26%;
+  left: 42%;
+}
+
+body.site-coastal.site-oax-craft .hero-floater:nth-child(3) {
+  top: auto;
+  right: auto;
+  bottom: 18%;
+  left: 38%;
+}
+
+body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
+  top: auto;
+  right: auto;
+  bottom: 24%;
+  left: 46%;
+}
