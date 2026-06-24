@@ -3,7 +3,7 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const MODAL_VERSION = '20';
+  const MODAL_VERSION = '21';
   const TUESDAY_POPUP_KEY = `elmirasol-tuesday-v${MODAL_VERSION}`;
   function isPreviewMode() {
     try {
@@ -97,7 +97,7 @@
     modal.innerHTML =
       `<div class="tuesday-closed-modal__backdrop" tabindex="-1" aria-hidden="true"></div>` +
       `<div class="tuesday-closed-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="tuesday-closed-title">` +
-      `<div class="tuesday-closed-modal__trim tuesday-closed-modal__trim--top" aria-hidden="true"></div>` +
+      `<div class="tuesday-closed-modal__trim tuesday-closed-modal__trim--papel" aria-hidden="true"></div>` +
       `<header class="tuesday-closed-modal__hero">` +
       `<div class="tuesday-closed-modal__logo-stage" aria-hidden="true">` +
       `<div class="tuesday-closed-modal__logo-sun">` +
@@ -106,9 +106,12 @@
       `<p class="tuesday-closed-modal__eyebrow">Tuesday</p>` +
       `<h2 class="tuesday-closed-modal__title" id="tuesday-closed-title">We&rsquo;re closed <span class="tuesday-closed-modal__title-em">today</span></h2>` +
       `</header>` +
-      `<div class="tuesday-closed-modal__rule" aria-hidden="true"><span class="tuesday-closed-modal__rule-gem"></span></div>` +
+      `<div class="tuesday-closed-modal__trim tuesday-closed-modal__trim--zigzag" aria-hidden="true"></div>` +
+      `<div class="tuesday-closed-modal__rule" aria-hidden="true">` +
+      `<span class="tuesday-closed-modal__rule-knot"><span></span><span></span><span></span></span>` +
+      `</div>` +
       `<div class="tuesday-closed-modal__body">` +
-      `<p class="tuesday-closed-modal__lead">Our kitchen takes Tuesdays off. Plan ahead and we&rsquo;ll see you soon.</p>` +
+      `<p class="tuesday-closed-modal__lead">Our kitchen takes Tuesdays off &mdash; plan ahead and we&rsquo;ll see you soon.</p>` +
       `<p class="tuesday-closed-modal__reopen">Back <strong>Wednesday at 8&nbsp;AM</strong></p>` +
       `<div class="tuesday-closed-modal__details">` +
       `<p class="tuesday-closed-modal__detail">Mon, Wed&ndash;Sun 8&ndash;9&nbsp;PM &middot; Fri &amp; Sat until 9:30</p>` +
@@ -118,7 +121,8 @@
       `<div class="tuesday-closed-modal__actions">` +
       `<button type="button" class="btn btn-primary tuesday-closed-modal__btn tuesday-closed-modal__btn--primary" data-tuesday-close>Got it</button>` +
       `</div></div>` +
-      `<div class="tuesday-closed-modal__trim tuesday-closed-modal__trim--bottom" aria-hidden="true"></div>` +
+      `<div class="tuesday-closed-modal__trim tuesday-closed-modal__trim--stripe" aria-hidden="true"></div>` +
+      `<div class="tuesday-closed-modal__trim tuesday-closed-modal__trim--papel" aria-hidden="true"></div>` +
       `</div>`;
     document.body.appendChild(modal);
 
