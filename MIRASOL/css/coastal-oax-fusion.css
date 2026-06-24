@@ -1460,7 +1460,7 @@ body.gsites-embed.site-coastal.site-oax-craft:not(.menu-page) .hero {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   Hero polaroids — desktop: four corners spread · mobile: row under title
+   Hero polaroids — small, separated, hand-placed
    ═══════════════════════════════════════════════════════════════ */
 
 body.site-coastal.site-oax-craft:not(.menu-page) .hero {
@@ -1484,20 +1484,26 @@ body.site-coastal.site-oax-craft .hero-floater {
 }
 
 body.site-coastal.site-oax-craft .hero-floater--snap {
-  --snap-w: clamp(96px, 7.5vw, 128px);
-  --snap-spread: 2.5in;
+  --snap-w: clamp(64px, 5vw, 88px);
   height: auto !important;
   animation: none !important;
+}
+
+body.site-coastal.site-oax-craft .hero-snap {
+  filter:
+    drop-shadow(0 6px 14px rgba(0, 0, 0, 0.26))
+    drop-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
 }
 
 body.site-coastal.site-oax-craft .hero-snap__paper {
   overflow: visible;
   border-color: #ddd5c8;
+  padding: 5px 5px 14px;
 }
 
 body.site-coastal.site-oax-craft .hero-snap__photo {
   overflow: hidden;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 body.site-coastal.site-oax-craft .hero-snap__paper img {
@@ -1505,12 +1511,17 @@ body.site-coastal.site-oax-craft .hero-snap__paper img {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  transform: scale(1.2);
+  transform: scale(1.14);
   transform-origin: center center;
   background: #141210;
 }
 
-/* Desktop — one in each corner, ~2.5in from edges (5in spread) */
+body.site-coastal.site-oax-craft .hero-snap__shadow {
+  opacity: 0.65;
+  bottom: -5%;
+}
+
+/* Desktop — petite corners, offset so they feel scattered not stacked */
 @media (min-width: 901px) {
   body.site-coastal.site-oax-craft:not(.menu-page) .hero-floaters {
     position: absolute !important;
@@ -1534,28 +1545,62 @@ body.site-coastal.site-oax-craft .hero-snap__paper img {
     display: block !important;
   }
 
+  body.site-coastal.site-oax-craft .hero-floater--snap {
+    --snap-w: clamp(68px, 4.8vw, 92px);
+  }
+
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(1) {
-    top: var(--snap-spread);
-    left: var(--snap-spread);
-    transform: rotate(-6deg) !important;
+    top: 22%;
+    left: clamp(0.9rem, 4vw, 3.25rem);
+    transform: rotate(-5deg) !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(2) {
-    top: var(--snap-spread);
-    right: var(--snap-spread);
-    transform: rotate(5deg) !important;
+    top: 25%;
+    right: clamp(0.9rem, 4vw, 3.25rem);
+    transform: rotate(4deg) !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(3) {
-    bottom: var(--snap-spread);
-    left: var(--snap-spread);
-    transform: rotate(-4deg) !important;
+    bottom: 16%;
+    left: clamp(1.1rem, 4.6vw, 3.75rem);
+    transform: rotate(-3deg) !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(4) {
-    bottom: var(--snap-spread);
-    right: var(--snap-spread);
-    transform: rotate(6deg) !important;
+    bottom: 19%;
+    right: clamp(1.1rem, 4.6vw, 3.75rem);
+    transform: rotate(5deg) !important;
+  }
+
+  body.site-coastal.site-oax-craft .hero-snap__paper {
+    padding: 6px 6px 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.site-coastal.site-oax-craft .hero-floater--snap {
+    --snap-w: clamp(72px, 4.4vw, 96px);
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(1) {
+    top: 23%;
+    left: clamp(1.25rem, 5vw, 4.5rem);
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(2) {
+    top: 26%;
+    right: clamp(1.25rem, 5vw, 4.5rem);
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(3) {
+    bottom: 15%;
+    left: clamp(1.5rem, 5.5vw, 5rem);
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(4) {
+    bottom: 18%;
+    right: clamp(1.5rem, 5.5vw, 5rem);
   }
 }
 
@@ -1708,23 +1753,23 @@ body.site-coastal.site-oax-craft .hero-snap__paper img {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
-    max-width: 22.5rem !important;
+    max-width: 20rem !important;
     height: auto !important;
-    margin: 0.5rem auto 0.35rem !important;
+    margin: 0.45rem auto 0.5rem !important;
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
     align-items: flex-end !important;
-    gap: clamp(0.22rem, 1.6vw, 0.45rem) !important;
+    gap: clamp(0.55rem, 3.2vw, 0.9rem) !important;
     overflow: visible !important;
     pointer-events: none;
     z-index: 4;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: clamp(64px, 22vw, 80px);
+    --snap-w: clamp(50px, 15.5vw, 64px);
     --snap-h: auto;
-    animation-duration: 7.2s;
+    animation: none !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater:nth-child(1),
@@ -1741,8 +1786,28 @@ body.site-coastal.site-oax-craft .hero-snap__paper img {
     margin: 0;
   }
 
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(1) {
+    transform: translateY(2px) rotate(-3deg) !important;
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(2) {
+    transform: translateY(-1px) rotate(3deg) !important;
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(3) {
+    transform: translateY(3px) rotate(-2deg) !important;
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(4) {
+    transform: translateY(-1px) rotate(2deg) !important;
+  }
+
+  body.site-coastal.site-oax-craft .hero-snap__paper {
+    padding: 4px 4px 12px;
+  }
+
   body.site-coastal.site-oax-craft .hero-snap__paper img {
-    transform: scale(1.12);
+    transform: scale(1.1);
   }
 
   body.menu-page.site-coastal.site-oax-craft .menu-view-tabs {
@@ -1819,13 +1884,13 @@ body.site-coastal.site-oax-craft .hero-snap__paper img {
   }
 
   body.site-coastal.site-oax-craft .hero-floaters {
-    gap: 0.2rem !important;
+    gap: 0.45rem !important;
     max-width: 100% !important;
-    padding: 0 0.15rem !important;
+    padding: 0 0.2rem !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: clamp(58px, 21vw, 72px) !important;
+    --snap-w: clamp(48px, 15vw, 60px) !important;
   }
 
   body.site-coastal.site-oax-craft .google-review-tab {
