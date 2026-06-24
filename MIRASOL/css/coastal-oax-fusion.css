@@ -334,24 +334,46 @@ body.site-coastal.site-oax-craft .visit-card__label {
 }
 
 body.site-coastal.site-oax-craft .visit-hours--compact {
-  padding: 0.2rem 0.3rem !important;
+  display: grid !important;
+  gap: 0.1rem !important;
+  padding: 0.18rem 0.28rem !important;
 }
 
 body.site-coastal.site-oax-craft .visit-hours--compact li {
-  padding: 0.18rem 0.32rem !important;
-  font-size: 0.72rem !important;
-  gap: 0.35rem !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.4rem !important;
+  padding: 0.14rem 0.28rem !important;
+  font-size: 0.7rem !important;
+  border-radius: 5px;
 }
 
-body.site-coastal.site-oax-craft .visit-hours--compact li span:first-child {
-  font-size: 0.74rem !important;
+body.site-coastal.site-oax-craft .visit-hours--compact li:nth-child(odd):not(.closed) {
+  background: rgba(0, 150, 199, 0.05);
+}
+
+body.site-coastal.site-oax-craft .visit-hours__days {
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  font-size: 0.7rem !important;
+  color: var(--ink) !important;
+  line-height: 1.2 !important;
   min-width: 0 !important;
-  line-height: 1.25 !important;
 }
 
-body.site-coastal.site-oax-craft .visit-hours--compact li span:last-child {
-  font-size: 0.68rem !important;
-  flex-shrink: 0;
+body.site-coastal.site-oax-craft .visit-hours__time {
+  font-weight: 700 !important;
+  font-size: 0.66rem !important;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft) !important;
+  white-space: nowrap;
+  text-align: right;
+}
+
+body.site-coastal.site-oax-craft .visit-hours--compact li.closed .visit-hours__days,
+body.site-coastal.site-oax-craft .visit-hours--compact li.closed .visit-hours__time {
+  color: var(--red) !important;
 }
 
 body.site-coastal.site-oax-craft .visit-contact__icon {
