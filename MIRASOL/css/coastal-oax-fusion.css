@@ -1497,33 +1497,33 @@ body.site-coastal.site-oax-craft .hero-snap__paper img {
 }
 
 body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
-  top: 22%;
+  top: 14%;
   right: auto;
   bottom: auto;
-  left: 3%;
+  left: 2%;
   z-index: 1;
 }
 
 body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
-  top: 20%;
+  top: 12%;
   left: auto;
   bottom: auto;
-  right: 3%;
+  right: 2%;
   z-index: 1;
 }
 
 body.site-coastal.site-oax-craft .hero-floater:nth-child(3) {
-  top: 46%;
+  top: auto;
   right: auto;
-  bottom: auto;
-  left: 6%;
+  bottom: 16%;
+  left: 2%;
   z-index: 2;
 }
 
 body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
-  top: 44%;
+  top: auto;
   left: auto;
-  bottom: auto;
-  right: 6%;
+  bottom: 14%;
+  right: 2%;
   z-index: 2;
 }
