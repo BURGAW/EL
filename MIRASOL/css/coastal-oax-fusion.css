@@ -1476,8 +1476,15 @@ body.site-coastal.site-oax-craft .hero-floater--snap {
   height: auto !important;
 }
 
+body.site-coastal.site-oax-craft .hero-snap__paper {
+  overflow: hidden;
+}
+
 body.site-coastal.site-oax-craft .hero-snap__paper img {
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.2);
+  transform-origin: center center;
   background: #141210;
 }
 
