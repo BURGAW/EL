@@ -1491,9 +1491,9 @@ body.site-coastal.site-oax-craft .hero-floater {
 }
 
 body.site-coastal.site-oax-craft .hero-floater--snap {
-  --snap-w: 46px;
-  width: 46px !important;
-  max-width: 46px !important;
+  --snap-w: 72px;
+  width: 72px !important;
+  max-width: 72px !important;
   min-width: 0 !important;
   height: auto !important;
   animation: none !important;
@@ -1509,7 +1509,7 @@ body.site-coastal.site-oax-craft .hero-snap {
 body.site-coastal.site-oax-craft .hero-snap__paper {
   overflow: visible;
   border-color: #ddd5c8;
-  padding: 3px 3px 8px !important;
+  padding: 5px 5px 14px !important;
 }
 
 body.site-coastal.site-oax-craft .hero-snap__photo {
@@ -1629,7 +1629,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
     order: 3;
     position: relative !important;
     inset: auto !important;
-    width: min(100%, 16.5rem) !important;
+    width: min(100%, 19rem) !important;
     height: auto !important;
     margin: 0.35rem auto 0.4rem !important;
     padding: 0 0.2rem !important;
@@ -1642,9 +1642,9 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: 38px;
-    width: 38px !important;
-    max-width: 38px !important;
+    --snap-w: 58px;
+    width: 58px !important;
+    max-width: 58px !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(1) {
@@ -1664,7 +1664,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 
   body.site-coastal.site-oax-craft .hero-snap__paper {
-    padding: 2px 2px 7px !important;
+    padding: 4px 4px 11px !important;
   }
 
   body.site-coastal.site-oax-craft .hero-snap__paper img {
@@ -1876,15 +1876,15 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 
   body.site-coastal.site-oax-craft .hero-floaters {
-    width: min(100%, 15rem) !important;
-    gap: 0.25rem !important;
+    width: min(100%, 17.5rem) !important;
+    gap: 0.35rem !important;
     padding: 0 0.1rem !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: 34px !important;
-    width: 34px !important;
-    max-width: 34px !important;
+    --snap-w: 52px !important;
+    width: 52px !important;
+    max-width: 52px !important;
   }
 
   body.site-coastal.site-oax-craft .google-review-tab {
