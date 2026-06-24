@@ -1460,22 +1460,40 @@ body.gsites-embed.site-coastal.site-oax-craft:not(.menu-page) .hero {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   Hero polaroids — two per side, stacked with overlap
+   Hero polaroids — two per side, stacked, fully visible
    ═══════════════════════════════════════════════════════════════ */
 
+body.site-coastal.site-oax-craft:not(.menu-page) .hero {
+  overflow: visible !important;
+}
+
+body.site-coastal.site-oax-craft .hero-floaters {
+  overflow: visible !important;
+}
+
+body.site-coastal.site-oax-craft .hero-floater--snap {
+  --snap-w: clamp(108px, 14vw, 152px);
+  height: auto !important;
+}
+
+body.site-coastal.site-oax-craft .hero-snap__paper img {
+  object-fit: contain;
+  background: #141210;
+}
+
 body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
-  top: 34%;
+  top: 22%;
   right: auto;
   bottom: auto;
-  left: 4%;
+  left: 3%;
   z-index: 1;
 }
 
 body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
-  top: 32%;
+  top: 20%;
   left: auto;
   bottom: auto;
-  right: 4%;
+  right: 3%;
   z-index: 1;
 }
 
@@ -1483,7 +1501,7 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(3) {
   top: 46%;
   right: auto;
   bottom: auto;
-  left: 7%;
+  left: 6%;
   z-index: 2;
 }
 
@@ -1491,6 +1509,6 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
   top: 44%;
   left: auto;
   bottom: auto;
-  right: 7%;
+  right: 6%;
   z-index: 2;
 }
