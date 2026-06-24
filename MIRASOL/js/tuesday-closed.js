@@ -3,7 +3,7 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const MODAL_VERSION = '33';
+  const MODAL_VERSION = '34';
   const TUESDAY_POPUP_KEY = `elmirasol-tuesday-v${MODAL_VERSION}`;
   function isPreviewMode() {
     try {
@@ -66,8 +66,15 @@
     document.body.classList.remove('modal-open');
   }
 
+  function syncViewportMode(modal) {
+    if (!modal) return;
+    const desktop = window.matchMedia('(min-width: 769px)').matches;
+    modal.dataset.viewport = desktop ? 'desktop' : 'mobile';
+  }
+
   function openTuesdayPopup(modal) {
     if (!modal || modal.classList.contains('is-open')) return;
+    syncViewportMode(modal);
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('tuesday-modal-open');
@@ -97,6 +104,10 @@
     modal.innerHTML =
       `<div class="tuesday-closed-modal__backdrop" tabindex="-1" aria-hidden="true"></div>` +
       `<div class="tuesday-closed-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="tuesday-closed-title">` +
+      `<span class="tuesday-closed-modal__jewel tuesday-closed-modal__jewel--tl" aria-hidden="true"></span>` +
+      `<span class="tuesday-closed-modal__jewel tuesday-closed-modal__jewel--tr" aria-hidden="true"></span>` +
+      `<span class="tuesday-closed-modal__jewel tuesday-closed-modal__jewel--bl" aria-hidden="true"></span>` +
+      `<span class="tuesday-closed-modal__jewel tuesday-closed-modal__jewel--br" aria-hidden="true"></span>` +
       `<div class="tuesday-closed-modal__shell">` +
       `<span class="tuesday-closed-modal__selvedge tuesday-closed-modal__selvedge--left" aria-hidden="true"></span>` +
       `<span class="tuesday-closed-modal__selvedge tuesday-closed-modal__selvedge--right" aria-hidden="true"></span>` +
@@ -137,6 +148,14 @@
       `<div class="tuesday-closed-modal__craft-foot__shine"></div>` +
       `</div></div></div>`;
     document.body.appendChild(modal);
+    syncViewportMode(modal);
+
+    if (!window.__tuesdayViewportBound) {
+      window.__tuesdayViewportBound = true;
+      window.addEventListener('resize', () => {
+        syncViewportMode(document.getElementById('tuesday-closed-modal'));
+      }, { passive: true });
+    }
 
     modal.querySelectorAll('[data-tuesday-close]').forEach((el) => {
       el.addEventListener('click', () => {
