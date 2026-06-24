@@ -2,7 +2,7 @@
  * El Mirasol vibe — single hero image + Polaroid floaters, review carousel
  */
 (function () {
-  const HERO_IMAGE = 'assets/images/hero/el-mirasol-hero.jpg?v=hero3';
+  const HERO_IMAGE = 'assets/images/hero/el-mirasol-hero.jpg?v=storefront1';
 
   const FLOATERS = [
     'assets/images/facebook/nachos.jpg?v=vibe1',
@@ -16,7 +16,7 @@
     if (!root) return;
 
     root.innerHTML =
-      `<div class="hero-rotator__slide is-active" style="background-image:url('${HERO_IMAGE}')" role="img" aria-label="Seasoned shrimp platter with rice, beans, avocado, and pico de gallo at El Mirasol"></div>`;
+      `<div class="hero-rotator__slide is-active" style="background-image:url('${HERO_IMAGE}')" role="img" aria-label="El Mirasol Mexican Restaurant storefront at dusk in Burgaw, NC"></div>`;
   }
 
   function initHeroFloaters() {

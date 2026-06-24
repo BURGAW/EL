@@ -540,6 +540,7 @@ body.site-coastal.site-oax-craft.site-worldcup .wc-promo__text strong {
 body.site-coastal .hero--single .hero-rotator__slide {
   transform: scale(1) !important;
   transition: none !important;
+  background-position: center 42% !important;
 }
 
 body.site-coastal .hero--single .hero-overlay {
