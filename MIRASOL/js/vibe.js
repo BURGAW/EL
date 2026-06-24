@@ -5,10 +5,10 @@
   const HERO_IMAGE = 'assets/images/hero/el-mirasol-hero.jpg?v=storefront1';
 
   const FLOATERS = [
-    { src: 'assets/images/facebook/nachos.jpg?v=vibe1', caption: 'Nachos', alt: 'Loaded nachos' },
-    { src: 'assets/images/facebook/margarita-mango.jpg?v=vibe1', caption: 'Mango Margarita', alt: 'Mango margarita' },
-    { src: 'assets/images/menu/IMG_1514.jpg?v=vibe1', caption: 'Street Tacos', alt: 'Street tacos' },
-    { src: 'assets/images/facebook/pozole.jpg?v=vibe1', caption: 'Pozole', alt: 'Pozole rojo' },
+    { src: 'assets/images/facebook/nachos.jpg?v=vibe1', alt: 'Loaded nachos' },
+    { src: 'assets/images/facebook/margarita-mango.jpg?v=vibe1', alt: 'Mango margarita' },
+    { src: 'assets/images/menu/IMG_1514.jpg?v=vibe1', alt: 'Street tacos' },
+    { src: 'assets/images/facebook/pozole.jpg?v=vibe1', alt: 'Pozole rojo' },
   ];
 
   function initHeroRotator() {
@@ -31,7 +31,6 @@
         `<div class="hero-snap__photo">` +
         `<img src="${item.src}" alt="${item.alt}" loading="lazy" width="140" height="140">` +
         `</div>` +
-        `<span class="hero-snap__caption">${item.caption}</span>` +
         `</div>` +
         `<span class="hero-snap__shadow" aria-hidden="true"></span>` +
         `</article>` +
