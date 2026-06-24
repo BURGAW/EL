@@ -1163,3 +1163,130 @@ body.gsites-embed.site-coastal.site-oax-craft.menu-page .footer {
   margin-top: 0 !important;
   padding-top: 1rem !important;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   Home — sea + champagne banners (less red / orange)
+   Menu page keeps bolder Oaxacan accent strips
+   ═══════════════════════════════════════════════════════════════ */
+
+body.site-coastal.site-oax-craft:not(.menu-page) .social-topbar {
+  background: linear-gradient(
+    90deg,
+    var(--coast-sea) 0%,
+    var(--coast-sea-mid) 38%,
+    var(--coast-sea-light) 68%,
+    var(--oax-gold) 100%
+  ) !important;
+  box-shadow: 0 2px 12px rgba(0, 119, 182, 0.14) !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) .social-topbar::after {
+  background: linear-gradient(
+    90deg,
+    var(--coast-sea-light),
+    var(--oax-gold-light),
+    var(--oax-gold-pale)
+  ) !important;
+  height: 4px !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) .hero-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 119, 182, 0.34) 0%,
+      rgba(15, 28, 46, 0.48) 48%,
+      rgba(0, 95, 138, 0.52) 100%
+    ),
+    linear-gradient(135deg, rgba(212, 168, 75, 0.2) 0%, transparent 52%) !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) .feat-ribbon {
+  background:
+    var(--oax-flores),
+    linear-gradient(
+      90deg,
+      var(--coast-sea) 0%,
+      var(--coast-sea-mid) 45%,
+      var(--oax-gold) 82%,
+      var(--oax-gold-light) 100%
+    ) !important;
+  background-size: var(--banner-flores-size), 100% 100% !important;
+  border-bottom: 3px solid rgba(212, 168, 75, 0.42) !important;
+  box-shadow: 0 3px 10px rgba(0, 119, 182, 0.1) !important;
+  color: #fff !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) .feat-ribbon__specials {
+  color: var(--oax-gold-pale) !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) .feat-ribbon__meal {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+/* Stats — soft coastal band, not red gradient */
+body.site-coastal.site-oax-craft:not(.menu-page) .feat-stats {
+  background: linear-gradient(
+    180deg,
+    var(--coast-foam) 0%,
+    #fff 50%,
+    var(--oax-pearl) 100%
+  ) !important;
+  box-shadow: none !important;
+  border-top: 2px solid rgba(0, 150, 199, 0.2) !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) .feat-stats::after {
+  height: 3px !important;
+  background: linear-gradient(
+    90deg,
+    var(--coast-sea-light),
+    var(--oax-gold),
+    var(--coast-sea-light)
+  ) !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) .feat-stat {
+  background: transparent !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) .feat-stat__num,
+body.site-coastal.site-oax-craft:not(.menu-page) .feat-stat__num--text {
+  color: var(--coast-sea) !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) .feat-stat__hint {
+  color: var(--oax-gold) !important;
+}
+
+/* Subtle craft trim — zigzag + gold shine only */
+body.site-coastal.site-oax-craft:not(.menu-page) .oax-craft-band--subtle .oax-craft-band__zigzag {
+  height: 6px !important;
+  opacity: 0.55 !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) .oax-craft-band--subtle .oax-craft-band__shine {
+  height: 2px !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) .oax-craft-band--subtle .oax-craft-band__serape,
+body.site-coastal.site-oax-craft:not(.menu-page) .oax-craft-band--section {
+  display: none !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) .oax-craft-band--foot.oax-craft-band--subtle .oax-craft-band__zigzag {
+  height: 5px !important;
+  opacity: 0.5 !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page) footer.footer--slim::before,
+body.site-coastal.site-oax-craft:not(.menu-page) .footer::before {
+  background: linear-gradient(
+    90deg,
+    var(--coast-sea-light),
+    var(--oax-gold),
+    var(--coast-sea-light)
+  ) !important;
+  height: 4px !important;
+}
