@@ -552,24 +552,27 @@ body.site-coastal .hero--single .hero-rotator {
 }
 
 body.site-coastal .hero--single .hero-rotator__slide {
-  transform: scale(1) !important;
+  transform: scale(1.06) !important;
+  transform-origin: center 58% !important;
   transition: none !important;
-  background-size: 92% auto !important;
-  background-position: center 36% !important;
+  background-size: cover !important;
+  background-position: center 58% !important;
   background-repeat: no-repeat !important;
 }
 
 @media (max-width: 768px) {
   body.site-coastal .hero--single .hero-rotator__slide {
-    background-size: 100% auto !important;
-    background-position: center 32% !important;
+    transform: scale(1.04) !important;
+    transform-origin: center 62% !important;
+    background-position: center 62% !important;
   }
 }
 
 @media (min-width: 1200px) {
   body.site-coastal .hero--single .hero-rotator__slide {
-    background-size: 88% auto !important;
-    background-position: center 38% !important;
+    transform: scale(1.08) !important;
+    transform-origin: center 56% !important;
+    background-position: center 56% !important;
   }
 }
 
