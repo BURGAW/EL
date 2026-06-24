@@ -108,7 +108,7 @@ window.SITE_CONFIG = {
 
   /** FIFA World Cup 2026 — watch party hub (set enabled: false after the tournament) */
   worldCup: {
-    enabled: true,
+    enabled: false,
     flags: ['mx', 'us', 'ca', 'br', 'ar', 'co', 'es', 'fr', 'de'],
     hostFlags: ['mx', 'us', 'ca'],
     promo: 'World Cup 2026 — <strong>matches on our TVs</strong>',

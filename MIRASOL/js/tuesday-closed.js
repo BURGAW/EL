@@ -3,7 +3,7 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const MODAL_VERSION = '17';
+  const MODAL_VERSION = '18';
   const TUESDAY_POPUP_KEY = `elmirasol-tuesday-v${MODAL_VERSION}`;
   function isPreviewMode() {
     try {
@@ -98,27 +98,23 @@
       `<div class="tuesday-closed-modal__backdrop" tabindex="-1" aria-hidden="true"></div>` +
       `<div class="tuesday-closed-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="tuesday-closed-title">` +
       `<header class="tuesday-closed-modal__hero">` +
-      `<span class="tuesday-closed-modal__badge">` +
-      `<span class="tuesday-closed-modal__badge-weave" aria-hidden="true"></span>` +
-      `Closed today` +
-      `</span>` +
       `<div class="tuesday-closed-modal__logo-stage" aria-hidden="true">` +
       `<div class="tuesday-closed-modal__logo-ring">` +
       `<div class="tuesday-closed-modal__logo-wrap">` +
       `<img src="${escapeHtml(logo)}" alt="${escapeHtml(brandName)}" class="tuesday-closed-modal__logo" width="72" height="72">` +
       `</div></div></div>` +
-      `<h2 class="tuesday-closed-modal__title" id="tuesday-closed-title">We&rsquo;re taking Tuesday off</h2>` +
+      `<h2 class="tuesday-closed-modal__title" id="tuesday-closed-title">Closed on Tuesdays</h2>` +
       `</header>` +
       `<div class="tuesday-closed-modal__trim" aria-hidden="true"></div>` +
       `<div class="tuesday-closed-modal__body">` +
-      `<p class="tuesday-closed-modal__lead">Closed every <strong>Tuesday</strong>. Back <strong>Wednesday at 8&nbsp;AM</strong>.</p>` +
+      `<p class="tuesday-closed-modal__lead">We reopen <strong>Wednesday at 8&nbsp;AM</strong>.</p>` +
       `<div class="tuesday-closed-modal__info">` +
       `<p class="tuesday-closed-modal__info-line">Mon, Wed&ndash;Sun 8&ndash;9&nbsp;PM &middot; Fri &amp; Sat until 9:30</p>` +
       `<p class="tuesday-closed-modal__info-line">${escapeHtml(address)}</p>` +
       `<a class="tuesday-closed-modal__info-link" href="tel:${escapeHtml(phoneTel)}">${escapeHtml(phone)}</a>` +
       `</div>` +
       `<div class="tuesday-closed-modal__actions">` +
-      `<button type="button" class="btn btn-primary tuesday-closed-modal__btn tuesday-closed-modal__btn--primary" data-tuesday-close>See you Wednesday!</button>` +
+      `<button type="button" class="btn btn-primary tuesday-closed-modal__btn tuesday-closed-modal__btn--primary" data-tuesday-close>Got it</button>` +
       `</div></div></div>`;
     document.body.appendChild(modal);
 
