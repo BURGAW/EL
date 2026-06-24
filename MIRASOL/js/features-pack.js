@@ -244,8 +244,10 @@
   function initHeroCaptions() {
     if (!isHome) return;
     const hero = document.querySelector('.hero');
+    if (!hero || hero.classList.contains('hero--single')) return;
+
     const rotator = document.getElementById('hero-rotator');
-    if (!hero || !rotator) return;
+    if (!rotator) return;
 
     const cap = document.createElement('div');
     cap.className = 'feat-hero-caption';

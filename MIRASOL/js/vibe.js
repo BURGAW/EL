@@ -1,22 +1,39 @@
 /**
- * El Mirasol vibe — single hero image, review carousel
+ * El Mirasol vibe — single hero image + Polaroid floaters, review carousel
  */
 (function () {
-  const HERO_IMAGE = 'assets/images/hero/el-mirasol-hero.jpg?v=hero2';
+  const HERO_IMAGE = 'assets/images/hero/el-mirasol-hero.jpg?v=hero3';
+
+  const FLOATERS = [
+    'assets/images/facebook/nachos.jpg?v=vibe1',
+    'assets/images/facebook/margarita-mango.jpg?v=vibe1',
+    'assets/images/menu/IMG_1514.jpg?v=vibe1',
+    'assets/images/facebook/pozole.jpg?v=vibe1',
+  ];
 
   function initHeroRotator() {
     const root = document.getElementById('hero-rotator');
     if (!root) return;
 
-    const slide = root.querySelector('.hero-rotator__slide');
-    if (slide) {
-      slide.style.backgroundImage = `url('${HERO_IMAGE}')`;
-      slide.classList.add('is-active');
-      return;
-    }
-
     root.innerHTML =
-      `<div class="hero-rotator__slide is-active" style="background-image:url('${HERO_IMAGE}')" role="img" aria-label="Seasoned shrimp platter at El Mirasol"></div>`;
+      `<div class="hero-rotator__slide is-active" style="background-image:url('${HERO_IMAGE}')" role="img" aria-label="Seasoned shrimp platter with rice, beans, avocado, and pico de gallo at El Mirasol"></div>`;
+  }
+
+  function initHeroFloaters() {
+    const root = document.getElementById('hero-floaters');
+    if (!root) return;
+
+    root.innerHTML = FLOATERS.map(
+      (src, i) =>
+        `<div class="hero-floater hero-floater--snap" style="--snap-i:${i}">` +
+        `<article class="hero-snap">` +
+        `<div class="hero-snap__paper">` +
+        `<img src="${src}" alt="" loading="lazy" width="140" height="140">` +
+        `</div>` +
+        `<span class="hero-snap__shadow" aria-hidden="true"></span>` +
+        `</article>` +
+        `</div>`
+    ).join('');
   }
 
   function initReviewCarousel() {
@@ -44,6 +61,7 @@
 
   function init() {
     initHeroRotator();
+    initHeroFloaters();
     if (window.ElMirasolReviews) {
       const grid = document.getElementById('reviews-grid');
       if (grid && grid.dataset.rendered !== '1') {
