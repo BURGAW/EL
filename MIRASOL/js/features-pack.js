@@ -47,7 +47,7 @@
     } },
 
     { label: 'Hours & Location', keys: 'V', action: () => scrollToEl('#visit') },
-    { label: 'Share MIRASOL', keys: 'S', action: shareSite },
+    { label: 'Share El Mirasol', keys: 'S', action: shareSite },
     { label: 'Copy Address', keys: '', action: copyAddress },
     { label: 'Leave a Google Review', keys: '', action: () => { window.open(window.SITE_CONFIG?.google?.reviewUrl || '#', '_blank'); } },
   ];
@@ -144,8 +144,8 @@
 
   function shareSite() {
     const data = {
-      title: 'MIRASOL — Burgaw, NC',
-      text: 'You HAVE to try the birria tacos at MIRASOL in Burgaw — 4.8★ on Google. Family-owned, hardworking, and worth the drive.',
+      title: 'El Mirasol — Burgaw, NC',
+      text: 'You HAVE to try the birria tacos at El Mirasol in Burgaw — 4.8★ on Google. Family-owned, hardworking, and worth the drive.',
       url: location.origin + location.pathname.replace(/menu\.html.*/, 'index.html'),
     };
     if (navigator.share) {

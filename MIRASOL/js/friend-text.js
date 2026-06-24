@@ -27,10 +27,10 @@
   ];
 
   const BODY = [
-    'MIRASOL in Burgaw is the family-run Mexican spot everyone drives to for {dish}. 4.8★ on Google, made-from-scratch everything, and the kind of kitchen that actually cares.',
-    'There\'s a little Mexican grill in Burgaw called MIRASOL — family-owned, hardworking, and obsessed with doing things right. Start with {dish} and thank me later.',
-    'I found our new go-to: MIRASOL on US-117 in Burgaw. Homemade tortillas, bold salsas, and {dish} that will ruin every other version for you.',
-    'MIRASOL in Burgaw hits different — not a chain, just a family kitchen putting love on every plate. I\'m talking {dish}, cold margaritas, the whole vibe.',
+    'El Mirasol in Burgaw is the family-run Mexican spot everyone drives to for {dish}. 4.8★ on Google, made-from-scratch everything, and the kind of kitchen that actually cares.',
+    'There\'s a little Mexican grill in Burgaw called El Mirasol — family-owned, hardworking, and obsessed with doing things right. Start with {dish} and thank me later.',
+    'I found our new go-to: El Mirasol on US-117 in Burgaw. Homemade tortillas, bold salsas, and {dish} that will ruin every other version for you.',
+    'El Mirasol in Burgaw hits different — not a chain, just a family kitchen putting love on every plate. I\'m talking {dish}, cold margaritas, the whole vibe.',
   ];
 
   const CLOSER = [
