@@ -1460,7 +1460,7 @@ body.gsites-embed.site-coastal.site-oax-craft:not(.menu-page) .hero {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   Hero polaroids — two per side, stacked, fully visible
+   Hero polaroids — desktop: four corners spread · mobile: row under title
    ═══════════════════════════════════════════════════════════════ */
 
 body.site-coastal.site-oax-craft:not(.menu-page) .hero {
@@ -1468,21 +1468,26 @@ body.site-coastal.site-oax-craft:not(.menu-page) .hero {
 }
 
 body.site-coastal.site-oax-craft:not(.menu-page) .hero-content {
-  position: static !important;
+  position: relative !important;
   z-index: 4;
 }
 
 body.site-coastal.site-oax-craft .hero-floaters {
   overflow: visible !important;
+  pointer-events: none;
+  z-index: 3;
+}
+
+body.site-coastal.site-oax-craft .hero-floater {
+  animation: none !important;
+  margin: 0 !important;
 }
 
 body.site-coastal.site-oax-craft .hero-floater--snap {
-  --snap-w: clamp(108px, 14vw, 152px);
-  --snap-h: calc(var(--snap-w) + 34px);
-  --snap-stack-top: 28%;
-  --snap-stack-gap: 5in;
-  --snap-edge-x: 2.5in;
+  --snap-w: clamp(96px, 7.5vw, 128px);
+  --snap-spread: 2.5in;
   height: auto !important;
+  animation: none !important;
 }
 
 body.site-coastal.site-oax-craft .hero-snap__paper {
@@ -1505,36 +1510,53 @@ body.site-coastal.site-oax-craft .hero-snap__paper img {
   background: #141210;
 }
 
-body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
-  top: var(--snap-stack-top);
-  right: auto;
-  bottom: auto;
-  left: var(--snap-edge-x);
-  z-index: 1;
-}
+/* Desktop — one in each corner, ~2.5in from edges (5in spread) */
+@media (min-width: 901px) {
+  body.site-coastal.site-oax-craft:not(.menu-page) .hero-floaters {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
 
-body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
-  top: var(--snap-stack-top);
-  left: auto;
-  bottom: auto;
-  right: var(--snap-edge-x);
-  z-index: 1;
-}
+  body.site-coastal.site-oax-craft .hero-floater {
+    position: absolute !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+  }
 
-body.site-coastal.site-oax-craft .hero-floater:nth-child(3) {
-  top: calc(var(--snap-stack-top) + var(--snap-h) + var(--snap-stack-gap));
-  right: auto;
-  bottom: auto;
-  left: calc(var(--snap-edge-x) + 0.35in);
-  z-index: 2;
-}
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(1) {
+    top: var(--snap-spread);
+    left: var(--snap-spread);
+    transform: rotate(-6deg) !important;
+  }
 
-body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
-  top: calc(var(--snap-stack-top) + var(--snap-h) + var(--snap-stack-gap));
-  left: auto;
-  bottom: auto;
-  right: calc(var(--snap-edge-x) + 0.35in);
-  z-index: 2;
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(2) {
+    top: var(--snap-spread);
+    right: var(--snap-spread);
+    transform: rotate(5deg) !important;
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(3) {
+    bottom: var(--snap-spread);
+    left: var(--snap-spread);
+    transform: rotate(-4deg) !important;
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(4) {
+    bottom: var(--snap-spread);
+    right: var(--snap-spread);
+    transform: rotate(6deg) !important;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════
