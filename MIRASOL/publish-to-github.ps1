@@ -19,10 +19,19 @@ Write-Host 'Copying site files...' -ForegroundColor Gray
 robocopy $src $dst /MIR /XD .git /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
 if ($LASTEXITCODE -ge 8) { throw "robocopy failed with exit code $LASTEXITCODE" }
 
+$rootRedirects = Join-Path $src 'github-pages-root'
+if (Test-Path $rootRedirects) {
+  Write-Host 'Copying EL root redirects...' -ForegroundColor Gray
+  robocopy $rootRedirects $repo index.html menu.html /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
+  if ($LASTEXITCODE -ge 8) { throw "robocopy root redirects failed with exit code $LASTEXITCODE" }
+}
+
 Set-Location $repo
-$status = git status --porcelain MIRASOL
+$status = git status --porcelain MIRASOL index.html menu.html
 if ($status) {
   git add MIRASOL
+  if (Test-Path (Join-Path $repo 'index.html')) { git add index.html }
+  if (Test-Path (Join-Path $repo 'menu.html')) { git add menu.html }
   git commit -m 'Update MIRASOL site'
   Write-Host 'Committed MIRASOL updates.' -ForegroundColor Green
 } else {

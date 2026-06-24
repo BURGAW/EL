@@ -4,8 +4,9 @@ Static website for MIRASOL in Burgaw, NC.
 
 ## Live URLs (after GitHub Pages is enabled)
 
-- Home: `https://burgaw.github.io/EL/`
-- Menu: `https://burgaw.github.io/EL/menu.html`
+- Home: `https://burgaw.github.io/EL/MIRASOL/`
+- Menu: `https://burgaw.github.io/EL/MIRASOL/menu.html`
+- Short links (`/EL/` and `/EL/menu.html`) redirect to the URLs above
 - Google Sites embed: add `?embed=1` to either URL
 
 ## GitHub Pages setup

@@ -12,7 +12,8 @@
     try {
       return window.self !== window.top;
     } catch (e) {
-      return true;
+      /* Facebook / Instagram in-app browsers can throw here — not an embed */
+      return false;
     }
   }
 
