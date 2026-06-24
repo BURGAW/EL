@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="css/clover-ordering.css?v=clover1">
   <link rel="stylesheet" href="css/tuesday-closed.css?v=design17">
   <link rel="stylesheet" href="css/google-sites-embed.css?v=scrollnav1">
-  <link rel="stylesheet" href="css/coastal-oax-fusion.css?v=oaxmid46">
+  <link rel="stylesheet" href="css/coastal-oax-fusion.css?v=oaxmid47">
 
   <link rel="preload" as="image" href="assets/images/hero/el-mirasol-hero.jpg?v=storefront1">
   <meta property="og:image" content="https://burgaw.github.io/EL/MIRASOL/assets/images/hero/el-mirasol-hero.jpg?v=storefront1">
@@ -78,7 +78,7 @@
   }
   </script>
 </head>
-<body class="pattern has-topbar site-coastal site-oax-craft" data-build="oaxmid46">
+<body class="pattern has-topbar site-coastal site-oax-craft" data-build="oaxmid47">
   <a href="#main" class="skip-link">Skip to content</a>
 
   <div class="social-topbar">
@@ -328,53 +328,48 @@
       </div>
     </section>
 
-    <section id="visit" class="section visit-section visit-section--tight">
-      <header class="visit-mast reveal">
-        <span class="section-tag">Find Us</span>
-        <h2>Hours &amp; Location</h2>
-      </header>
+    <section id="visit" class="section visit-section visit-section--flow">
+      <div class="visit-flow reveal">
+        <header class="visit-flow__head">
+          <span class="section-tag">Find Us</span>
+          <h2>Hours &amp; Location</h2>
+        </header>
 
-      <div class="visit-stack reveal">
-        <section class="visit-zone visit-zone--hours" aria-labelledby="visit-hours-label">
-          <h3 class="visit-zone__label" id="visit-hours-label">Hours</h3>
-          <div class="visit-zone__hours" aria-label="Restaurant hours">
-            <div class="visit-zone__slot">
-              <span class="visit-zone__days">Mon · Wed · Thu · Sun</span>
-              <span class="visit-zone__time">8 AM – 9 PM</span>
-            </div>
-            <div class="visit-zone__slot">
-              <span class="visit-zone__days">Fri · Sat</span>
-              <span class="visit-zone__time">8 AM – 9:30 PM</span>
-            </div>
-            <div class="visit-zone__slot visit-zone__slot--closed">
-              <span class="visit-zone__days">Tue</span>
-              <span class="visit-zone__time">Closed</span>
-            </div>
+        <div class="visit-flow__hours" aria-label="Restaurant hours">
+          <div class="visit-flow__hour">
+            <span class="visit-flow__days">Mon · Wed · Thu · Sun</span>
+            <span class="visit-flow__time">8 AM – 9 PM</span>
           </div>
-        </section>
+          <div class="visit-flow__hour">
+            <span class="visit-flow__days">Fri · Sat</span>
+            <span class="visit-flow__time">8 AM – 9:30 PM</span>
+          </div>
+          <div class="visit-flow__hour visit-flow__hour--closed">
+            <span class="visit-flow__days">Tue</span>
+            <span class="visit-flow__time">Closed</span>
+          </div>
+        </div>
 
-        <section class="visit-zone visit-zone--reach">
-          <div class="visit-zone__contact" aria-labelledby="visit-contact-label">
-            <h3 class="visit-zone__label" id="visit-contact-label">Contact</h3>
-            <address class="visit-zone__addr">
-              <span class="visit-zone__addr-line">211 U.S. Hwy 117 S, Burgaw, NC 28425</span>
-              <span class="visit-zone__phone-line">
+        <div class="visit-flow__body">
+          <div class="visit-flow__info">
+            <address class="visit-flow__contact">
+              <span class="visit-flow__addr">211 U.S. Hwy 117 S, Burgaw, NC 28425</span>
+              <span class="visit-flow__phones">
                 <a href="tel:9107891154">(910) 789-1154</a>
-                <span aria-hidden="true">·</span>
+                <span class="visit-flow__dot" aria-hidden="true">·</span>
                 <a href="tel:9103006198">(910) 300-6198</a>
               </span>
             </address>
-            <div class="visit-zone__actions">
+            <div class="visit-flow__actions">
               <a href="https://www.google.com/maps/dir/?api=1&destination=34.551919,-77.913414" class="btn btn-social--directions" data-map-directions target="_blank" rel="noopener noreferrer">Directions</a>
               <button type="button" class="btn btn-outline btn-copy-addr" data-copy-addr>Copy</button>
-              <a href="https://www.facebook.com/elmirasolburgaw/" class="visit-zone__chip visit-zone__chip--fb" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>
-              <a href="https://www.instagram.com/elmirasolburgaw/" class="visit-zone__chip visit-zone__chip--ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+              <a href="https://www.facebook.com/elmirasolburgaw/" class="visit-flow__chip visit-flow__chip--fb" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>
+              <a href="https://www.instagram.com/elmirasolburgaw/" class="visit-flow__chip visit-flow__chip--ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
             </div>
           </div>
 
-          <div class="visit-zone__map-wrap">
-            <h3 class="visit-zone__label visit-zone__label--map">Map</h3>
-            <div class="map-wrap visit-zone__map" id="site-map">
+          <div class="visit-flow__map">
+            <div class="map-wrap visit-flow__map-frame" id="site-map">
               <div class="map-wrap__toolbar" role="group" aria-label="Map view">
                 <button type="button" class="map-wrap__type is-active" data-map-type="roadmap" aria-pressed="true">Map</button>
                 <button type="button" class="map-wrap__type" data-map-type="satellite" aria-pressed="false">Satellite</button>
@@ -391,13 +386,13 @@
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
 
-      <div class="feat-share-row feat-share-row--tight" id="feat-share-row">
-        <button type="button" class="btn btn-primary" data-share>Share</button>
-        <button type="button" class="btn btn-outline" data-sms>Text Friend</button>
-        <a href="https://www.google.com/maps?cid=9919601015129450221" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Review</a>
+        <div class="visit-flow__share feat-share-row" id="feat-share-row">
+          <button type="button" class="btn btn-primary" data-share>Share</button>
+          <button type="button" class="btn btn-outline" data-sms>Text Friend</button>
+          <a href="https://www.google.com/maps?cid=9919601015129450221" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Review</a>
+        </div>
       </div>
     </section>
   </main>
