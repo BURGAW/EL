@@ -1643,12 +1643,8 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: clamp(50px, 14.5vw, 68px);
-    --snap-h: calc(var(--snap-w) + 21px);
-  }
-
-  body.site-coastal.site-oax-craft .hero-floater--snap {
     --snap-w: clamp(44px, 12vw, 58px);
+    --snap-h: calc(var(--snap-w) + 21px);
     --snap-stack-top: 15%;
   }
 }
