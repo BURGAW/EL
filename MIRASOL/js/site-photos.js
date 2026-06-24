@@ -1,7 +1,12 @@
-/** Facebook homepage photos + iPhone menu photos */
+/** Kitchen + menu photos (groky-import → assets/images/menu/groky/) */
 (function () {
-  const FB_V = '?v=itemphoto3';
-  const MENU_V = '?v=itemphoto3';
+  const GROKY_V = '?v=groky1';
+  const FB_V = '?v=groky1';
+  const MENU_V = '?v=groky1';
+
+  function groky(slug) {
+    return 'assets/images/menu/groky/' + slug + '.jpg' + GROKY_V;
+  }
 
   function fb(file) {
     return 'assets/images/facebook/' + file + FB_V;
@@ -12,90 +17,81 @@
   }
 
   window.SITE_PHOTOS = {
-    version: MENU_V,
+    version: GROKY_V,
 
-    /** Homepage “From Our Kitchen” slideshow — one photo per dish, no angle duplicates */
     gallery: [
-      { src: fb('pozole.jpg'), alt: 'Bowl of pozole with hominy and pork', caption: 'Pozole' },
-      { src: fb('nachos.jpg'), alt: 'Chicken nachos with queso and fresh toppings', caption: 'Chicken Nachos' },
-      { src: fb('menudo.jpg'), alt: 'Bowls of menudo with cilantro, onion, and lime', caption: 'Menudo' },
-      { src: menu('IMG_2876'), alt: 'Sizzling mixed fajitas in a cast-iron skillet', caption: 'Sizzling Fajitas' },
-      { src: menu('IMG_1512'), alt: 'Steak and shrimp combo platters', caption: 'Combo Platters' },
-      { src: menu('IMG_1902'), alt: 'Tacos and enchiladas verde', caption: 'Tacos & Enchiladas' },
-      { src: menu('IMG_0399'), alt: 'Mexican street corn in a to-go container', caption: 'Street Corn' },
-      { src: menu('IMG_2751'), alt: 'Shrimp cocktail with avocado and tortilla chips', caption: 'Shrimp Cocktail' },
-      { src: fb('shrimp-plate.jpg'), alt: 'Seasoned shrimp plate with rice, beans, and avocado', caption: 'Shrimp Plate' },
-      { src: menu('IMG_0065'), alt: 'Seafood caldo with crab and shrimp', caption: 'Seafood Caldo' },
-      { src: menu('IMG_0335'), alt: 'Enchiladas verdes, tacos, and flautas', caption: 'Lunch Favorites' },
-      { src: menu('IMG_1031'), alt: 'Tray of fresh tamales', caption: 'Tamales' },
-      { src: fb('margarita-pineapple.jpg'), alt: 'Pineapple margaritas with chili-lime rim', caption: 'Pineapple Margaritas' },
-      { src: menu('IMG_2973'), alt: 'Strawberry margarita at the bar', caption: 'Strawberry Margarita' },
-      { src: fb('beers.jpg'), alt: 'Mexican beers including Corona, Victoria, and Modelo', caption: 'Mexican Beers' },
-      { src: menu('IMG_2920'), alt: 'Torta on a wooden table', caption: 'Torta' },
-      { src: fb('fb-1536624234924037.jpg'), alt: 'Seasoned shrimp with rice and beans', caption: 'Shrimp Combo' },
-      { src: menu('IMG_1585'), alt: 'Toasted breakfast sandwich', caption: 'Breakfast Sandwich' },
-      { src: menu('IMG_2860'), alt: 'Omelette with avocado and pico de gallo', caption: 'Breakfast Omelette' },
-      { src: menu('IMG_1958'), alt: 'Strawberry margarita at the bar', caption: 'Bar Margarita' },
-      { src: menu('IMG_0440'), alt: 'Takeout combo plate', caption: 'Combo To-Go' },
+      { src: groky('birria-tacos'), alt: 'Birria tacos with consommé', caption: 'Birria Tacos' },
+      { src: groky('nachos'), alt: 'Loaded nachos', caption: 'Nachos' },
+      { src: groky('menudo'), alt: 'Menudo with garnishes', caption: 'Menudo' },
+      { src: groky('shrimp-fajitas'), alt: 'Shrimp fajitas sizzling', caption: 'Shrimp Fajitas' },
+      { src: groky('carne-asada'), alt: 'Carne asada platter', caption: 'Carne Asada' },
+      { src: groky('molcajete'), alt: 'Molcajete platter', caption: 'Molcajete' },
+      { src: groky('coctel-de-camaron'), alt: 'Shrimp cocktail', caption: 'Coctel de Camarones' },
+      { src: groky('mango-margarita'), alt: 'Mango margarita', caption: 'Margaritas' },
+      { src: groky('chilaquiles'), alt: 'Chilaquiles platter', caption: 'Chilaquiles' },
+      { src: groky('torta'), alt: 'Mexican torta', caption: 'Torta' },
+      { src: groky('quesadilla'), alt: 'Quesadilla plate', caption: 'Quesadilla' },
+      { src: groky('chimichanga'), alt: 'Chimichanga', caption: 'Chimichanga' },
+      { src: groky('mojara'), alt: 'Fried tilapia platter', caption: 'Mojarra Frita' },
+      { src: groky('street-corn-with-no-chile-powder'), alt: 'Street corn', caption: 'Street Corn' },
+      { src: groky('breakfast-platters'), alt: 'Breakfast platters', caption: 'Breakfast' },
+      { src: groky('7-mares'), alt: 'Seven seas seafood soup', caption: 'Siete Mares' },
     ],
 
     followBand: [
-      { src: fb('nachos.jpg'), alt: 'Chicken nachos with queso' },
-      { src: fb('pozole.jpg'), alt: 'Bowl of pozole' },
-      { src: menu('IMG_2876'), alt: 'Sizzling fajitas' },
-      { src: menu('IMG_0399'), alt: 'Mexican street corn' },
-      { src: fb('shrimp-plate.jpg'), alt: 'Seasoned shrimp plate' },
-      { src: fb('beers.jpg'), alt: 'Mexican beers' },
+      { src: groky('nachos'), alt: 'Nachos' },
+      { src: groky('birria-tacos'), alt: 'Birria tacos' },
+      { src: groky('shrimp-fajitas'), alt: 'Fajitas' },
+      { src: groky('menudo'), alt: 'Menudo' },
+      { src: groky('mango-margarita'), alt: 'Margarita' },
+      { src: groky('carne-asada'), alt: 'Carne asada' },
     ],
 
     menuStrip: {
       breakfast: [
-        { src: menu('IMG_2915'), alt: 'Breakfast sandwich' },
-        { src: menu('IMG_2920'), alt: 'Breakfast plate' },
-        { src: menu('IMG_2865'), alt: 'Breakfast at MIRASOL' },
-        { src: menu('IMG_1578'), alt: 'Morning plate' },
-        { src: menu('IMG_1585'), alt: 'Toasted sandwich' },
-        { src: menu('IMG_2920'), alt: 'Torta' },
+        { src: groky('breakfast-platters'), alt: 'Breakfast platters' },
+        { src: groky('pancake'), alt: 'Pancakes' },
+        { src: groky('omlete'), alt: 'Omelette' },
+        { src: groky('huevos-con-chorizo-platter'), alt: 'Huevos con chorizo' },
       ],
-      'daily-lunch': [],
+      'daily-lunch': [
+        { src: groky('birria-tacos'), alt: 'Birria tacos' },
+        { src: groky('crunchy-tacos'), alt: 'Crunchy tacos' },
+        { src: groky('davey-special'), alt: "Davey's Special" },
+        { src: groky('quesadilla'), alt: 'Quesadilla' },
+      ],
       dinner: [
-        { src: menu('IMG_1512'), alt: 'Combo platters' },
-        { src: menu('IMG_2876'), alt: 'Sizzling fajitas' },
-        { src: menu('IMG_2751'), alt: 'Shrimp cocktail' },
-        { src: menu('IMG_0065'), alt: 'Seafood caldo' },
-        { src: menu('IMG_1541'), alt: 'Dinner plate' },
-        { src: menu('IMG_2973'), alt: 'Margarita at the bar' },
+        { src: groky('carne-asada'), alt: 'Carne asada' },
+        { src: groky('shrimp-fajitas'), alt: 'Fajitas' },
+        { src: groky('molcajete'), alt: 'Molcajete' },
+        { src: groky('coctel-de-camaron'), alt: 'Shrimp cocktail' },
+        { src: groky('mango-margarita'), alt: 'Margarita' },
       ],
     },
 
-    /** Menu page — one spotlight photo per category (matches section id) */
     categorySpotlight: {
-      breakfast: { src: menu('IMG_2860'), alt: 'Omelette with avocado and pico de gallo' },
-      'daily-lunch': null,
-      appetizers: { src: menu('IMG_0399'), alt: 'Mexican street corn' },
-      tacos: { src: menu('IMG_0335'), alt: 'Birria tacos with consommé' },
-      burritos: null,
-      chimichangas: { src: menu('IMG_0440'), alt: 'Chimichanga with rice and beans' },
-      quesadillas: { src: menu('IMG_1964'), alt: 'Quesadilla with fresh salad' },
-      tortas: { src: menu('IMG_2920'), alt: 'Torta on a wooden table' },
-      fajitas: { src: menu('IMG_2876'), alt: 'Sizzling mixed fajitas in cast iron' },
-      enchiladas: { src: menu('IMG_1902'), alt: 'Tacos and enchiladas verde' },
-      platters: { src: menu('IMG_1512'), alt: 'Steak and shrimp combo platters' },
-      kids: { src: menu('IMG_1541'), alt: 'Carne asada plate with rice and queso' },
-      broths: { src: fb('menudo.jpg'), alt: 'Bowls of menudo with garnishes' },
-      desserts: { src: fb('pozole.jpg'), alt: 'Bowl of pozole' },
-      alcohol: {
-        src: fb('margarita-pineapple.jpg'),
-        alt: 'Pineapple margaritas and Mexican beers at the bar',
-      },
+      breakfast: { src: groky('breakfast-platters'), alt: 'Breakfast at El Mirasol' },
+      'daily-lunch': { src: groky('multi-item'), alt: 'Daily lunch favorites' },
+      appetizers: { src: groky('2-sopes'), alt: 'Sopes and antojitos' },
+      tacos: { src: groky('birria-tacos'), alt: 'Birria tacos with consommé' },
+      burritos: { src: groky('burrito-meal'), alt: 'Burrito plate' },
+      chimichangas: { src: groky('chimichanga'), alt: 'Chimichanga' },
+      quesadillas: { src: groky('quesadilla'), alt: 'Quesadilla' },
+      tortas: { src: groky('torta'), alt: 'Torta' },
+      fajitas: { src: groky('shrimp-fajitas'), alt: 'Sizzling fajitas' },
+      enchiladas: { src: groky('queso-enchiladas'), alt: 'Queso enchiladas' },
+      platters: { src: groky('carne-asada'), alt: 'Combo platters' },
+      kids: { src: groky('grilled-chicken-platter'), alt: 'Kids plate' },
+      broths: { src: groky('menudo'), alt: 'Menudo' },
+      desserts: { src: groky('fruit-cups'), alt: 'Fresh fruit cups' },
+      drinks: { src: groky('fruit-cups'), alt: 'Aguas frescas' },
+      alcohol: { src: groky('mango-margarita'), alt: 'Margaritas at the bar' },
     },
 
     desserts: [
-      { src: fb('margarita-pineapple.jpg'), alt: 'Pineapple margaritas' },
-      { src: menu('IMG_2973'), alt: 'Strawberry margarita' },
-      { src: fb('shrimp-cocktail.jpg'), alt: 'Shrimp cocktail' },
-      { src: fb('nachos.jpg'), alt: 'Nachos with queso' },
-      { src: fb('beers.jpg'), alt: 'Mexican beers' },
+      { src: groky('mango-margarita'), alt: 'Margarita' },
+      { src: groky('fruit-cups'), alt: 'Fruit cups' },
+      { src: groky('mangonada'), alt: 'Mangonada' },
     ],
   };
 
@@ -112,112 +108,181 @@
     return `${sectionId}|${normalizeName(name)}`;
   }
 
-  /** IMG_1902 is a two-plate shot — crop left (tacos) or right (enchiladas) */
-  const PLATE_1902 = menu('IMG_1902');
-  function plate1902(side, alt) {
-    return { src: PLATE_1902, alt, crop: side };
+  function g(slug, alt) {
+    return { src: groky(slug), alt };
   }
 
-  /**
-   * Verified item photos only — no category guesses or rotation.
-   * If a dish is not listed here, the modal shows description only.
-   */
   const itemPhotos = {
     /* breakfast */
-    [photoKey('breakfast', 'Carne Asada con Huevo')]: { src: menu('IMG_1541'), alt: 'Carne asada with eggs' },
-    [photoKey('breakfast', 'Chilaquiles en Salsa Verde')]: { src: menu('IMG_0335'), alt: 'Chilaquiles in green salsa' },
-    [photoKey('breakfast', 'Strawberry Pancakes')]: { src: menu('IMG_2865'), alt: 'Strawberry pancakes' },
-    [photoKey('breakfast', 'Bacon & Eggs')]: { src: menu('IMG_1585'), alt: 'Bacon and eggs' },
+    [photoKey('breakfast', 'Bacon & Eggs')]: g('breakfast-platters', 'Bacon and eggs'),
+    [photoKey('breakfast', 'Huevo con Jamón')]: g('breakfast-platters', 'Huevo con jamón'),
+    [photoKey('breakfast', 'Pancake Tacos')]: g('pancake', 'Pancake tacos'),
+    [photoKey('breakfast', 'Carne Asada con Huevo')]: g('carne-asada', 'Carne asada con huevo'),
+    [photoKey('breakfast', 'Huevo con Chorizo')]: g('huevos-con-chorizo-platter', 'Huevo con chorizo'),
+    [photoKey('breakfast', 'Strawberry Pancakes')]: g('pancake', 'Strawberry pancakes'),
+    [photoKey('breakfast', 'Huevos Ahogados')]: g('huevos-a-la-mexicana', 'Huevos ahogados'),
+    [photoKey('breakfast', 'Chilaquiles en Salsa Verde')]: g('chilaquiles-2', 'Chilaquiles en salsa verde'),
+    [photoKey('breakfast', 'Burrito de Papas con Chorizo')]: g('huevos-con-chorizo-platter', 'Burrito de papas con chorizo'),
+    [photoKey('breakfast', 'Burrito Huevo a la Mexicana')]: g('huevos-a-la-mexicana', 'Burrito huevo a la mexicana'),
+    [photoKey('breakfast', 'Burrito de Huevo con Jamón')]: g('breakfast-platters', 'Burrito de huevo con jamón'),
+    [photoKey('breakfast', 'Burrito Huevo con Chorizo y Papas')]: g('huevos-con-chorizo-platter', 'Burrito huevo con chorizo y papas'),
+    [photoKey('breakfast', 'Pancakes')]: g('pancake', 'Pancakes'),
+    [photoKey('breakfast', 'Aguas Frescas')]: g('fruit-cups', 'Aguas frescas'),
 
-    /* daily lunch — no photos yet; modal shows description only */
+    /* daily lunch */
+    [photoKey('daily-lunch', 'Crunchy Tacos')]: g('crunchy-tacos', 'Crunchy tacos'),
+    [photoKey('daily-lunch', 'Tacos')]: g('order-of-tacos', 'Tacos with rice and beans'),
+    [photoKey('daily-lunch', 'Empanadas')]: g('empandas', 'Empanadas'),
+    [photoKey('daily-lunch', 'Enchiladas')]: g('queso-enchiladas', 'Enchiladas'),
+    [photoKey('daily-lunch', 'Quesadilla')]: g('quesadilla', 'Quesadilla'),
+    [photoKey('daily-lunch', 'Half-Size Torta')]: g('torta', 'Half-size torta'),
+    [photoKey('daily-lunch', 'Tamales')]: g('ls-tamles', 'Tamales'),
+    [photoKey('daily-lunch', 'Fajitas')]: g('fajita-mix', 'Chicken fajitas'),
+    [photoKey('daily-lunch', 'Fried Eggs')]: g('huevos-a-la-mexicana', 'Fried eggs plate'),
+    [photoKey('daily-lunch', 'Small ACP')]: g('grilled-chicken-platter', 'Arroz con pollo'),
+    [photoKey('daily-lunch', "Davey's Special")]: g('davey-special', "Davey's Special"),
+    [photoKey('daily-lunch', 'Birria Tacos')]: g('birria-tacos', 'Birria tacos'),
 
     /* appetizers */
-    [photoKey('appetizers', 'Esquite')]: { src: menu('IMG_0399'), alt: 'Esquite cup' },
-    [photoKey('appetizers', 'Street Corn')]: { src: menu('IMG_0399'), alt: 'Mexican street corn' },
-    [photoKey('appetizers', 'Elote')]: { src: menu('IMG_0399'), alt: 'Elote' },
-    [photoKey('appetizers', 'Tamales')]: { src: menu('IMG_1031'), alt: 'Fresh tamales' },
+    [photoKey('appetizers', 'Sope')]: g('2-sopes', 'Sopes'),
+    [photoKey('appetizers', 'Huarache')]: g('huarache', 'Huarache'),
+    [photoKey('appetizers', 'Gorditas')]: g('masita', 'Gorditas'),
+    [photoKey('appetizers', 'Tamales')]: g('ls-tamles', 'Tamales'),
+    [photoKey('appetizers', 'Tostada')]: g('4-tostadas', 'Tostada'),
+    [photoKey('appetizers', 'Empanadas')]: g('empandas', 'Empanadas'),
+    [photoKey('appetizers', 'Esquite')]: g('street-corn-with-no-chile-powder', 'Esquite'),
+    [photoKey('appetizers', 'Street Corn')]: g('street-corn-with-no-chile-powder', 'Street corn'),
+    [photoKey('appetizers', 'Guacamole')]: g('nachos', 'Guacamole with chips'),
 
     /* tacos */
-    [photoKey('tacos', 'Birria Tacos')]: { src: menu('IMG_0335'), alt: 'Birria tacos with consommé' },
-    [photoKey('tacos', 'Tacos de Birria')]: { src: menu('IMG_0335'), alt: 'Tacos de birria con consomé' },
-    [photoKey('tacos', 'Chicken Birria Tacos')]: { src: menu('IMG_0335'), alt: 'Chicken birria tacos' },
-    [photoKey('tacos', 'Tacos de Birria de Pollo')]: { src: menu('IMG_0335'), alt: 'Tacos de birria de pollo' },
-    [photoKey('tacos', 'Shrimp Tacos')]: { src: fb('shrimp-plate.jpg'), alt: 'Shrimp tacos' },
-    [photoKey('tacos', 'Tacos de Camarones')]: { src: fb('shrimp-plate.jpg'), alt: 'Tacos de camarones' },
-    [photoKey('tacos', 'Tacos Albañil')]: plate1902('left', 'Tacos albañil with chorizo and eggs'),
-    [photoKey('tacos', 'Tacos Albanil')]: plate1902('left', 'Tacos albañil with chorizo and eggs'),
+    [photoKey('tacos', 'Taco')]: g('tacos', 'Street taco'),
+    [photoKey('tacos', 'Order of Tacos')]: g('order-of-tacos', 'Order of tacos'),
+    [photoKey('tacos', 'Crunchy Tacos')]: g('crunchy-tacos', 'Crunchy tacos'),
+    [photoKey('tacos', 'Tacos Dorados')]: g('tacos-dorados', 'Tacos dorados'),
+    [photoKey('tacos', 'Birria Tacos')]: g('birria-tacos', 'Birria tacos with consommé'),
+    [photoKey('tacos', 'Chicken Birria Tacos')]: g('quesabirria', 'Chicken birria tacos'),
+    [photoKey('tacos', 'Shrimp Tacos')]: g('shrimp-tacos-on-flour', 'Shrimp tacos'),
+    [photoKey('tacos', 'Tacos Campechanos')]: g('order-of-tacos-2', 'Tacos campechanos'),
+    [photoKey('tacos', 'Tacos Albañil')]: g('huevos-con-chorizo-platter', 'Tacos albañil'),
+
+    /* burritos */
+    [photoKey('burritos', 'Burrito Meal')]: g('burrito-meal', 'Burrito meal'),
+    [photoKey('burritos', 'Fajita Burrito')]: g('fajita-mix', 'Fajita burrito'),
+    [photoKey('burritos', 'Choripollo Burrito')]: g('davey-special', 'Choripollo burrito'),
+    [photoKey('burritos', 'Burrito Campechano')]: g('burrito-meal', 'Burrito campechano'),
+    [photoKey('burritos', 'California Burrito')]: g('califorina-burrito', 'California burrito'),
+    [photoKey('burritos', 'Shrimp Burrito')]: g('burrito-meal', 'Shrimp burrito'),
+    [photoKey('burritos', 'Veggie Burrito')]: g('burrito-meal', 'Veggie burrito'),
+    [photoKey('burritos', 'Burrito Huevos a la Mexicana')]: g('huevos-a-la-mexicana', 'Burrito huevos a la mexicana'),
 
     /* chimichangas */
-    [photoKey('chimichangas', 'Chimichanga Meal')]: { src: menu('IMG_0440'), alt: 'Chimichanga plate' },
-    [photoKey('chimichangas', 'Shrimp Chimichanga')]: { src: menu('IMG_0440'), alt: 'Shrimp chimichanga' },
-    [photoKey('chimichangas', 'Chimichanga de Camarones')]: { src: menu('IMG_0440'), alt: 'Chimichanga de camarones' },
+    [photoKey('chimichangas', 'Chimichanga Meal')]: g('chimichanga', 'Chimichanga'),
+    [photoKey('chimichangas', 'Shrimp Chimichanga')]: g('chimi', 'Shrimp chimichanga'),
+    [photoKey('chimichangas', 'Burrito Mummia')]: g('burrito-mommia', 'Burrito mummia'),
 
     /* quesadillas */
-    [photoKey('quesadillas', 'Quesadilla Meal')]: { src: menu('IMG_1964'), alt: 'Quesadilla plate' },
-    [photoKey('quesadillas', 'Quesadilla de Birria')]: { src: menu('IMG_0335'), alt: 'Quesadilla de birria' },
-    [photoKey('quesadillas', 'Shrimp Quesadilla')]: { src: menu('IMG_1964'), alt: 'Shrimp quesadilla' },
-    [photoKey('quesadillas', 'Quesadilla de Camarones')]: { src: menu('IMG_1964'), alt: 'Quesadilla de camarones' },
+    [photoKey('quesadillas', 'Quesadilla Meal')]: g('quesadilla', 'Quesadilla meal'),
+    [photoKey('quesadillas', 'Shrimp Quesadilla')]: g('quesadilla', 'Shrimp quesadilla'),
+    [photoKey('quesadillas', 'Veggie Quesadilla')]: g('quesadilla-de-maiz', 'Veggie quesadilla'),
+    [photoKey('quesadillas', 'Fajita Quesadilla')]: g('fajita-mix', 'Fajita quesadilla'),
+    [photoKey('quesadillas', 'Quesadilla de Maíz')]: g('quesadilla-de-maiz', 'Quesadilla de maíz'),
+    [photoKey('quesadillas', 'Quesadilla de Birria')]: g('quesabirria', 'Quesadilla de birria'),
+
+    /* tortas */
+    [photoKey('tortas', 'Torta')]: g('torta', 'Torta'),
+    [photoKey('tortas', 'Torta Cubana')]: g('torta-2', 'Torta cubana'),
+    [photoKey('tortas', 'Fried Steak Torta')]: g('torta', 'Fried steak torta'),
+    [photoKey('tortas', 'Fried Chicken Torta')]: g('torta-2', 'Fried chicken torta'),
 
     /* fajitas */
-    [photoKey('fajitas', 'Campechanas Fajitas')]: { src: menu('IMG_2876'), alt: 'Campechanas fajitas' },
-    [photoKey('fajitas', 'Fajitas Campechanas')]: { src: menu('IMG_2876'), alt: 'Fajitas campechanas' },
-    [photoKey('fajitas', 'Mix Fajitas')]: { src: menu('IMG_2876'), alt: 'Mix fajitas' },
-    [photoKey('fajitas', 'Fajitas Mixtas')]: { src: menu('IMG_2876'), alt: 'Fajitas mixtas' },
-    [photoKey('fajitas', 'Shrimp Fajitas')]: { src: menu('IMG_2876'), alt: 'Shrimp fajitas' },
-    [photoKey('fajitas', 'Fajitas de Camarones')]: { src: menu('IMG_2876'), alt: 'Fajitas de camarones' },
-    [photoKey('fajitas', 'Steak Fajitas')]: { src: menu('IMG_2876'), alt: 'Steak fajitas' },
-    [photoKey('fajitas', 'Fajitas de Res')]: { src: menu('IMG_2876'), alt: 'Fajitas de res' },
-    [photoKey('fajitas', 'Chicken Fajitas')]: { src: menu('IMG_2876'), alt: 'Chicken fajitas' },
-    [photoKey('fajitas', 'Fajitas de Pollo')]: { src: menu('IMG_2876'), alt: 'Fajitas de pollo' },
+    [photoKey('fajitas', 'Campechanas Fajitas')]: g('fajita-mix', 'Campechanas fajitas'),
+    [photoKey('fajitas', 'Mix Fajitas')]: g('fajita-mix', 'Mix fajitas'),
+    [photoKey('fajitas', 'Shrimp Fajitas')]: g('shrimp-fajitas', 'Shrimp fajitas'),
+    [photoKey('fajitas', 'Steak Fajitas')]: g('steak-aca', 'Steak fajitas'),
+    [photoKey('fajitas', 'Chicken Fajitas')]: g('grilled-chicken-platter', 'Chicken fajitas'),
 
-    /* enchiladas — right plate from IMG_1902 */
-    [photoKey('enchiladas', 'Enchiladas')]: plate1902('right', 'Enchiladas verde'),
-    [photoKey('enchiladas', 'Queso Enchiladas')]: plate1902('right', 'Queso enchiladas'),
-    [photoKey('enchiladas', 'Enchiladas con Queso')]: plate1902('right', 'Enchiladas con queso'),
-    [photoKey('enchiladas', 'Enchiladas Campechanas')]: plate1902('right', 'Enchiladas campechanas'),
+    /* enchiladas */
+    [photoKey('enchiladas', 'Enchiladas')]: g('queso-enchiladas', 'Enchiladas'),
+    [photoKey('enchiladas', 'Queso Enchiladas')]: g('quesoenchiladas', 'Queso enchiladas'),
+    [photoKey('enchiladas', 'Enchiladas Campechanas')]: g('queso-enchiladas', 'Enchiladas campechanas'),
 
     /* platters */
-    [photoKey('platters', "Davey's Special")]: { src: menu('IMG_1670'), alt: "Davey's Special — chicken, chorizo, and queso sauce" },
-    [photoKey('platters', 'Especial de Davey')]: { src: menu('IMG_1670'), alt: 'Especial de Davey — pollo, chorizo y queso' },
-    [photoKey('platters', 'Nachos')]: { src: fb('nachos.jpg'), alt: 'Loaded nachos' },
-    [photoKey('platters', 'Carne Asada')]: { src: menu('IMG_1541'), alt: 'Carne asada plate' },
-    [photoKey('platters', 'Chilaquiles')]: { src: menu('IMG_0335'), alt: 'Chilaquiles platter' },
-    [photoKey('platters', 'Mar y Tierra')]: { src: menu('IMG_1512'), alt: 'Steak and shrimp platter' },
-    [photoKey('platters', 'Oaxaqueño')]: { src: menu('IMG_1512'), alt: 'Oaxaqueño platter' },
-    [photoKey('platters', 'Oaxaqueño de Pollo')]: { src: menu('IMG_1512'), alt: 'Oaxaqueño de pollo' },
-    [photoKey('platters', 'Molcajete')]: { src: menu('IMG_1512'), alt: 'Molcajete platter' },
-    [photoKey('platters', 'Coctel de Camarones')]: { src: fb('shrimp-cocktail.jpg'), alt: 'Shrimp cocktail' },
-    [photoKey('platters', 'Camarones Empanizados')]: { src: fb('shrimp-plate.jpg'), alt: 'Breaded shrimp plate' },
-    [photoKey('platters', 'Grilled or Fried Chicken')]: { src: menu('IMG_1541'), alt: 'Chicken plate' },
-    [photoKey('platters', 'Pollo Asado o Frito')]: { src: menu('IMG_1541'), alt: 'Pollo asado o frito' },
-    [photoKey('platters', 'Fried Steak')]: { src: menu('IMG_1541'), alt: 'Fried steak plate' },
-    [photoKey('platters', 'Bistec Frito')]: { src: menu('IMG_1541'), alt: 'Bistec frito' },
+    [photoKey('platters', 'ACP (Arroz Con Pollo)')]: g('grilled-chicken-platter', 'Arroz con pollo'),
+    [photoKey('platters', "Davey's Special")]: g('davey-special', "Davey's Special"),
+    [photoKey('platters', 'Carne Asada')]: g('carne-asada', 'Carne asada'),
+    [photoKey('platters', 'Oaxaqueño')]: g('platilla-oaxacaqueno', 'Oaxaqueño platter'),
+    [photoKey('platters', 'Oaxaqueño de Pollo')]: g('platillo', 'Oaxaqueño de pollo'),
+    [photoKey('platters', 'Mojarra Frita')]: g('mojara', 'Mojarra frita'),
+    [photoKey('platters', 'Chile Relleno')]: g('chile-relleno', 'Chile relleno'),
+    [photoKey('platters', 'Taco Salad')]: g('taco-bowl', 'Taco salad'),
+    [photoKey('platters', 'Chilaquiles')]: g('chilaquiles', 'Chilaquiles'),
+    [photoKey('platters', 'Mar y Tierra')]: g('carne-asada', 'Mar y tierra'),
+    [photoKey('platters', 'Molcajete')]: g('molcajete', 'Molcajete'),
+    [photoKey('platters', 'Cazuelón')]: g('davey-special', 'Cazuelón'),
+    [photoKey('platters', 'Tlayuda')]: g('tylayuda', 'Tlayuda'),
+    [photoKey('platters', 'Nachos')]: g('nachos', 'Loaded nachos'),
+    [photoKey('platters', 'Fried Steak')]: g('steak-aca', 'Fried steak'),
+    [photoKey('platters', 'Grilled or Fried Chicken')]: g('grilled-chicken-platter', 'Grilled chicken platter'),
+    [photoKey('platters', 'Parrillada')]: g('parrilliada', 'Parrillada'),
+    [photoKey('platters', 'Camarones Empanizados')]: g('fried-shrimp-platter', 'Breaded shrimp'),
+    [photoKey('platters', 'Coctel de Camarones')]: g('coctel-de-camaron', 'Coctel de camarones'),
+    [photoKey('platters', 'Chicken and Spaghetti')]: g('spaghetti', 'Chicken and spaghetti'),
+    [photoKey('platters', 'Phil')]: g('phil', 'Philly steak plate'),
+    [photoKey('platters', 'Huevos Enchilados')]: g('huevos-enchilados', 'Huevos enchilados'),
+
+    /* kids */
+    [photoKey('kids', 'Kids Quesadilla')]: g('quesadilla', 'Kids quesadilla'),
+    [photoKey('kids', 'Kids Burrito')]: g('burrito-meal', 'Kids burrito'),
+    [photoKey('kids', 'Kids ACP')]: g('grilled-chicken-platter', 'Kids ACP'),
+    [photoKey('kids', 'Scrambled Eggs')]: g('huevos-a-la-mexicana', 'Scrambled eggs'),
 
     /* broths */
-    [photoKey('broths', 'Menudo')]: { src: fb('menudo.jpg'), alt: 'Menudo' },
-    [photoKey('broths', 'Siete Mares')]: { src: menu('IMG_0065'), alt: 'Siete mares seafood soup' },
+    [photoKey('broths', 'Caldo de Res')]: g('caldo-de-res', 'Caldo de res'),
+    [photoKey('broths', 'Caldo de Borrego')]: g('caldo-de-res', 'Caldo de borrego'),
+    [photoKey('broths', 'Menudo')]: g('menudo', 'Menudo'),
+    [photoKey('broths', 'Siete Mares')]: g('7-mares', 'Siete mares'),
+
+    /* drinks */
+    [photoKey('drinks', 'Aguas Frescas')]: g('fruit-cups', 'Aguas frescas'),
+    [photoKey('drinks', 'Jarritos & Squirt')]: g('fruit-cups', 'Jarritos'),
 
     /* alcohol */
-    [photoKey('alcohol', 'Margarita')]: { src: fb('margarita-pineapple.jpg'), alt: 'Margarita' },
-    [photoKey('alcohol', 'Beer (12 oz)')]: { src: fb('beers.jpg'), alt: 'Mexican beers' },
-    [photoKey('alcohol', 'Beer (24 oz)')]: { src: fb('beers.jpg'), alt: 'Mexican beers' },
-    [photoKey('alcohol', 'Beer (32 oz)')]: { src: fb('beers.jpg'), alt: 'Mexican beers' },
+    [photoKey('alcohol', 'Margarita')]: g('mango-margarita', 'Margarita'),
+    [photoKey('alcohol', 'Mojito')]: g('mojitos', 'Mojito'),
+    [photoKey('alcohol', 'Michelada Cheladas')]: g('coco-azul', 'Michelada'),
+    [photoKey('alcohol', 'Micheladas')]: g('coco-azul', 'Michelada'),
+    [photoKey('alcohol', 'Piña Colada')]: g('pinaapple-habiscus-margarita', 'Piña colada'),
+    [photoKey('alcohol', 'Paloma')]: g('mixed-drinks', 'Paloma'),
+    [photoKey('alcohol', 'Tequila Sunrise')]: g('mixed-drinks', 'Tequila sunrise'),
+    [photoKey('alcohol', 'Beer (12 oz)')]: g('mixed-drinks', 'Mexican beer'),
+    [photoKey('alcohol', 'Beer (24 oz)')]: g('mixed-drinks', 'Mexican beer'),
+    [photoKey('alcohol', 'Beer (32 oz)')]: g('mixed-drinks', 'Mexican beer'),
   };
 
-  /** Sections with no verified photos — never borrow from dinner menu */
-  const noPhotoSections = new Set(['daily-lunch']);
-
-  /** Same photo for every item in a section (when no item-specific match) */
   const sectionDefaultPhotos = {
-    tortas: { src: menu('IMG_2920'), alt: 'Torta on a wooden table' },
+    breakfast: g('breakfast-platters', 'Breakfast at El Mirasol'),
+    'daily-lunch': g('multi-item', 'Daily lunch'),
+    appetizers: g('2-sopes', 'Appetizers'),
+    tacos: g('birria-tacos', 'Tacos'),
+    burritos: g('burrito-meal', 'Burritos'),
+    chimichangas: g('chimichanga', 'Chimichangas'),
+    quesadillas: g('quesadilla', 'Quesadillas'),
+    tortas: g('torta', 'Tortas'),
+    fajitas: g('shrimp-fajitas', 'Fajitas'),
+    enchiladas: g('queso-enchiladas', 'Enchiladas'),
+    platters: g('carne-asada', 'Platters'),
+    kids: g('grilled-chicken-platter', 'Kids menu'),
+    broths: g('menudo', 'Weekend broths'),
+    drinks: g('fruit-cups', 'Drinks'),
+    alcohol: g('mango-margarita', 'Bar drinks'),
   };
 
   const skuPhotos = {
-    'taco-birria': { src: menu('IMG_0335'), alt: 'Birria tacos' },
-    'plt-oaxaqueno': { src: menu('IMG_1512'), alt: 'Oaxaqueño platter' },
-    'plt-molcajete': { src: menu('IMG_1512'), alt: 'Molcajete' },
-    'broth-menudo': { src: fb('menudo.jpg'), alt: 'Menudo' },
-    'drk-margarita': { src: fb('margarita-pineapple.jpg'), alt: 'Margarita' },
+    'taco-birria': g('birria-tacos', 'Birria tacos'),
+    'plt-oaxaqueno': g('platilla-oaxacaqueno', 'Oaxaqueño'),
+    'plt-molcajete': g('molcajete', 'Molcajete'),
+    'broth-menudo': g('menudo', 'Menudo'),
+    'drk-margarita': g('mango-margarita', 'Margarita'),
   };
 
   function lookupFeaturedPhoto(sectionId, itemName) {
@@ -238,10 +303,8 @@
     return out;
   }
 
-  /** Photo for item detail modal — verified matches only; otherwise blank */
   function resolveItemPhoto(sectionId, item) {
     if (!item) return null;
-    if (noPhotoSections.has(sectionId)) return null;
     if (item.image) return photoResult({ src: item.image, alt: item.name }, item.name);
 
     if (item.sku && skuPhotos[item.sku]?.src) {

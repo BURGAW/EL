@@ -295,6 +295,16 @@ body.menu-page .header .nav a[href*="index.html#visit"] {
   gap: 0.45rem;
 }
 
+.menu-online__grid:not(.menu-online__grid--solo) {
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+}
+
+@media (min-width: 720px) {
+  .menu-online__grid:not(.menu-online__grid--solo) {
+    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  }
+}
+
 .menu-card {
   background: var(--white);
   border: 1px solid rgba(240, 184, 74, 0.22);
@@ -308,6 +318,41 @@ body.menu-page .header .nav a[href*="index.html#visit"] {
   text-align: left;
   width: 100%;
   font-family: inherit;
+}
+
+.menu-card--has-photo {
+  padding: 0;
+  overflow: hidden;
+}
+
+.menu-card--has-photo .menu-card__head,
+.menu-card--has-photo .menu-card__foot {
+  padding-left: 0.55rem;
+  padding-right: 0.55rem;
+}
+
+.menu-card--has-photo .menu-card__foot {
+  padding-bottom: 0.45rem;
+}
+
+.menu-card__photo {
+  width: 100%;
+  aspect-ratio: 4 / 2.5;
+  overflow: hidden;
+  background: #f0ebe3;
+  border-bottom: 1px solid rgba(240, 184, 74, 0.18);
+}
+
+.menu-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.menu-card--has-photo .menu-card__head {
+  padding-top: 0.45rem;
 }
 
 .menu-card--btn {

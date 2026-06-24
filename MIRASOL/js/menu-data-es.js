@@ -6,7 +6,7 @@ const FEATURED_ITEMS_ES = [
     name: 'Nachos',
     headline: 'Nachos Cargados',
     blurb: 'Totopos crujientes con pollo sazonado, queso derretido, pico, aguacate y toppings frescos.',
-    image: 'assets/images/facebook/nachos.jpg?v=gsmatch1',
+    image: 'assets/images/menu/groky/nachos.jpg?v=groky1',
     tag: 'popular',
   },
   {
@@ -14,7 +14,7 @@ const FEATURED_ITEMS_ES = [
     name: 'Fajitas de Camarones',
     headline: 'Camarones a la Plancha',
     blurb: 'Camarones sazonados con arroz, frijoles, aguacate y todos los acompañamientos.',
-    image: 'assets/images/menu/IMG_2876.jpg?v=sharpfix1',
+    image: 'assets/images/menu/groky/shrimp-fajitas.jpg?v=groky1',
     tag: 'popular',
   },
   {
@@ -22,7 +22,7 @@ const FEATURED_ITEMS_ES = [
     name: 'Menudo',
     headline: 'Menudo de Fin de Semana',
     blurb: 'Sopa tradicional — viernes, sábado y domingo. Favorito del condado.',
-    image: 'assets/images/facebook/menudo.jpg?v=gsmatch1',
+    image: 'assets/images/menu/groky/menudo.jpg?v=groky1',
     tag: 'weekend',
   },
   {
@@ -30,7 +30,7 @@ const FEATURED_ITEMS_ES = [
     name: 'Margarita',
     headline: 'Margaritas Artesanales',
     blurb: 'Limón recién exprimido, frutas frescas y su elección de sal o Tajín.',
-    image: 'assets/images/facebook/margarita-pineapple.jpg?v=gsmatch1',
+    image: 'assets/images/menu/groky/mango-margarita.jpg?v=groky1',
     tag: 'popular',
   },
 ];
