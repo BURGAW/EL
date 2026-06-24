@@ -234,58 +234,76 @@ body.menu-page .footer-inner {
   }
 }
 
-/* ── Oaxacan compact partner (fusion.css loads after and finalizes) ── */
+/* ── Oaxacan compact partner (coastal-oax-fusion.css loads last) ── */
 body.site-coastal.site-oax-craft .section,
-body.site-coastal.site-oax-craft .favorites-showcase {
-  padding: clamp(0.95rem, 2.2vw, 1.55rem) clamp(0.75rem, 2.8vw, 1.2rem);
+body.site-coastal.site-oax-craft .favorites-showcase,
+body.site-coastal.site-oax-craft .story-spin-section,
+body.site-coastal.site-oax-craft .reviews-section {
+  padding: clamp(0.7rem, 1.6vw, 1.15rem) clamp(0.7rem, 2.5vw, 1.1rem);
 }
 
 body.site-coastal.site-oax-craft.has-topbar .hero {
-  padding-top: calc(var(--header-h) + 1.15rem);
+  padding-top: calc(var(--header-h) + 0.85rem);
 }
 
 body.site-coastal.site-oax-craft .hero-sub {
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.85rem;
 }
 
 body.site-coastal.site-oax-craft .favorites-showcase__head {
-  margin-bottom: 0.75rem;
-}
-
-body.site-coastal.site-oax-craft .feat-stat {
-  padding: 0.95rem 0.55rem;
-}
-
-body.site-coastal.site-oax-craft .reviews-section .section-lead {
-  margin-bottom: 0.55rem !important;
-}
-
-body.site-coastal.site-oax-craft .reviews-stats {
-  margin: 0.35rem auto 0.55rem !important;
-}
-
-body.site-coastal.site-oax-craft .visit-grid {
-  margin-top: 0.85rem;
-  gap: 0.75rem;
-}
-
-body.site-coastal.site-oax-craft .feat-share-row {
-  margin-top: 0.45rem;
   margin-bottom: 0.55rem;
 }
 
+body.site-coastal.site-oax-craft .feat-stat {
+  padding: 0.75rem 0.45rem;
+}
+
+body.site-coastal.site-oax-craft .story-spin__roulette-stage {
+  min-height: clamp(200px, 24vw, 270px);
+  padding-bottom: 2.65rem;
+}
+
+body.site-coastal.site-oax-craft .reviews-section .section-lead {
+  margin-bottom: 0.4rem !important;
+}
+
+body.site-coastal.site-oax-craft .reviews-stats {
+  margin: 0.25rem auto 0.4rem !important;
+}
+
+body.site-coastal.site-oax-craft .reviews-grid {
+  margin-bottom: 0.65rem;
+  gap: 0.55rem;
+}
+
+body.site-coastal.site-oax-craft .visit-grid {
+  margin-top: 0.65rem;
+  gap: 0.65rem;
+}
+
+body.site-coastal.site-oax-craft .feat-share-row {
+  margin-top: 0.35rem;
+  margin-bottom: 0.45rem;
+}
+
 body.menu-page.site-coastal.site-oax-craft .menu-online-shell {
-  padding: 0.35rem clamp(0.75rem, 2.8vw, 1.2rem) 1rem;
+  padding: 0.3rem clamp(0.7rem, 2.5vw, 1.1rem) 0.85rem;
+}
+
+body.menu-page.site-coastal.site-oax-craft .order-strip {
+  margin-bottom: 0.35rem;
 }
 
 body.menu-page.site-coastal.site-oax-craft .footer {
   margin-top: 0;
-  padding-top: 1.35rem;
+  padding-top: 1.15rem;
 }
 
 @media (max-width: 768px) {
   body.site-coastal.site-oax-craft .section,
-  body.site-coastal.site-oax-craft .favorites-showcase {
-    padding: 0.85rem 0.75rem !important;
+  body.site-coastal.site-oax-craft .favorites-showcase,
+  body.site-coastal.site-oax-craft .story-spin-section,
+  body.site-coastal.site-oax-craft .reviews-section {
+    padding: 0.7rem 0.7rem !important;
   }
 }

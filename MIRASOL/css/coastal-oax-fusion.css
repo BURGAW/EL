@@ -576,31 +576,28 @@ body.site-coastal.site-oax-craft .story-spin__story:not(:has(.story-spin__img)) 
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   Oaxacan compact — tighter rhythm, enlarged craft banners
+   Oaxacan compact v3 — tight rhythm, bold craft banners, no dead air
+   Loads last — wins over site-spacing, mobile, google-sites-embed
    ═══════════════════════════════════════════════════════════════ */
 
 body.site-coastal.site-oax-craft {
-  --compact-section-y: clamp(0.95rem, 2.2vw, 1.55rem);
-  --compact-section-x: clamp(0.75rem, 2.8vw, 1.2rem);
-  --banner-ribbon-y: 1.05rem;
-  --banner-craft-serape: 12px;
-  --banner-craft-zigzag: 10px;
-  --banner-flores-size: 110px 40px;
+  --compact-section-y: clamp(0.7rem, 1.6vw, 1.15rem);
+  --compact-section-x: clamp(0.7rem, 2.5vw, 1.1rem);
+  --banner-ribbon-y: 1.15rem;
+  --banner-craft-serape: 14px;
+  --banner-craft-zigzag: 12px;
+  --banner-craft-shine: 4px;
+  --banner-flores-size: 120px 44px;
 }
 
-/* Less decorative dead space at page edges */
+/* Kill decorative edge clutter — reclaim horizontal space */
 body.site-coastal.site-oax-craft.pattern::before,
-body.site-coastal.site-oax-craft.pattern::after {
-  opacity: 0.18 !important;
-  transform: scale(0.82);
-}
-
+body.site-coastal.site-oax-craft.pattern::after,
 body.site-coastal.site-oax-craft > main::before,
 body.site-coastal.site-oax-craft > main::after,
 body.site-coastal.site-oax-craft #main::before,
 body.site-coastal.site-oax-craft #main::after {
-  opacity: 0.14 !important;
-  width: 3px !important;
+  display: none !important;
 }
 
 /* ── Enlarged Oaxacan craft bands (section dividers) ── */
@@ -622,7 +619,24 @@ body.site-coastal.site-oax-craft .oax-craft-band__zigzag {
 }
 
 body.site-coastal.site-oax-craft .oax-craft-band__shine {
-  height: 3px !important;
+  height: var(--banner-craft-shine) !important;
+}
+
+/* Section dividers — replace white gaps with bold Oaxacan bands */
+body.site-coastal.site-oax-craft .oax-craft-band--section {
+  margin: 0 !important;
+}
+
+body.site-coastal.site-oax-craft .oax-craft-band--section .oax-craft-band__serape {
+  height: calc(var(--banner-craft-serape) + 2px) !important;
+}
+
+body.site-coastal.site-oax-craft .oax-craft-band--section .oax-craft-band__zigzag {
+  height: var(--banner-craft-zigzag) !important;
+}
+
+body.site-coastal.site-oax-craft .oax-craft-band--section .oax-craft-band__shine {
+  height: var(--banner-craft-shine) !important;
 }
 
 body.site-coastal.site-oax-craft .social-topbar {
@@ -643,25 +657,33 @@ body.site-coastal.site-oax-craft .header::after {
 /* ── Hero: shorter shell, tighter copy, no scroll dead zone ── */
 body.site-coastal.site-oax-craft .hero,
 body.site-coastal.site-oax-craft .hero.hero--vibe {
-  min-height: min(70dvh, 620px) !important;
-  padding-bottom: 1.75rem !important;
+  min-height: min(62dvh, 540px) !important;
+  padding-bottom: 1.35rem !important;
 }
 
 body.site-coastal.site-oax-craft.has-topbar .hero {
-  padding-top: calc(var(--header-h) + 1.15rem) !important;
+  padding-top: calc(var(--header-h) + 0.85rem) !important;
 }
 
 body.site-coastal.site-oax-craft .hero-content {
   padding-bottom: 0 !important;
+  max-width: 700px !important;
+}
+
+body.site-coastal.site-oax-craft .hero-eyebrow {
+  margin-bottom: 0.2rem !important;
+  font-size: clamp(1.35rem, 4vw, 1.85rem) !important;
 }
 
 body.site-coastal.site-oax-craft .hero h1 {
-  margin-bottom: 0.45rem !important;
+  margin-bottom: 0.35rem !important;
+  font-size: clamp(2.1rem, 6.5vw, 3.2rem) !important;
 }
 
 body.site-coastal.site-oax-craft .hero-sub {
-  margin-bottom: 1.1rem !important;
-  line-height: 1.5 !important;
+  margin-bottom: 0.85rem !important;
+  line-height: 1.45 !important;
+  font-size: clamp(0.95rem, 2.2vw, 1.08rem) !important;
 }
 
 body.site-coastal.site-oax-craft .hero-btns {
@@ -681,9 +703,9 @@ body.site-coastal.site-oax-craft .feat-ribbon {
 }
 
 body.site-coastal.site-oax-craft .feat-ribbon__inner {
-  min-height: 3.55rem;
+  min-height: 3.85rem;
   padding: var(--banner-ribbon-y) var(--compact-section-x) !important;
-  gap: 0.7rem !important;
+  gap: 0.75rem !important;
 }
 
 body.site-coastal.site-oax-craft .feat-ribbon__specials {
@@ -703,19 +725,33 @@ body.site-coastal.site-oax-craft .feat-ribbon__dot {
   height: 9px !important;
 }
 
-/* ── Stats: compact height, banner presence ── */
+/* ── Stats: Oaxacan banner band ── */
 body.site-coastal.site-oax-craft .feat-stats {
   padding: 0 !important;
   margin: 0 !important;
-  border-top: 3px solid rgba(212, 168, 75, 0.45) !important;
+  border-top: none !important;
+  background:
+    var(--oax-flores),
+    linear-gradient(
+      90deg,
+      var(--coast-sea) 0%,
+      var(--oax-red-deep) 24%,
+      var(--oax-red) 48%,
+      var(--oax-gold) 76%,
+      var(--oax-gold-light) 100%
+    ) !important;
+  background-size: var(--banner-flores-size), 100% 100% !important;
+  box-shadow: 0 4px 14px rgba(200, 16, 46, 0.12) !important;
 }
 
 body.site-coastal.site-oax-craft .feat-stats::after {
-  height: 5px !important;
+  height: 6px !important;
+  background: var(--oax-serape) !important;
 }
 
 body.site-coastal.site-oax-craft .feat-stat {
-  padding: 0.95rem 0.55rem !important;
+  padding: 0.75rem 0.45rem !important;
+  background: rgba(253, 252, 250, 0.94) !important;
 }
 
 body.site-coastal.site-oax-craft .feat-stat__num {
@@ -758,11 +794,21 @@ body.site-coastal.site-oax-craft .fav-cards {
 }
 
 body.site-coastal.site-oax-craft .fav-card {
-  min-height: 248px !important;
+  min-height: 210px !important;
 }
 
 body.site-coastal.site-oax-craft .fav-card__body {
-  padding: 1.15rem !important;
+  padding: 0.95rem !important;
+}
+
+body.site-coastal.site-oax-craft .fav-card h3 {
+  font-size: clamp(1.1rem, 2.8vw, 1.35rem) !important;
+  margin-bottom: 0.3rem !important;
+}
+
+body.site-coastal.site-oax-craft .fav-card__body p {
+  font-size: 0.82rem !important;
+  line-height: 1.4 !important;
 }
 
 body.site-coastal.site-oax-craft .story-spin-section {
@@ -771,11 +817,44 @@ body.site-coastal.site-oax-craft .story-spin-section {
 }
 
 body.site-coastal.site-oax-craft .story-spin__frame {
-  padding: clamp(0.85rem, 2.5vw, 1.25rem) !important;
+  padding: clamp(0.65rem, 2vw, 0.95rem) !important;
 }
 
 body.site-coastal.site-oax-craft .story-spin__story {
-  gap: 0.65rem !important;
+  gap: 0.5rem !important;
+  padding: clamp(0.75rem, 2vw, 1rem) !important;
+}
+
+/* Roulette — biggest empty-space offender */
+body.site-coastal.site-oax-craft .story-spin__roulette-stage {
+  min-height: clamp(200px, 24vw, 270px) !important;
+  padding: 0.15rem 0.1rem 2.65rem !important;
+  gap: 0.55rem !important;
+}
+
+body.site-coastal.site-oax-craft .fiesta-card--roulette-hero {
+  padding: clamp(0.65rem, 1.8vw, 0.9rem) !important;
+}
+
+body.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__wheel-wrap {
+  transform: scale(0.88);
+  transform-origin: center;
+}
+
+body.site-coastal.site-oax-craft .story-spin__roulette-label {
+  bottom: 0.55rem !important;
+  left: 0.55rem !important;
+  padding: 0.4rem 0.55rem !important;
+}
+
+body.site-coastal.site-oax-craft .story-spin__roulette-teaser {
+  font-size: 0.74rem !important;
+  line-height: 1.35 !important;
+}
+
+body.site-coastal.site-oax-craft .story-spin__story-head h2 {
+  font-size: clamp(1.35rem, 2.6vw, 1.7rem) !important;
+  margin-bottom: 0.3rem !important;
 }
 
 body.site-coastal.site-oax-craft .story-spin__story-head {
@@ -803,13 +882,38 @@ body.site-coastal.site-oax-craft .reviews-stats {
   margin: 0.35rem auto 0.55rem !important;
 }
 
+body.site-coastal.site-oax-craft .reviews-section__inner {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 body.site-coastal.site-oax-craft .reviews-grid {
-  margin-bottom: 1rem !important;
-  gap: 0.75rem !important;
+  margin-bottom: 0.65rem !important;
+  gap: 0.55rem !important;
+}
+
+body.site-coastal.site-oax-craft .review-card {
+  padding: 0.85rem 0.9rem 0.75rem !important;
+}
+
+body.site-coastal.site-oax-craft .review-card__quote {
+  font-size: 0.92rem !important;
+  line-height: 1.55 !important;
+}
+
+body.site-coastal.site-oax-craft .reviews-stats {
+  margin: 0.25rem auto 0.4rem !important;
+  gap: 0.35rem 0.65rem !important;
+}
+
+body.site-coastal.site-oax-craft .reviews-stat {
+  padding: 0.4rem 0.65rem !important;
+  font-size: 0.78rem !important;
 }
 
 body.site-coastal.site-oax-craft .reviews-cta {
-  margin-top: 0.65rem !important;
+  margin-top: 0.45rem !important;
+  gap: 0.4rem !important;
 }
 
 body.site-coastal.site-oax-craft .feat-share-row {
@@ -824,15 +928,34 @@ body.site-coastal.site-oax-craft .visit-grid {
 }
 
 body.site-coastal.site-oax-craft h2 {
-  margin-bottom: 0.45rem !important;
+  margin-bottom: 0.35rem !important;
+  font-size: clamp(1.45rem, 4vw, 2rem) !important;
 }
 
 body.site-coastal.site-oax-craft .section-lead {
-  margin-bottom: 0.55rem !important;
+  margin-bottom: 0.4rem !important;
+  font-size: 0.92rem !important;
+  line-height: 1.5 !important;
 }
 
 body.site-coastal.site-oax-craft .section-tag {
-  margin-bottom: 0.35rem !important;
+  margin-bottom: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  font-size: 0.62rem !important;
+}
+
+body.site-coastal.site-oax-craft .visit-card__body {
+  gap: 0.55rem !important;
+}
+
+body.site-coastal.site-oax-craft .map-wrap__frame {
+  min-height: 220px !important;
+  height: clamp(200px, 32vw, 260px) !important;
+}
+
+body.site-coastal.site-oax-craft .footer::before,
+body.site-coastal.site-oax-craft footer.footer--slim::before {
+  height: 8px !important;
 }
 
 /* ── Menu page compact + Oaxacan banner tabs ── */
@@ -872,8 +995,34 @@ body.menu-page.site-coastal.site-oax-craft .menu-view-tab {
 }
 
 body.menu-page.site-coastal.site-oax-craft .order-strip {
-  padding: 0.75rem 0.85rem !important;
-  margin-bottom: 0.45rem !important;
+  margin: 0 calc(-1 * var(--compact-section-x)) 0.35rem !important;
+  padding: 0.65rem var(--compact-section-x) !important;
+  border-radius: 0 !important;
+  gap: 0.55rem 1rem !important;
+  background:
+    var(--oax-flores),
+    linear-gradient(
+      90deg,
+      var(--coast-sea) 0%,
+      var(--oax-red-deep) 30%,
+      var(--oax-red) 55%,
+      var(--oax-gold) 82%,
+      var(--oax-gold-light) 100%
+    ) !important;
+  background-size: var(--banner-flores-size), 100% 100% !important;
+  border-bottom: 4px solid rgba(232, 200, 120, 0.58) !important;
+  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.1) !important;
+  color: #fff !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .order-strip h2,
+body.menu-page.site-coastal.site-oax-craft .order-strip p,
+body.menu-page.site-coastal.site-oax-craft .order-strip__hint {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .order-strip__badge {
+  color: var(--oax-gold-pale) !important;
 }
 
 body.menu-page.site-coastal.site-oax-craft .order-strip h2 {
@@ -922,49 +1071,57 @@ body.site-coastal.site-oax-craft .footer-inner {
 }
 
 @media (max-width: 768px) {
-  body.site-coastal.site-oax-craft > main::before,
-  body.site-coastal.site-oax-craft > main::after,
-  body.site-coastal.site-oax-craft #main::before,
-  body.site-coastal.site-oax-craft #main::after {
-    display: none !important;
+  body.site-coastal.site-oax-craft {
+    --banner-craft-serape: 12px;
+    --banner-craft-zigzag: 10px;
   }
 
   body.site-coastal.site-oax-craft .hero,
   body.site-coastal.site-oax-craft .hero.hero--vibe {
-    min-height: min(64dvh, 500px) !important;
+    min-height: min(56dvh, 420px) !important;
   }
 
   body.site-coastal.site-oax-craft.has-topbar .hero {
-    padding-top: calc(var(--header-h) + 0.75rem) !important;
+    padding-top: calc(var(--header-h) + 0.55rem) !important;
   }
 
   body.site-coastal.site-oax-craft .feat-ribbon__inner {
     min-height: 0;
-    padding: 0.65rem 0.75rem !important;
+    padding: 0.7rem 0.75rem !important;
   }
 
   body.site-coastal.site-oax-craft .feat-stat {
-    padding: 0.7rem 0.35rem !important;
+    padding: 0.55rem 0.3rem !important;
+  }
+
+  body.site-coastal.site-oax-craft .feat-stat__num {
+    font-size: clamp(1.4rem, 3.8vw, 1.85rem) !important;
   }
 
   body.site-coastal.site-oax-craft .fav-card {
-    min-height: 220px !important;
+    min-height: 185px !important;
   }
 
-  body.site-coastal.site-oax-craft .oax-craft-band__serape {
-    height: 10px !important;
+  body.site-coastal.site-oax-craft .story-spin__frame {
+    grid-template-columns: 1fr !important;
   }
 
-  body.site-coastal.site-oax-craft .oax-craft-band__zigzag {
-    height: 8px !important;
+  body.site-coastal.site-oax-craft .story-spin__roulette-stage {
+    min-height: clamp(180px, 52vw, 240px) !important;
+    padding-bottom: 2.35rem !important;
+    flex-direction: column !important;
+  }
+
+  body.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__wheel-wrap {
+    transform: scale(0.78);
   }
 
   body.site-coastal.site-oax-craft .section,
   body.site-coastal.site-oax-craft .favorites-showcase,
   body.site-coastal.site-oax-craft .reviews-section,
   body.site-coastal.site-oax-craft .story-spin-section {
-    padding-top: 0.85rem !important;
-    padding-bottom: 0.85rem !important;
+    padding-top: 0.7rem !important;
+    padding-bottom: 0.7rem !important;
   }
 
   body.menu-page.site-coastal.site-oax-craft .menu-view-tabs {
@@ -972,4 +1129,37 @@ body.site-coastal.site-oax-craft .footer-inner {
     margin-right: calc(-1 * var(--compact-section-x)) !important;
     padding: 0.5rem var(--compact-section-x) !important;
   }
+
+  body.menu-page.site-coastal.site-oax-craft .order-strip {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+}
+
+/* Google Sites embed — compact must still win */
+body.gsites-embed.site-coastal.site-oax-craft .hero {
+  min-height: min(52dvh, 380px) !important;
+  padding: calc(var(--header-h) + 0.65rem) var(--compact-section-x) 1.25rem !important;
+}
+
+body.gsites-embed.site-coastal.site-oax-craft .section,
+body.gsites-embed.site-coastal.site-oax-craft .favorites-showcase,
+body.gsites-embed.site-coastal.site-oax-craft .reviews-section,
+body.gsites-embed.site-coastal.site-oax-craft .story-spin-section {
+  padding-top: 0.65rem !important;
+  padding-bottom: 0.65rem !important;
+}
+
+body.gsites-embed.site-coastal.site-oax-craft .story-spin__roulette-stage {
+  min-height: clamp(170px, 48vw, 220px) !important;
+}
+
+body.gsites-embed.site-coastal.site-oax-craft.menu-page .menu-online-shell {
+  padding-top: 0.3rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+body.gsites-embed.site-coastal.site-oax-craft.menu-page .footer {
+  margin-top: 0 !important;
+  padding-top: 1rem !important;
 }
