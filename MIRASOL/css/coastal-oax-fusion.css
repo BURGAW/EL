@@ -1647,21 +1647,9 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
     --snap-h: calc(var(--snap-w) + 21px);
   }
 
-  body.site-coastal.site-oax-craft .hero-floater:nth-child(1),
-  body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
-    display: none !important;
-  }
-
-  body.site-coastal.site-oax-craft .hero-floater:nth-child(3) {
-    top: auto;
-    bottom: 15%;
-    left: 4%;
-  }
-
-  body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
-    top: auto;
-    bottom: 15%;
-    right: 4%;
+  body.site-coastal.site-oax-craft .hero-floater--snap {
+    --snap-w: clamp(44px, 12vw, 58px);
+    --snap-stack-top: 15%;
   }
 }
 
@@ -1794,9 +1782,9 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
 }
 
 @media (max-width: 600px) {
-  body.site-coastal.site-oax-craft .hero-floater:nth-child(1),
-  body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
-    display: none !important;
+  body.site-coastal.site-oax-craft .hero-floater--snap {
+    --snap-w: clamp(46px, 12.5vw, 62px);
+    --snap-stack-top: 16%;
   }
 
   body.site-coastal.site-oax-craft .hero-content {
@@ -1812,10 +1800,12 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
     padding-right: clamp(3rem, 16vw, 3.5rem) !important;
   }
 
+  body.site-coastal.site-oax-craft .hero-floater:nth-child(1),
+  body.site-coastal.site-oax-craft .hero-floater:nth-child(2),
   body.site-coastal.site-oax-craft .hero-floater:nth-child(3),
   body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
-    bottom: 5% !important;
-    --snap-w: clamp(42px, 11.5vw, 54px) !important;
+    display: block !important;
+    bottom: auto !important;
   }
 
   body.site-coastal.site-oax-craft .google-review-tab {
