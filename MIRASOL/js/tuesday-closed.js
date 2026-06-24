@@ -3,7 +3,7 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const MODAL_VERSION = '18';
+  const MODAL_VERSION = '19';
   const TUESDAY_POPUP_KEY = `elmirasol-tuesday-v${MODAL_VERSION}`;
   function isPreviewMode() {
     try {
@@ -101,16 +101,17 @@
       `<div class="tuesday-closed-modal__logo-stage" aria-hidden="true">` +
       `<div class="tuesday-closed-modal__logo-ring">` +
       `<div class="tuesday-closed-modal__logo-wrap">` +
-      `<img src="${escapeHtml(logo)}" alt="${escapeHtml(brandName)}" class="tuesday-closed-modal__logo" width="72" height="72">` +
+      `<img src="${escapeHtml(logo)}" alt="${escapeHtml(brandName)}" class="tuesday-closed-modal__logo" width="56" height="56">` +
       `</div></div></div>` +
-      `<h2 class="tuesday-closed-modal__title" id="tuesday-closed-title">Closed on Tuesdays</h2>` +
+      `<p class="tuesday-closed-modal__eyebrow">Tuesday</p>` +
+      `<h2 class="tuesday-closed-modal__title" id="tuesday-closed-title">We&rsquo;re closed today</h2>` +
       `</header>` +
-      `<div class="tuesday-closed-modal__trim" aria-hidden="true"></div>` +
+      `<div class="tuesday-closed-modal__rule" aria-hidden="true"><span class="tuesday-closed-modal__rule-gem"></span></div>` +
       `<div class="tuesday-closed-modal__body">` +
       `<p class="tuesday-closed-modal__lead">We reopen <strong>Wednesday at 8&nbsp;AM</strong>.</p>` +
-      `<div class="tuesday-closed-modal__info">` +
-      `<p class="tuesday-closed-modal__info-line">Mon, Wed&ndash;Sun 8&ndash;9&nbsp;PM &middot; Fri &amp; Sat until 9:30</p>` +
-      `<p class="tuesday-closed-modal__info-line">${escapeHtml(address)}</p>` +
+      `<div class="tuesday-closed-modal__details">` +
+      `<p class="tuesday-closed-modal__detail">Mon, Wed&ndash;Sun 8&ndash;9&nbsp;PM &middot; Fri &amp; Sat until 9:30</p>` +
+      `<p class="tuesday-closed-modal__detail">${escapeHtml(address)}</p>` +
       `<a class="tuesday-closed-modal__info-link" href="tel:${escapeHtml(phoneTel)}">${escapeHtml(phone)}</a>` +
       `</div>` +
       `<div class="tuesday-closed-modal__actions">` +
