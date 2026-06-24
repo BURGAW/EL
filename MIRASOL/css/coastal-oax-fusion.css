@@ -108,7 +108,16 @@ body.site-coastal.site-oax-craft .nav-menu-cta,
 body.site-coastal.site-oax-craft .nav-menu-cta:hover,
 body.site-coastal.site-oax-craft .nav-menu-cta.active {
   background: linear-gradient(135deg, var(--oax-red-deep), var(--oax-red) 55%, var(--oax-gold)) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: 0 1px 2px rgba(15, 28, 46, 0.35) !important;
   box-shadow: 0 4px 16px rgba(200, 16, 46, 0.28) !important;
+}
+
+body.site-coastal.site-oax-craft .header .nav a.nav-menu-cta:hover,
+body.site-coastal.site-oax-craft .header .nav a.nav-menu-cta.active {
+  background: linear-gradient(135deg, var(--oax-red-deep), var(--oax-red) 55%, var(--oax-gold)) !important;
+  color: #fff !important;
 }
 
 /* ── Craft bands: slightly richer editorial presence ── */
@@ -431,9 +440,10 @@ body.menu-page.site-coastal.site-oax-craft .menu-compact-bar--online {
 }
 
 body.menu-page.site-coastal.site-oax-craft .menu-view-tab.is-active {
-  background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
-  border-color: var(--oax-gold) !important;
-  box-shadow: 0 4px 14px rgba(200, 16, 46, 0.28) !important;
+  background: linear-gradient(135deg, var(--coast-sea), var(--coast-sea-mid)) !important;
+  border-color: var(--coast-sea-mid) !important;
+  color: #fff !important;
+  box-shadow: 0 3px 10px rgba(0, 119, 182, 0.22) !important;
 }
 
 body.menu-page.site-coastal.site-oax-craft .menu-online-tab.is-active {
@@ -964,34 +974,38 @@ body.menu-page.site-coastal.site-oax-craft .menu-online-shell {
 }
 
 body.menu-page.site-coastal.site-oax-craft .menu-view-tabs {
-  margin: 0 calc(-1 * var(--compact-section-x)) 0.4rem !important;
-  padding: 0.55rem var(--compact-section-x) !important;
-  gap: 0.4rem !important;
-  background:
-    var(--oax-flores),
-    linear-gradient(
-      90deg,
-      var(--coast-sea) 0%,
-      var(--oax-red-deep) 28%,
-      var(--oax-red) 52%,
-      var(--oax-gold) 80%,
-      var(--oax-gold-light) 100%
-    ) !important;
-  background-size: var(--banner-flores-size), 100% 100% !important;
-  border-bottom: 4px solid rgba(232, 200, 120, 0.58) !important;
-  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.12) !important;
+  margin: 0 0 0.4rem !important;
+  padding: 0.4rem !important;
+  gap: 0.35rem !important;
+  background: rgba(253, 252, 250, 0.98) !important;
+  border: 1px solid rgba(212, 168, 75, 0.32) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 2px 10px rgba(0, 119, 182, 0.06) !important;
 }
 
 body.menu-page.site-coastal.site-oax-craft .menu-view-tab {
-  color: rgba(255, 255, 255, 0.92) !important;
-  border-color: rgba(255, 255, 255, 0.28) !important;
-  background: rgba(15, 28, 46, 0.22) !important;
-}
-
-body.menu-page.site-coastal.site-oax-craft .menu-view-tab {
+  color: var(--ink-soft, #3d4f63) !important;
+  border: 1px solid rgba(0, 119, 182, 0.14) !important;
+  background: #fff !important;
   padding: 0.62rem 0.85rem !important;
   font-size: 0.82rem !important;
+  font-weight: 700 !important;
   min-height: 2.65rem;
+}
+
+body.menu-page.site-coastal.site-oax-craft .menu-view-tab:hover {
+  color: var(--coast-sea) !important;
+  background: var(--coast-foam) !important;
+  border-color: rgba(0, 150, 199, 0.28) !important;
+}
+
+body.menu-page.site-coastal.site-oax-craft .menu-view-tab.is-active {
+  background: linear-gradient(135deg, var(--coast-sea), var(--coast-sea-mid)) !important;
+  border-color: var(--coast-sea-mid) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: 0 1px 2px rgba(15, 28, 46, 0.3) !important;
+  box-shadow: 0 3px 10px rgba(0, 119, 182, 0.22) !important;
 }
 
 body.menu-page.site-coastal.site-oax-craft .order-strip {
@@ -1125,9 +1139,14 @@ body.site-coastal.site-oax-craft .footer-inner {
   }
 
   body.menu-page.site-coastal.site-oax-craft .menu-view-tabs {
-    margin-left: calc(-1 * var(--compact-section-x)) !important;
-    margin-right: calc(-1 * var(--compact-section-x)) !important;
-    padding: 0.5rem var(--compact-section-x) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0.35rem !important;
+  }
+
+  body.menu-page.site-coastal.site-oax-craft .menu-view-tab {
+    font-size: 0.76rem !important;
+    padding: 0.55rem 0.65rem !important;
   }
 
   body.menu-page.site-coastal.site-oax-craft .order-strip {
