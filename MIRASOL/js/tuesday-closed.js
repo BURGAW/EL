@@ -3,7 +3,7 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const MODAL_VERSION = '27';
+  const MODAL_VERSION = '28';
   const TUESDAY_POPUP_KEY = `elmirasol-tuesday-v${MODAL_VERSION}`;
   function isPreviewMode() {
     try {
@@ -108,43 +108,26 @@
       `<div class="tuesday-closed-modal__logo-stage" aria-hidden="true">` +
       `<div class="tuesday-closed-modal__logo-halo">` +
       `<div class="tuesday-closed-modal__logo-frame">` +
-      `<img src="${escapeHtml(logo)}" alt="${escapeHtml(brandName)}" class="tuesday-closed-modal__logo" width="86" height="50">` +
+      `<img src="${escapeHtml(logo)}" alt="${escapeHtml(brandName)}" class="tuesday-closed-modal__logo" width="72" height="42">` +
       `</div></div></div>` +
       `<p class="tuesday-closed-modal__eyebrow">` +
       `<span class="tuesday-closed-modal__eyebrow-dot" aria-hidden="true"></span>Tuesday` +
       `<span class="tuesday-closed-modal__eyebrow-dot" aria-hidden="true"></span>` +
       `</p>` +
       `<h2 class="tuesday-closed-modal__title" id="tuesday-closed-title">We&rsquo;re closed <em>today</em></h2>` +
-      `<p class="tuesday-closed-modal__subtitle">Weekly rest day</p>` +
       `</header>` +
       `<div class="tuesday-closed-modal__divider" aria-hidden="true">` +
       `<span class="tuesday-closed-modal__divider-star"></span>` +
       `</div>` +
       `<div class="tuesday-closed-modal__body">` +
-      `<p class="tuesday-closed-modal__lead">The kitchen rests on Tuesdays. We&rsquo;ll be ready for you Wednesday.</p>` +
-      `<div class="tuesday-closed-modal__reopen">` +
-      `<span class="tuesday-closed-modal__reopen-label">We reopen</span>` +
-      `<p class="tuesday-closed-modal__reopen-time"><span>Wednesday</span> &middot; 8&nbsp;AM</p>` +
-      `<p class="tuesday-closed-modal__reopen-note">Doors open for pickup &amp; dine-in</p>` +
-      `</div>` +
+      `<p class="tuesday-closed-modal__lead">Kitchen rests on Tuesdays&mdash;back Wednesday.</p>` +
+      `<p class="tuesday-closed-modal__reopen-pill">Back <span>Wednesday</span> &middot; 8&nbsp;AM</p>` +
       `<div class="tuesday-closed-modal__details">` +
-      `<div class="tuesday-closed-modal__details-head">` +
-      `<span class="tuesday-closed-modal__details-title">Visit us</span>` +
-      `</div>` +
-      `<div class="tuesday-closed-modal__detail-row">` +
-      `<span class="tuesday-closed-modal__detail-label">Hours</span>` +
-      `<p class="tuesday-closed-modal__detail-value">Mon, Wed&ndash;Sun 8&ndash;9&nbsp;PM<br>Fri &amp; Sat until 9:30&nbsp;PM</p>` +
-      `</div>` +
-      `<div class="tuesday-closed-modal__detail-row">` +
-      `<span class="tuesday-closed-modal__detail-label">Place</span>` +
-      `<p class="tuesday-closed-modal__detail-value">${escapeHtml(address)}</p>` +
-      `</div>` +
-      `<div class="tuesday-closed-modal__detail-row">` +
-      `<span class="tuesday-closed-modal__detail-label">Call</span>` +
-      `<p class="tuesday-closed-modal__detail-value">` +
+      `<p class="tuesday-closed-modal__detail-line">Mon, Wed&ndash;Sun 8&ndash;9&nbsp;PM &middot; Fri &amp; Sat 9:30</p>` +
+      `<p class="tuesday-closed-modal__detail-line">${escapeHtml(address)}</p>` +
+      `<p class="tuesday-closed-modal__detail-line">` +
       `<a class="tuesday-closed-modal__info-link" href="tel:${escapeHtml(phoneTel)}">${escapeHtml(phone)}</a>` +
-      `</p></div></div>` +
-      `<p class="tuesday-closed-modal__footnote">Closed every Tuesday &middot; Eastern time</p>` +
+      `</p></div>` +
       `<div class="tuesday-closed-modal__actions">` +
       `<button type="button" class="btn btn-primary tuesday-closed-modal__btn tuesday-closed-modal__btn--primary" data-tuesday-close>Got it</button>` +
       `</div></div>` +
