@@ -552,7 +552,7 @@ body.site-coastal .hero--single .hero-rotator {
 }
 
 body.site-coastal .hero--single .hero-rotator__slide {
-  transform: scale(1.06) !important;
+  transform: scale(1) !important;
   transform-origin: center 58% !important;
   transition: none !important;
   background-size: cover !important;
@@ -562,15 +562,15 @@ body.site-coastal .hero--single .hero-rotator__slide {
 
 @media (max-width: 768px) {
   body.site-coastal .hero--single .hero-rotator__slide {
-    transform: scale(1.04) !important;
-    transform-origin: center 62% !important;
-    background-position: center 62% !important;
+    transform: scale(1) !important;
+    transform-origin: center 60% !important;
+    background-position: center 60% !important;
   }
 }
 
 @media (min-width: 1200px) {
   body.site-coastal .hero--single .hero-rotator__slide {
-    transform: scale(1.08) !important;
+    transform: scale(1) !important;
     transform-origin: center 56% !important;
     background-position: center 56% !important;
   }
@@ -1345,4 +1345,38 @@ body.site-coastal.site-oax-craft:not(.menu-page) .section-tag {
   color: var(--oax-red-deep) !important;
   background:
     linear-gradient(90deg, transparent, rgba(200, 16, 46, 0.35), transparent) bottom / 72% 1px no-repeat !important;
+}
+
+/* Home hero — taller frame to reveal more storefront */
+body.site-coastal.site-oax-craft:not(.menu-page) .hero,
+body.site-coastal.site-oax-craft:not(.menu-page) .hero.hero--vibe {
+  min-height: min(78dvh, 720px) !important;
+  padding-bottom: 1.75rem !important;
+}
+
+body.site-coastal.site-oax-craft:not(.menu-page).has-topbar .hero {
+  padding-top: calc(var(--header-h) + 1rem) !important;
+}
+
+@media (max-width: 768px) {
+  body.site-coastal.site-oax-craft:not(.menu-page) .hero,
+  body.site-coastal.site-oax-craft:not(.menu-page) .hero.hero--vibe {
+    min-height: min(70dvh, 580px) !important;
+  }
+
+  body.site-coastal.site-oax-craft:not(.menu-page).has-topbar .hero {
+    padding-top: calc(var(--header-h) + 0.65rem) !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.site-coastal.site-oax-craft:not(.menu-page) .hero,
+  body.site-coastal.site-oax-craft:not(.menu-page) .hero.hero--vibe {
+    min-height: min(84dvh, 860px) !important;
+  }
+}
+
+body.gsites-embed.site-coastal.site-oax-craft:not(.menu-page) .hero {
+  min-height: min(72dvh, 640px) !important;
+  padding: calc(var(--header-h) + 0.85rem) var(--compact-section-x) 1.5rem !important;
 }
