@@ -1537,6 +1537,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   body.site-coastal.site-oax-craft:not(.menu-page) .hero-floaters {
     --snap-pull-x: min(15cm, 22vw);
     --snap-pull-y: min(15cm, 18vh);
+    --snap-left-bottom-drop: min(8cm, 12vh);
     position: absolute !important;
     inset: 0 !important;
     width: 100% !important;
@@ -1575,7 +1576,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
     grid-row: 3;
     align-self: start;
     justify-self: start;
-    transform: rotate(-2deg) translate(var(--snap-pull-x), calc(-1 * var(--snap-pull-y))) !important;
+    transform: rotate(-2deg) translate(var(--snap-pull-x), calc(-1 * var(--snap-pull-y) + var(--snap-left-bottom-drop))) !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(4) {
