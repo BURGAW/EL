@@ -1484,7 +1484,9 @@ body.site-coastal.site-oax-craft .hero-floater {
 }
 
 body.site-coastal.site-oax-craft .hero-floater--snap {
-  --snap-w: clamp(48px, 3.8vw, 68px);
+  --snap-w: clamp(40px, 2.6vw, 52px);
+  width: var(--snap-w) !important;
+  max-width: 52px;
   height: auto !important;
   animation: none !important;
 }
@@ -1498,7 +1500,7 @@ body.site-coastal.site-oax-craft .hero-snap {
 body.site-coastal.site-oax-craft .hero-snap__paper {
   overflow: visible;
   border-color: #ddd5c8;
-  padding: 4px 4px 10px;
+  padding: 3px 3px 8px;
 }
 
 body.site-coastal.site-oax-craft .hero-snap__photo {
@@ -1511,7 +1513,7 @@ body.site-coastal.site-oax-craft .hero-snap__paper img {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  transform: scale(1.14);
+  transform: scale(1.1);
   transform-origin: center center;
   background: #141210;
 }
@@ -1546,61 +1548,37 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: clamp(52px, 3.6vw, 72px);
+    --snap-w: 50px;
+    width: 50px !important;
+    max-width: 50px;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(1) {
-    top: 22%;
-    left: clamp(0.9rem, 4vw, 3.25rem);
-    transform: rotate(-5deg) !important;
+    top: 19%;
+    left: clamp(1rem, 6.5vw, 6rem);
+    transform: rotate(-4deg) !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(2) {
-    top: 25%;
-    right: clamp(0.9rem, 4vw, 3.25rem);
+    top: 27%;
+    right: clamp(1rem, 6.5vw, 6rem);
+    transform: rotate(3deg) !important;
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(3) {
+    bottom: 13%;
+    left: clamp(1.25rem, 7vw, 6.5rem);
+    transform: rotate(-2deg) !important;
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(4) {
+    bottom: 21%;
+    right: clamp(1.25rem, 7vw, 6.5rem);
     transform: rotate(4deg) !important;
   }
 
-  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(3) {
-    bottom: 16%;
-    left: clamp(1.1rem, 4.6vw, 3.75rem);
-    transform: rotate(-3deg) !important;
-  }
-
-  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(4) {
-    bottom: 19%;
-    right: clamp(1.1rem, 4.6vw, 3.75rem);
-    transform: rotate(5deg) !important;
-  }
-
   body.site-coastal.site-oax-craft .hero-snap__paper {
-    padding: 5px 5px 12px;
-  }
-}
-
-@media (min-width: 1280px) {
-  body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: clamp(56px, 3.4vw, 76px);
-  }
-
-  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(1) {
-    top: 23%;
-    left: clamp(1.25rem, 5vw, 4.5rem);
-  }
-
-  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(2) {
-    top: 26%;
-    right: clamp(1.25rem, 5vw, 4.5rem);
-  }
-
-  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(3) {
-    bottom: 15%;
-    left: clamp(1.5rem, 5.5vw, 5rem);
-  }
-
-  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(4) {
-    bottom: 18%;
-    right: clamp(1.5rem, 5.5vw, 5rem);
+    padding: 3px 3px 9px;
   }
 }
 
@@ -1752,22 +1730,24 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   body.site-coastal.site-oax-craft .hero-floaters {
     position: relative !important;
     inset: auto !important;
-    width: 100% !important;
-    max-width: 20rem !important;
+    width: min(100%, 17.5rem) !important;
+    max-width: 17.5rem !important;
     height: auto !important;
-    margin: 0.45rem auto 0.5rem !important;
+    margin: 0.4rem auto 0.45rem !important;
     display: flex !important;
     flex-direction: row !important;
-    justify-content: center !important;
+    justify-content: space-between !important;
     align-items: flex-end !important;
-    gap: clamp(0.55rem, 3.2vw, 0.9rem) !important;
+    gap: clamp(0.5rem, 3.5vw, 0.85rem) !important;
     overflow: visible !important;
     pointer-events: none;
     z-index: 4;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: clamp(40px, 12.5vw, 52px);
+    --snap-w: clamp(34px, 10vw, 42px);
+    width: var(--snap-w) !important;
+    max-width: 42px;
     --snap-h: auto;
     animation: none !important;
   }
@@ -1803,11 +1783,11 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 
   body.site-coastal.site-oax-craft .hero-snap__paper {
-    padding: 3px 3px 9px;
+    padding: 2px 2px 7px;
   }
 
   body.site-coastal.site-oax-craft .hero-snap__paper img {
-    transform: scale(1.08);
+    transform: scale(1.06);
   }
 
   body.menu-page.site-coastal.site-oax-craft .menu-view-tabs {
@@ -1884,13 +1864,16 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
   }
 
   body.site-coastal.site-oax-craft .hero-floaters {
-    gap: 0.45rem !important;
+    width: min(100%, 16rem) !important;
+    gap: 0.4rem !important;
     max-width: 100% !important;
-    padding: 0 0.2rem !important;
+    padding: 0 0.15rem !important;
   }
 
   body.site-coastal.site-oax-craft .hero-floater--snap {
-    --snap-w: clamp(36px, 11.5vw, 46px) !important;
+    --snap-w: clamp(30px, 9vw, 38px) !important;
+    width: var(--snap-w) !important;
+    max-width: 38px !important;
   }
 
   body.site-coastal.site-oax-craft .google-review-tab {
