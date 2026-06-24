@@ -28,7 +28,9 @@
         `<div class="hero-floater hero-floater--snap" style="--snap-i:${i}">` +
         `<article class="hero-snap">` +
         `<div class="hero-snap__paper">` +
+        `<div class="hero-snap__photo">` +
         `<img src="${src}" alt="" loading="lazy" width="140" height="140">` +
+        `</div>` +
         `</div>` +
         `<span class="hero-snap__shadow" aria-hidden="true"></span>` +
         `</article>` +
