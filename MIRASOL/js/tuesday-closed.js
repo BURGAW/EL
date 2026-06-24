@@ -3,7 +3,7 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const MODAL_VERSION = '16';
+  const MODAL_VERSION = '17';
   const TUESDAY_POPUP_KEY = `elmirasol-tuesday-v${MODAL_VERSION}`;
   function isPreviewMode() {
     try {
@@ -99,7 +99,7 @@
       `<div class="tuesday-closed-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="tuesday-closed-title">` +
       `<header class="tuesday-closed-modal__hero">` +
       `<span class="tuesday-closed-modal__badge">` +
-      `<span class="tuesday-closed-modal__badge-dot" aria-hidden="true"></span>` +
+      `<span class="tuesday-closed-modal__badge-weave" aria-hidden="true"></span>` +
       `Closed today` +
       `</span>` +
       `<div class="tuesday-closed-modal__logo-stage" aria-hidden="true">` +

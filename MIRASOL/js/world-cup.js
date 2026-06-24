@@ -66,6 +66,10 @@
     return copy().menuHint;
   }
 
+  function oaxacanWeaveHosts() {
+    return '<span class="wc-oax-weave" aria-hidden="true" title="Oaxacan textile"></span>';
+  }
+
   function miniFlag(code) {
     const svg = FLAGS[code];
     if (!svg) return '';
@@ -80,7 +84,6 @@
     if (document.body.classList.contains('menu-page')) return;
     if (document.getElementById('wc-promo')) return;
     const c = cfg();
-    const hostFlags = (c.hostFlags || ['mx', 'us', 'ca']).map(miniFlag).join('');
     const text = copy();
 
     const el = document.createElement('div');
@@ -90,7 +93,7 @@
     el.innerHTML =
       `<span class="wc-promo__ball" aria-hidden="true">⚽</span>` +
       `<span class="wc-promo__text">${text.promo}</span>` +
-      `<span class="wc-promo__hosts" aria-label="${text.promoSub}">${hostFlags}</span>`;
+      `<span class="wc-promo__hosts" aria-label="${text.promoSub}">${oaxacanWeaveHosts()}</span>`;
 
     const header = document.querySelector('.header');
     if (header) header.after(el);
@@ -151,14 +154,12 @@
 
   function refreshCopy() {
     const text = copy();
-    const hostFlags = (cfg().hostFlags || ['mx', 'us', 'ca']).map(miniFlag).join('');
-
     const promo = document.getElementById('wc-promo');
     if (promo) {
       promo.innerHTML =
         `<span class="wc-promo__ball" aria-hidden="true">⚽</span>` +
         `<span class="wc-promo__text">${text.promo}</span>` +
-        `<span class="wc-promo__hosts" aria-label="${text.promoSub}">${hostFlags}</span>`;
+        `<span class="wc-promo__hosts" aria-label="${text.promoSub}">${oaxacanWeaveHosts()}</span>`;
     }
 
     const ribbon = document.querySelector('[data-feat-special].wc-ribbon-special');
