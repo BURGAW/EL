@@ -1480,6 +1480,8 @@ body.site-coastal.site-oax-craft .hero-floater--snap {
   --snap-w: clamp(108px, 14vw, 152px);
   --snap-h: calc(var(--snap-w) + 34px);
   --snap-stack-top: 28%;
+  --snap-stack-gap: 5in;
+  --snap-edge-x: 2.5in;
   height: auto !important;
 }
 
@@ -1507,7 +1509,7 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
   top: var(--snap-stack-top);
   right: auto;
   bottom: auto;
-  left: 5%;
+  left: var(--snap-edge-x);
   z-index: 1;
 }
 
@@ -1515,23 +1517,23 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
   top: var(--snap-stack-top);
   left: auto;
   bottom: auto;
-  right: 5%;
+  right: var(--snap-edge-x);
   z-index: 1;
 }
 
 body.site-coastal.site-oax-craft .hero-floater:nth-child(3) {
-  top: calc(var(--snap-stack-top) + var(--snap-h));
+  top: calc(var(--snap-stack-top) + var(--snap-h) + var(--snap-stack-gap));
   right: auto;
   bottom: auto;
-  left: 5.5%;
+  left: calc(var(--snap-edge-x) + 0.35in);
   z-index: 2;
 }
 
 body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
-  top: calc(var(--snap-stack-top) + var(--snap-h));
+  top: calc(var(--snap-stack-top) + var(--snap-h) + var(--snap-stack-gap));
   left: auto;
   bottom: auto;
-  right: 5.5%;
+  right: calc(var(--snap-edge-x) + 0.35in);
   z-index: 2;
 }
 
