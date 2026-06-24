@@ -1460,16 +1460,11 @@ body.gsites-embed.site-coastal.site-oax-craft:not(.menu-page) .hero {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   Hero polaroids — two per side, stacked, fully visible
+   Hero polaroids — four separate corners (desktop), row (mobile)
    ═══════════════════════════════════════════════════════════════ */
 
 body.site-coastal.site-oax-craft:not(.menu-page) .hero {
   overflow: visible !important;
-}
-
-body.site-coastal.site-oax-craft:not(.menu-page) .hero-content {
-  position: static !important;
-  z-index: 4;
 }
 
 body.site-coastal.site-oax-craft .hero-floaters {
@@ -1477,7 +1472,7 @@ body.site-coastal.site-oax-craft .hero-floaters {
 }
 
 body.site-coastal.site-oax-craft .hero-floater--snap {
-  --snap-w: clamp(108px, 14vw, 152px);
+  --snap-w: clamp(96px, 11vw, 132px);
   height: auto !important;
 }
 
@@ -1501,58 +1496,77 @@ body.site-coastal.site-oax-craft .hero-snap__paper img {
   background: #141210;
 }
 
-/* Desktop — four corners, each polaroid separate */
-body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
-  top: 14%;
-  right: auto;
-  bottom: auto;
-  left: 2%;
-  z-index: 1;
-}
+@media (min-width: 769px) {
+  body.site-coastal.site-oax-craft .hero-floaters {
+    position: absolute !important;
+    inset: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    display: block !important;
+    pointer-events: none;
+    z-index: 3;
+  }
 
-body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
-  top: 12%;
-  left: auto;
-  bottom: auto;
-  right: 2%;
-  z-index: 1;
-}
+  body.site-coastal.site-oax-craft .hero-floater--snap {
+    --snap-w: clamp(100px, 10.5vw, 128px);
+    animation: none !important;
+  }
 
-body.site-coastal.site-oax-craft .hero-floater:nth-child(3) {
-  top: auto;
-  right: auto;
-  bottom: 16%;
-  left: 2%;
-  z-index: 1;
-}
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(1) { --snap-tilt: -3deg; }
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(2) { --snap-tilt: 3deg; }
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(3) { --snap-tilt: -2deg; }
+  body.site-coastal.site-oax-craft .hero-floater--snap:nth-child(4) { --snap-tilt: 2deg; }
 
-body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
-  top: auto;
-  left: auto;
-  bottom: 14%;
-  right: 2%;
-  z-index: 1;
+  body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
+    top: 11%;
+    right: auto;
+    bottom: auto;
+    left: 1.25%;
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
+    top: 9%;
+    left: auto;
+    bottom: auto;
+    right: 1.25%;
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater:nth-child(3) {
+    top: auto;
+    right: auto;
+    bottom: 13%;
+    left: 1.25%;
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
+    top: auto;
+    left: auto;
+    bottom: 11%;
+    right: 1.25%;
+  }
 }
 
 @media (min-width: 1200px) {
   body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
-    top: 12%;
-    left: 1.5%;
+    top: 10%;
+    left: 1%;
   }
 
   body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
-    top: 10%;
-    right: 1.5%;
+    top: 8%;
+    right: 1%;
   }
 
   body.site-coastal.site-oax-craft .hero-floater:nth-child(3) {
-    bottom: 18%;
-    left: 1.5%;
+    bottom: 14%;
+    left: 1%;
   }
 
   body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
-    bottom: 16%;
-    right: 1.5%;
+    bottom: 12%;
+    right: 1%;
   }
 }
 
@@ -1687,32 +1701,57 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
   }
 
   /* Polaroids — 4 in a row under El Mirasol */
-  body.site-coastal.site-oax-craft:not(.menu-page) .hero-content {
+  body.site-coastal.site-oax-craft:not(.menu-page) .hero {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+  }
+
+  body.site-coastal.site-oax-craft:not(.menu-page) .hero-content {
+    display: contents !important;
+  }
+
+  body.site-coastal.site-oax-craft:not(.menu-page) .hero-eyebrow {
+    order: 1;
     text-align: center !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    width: 100% !important;
+    width: 100%;
+    padding: 0 1rem;
   }
 
   body.site-coastal.site-oax-craft:not(.menu-page) .hero h1 {
+    order: 2;
     margin-bottom: 0 !important;
+    text-align: center !important;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  body.site-coastal.site-oax-craft:not(.menu-page) .hero-sub {
+    order: 4;
+    text-align: center !important;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  body.site-coastal.site-oax-craft:not(.menu-page) .mobile-quick {
+    order: 5;
+    width: 100%;
+    padding: 0 1rem;
   }
 
   body.site-coastal.site-oax-craft .hero-floaters {
+    order: 3;
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
-    max-width: 22.5rem !important;
+    max-width: 23rem !important;
     height: auto !important;
-    margin: 0.5rem auto 0.35rem !important;
+    margin: 0.55rem auto 0.4rem !important;
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
     align-items: flex-end !important;
-    gap: clamp(0.4rem, 2.4vw, 0.65rem) !important;
+    gap: clamp(0.5rem, 2.8vw, 0.75rem) !important;
     overflow: visible !important;
     pointer-events: none;
     z-index: 4;
