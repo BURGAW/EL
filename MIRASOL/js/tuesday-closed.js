@@ -3,8 +3,8 @@
  */
 (function () {
   const TZ = 'America/New_York';
-  const TUESDAY_POPUP_KEY = 'elmirasol-tuesday-v10';
-  const MODAL_VERSION = '14';
+  const MODAL_VERSION = '15';
+  const TUESDAY_POPUP_KEY = `elmirasol-tuesday-v${MODAL_VERSION}`;
   const isMenu = document.body.classList.contains('menu-page');
 
   function isPreviewMode() {
@@ -54,6 +54,7 @@
   }
 
   function markTuesdayPopupSeen() {
+    if (isPreviewMode()) return;
     try {
       localStorage.setItem(TUESDAY_POPUP_KEY, easternDateKey());
     } catch { /* ignore */ }
@@ -161,18 +162,17 @@
     openTimer = window.setTimeout(() => openTuesdayPopup(modal), 600);
   }
 
-  function boot() {
-    if (!isTuesdayEastern() && !isPreviewMode()) return;
+  function initTuesdayPopup() {
     scheduleTuesdayPopup();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot, { once: true });
+    document.addEventListener('DOMContentLoaded', initTuesdayPopup, { once: true });
   } else {
-    boot();
+    initTuesdayPopup();
   }
 
   window.addEventListener('load', () => {
-    window.setTimeout(scheduleTuesdayPopup, 400);
+    window.setTimeout(scheduleTuesdayPopup, 500);
   }, { once: true });
 })();
