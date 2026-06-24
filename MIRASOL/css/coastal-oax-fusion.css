@@ -1478,9 +1478,6 @@ body.site-coastal.site-oax-craft .hero-floaters {
 
 body.site-coastal.site-oax-craft .hero-floater--snap {
   --snap-w: clamp(108px, 14vw, 152px);
-  --snap-h: calc(var(--snap-w) + 34px);
-  --snap-gap: clamp(1.1rem, 2.8vh, 2rem);
-  --snap-stack-top: 20%;
   height: auto !important;
 }
 
@@ -1504,8 +1501,9 @@ body.site-coastal.site-oax-craft .hero-snap__paper img {
   background: #141210;
 }
 
+/* Desktop — four corners, each polaroid separate */
 body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
-  top: var(--snap-stack-top);
+  top: 14%;
   right: auto;
   bottom: auto;
   left: 2%;
@@ -1513,7 +1511,7 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
 }
 
 body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
-  top: calc(var(--snap-stack-top) - 2%);
+  top: 12%;
   left: auto;
   bottom: auto;
   right: 2%;
@@ -1523,38 +1521,38 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
 body.site-coastal.site-oax-craft .hero-floater:nth-child(3) {
   top: auto;
   right: auto;
-  bottom: 22%;
-  left: 2.5%;
-  z-index: 2;
+  bottom: 16%;
+  left: 2%;
+  z-index: 1;
 }
 
 body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
   top: auto;
   left: auto;
-  bottom: 20%;
-  right: 2.5%;
-  z-index: 2;
+  bottom: 14%;
+  right: 2%;
+  z-index: 1;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1200px) {
   body.site-coastal.site-oax-craft .hero-floater:nth-child(1) {
-    top: 18%;
+    top: 12%;
     left: 1.5%;
   }
 
   body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
-    top: 16%;
+    top: 10%;
     right: 1.5%;
   }
 
   body.site-coastal.site-oax-craft .hero-floater:nth-child(3) {
-    bottom: 24%;
-    left: 2%;
+    bottom: 18%;
+    left: 1.5%;
   }
 
   body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
-    bottom: 22%;
-    right: 2%;
+    bottom: 16%;
+    right: 1.5%;
   }
 }
 
@@ -1714,7 +1712,7 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
     flex-direction: row !important;
     justify-content: center !important;
     align-items: flex-end !important;
-    gap: clamp(0.22rem, 1.6vw, 0.45rem) !important;
+    gap: clamp(0.4rem, 2.4vw, 0.65rem) !important;
     overflow: visible !important;
     pointer-events: none;
     z-index: 4;
