@@ -49,14 +49,15 @@ body.has-topbar .google-review-tab {
 
 @media (max-width: 768px) {
   .google-review-tab {
-    top: calc(var(--header-h, 56px) + var(--safe-top, 0px) + 0.45rem);
+    top: calc(var(--topbar-stack, var(--topbar-h, 40px)) + var(--header-h, 56px) + var(--safe-top, 0px) + 0.45rem);
     right: max(0.5rem, env(safe-area-inset-right, 0px));
     font-size: 0.7rem;
+    min-height: 40px;
   }
 
   body.has-topbar .google-review-tab {
     top: calc(
-      var(--topbar-h, 36px) + var(--header-h, 56px) + var(--safe-top, 0px) + 0.45rem
+      var(--topbar-stack, var(--topbar-h, 40px)) + var(--header-h, 56px) + var(--safe-top, 0px) + 0.45rem
     );
   }
 }

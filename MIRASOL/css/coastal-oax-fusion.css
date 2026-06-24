@@ -1612,12 +1612,6 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
     right: 4.5%;
   }
 
-  body.site-coastal.site-oax-craft .mobile-quick {
-    display: flex !important;
-    gap: 0.45rem !important;
-    margin-top: 0.85rem !important;
-  }
-
   body.site-coastal.site-oax-craft .mobile-quick a {
     min-height: 44px;
     padding: 0.65rem 0.4rem !important;
@@ -1674,5 +1668,162 @@ body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
 @media (max-width: 900px) and (prefers-reduced-motion: reduce) {
   body.site-coastal.site-oax-craft .hero-floater--snap {
     animation: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Mobile UX pass — overlaps, touch targets, chrome stack
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  body.site-coastal.site-oax-craft {
+    --mobile-cta-h: 72px;
+    --topbar-h: 40px;
+    --topbar-stack: 40px;
+  }
+
+  body.site-coastal.site-oax-craft.has-mobile-cta {
+    padding-bottom: calc(var(--mobile-cta-h) + var(--safe-bottom, 0px) + 6px) !important;
+  }
+
+  body.site-coastal.site-oax-craft .social-topbar {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start !important;
+    padding: 0 0.65rem !important;
+    scrollbar-width: none;
+  }
+
+  body.site-coastal.site-oax-craft .social-topbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.site-coastal.site-oax-craft .social-topbar a {
+    min-height: 40px !important;
+    padding: 0 0.6rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-shrink: 0;
+    font-size: 0.72rem !important;
+    line-height: 1.2 !important;
+  }
+
+  body.site-coastal.site-oax-craft .google-review-tab {
+    top: calc(var(--topbar-stack) + var(--header-h) + var(--safe-top, 0px) + 0.35rem) !important;
+    right: calc(3.35rem + env(safe-area-inset-right, 0px)) !important;
+    z-index: 185 !important;
+    padding: 0.4rem 0.45rem !important;
+    min-height: 40px;
+  }
+
+  body.site-coastal.site-oax-craft .google-review-tab__text {
+    display: none;
+  }
+
+  body.site-coastal.site-oax-craft .mobile-quick {
+    display: none !important;
+  }
+
+  body.menu-page.site-coastal.site-oax-craft .menu-view-tabs {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    mask-image: linear-gradient(90deg, transparent, #000 10px, #000 calc(100% - 10px), transparent);
+  }
+
+  body.menu-page.site-coastal.site-oax-craft .menu-view-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.menu-page.site-coastal.site-oax-craft .menu-view-tab {
+    flex: 0 0 auto !important;
+    min-height: 48px !important;
+    height: auto !important;
+    padding: 0.65rem 0.9rem !important;
+    font-size: 0.8rem !important;
+    scroll-snap-align: start;
+    white-space: nowrap !important;
+    line-height: 1.25 !important;
+  }
+
+  body.menu-page.site-coastal.site-oax-craft .order-strip {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 10px !important;
+  }
+
+  body.menu-page.site-coastal.site-oax-craft .menu-online__toolbar {
+    position: sticky !important;
+    top: calc(var(--topbar-stack) + var(--header-h) + var(--safe-top, 0px) - 1px) !important;
+    z-index: 180 !important;
+    background: rgba(253, 252, 250, 0.96) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  body.site-coastal.site-oax-craft .feat-share-row .btn {
+    min-height: 48px !important;
+    font-size: 0.85rem !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  body.site-coastal.site-oax-craft .visit-card__toolbar .btn,
+  body.site-coastal.site-oax-craft .visit-card__social {
+    min-height: 44px !important;
+  }
+
+  body.site-coastal.site-oax-craft .reviews-section__inner {
+    overflow-x: clip;
+  }
+
+  body.site-coastal.site-oax-craft .reviews-carousel-wrap {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.menu-page.site-coastal.site-oax-craft .roulette-fab {
+    top: 32% !important;
+  }
+
+  body.site-coastal.site-oax-craft .footer--slim {
+    padding-bottom: 0.5rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body.site-coastal.site-oax-craft .hero-floater:nth-child(1),
+  body.site-coastal.site-oax-craft .hero-floater:nth-child(2) {
+    display: none !important;
+  }
+
+  body.site-coastal.site-oax-craft .hero-content {
+    padding-left: clamp(3.25rem, 18vw, 4.25rem) !important;
+    padding-right: clamp(3.25rem, 18vw, 4.25rem) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body.site-coastal.site-oax-craft:not(.menu-page) .hero-content {
+    padding-bottom: 1rem !important;
+    padding-left: clamp(3rem, 16vw, 3.5rem) !important;
+    padding-right: clamp(3rem, 16vw, 3.5rem) !important;
+  }
+
+  body.site-coastal.site-oax-craft .hero-floater:nth-child(3),
+  body.site-coastal.site-oax-craft .hero-floater:nth-child(4) {
+    bottom: 5% !important;
+    --snap-w: clamp(42px, 11.5vw, 54px) !important;
+  }
+
+  body.site-coastal.site-oax-craft .google-review-tab {
+    right: calc(3.15rem + env(safe-area-inset-right, 0px)) !important;
+    padding: 0.35rem 0.4rem !important;
+  }
+
+  body.site-coastal.site-oax-craft .google-review-tab__num {
+    font-size: 0.9rem !important;
   }
 }

@@ -42,7 +42,7 @@
   --max: 1120px;
   --header-h: 64px;
   --touch: 48px;
-  --mobile-cta-h: 68px;
+  --mobile-cta-h: 72px;
   --topbar-h: 36px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
