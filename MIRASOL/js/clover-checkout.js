@@ -34,7 +34,7 @@
   }
 
   function isPaymentLive() {
-    return Boolean(apiBase());
+    return ordering().enabled === true && Boolean(apiBase());
   }
 
   function showIframeFields() {

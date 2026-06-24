@@ -13,7 +13,8 @@ window.SITE_CONFIG = {
   },
 
   ordering: {
-    enabled: true,
+    /** Set true when Clover platform token + kitchen device ID are live on Render */
+    enabled: false,
 
     /**
      * native = MIRASOL menu + cart on this site (what guests see now).
@@ -67,7 +68,7 @@ window.SITE_CONFIG = {
        *   and host Clover's file at /.well-known/apple-developer-merchantid-domain-association
        */
       ecommerce: {
-        enabled: true,
+        enabled: false,
         mode: 'iframe',
         /** Public key from Dashboard → Ecommerce API Tokens → Hosted iFrame + API/SDK */
         publicKey: '35d43a78498708c551c0de1a1cba1010',
@@ -88,8 +89,8 @@ window.SITE_CONFIG = {
       payAtPickupFallback: true,
     },
 
-    comingSoonLabel: 'Order from our menu',
-    comingSoonSub: 'Build your cart here — pickup only. Call to confirm your order.',
+    comingSoonLabel: 'Coming soon',
+    comingSoonSub: 'Online ordering is being set up. Call (910) 789-1154 to order for pickup.',
 
     fulfillment: ['pickup'],
 

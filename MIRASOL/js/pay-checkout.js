@@ -160,8 +160,17 @@
     }
   }
 
+  function orderingEnabled() {
+    return window.SITE_CONFIG?.ordering?.enabled === true;
+  }
+
   async function init() {
     const L = labels();
+    if (!orderingEnabled()) {
+      redirectMenu();
+      return;
+    }
+
     const items = loadCart();
     const draft = loadDraft();
 
