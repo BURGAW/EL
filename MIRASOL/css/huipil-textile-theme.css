@@ -1,5 +1,5 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v22 · Luxe Runner
+   El Mirasol — Textile Theme v23 · Luxe Runner
    Cloth pattern: serape stripes + diamond weave (CSS + tight weave tile).
    Solid chrome · jewel palette · unified button system.
    ============================================================================= */
@@ -539,7 +539,7 @@ body.site-huipil.site-coastal.site-oax-craft .favorites-showcase__head h2 {
   color: var(--tex-red-deep) !important;
 }
 
-/* ── Story + Roulette ── */
+/* ── Story + Dish Roulette ── */
 body.site-huipil.site-coastal.site-oax-craft .story-spin-section {
   padding-top: clamp(1.75rem, 3.5vw, 2.75rem) !important;
   padding-bottom: clamp(1.75rem, 3.5vw, 2.75rem) !important;
@@ -590,52 +590,26 @@ body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero {
   border: none !important;
   box-shadow: none !important;
   min-height: 100% !important;
+  overflow: visible !important;
 }
 
-body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-stage {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex: 1 !important;
-  gap: clamp(1rem, 2vw, 1.5rem) !important;
-  min-height: clamp(270px, 30vw, 350px) !important;
-  padding: clamp(1.1rem, 2vw, 1.5rem) !important;
-  padding-bottom: clamp(3.75rem, 5vw, 4.25rem) !important;
-}
-
-body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__wheel-wrap {
-  transform: none !important;
-  width: clamp(200px, 21vw, 270px) !important;
-  height: clamp(200px, 21vw, 270px) !important;
-  margin: 0 !important;
-}
-
-body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__wheel {
-  border-color: var(--tex-gold) !important;
-  background: conic-gradient(
-    var(--tex-red) 0deg 45deg,
-    var(--tex-gold) 45deg 90deg,
-    var(--tex-teal) 90deg 135deg,
-    var(--tex-navy) 135deg 180deg,
-    var(--tex-orange) 180deg 225deg,
-    var(--tex-magenta) 225deg 270deg,
-    var(--tex-green) 270deg 315deg,
-    var(--tex-red-deep) 315deg 360deg
-  ) !important;
-}
-
+/* Label as header — no absolute overlap on spin button */
 body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-label {
-  position: absolute !important;
-  left: 0.9rem !important;
-  bottom: 0.9rem !important;
-  z-index: 5 !important;
-  max-width: 11.5rem !important;
-  padding: 0.6rem 0.75rem !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 2 !important;
+  flex-shrink: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0.85rem 1.1rem 0.75rem !important;
+  text-align: center !important;
   background: var(--tex-cream-light) !important;
-  border: 1px solid rgba(61, 38, 24, 0.12) !important;
-  border-radius: 10px !important;
-  box-shadow: var(--tex-shadow-soft) !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(61, 38, 24, 0.1) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-label::before {
@@ -646,15 +620,180 @@ body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-label::before
   right: 0;
   height: 4px;
   background: var(--tex-serape-border);
-  border-radius: 10px 10px 0 0;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-eyebrow {
+  display: block !important;
   color: var(--tex-teal) !important;
+  font-size: 0.62rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-title {
   color: var(--tex-red-deep) !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(1.35rem, 2.4vw, 1.55rem) !important;
+  line-height: 1.05 !important;
+  margin: 0.12rem 0 0 !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-hint {
+  color: var(--tex-ink-soft) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  margin: 0.2rem 0 0 !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-stage {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 !important;
+  gap: clamp(1rem, 2.2vw, 1.65rem) !important;
+  min-height: clamp(280px, 32vw, 360px) !important;
+  padding: clamp(1.15rem, 2.2vw, 1.55rem) clamp(1rem, 2vw, 1.35rem) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-wheel {
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-panel {
+  flex: 1 1 12rem !important;
+  min-width: 0 !important;
+  max-width: 18rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 0.55rem !important;
+  position: relative !important;
+  z-index: 4 !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-teaser {
+  margin: 0 !important;
+  font-size: 0.82rem !important;
+  line-height: 1.45 !important;
+  color: var(--tex-ink-soft) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__wheel-wrap {
+  transform: none !important;
+  width: clamp(210px, 22vw, 280px) !important;
+  height: clamp(210px, 22vw, 280px) !important;
+  margin: 0 !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__wheel {
+  border: 5px solid var(--tex-gold) !important;
+  background: conic-gradient(
+    var(--tex-red) 0deg 45deg,
+    var(--tex-gold) 45deg 90deg,
+    var(--tex-teal) 90deg 135deg,
+    var(--tex-navy) 135deg 180deg,
+    var(--tex-orange) 180deg 225deg,
+    var(--tex-magenta) 225deg 270deg,
+    var(--tex-green) 270deg 315deg,
+    var(--tex-red-deep) 315deg 360deg
+  ) !important;
+  box-shadow:
+    0 10px 28px rgba(38, 28, 22, 0.14),
+    inset 0 0 22px rgba(255, 252, 247, 0.22) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__pointer {
+  top: -12px !important;
+  border-left-width: 13px !important;
+  border-right-width: 13px !important;
+  border-top-width: 22px !important;
+  border-top-color: var(--tex-gold) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__center {
+  width: clamp(3.5rem, 5vw, 4.5rem) !important;
+  height: clamp(3.5rem, 5vw, 4.5rem) !important;
+  font-size: clamp(1.75rem, 3vw, 2.2rem) !important;
+  border: 4px solid var(--tex-gold) !important;
+  background: var(--tex-cream-light) !important;
+  box-shadow: 0 3px 10px rgba(38, 28, 22, 0.18) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__result {
+  text-align: left !important;
+  min-height: 3.25rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__result p {
+  margin: 0.25rem 0 0 !important;
+  font-size: 0.84rem !important;
+  line-height: 1.42 !important;
+  color: var(--tex-ink-soft) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__result strong {
+  display: block !important;
+  font-size: 1.08rem !important;
+  line-height: 1.2 !important;
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__tag {
+  color: var(--tex-gold) !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__meta {
+  color: var(--tex-wood-mid) !important;
+  font-size: 0.76rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__actions {
+  margin-top: 0.55rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__menu-link {
+  width: 100% !important;
+  min-height: 44px !important;
+  font-size: 0.84rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-spin-btn {
+  width: 100% !important;
+  margin-top: 0 !important;
+  position: relative !important;
+  z-index: 6 !important;
+  min-height: 48px !important;
+}
+
+/* Menu-page floating roulette */
+body.site-huipil.menu-page.site-coastal.site-oax-craft .roulette-fab {
+  background: linear-gradient(180deg, #c43a34 0%, var(--tex-red-deep) 45%, var(--tex-red) 100%) !important;
+  border: 2px solid var(--tex-red-deep) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 22px rgba(122, 26, 24, 0.32) !important;
+}
+
+body.site-huipil.menu-page.site-coastal.site-oax-craft .roulette-panel__inner,
+body.site-huipil.menu-page.site-coastal.site-oax-craft .fiesta-card--roulette-compact {
+  background: var(--tex-cream-light) !important;
+  border-color: rgba(61, 38, 24, 0.14) !important;
+}
+
+body.site-huipil.menu-page.site-coastal.site-oax-craft .roulette-panel__title {
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-huipil.menu-page.site-coastal.site-oax-craft .fiesta-card--roulette-compact .fiesta-roulette__wheel {
+  border-color: var(--tex-gold) !important;
 }
 
 /* ── Reviews & visit ── */
@@ -1078,7 +1217,27 @@ body.site-huipil.welcome-page .popup__btn {
 
   body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-stage {
     flex-direction: column !important;
-    padding-bottom: 4.75rem !important;
+    min-height: auto !important;
+    padding: 1.1rem 1rem 1.25rem !important;
+    gap: 1rem !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-panel {
+    flex: 1 1 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-teaser,
+  body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__result {
+    text-align: center !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__wheel-wrap {
+    width: clamp(220px, 62vw, 280px) !important;
+    height: clamp(220px, 62vw, 280px) !important;
+    transform: none !important;
   }
 }
 
