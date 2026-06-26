@@ -1,5 +1,5 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v19
+   El Mirasol — Textile Theme v20
    Serape border lines + woven pattern (CSS). Layout + button polish.
    ============================================================================= */
 
@@ -73,6 +73,19 @@ body.site-huipil {
 
 body.site-huipil.site-coastal.site-oax-craft.has-topbar {
   --tex-trim-h: 38px;
+}
+
+/* Home: serape stripes only — no woven band */
+body.site-huipil.tex-trim-home {
+  --tex-trim-h: 14px;
+}
+
+body.site-huipil .tex-serape-trim--home .tex-serape-trim__weave {
+  display: none !important;
+}
+
+body.site-huipil .tex-serape-trim--home .tex-serape-trim__line {
+  height: 14px;
 }
 
 body.site-huipil::selection {
