@@ -1,5 +1,5 @@
 /* =============================================================================
-   El Mirasol — Textile Master Theme v11
+   El Mirasol — Textile Master Theme v12
    Pattern trims only (serape · dash · craft bands) — no layout/spacing changes.
    ============================================================================= */
 
@@ -75,6 +75,7 @@ body.site-huipil {
   --tex-trim-craft-serape: 20px;
   --tex-trim-craft-zigzag: 17px;
   --tex-trim-craft-shine: 5px;
+  --tex-nav-banner-h: calc(var(--tex-trim-craft-shine) + var(--tex-trim-craft-zigzag) + var(--tex-trim-craft-serape));
 }
 
 /* Sync coastal craft-band pattern stack to same trim scale */
@@ -150,40 +151,67 @@ body.site-huipil.site-coastal.site-oax-craft #main::after {
   content: none !important;
 }
 
-/* --- Topbar & header --- */
+/* --- Topbar: clean strip, bordered social chips --- */
 body.site-huipil.site-coastal.site-oax-craft .social-topbar {
-  background: linear-gradient(
-    90deg,
-    var(--tex-red-deep) 0%,
-    var(--serape-magenta) 22%,
-    var(--tex-red) 42%,
-    var(--serape-orange) 58%,
-    var(--serape-cyan) 74%,
-    var(--tex-blue) 90%,
-    var(--tex-blue-bright) 100%
-  ) !important;
-  box-shadow: 0 2px 16px rgba(154, 34, 24, 0.3) !important;
+  background: var(--tex-red-deep) !important;
+  box-shadow: 0 2px 10px rgba(154, 34, 24, 0.22) !important;
   border-bottom: none !important;
+  gap: 0.5rem !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .social-topbar::after {
-  display: block !important;
-  content: '' !important;
-  position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  height: var(--tex-trim-topbar) !important;
-  background: var(--tex-serape-rainbow) repeat-x center !important;
-  background-size: 240px 72px !important;
-  box-shadow: none !important;
-  pointer-events: none !important;
+  display: none !important;
+  content: none !important;
 }
 
+body.site-huipil.site-coastal.site-oax-craft .social-topbar > span {
+  display: none !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .social-topbar a {
+  background: rgba(255, 252, 247, 0.97) !important;
+  color: var(--tex-ink) !important;
+  border-radius: 999px !important;
+  padding: 0.22rem 0.72rem !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  box-shadow: 0 1px 4px rgba(30, 30, 30, 0.08) !important;
+  transition: filter 0.2s, box-shadow 0.2s !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .social-topbar a:hover {
+  filter: brightness(1.03) !important;
+  box-shadow: 0 2px 8px rgba(30, 30, 30, 0.12) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .social-topbar a[href*="facebook"] {
+  border: 2px solid #1877f2 !important;
+  color: #0d5dbf !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .social-topbar a[href*="facebook"] svg {
+  color: #1877f2 !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .social-topbar a[href*="instagram"] {
+  border: 2px solid #e1306c !important;
+  color: #9b2252 !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .social-topbar a[href*="instagram"] svg {
+  color: #e1306c !important;
+}
+
+/* --- Header: full craft banner under Home / Menu row --- */
 body.site-huipil.site-coastal.site-oax-craft .header {
   background: rgba(255, 252, 247, 0.96) !important;
   border-bottom: none !important;
   box-shadow: 0 4px 20px rgba(74, 55, 40, 0.08) !important;
+  overflow: visible !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .header::before {
+  display: none !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .header::after {
@@ -192,16 +220,34 @@ body.site-huipil.site-coastal.site-oax-craft .header::after {
   position: absolute !important;
   left: 0 !important;
   right: 0 !important;
-  bottom: 0 !important;
-  height: var(--tex-trim-header) !important;
+  top: 100% !important;
+  bottom: auto !important;
+  height: var(--tex-nav-banner-h) !important;
   background:
-    var(--tex-dash-band) repeat-x center top,
-    var(--tex-stripe-h) repeat-x center bottom !important;
-  background-size: 40px 10px, 160px 10px !important;
+    linear-gradient(90deg, transparent, var(--serape-yellow), var(--serape-magenta), var(--serape-cyan), transparent) center top / 100% var(--tex-trim-craft-shine) no-repeat,
+    var(--tex-dash-band) repeat-x center,
+    var(--tex-serape-rainbow) repeat-x center bottom !important;
+  background-size:
+    100% var(--tex-trim-craft-shine),
+    40px 10px,
+    240px 72px !important;
   opacity: 1 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
 }
 
-body.site-huipil.site-coastal.site-oax-craft .header::before {
+/* Room for banner below fixed header */
+body.site-huipil.has-topbar .hero {
+  padding-top: calc(var(--header-h) + var(--topbar-h) + var(--safe-top) + var(--tex-nav-banner-h) + 2.5rem) !important;
+}
+
+body.site-huipil.has-topbar.menu-page .menu-online-shell,
+body.site-huipil.has-topbar.menu-page #main {
+  padding-top: calc(var(--header-h) + var(--topbar-h) + var(--tex-nav-banner-h) + 0.35rem) !important;
+}
+
+/* Menu duplicate craft band — header banner replaces it */
+body.site-huipil.site-coastal.site-oax-craft.menu-page .header + .oax-craft-band {
   display: none !important;
 }
 
@@ -220,18 +266,10 @@ body.site-huipil .nav-menu-cta.active {
   box-shadow: 0 4px 14px rgba(194, 53, 47, 0.3) !important;
 }
 
-/* --- Hero trims only (no overlay takeover) --- */
+/* --- Hero: no top pattern border (lives under header nav) --- */
 body.site-huipil .hero::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: var(--tex-trim-hero);
-  background: var(--tex-serape-rainbow) repeat-x center;
-  background-size: 240px 72px;
-  z-index: 4;
-  pointer-events: none;
+  display: none !important;
+  content: none !important;
 }
 
 body.site-huipil .hero::after {
