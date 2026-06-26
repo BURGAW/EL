@@ -1,5 +1,5 @@
 /* =============================================================================
-   El Mirasol — Textile Master Theme v10
+   El Mirasol — Textile Master Theme v11
    Pattern trims only (serape · dash · craft bands) — no layout/spacing changes.
    ============================================================================= */
 
@@ -67,14 +67,14 @@ body.site-huipil {
   --coast-sea-mid: var(--tex-blue-bright);
 
   /* Pattern trim heights only (serape · dash-band · stripe-h) */
-  --tex-trim-topbar: 12px;
-  --tex-trim-header: 14px;
-  --tex-trim-hero: 12px;
-  --tex-trim-footer: 14px;
-  --tex-trim-section: 12px;
-  --tex-trim-craft-serape: 16px;
-  --tex-trim-craft-zigzag: 14px;
-  --tex-trim-craft-shine: 4px;
+  --tex-trim-topbar: 15px;
+  --tex-trim-header: 17px;
+  --tex-trim-hero: 15px;
+  --tex-trim-footer: 17px;
+  --tex-trim-section: 15px;
+  --tex-trim-craft-serape: 20px;
+  --tex-trim-craft-zigzag: 17px;
+  --tex-trim-craft-shine: 5px;
 }
 
 /* Sync coastal craft-band pattern stack to same trim scale */
