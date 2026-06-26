@@ -1,0 +1,121 @@
+/* El Mirasol — Huipil textile main theme
+   Red-on-cream embroidered folk textile (user reference) */
+
+body.site-huipil {
+  --huipil-red: #b91c34;
+  --huipil-red-deep: #8f1528;
+  --huipil-red-bright: #c41e3a;
+  --huipil-cream: #f5f0e6;
+  --huipil-cream-light: #faf7f1;
+  --huipil-ink: #3a2a28;
+  --huipil-textile: url("../assets/patterns/huipil-textile-reference.png");
+
+  --oax-red: var(--huipil-red);
+  --oax-red-deep: var(--huipil-red-deep);
+  --oax-gold: #c9a86c;
+  --oax-gold-light: #ddc18a;
+  --oax-gold-pale: #efe2c8;
+  --oax-ivory: var(--huipil-cream-light);
+  --oax-pearl: var(--huipil-cream);
+
+  --fire-red: var(--huipil-red);
+  --fire-red-deep: var(--huipil-red-deep);
+  --coast-sea: var(--huipil-red-deep);
+  --coast-sea-mid: var(--huipil-red);
+  --theme-color: var(--huipil-red);
+}
+
+/* Page canvas — textile visible but softened for readability */
+body.site-huipil.pattern,
+body.site-huipil.menu-page.pattern,
+body.site-huipil.pay-page.pattern {
+  background-color: var(--huipil-cream) !important;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(250, 247, 241, 0.9) 0%,
+      rgba(245, 240, 230, 0.86) 42%,
+      rgba(245, 240, 230, 0.92) 100%
+    ),
+    var(--huipil-textile) !important;
+  background-size: cover, cover !important;
+  background-position: center 18%, center 22% !important;
+  background-attachment: fixed, fixed !important;
+  background-repeat: no-repeat, no-repeat !important;
+  color: var(--huipil-ink);
+}
+
+body.site-huipil.pattern::before,
+body.site-huipil.pattern::after {
+  display: none !important;
+}
+
+/* Topbar — huipil red (no coastal blue) */
+body.site-huipil .social-topbar {
+  background: linear-gradient(
+    90deg,
+    var(--huipil-red-deep) 0%,
+    var(--huipil-red) 48%,
+    var(--huipil-red-bright) 100%
+  ) !important;
+  box-shadow: 0 2px 14px rgba(143, 21, 40, 0.28) !important;
+}
+
+/* Craft band — textile strip */
+body.site-huipil .oax-craft-band__serape {
+  background:
+    linear-gradient(90deg, rgba(143, 21, 40, 0.35), rgba(143, 21, 40, 0.12)),
+    var(--huipil-textile) center / cover no-repeat !important;
+  opacity: 0.95 !important;
+}
+
+body.site-huipil .oax-craft-band__zigzag {
+  opacity: 0.55 !important;
+}
+
+/* Content panels stay readable on busy textile */
+body.site-huipil .hero-card,
+body.site-huipil .story-card,
+body.site-huipil .feature-card,
+body.site-huipil .menu-section,
+body.site-huipil .menu-card,
+body.site-huipil .menu-item-card,
+body.site-huipil .order-cart-panel,
+body.site-huipil .pay-shell,
+body.site-huipil .popup,
+body.site-huipil main section {
+  background-color: rgba(250, 247, 241, 0.94);
+}
+
+body.site-huipil .menu-item-card,
+body.site-huipil .menu-card {
+  border-color: rgba(185, 28, 52, 0.14) !important;
+  box-shadow: 0 8px 28px rgba(58, 42, 40, 0.08) !important;
+}
+
+/* Primary buttons & accents */
+body.site-huipil .btn-primary,
+body.site-huipil .menu-cta-primary,
+body.site-huipil .order-cart-checkout {
+  background: linear-gradient(135deg, var(--huipil-red-deep), var(--huipil-red)) !important;
+  border-color: var(--huipil-red-deep) !important;
+}
+
+body.site-huipil a:not(.btn):not(.social-topbar a):hover {
+  color: var(--huipil-red-deep);
+}
+
+/* Headings */
+body.site-huipil h1,
+body.site-huipil h2,
+body.site-huipil .section-title,
+body.site-huipil .menu-section-title {
+  color: var(--huipil-red-deep);
+}
+
+/* Footer / secondary bands */
+body.site-huipil footer,
+body.site-huipil .site-footer {
+  background: linear-gradient(180deg, rgba(250, 247, 241, 0.97), rgba(245, 240, 230, 0.98)) !important;
+  border-top: 3px solid var(--huipil-red);
+}
