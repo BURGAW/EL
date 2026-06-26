@@ -1,79 +1,276 @@
-/* El Mirasol — Huipil textile main theme
-   Red-on-cream embroidered folk textile (user reference) */
+/* El Mirasol — Textile Master Theme v2
+   Fusion: huipil red embroidery · woven runner (Image #1) · Oaxacan coastal craft */
 
 body.site-huipil {
-  --huipil-red: #b91c34;
-  --huipil-red-deep: #8f1528;
-  --huipil-red-bright: #c41e3a;
-  --huipil-cream: #f5f0e6;
-  --huipil-cream-light: #faf7f1;
-  --huipil-ink: #3a2a28;
-  --huipil-textile: url("../assets/patterns/huipil-textile-reference.png");
+  /* Runner cream + wood table warmth */
+  --tex-cream: #f7f3eb;
+  --tex-cream-light: #faf8f2;
+  --tex-cream-deep: #ede6d8;
+  --tex-ivory: #fffcf7;
 
-  --oax-red: var(--huipil-red);
-  --oax-red-deep: var(--huipil-red-deep);
-  --oax-gold: #c9a86c;
-  --oax-gold-light: #ddc18a;
-  --oax-gold-pale: #efe2c8;
-  --oax-ivory: var(--huipil-cream-light);
-  --oax-pearl: var(--huipil-cream);
+  /* Image #1 stripe palette — red · blue · ink · green · gold · rose */
+  --tex-red: #c2352f;
+  --tex-red-deep: #9a2218;
+  --tex-red-bright: #d43d35;
+  --tex-rose: #c45a6a;
+  --tex-blue: #2d5f8f;
+  --tex-blue-bright: #3a7ab5;
+  --tex-green: #3d7340;
+  --tex-green-deep: #2a5c2e;
+  --tex-gold: #d4a82a;
+  --tex-gold-light: #e8c878;
+  --tex-ink: #1e1e1e;
+  --tex-wood: #4a3728;
 
-  --fire-red: var(--huipil-red);
-  --fire-red-deep: var(--huipil-red-deep);
-  --coast-sea: var(--huipil-red-deep);
-  --coast-sea-mid: var(--huipil-red);
-  --theme-color: var(--huipil-red);
+  /* Reference photos */
+  --tex-huipil: url("../assets/patterns/huipil-textile-reference.png");
+  --tex-runner: url("../assets/patterns/woven-runner-reference.png");
+
+  /* Multicolor diamond lattice (runner center panel) */
+  --tex-diamond: url("data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32 4 L60 32 L32 60 L4 32 Z' fill='none' stroke='%23d8d0c2' stroke-width='0.7'/%3E%3Cpath d='M32 12 L52 32 L32 52 L12 32 Z' fill='none' stroke='%23c2352f' stroke-width='0.55' stroke-opacity='0.42'/%3E%3Cpath d='M32 20 L44 32 L32 44 L20 32 Z' fill='%232d5f8f' fill-opacity='0.12'/%3E%3Cpath d='M32 26 L38 32 L32 38 L26 32 Z' fill='%233d7340' fill-opacity='0.18'/%3E%3Cline x1='32' y1='20' x2='32' y2='44' stroke='%231e1e1e' stroke-width='0.35' stroke-opacity='0.22'/%3E%3Cline x1='20' y1='32' x2='44' y2='32' stroke='%231e1e1e' stroke-width='0.35' stroke-opacity='0.22'/%3E%3Ccircle cx='32' cy='32' r='2.2' fill='%23c2352f' fill-opacity='0.28'/%3E%3C/svg%3E");
+
+  /* Huipil embroidery — flowers + birds (red on cream) */
+  --tex-huipil-motif: url("data:image/svg+xml,%3Csvg width='96' height='96' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c2352f' fill-opacity='0.09' stroke='%23c2352f' stroke-opacity='0.14' stroke-width='0.5'%3E%3Ccircle cx='24' cy='28' r='5' fill='none'/%3E%3Ccircle cx='24' cy='28' r='2'/%3E%3Cpath d='M24 18 Q28 24 24 28 Q20 24 24 18'/%3E%3Cpath d='M34 18 Q28 24 24 28 Q28 32 34 18'/%3E%3Cpath d='M14 18 Q20 24 24 28 Q20 32 14 18'/%3E%3Cpath d='M24 38 Q28 32 24 28 Q20 32 24 38'/%3E%3Cpath d='M58 52 Q62 46 68 48 Q64 54 58 52' fill='%23c2352f' fill-opacity='0.07'/%3E%3Cpath d='M58 48 L52 44 L54 50 Z'/%3E%3Cpath d='M68 48 L74 44 L72 50 Z'/%3E%3Ccircle cx='72' cy='22' r='4' fill='none'/%3E%3Ccircle cx='72' cy='22' r='1.6'/%3E%3Cpath d='M48 68 Q54 62 60 68 Q54 74 48 68'/%3E%3C/g%3E%3C/svg%3E");
+
+  /* Geometric dash band (between selvedge and center weave) */
+  --tex-dash-band: url("data:image/svg+xml,%3Csvg width='48' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='2' width='2' height='2' fill='%23c2352f'/%3E%3Crect x='8' y='2' width='2' height='2' fill='%232d5f8f'/%3E%3Crect x='14' y='2' width='2' height='2' fill='%231e1e1e'/%3E%3Crect x='20' y='2' width='2' height='2' fill='%233d7340'/%3E%3Crect x='26' y='2' width='2' height='2' fill='%23d4a82a'/%3E%3Crect x='32' y='2' width='2' height='2' fill='%23c45a6a'/%3E%3Crect x='38' y='2' width='2' height='2' fill='%23c2352f'/%3E%3Crect x='44' y='2' width='2' height='2' fill='%232d5f8f'/%3E%3C/svg%3E");
+
+  /* Runner selvedge stripes — exact Image #1 sequence */
+  --tex-stripe-h: url("data:image/svg+xml,%3Csvg width='160' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='160' height='1.1' y='0' fill='%23c2352f'/%3E%3Crect width='160' height='0.9' y='1.2' fill='%232d5f8f'/%3E%3Crect width='160' height='0.8' y='2.2' fill='%231e1e1e'/%3E%3Crect width='160' height='1' y='3.1' fill='%233d7340'/%3E%3Crect width='160' height='0.9' y='4.2' fill='%23d4a82a'/%3E%3Crect width='160' height='0.8' y='5.2' fill='%23c45a6a'/%3E%3Crect width='160' height='1' y='6.1' fill='%23c2352f'/%3E%3Crect width='160' height='0.9' y='7.2' fill='%232d5f8f'/%3E%3Crect width='160' height='0.8' y='8.2' fill='%231e1e1e'/%3E%3Crect width='160' height='1.1' y='9.1' fill='%233d7340'/%3E%3C/svg%3E");
+
+  --tex-stripe-v: url("data:image/svg+xml,%3Csvg width='12' height='160' xmlns='http://www.w3.org/2000/svg'%3E%3Crect height='160' width='1.1' x='0' fill='%23c2352f'/%3E%3Crect height='160' width='0.9' x='1.2' fill='%232d5f8f'/%3E%3Crect height='160' width='0.8' x='2.2' fill='%231e1e1e'/%3E%3Crect height='160' width='1' x='3.1' fill='%233d7340'/%3E%3Crect height='160' width='0.9' x='4.2' fill='%23d4a82a'/%3E%3Crect height='160' width='0.8' x='5.2' fill='%23c45a6a'/%3E%3Crect height='160' width='1' x='6.1' fill='%23c2352f'/%3E%3Crect height='160' width='0.9' x='7.2' fill='%232d5f8f'/%3E%3Crect height='160' width='0.8' x='8.2' fill='%231e1e1e'/%3E%3Crect height='160' width='1.1' x='9.1' fill='%233d7340'/%3E%3C/svg%3E");
+
+  /* Multicolor fringe (runner end) */
+  --tex-fringe: url("data:image/svg+xml,%3Csvg width='128' height='18' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='128' height='4' fill='%23f7f3eb'/%3E%3Cg fill-opacity='0.92'%3E%3Crect x='2' y='4' width='2' height='13' fill='%23faf8f2'/%3E%3Crect x='6' y='4' width='2' height='14' fill='%23c2352f'/%3E%3Crect x='10' y='5' width='2' height='12' fill='%232d5f8f'/%3E%3Crect x='14' y='4' width='2' height='14' fill='%23d4a82a'/%3E%3Crect x='18' y='5' width='2' height='11' fill='%233d7340'/%3E%3Crect x='22' y='4' width='2' height='14' fill='%23faf8f2'/%3E%3Crect x='26' y='4' width='2' height='13' fill='%231e1e1e'/%3E%3Crect x='30' y='5' width='2' height='12' fill='%23c45a6a'/%3E%3Crect x='34' y='4' width='2' height='14' fill='%23c2352f'/%3E%3Crect x='38' y='4' width='2' height='13' fill='%232d5f8f'/%3E%3Crect x='42' y='5' width='2' height='12' fill='%23d4a82a'/%3E%3Crect x='46' y='4' width='2' height='14' fill='%23faf8f2'/%3E%3Crect x='50' y='4' width='2' height='13' fill='%233d7340'/%3E%3Crect x='54' y='5' width='2' height='11' fill='%23c2352f'/%3E%3Crect x='58' y='4' width='2' height='14' fill='%232d5f8f'/%3E%3Crect x='62' y='4' width='2' height='13' fill='%23d4a82a'/%3E%3Crect x='66' y='5' width='2' height='12' fill='%23c45a6a'/%3E%3Crect x='70' y='4' width='2' height='14' fill='%23faf8f2'/%3E%3Crect x='74' y='4' width='2' height='13' fill='%23c2352f'/%3E%3Crect x='78' y='5' width='2' height='12' fill='%233d7340'/%3E%3Crect x='82' y='4' width='2' height='14' fill='%232d5f8f'/%3E%3Crect x='86' y='4' width='2' height='13' fill='%23d4a82a'/%3E%3Crect x='90' y='5' width='2' height='11' fill='%231e1e1e'/%3E%3Crect x='94' y='4' width='2' height='14' fill='%23c2352f'/%3E%3Crect x='98' y='4' width='2' height='13' fill='%23faf8f2'/%3E%3Crect x='102' y='5' width='2' height='12' fill='%23c45a6a'/%3E%3Crect x='106' y='4' width='2' height='14' fill='%233d7340'/%3E%3Crect x='110' y='4' width='2' height='13' fill='%232d5f8f'/%3E%3Crect x='114' y='5' width='2' height='12' fill='%23d4a82a'/%3E%3Crect x='118' y='4' width='2' height='14' fill='%23c2352f'/%3E%3Crect x='122' y='4' width='2' height='13' fill='%23faf8f2'/%3E%3C/g%3E%3C/svg%3E");
+
+  /* Brand token bridge */
+  --huipil-red: var(--tex-red);
+  --huipil-red-deep: var(--tex-red-deep);
+  --huipil-red-bright: var(--tex-red-bright);
+  --huipil-cream: var(--tex-cream);
+  --huipil-cream-light: var(--tex-cream-light);
+  --huipil-ink: var(--tex-ink);
+  --huipil-textile: var(--tex-huipil-motif);
+
+  --oax-red: var(--tex-red);
+  --oax-red-deep: var(--tex-red-deep);
+  --oax-gold: var(--tex-gold);
+  --oax-gold-light: var(--tex-gold-light);
+  --oax-gold-pale: #f0e4c8;
+  --oax-ivory: var(--tex-cream-light);
+  --oax-pearl: var(--tex-cream);
+  --oax-zigzag-h: var(--tex-stripe-h);
+  --oax-zigzag-v: var(--tex-stripe-v);
+  --oax-flores: var(--tex-huipil-motif);
+  --oax-serape: linear-gradient(
+    90deg,
+    var(--tex-red-deep) 0%,
+    var(--tex-red) 22%,
+    var(--tex-blue) 42%,
+    var(--tex-ink) 52%,
+    var(--tex-green) 68%,
+    var(--tex-gold) 84%,
+    var(--tex-rose) 100%
+  );
+
+  --fire-red: var(--tex-red);
+  --fire-red-deep: var(--tex-red-deep);
+  --coast-sea: var(--tex-blue);
+  --coast-sea-mid: var(--tex-blue-bright);
 }
 
-/* Page canvas — textile visible but softened for readability */
+/* Suppress coastal/oax star marks — textile layers own ::before/::after */
+body.site-huipil.site-coastal.site-oax-craft.pattern::before,
+body.site-huipil.site-coastal.site-oax-craft.pattern::after {
+  opacity: 1 !important;
+}
+
+/* ── Page canvas: cream weave + huipil motif + runner accent ── */
 body.site-huipil.pattern,
 body.site-huipil.menu-page.pattern,
 body.site-huipil.pay-page.pattern {
-  background-color: var(--huipil-cream) !important;
+  background-color: var(--tex-cream) !important;
   background-image:
-    linear-gradient(
-      180deg,
-      rgba(250, 247, 241, 0.9) 0%,
-      rgba(245, 240, 230, 0.86) 42%,
-      rgba(245, 240, 230, 0.92) 100%
-    ),
-    var(--huipil-textile) !important;
-  background-size: cover, cover !important;
-  background-position: center 18%, center 22% !important;
-  background-attachment: fixed, fixed !important;
-  background-repeat: no-repeat, no-repeat !important;
-  color: var(--huipil-ink);
+    linear-gradient(180deg, rgba(255, 252, 247, 0.92) 0%, rgba(247, 243, 235, 0.88) 50%, rgba(250, 248, 242, 0.94) 100%),
+    var(--tex-huipil-motif),
+    var(--tex-diamond),
+    radial-gradient(ellipse 50% 40% at 100% 8%, rgba(45, 95, 143, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 46% 36% at 0% 92%, rgba(194, 53, 47, 0.08) 0%, transparent 56%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(74, 55, 40, 0.04) 0%, transparent 65%),
+    var(--tex-huipil) !important;
+  background-size:
+    100% 100%,
+    96px 96px,
+    64px 64px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    min(680px, 92vw) auto !important;
+  background-position:
+    center,
+    center,
+    center,
+    center,
+    center,
+    center,
+    right 4% top 6% !important;
+  background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed !important;
+  background-repeat: no-repeat, repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat !important;
+  color: var(--tex-ink);
 }
 
-body.site-huipil.pattern::before,
+/* Runner photo accent — bottom-right, wood-table warmth */
+body.site-huipil.pattern::before {
+  display: block !important;
+  content: '';
+  position: fixed;
+  right: -4%;
+  bottom: -2%;
+  width: min(44vw, 540px);
+  height: min(36vh, 400px);
+  background:
+    linear-gradient(145deg, rgba(247, 243, 235, 0.45) 0%, rgba(247, 243, 235, 0.78) 55%, rgba(250, 248, 242, 0.9) 100%),
+    var(--tex-runner) center / cover no-repeat !important;
+  opacity: 0.48;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 14px 0 0 0;
+  box-shadow: -10px -10px 48px rgba(74, 55, 40, 0.1);
+  border-top: 12px solid transparent;
+  border-image: var(--tex-stripe-h) 12 repeat;
+}
+
+/* Fringe footer */
 body.site-huipil.pattern::after {
-  display: none !important;
+  display: block !important;
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18px;
+  background: var(--tex-fringe) repeat-x center bottom;
+  background-size: 128px 18px;
+  opacity: 0.94;
+  pointer-events: none;
+  z-index: 4;
 }
 
-/* Topbar — huipil red (no coastal blue) */
+/* Side selvedge stripes (full page) */
+body.site-huipil.pattern {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-image: var(--tex-stripe-v) 8 repeat;
+}
+
+/* ── Topbar: huipil red → coastal blue with runner trim ── */
 body.site-huipil .social-topbar {
   background: linear-gradient(
     90deg,
-    var(--huipil-red-deep) 0%,
-    var(--huipil-red) 48%,
-    var(--huipil-red-bright) 100%
+    var(--tex-red-deep) 0%,
+    var(--tex-red) 32%,
+    var(--tex-red-bright) 55%,
+    var(--tex-blue) 82%,
+    var(--tex-blue-bright) 100%
   ) !important;
-  box-shadow: 0 2px 14px rgba(143, 21, 40, 0.28) !important;
+  box-shadow: 0 2px 18px rgba(154, 34, 24, 0.3) !important;
+  border-bottom: none !important;
+  position: relative;
 }
 
-/* Craft band — textile strip */
-body.site-huipil .oax-craft-band__serape {
+body.site-huipil .social-topbar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  height: 12px;
   background:
-    linear-gradient(90deg, rgba(143, 21, 40, 0.35), rgba(143, 21, 40, 0.12)),
-    var(--huipil-textile) center / cover no-repeat !important;
-  opacity: 0.95 !important;
+    var(--tex-dash-band) repeat-x center,
+    var(--tex-stripe-h) repeat-x center bottom !important;
+  background-size: 48px 6px, 160px 12px !important;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ── Header: pearl glass + stripe underline ── */
+body.site-huipil .header {
+  background: rgba(255, 252, 247, 0.96) !important;
+  border-bottom: none !important;
+  box-shadow:
+    0 4px 24px rgba(74, 55, 40, 0.06),
+    0 1px 0 rgba(212, 168, 42, 0.35) inset !important;
+  position: relative;
+}
+
+body.site-huipil .header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  background: var(--tex-dash-band) repeat-x center;
+  background-size: 48px 6px;
+  opacity: 0.85;
+}
+
+body.site-huipil .logo__title {
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-huipil .header .logo__sub {
+  color: var(--tex-gold) !important;
+}
+
+body.site-huipil .nav-menu-cta,
+body.site-huipil .nav-menu-cta:hover,
+body.site-huipil .nav-menu-cta.active {
+  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red) 50%, var(--tex-gold)) !important;
+  box-shadow: 0 4px 16px rgba(194, 53, 47, 0.3) !important;
+}
+
+/* ── Craft bands: runner selvedge + serape ── */
+body.site-huipil .oax-craft-band__shine {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--tex-gold-light) 18%,
+    var(--tex-red) 48%,
+    var(--tex-blue) 72%,
+    transparent
+  ) !important;
+  height: 2px !important;
 }
 
 body.site-huipil .oax-craft-band__zigzag {
-  opacity: 0.55 !important;
+  height: 12px !important;
+  background:
+    var(--tex-dash-band) repeat-x center,
+    var(--tex-stripe-h) repeat-x center bottom !important;
+  background-size: 48px 6px, 160px 12px !important;
+  opacity: 1 !important;
 }
 
-/* Content panels stay readable on busy textile */
+body.site-huipil .oax-craft-band__serape {
+  height: 7px !important;
+  background: var(--oax-serape) !important;
+  opacity: 1 !important;
+}
+
+body.site-huipil.site-oax-craft > main::before,
+body.site-huipil.site-oax-craft > main::after,
+body.site-huipil.site-oax-craft #main::before,
+body.site-huipil.site-oax-craft #main::after {
+  width: 8px !important;
+  background:
+    var(--tex-dash-band) repeat-y center,
+    var(--tex-stripe-v) repeat-y center !important;
+  background-size: 6px 48px, 12px 160px !important;
+  opacity: 0.62 !important;
+}
+
+/* ── Content panels: woven-card feel ── */
 body.site-huipil .hero-card,
 body.site-huipil .story-card,
 body.site-huipil .feature-card,
@@ -83,39 +280,148 @@ body.site-huipil .menu-item-card,
 body.site-huipil .order-cart-panel,
 body.site-huipil .pay-shell,
 body.site-huipil .popup,
-body.site-huipil main section {
-  background-color: rgba(250, 247, 241, 0.94);
+body.site-huipil main section,
+body.site-huipil .menu-pro-header,
+body.site-huipil .collection-intro {
+  background-color: rgba(255, 252, 247, 0.94) !important;
+  border-color: rgba(194, 53, 47, 0.1) !important;
 }
 
 body.site-huipil .menu-item-card,
-body.site-huipil .menu-card {
-  border-color: rgba(185, 28, 52, 0.14) !important;
-  box-shadow: 0 8px 28px rgba(58, 42, 40, 0.08) !important;
+body.site-huipil .menu-card,
+body.site-huipil .feature-card,
+body.site-huipil .hero-card,
+body.site-huipil .story-card {
+  box-shadow:
+    0 12px 36px rgba(30, 30, 30, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+  border-top: 4px solid transparent !important;
+  border-image: linear-gradient(
+    90deg,
+    var(--tex-red) 0%,
+    var(--tex-blue) 28%,
+    var(--tex-ink) 42%,
+    var(--tex-green) 62%,
+    var(--tex-gold) 82%,
+    var(--tex-rose) 100%
+  ) 1 !important;
+  position: relative;
 }
 
-/* Primary buttons & accents */
+body.site-huipil .menu-item-card::before,
+body.site-huipil .feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--tex-huipil-motif);
+  background-size: 96px 96px;
+  opacity: 0.35;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+body.site-huipil .menu-item-card > *,
+body.site-huipil .feature-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Hero: textile wash over photo ── */
+body.site-huipil .hero-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(154, 34, 24, 0.18) 0%,
+      rgba(30, 30, 30, 0.42) 42%,
+      rgba(45, 95, 143, 0.22) 100%
+    ) !important;
+}
+
+body.site-huipil .hero-eyebrow {
+  color: var(--tex-gold-light) !important;
+  letter-spacing: 0.14em;
+}
+
+/* ── Buttons & links ── */
 body.site-huipil .btn-primary,
 body.site-huipil .menu-cta-primary,
 body.site-huipil .order-cart-checkout {
-  background: linear-gradient(135deg, var(--huipil-red-deep), var(--huipil-red)) !important;
-  border-color: var(--huipil-red-deep) !important;
+  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red) 55%, var(--tex-red-bright)) !important;
+  border-color: var(--tex-red-deep) !important;
+  box-shadow: 0 4px 20px rgba(154, 34, 24, 0.32) !important;
+}
+
+body.site-huipil .btn-secondary,
+body.site-huipil .menu-cta-secondary {
+  border-color: var(--tex-blue) !important;
+  color: var(--tex-blue) !important;
 }
 
 body.site-huipil a:not(.btn):not(.social-topbar a):hover {
-  color: var(--huipil-red-deep);
+  color: var(--tex-red-deep);
 }
 
-/* Headings */
+/* ── Typography ── */
 body.site-huipil h1,
 body.site-huipil h2,
 body.site-huipil .section-title,
 body.site-huipil .menu-section-title {
-  color: var(--huipil-red-deep);
+  color: var(--tex-red-deep);
 }
 
-/* Footer / secondary bands */
+body.site-huipil h3,
+body.site-huipil .menu-item-name {
+  color: var(--tex-ink);
+}
+
+/* ── Footer: dash band + fringe clearance ── */
 body.site-huipil footer,
 body.site-huipil .site-footer {
-  background: linear-gradient(180deg, rgba(250, 247, 241, 0.97), rgba(245, 240, 230, 0.98)) !important;
-  border-top: 3px solid var(--huipil-red);
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.98), rgba(237, 230, 216, 0.99)) !important;
+  border-top: 12px solid transparent !important;
+  border-image: var(--tex-stripe-h) 12 repeat !important;
+  padding-bottom: calc(1.5rem + 18px) !important;
+  position: relative;
+}
+
+body.site-huipil footer::before,
+body.site-huipil .site-footer::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--tex-dash-band) repeat-x center;
+  background-size: 48px 6px;
+  opacity: 0.8;
+}
+
+/* Menu chips */
+body.site-huipil .menu-chip.is-active,
+body.site-huipil .menu-filter-btn.is-active {
+  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red)) !important;
+  border-color: var(--tex-red-deep) !important;
+}
+
+body.site-huipil .menu-chip:not(.is-active):hover,
+body.site-huipil .menu-filter-btn:not(.is-active):hover {
+  border-color: var(--tex-blue) !important;
+  color: var(--tex-blue) !important;
+}
+
+/* Section titles — huipil band underline */
+body.site-huipil .section-title::after,
+body.site-huipil .menu-section-title::after {
+  content: '';
+  display: block;
+  width: min(180px, 40%);
+  height: 8px;
+  margin: 0.5rem auto 0;
+  background:
+    var(--tex-dash-band) repeat-x center,
+    var(--tex-stripe-h) repeat-x center bottom;
+  background-size: 48px 6px, 160px 8px;
+  opacity: 0.9;
 }
