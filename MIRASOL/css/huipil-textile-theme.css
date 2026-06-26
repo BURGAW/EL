@@ -1,7 +1,6 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v16
-   Single reference: woven-runner-reference.png (handwoven table runner).
-   Warm editorial craft — purposeful crops, no tiling.
+   El Mirasol — Textile Theme v17 · Editorial Craft
+   Single asset: woven-runner-reference.png — art-directed crops only.
    ============================================================================= */
 
 body.site-huipil {
@@ -10,15 +9,31 @@ body.site-huipil {
   --tex-linen: #ebe5d8;
   --tex-wood: #4a3228;
   --tex-wood-mid: #6b4e3d;
+  --tex-wood-soft: #8a6b56;
   --tex-red: #a8332f;
   --tex-red-deep: #7a2218;
   --tex-navy: #1e3a5f;
   --tex-green: #2d5e48;
   --tex-gold: #c49a3a;
+  --tex-gold-pale: #e8d4a8;
   --tex-terracotta: #c46b52;
   --tex-ink: #2a211c;
+  --tex-ink-soft: #4a3d34;
 
-  --tex-runner: url("../assets/patterns/woven-runner-reference.png?v=runner1");
+  --tex-runner: url("../assets/patterns/woven-runner-reference.png?v=runner2");
+  --tex-crop-stripe: 34% 56%;
+  --tex-crop-scene: center 44%;
+  --tex-crop-fringe: 82% 50%;
+  --tex-crop-welcome: 42% 48%;
+  --tex-crop-weave: 50% 52%;
+
+  --tex-radius-sm: 8px;
+  --tex-radius-md: 14px;
+  --tex-radius-lg: 22px;
+  --tex-shadow-soft: 0 4px 24px rgba(74, 50, 40, 0.08);
+  --tex-shadow-lift: 0 12px 40px rgba(74, 50, 40, 0.14);
+  --tex-shadow-chrome: 0 2px 20px rgba(74, 50, 40, 0.18);
+  --tex-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
   --huipil-red: var(--tex-red);
   --huipil-red-deep: var(--tex-red-deep);
@@ -38,47 +53,55 @@ body.site-huipil {
   --fire-red-deep: var(--tex-red-deep);
   --coast-sea: var(--tex-navy);
   --coast-sea-mid: #2d5f8f;
+
+  scroll-behavior: smooth;
 }
 
-/* --- Runner banner: stripe border crop under nav --- */
+body.site-huipil::selection {
+  background: rgba(168, 51, 47, 0.22);
+  color: var(--tex-ink);
+}
+
+/* ── Runner banner: cinematic stripe crop under nav ── */
 body.site-huipil .tex-runner-banner {
   position: relative;
   display: block;
   width: 100%;
-  height: clamp(48px, 6.5vw, 68px);
+  height: clamp(52px, 7vw, 76px);
+  overflow: hidden;
   background: var(--tex-runner) no-repeat;
   background-size: cover;
-  background-position: 34% 56%;
+  background-position: var(--tex-crop-stripe);
   box-shadow:
-    0 1px 0 rgba(255, 252, 247, 0.55) inset,
-    0 8px 28px rgba(74, 50, 40, 0.16);
+    0 1px 0 rgba(255, 252, 247, 0.65) inset,
+    0 10px 36px rgba(74, 50, 40, 0.18);
   pointer-events: none;
+  animation: tex-runner-pan 28s var(--tex-ease) infinite alternate;
 }
 
 body.site-huipil .tex-runner-banner::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    var(--tex-cream) 0%,
-    transparent 10%,
-    transparent 90%,
-    var(--tex-cream) 100%
-  );
-  opacity: 0.92;
+  background:
+    linear-gradient(90deg, var(--tex-cream) 0%, transparent 12%, transparent 88%, var(--tex-cream) 100%),
+    linear-gradient(180deg, rgba(255, 252, 247, 0.35) 0%, transparent 40%, rgba(42, 33, 28, 0.08) 100%);
   pointer-events: none;
 }
 
 body.site-huipil .tex-runner-banner::after {
   content: '';
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 50%;
   bottom: 0;
-  height: 2px;
-  background: rgba(74, 50, 40, 0.22);
-  pointer-events: none;
+  transform: translateX(-50%);
+  width: min(240px, 42vw);
+  height: 3px;
+  background: var(--tex-runner) center / cover;
+  background-position: var(--tex-crop-stripe);
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 -1px 0 rgba(255, 252, 247, 0.5) inset;
+  opacity: 0.95;
 }
 
 body.site-huipil.site-coastal.site-oax-craft.has-topbar .header + .tex-runner-banner {
@@ -98,68 +121,114 @@ body.site-huipil.site-coastal.site-oax-craft.has-topbar .header + .tex-runner-ba
   margin-top: 0 !important;
 }
 
-/* --- Home showcase: full runner still-life between hero and ribbon --- */
+/* ── Editorial showcase: magazine spread ── */
 body.site-huipil .tex-runner-showcase {
   position: relative;
   display: block;
-  width: 100%;
-  height: clamp(130px, 24vw, 210px);
+  width: min(96%, 1180px);
+  height: clamp(148px, 26vw, 240px);
+  margin: clamp(0.85rem, 2.5vw, 1.35rem) auto clamp(0.65rem, 2vw, 1rem);
+  padding: 0;
+  border: none;
   background: var(--tex-runner) no-repeat;
   background-size: cover;
-  background-position: center 44%;
-  pointer-events: none;
+  background-position: var(--tex-crop-scene);
+  border-radius: var(--tex-radius-lg);
+  box-shadow:
+    0 0 0 1px rgba(107, 78, 61, 0.14),
+    0 0 0 6px rgba(250, 246, 239, 0.85),
+    0 0 0 7px rgba(196, 154, 58, 0.22),
+    var(--tex-shadow-lift);
+  overflow: hidden;
 }
 
 body.site-huipil .tex-runner-showcase::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    var(--tex-cream) 0%,
-    transparent 22%,
-    transparent 78%,
-    var(--tex-cream) 100%
-  );
+  background:
+    linear-gradient(180deg, rgba(243, 237, 227, 0.55) 0%, transparent 28%, transparent 62%, rgba(42, 33, 28, 0.42) 100%),
+    linear-gradient(90deg, rgba(243, 237, 227, 0.4) 0%, transparent 18%, transparent 82%, rgba(243, 237, 227, 0.35) 100%);
   pointer-events: none;
 }
 
-body.site-huipil .tex-runner-showcase::after {
-  content: '';
+body.site-huipil .tex-runner-showcase__mat {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    var(--tex-cream) 0%,
-    transparent 14%,
-    transparent 86%,
-    var(--tex-cream) 100%
-  );
-  opacity: 0.88;
+  inset: 10px;
+  border: 1px solid rgba(255, 252, 247, 0.45);
+  border-radius: calc(var(--tex-radius-lg) - 6px);
+  box-shadow:
+    0 0 0 1px rgba(74, 50, 40, 0.12) inset,
+    0 0 40px rgba(74, 50, 40, 0.06) inset;
   pointer-events: none;
 }
 
-/* --- Welcome popup: runner header band --- */
+body.site-huipil .tex-runner-showcase__caption {
+  position: absolute;
+  left: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(0.85rem, 2.5vw, 1.5rem);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: left;
+  z-index: 1;
+}
+
+body.site-huipil .tex-runner-showcase__eyebrow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tex-gold-pale);
+  text-shadow: 0 1px 8px rgba(42, 33, 28, 0.55);
+}
+
+body.site-huipil .tex-runner-showcase__title {
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: clamp(1.05rem, 2.8vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(42, 33, 28, 0.5);
+}
+
+/* ── Welcome: cover-story popup ── */
 body.site-huipil.welcome-page .tex-runner-welcome {
   display: block;
   width: calc(100% + 3.5rem);
-  margin: -2rem -1.75rem 1.25rem;
-  height: clamp(110px, 28vw, 150px);
+  margin: -2rem -1.75rem 1.35rem;
+  height: clamp(128px, 30vw, 168px);
   border-radius: 20px 20px 0 0;
   background: var(--tex-runner) no-repeat;
   background-size: cover;
-  background-position: 42% 48%;
-  box-shadow: 0 6px 20px rgba(74, 50, 40, 0.14);
+  background-position: var(--tex-crop-welcome);
+  box-shadow: 0 8px 28px rgba(74, 50, 40, 0.2);
+}
+
+body.site-huipil.welcome-page .tex-runner-welcome::after {
+  content: '';
+  display: block;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 35%, rgba(42, 33, 28, 0.35) 100%);
 }
 
 body.site-huipil.welcome-page .popup {
   padding-top: 0 !important;
   overflow: hidden;
-  border-color: rgba(107, 78, 61, 0.22) !important;
+  border: 1px solid rgba(107, 78, 61, 0.2) !important;
   background: var(--tex-cream-light) !important;
+  box-shadow:
+    0 0 0 1px rgba(196, 154, 58, 0.15) inset,
+    0 28px 70px rgba(42, 33, 28, 0.45) !important;
 }
 
-/* --- Fixed chrome --- */
+body.site-huipil.welcome-page .popup__logo {
+  border-color: var(--tex-gold) !important;
+  box-shadow: 0 4px 18px rgba(74, 50, 40, 0.15);
+}
+
+/* ── Fixed chrome ── */
 body.site-huipil .social-topbar {
   position: fixed !important;
   z-index: 210 !important;
@@ -175,14 +244,20 @@ body.site-huipil .skip-link {
   z-index: 999 !important;
 }
 
-/* --- Page shell: warm linen canvas --- */
+body.site-huipil .skip-link:focus-visible {
+  outline: 2px solid var(--tex-gold);
+  outline-offset: 3px;
+}
+
+/* ── Linen canvas ── */
 body.site-huipil.site-coastal.site-oax-craft.pattern,
 body.site-huipil.site-coastal.site-oax-craft.menu-page.pattern,
 body.site-huipil.site-coastal.site-oax-craft.pay-page.pattern {
   background-color: var(--tex-cream) !important;
   background-image:
-    radial-gradient(ellipse 90% 55% at 50% -8%, rgba(250, 246, 239, 0.95) 0%, transparent 62%),
-    radial-gradient(ellipse 70% 40% at 100% 100%, rgba(196, 154, 58, 0.06) 0%, transparent 55%) !important;
+    radial-gradient(ellipse 95% 60% at 50% -10%, rgba(250, 246, 239, 0.98) 0%, transparent 58%),
+    radial-gradient(ellipse 55% 35% at 0% 100%, rgba(45, 94, 72, 0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 30% at 100% 90%, rgba(196, 154, 58, 0.07) 0%, transparent 52%) !important;
   color: var(--tex-ink);
 }
 
@@ -196,16 +271,18 @@ body.site-huipil.site-coastal.site-oax-craft.pay-page.pattern::after {
   content: none !important;
 }
 
-/* --- Topbar: warm wood entry --- */
+/* ── Topbar: wood → ember ── */
 body.site-huipil.site-coastal.site-oax-craft .social-topbar {
   background: linear-gradient(
-    90deg,
+    92deg,
     var(--tex-wood) 0%,
-    var(--tex-red-deep) 58%,
+    #5c3828 38%,
+    var(--tex-red-deep) 68%,
     var(--tex-red) 100%
   ) !important;
-  box-shadow: 0 2px 16px rgba(74, 50, 40, 0.22) !important;
-  border-bottom: none !important;
+  box-shadow: var(--tex-shadow-chrome) !important;
+  border-bottom: 1px solid rgba(255, 252, 247, 0.08) !important;
+  letter-spacing: 0.03em;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .social-topbar::after {
@@ -214,34 +291,42 @@ body.site-huipil.site-coastal.site-oax-craft .social-topbar::after {
 
 body.site-huipil.site-coastal.site-oax-craft .social-topbar a {
   background: transparent !important;
-  color: #fff !important;
+  color: rgba(255, 252, 247, 0.96) !important;
   border: none !important;
   border-radius: 0 !important;
-  padding: 0.2rem 0.55rem !important;
+  padding: 0.25rem 0.6rem !important;
   font-weight: 600 !important;
+  font-size: 0.78rem !important;
   box-shadow: none !important;
-  text-shadow: 0 1px 2px rgba(42, 33, 28, 0.25) !important;
-  letter-spacing: 0.02em;
+  text-shadow: 0 1px 3px rgba(42, 33, 28, 0.3) !important;
+  transition: color 0.25s var(--tex-ease), opacity 0.25s var(--tex-ease);
 }
 
 body.site-huipil.site-coastal.site-oax-craft .social-topbar a svg {
-  color: #fff !important;
-  filter: drop-shadow(0 1px 1px rgba(42, 33, 28, 0.2));
+  color: inherit !important;
+  opacity: 0.92;
+  transition: transform 0.25s var(--tex-ease);
 }
 
 body.site-huipil.site-coastal.site-oax-craft .social-topbar a:hover {
-  text-decoration: underline !important;
-  text-underline-offset: 3px;
-  filter: none !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  opacity: 1;
 }
 
-/* --- Header: linen glass --- */
+body.site-huipil.site-coastal.site-oax-craft .social-topbar a:hover svg {
+  transform: translateY(-1px);
+}
+
+/* ── Header: frosted linen ── */
 body.site-huipil.site-coastal.site-oax-craft .header {
-  background: rgba(250, 246, 239, 0.96) !important;
+  background: rgba(250, 246, 239, 0.92) !important;
+  backdrop-filter: blur(18px) saturate(1.15) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.15) !important;
   border-bottom: none !important;
   box-shadow:
-    0 1px 0 rgba(107, 78, 61, 0.1),
-    0 4px 18px rgba(74, 50, 40, 0.05) !important;
+    0 1px 0 rgba(107, 78, 61, 0.08),
+    0 6px 24px rgba(74, 50, 40, 0.06) !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .header::before,
@@ -250,92 +335,448 @@ body.site-huipil.site-coastal.site-oax-craft .header::after {
   content: none !important;
 }
 
+body.site-huipil .logo-img--lockup {
+  box-shadow:
+    0 0 0 2px var(--tex-cream-light),
+    0 0 0 3px rgba(196, 154, 58, 0.45),
+    0 4px 14px rgba(74, 50, 40, 0.12) !important;
+}
+
 body.site-huipil .logo__title {
   color: var(--tex-red-deep) !important;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  font-weight: 700 !important;
 }
 
 body.site-huipil .header .logo__sub {
   color: var(--tex-gold) !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 600 !important;
+}
+
+body.site-huipil .header .nav a:not(.nav-menu-cta) {
+  color: var(--tex-ink-soft) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+  position: relative;
+  transition: color 0.2s var(--tex-ease);
+}
+
+body.site-huipil .header .nav a:not(.nav-menu-cta).active::after,
+body.site-huipil .header .nav a:not(.nav-menu-cta):hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--tex-gold), var(--tex-red));
+  border-radius: 2px;
 }
 
 body.site-huipil .nav-menu-cta,
 body.site-huipil .nav-menu-cta:hover,
 body.site-huipil .nav-menu-cta.active {
-  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red)) !important;
-  box-shadow: 0 3px 14px rgba(122, 34, 24, 0.22) !important;
+  background: linear-gradient(135deg, var(--tex-red-deep) 0%, var(--tex-red) 72%, #b84838 100%) !important;
+  box-shadow:
+    0 4px 16px rgba(122, 34, 24, 0.28),
+    0 1px 0 rgba(255, 252, 247, 0.15) inset !important;
+  letter-spacing: 0.05em !important;
+  transition: transform 0.2s var(--tex-ease), box-shadow 0.2s var(--tex-ease) !important;
 }
 
-/* --- Hero: warmer craft overlay --- */
+body.site-huipil .nav-menu-cta:hover {
+  transform: translateY(-1px);
+}
+
+/* ── Hero: editorial cover ── */
 body.site-huipil.site-coastal.site-oax-craft .hero-overlay {
   background:
-    linear-gradient(
-      180deg,
-      rgba(30, 58, 95, 0.28) 0%,
-      rgba(74, 50, 40, 0.42) 42%,
-      rgba(122, 34, 24, 0.52) 100%
-    ) !important;
+    linear-gradient(125deg, rgba(30, 58, 95, 0.32) 0%, transparent 42%),
+    linear-gradient(180deg, rgba(74, 50, 40, 0.2) 0%, rgba(42, 33, 28, 0.48) 55%, rgba(122, 34, 24, 0.58) 100%) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .hero-content {
+  max-width: 42rem;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .hero-eyebrow {
-  color: var(--tex-linen) !important;
-  letter-spacing: 0.16em !important;
+  color: var(--tex-gold-pale) !important;
+  letter-spacing: 0.2em !important;
+  font-weight: 700 !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase;
 }
 
-/* --- Hide legacy craft bands --- */
+body.site-huipil.site-coastal.site-oax-craft .hero h1 {
+  letter-spacing: 0.05em !important;
+  text-shadow:
+    0 2px 4px rgba(42, 33, 28, 0.35),
+    0 12px 40px rgba(42, 33, 28, 0.25) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .hero-sub {
+  color: rgba(255, 252, 247, 0.92) !important;
+  line-height: 1.65 !important;
+  text-shadow: 0 1px 12px rgba(42, 33, 28, 0.4);
+}
+
+body.site-huipil.site-coastal.site-oax-craft .mobile-quick a {
+  background: rgba(250, 246, 239, 0.14) !important;
+  border: 1px solid rgba(255, 252, 247, 0.35) !important;
+  backdrop-filter: blur(8px);
+  transition: background 0.2s var(--tex-ease), border-color 0.2s var(--tex-ease);
+}
+
+body.site-huipil.site-coastal.site-oax-craft .mobile-quick a:hover {
+  background: rgba(250, 246, 239, 0.28) !important;
+  border-color: var(--tex-gold-pale) !important;
+}
+
+/* ── Live ribbon: luxe band + runner hem ── */
+body.site-huipil.site-coastal.site-oax-craft .feat-ribbon {
+  position: relative;
+  background: linear-gradient(
+    92deg,
+    var(--tex-navy) 0%,
+    var(--tex-wood) 18%,
+    var(--tex-red-deep) 46%,
+    var(--tex-red) 66%,
+    var(--tex-gold) 100%
+  ) !important;
+  background-size: 100% 100% !important;
+  border-bottom: none !important;
+  box-shadow: 0 6px 22px rgba(74, 50, 40, 0.14) !important;
+  overflow: hidden;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .feat-ribbon::after {
+  content: '' !important;
+  display: block !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: var(--tex-runner) center / cover;
+  background-position: var(--tex-crop-stripe);
+  opacity: 0.92;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .feat-ribbon__inner {
+  position: relative;
+  z-index: 1;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .feat-ribbon__specials {
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-shadow: 0 1px 3px rgba(42, 33, 28, 0.25);
+}
+
+body.site-huipil.site-coastal.site-oax-craft .feat-ribbon__dot {
+  background: var(--tex-gold-pale) !important;
+  box-shadow: 0 0 10px rgba(232, 212, 168, 0.7) !important;
+}
+
+/* ── Stats: linen cards on woven rail ── */
+body.site-huipil.site-coastal.site-oax-craft .feat-stats {
+  position: relative;
+  padding: 0.65rem 0.5rem 0.75rem !important;
+  background: var(--tex-linen) !important;
+  background-image: none !important;
+  box-shadow: var(--tex-shadow-soft) !important;
+  gap: 0.5rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .feat-stats::before {
+  content: '' !important;
+  display: block !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--tex-runner) center / cover;
+  background-position: var(--tex-crop-stripe);
+}
+
+body.site-huipil.site-coastal.site-oax-craft .feat-stats::after {
+  display: none !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .feat-stat {
+  background: rgba(250, 246, 239, 0.96) !important;
+  border: 1px solid rgba(107, 78, 61, 0.1) !important;
+  border-radius: var(--tex-radius-sm) !important;
+  box-shadow: 0 2px 10px rgba(74, 50, 40, 0.04) !important;
+  transition: transform 0.25s var(--tex-ease), box-shadow 0.25s var(--tex-ease);
+}
+
+body.site-huipil.site-coastal.site-oax-craft .feat-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(74, 50, 40, 0.08) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .feat-stat__num {
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .feat-stat__label {
+  color: var(--tex-wood-mid) !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.68rem !important;
+}
+
+/* ── Section rhythm & woven dividers ── */
 body.site-huipil .oax-craft-band {
   display: none !important;
 }
 
 body.site-huipil .hero::before,
-body.site-huipil .hero::after,
+body.site-huipil .hero::after {
+  display: none !important;
+  content: none !important;
+}
+
+body.site-huipil .favorites-showcase::before,
+body.site-huipil .story-spin-section::before,
+body.site-huipil .reviews-section::before,
+body.site-huipil .visit-section::before {
+  content: '';
+  display: block;
+  width: min(88%, 680px);
+  height: 5px;
+  margin: 0 auto 1.25rem;
+  background: var(--tex-runner) center / cover;
+  background-position: var(--tex-crop-stripe);
+  border-radius: 4px;
+  opacity: 0.88;
+  box-shadow: 0 2px 10px rgba(74, 50, 40, 0.08);
+}
+
+body.site-huipil .section-tag {
+  color: var(--tex-wood-mid) !important;
+  letter-spacing: 0.2em !important;
+  font-weight: 700 !important;
+  position: relative;
+  padding-left: 1.1rem !important;
+}
+
+body.site-huipil .section-tag::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--tex-runner) center / cover;
+  background-position: var(--tex-crop-weave);
+  border-radius: 1px;
+  box-shadow: 0 0 0 1px rgba(196, 154, 58, 0.35);
+}
+
+body.site-huipil h1,
+body.site-huipil h2,
+body.site-huipil .section-title,
+body.site-huipil .menu-section-title {
+  color: var(--tex-red-deep);
+}
+
+body.site-huipil h2 em {
+  color: var(--tex-gold) !important;
+  font-style: normal;
+  font-weight: 600;
+}
+
 body.site-huipil .section-title::after,
 body.site-huipil .menu-section-title::after {
   display: none !important;
-  content: none !important;
 }
 
-/* --- Ribbon & stats: earthy gradients, no texture tiling --- */
-body.site-huipil.site-coastal.site-oax-craft .feat-ribbon {
+/* ── Signature plates ── */
+body.site-huipil.site-coastal.site-oax-craft .fav-card {
+  border-radius: var(--tex-radius-md) !important;
+  overflow: hidden;
+  box-shadow: var(--tex-shadow-soft) !important;
+  transition: transform 0.35s var(--tex-ease), box-shadow 0.35s var(--tex-ease) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fav-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--tex-shadow-lift) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fav-card__overlay {
   background: linear-gradient(
-    90deg,
-    var(--tex-navy) 0%,
-    var(--tex-wood) 20%,
-    var(--tex-red-deep) 48%,
-    var(--tex-red) 68%,
-    var(--tex-gold) 100%
+    180deg,
+    transparent 20%,
+    rgba(42, 33, 28, 0.35) 55%,
+    rgba(122, 34, 24, 0.72) 100%
   ) !important;
-  background-size: 100% 100% !important;
-  border-bottom: 2px solid rgba(196, 154, 58, 0.42) !important;
-  box-shadow: 0 4px 18px rgba(74, 50, 40, 0.12) !important;
 }
 
-body.site-huipil.site-coastal.site-oax-craft .feat-stats {
-  background: linear-gradient(
-    90deg,
-    var(--tex-navy) 0%,
-    var(--tex-red-deep) 32%,
-    var(--tex-red) 55%,
-    var(--tex-gold) 100%
-  ) !important;
-  background-size: 100% 100% !important;
+body.site-huipil.site-coastal.site-oax-craft .fav-card__tag {
+  background: rgba(250, 246, 239, 0.92) !important;
+  color: var(--tex-red-deep) !important;
+  border: 1px solid rgba(196, 154, 58, 0.4) !important;
+  letter-spacing: 0.12em !important;
+  font-weight: 700 !important;
 }
 
-body.site-huipil.site-coastal.site-oax-craft .feat-stats::after {
-  display: none !important;
-  content: none !important;
+body.site-huipil.site-coastal.site-oax-craft .fav-card h3 {
+  letter-spacing: 0.03em;
+  text-shadow: 0 2px 12px rgba(42, 33, 28, 0.35);
 }
 
-/* --- Footer: fringe crop from runner photo --- */
+/* ── Story & fiesta surfaces ── */
+body.site-huipil.site-coastal.site-oax-craft .story-spin__frame,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero {
+  background: rgba(250, 246, 239, 0.97) !important;
+  border: 1px solid rgba(107, 78, 61, 0.12) !important;
+  border-radius: var(--tex-radius-md) !important;
+  box-shadow: var(--tex-shadow-soft) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__frame::before {
+  background: var(--tex-runner) center / cover !important;
+  background-position: var(--tex-crop-weave) !important;
+  opacity: 0.85 !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-spin-btn,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-stamp-btn {
+  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red)) !important;
+  box-shadow: 0 4px 16px rgba(122, 34, 24, 0.22) !important;
+  letter-spacing: 0.04em;
+}
+
+/* ── Menu page: editorial ordering ── */
+body.site-huipil.menu-page.site-coastal.site-oax-craft .order-strip {
+  position: relative;
+  background: rgba(250, 246, 239, 0.98) !important;
+  border: 1px solid rgba(107, 78, 61, 0.12) !important;
+  border-radius: var(--tex-radius-md) !important;
+  box-shadow: var(--tex-shadow-soft) !important;
+  overflow: hidden;
+}
+
+body.site-huipil.menu-page.site-coastal.site-oax-craft .order-strip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--tex-runner) center / cover;
+  background-position: var(--tex-crop-stripe);
+}
+
+body.site-huipil.menu-page.site-coastal.site-oax-craft .order-strip__badge {
+  background: var(--tex-red-deep) !important;
+  letter-spacing: 0.1em;
+}
+
+body.site-huipil.menu-page.site-coastal.site-oax-craft .menu-view-tabs {
+  border-color: rgba(107, 78, 61, 0.14) !important;
+  background: rgba(250, 246, 239, 0.96) !important;
+}
+
+body.site-huipil.menu-page.site-coastal.site-oax-craft .menu-view-tab.is-active {
+  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red)) !important;
+  box-shadow: 0 3px 12px rgba(122, 34, 24, 0.2) !important;
+}
+
+body.site-huipil .menu-card,
+body.site-huipil .order-cart-panel {
+  background-color: rgba(250, 246, 239, 0.98) !important;
+  border-color: rgba(107, 78, 61, 0.11) !important;
+  border-radius: var(--tex-radius-sm) !important;
+  box-shadow: var(--tex-shadow-soft) !important;
+  transition: border-color 0.2s var(--tex-ease), box-shadow 0.2s var(--tex-ease);
+}
+
+body.site-huipil .menu-card:hover {
+  border-color: rgba(196, 154, 58, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(74, 50, 40, 0.09) !important;
+}
+
+body.site-huipil .menu-chip.is-active,
+body.site-huipil .menu-filter-btn.is-active {
+  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red)) !important;
+  border-color: var(--tex-red-deep) !important;
+}
+
+body.site-huipil .item-modal__dialog {
+  background: var(--tex-cream-light) !important;
+  border: 1px solid rgba(107, 78, 61, 0.14) !important;
+  border-radius: var(--tex-radius-md) !important;
+}
+
+/* ── Pay page ── */
+body.site-huipil.pay-page .pay-shell {
+  background-color: transparent !important;
+}
+
+body.site-huipil.pay-page .pay-head,
+body.site-huipil.pay-page .pay-summary,
+body.site-huipil.pay-page .pay-card {
+  background: rgba(250, 246, 239, 0.98) !important;
+  border: 1px solid rgba(107, 78, 61, 0.11) !important;
+  border-radius: var(--tex-radius-md) !important;
+  box-shadow: var(--tex-shadow-soft) !important;
+}
+
+body.site-huipil.pay-page .pay-title {
+  color: var(--tex-red-deep) !important;
+  letter-spacing: 0.04em;
+}
+
+/* ── Buttons ── */
+body.site-huipil .btn-primary,
+body.site-huipil .btn-red,
+body.site-huipil .menu-cta-primary,
+body.site-huipil .order-cart-checkout,
+body.site-huipil .btn-order {
+  background: linear-gradient(135deg, var(--tex-red-deep) 0%, var(--tex-red) 70%, #b84838 100%) !important;
+  border-color: var(--tex-red-deep) !important;
+  box-shadow: 0 4px 18px rgba(122, 34, 24, 0.22) !important;
+  letter-spacing: 0.04em;
+  transition: transform 0.2s var(--tex-ease), box-shadow 0.2s var(--tex-ease), filter 0.2s !important;
+}
+
+body.site-huipil .btn-primary:hover,
+body.site-huipil .btn-red:hover,
+body.site-huipil .menu-cta-primary:hover,
+body.site-huipil .order-cart-checkout:hover,
+body.site-huipil .btn-order:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+body.site-huipil .btn-outline {
+  border-color: rgba(107, 78, 61, 0.28) !important;
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-huipil :focus-visible {
+  outline: 2px solid var(--tex-gold);
+  outline-offset: 2px;
+}
+
+/* ── Footer: fringe + linen base ── */
 body.site-huipil.site-coastal.site-oax-craft .footer::before,
 body.site-huipil.site-coastal.site-oax-craft footer.footer--slim::before {
   display: block !important;
   content: '' !important;
-  height: clamp(22px, 4vw, 32px) !important;
+  height: clamp(26px, 5vw, 38px) !important;
   background: var(--tex-runner) no-repeat !important;
   background-size: cover !important;
-  background-position: 82% 50% !important;
-  box-shadow: 0 -3px 14px rgba(74, 50, 40, 0.08) !important;
+  background-position: var(--tex-crop-fringe) !important;
+  box-shadow: 0 -4px 18px rgba(74, 50, 40, 0.1) !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .footer::after,
@@ -348,47 +789,15 @@ body.site-huipil.site-coastal.site-oax-craft .footer-crown::after {
 body.site-huipil.site-coastal.site-oax-craft .footer,
 body.site-huipil.site-coastal.site-oax-craft footer.footer--slim {
   background: var(--tex-cream-light) !important;
-  border-top: 1px solid rgba(107, 78, 61, 0.1) !important;
+  border-top: none !important;
+  color: var(--tex-ink-soft);
 }
 
-/* --- Typography & surfaces --- */
-body.site-huipil h1,
-body.site-huipil h2,
-body.site-huipil .section-title,
-body.site-huipil .menu-section-title {
-  color: var(--tex-red-deep);
-}
-
-body.site-huipil .section-tag {
-  color: var(--tex-wood-mid) !important;
-}
-
-body.site-huipil .btn-primary,
-body.site-huipil .menu-cta-primary,
-body.site-huipil .order-cart-checkout {
-  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red)) !important;
-  border-color: var(--tex-red-deep) !important;
-  box-shadow: 0 4px 16px rgba(122, 34, 24, 0.2) !important;
-}
-
-body.site-huipil .menu-card,
-body.site-huipil .order-cart-panel,
-body.site-huipil .pay-shell {
-  background-color: rgba(250, 246, 239, 0.98) !important;
-  border-color: rgba(107, 78, 61, 0.12) !important;
-  box-shadow: 0 2px 18px rgba(74, 50, 40, 0.06) !important;
-}
-
-body.site-huipil .menu-chip.is-active,
-body.site-huipil .menu-filter-btn.is-active {
-  background: var(--tex-red) !important;
-  border-color: var(--tex-red-deep) !important;
-}
-
+/* ── Welcome backdrop ── */
 body.site-huipil.welcome-page {
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(74, 50, 40, 0.55) 0%, transparent 70%),
-    var(--tex-wood) !important;
+    radial-gradient(ellipse 90% 70% at 50% -15%, rgba(138, 107, 86, 0.45) 0%, transparent 62%),
+    linear-gradient(165deg, var(--tex-wood) 0%, #3a261c 100%) !important;
 }
 
 body.site-huipil.welcome-page .popup::before {
@@ -396,22 +805,51 @@ body.site-huipil.welcome-page .popup::before {
 }
 
 body.site-huipil.welcome-page .popup__btn {
-  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red) 60%, var(--tex-gold)) !important;
-  box-shadow: 0 8px 24px rgba(122, 34, 24, 0.28) !important;
+  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red) 55%, var(--tex-gold)) !important;
+  box-shadow: 0 10px 28px rgba(122, 34, 24, 0.32) !important;
 }
 
 body.site-huipil.welcome-page .popup__eyebrow {
   color: var(--tex-red) !important;
+  letter-spacing: 0.2em !important;
+}
+
+body.site-huipil.welcome-page .popup__title {
+  color: var(--tex-red-deep) !important;
+  letter-spacing: 0.06em !important;
+}
+
+/* ── Motion ── */
+@keyframes tex-runner-pan {
+  0% { background-position: 30% 56%; }
+  100% { background-position: 40% 54%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.site-huipil .tex-runner-banner {
+    animation: none;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .feat-stat:hover,
+  body.site-huipil.site-coastal.site-oax-craft .fav-card:hover,
+  body.site-huipil .nav-menu-cta:hover,
+  body.site-huipil .btn-primary:hover {
+    transform: none;
+  }
 }
 
 @media (max-width: 768px) {
   body.site-huipil .tex-runner-banner {
-    height: 44px;
-    background-position: 38% 58%;
+    height: 48px;
   }
 
   body.site-huipil .tex-runner-showcase {
-    height: 120px;
-    background-position: center 46%;
+    width: 94%;
+    height: 132px;
+    border-radius: var(--tex-radius-md);
+  }
+
+  body.site-huipil .tex-runner-showcase__title {
+    font-size: 1rem;
   }
 }
