@@ -1,5 +1,5 @@
-/* El Mirasol — Textile Master Theme v2
-   Fusion: huipil red embroidery · woven runner (Image #1) · Oaxacan coastal craft */
+/* El Mirasol — Textile Master Theme v3
+   Fusion: huipil embroidery · woven runner · rainbow serape · Oaxacan coastal craft */
 
 body.site-huipil {
   /* Runner cream + wood table warmth */
@@ -8,7 +8,7 @@ body.site-huipil {
   --tex-cream-deep: #ede6d8;
   --tex-ivory: #fffcf7;
 
-  /* Image #1 stripe palette — red · blue · ink · green · gold · rose */
+  /* Runner selvedge palette */
   --tex-red: #c2352f;
   --tex-red-deep: #9a2218;
   --tex-red-bright: #d43d35;
@@ -22,26 +22,42 @@ body.site-huipil {
   --tex-ink: #1e1e1e;
   --tex-wood: #4a3728;
 
+  /* Rainbow serape palette (Image #1) */
+  --serape-magenta: #e91e8c;
+  --serape-pink: #d946a8;
+  --serape-yellow: #ffd700;
+  --serape-gold: #facc15;
+  --serape-orange: #ff6b2b;
+  --serape-red: #dc2626;
+  --serape-cyan: #22d3ee;
+  --serape-blue: #2563eb;
+  --serape-purple: #9333ea;
+  --serape-lime: #84cc16;
+  --serape-rust: #b45309;
+  --serape-burgundy: #7f1d1d;
+  --serape-navy: #1e293b;
+
   /* Reference photos */
   --tex-huipil: url("../assets/patterns/huipil-textile-reference.png");
   --tex-runner: url("../assets/patterns/woven-runner-reference.png");
+  --tex-serape: url("../assets/patterns/rainbow-serape-reference.png");
+
+  /* Dense rainbow serape stripes — chaotic horizontal weave */
+  --tex-serape-rainbow: url("data:image/svg+xml,%3Csvg width='240' height='72' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='0' height='2' width='240' fill='%23e91e8c'/%3E%3Crect y='2' height='1.5' width='240' fill='%23ffd700'/%3E%3Crect y='3.5' height='2' width='240' fill='%23ff6b2b'/%3E%3Crect y='5.5' height='1' width='240' fill='%23dc2626'/%3E%3Crect y='6.5' height='2.5' width='240' fill='%2322d3ee'/%3E%3Crect y='9' height='1.5' width='240' fill='%232563eb'/%3E%3Crect y='10.5' height='2' width='240' fill='%239333ea'/%3E%3Crect y='12.5' height='1' width='240' fill='%2384cc16'/%3E%3Crect y='13.5' height='2' width='240' fill='%23b45309'/%3E%3Crect y='15.5' height='1.5' width='240' fill='%237f1d1d'/%3E%3Crect y='17' height='2' width='240' fill='%231e293b'/%3E%3Crect y='19' height='1' width='240' fill='%23faf8f2'/%3E%3Crect y='20' height='2.5' width='240' fill='%23d946a8'/%3E%3Crect y='22.5' height='1.5' width='240' fill='%23facc15'/%3E%3Crect y='24' height='2' width='240' fill='%23ea580c'/%3E%3Crect y='26' height='1' width='240' fill='%23ef4444'/%3E%3Crect y='27' height='2' width='240' fill='%2306b6d4'/%3E%3Crect y='29' height='1.5' width='240' fill='%233b82f6'/%3E%3Crect y='30.5' height='2' width='240' fill='%23a855f7'/%3E%3Crect y='32.5' height='1' width='240' fill='%2365a30d'/%3E%3Crect y='33.5' height='2.5' width='240' fill='%23c2410c'/%3E%3Crect y='36' height='1.5' width='240' fill='%23991b1b'/%3E%3Crect y='37.5' height='2' width='240' fill='%230f172a'/%3E%3Crect y='39.5' height='1' width='240' fill='%23f0abfc'/%3E%3Crect y='40.5' height='2' width='240' fill='%23fde047'/%3E%3Crect y='42.5' height='1.5' width='240' fill='%23fb923c'/%3E%3Crect y='44' height='2' width='240' fill='%23f43f5e'/%3E%3Crect y='46' height='1' width='240' fill='%2367e8f9'/%3E%3Crect y='47' height='2.5' width='240' fill='%231d4ed8'/%3E%3Crect y='49.5' height='1.5' width='240' fill='%237c3aed'/%3E%3Crect y='51' height='2' width='240' fill='%234ade80'/%3E%3Crect y='53' height='1' width='240' fill='%23d97706'/%3E%3Crect y='54' height='2' width='240' fill='%23be123c'/%3E%3Crect y='56' height='1.5' width='240' fill='%23334155'/%3E%3Crect y='57.5' height='2' width='240' fill='%23ec4899'/%3E%3Crect y='59.5' height='1' width='240' fill='%23eab308'/%3E%3Crect y='60.5' height='2.5' width='240' fill='%23f97316'/%3E%3Crect y='63' height='1.5' width='240' fill='%23e11d48'/%3E%3Crect y='64.5' height='2' width='240' fill='%230891b2'/%3E%3Crect y='66.5' height='1' width='240' fill='%231e40af'/%3E%3Crect y='67.5' height='2' width='240' fill='%236d28d9'/%3E%3Crect y='69.5' height='1.5' width='240' fill='%2316a34a'/%3E%3Crect y='71' height='1' width='240' fill='%2392400e'/%3E%3C/svg%3E");
 
   /* Multicolor diamond lattice (runner center panel) */
   --tex-diamond: url("data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32 4 L60 32 L32 60 L4 32 Z' fill='none' stroke='%23d8d0c2' stroke-width='0.7'/%3E%3Cpath d='M32 12 L52 32 L32 52 L12 32 Z' fill='none' stroke='%23c2352f' stroke-width='0.55' stroke-opacity='0.42'/%3E%3Cpath d='M32 20 L44 32 L32 44 L20 32 Z' fill='%232d5f8f' fill-opacity='0.12'/%3E%3Cpath d='M32 26 L38 32 L32 38 L26 32 Z' fill='%233d7340' fill-opacity='0.18'/%3E%3Cline x1='32' y1='20' x2='32' y2='44' stroke='%231e1e1e' stroke-width='0.35' stroke-opacity='0.22'/%3E%3Cline x1='20' y1='32' x2='44' y2='32' stroke='%231e1e1e' stroke-width='0.35' stroke-opacity='0.22'/%3E%3Ccircle cx='32' cy='32' r='2.2' fill='%23c2352f' fill-opacity='0.28'/%3E%3C/svg%3E");
 
-  /* Huipil embroidery — flowers + birds (red on cream) */
+  /* Huipil embroidery — flowers + birds */
   --tex-huipil-motif: url("data:image/svg+xml,%3Csvg width='96' height='96' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c2352f' fill-opacity='0.09' stroke='%23c2352f' stroke-opacity='0.14' stroke-width='0.5'%3E%3Ccircle cx='24' cy='28' r='5' fill='none'/%3E%3Ccircle cx='24' cy='28' r='2'/%3E%3Cpath d='M24 18 Q28 24 24 28 Q20 24 24 18'/%3E%3Cpath d='M34 18 Q28 24 24 28 Q28 32 34 18'/%3E%3Cpath d='M14 18 Q20 24 24 28 Q20 32 14 18'/%3E%3Cpath d='M24 38 Q28 32 24 28 Q20 32 24 38'/%3E%3Cpath d='M58 52 Q62 46 68 48 Q64 54 58 52' fill='%23c2352f' fill-opacity='0.07'/%3E%3Cpath d='M58 48 L52 44 L54 50 Z'/%3E%3Cpath d='M68 48 L74 44 L72 50 Z'/%3E%3Ccircle cx='72' cy='22' r='4' fill='none'/%3E%3Ccircle cx='72' cy='22' r='1.6'/%3E%3Cpath d='M48 68 Q54 62 60 68 Q54 74 48 68'/%3E%3C/g%3E%3C/svg%3E");
 
-  /* Geometric dash band (between selvedge and center weave) */
   --tex-dash-band: url("data:image/svg+xml,%3Csvg width='48' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='2' width='2' height='2' fill='%23c2352f'/%3E%3Crect x='8' y='2' width='2' height='2' fill='%232d5f8f'/%3E%3Crect x='14' y='2' width='2' height='2' fill='%231e1e1e'/%3E%3Crect x='20' y='2' width='2' height='2' fill='%233d7340'/%3E%3Crect x='26' y='2' width='2' height='2' fill='%23d4a82a'/%3E%3Crect x='32' y='2' width='2' height='2' fill='%23c45a6a'/%3E%3Crect x='38' y='2' width='2' height='2' fill='%23c2352f'/%3E%3Crect x='44' y='2' width='2' height='2' fill='%232d5f8f'/%3E%3C/svg%3E");
 
-  /* Runner selvedge stripes — exact Image #1 sequence */
   --tex-stripe-h: url("data:image/svg+xml,%3Csvg width='160' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='160' height='1.1' y='0' fill='%23c2352f'/%3E%3Crect width='160' height='0.9' y='1.2' fill='%232d5f8f'/%3E%3Crect width='160' height='0.8' y='2.2' fill='%231e1e1e'/%3E%3Crect width='160' height='1' y='3.1' fill='%233d7340'/%3E%3Crect width='160' height='0.9' y='4.2' fill='%23d4a82a'/%3E%3Crect width='160' height='0.8' y='5.2' fill='%23c45a6a'/%3E%3Crect width='160' height='1' y='6.1' fill='%23c2352f'/%3E%3Crect width='160' height='0.9' y='7.2' fill='%232d5f8f'/%3E%3Crect width='160' height='0.8' y='8.2' fill='%231e1e1e'/%3E%3Crect width='160' height='1.1' y='9.1' fill='%233d7340'/%3E%3C/svg%3E");
 
   --tex-stripe-v: url("data:image/svg+xml,%3Csvg width='12' height='160' xmlns='http://www.w3.org/2000/svg'%3E%3Crect height='160' width='1.1' x='0' fill='%23c2352f'/%3E%3Crect height='160' width='0.9' x='1.2' fill='%232d5f8f'/%3E%3Crect height='160' width='0.8' x='2.2' fill='%231e1e1e'/%3E%3Crect height='160' width='1' x='3.1' fill='%233d7340'/%3E%3Crect height='160' width='0.9' x='4.2' fill='%23d4a82a'/%3E%3Crect height='160' width='0.8' x='5.2' fill='%23c45a6a'/%3E%3Crect height='160' width='1' x='6.1' fill='%23c2352f'/%3E%3Crect height='160' width='0.9' x='7.2' fill='%232d5f8f'/%3E%3Crect height='160' width='0.8' x='8.2' fill='%231e1e1e'/%3E%3Crect height='160' width='1.1' x='9.1' fill='%233d7340'/%3E%3C/svg%3E");
 
-  /* Multicolor fringe (runner end) */
-  --tex-fringe: url("data:image/svg+xml,%3Csvg width='128' height='18' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='128' height='4' fill='%23f7f3eb'/%3E%3Cg fill-opacity='0.92'%3E%3Crect x='2' y='4' width='2' height='13' fill='%23faf8f2'/%3E%3Crect x='6' y='4' width='2' height='14' fill='%23c2352f'/%3E%3Crect x='10' y='5' width='2' height='12' fill='%232d5f8f'/%3E%3Crect x='14' y='4' width='2' height='14' fill='%23d4a82a'/%3E%3Crect x='18' y='5' width='2' height='11' fill='%233d7340'/%3E%3Crect x='22' y='4' width='2' height='14' fill='%23faf8f2'/%3E%3Crect x='26' y='4' width='2' height='13' fill='%231e1e1e'/%3E%3Crect x='30' y='5' width='2' height='12' fill='%23c45a6a'/%3E%3Crect x='34' y='4' width='2' height='14' fill='%23c2352f'/%3E%3Crect x='38' y='4' width='2' height='13' fill='%232d5f8f'/%3E%3Crect x='42' y='5' width='2' height='12' fill='%23d4a82a'/%3E%3Crect x='46' y='4' width='2' height='14' fill='%23faf8f2'/%3E%3Crect x='50' y='4' width='2' height='13' fill='%233d7340'/%3E%3Crect x='54' y='5' width='2' height='11' fill='%23c2352f'/%3E%3Crect x='58' y='4' width='2' height='14' fill='%232d5f8f'/%3E%3Crect x='62' y='4' width='2' height='13' fill='%23d4a82a'/%3E%3Crect x='66' y='5' width='2' height='12' fill='%23c45a6a'/%3E%3Crect x='70' y='4' width='2' height='14' fill='%23faf8f2'/%3E%3Crect x='74' y='4' width='2' height='13' fill='%23c2352f'/%3E%3Crect x='78' y='5' width='2' height='12' fill='%233d7340'/%3E%3Crect x='82' y='4' width='2' height='14' fill='%232d5f8f'/%3E%3Crect x='86' y='4' width='2' height='13' fill='%23d4a82a'/%3E%3Crect x='90' y='5' width='2' height='11' fill='%231e1e1e'/%3E%3Crect x='94' y='4' width='2' height='14' fill='%23c2352f'/%3E%3Crect x='98' y='4' width='2' height='13' fill='%23faf8f2'/%3E%3Crect x='102' y='5' width='2' height='12' fill='%23c45a6a'/%3E%3Crect x='106' y='4' width='2' height='14' fill='%233d7340'/%3E%3Crect x='110' y='4' width='2' height='13' fill='%232d5f8f'/%3E%3Crect x='114' y='5' width='2' height='12' fill='%23d4a82a'/%3E%3Crect x='118' y='4' width='2' height='14' fill='%23c2352f'/%3E%3Crect x='122' y='4' width='2' height='13' fill='%23faf8f2'/%3E%3C/g%3E%3C/svg%3E");
+  --tex-fringe: url("data:image/svg+xml,%3Csvg width='128' height='18' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='128' height='4' fill='%23f7f3eb'/%3E%3Cg fill-opacity='0.92'%3E%3Crect x='2' y='4' width='2' height='13' fill='%23faf8f2'/%3E%3Crect x='6' y='4' width='2' height='14' fill='%23e91e8c'/%3E%3Crect x='10' y='5' width='2' height='12' fill='%2322d3ee'/%3E%3Crect x='14' y='4' width='2' height='14' fill='%23ffd700'/%3E%3Crect x='18' y='5' width='2' height='11' fill='%2384cc16'/%3E%3Crect x='22' y='4' width='2' height='14' fill='%23faf8f2'/%3E%3Crect x='26' y='4' width='2' height='13' fill='%232563eb'/%3E%3Crect x='30' y='5' width='2' height='12' fill='%23d946a8'/%3E%3Crect x='34' y='4' width='2' height='14' fill='%23ff6b2b'/%3E%3Crect x='38' y='4' width='2' height='13' fill='%239333ea'/%3E%3Crect x='42' y='5' width='2' height='12' fill='%23ffd700'/%3E%3Crect x='46' y='4' width='2' height='14' fill='%23faf8f2'/%3E%3Crect x='50' y='4' width='2' height='13' fill='%23dc2626'/%3E%3Crect x='54' y='5' width='2' height='11' fill='%2306b6d4'/%3E%3Crect x='58' y='4' width='2' height='14' fill='%23b45309'/%3E%3Crect x='62' y='4' width='2' height='13' fill='%23facc15'/%3E%3Crect x='66' y='5' width='2' height='12' fill='%23ec4899'/%3E%3Crect x='70' y='4' width='2' height='14' fill='%23faf8f2'/%3E%3Crect x='74' y='4' width='2' height='13' fill='%231e40af'/%3E%3Crect x='78' y='5' width='2' height='12' fill='%2365a30d'/%3E%3Crect x='82' y='4' width='2' height='14' fill='%23f97316'/%3E%3Crect x='86' y='4' width='2' height='13' fill='%237c3aed'/%3E%3Crect x='90' y='5' width='2' height='11' fill='%231e293b'/%3E%3Crect x='94' y='4' width='2' height='14' fill='%23e11d48'/%3E%3Crect x='98' y='4' width='2' height='13' fill='%23faf8f2'/%3E%3Crect x='102' y='5' width='2' height='12' fill='%2322d3ee'/%3E%3Crect x='106' y='4' width='2' height='14' fill='%23eab308'/%3E%3Crect x='110' y='4' width='2' height='13' fill='%233b82f6'/%3E%3Crect x='114' y='5' width='2' height='12' fill='%23a855f7'/%3E%3Crect x='118' y='4' width='2' height='14' fill='%23dc2626'/%3E%3Crect x='122' y='4' width='2' height='13' fill='%23faf8f2'/%3E%3C/g%3E%3C/svg%3E");
 
   /* Brand token bridge */
   --huipil-red: var(--tex-red);
@@ -59,19 +75,10 @@ body.site-huipil {
   --oax-gold-pale: #f0e4c8;
   --oax-ivory: var(--tex-cream-light);
   --oax-pearl: var(--tex-cream);
-  --oax-zigzag-h: var(--tex-stripe-h);
+  --oax-zigzag-h: var(--tex-serape-rainbow);
   --oax-zigzag-v: var(--tex-stripe-v);
   --oax-flores: var(--tex-huipil-motif);
-  --oax-serape: linear-gradient(
-    90deg,
-    var(--tex-red-deep) 0%,
-    var(--tex-red) 22%,
-    var(--tex-blue) 42%,
-    var(--tex-ink) 52%,
-    var(--tex-green) 68%,
-    var(--tex-gold) 84%,
-    var(--tex-rose) 100%
-  );
+  --oax-serape: var(--tex-serape-rainbow);
 
   --fire-red: var(--tex-red);
   --fire-red-deep: var(--tex-red-deep);
@@ -79,33 +86,41 @@ body.site-huipil {
   --coast-sea-mid: var(--tex-blue-bright);
 }
 
-/* Suppress coastal/oax star marks — textile layers own ::before/::after */
+/* Suppress coastal/oax star marks */
 body.site-huipil.site-coastal.site-oax-craft.pattern::before,
 body.site-huipil.site-coastal.site-oax-craft.pattern::after {
   opacity: 1 !important;
 }
 
-/* ── Page canvas: cream weave + huipil motif + runner accent ── */
+/* ── Page canvas: four-textile layered composition ── */
 body.site-huipil.pattern,
 body.site-huipil.menu-page.pattern,
 body.site-huipil.pay-page.pattern {
   background-color: var(--tex-cream) !important;
   background-image:
-    linear-gradient(180deg, rgba(255, 252, 247, 0.92) 0%, rgba(247, 243, 235, 0.88) 50%, rgba(250, 248, 242, 0.94) 100%),
+    linear-gradient(180deg, rgba(255, 252, 247, 0.9) 0%, rgba(247, 243, 235, 0.84) 48%, rgba(250, 248, 242, 0.92) 100%),
     var(--tex-huipil-motif),
     var(--tex-diamond),
-    radial-gradient(ellipse 50% 40% at 100% 8%, rgba(45, 95, 143, 0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 46% 36% at 0% 92%, rgba(194, 53, 47, 0.08) 0%, transparent 56%),
+    linear-gradient(90deg, rgba(247, 243, 235, 0.72), rgba(247, 243, 235, 0.72)),
+    var(--tex-serape-rainbow),
+    radial-gradient(ellipse 52% 42% at 100% 8%, rgba(37, 99, 235, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 48% 38% at 0% 92%, rgba(233, 30, 140, 0.07) 0%, transparent 56%),
     radial-gradient(ellipse 80% 50% at 50% 100%, rgba(74, 55, 40, 0.04) 0%, transparent 65%),
-    var(--tex-huipil) !important;
+    var(--tex-serape),
+    var(--tex-huipil),
+    var(--tex-runner) !important;
   background-size:
     100% 100%,
     96px 96px,
     64px 64px,
     100% 100%,
+    240px 72px,
     100% 100%,
     100% 100%,
-    min(680px, 92vw) auto !important;
+    100% 100%,
+    min(520px, 50vw) auto,
+    min(640px, 88vw) auto,
+    min(480px, 42vw) auto !important;
   background-position:
     center,
     center,
@@ -113,34 +128,41 @@ body.site-huipil.pay-page.pattern {
     center,
     center,
     center,
-    right 4% top 6% !important;
-  background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed !important;
-  background-repeat: no-repeat, repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat !important;
+    center,
+    center,
+    left -6% top 4%,
+    right 4% top 5%,
+    right -8% bottom -6% !important;
+  background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed !important;
+  background-repeat: no-repeat, repeat, repeat, no-repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat !important;
   color: var(--tex-ink);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-image: var(--tex-serape-rainbow) 10 repeat;
 }
 
-/* Runner photo accent — bottom-right, wood-table warmth */
+/* Runner accent — bottom-right */
 body.site-huipil.pattern::before {
   display: block !important;
   content: '';
   position: fixed;
-  right: -4%;
-  bottom: -2%;
-  width: min(44vw, 540px);
-  height: min(36vh, 400px);
+  right: -3%;
+  bottom: 20px;
+  width: min(40vw, 500px);
+  height: min(32vh, 360px);
   background:
-    linear-gradient(145deg, rgba(247, 243, 235, 0.45) 0%, rgba(247, 243, 235, 0.78) 55%, rgba(250, 248, 242, 0.9) 100%),
+    linear-gradient(145deg, rgba(247, 243, 235, 0.35) 0%, rgba(247, 243, 235, 0.7) 60%, rgba(250, 248, 242, 0.88) 100%),
     var(--tex-runner) center / cover no-repeat !important;
-  opacity: 0.48;
+  opacity: 0.44;
   pointer-events: none;
   z-index: 0;
   border-radius: 14px 0 0 0;
   box-shadow: -10px -10px 48px rgba(74, 55, 40, 0.1);
-  border-top: 12px solid transparent;
-  border-image: var(--tex-stripe-h) 12 repeat;
+  border-top: 14px solid transparent;
+  border-image: var(--tex-serape-rainbow) 14 repeat;
 }
 
-/* Fringe footer */
+/* Fringe + rainbow cap */
 body.site-huipil.pattern::after {
   display: block !important;
   content: '';
@@ -148,34 +170,47 @@ body.site-huipil.pattern::after {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 18px;
-  background: var(--tex-fringe) repeat-x center bottom;
-  background-size: 128px 18px;
-  opacity: 0.94;
+  height: 22px;
+  background:
+    var(--tex-fringe) repeat-x center bottom,
+    var(--tex-serape-rainbow) repeat-x center top !important;
+  background-size: 128px 18px, 240px 4px !important;
+  opacity: 0.96;
   pointer-events: none;
   z-index: 4;
 }
 
-/* Side selvedge stripes (full page) */
-body.site-huipil.pattern {
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-image: var(--tex-stripe-v) 8 repeat;
-}
-
-/* ── Topbar: huipil red → coastal blue with runner trim ── */
+/* ── Topbar: serape cap + huipil red → coastal blue ── */
 body.site-huipil .social-topbar {
-  background: linear-gradient(
-    90deg,
-    var(--tex-red-deep) 0%,
-    var(--tex-red) 32%,
-    var(--tex-red-bright) 55%,
-    var(--tex-blue) 82%,
-    var(--tex-blue-bright) 100%
-  ) !important;
-  box-shadow: 0 2px 18px rgba(154, 34, 24, 0.3) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, transparent 28%),
+    linear-gradient(
+      90deg,
+      var(--tex-red-deep) 0%,
+      var(--serape-magenta) 18%,
+      var(--tex-red) 34%,
+      var(--serape-orange) 48%,
+      var(--tex-red-bright) 58%,
+      var(--serape-cyan) 72%,
+      var(--tex-blue) 86%,
+      var(--tex-blue-bright) 100%
+    ) !important;
+  box-shadow: 0 2px 20px rgba(154, 34, 24, 0.32) !important;
   border-bottom: none !important;
   position: relative;
+}
+
+body.site-huipil .social-topbar::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5px;
+  background: var(--tex-serape-rainbow) repeat-x center;
+  background-size: 240px 72px;
+  pointer-events: none;
+  z-index: 2;
 }
 
 body.site-huipil .social-topbar::after {
@@ -183,17 +218,17 @@ body.site-huipil .social-topbar::after {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -12px;
-  height: 12px;
+  bottom: -16px;
+  height: 16px;
   background:
-    var(--tex-dash-band) repeat-x center,
-    var(--tex-stripe-h) repeat-x center bottom !important;
-  background-size: 48px 6px, 160px 12px !important;
+    var(--tex-dash-band) repeat-x center top,
+    var(--tex-serape-rainbow) repeat-x center bottom !important;
+  background-size: 48px 6px, 240px 16px !important;
   pointer-events: none;
   z-index: 3;
 }
 
-/* ── Header: pearl glass + stripe underline ── */
+/* ── Header ── */
 body.site-huipil .header {
   background: rgba(255, 252, 247, 0.96) !important;
   border-bottom: none !important;
@@ -203,16 +238,30 @@ body.site-huipil .header {
   position: relative;
 }
 
+body.site-huipil .header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--tex-serape-rainbow) repeat-x center;
+  background-size: 240px 72px;
+  opacity: 0.95;
+}
+
 body.site-huipil .header::after {
   content: '';
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 6px;
-  background: var(--tex-dash-band) repeat-x center;
-  background-size: 48px 6px;
-  opacity: 0.85;
+  height: 8px;
+  background:
+    var(--tex-dash-band) repeat-x center top,
+    var(--tex-stripe-h) repeat-x center bottom;
+  background-size: 48px 6px, 160px 8px;
+  opacity: 0.88;
 }
 
 body.site-huipil .logo__title {
@@ -226,35 +275,108 @@ body.site-huipil .header .logo__sub {
 body.site-huipil .nav-menu-cta,
 body.site-huipil .nav-menu-cta:hover,
 body.site-huipil .nav-menu-cta.active {
-  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red) 50%, var(--tex-gold)) !important;
-  box-shadow: 0 4px 16px rgba(194, 53, 47, 0.3) !important;
+  background: linear-gradient(
+    135deg,
+    var(--tex-red-deep) 0%,
+    var(--serape-magenta) 28%,
+    var(--tex-red) 50%,
+    var(--serape-orange) 72%,
+    var(--tex-gold) 100%
+  ) !important;
+  box-shadow: 0 4px 18px rgba(194, 53, 47, 0.34) !important;
 }
 
-/* ── Craft bands: runner selvedge + serape ── */
+/* ── Hero: rainbow serape sash + textile wash ── */
+body.site-huipil .hero {
+  position: relative;
+}
+
+body.site-huipil .hero::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 6px;
+  background: var(--tex-serape-rainbow) repeat-x center;
+  background-size: 240px 72px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+body.site-huipil .hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18px;
+  background:
+    linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.12)),
+    var(--tex-serape-rainbow) repeat-x center !important;
+  background-size: 100% 100%, 240px 18px !important;
+  z-index: 4;
+  pointer-events: none;
+  box-shadow: 0 -4px 24px rgba(233, 30, 140, 0.18);
+}
+
+body.site-huipil .hero-overlay {
+  background:
+    linear-gradient(
+      125deg,
+      rgba(233, 30, 140, 0.12) 0%,
+      rgba(154, 34, 24, 0.2) 22%,
+      rgba(30, 30, 30, 0.44) 48%,
+      rgba(37, 99, 235, 0.18) 78%,
+      rgba(147, 51, 234, 0.1) 100%
+    ) !important;
+}
+
+body.site-huipil .hero-eyebrow {
+  color: var(--tex-gold-light) !important;
+  letter-spacing: 0.14em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  padding: 0.35rem 0.9rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(233, 30, 140, 0.35), rgba(37, 99, 235, 0.35));
+  border-bottom: 2px solid rgba(255, 215, 0, 0.55);
+}
+
+body.site-huipil .hero h1 {
+  text-shadow:
+    0 2px 24px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(233, 30, 140, 0.15);
+}
+
+/* ── Craft bands: full rainbow serape ── */
 body.site-huipil .oax-craft-band__shine {
   background: linear-gradient(
     90deg,
     transparent,
-    var(--tex-gold-light) 18%,
-    var(--tex-red) 48%,
-    var(--tex-blue) 72%,
+    var(--serape-yellow) 12%,
+    var(--serape-magenta) 32%,
+    var(--serape-cyan) 52%,
+    var(--serape-lime) 72%,
     transparent
   ) !important;
-  height: 2px !important;
+  height: 3px !important;
+  opacity: 0.9 !important;
 }
 
 body.site-huipil .oax-craft-band__zigzag {
-  height: 12px !important;
+  height: 16px !important;
   background:
-    var(--tex-dash-band) repeat-x center,
-    var(--tex-stripe-h) repeat-x center bottom !important;
-  background-size: 48px 6px, 160px 12px !important;
+    var(--tex-dash-band) repeat-x center top,
+    var(--tex-serape-rainbow) repeat-x center bottom !important;
+  background-size: 48px 6px, 240px 16px !important;
   opacity: 1 !important;
+  box-shadow: 0 2px 12px rgba(233, 30, 140, 0.12);
 }
 
 body.site-huipil .oax-craft-band__serape {
-  height: 7px !important;
-  background: var(--oax-serape) !important;
+  height: 14px !important;
+  background: var(--tex-serape-rainbow) repeat-x center !important;
+  background-size: 240px 72px !important;
   opacity: 1 !important;
 }
 
@@ -262,15 +384,15 @@ body.site-huipil.site-oax-craft > main::before,
 body.site-huipil.site-oax-craft > main::after,
 body.site-huipil.site-oax-craft #main::before,
 body.site-huipil.site-oax-craft #main::after {
-  width: 8px !important;
+  width: 10px !important;
   background:
     var(--tex-dash-band) repeat-y center,
-    var(--tex-stripe-v) repeat-y center !important;
-  background-size: 6px 48px, 12px 160px !important;
-  opacity: 0.62 !important;
+    var(--tex-serape-rainbow) repeat-y center !important;
+  background-size: 6px 48px, 10px 240px !important;
+  opacity: 0.78 !important;
 }
 
-/* ── Content panels: woven-card feel ── */
+/* ── Content panels ── */
 body.site-huipil .hero-card,
 body.site-huipil .story-card,
 body.site-huipil .feature-card,
@@ -283,7 +405,7 @@ body.site-huipil .popup,
 body.site-huipil main section,
 body.site-huipil .menu-pro-header,
 body.site-huipil .collection-intro {
-  background-color: rgba(255, 252, 247, 0.94) !important;
+  background-color: rgba(255, 252, 247, 0.93) !important;
   border-color: rgba(194, 53, 47, 0.1) !important;
 }
 
@@ -294,18 +416,37 @@ body.site-huipil .hero-card,
 body.site-huipil .story-card {
   box-shadow:
     0 12px 36px rgba(30, 30, 30, 0.07),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
-  border-top: 4px solid transparent !important;
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    -4px 0 0 0 transparent !important;
+  border-top: 5px solid transparent !important;
+  border-left: 5px solid transparent !important;
   border-image: linear-gradient(
-    90deg,
-    var(--tex-red) 0%,
-    var(--tex-blue) 28%,
-    var(--tex-ink) 42%,
-    var(--tex-green) 62%,
-    var(--tex-gold) 82%,
-    var(--tex-rose) 100%
+    180deg,
+    var(--serape-magenta) 0%,
+    var(--serape-yellow) 18%,
+    var(--serape-cyan) 38%,
+    var(--serape-purple) 58%,
+    var(--serape-lime) 78%,
+    var(--serape-orange) 100%
   ) 1 !important;
   position: relative;
+}
+
+body.site-huipil .menu-item-card::after,
+body.site-huipil .feature-card::after,
+body.site-huipil .hero-card::after,
+body.site-huipil .story-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--tex-serape-rainbow) repeat-x center;
+  background-size: 240px 72px;
+  border-radius: inherit inherit 0 0;
+  pointer-events: none;
+  z-index: 2;
 }
 
 body.site-huipil .menu-item-card::before,
@@ -315,7 +456,7 @@ body.site-huipil .feature-card::before {
   inset: 0;
   background: var(--tex-huipil-motif);
   background-size: 96px 96px;
-  opacity: 0.35;
+  opacity: 0.32;
   pointer-events: none;
   border-radius: inherit;
   z-index: 0;
@@ -327,39 +468,40 @@ body.site-huipil .feature-card > * {
   z-index: 1;
 }
 
-/* ── Hero: textile wash over photo ── */
-body.site-huipil .hero-overlay {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(154, 34, 24, 0.18) 0%,
-      rgba(30, 30, 30, 0.42) 42%,
-      rgba(45, 95, 143, 0.22) 100%
-    ) !important;
-}
-
-body.site-huipil .hero-eyebrow {
-  color: var(--tex-gold-light) !important;
-  letter-spacing: 0.14em;
-}
-
-/* ── Buttons & links ── */
+/* ── Buttons ── */
 body.site-huipil .btn-primary,
 body.site-huipil .menu-cta-primary,
 body.site-huipil .order-cart-checkout {
-  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red) 55%, var(--tex-red-bright)) !important;
+  background: linear-gradient(
+    135deg,
+    var(--tex-red-deep) 0%,
+    var(--serape-magenta) 35%,
+    var(--tex-red) 65%,
+    var(--serape-orange) 100%
+  ) !important;
   border-color: var(--tex-red-deep) !important;
-  box-shadow: 0 4px 20px rgba(154, 34, 24, 0.32) !important;
+  box-shadow: 0 4px 22px rgba(233, 30, 140, 0.28) !important;
+}
+
+body.site-huipil .btn-primary:hover,
+body.site-huipil .menu-cta-primary:hover,
+body.site-huipil .order-cart-checkout:hover {
+  background: linear-gradient(
+    135deg,
+    var(--serape-burgundy) 0%,
+    var(--serape-purple) 40%,
+    var(--serape-cyan) 100%
+  ) !important;
 }
 
 body.site-huipil .btn-secondary,
 body.site-huipil .menu-cta-secondary {
-  border-color: var(--tex-blue) !important;
-  color: var(--tex-blue) !important;
+  border-color: var(--serape-blue) !important;
+  color: var(--serape-blue) !important;
 }
 
 body.site-huipil a:not(.btn):not(.social-topbar a):hover {
-  color: var(--tex-red-deep);
+  color: var(--serape-magenta);
 }
 
 /* ── Typography ── */
@@ -375,13 +517,13 @@ body.site-huipil .menu-item-name {
   color: var(--tex-ink);
 }
 
-/* ── Footer: dash band + fringe clearance ── */
+/* ── Footer ── */
 body.site-huipil footer,
 body.site-huipil .site-footer {
   background: linear-gradient(180deg, rgba(255, 252, 247, 0.98), rgba(237, 230, 216, 0.99)) !important;
-  border-top: 12px solid transparent !important;
-  border-image: var(--tex-stripe-h) 12 repeat !important;
-  padding-bottom: calc(1.5rem + 18px) !important;
+  border-top: 16px solid transparent !important;
+  border-image: var(--tex-serape-rainbow) 16 repeat !important;
+  padding-bottom: calc(1.5rem + 22px) !important;
   position: relative;
 }
 
@@ -389,39 +531,55 @@ body.site-huipil footer::before,
 body.site-huipil .site-footer::before {
   content: '';
   position: absolute;
-  top: -6px;
+  top: -8px;
   left: 0;
   right: 0;
-  height: 6px;
+  height: 8px;
   background: var(--tex-dash-band) repeat-x center;
   background-size: 48px 6px;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 /* Menu chips */
 body.site-huipil .menu-chip.is-active,
 body.site-huipil .menu-filter-btn.is-active {
-  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red)) !important;
+  background: linear-gradient(135deg, var(--tex-red-deep), var(--serape-magenta), var(--tex-red)) !important;
   border-color: var(--tex-red-deep) !important;
 }
 
 body.site-huipil .menu-chip:not(.is-active):hover,
 body.site-huipil .menu-filter-btn:not(.is-active):hover {
-  border-color: var(--tex-blue) !important;
-  color: var(--tex-blue) !important;
+  border-color: var(--serape-cyan) !important;
+  color: var(--serape-blue) !important;
 }
 
-/* Section titles — huipil band underline */
+/* Section titles — rainbow serape underline */
 body.site-huipil .section-title::after,
 body.site-huipil .menu-section-title::after {
   content: '';
   display: block;
-  width: min(180px, 40%);
-  height: 8px;
-  margin: 0.5rem auto 0;
+  width: min(220px, 50%);
+  height: 12px;
+  margin: 0.55rem auto 0;
   background:
-    var(--tex-dash-band) repeat-x center,
-    var(--tex-stripe-h) repeat-x center bottom;
-  background-size: 48px 6px, 160px 8px;
-  opacity: 0.9;
+    var(--tex-dash-band) repeat-x center top,
+    var(--tex-serape-rainbow) repeat-x center bottom;
+  background-size: 48px 6px, 240px 12px;
+  opacity: 0.95;
+  border-radius: 1px;
+  box-shadow: 0 2px 10px rgba(233, 30, 140, 0.15);
+}
+
+/* Menu page header ribbon */
+body.site-huipil .menu-pro-header::before,
+body.site-huipil .collection-intro::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 10px;
+  margin-bottom: 0.75rem;
+  background: var(--tex-serape-rainbow) repeat-x center;
+  background-size: 240px 72px;
+  border-radius: 2px;
+  opacity: 0.92;
 }
