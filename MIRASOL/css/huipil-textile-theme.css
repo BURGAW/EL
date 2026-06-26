@@ -1,7 +1,7 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v21 · Luxe Runner
+   El Mirasol — Textile Theme v22 · Luxe Runner
    Cloth pattern: serape stripes + diamond weave (CSS + tight weave tile).
-   Solid chrome · jewel palette · site-wide master pass.
+   Solid chrome · jewel palette · unified button system.
    ============================================================================= */
 
 body.site-huipil {
@@ -329,16 +329,11 @@ body.site-huipil .header .nav a.nav-menu-cta {
   align-items: center !important;
   justify-content: center !important;
   min-height: 40px !important;
-  padding: 0.45rem 1.15rem !important;
+  padding: 0.5rem 1.2rem !important;
   border-radius: 999px !important;
   font-size: 0.82rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.07em !important;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-  border: 2px solid var(--tex-red-deep) !important;
-  background: linear-gradient(180deg, #c43a34 0%, var(--tex-red-deep) 45%, var(--tex-red) 100%) !important;
-  box-shadow: 0 1px 0 rgba(255, 252, 247, 0.2) inset, 0 4px 16px rgba(122, 26, 24, 0.3) !important;
 }
 
 /* ── Hero ── */
@@ -727,102 +722,291 @@ body.site-huipil .menu-card::before {
   border-radius: var(--tex-radius-sm) var(--tex-radius-sm) 0 0;
 }
 
-/* ── Buttons luxe ── */
-body.site-huipil .btn,
-body.site-huipil .fiesta-spin-btn,
-body.site-huipil .fiesta-stamp-btn,
-body.site-huipil .btn-order,
-body.site-huipil .order-cart-checkout,
-body.site-huipil .popup__btn {
+/* ── Buttons v22 · serape cap + jewel fills ── */
+body.site-huipil.site-coastal.site-oax-craft .btn,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-spin-btn,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-stamp-btn,
+body.site-huipil.site-coastal.site-oax-craft .btn-order,
+body.site-huipil.site-coastal.site-oax-craft .order-cart-checkout,
+body.site-huipil.site-coastal.site-oax-craft .popup__btn,
+body.site-huipil.site-coastal.site-oax-craft .header .nav a.nav-menu-cta,
+body.site-huipil.site-coastal.site-oax-craft .mobile-cta a,
+body.site-huipil.site-coastal.site-oax-craft .mobile-quick a,
+body.site-huipil.site-coastal.site-oax-craft .lang-toggle-btn,
+body.site-huipil.site-coastal.site-oax-craft .menu-view-tab,
+body.site-huipil.site-coastal.site-oax-craft .menu-chip,
+body.site-huipil.site-coastal.site-oax-craft .menu-filter-btn,
+body.site-huipil.site-coastal.site-oax-craft .cart-fab {
   position: relative;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  gap: 0.4rem;
   min-height: 48px !important;
-  padding: 0.72rem 1.45rem !important;
+  padding: 0.78rem 1.45rem 0.72rem !important;
   font-family: Montserrat, system-ui, sans-serif !important;
   font-size: 0.86rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.06em !important;
+  line-height: 1.2 !important;
   border-radius: 999px !important;
   border: 2px solid transparent !important;
   cursor: pointer !important;
   text-decoration: none !important;
-  transition: transform 0.2s var(--tex-ease), box-shadow 0.2s var(--tex-ease) !important;
+  overflow: hidden !important;
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation !important;
+  transition:
+    transform 0.2s var(--tex-ease),
+    box-shadow 0.2s var(--tex-ease),
+    background 0.2s var(--tex-ease),
+    border-color 0.2s var(--tex-ease),
+    color 0.2s var(--tex-ease) !important;
 }
 
-body.site-huipil .btn-primary,
-body.site-huipil .btn-red,
-body.site-huipil .fiesta-spin-btn,
-body.site-huipil .fiesta-stamp-btn,
-body.site-huipil .btn-order,
-body.site-huipil .order-cart-checkout,
-body.site-huipil .menu-online__call .btn-red,
-body.site-huipil .visit-flow__actions .btn-red {
+body.site-huipil.site-coastal.site-oax-craft .header .nav a.nav-menu-cta {
+  min-height: 40px !important;
+  padding: 0.52rem 1.2rem 0.48rem !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.07em !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .visit-card__toolbar .btn,
+body.site-huipil.site-coastal.site-oax-craft .visit-flow__actions .btn,
+body.site-huipil.site-coastal.site-oax-craft .visit-flow__share .btn {
+  min-height: 40px !important;
+  padding: 0.5rem 0.72rem 0.46rem !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Jewel primary — serape stripe + gold shimmer */
+body.site-huipil.site-coastal.site-oax-craft .btn-primary,
+body.site-huipil.site-coastal.site-oax-craft .btn-red,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-spin-btn,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-stamp-btn,
+body.site-huipil.site-coastal.site-oax-craft .btn-order,
+body.site-huipil.site-coastal.site-oax-craft .order-cart-checkout,
+body.site-huipil.site-coastal.site-oax-craft .menu-online__call .btn-red,
+body.site-huipil.site-coastal.site-oax-craft .visit-flow__actions .btn-red,
+body.site-huipil.site-coastal.site-oax-craft .header .nav a.nav-menu-cta,
+body.site-huipil.site-coastal.site-oax-craft .mobile-cta .cta-menu,
+body.site-huipil.site-coastal.site-oax-craft .cart-fab,
+body.site-huipil.site-coastal.site-oax-craft .menu-view-tab.is-active,
+body.site-huipil.site-coastal.site-oax-craft .menu-chip.is-active,
+body.site-huipil.site-coastal.site-oax-craft .menu-filter-btn.is-active,
+body.site-huipil.site-coastal.site-oax-craft .menu-online-tab.is-active,
+body.site-huipil.site-coastal.site-oax-craft .popup__btn {
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: 0 1px 2px rgba(15, 26, 46, 0.5), 0 0 1px rgba(38, 28, 22, 0.35) !important;
   border-color: var(--tex-red-deep) !important;
-  background: linear-gradient(180deg, #c43a34 0%, var(--tex-red-deep) 42%, var(--tex-red) 100%) !important;
-  box-shadow: 0 1px 0 rgba(255, 252, 247, 0.22) inset, 0 5px 18px rgba(122, 26, 24, 0.28) !important;
+  background: linear-gradient(180deg, #c43a34 0%, var(--tex-red-deep) 40%, var(--tex-red) 100%) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 252, 247, 0.28) inset,
+    0 4px 0 rgba(122, 26, 24, 0.32),
+    0 6px 20px rgba(122, 26, 24, 0.26) !important;
 }
 
-body.site-huipil .btn-primary::after,
-body.site-huipil .btn-red::after,
-body.site-huipil .fiesta-spin-btn::after {
+body.site-huipil.site-coastal.site-oax-craft .btn-primary::before,
+body.site-huipil.site-coastal.site-oax-craft .btn-red::before,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-spin-btn::before,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-stamp-btn::before,
+body.site-huipil.site-coastal.site-oax-craft .btn-order::before,
+body.site-huipil.site-coastal.site-oax-craft .order-cart-checkout::before,
+body.site-huipil.site-coastal.site-oax-craft .header .nav a.nav-menu-cta::before,
+body.site-huipil.site-coastal.site-oax-craft .mobile-cta .cta-menu::before,
+body.site-huipil.site-coastal.site-oax-craft .cart-fab::before,
+body.site-huipil.site-coastal.site-oax-craft .menu-view-tab.is-active::before,
+body.site-huipil.site-coastal.site-oax-craft .menu-chip.is-active::before,
+body.site-huipil.site-coastal.site-oax-craft .menu-filter-btn.is-active::before,
+body.site-huipil.site-coastal.site-oax-craft .popup__btn::before {
   content: '';
   position: absolute;
-  top: 3px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--tex-serape-border);
+  border-radius: 999px 999px 0 0;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .btn-primary::after,
+body.site-huipil.site-coastal.site-oax-craft .btn-red::after,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-spin-btn::after,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-stamp-btn::after,
+body.site-huipil.site-coastal.site-oax-craft .btn-order::after,
+body.site-huipil.site-coastal.site-oax-craft .header .nav a.nav-menu-cta::after,
+body.site-huipil.site-coastal.site-oax-craft .mobile-cta .cta-menu::after,
+body.site-huipil.site-coastal.site-oax-craft .popup__btn::after {
+  content: '';
+  position: absolute;
+  top: 5px;
   left: 12%;
   right: 12%;
   height: 2px;
   background: linear-gradient(90deg, var(--tex-gold-pale), var(--tex-yellow), var(--tex-gold-pale));
   border-radius: 2px;
-  opacity: 0.55;
+  opacity: 0.6;
   pointer-events: none;
 }
 
-body.site-huipil .btn-outline,
-body.site-huipil .item-modal__actions .btn-outline {
+/* Outline & secondary — readable on cream */
+body.site-huipil.site-coastal.site-oax-craft .btn-outline,
+body.site-huipil.site-coastal.site-oax-craft .item-modal__actions .btn-outline,
+body.site-huipil.site-coastal.site-oax-craft .visit-card__toolbar .btn-outline,
+body.site-huipil.site-coastal.site-oax-craft .feat-share-row .btn-outline,
+body.site-huipil.site-coastal.site-oax-craft .btn-copy-addr,
+body.site-huipil.site-coastal.site-oax-craft .mobile-cta .cta-call,
+body.site-huipil.site-coastal.site-oax-craft .lang-toggle-btn:not([aria-pressed="true"]) {
   background: var(--tex-cream-light) !important;
   color: var(--tex-red-deep) !important;
-  border-color: rgba(61, 38, 24, 0.22) !important;
+  -webkit-text-fill-color: var(--tex-red-deep) !important;
+  text-shadow: none !important;
+  border-color: rgba(61, 38, 24, 0.28) !important;
+  box-shadow: 0 1px 0 rgba(255, 252, 247, 0.9) inset, 0 3px 12px rgba(61, 38, 24, 0.08) !important;
+  backdrop-filter: none !important;
 }
 
-body.site-huipil .menu-view-tab.is-active,
-body.site-huipil .menu-chip.is-active,
-body.site-huipil .menu-filter-btn.is-active {
-  background: linear-gradient(180deg, var(--tex-red-deep), var(--tex-red)) !important;
+body.site-huipil.site-coastal.site-oax-craft .lang-toggle-btn[aria-pressed="true"] {
+  background: linear-gradient(180deg, var(--tex-cream) 0%, var(--tex-linen) 100%) !important;
+  color: var(--tex-red-deep) !important;
+  border-color: var(--tex-red) !important;
+  box-shadow: 0 0 0 1px rgba(181, 46, 42, 0.12) inset !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .menu-view-tab:not(.is-active),
+body.site-huipil.site-coastal.site-oax-craft .menu-chip:not(.is-active),
+body.site-huipil.site-coastal.site-oax-craft .menu-filter-btn:not(.is-active) {
+  background: var(--tex-cream-light) !important;
+  color: var(--tex-ink-soft) !important;
+  border-color: rgba(61, 38, 24, 0.16) !important;
+  box-shadow: 0 1px 0 rgba(255, 252, 247, 0.85) inset !important;
+}
+
+/* Social & utility fills */
+body.site-huipil.site-coastal.site-oax-craft a[href*="facebook.com/elmirasolburgaw"].btn,
+body.site-huipil.site-coastal.site-oax-craft .btn-social--facebook {
+  background: linear-gradient(180deg, #1a8af5 0%, #1877f2 55%, #1464d0 100%) !important;
+  border-color: #1464d0 !important;
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: 0 1px 2px rgba(15, 26, 46, 0.35) !important;
+  box-shadow: 0 4px 16px rgba(24, 119, 242, 0.32) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft a[href*="google.com/maps/dir"].btn,
+body.site-huipil.site-coastal.site-oax-craft .btn-social--directions,
+body.site-huipil.site-coastal.site-oax-craft .mobile-cta .cta-directions,
+body.site-huipil.site-coastal.site-oax-craft .mobile-quick .quick-link--directions,
+body.site-huipil.site-coastal.site-oax-craft .visit-card__toolbar .btn-social--directions {
+  background: linear-gradient(180deg, var(--tex-teal) 0%, #1a5f8f 55%, var(--tex-navy) 100%) !important;
+  border-color: var(--tex-navy-deep) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: 0 1px 2px rgba(15, 26, 46, 0.45) !important;
+  box-shadow: 0 4px 16px rgba(26, 40, 68, 0.28) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .mobile-quick a:not(.quick-link--directions) {
+  background: linear-gradient(180deg, #c43a34 0%, var(--tex-red-deep) 45%, var(--tex-red) 100%) !important;
   border-color: var(--tex-red-deep) !important;
-}
-
-body.site-huipil a[href*="facebook.com/elmirasolburgaw"].btn,
-body.site-huipil .btn-social--facebook {
-  background: #1877f2 !important;
-  border-color: #1877f2 !important;
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: 0 1px 2px rgba(15, 26, 46, 0.45) !important;
+  box-shadow: 0 4px 14px rgba(122, 26, 24, 0.28) !important;
 }
 
-body.site-huipil a[href*="google.com/maps/dir"].btn,
-body.site-huipil .mobile-quick .quick-link--directions {
-  background: linear-gradient(180deg, #1e5f8f, #2a6b9e) !important;
-  border-color: #1a4f75 !important;
-  color: #fff !important;
-}
-
-body.site-huipil .mobile-quick a {
-  border-radius: 999px !important;
-  font-weight: 700 !important;
+body.site-huipil.site-coastal.site-oax-craft .visit-card__toolbar {
+  background: linear-gradient(145deg, var(--tex-cream-light), var(--tex-linen)) !important;
+  border-color: rgba(61, 38, 24, 0.14) !important;
+  box-shadow: 0 1px 0 rgba(255, 252, 247, 0.9) inset, 0 6px 18px rgba(38, 28, 22, 0.06) !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .mobile-cta {
   background: var(--tex-cream-light) !important;
   border-top: 4px solid transparent !important;
   border-image: var(--tex-serape-border) 1 !important;
+  box-shadow: 0 -6px 24px rgba(38, 28, 22, 0.1) !important;
 }
 
-body.site-huipil :focus-visible {
-  outline: 2px solid var(--tex-gold);
-  outline-offset: 2px;
+body.site-huipil.site-coastal.site-oax-craft .mobile-cta a {
+  min-height: 44px !important;
+  padding: 0.62rem 0.55rem 0.58rem !important;
+  font-size: 0.8rem !important;
+}
+
+@media (hover: hover) {
+  body.site-huipil.site-coastal.site-oax-craft .btn-primary:hover,
+  body.site-huipil.site-coastal.site-oax-craft .btn-red:hover,
+  body.site-huipil.site-coastal.site-oax-craft .fiesta-spin-btn:hover:not([aria-busy="true"]),
+  body.site-huipil.site-coastal.site-oax-craft .fiesta-stamp-btn:hover:not(:disabled),
+  body.site-huipil.site-coastal.site-oax-craft .btn-order:hover,
+  body.site-huipil.site-coastal.site-oax-craft .order-cart-checkout:hover,
+  body.site-huipil.site-coastal.site-oax-craft .header .nav a.nav-menu-cta:hover,
+  body.site-huipil.site-coastal.site-oax-craft .mobile-cta .cta-menu:hover,
+  body.site-huipil.site-coastal.site-oax-craft .cart-fab:hover,
+  body.site-huipil.site-coastal.site-oax-craft .popup__btn:hover {
+    transform: translateY(-2px) !important;
+    background: linear-gradient(180deg, #d04a44 0%, var(--tex-red-deep) 36%, #c43a34 100%) !important;
+    box-shadow:
+      0 1px 0 rgba(255, 252, 247, 0.32) inset,
+      0 5px 0 rgba(122, 26, 24, 0.28),
+      0 10px 28px rgba(122, 26, 24, 0.34) !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .btn-outline:hover,
+  body.site-huipil.site-coastal.site-oax-craft .btn-copy-addr:hover,
+  body.site-huipil.site-coastal.site-oax-craft .mobile-cta .cta-call:hover,
+  body.site-huipil.site-coastal.site-oax-craft .lang-toggle-btn:hover {
+    transform: translateY(-1px) !important;
+    background: var(--tex-cream) !important;
+    border-color: var(--tex-gold) !important;
+    color: var(--tex-red-deep) !important;
+    box-shadow: 0 4px 14px rgba(61, 38, 24, 0.12) !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft a[href*="facebook.com/elmirasolburgaw"].btn:hover,
+  body.site-huipil.site-coastal.site-oax-craft .btn-social--facebook:hover {
+    background: linear-gradient(180deg, #2b95f7 0%, #1877f2 55%, #0d65d9 100%) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft a[href*="google.com/maps/dir"].btn:hover,
+  body.site-huipil.site-coastal.site-oax-craft .btn-social--directions:hover,
+  body.site-huipil.site-coastal.site-oax-craft .mobile-cta .cta-directions:hover,
+  body.site-huipil.site-coastal.site-oax-craft .mobile-quick .quick-link--directions:hover {
+    background: linear-gradient(180deg, #22808a 0%, #1a6b9e 55%, #1a2844 100%) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .menu-view-tab:not(.is-active):hover,
+  body.site-huipil.site-coastal.site-oax-craft .menu-chip:not(.is-active):hover,
+  body.site-huipil.site-coastal.site-oax-craft .menu-filter-btn:not(.is-active):hover {
+    border-color: rgba(201, 160, 74, 0.55) !important;
+    color: var(--tex-red-deep) !important;
+  }
+}
+
+body.site-huipil.site-coastal.site-oax-craft .btn:active,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-spin-btn:active,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-stamp-btn:active,
+body.site-huipil.site-coastal.site-oax-craft .mobile-cta a:active {
+  transform: scale(0.98) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-spin-btn[aria-busy="true"],
+body.site-huipil.site-coastal.site-oax-craft .fiesta-stamp-btn:disabled {
+  opacity: 0.58 !important;
+  cursor: wait !important;
+  transform: none !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft :focus-visible {
+  outline: 2px solid var(--tex-gold) !important;
+  outline-offset: 2px !important;
 }
 
 /* ── Footer luxe ── */
@@ -879,7 +1063,7 @@ body.site-huipil.welcome-page .popup::before {
 }
 
 body.site-huipil.welcome-page .popup__btn {
-  background: linear-gradient(180deg, var(--tex-red-deep), var(--tex-red) 60%, var(--tex-gold)) !important;
+  width: 100%;
 }
 
 @media (max-width: 900px) {
@@ -913,8 +1097,9 @@ body.site-huipil.welcome-page .popup__btn {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.site-huipil .btn:hover,
-  body.site-huipil .fiesta-spin-btn:hover {
+  body.site-huipil.site-coastal.site-oax-craft .btn:hover,
+  body.site-huipil.site-coastal.site-oax-craft .fiesta-spin-btn:hover,
+  body.site-huipil.site-coastal.site-oax-craft .mobile-cta a:hover {
     transform: none !important;
   }
 }
