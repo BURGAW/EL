@@ -169,13 +169,6 @@ body.site-huipil.site-coastal.site-oax-craft .footer::before {
   content: none !important;
 }
 
-/* Let coastal handle craft-band sizing — don't amplify */
-body.site-huipil.site-coastal.site-oax-craft .oax-craft-band__shine,
-body.site-huipil.site-coastal.site-oax-craft .oax-craft-band__zigzag,
-body.site-huipil.site-coastal.site-oax-craft .oax-craft-band__serape {
-  /* inherit coastal-oax-fusion defaults */
-}
-
 /* --- Typography & buttons --- */
 body.site-huipil h1,
 body.site-huipil h2,
