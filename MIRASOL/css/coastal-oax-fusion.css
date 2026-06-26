@@ -303,13 +303,13 @@ body.site-coastal.site-oax-craft .order-strip {
     0 8px 22px rgba(26, 24, 22, 0.06) !important;
 }
 
-body.site-coastal.site-oax-craft .feature,
-body.site-coastal.site-oax-craft .review-card,
-body.site-coastal.site-oax-craft .extras-card,
-body.site-coastal.site-oax-craft .fiesta-card,
-body.site-coastal.site-oax-craft .info-card,
-body.site-coastal.site-oax-craft .visit-grid > .map-wrap,
-body.menu-page.site-coastal.site-oax-craft .menu-card {
+body.site-coastal.site-oax-craft:not(.site-huipil) .feature,
+body.site-coastal.site-oax-craft:not(.site-huipil) .review-card,
+body.site-coastal.site-oax-craft:not(.site-huipil) .extras-card,
+body.site-coastal.site-oax-craft:not(.site-huipil) .fiesta-card,
+body.site-coastal.site-oax-craft:not(.site-huipil) .info-card,
+body.site-coastal.site-oax-craft:not(.site-huipil) .visit-grid > .map-wrap,
+body.menu-page.site-coastal.site-oax-craft:not(.site-huipil) .menu-card {
   border-left: 4px solid var(--oax-red) !important;
 }
 
@@ -2131,7 +2131,7 @@ body.site-coastal.site-oax-craft .hero-snap__shadow {
     display: none;
   }
 
-  body.site-coastal.site-oax-craft .mobile-quick {
+  body.site-coastal.site-oax-craft:not(.site-huipil) .mobile-quick {
     display: none !important;
   }
 

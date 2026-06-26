@@ -1,5 +1,5 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v23 · Luxe Runner
+   El Mirasol — Textile Theme v24 · Luxe Runner
    Cloth pattern: serape stripes + diamond weave (CSS + tight weave tile).
    Solid chrome · jewel palette · unified button system.
    ============================================================================= */
@@ -1205,6 +1205,177 @@ body.site-huipil.welcome-page .popup__btn {
   width: 100%;
 }
 
+/* ── Coastal neutralization ──
+   Beats coastal-theme + coastal-oax-fusion compact/mobile passes */
+body.site-huipil.site-coastal.site-oax-craft .section,
+body.site-huipil.site-coastal.site-oax-craft .favorites-showcase,
+body.site-huipil.site-coastal.site-oax-craft .visit-section--flow {
+  padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1rem, 3vw, 1.5rem) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .reviews-section {
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem) !important;
+  padding-bottom: clamp(1.75rem, 3.5vw, 2.5rem) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin-section {
+  background: transparent !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .section-tag {
+  color: var(--tex-wood-mid) !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.22em !important;
+  margin-bottom: 0.45rem !important;
+  padding-bottom: 0 !important;
+  padding-left: 1rem !important;
+  border-left: 4px solid var(--tex-gold) !important;
+  background: none !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .section-tag {
+  background: none !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft h2 {
+  color: var(--tex-red-deep) !important;
+  margin-bottom: 0.55rem !important;
+  font-size: clamp(1.55rem, 3.5vw, 2.1rem) !important;
+  line-height: 1.12 !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) h2 em {
+  color: var(--tex-gold) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .section-lead {
+  color: var(--tex-ink-soft) !important;
+  margin-bottom: 0.85rem !important;
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .feature,
+body.site-huipil.site-coastal.site-oax-craft .review-card,
+body.site-huipil.site-coastal.site-oax-craft .extras-card,
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card:not(.fiesta-card--roulette-hero),
+body.site-huipil.site-coastal.site-oax-craft .info-card,
+body.site-huipil.site-coastal.site-oax-craft .visit-grid > .map-wrap,
+body.site-huipil.menu-page.site-coastal.site-oax-craft .menu-card {
+  border-left: none !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .hero,
+body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .hero.hero--vibe {
+  min-height: min(62dvh, 600px) !important;
+  padding-bottom: 1.5rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft:not(.menu-page).has-topbar .hero {
+  padding-top: calc(var(--topbar-stack) + var(--header-h) + var(--tex-trim-h) + 0.35rem) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.5rem) !important;
+  text-shadow:
+    0 2px 18px rgba(15, 26, 46, 0.45),
+    0 0 24px rgba(201, 160, 74, 0.2) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .hero-sub {
+  color: rgba(255, 252, 247, 0.95) !important;
+  font-size: clamp(0.9rem, 2.2vw, 1.05rem) !important;
+  line-height: 1.5 !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .hero-content {
+  max-width: 42rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .mobile-quick {
+  display: flex !important;
+  gap: 0.55rem !important;
+  margin-top: 1.25rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .visit-flow {
+  position: relative !important;
+  border: 1px solid rgba(61, 38, 24, 0.12) !important;
+  border-left: none !important;
+  border-radius: var(--tex-radius-md) !important;
+  background: var(--tex-cream-light) !important;
+  box-shadow: var(--tex-shadow-lift) !important;
+  overflow: hidden !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .visit-flow::before {
+  content: '' !important;
+  display: block !important;
+  height: 6px !important;
+  background: var(--tex-serape-border) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .visit-flow__head {
+  background: var(--tex-cream-light) !important;
+  border-bottom: 1px solid rgba(61, 38, 24, 0.1) !important;
+  padding: 0.85rem 1rem 0.75rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .visit-flow__hours,
+body.site-huipil.site-coastal.site-oax-craft .visit-flow__info {
+  background: transparent !important;
+  border-color: rgba(61, 38, 24, 0.1) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .visit-flow__share {
+  background: var(--tex-linen) !important;
+  border-top: 1px solid rgba(61, 38, 24, 0.1) !important;
+  padding: 0.65rem 0.85rem 0.75rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .visit-flow__share .btn {
+  min-height: 44px !important;
+  font-size: 0.78rem !important;
+  padding: 0.55rem 0.85rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .map-wrap__frame,
+body.site-huipil.site-coastal.site-oax-craft .visit-flow__map-frame .map-wrap__frame {
+  min-height: 220px !important;
+  height: clamp(200px, 34vw, 280px) !important;
+  border-color: rgba(61, 38, 24, 0.12) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .review-card__name--head {
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .review-stars {
+  color: var(--tex-gold) !important;
+}
+
+body.site-huipil.menu-page.site-coastal.site-oax-craft .menu-card {
+  padding: 0.85rem 0.9rem !important;
+}
+
+body.site-huipil.menu-page.site-coastal.site-oax-craft .menu-view-tab:not(.is-active):hover {
+  background: var(--tex-cream) !important;
+  border-color: rgba(201, 160, 74, 0.45) !important;
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-huipil.menu-page.site-coastal.site-oax-craft .menu-online__toolbar {
+  top: calc(var(--topbar-stack) + var(--header-h) + var(--tex-trim-h) + var(--safe-top, 0px) - 1px) !important;
+  z-index: 195 !important;
+  background: rgba(252, 250, 245, 0.96) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft.has-mobile-cta {
+  padding-bottom: calc(var(--mobile-cta-h, 72px) + var(--safe-bottom, 0px) + 8px) !important;
+}
+
 @media (max-width: 900px) {
   body.site-huipil.site-coastal.site-oax-craft .story-spin__frame {
     grid-template-columns: 1fr !important;
@@ -1246,12 +1417,47 @@ body.site-huipil.welcome-page .popup__btn {
     --tex-trim-h: 34px;
   }
 
+  body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .hero,
+  body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .hero.hero--vibe {
+    min-height: min(58dvh, 520px) !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft:not(.menu-page).has-topbar .hero {
+    padding-top: calc(var(--topbar-stack) + var(--header-h) + var(--tex-trim-h) + 0.35rem) !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .google-review-tab {
+    top: calc(var(--topbar-stack) + var(--header-h) + var(--tex-trim-h) + var(--safe-top, 0px) + 0.35rem) !important;
+    z-index: 205 !important;
+    background: var(--tex-cream-light) !important;
+    border-color: rgba(61, 38, 24, 0.14) !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .section,
+  body.site-huipil.site-coastal.site-oax-craft .favorites-showcase,
+  body.site-huipil.site-coastal.site-oax-craft .reviews-section,
+  body.site-huipil.site-coastal.site-oax-craft .story-spin-section {
+    padding-top: clamp(1.25rem, 4vw, 1.75rem) !important;
+    padding-bottom: clamp(1.25rem, 4vw, 1.75rem) !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .fav-card {
+    min-height: auto !important;
+  }
+
   body.site-huipil .tex-serape-trim__line {
     height: 11px;
   }
 
   body.site-huipil .tex-serape-trim__weave {
     height: 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .hero,
+  body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .hero.hero--vibe {
+    min-height: min(68dvh, 680px) !important;
   }
 }
 
