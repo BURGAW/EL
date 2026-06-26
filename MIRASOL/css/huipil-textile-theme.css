@@ -19,8 +19,9 @@ body.site-huipil {
   --tex-navy: #1a2844;
   --tex-navy-deep: #0f1a2e;
   --tex-teal: #1a6b72;
-  --tex-red: #b52e2a;
-  --tex-red-deep: #7a1a18;
+  --tex-red: #d43832;
+  --tex-red-deep: #b82824;
+  --tex-red-bright: #e84a42;
   --tex-magenta: #a8327a;
   --tex-orange: #d45a28;
   --tex-yellow: #e4b83a;
@@ -55,7 +56,7 @@ body.site-huipil {
   );
 
   /* SVG diamond field — backup + blend */
-  --tex-weave-svg: url("data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' fill='%23f6f0e6'/%3E%3Cpath d='M32 8 L56 32 L32 56 L8 32 Z' fill='none' stroke='%231a2844' stroke-width='0.85' opacity='0.28'/%3E%3Cpath d='M32 14 L50 32 L32 50 L14 32 Z' fill='none' stroke='%23b52e2a' stroke-width='0.7' opacity='0.22'/%3E%3Cpath d='M32 20 L44 32 L32 44 L20 32 Z' fill='none' stroke='%231a6b72' stroke-width='0.6' opacity='0.2'/%3E%3Cpath d='M32 26 L38 32 L32 38 L26 32 Z' fill='%23c9a04a' fill-opacity='0.08'/%3E%3Cpath d='M0 32 H64 M32 0 V64' stroke='%23c9a04a' stroke-width='0.3' opacity='0.12'/%3E%3C/svg%3E");
+  --tex-weave-svg: url("data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' fill='%23f6f0e6'/%3E%3Cpath d='M32 8 L56 32 L32 56 L8 32 Z' fill='none' stroke='%231a2844' stroke-width='0.85' opacity='0.28'/%3E%3Cpath d='M32 14 L50 32 L32 50 L14 32 Z' fill='none' stroke='%23d43832' stroke-width='0.7' opacity='0.24'/%3E%3Cpath d='M32 20 L44 32 L32 44 L20 32 Z' fill='none' stroke='%231a6b72' stroke-width='0.6' opacity='0.2'/%3E%3Cpath d='M32 26 L38 32 L32 38 L26 32 Z' fill='%23c9a04a' fill-opacity='0.08'/%3E%3Cpath d='M0 32 H64 M32 0 V64' stroke='%23c9a04a' stroke-width='0.3' opacity='0.12'/%3E%3C/svg%3E");
 
   --tex-weave: var(--tex-weave-svg);
 
@@ -91,7 +92,7 @@ body.site-huipil {
 }
 
 body.site-huipil::selection {
-  background: rgba(181, 46, 42, 0.2);
+  background: rgba(212, 56, 50, 0.22);
   color: var(--tex-ink);
 }
 
@@ -338,7 +339,7 @@ body.site-huipil .header .nav a.nav-menu-cta {
 body.site-huipil.site-coastal.site-oax-craft .hero-overlay {
   background:
     linear-gradient(125deg, rgba(26, 40, 68, 0.35) 0%, transparent 45%),
-    linear-gradient(180deg, rgba(61, 38, 24, 0.15) 0%, rgba(38, 28, 22, 0.5) 55%, rgba(122, 26, 24, 0.58) 100%) !important;
+    linear-gradient(180deg, rgba(61, 38, 24, 0.15) 0%, rgba(38, 28, 22, 0.5) 55%, rgba(184, 40, 36, 0.52) 100%) !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .hero-eyebrow {
@@ -769,7 +770,7 @@ body.site-huipil.menu-page.site-coastal.site-oax-craft .roulette-fab {
   border: 2px solid var(--tex-red-deep) !important;
   border-top-color: var(--tex-gold) !important;
   color: #fff !important;
-  box-shadow: 0 4px 16px rgba(122, 26, 24, 0.28) !important;
+  box-shadow: 0 4px 16px rgba(184, 40, 36, 0.28) !important;
 }
 
 body.site-huipil.menu-page.site-coastal.site-oax-craft .roulette-panel__inner,
@@ -947,7 +948,7 @@ body.site-huipil.site-coastal.site-oax-craft .fiesta-roulette__menu-link {
   border-color: var(--tex-red-deep) !important;
   border-top-color: var(--tex-gold) !important;
   border-top-width: 3px !important;
-  box-shadow: 0 3px 14px rgba(122, 26, 24, 0.22) !important;
+  box-shadow: 0 3px 14px rgba(184, 40, 36, 0.24) !important;
 }
 
 /* Outline — cream tag on ivory pages */
@@ -1027,8 +1028,8 @@ body.site-huipil.site-coastal.site-oax-craft .mobile-cta a {
   body.site-huipil.site-coastal.site-oax-craft .header .nav a.nav-menu-cta:hover,
   body.site-huipil.site-coastal.site-oax-craft .mobile-cta .cta-menu:hover,
   body.site-huipil.site-coastal.site-oax-craft .popup__btn:hover {
-    background: var(--tex-red-deep) !important;
-    box-shadow: 0 5px 18px rgba(122, 26, 24, 0.3) !important;
+    background: var(--tex-red-bright) !important;
+    box-shadow: 0 5px 18px rgba(212, 56, 50, 0.32) !important;
   }
 
   body.site-huipil.site-coastal.site-oax-craft .btn-outline:hover,
