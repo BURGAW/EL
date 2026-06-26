@@ -1292,10 +1292,8 @@ body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .hero-content {
   max-width: 42rem !important;
 }
 
-body.site-huipil.site-coastal.site-oax-craft .mobile-quick {
-  display: flex !important;
-  gap: 0.55rem !important;
-  margin-top: 1.25rem !important;
+body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .mobile-quick {
+  display: none !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .visit-flow {
