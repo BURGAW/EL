@@ -1,6 +1,6 @@
 /* =============================================================================
-   El Mirasol — Textile Master Theme v12
-   Pattern trims only (serape · dash · craft bands) — no layout/spacing changes.
+   El Mirasol — Textile Theme v13 (calm)
+   Palette + readable chrome only. No stacked pattern borders.
    ============================================================================= */
 
 body.site-huipil {
@@ -8,46 +8,19 @@ body.site-huipil {
   --tex-cream-light: #faf8f2;
   --tex-red: #c2352f;
   --tex-red-deep: #9a2218;
-  --tex-red-bright: #d43d35;
   --tex-blue: #2d5f8f;
   --tex-blue-bright: #3a7ab5;
-  --tex-green: #3d7340;
   --tex-gold: #d4a82a;
   --tex-gold-light: #e8c878;
   --tex-ink: #1e1e1e;
 
-  --serape-magenta: #e91e8c;
-  --serape-yellow: #ffd700;
-  --serape-orange: #ff6b2b;
-  --serape-cyan: #22d3ee;
-  --serape-blue: #2563eb;
-  --serape-purple: #9333ea;
-  --serape-lime: #84cc16;
-
-  --tex-huipil: url("../assets/patterns/huipil-textile-reference.png");
-  --tex-runner: url("../assets/patterns/woven-runner-reference.png");
-  --tex-serape: url("../assets/patterns/rainbow-serape-reference.png");
-
   --tex-serape-rainbow: url("data:image/svg+xml,%3Csvg width='240' height='72' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='0' height='2.5' width='240' fill='%23e91e8c'/%3E%3Crect y='2.5' height='2' width='240' fill='%23ffd700'/%3E%3Crect y='4.5' height='2.5' width='240' fill='%23ff6b2b'/%3E%3Crect y='7' height='1.5' width='240' fill='%23dc2626'/%3E%3Crect y='8.5' height='3' width='240' fill='%2322d3ee'/%3E%3Crect y='11.5' height='2' width='240' fill='%232563eb'/%3E%3Crect y='13.5' height='2.5' width='240' fill='%239333ea'/%3E%3Crect y='16' height='1.5' width='240' fill='%2384cc16'/%3E%3Crect y='17.5' height='2.5' width='240' fill='%23b45309'/%3E%3Crect y='20' height='2' width='240' fill='%237f1d1d'/%3E%3Crect y='22' height='2.5' width='240' fill='%231e293b'/%3E%3Crect y='24.5' height='1.5' width='240' fill='%23faf8f2'/%3E%3Crect y='26' height='3' width='240' fill='%23d946a8'/%3E%3Crect y='29' height='2' width='240' fill='%23facc15'/%3E%3Crect y='31' height='2.5' width='240' fill='%23ea580c'/%3E%3Crect y='33.5' height='1.5' width='240' fill='%23ef4444'/%3E%3Crect y='35' height='3' width='240' fill='%2306b6d4'/%3E%3Crect y='38' height='2' width='240' fill='%233b82f6'/%3E%3Crect y='40' height='2.5' width='240' fill='%23a855f7'/%3E%3Crect y='42.5' height='1.5' width='240' fill='%2365a30d'/%3E%3Crect y='44' height='3' width='240' fill='%23c2410c'/%3E%3Crect y='47' height='2' width='240' fill='%23991b1b'/%3E%3Crect y='49' height='2.5' width='240' fill='%230f172a'/%3E%3Crect y='51.5' height='1.5' width='240' fill='%23f0abfc'/%3E%3Crect y='53' height='2.5' width='240' fill='%23fde047'/%3E%3Crect y='55.5' height='2' width='240' fill='%23f43f5e'/%3E%3Crect y='57.5' height='2.5' width='240' fill='%2367e8f9'/%3E%3Crect y='60' height='2' width='240' fill='%231d4ed8'/%3E%3Crect y='62' height='2.5' width='240' fill='%237c3aed'/%3E%3Crect y='64.5' height='1.5' width='240' fill='%234ade80'/%3E%3Crect y='66' height='2.5' width='240' fill='%23d97706'/%3E%3Crect y='68.5' height='2' width='240' fill='%23be123c'/%3E%3Crect y='70.5' height='1.5' width='240' fill='%23ec4899'/%3E%3C/svg%3E");
-
-  --tex-diamond: url("data:image/svg+xml,%3Csvg width='48' height='48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 2 L46 24 L24 46 L2 24 Z' fill='none' stroke='%23d0c8ba' stroke-width='0.8'/%3E%3Cpath d='M24 8 L40 24 L24 40 L8 24 Z' fill='none' stroke='%23c2352f' stroke-width='0.7' stroke-opacity='0.5'/%3E%3Cpath d='M24 14 L34 24 L24 34 L14 24 Z' fill='%232d5f8f' fill-opacity='0.16'/%3E%3Cpath d='M24 19 L29 24 L24 29 L19 24 Z' fill='%233d7340' fill-opacity='0.22'/%3E%3Ccircle cx='24' cy='24' r='2.5' fill='%23e91e8c' fill-opacity='0.28'/%3E%3C/svg%3E");
-
-  --tex-huipil-motif: url("data:image/svg+xml,%3Csvg width='72' height='72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c2352f' fill-opacity='0.12' stroke='%23c2352f' stroke-opacity='0.2' stroke-width='0.6'%3E%3Ccircle cx='18' cy='22' r='5' fill='none'/%3E%3Ccircle cx='18' cy='22' r='2'/%3E%3Cpath d='M18 14 Q22 18 18 22 Q14 18 18 14'/%3E%3Cpath d='M26 14 Q20 18 18 22 Q22 26 26 14'/%3E%3Cpath d='M10 14 Q16 18 18 22 Q14 26 10 14'/%3E%3Cpath d='M44 38 L38 34 L40 40 Z'/%3E%3Cpath d='M54 36 L60 32 L58 38 Z'/%3E%3Ccircle cx='54' cy='16' r='4' fill='none'/%3E%3Ccircle cx='54' cy='16' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
-
-  --tex-dash-band: url("data:image/svg+xml,%3Csvg width='40' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='3' height='3' fill='%23c2352f'/%3E%3Crect x='6' y='1' width='3' height='3' fill='%232d5f8f'/%3E%3Crect x='11' y='1' width='3' height='3' fill='%231e1e1e'/%3E%3Crect x='16' y='1' width='3' height='3' fill='%233d7340'/%3E%3Crect x='21' y='1' width='3' height='3' fill='%23d4a82a'/%3E%3Crect x='26' y='1' width='3' height='3' fill='%23e91e8c'/%3E%3Crect x='31' y='1' width='3' height='3' fill='%2322d3ee'/%3E%3Crect x='36' y='1' width='3' height='3' fill='%239333ea'/%3E%3C/svg%3E");
-
-  --tex-stripe-h: url("data:image/svg+xml,%3Csvg width='160' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='160' height='1.2' y='0' fill='%23c2352f'/%3E%3Crect width='160' height='1' y='1.3' fill='%232d5f8f'/%3E%3Crect width='160' height='0.9' y='2.4' fill='%231e1e1e'/%3E%3Crect width='160' height='1.1' y='3.4' fill='%233d7340'/%3E%3Crect width='160' height='1' y='4.6' fill='%23d4a82a'/%3E%3Crect width='160' height='0.9' y='5.7' fill='%23e91e8c'/%3E%3Crect width='160' height='1.1' y='6.7' fill='%2322d3ee'/%3E%3Crect width='160' height='1' y='7.9' fill='%239333ea'/%3E%3C/svg%3E");
-
-  --tex-stripe-v: url("data:image/svg+xml,%3Csvg width='10' height='160' xmlns='http://www.w3.org/2000/svg'%3E%3Crect height='160' width='1.2' x='0' fill='%23c2352f'/%3E%3Crect height='160' width='1' x='1.3' fill='%232d5f8f'/%3E%3Crect height='160' width='0.9' x='2.4' fill='%231e1e1e'/%3E%3Crect height='160' width='1.1' x='3.4' fill='%233d7340'/%3E%3Crect height='160' width='1' x='4.6' fill='%23d4a82a'/%3E%3Crect height='160' width='0.9' x='5.7' fill='%23e91e8c'/%3E%3Crect height='160' width='1.1' x='6.7' fill='%2322d3ee'/%3E%3Crect height='160' width='1' x='7.9' fill='%239333ea'/%3E%3C/svg%3E");
-
-  --tex-fringe: url("data:image/svg+xml,%3Csvg width='96' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='96' height='4' fill='%23f7f3eb'/%3E%3Cg%3E%3Crect x='2' y='4' width='2' height='15' fill='%23e91e8c'/%3E%3Crect x='6' y='4' width='2' height='16' fill='%2322d3ee'/%3E%3Crect x='10' y='5' width='2' height='14' fill='%23ffd700'/%3E%3Crect x='14' y='4' width='2' height='16' fill='%2384cc16'/%3E%3Crect x='18' y='4' width='2' height='15' fill='%232563eb'/%3E%3Crect x='22' y='5' width='2' height='14' fill='%23ff6b2b'/%3E%3Crect x='26' y='4' width='2' height='16' fill='%239333ea'/%3E%3Crect x='30' y='4' width='2' height='15' fill='%23dc2626'/%3E%3Crect x='34' y='5' width='2' height='14' fill='%2306b6d4'/%3E%3Crect x='38' y='4' width='2' height='16' fill='%23b45309'/%3E%3Crect x='42' y='4' width='2' height='15' fill='%23facc15'/%3E%3Crect x='46' y='5' width='2' height='14' fill='%23ec4899'/%3E%3Crect x='50' y='4' width='2' height='16' fill='%231e40af'/%3E%3Crect x='54' y='4' width='2' height='15' fill='%2365a30d'/%3E%3Crect x='58' y='5' width='2' height='14' fill='%23f97316'/%3E%3Crect x='62' y='4' width='2' height='16' fill='%237c3aed'/%3E%3Crect x='66' y='4' width='2' height='15' fill='%23e11d48'/%3E%3Crect x='70' y='5' width='2' height='14' fill='%2322d3ee'/%3E%3Crect x='74' y='4' width='2' height='16' fill='%23eab308'/%3E%3Crect x='78' y='4' width='2' height='15' fill='%233b82f6'/%3E%3Crect x='82' y='5' width='2' height='14' fill='%23a855f7'/%3E%3Crect x='86' y='4' width='2' height='16' fill='%23faf8f2'/%3E%3Crect x='90' y='4' width='2' height='15' fill='%23dc2626'/%3E%3C/g%3E%3C/svg%3E");
 
   --huipil-red: var(--tex-red);
   --huipil-red-deep: var(--tex-red-deep);
   --huipil-cream: var(--tex-cream);
   --huipil-cream-light: var(--tex-cream-light);
   --huipil-ink: var(--tex-ink);
-  --huipil-textile: var(--tex-huipil-motif);
 
   --oax-red: var(--tex-red);
   --oax-red-deep: var(--tex-red-deep);
@@ -57,32 +30,12 @@ body.site-huipil {
   --oax-ivory: var(--tex-cream-light);
   --oax-pearl: var(--tex-cream);
   --oax-zigzag-h: var(--tex-serape-rainbow);
-  --oax-zigzag-v: var(--tex-stripe-v);
-  --oax-flores: var(--tex-huipil-motif);
   --oax-serape: var(--tex-serape-rainbow);
 
   --fire-red: var(--tex-red);
   --fire-red-deep: var(--tex-red-deep);
   --coast-sea: var(--tex-blue);
   --coast-sea-mid: var(--tex-blue-bright);
-
-  /* Pattern trim heights only (serape · dash-band · stripe-h) */
-  --tex-trim-topbar: 15px;
-  --tex-trim-header: 17px;
-  --tex-trim-hero: 15px;
-  --tex-trim-footer: 17px;
-  --tex-trim-section: 15px;
-  --tex-trim-craft-serape: 20px;
-  --tex-trim-craft-zigzag: 17px;
-  --tex-trim-craft-shine: 5px;
-  --tex-nav-banner-h: calc(var(--tex-trim-craft-shine) + var(--tex-trim-craft-zigzag) + var(--tex-trim-craft-serape));
-}
-
-/* Sync coastal craft-band pattern stack to same trim scale */
-body.site-huipil.site-coastal.site-oax-craft {
-  --banner-craft-serape: var(--tex-trim-craft-serape) !important;
-  --banner-craft-zigzag: var(--tex-trim-craft-zigzag) !important;
-  --banner-craft-shine: var(--tex-trim-craft-shine) !important;
 }
 
 /* --- Fixed chrome --- */
@@ -101,12 +54,9 @@ body.site-huipil .skip-link {
   z-index: 999 !important;
 }
 
-/* --- Weave canvas: behind content, subtle --- */
+/* --- Page shell: plain cream, no weave texture --- */
 body.site-huipil > .tex-master-weave {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
+  display: none !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft.pattern,
@@ -117,96 +67,52 @@ body.site-huipil.site-coastal.site-oax-craft.pay-page.pattern {
   color: var(--tex-ink);
 }
 
-/* Kill pattern overlays; coastal already hides selvedges — keep them off */
 body.site-huipil.site-coastal.site-oax-craft.pattern::before,
-body.site-huipil.site-coastal.site-oax-craft.menu-page.pattern::before,
-body.site-huipil.site-coastal.site-oax-craft.pay-page.pattern::before,
 body.site-huipil.site-coastal.site-oax-craft.pattern::after,
+body.site-huipil.site-coastal.site-oax-craft.menu-page.pattern::before,
 body.site-huipil.site-coastal.site-oax-craft.menu-page.pattern::after,
-body.site-huipil.site-coastal.site-oax-craft.pay-page.pattern::after,
-body.site-huipil.site-coastal.site-oax-craft > main::before,
-body.site-huipil.site-coastal.site-oax-craft > main::after,
-body.site-huipil.site-coastal.site-oax-craft #main::before,
-body.site-huipil.site-coastal.site-oax-craft #main::after {
+body.site-huipil.site-coastal.site-oax-craft.pay-page.pattern::before,
+body.site-huipil.site-coastal.site-oax-craft.pay-page.pattern::after {
   display: none !important;
   content: none !important;
 }
 
-.tex-master-weave {
-  overflow: hidden;
-  background-color: var(--tex-cream);
-  background-image:
-    linear-gradient(180deg, rgba(255, 252, 247, 0.92) 0%, rgba(247, 243, 235, 0.88) 100%),
-    var(--tex-huipil-motif),
-    var(--tex-diamond);
-  background-size: 100% 100%, 72px 72px, 48px 48px;
-  background-position: center;
-  background-repeat: no-repeat, repeat, repeat;
-  opacity: 0.55;
-}
-
-.tex-master-weave::before,
-.tex-master-weave::after {
-  display: none !important;
-  content: none !important;
-}
-
-/* --- Topbar: clean strip, bordered social chips --- */
+/* --- Topbar: simple gradient, readable links --- */
 body.site-huipil.site-coastal.site-oax-craft .social-topbar {
-  background: var(--tex-red-deep) !important;
-  box-shadow: 0 2px 10px rgba(154, 34, 24, 0.22) !important;
+  background: linear-gradient(90deg, var(--tex-blue) 0%, var(--tex-red-deep) 100%) !important;
+  box-shadow: none !important;
   border-bottom: none !important;
-  gap: 0.5rem !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .social-topbar::after {
   display: none !important;
-  content: none !important;
-}
-
-body.site-huipil.site-coastal.site-oax-craft .social-topbar > span {
-  display: none !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .social-topbar a {
-  background: rgba(255, 252, 247, 0.97) !important;
-  color: var(--tex-ink) !important;
-  border-radius: 999px !important;
-  padding: 0.22rem 0.72rem !important;
-  font-weight: 600 !important;
-  line-height: 1.25 !important;
-  box-shadow: 0 1px 4px rgba(30, 30, 30, 0.08) !important;
-  transition: filter 0.2s, box-shadow 0.2s !important;
+  background: none !important;
+  border: none !important;
+  color: #fff !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 body.site-huipil.site-coastal.site-oax-craft .social-topbar a:hover {
-  filter: brightness(1.03) !important;
-  box-shadow: 0 2px 8px rgba(30, 30, 30, 0.12) !important;
+  color: #fff !important;
+  text-decoration: underline;
+  filter: none !important;
 }
 
-body.site-huipil.site-coastal.site-oax-craft .social-topbar a[href*="facebook"] {
-  border: 2px solid #1877f2 !important;
-  color: #0d5dbf !important;
+body.site-huipil.site-coastal.site-oax-craft .social-topbar a svg {
+  color: #fff !important;
 }
 
-body.site-huipil.site-coastal.site-oax-craft .social-topbar a[href*="facebook"] svg {
-  color: #1877f2 !important;
-}
-
-body.site-huipil.site-coastal.site-oax-craft .social-topbar a[href*="instagram"] {
-  border: 2px solid #e1306c !important;
-  color: #9b2252 !important;
-}
-
-body.site-huipil.site-coastal.site-oax-craft .social-topbar a[href*="instagram"] svg {
-  color: #e1306c !important;
-}
-
-/* --- Header: full craft banner under Home / Menu row --- */
+/* --- Header: clean, one thin serape line --- */
 body.site-huipil.site-coastal.site-oax-craft .header {
-  background: rgba(255, 252, 247, 0.96) !important;
+  background: rgba(255, 252, 247, 0.97) !important;
   border-bottom: none !important;
-  box-shadow: 0 4px 20px rgba(74, 55, 40, 0.08) !important;
+  box-shadow: 0 1px 0 rgba(194, 53, 47, 0.08) !important;
   overflow: visible !important;
 }
 
@@ -220,35 +126,13 @@ body.site-huipil.site-coastal.site-oax-craft .header::after {
   position: absolute !important;
   left: 0 !important;
   right: 0 !important;
-  top: 100% !important;
-  bottom: auto !important;
-  height: var(--tex-nav-banner-h) !important;
-  background:
-    linear-gradient(90deg, transparent, var(--serape-yellow), var(--serape-magenta), var(--serape-cyan), transparent) center top / 100% var(--tex-trim-craft-shine) no-repeat,
-    var(--tex-dash-band) repeat-x center,
-    var(--tex-serape-rainbow) repeat-x center bottom !important;
-  background-size:
-    100% var(--tex-trim-craft-shine),
-    40px 10px,
-    240px 72px !important;
-  opacity: 1 !important;
+  bottom: 0 !important;
+  top: auto !important;
+  height: 4px !important;
+  background: var(--tex-serape-rainbow) repeat-x center !important;
+  background-size: 240px 72px !important;
+  opacity: 0.85 !important;
   pointer-events: none !important;
-  z-index: 1 !important;
-}
-
-/* Room for banner below fixed header */
-body.site-huipil.has-topbar .hero {
-  padding-top: calc(var(--header-h) + var(--topbar-h) + var(--safe-top) + var(--tex-nav-banner-h) + 2.5rem) !important;
-}
-
-body.site-huipil.has-topbar.menu-page .menu-online-shell,
-body.site-huipil.has-topbar.menu-page #main {
-  padding-top: calc(var(--header-h) + var(--topbar-h) + var(--tex-nav-banner-h) + 0.35rem) !important;
-}
-
-/* Menu duplicate craft band — header banner replaces it */
-body.site-huipil.site-coastal.site-oax-craft.menu-page .header + .oax-craft-band {
-  display: none !important;
 }
 
 body.site-huipil .logo__title {
@@ -262,83 +146,37 @@ body.site-huipil .header .logo__sub {
 body.site-huipil .nav-menu-cta,
 body.site-huipil .nav-menu-cta:hover,
 body.site-huipil .nav-menu-cta.active {
-  background: linear-gradient(135deg, var(--tex-red-deep), var(--serape-magenta) 45%, var(--tex-red), var(--serape-orange)) !important;
-  box-shadow: 0 4px 14px rgba(194, 53, 47, 0.3) !important;
+  background: var(--tex-red) !important;
+  box-shadow: none !important;
 }
 
-/* --- Hero: no top pattern border (lives under header nav) --- */
-body.site-huipil .hero::before {
+/* --- No extra pattern borders on hero, sections, footer --- */
+body.site-huipil .hero::before,
+body.site-huipil .hero::after {
   display: none !important;
   content: none !important;
 }
 
-body.site-huipil .hero::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: var(--tex-trim-hero);
-  background:
-    var(--tex-dash-band) repeat-x center top,
-    var(--tex-serape-rainbow) repeat-x center bottom;
-  background-size: 40px 10px, 240px 72px;
-  z-index: 4;
-  pointer-events: none;
+body.site-huipil .section-title::after,
+body.site-huipil .menu-section-title::after {
+  display: none !important;
+  content: none !important;
 }
 
-body.site-huipil .hero-eyebrow {
-  color: var(--tex-gold-light) !important;
+body.site-huipil.site-coastal.site-oax-craft footer::before,
+body.site-huipil.site-coastal.site-oax-craft .footer::before {
+  display: none !important;
+  content: none !important;
 }
 
-/* --- Craft bands: bold trims (home + menu) --- */
+/* Let coastal handle craft-band sizing — don't amplify */
 body.site-huipil.site-coastal.site-oax-craft .oax-craft-band__shine,
-body.site-huipil.site-coastal.site-oax-craft .oax-craft-band--subtle .oax-craft-band__shine,
-body.site-huipil.site-coastal.site-oax-craft .oax-craft-band--foot .oax-craft-band__shine {
-  background: linear-gradient(90deg, transparent, var(--serape-yellow), var(--serape-magenta), var(--serape-cyan), transparent) !important;
-  height: var(--tex-trim-craft-shine) !important;
-  opacity: 1 !important;
-}
-
 body.site-huipil.site-coastal.site-oax-craft .oax-craft-band__zigzag,
-body.site-huipil.site-coastal.site-oax-craft .oax-craft-band--subtle .oax-craft-band__zigzag,
-body.site-huipil.site-coastal.site-oax-craft .oax-craft-band--foot .oax-craft-band__zigzag,
-body.site-huipil.site-coastal.site-oax-craft.menu-page .oax-craft-band--foot .oax-craft-band__zigzag {
-  height: var(--tex-trim-craft-zigzag) !important;
-  background:
-    var(--tex-dash-band) repeat-x center top,
-    var(--tex-serape-rainbow) repeat-x center bottom !important;
-  background-size: 40px 10px, 240px 72px !important;
-  opacity: 1 !important;
+body.site-huipil.site-coastal.site-oax-craft .oax-craft-band__serape {
+  /* inherit coastal-oax-fusion defaults */
 }
 
-body.site-huipil.site-coastal.site-oax-craft .oax-craft-band__serape,
-body.site-huipil.site-coastal.site-oax-craft .oax-craft-band--subtle .oax-craft-band__serape,
-body.site-huipil.site-coastal.site-oax-craft .oax-craft-band--foot .oax-craft-band__serape,
-body.site-huipil.site-coastal.site-oax-craft.menu-page .oax-craft-band--foot .oax-craft-band__serape {
-  height: var(--tex-trim-craft-serape) !important;
-  background: var(--tex-serape-rainbow) repeat-x center !important;
-  background-size: 240px 72px !important;
-  opacity: 1 !important;
-  display: block !important;
-}
-
-/* --- Content panels: no extra solid borders --- */
-body.site-huipil .menu-card,
-body.site-huipil .menu-item-card,
-body.site-huipil .order-cart-panel,
-body.site-huipil .pay-shell {
-  background-color: rgba(255, 252, 247, 0.97) !important;
-}
-
-/* --- Buttons & typography --- */
-body.site-huipil .btn-primary,
-body.site-huipil .menu-cta-primary,
-body.site-huipil .order-cart-checkout {
-  background: linear-gradient(135deg, var(--tex-red-deep), var(--serape-magenta) 40%, var(--tex-red), var(--serape-orange)) !important;
-  border-color: var(--tex-red-deep) !important;
-}
-
+/* --- Typography & buttons --- */
 body.site-huipil h1,
 body.site-huipil h2,
 body.site-huipil .section-title,
@@ -346,88 +184,35 @@ body.site-huipil .menu-section-title {
   color: var(--tex-red-deep);
 }
 
-/* --- Footer trim --- */
-body.site-huipil.site-coastal.site-oax-craft footer,
-body.site-huipil.site-coastal.site-oax-craft .footer {
-  border-top: none !important;
+body.site-huipil .btn-primary,
+body.site-huipil .menu-cta-primary,
+body.site-huipil .order-cart-checkout {
+  background: var(--tex-red) !important;
+  border-color: var(--tex-red-deep) !important;
+  box-shadow: none !important;
 }
 
-body.site-huipil.site-coastal.site-oax-craft footer::before,
-body.site-huipil.site-coastal.site-oax-craft .footer::before,
-body.site-huipil.site-coastal.site-oax-craft:not(.menu-page) .footer::before {
-  content: '' !important;
-  display: block !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: var(--tex-trim-footer) !important;
-  background:
-    var(--tex-dash-band) repeat-x center top,
-    var(--tex-serape-rainbow) repeat-x center bottom !important;
-  background-size: 40px 10px, 240px 72px !important;
-  opacity: 1 !important;
+body.site-huipil .menu-card,
+body.site-huipil .order-cart-panel,
+body.site-huipil .pay-shell {
+  background-color: rgba(255, 252, 247, 0.97) !important;
 }
 
-/* --- Menu UI --- */
 body.site-huipil .menu-chip.is-active,
 body.site-huipil .menu-filter-btn.is-active {
-  background: linear-gradient(135deg, var(--tex-red-deep), var(--serape-magenta), var(--tex-red)) !important;
+  background: var(--tex-red) !important;
   border-color: var(--tex-red-deep) !important;
 }
 
-body.site-huipil .section-title::after,
-body.site-huipil .menu-section-title::after {
-  content: '';
-  display: block;
-  width: min(240px, 62%);
-  height: var(--tex-trim-section);
-  margin: 0.25rem auto 0;
-  background:
-    var(--tex-dash-band) repeat-x center top,
-    var(--tex-serape-rainbow) repeat-x center bottom;
-  background-size: 40px 10px, 240px 72px;
-}
-
-/* --- Pay page --- */
-body.site-huipil.site-coastal.site-oax-craft.pay-page .tex-master-weave {
-  opacity: 0.4;
-}
-
-body.site-huipil.site-coastal.site-oax-craft.pay-page .pay-shell {
-  background: rgba(255, 252, 247, 0.98) !important;
-  border-radius: 12px;
-  box-shadow: 0 6px 24px rgba(30, 30, 30, 0.07) !important;
-}
-
-/* --- Welcome splash --- */
+/* --- Welcome --- */
 body.site-huipil.welcome-page {
   background: var(--tex-cream) !important;
-  color: var(--tex-ink);
-}
-
-body.site-huipil.welcome-page .popup {
-  position: relative;
-  overflow: hidden;
-  border-color: rgba(194, 53, 47, 0.16) !important;
 }
 
 body.site-huipil.welcome-page .popup::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--tex-trim-topbar);
-  background: var(--tex-serape-rainbow) repeat-x center;
-  background-size: 240px 72px;
-  pointer-events: none;
-}
-
-body.site-huipil.welcome-page .popup__eyebrow {
-  color: var(--tex-red-deep) !important;
+  display: none !important;
 }
 
 body.site-huipil.welcome-page .popup__btn {
-  background: linear-gradient(135deg, var(--tex-red-deep), var(--serape-magenta) 40%, var(--tex-red), var(--serape-orange)) !important;
+  background: var(--tex-red) !important;
 }
