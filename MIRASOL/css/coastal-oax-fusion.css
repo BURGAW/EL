@@ -104,9 +104,9 @@ body.site-coastal.site-oax-craft .header .logo__sub {
   letter-spacing: 0.12em !important;
 }
 
-body.site-coastal.site-oax-craft .nav-menu-cta,
-body.site-coastal.site-oax-craft .nav-menu-cta:hover,
-body.site-coastal.site-oax-craft .nav-menu-cta.active {
+body.site-coastal.site-oax-craft:not(.site-huipil) .nav-menu-cta,
+body.site-coastal.site-oax-craft:not(.site-huipil) .nav-menu-cta:hover,
+body.site-coastal.site-oax-craft:not(.site-huipil) .nav-menu-cta.active {
   background: linear-gradient(135deg, var(--oax-red-deep), var(--oax-red) 55%, var(--oax-gold)) !important;
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
@@ -161,21 +161,21 @@ body.site-coastal.site-oax-craft .hero-sub {
   color: rgba(255, 255, 255, 0.96) !important;
 }
 
-body.site-coastal.site-oax-craft .btn-primary {
+body.site-coastal.site-oax-craft:not(.site-huipil) .btn-primary {
   background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
   box-shadow: 0 4px 18px rgba(200, 16, 46, 0.32), 0 2px 8px rgba(212, 168, 75, 0.22) !important;
 }
 
-body.site-coastal.site-oax-craft .btn-primary:hover {
+body.site-coastal.site-oax-craft:not(.site-huipil) .btn-primary:hover {
   box-shadow: 0 6px 24px rgba(200, 16, 46, 0.38), 0 3px 12px rgba(212, 168, 75, 0.28) !important;
 }
 
-body.site-coastal.site-oax-craft .btn-red {
+body.site-coastal.site-oax-craft:not(.site-huipil) .btn-red {
   background: linear-gradient(135deg, var(--oax-red-deep), var(--oax-red)) !important;
   border-color: var(--oax-red) !important;
 }
 
-body.site-coastal.site-oax-craft .btn-red:hover {
+body.site-coastal.site-oax-craft:not(.site-huipil) .btn-red:hover {
   background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
   border-color: var(--oax-gold) !important;
 }
@@ -697,8 +697,8 @@ body.site-coastal.site-oax-craft .fiesta-card--roulette-inline h3 {
   color: var(--oax-red-deep) !important;
 }
 
-body.site-coastal.site-oax-craft .fiesta-spin-btn,
-body.site-coastal.site-oax-craft .fiesta-stamp-btn {
+body.site-coastal.site-oax-craft:not(.site-huipil) .fiesta-spin-btn,
+body.site-coastal.site-oax-craft:not(.site-huipil) .fiesta-stamp-btn {
   background: linear-gradient(135deg, var(--oax-red), var(--oax-gold)) !important;
 }
 
