@@ -1,7 +1,6 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v18
-   Woven runner reference → serape border lines + diamond weave (CSS only).
-   No photo used as page/layer backgrounds.
+   El Mirasol — Textile Theme v19
+   Serape border lines + woven pattern (CSS). Layout + button polish.
    ============================================================================= */
 
 body.site-huipil {
@@ -68,7 +67,12 @@ body.site-huipil {
   --coast-sea: var(--tex-navy);
   --coast-sea-mid: #2d5f8f;
 
+  --tex-trim-h: 38px;
   scroll-behavior: smooth;
+}
+
+body.site-huipil.site-coastal.site-oax-craft.has-topbar {
+  --tex-trim-h: 38px;
 }
 
 body.site-huipil::selection {
@@ -76,14 +80,24 @@ body.site-huipil::selection {
   color: var(--tex-ink);
 }
 
-/* ── Serape trim stack: border lines + woven center ── */
+/* ── Serape trim: fixed under header (no layout gap bug) ── */
 body.site-huipil .tex-serape-trim {
   display: flex;
   flex-direction: column;
   width: 100%;
   background: var(--tex-cream);
-  box-shadow: 0 6px 20px rgba(74, 50, 40, 0.1);
+  box-shadow: 0 4px 16px rgba(74, 50, 40, 0.1);
   pointer-events: none;
+}
+
+body.site-huipil.site-coastal.site-oax-craft.has-topbar .tex-serape-trim {
+  position: fixed !important;
+  top: calc(var(--topbar-stack) + var(--header-h)) !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 199 !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
 
 body.site-huipil .tex-serape-trim__line {
@@ -103,21 +117,21 @@ body.site-huipil .tex-serape-trim__weave {
   border-bottom: 1px solid rgba(107, 78, 61, 0.12);
 }
 
-body.site-huipil.site-coastal.site-oax-craft.has-topbar .header + .tex-serape-trim {
-  padding-top: calc(var(--topbar-stack) + var(--header-h)) !important;
-  margin-top: 0 !important;
-  box-sizing: content-box;
-}
-
-body.site-huipil.site-coastal.site-oax-craft.has-topbar .header + .tex-serape-trim + .hero {
-  padding-top: 0 !important;
+body.site-huipil.site-coastal.site-oax-craft.has-topbar .header + .tex-serape-trim + .hero,
+body.site-huipil.site-coastal.site-oax-craft.has-topbar:not(.menu-page) .hero {
+  padding-top: calc(var(--topbar-stack) + var(--header-h) + var(--tex-trim-h) + 0.35rem) !important;
   margin-top: 0 !important;
 }
 
-body.site-huipil.site-coastal.site-oax-craft.has-topbar .header + .tex-serape-trim + main,
-body.site-huipil.site-coastal.site-oax-craft.has-topbar .header + .tex-serape-trim + .menu-shell {
-  padding-top: 0.15rem !important;
+body.site-huipil.site-coastal.site-oax-craft.has-topbar .header + .tex-serape-trim + .menu-shell,
+body.site-huipil.site-coastal.site-oax-craft.has-topbar .menu-online-shell {
+  padding-top: calc(var(--topbar-stack) + var(--header-h) + var(--tex-trim-h) + 0.2rem) !important;
   margin-top: 0 !important;
+}
+
+body.site-huipil.pay-page .tex-serape-trim {
+  position: relative !important;
+  top: auto !important;
 }
 
 /* Welcome popup trim */
@@ -277,11 +291,30 @@ body.site-huipil .header .nav a:not(.nav-menu-cta):hover::after {
   border-radius: 2px;
 }
 
-body.site-huipil .nav-menu-cta,
-body.site-huipil .nav-menu-cta:hover,
-body.site-huipil .nav-menu-cta.active {
-  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red)) !important;
-  box-shadow: 0 4px 16px rgba(122, 34, 24, 0.28) !important;
+body.site-huipil .header .nav a.nav-menu-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 40px !important;
+  padding: 0.45rem 1.1rem !important;
+  border-radius: 999px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: none !important;
+  border: 2px solid var(--tex-red-deep) !important;
+  background: linear-gradient(180deg, #b83a34 0%, var(--tex-red-deep) 50%, var(--tex-red) 100%) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 252, 247, 0.18) inset,
+    0 4px 14px rgba(122, 34, 24, 0.28) !important;
+}
+
+body.site-huipil .header .nav a.nav-menu-cta:hover,
+body.site-huipil .header .nav a.nav-menu-cta.active {
+  background: linear-gradient(180deg, #c4443e 0%, var(--tex-red-deep) 45%, #c04038 100%) !important;
+  transform: translateY(-1px);
 }
 
 /* ── Hero ── */
@@ -467,19 +500,159 @@ body.site-huipil.site-coastal.site-oax-craft .fav-card__tag {
   border: 1px solid rgba(196, 154, 58, 0.4) !important;
 }
 
-body.site-huipil.site-coastal.site-oax-craft .story-spin__frame,
-body.site-huipil.site-coastal.site-oax-craft .fiesta-card,
-body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero {
-  background: rgba(250, 246, 239, 0.97) !important;
-  border: 1px solid rgba(107, 78, 61, 0.12) !important;
+/* ── Story + Dish Roulette layout fix ── */
+body.site-huipil.site-coastal.site-oax-craft .story-spin-section {
+  padding-top: clamp(1.5rem, 3vw, 2.5rem) !important;
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__frame {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr) !important;
+  gap: 0 !important;
+  padding: 0 !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+  background: rgba(250, 246, 239, 0.98) !important;
+  border: 1px solid rgba(107, 78, 61, 0.14) !important;
   border-radius: var(--tex-radius-md) !important;
   box-shadow: var(--tex-shadow-soft) !important;
 }
 
 body.site-huipil.site-coastal.site-oax-craft .story-spin__frame::before {
-  background: var(--tex-weave) repeat !important;
-  background-size: 48px 48px !important;
-  opacity: 0.55 !important;
+  content: '' !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 5px !important;
+  background: var(--tex-serape-border) !important;
+  opacity: 1 !important;
+  z-index: 3 !important;
+  border: none !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__story {
+  border-right: 1px solid rgba(107, 78, 61, 0.12) !important;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+  gap: 0.75rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  min-height: 100% !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-stage {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 1 auto !important;
+  gap: clamp(0.85rem, 2vw, 1.35rem) !important;
+  min-height: clamp(260px, 30vw, 340px) !important;
+  padding: clamp(1rem, 2vw, 1.35rem) !important;
+  padding-bottom: clamp(3.5rem, 5vw, 4rem) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-wheel {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__wheel-wrap {
+  transform: none !important;
+  width: clamp(190px, 20vw, 260px) !important;
+  height: clamp(190px, 20vw, 260px) !important;
+  margin: 0 !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__wheel {
+  border-color: var(--tex-gold) !important;
+  box-shadow:
+    0 8px 28px rgba(74, 50, 40, 0.14),
+    inset 0 0 20px rgba(255, 252, 247, 0.25) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-panel {
+  flex: 1 1 12rem !important;
+  max-width: 16rem !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 0.65rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-label {
+  position: absolute !important;
+  left: 0.85rem !important;
+  bottom: 0.85rem !important;
+  z-index: 5 !important;
+  max-width: 11rem !important;
+  padding: 0.55rem 0.7rem !important;
+  background: rgba(250, 246, 239, 0.96) !important;
+  border: 1px solid rgba(107, 78, 61, 0.14) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 6px 18px rgba(74, 50, 40, 0.1) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--tex-serape-border);
+  border-radius: 10px 10px 0 0;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-eyebrow {
+  color: var(--tex-navy) !important;
+  font-size: 0.58rem !important;
+  letter-spacing: 0.14em !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-title {
+  color: var(--tex-red-deep) !important;
+  font-family: Montserrat, system-ui, sans-serif !important;
+  font-size: clamp(1.1rem, 2vw, 1.35rem) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-teaser {
+  font-size: 0.8rem !important;
+  line-height: 1.45 !important;
+  color: var(--tex-ink-soft) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__result {
+  text-align: left !important;
+  min-height: 2.5rem !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__result p {
+  font-size: 0.84rem !important;
+  color: var(--tex-ink-soft) !important;
+}
+
+body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__result strong {
+  color: var(--tex-red-deep) !important;
+  font-size: 1.05rem !important;
 }
 
 /* ── Menu page ── */
@@ -522,17 +695,127 @@ body.site-huipil .menu-filter-btn.is-active {
   background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red)) !important;
 }
 
-/* ── Buttons ── */
+/* ── Unified textile buttons ── */
+body.site-huipil .btn,
+body.site-huipil .fiesta-spin-btn,
+body.site-huipil .fiesta-stamp-btn,
+body.site-huipil .btn-order,
+body.site-huipil .order-cart-checkout,
+body.site-huipil .menu-cta-primary,
+body.site-huipil .popup__btn {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.4rem !important;
+  min-height: 48px !important;
+  padding: 0.72rem 1.4rem !important;
+  font-family: Montserrat, var(--font-body), system-ui, sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1.2 !important;
+  border-radius: 999px !important;
+  border: 2px solid transparent !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: transform 0.2s var(--tex-ease), box-shadow 0.2s var(--tex-ease), filter 0.2s !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
 body.site-huipil .btn-primary,
 body.site-huipil .btn-red,
-body.site-huipil .menu-cta-primary,
-body.site-huipil .order-cart-checkout,
-body.site-huipil .btn-order,
 body.site-huipil .fiesta-spin-btn,
-body.site-huipil .fiesta-stamp-btn {
-  background: linear-gradient(135deg, var(--tex-red-deep), var(--tex-red)) !important;
+body.site-huipil .fiesta-stamp-btn,
+body.site-huipil .btn-order,
+body.site-huipil .order-cart-checkout,
+body.site-huipil .menu-cta-primary,
+body.site-huipil .visit-flow__actions .btn-red,
+body.site-huipil .menu-online__call .btn-red {
+  color: #fff !important;
   border-color: var(--tex-red-deep) !important;
-  box-shadow: 0 4px 18px rgba(122, 34, 24, 0.22) !important;
+  background: linear-gradient(180deg, #b83a34 0%, var(--tex-red-deep) 48%, var(--tex-red) 100%) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 252, 247, 0.2) inset,
+    0 4px 16px rgba(122, 34, 24, 0.24) !important;
+}
+
+body.site-huipil .btn-primary:hover,
+body.site-huipil .btn-red:hover,
+body.site-huipil .fiesta-spin-btn:hover:not([aria-busy="true"]),
+body.site-huipil .fiesta-stamp-btn:hover,
+body.site-huipil .btn-order:hover,
+body.site-huipil .order-cart-checkout:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.04);
+  box-shadow:
+    0 1px 0 rgba(255, 252, 247, 0.22) inset,
+    0 8px 22px rgba(122, 34, 24, 0.3) !important;
+}
+
+body.site-huipil .btn-outline,
+body.site-huipil .item-modal__actions .btn-outline {
+  background: var(--tex-cream-light) !important;
+  color: var(--tex-red-deep) !important;
+  border-color: rgba(107, 78, 61, 0.28) !important;
+  box-shadow: 0 2px 8px rgba(74, 50, 40, 0.06) !important;
+}
+
+body.site-huipil .btn-outline:hover {
+  background: var(--tex-linen) !important;
+  border-color: rgba(196, 154, 58, 0.45) !important;
+}
+
+body.site-huipil .story-spin__copy .btn-red {
+  align-self: flex-start !important;
+  min-height: 44px !important;
+  padding: 0.6rem 1.15rem !important;
+  font-size: 0.82rem !important;
+}
+
+body.site-huipil .fiesta-card--roulette-hero .fiesta-spin-btn {
+  width: 100% !important;
+  margin-top: 0 !important;
+  min-height: 46px !important;
+  padding: 0.65rem 1rem !important;
+  font-size: 0.86rem !important;
+}
+
+body.site-huipil .mobile-quick a {
+  min-height: 40px !important;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  font-size: 0.78rem !important;
+}
+
+body.site-huipil .menu-view-tab,
+body.site-huipil .menu-chip,
+body.site-huipil .menu-filter-btn {
+  border-radius: 999px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+}
+
+body.site-huipil .menu-view-tab.is-active {
+  color: #fff !important;
+  border-color: var(--tex-red-deep) !important;
+  box-shadow: 0 3px 12px rgba(122, 34, 24, 0.2) !important;
+}
+
+body.site-huipil a[href*="facebook.com/elmirasolburgaw"].btn,
+body.site-huipil .btn-social--facebook {
+  background: #1877f2 !important;
+  border-color: #1877f2 !important;
+  color: #fff !important;
+}
+
+body.site-huipil a[href*="google.com/maps/dir"].btn,
+body.site-huipil .btn-social--directions,
+body.site-huipil .mobile-quick .quick-link--directions {
+  background: linear-gradient(135deg, #1e5f8f, #2d7ab5) !important;
+  border-color: #1e5f8f !important;
+  color: #fff !important;
 }
 
 body.site-huipil :focus-visible {
@@ -587,12 +870,50 @@ body.site-huipil.welcome-page .popup__eyebrow {
   }
 }
 
+@media (max-width: 900px) {
+  body.site-huipil.site-coastal.site-oax-craft .story-spin__frame {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .story-spin__story {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(107, 78, 61, 0.12) !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-stage {
+    flex-direction: column !important;
+    min-height: auto !important;
+    padding-bottom: 4.5rem !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .story-spin__roulette-panel {
+    max-width: 100% !important;
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+
+  body.site-huipil.site-coastal.site-oax-craft .fiesta-card--roulette-hero .fiesta-roulette__wheel-wrap {
+    width: clamp(200px, 58vw, 260px) !important;
+    height: clamp(200px, 58vw, 260px) !important;
+  }
+}
+
 @media (max-width: 768px) {
+  body.site-huipil.site-coastal.site-oax-craft.has-topbar {
+    --tex-trim-h: 33px;
+  }
+
   body.site-huipil .tex-serape-trim__line {
     height: 10px;
   }
 
   body.site-huipil .tex-serape-trim__weave {
     height: 11px;
+  }
+
+  body.site-huipil .btn,
+  body.site-huipil .fiesta-spin-btn {
+    min-height: 46px !important;
+    font-size: 0.84rem !important;
   }
 }
