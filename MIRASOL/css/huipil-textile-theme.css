@@ -2249,10 +2249,10 @@ body.site-huipil .hero-floater--snap {
   --snap-w: clamp(68px, 8.5vw, 108px);
 }
 
-body.site-huipil .hero-floater:nth-child(1) { top: 11%; left: 1.5%; }
-body.site-huipil .hero-floater:nth-child(2) { top: 10%; right: 1.5%; }
-body.site-huipil .hero-floater:nth-child(3) { bottom: 14%; left: 2%; }
-body.site-huipil .hero-floater:nth-child(4) { bottom: 12%; right: 2%; }
+body.site-huipil .hero-floater:nth-child(1) { top: 27%; left: max(6%, calc(50% - 22rem)); }
+body.site-huipil .hero-floater:nth-child(2) { top: 25%; right: max(6%, calc(50% - 22rem)); }
+body.site-huipil .hero-floater:nth-child(3) { bottom: 30%; left: max(6%, calc(50% - 21rem)); }
+body.site-huipil .hero-floater:nth-child(4) { bottom: 28%; right: max(6%, calc(50% - 21rem)); }
 
 body.site-huipil .hero--single .hero-rotator__slide {
   opacity: 1 !important;
@@ -3950,4 +3950,23 @@ body.site-huipil .visit-flow__map-band::before {
 body.site-huipil .visit-flow::before {
   width: 4px !important;
   background: var(--tex-oax-serape) !important;
+}
+
+/* ── v45 · polaroids frame hero copy (edges, closer in) ── */
+@media (min-width: 901px) {
+  body.site-huipil:not(.menu-page) .hero-floater--snap {
+    --snap-w: clamp(72px, 8.8vw, 112px);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  body.site-huipil .hero-floater:nth-child(1) {
+    top: 24% !important;
+    left: max(5%, calc(50% - 19rem)) !important;
+  }
+
+  body.site-huipil .hero-floater:nth-child(2) {
+    top: 22% !important;
+    right: max(5%, calc(50% - 19rem)) !important;
+  }
 }
