@@ -1,7 +1,7 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v33 · Runner Reference (single theme)
+   El Mirasol — Textile Theme v34 · Calm Ivory Weave (single theme)
    woven-runner-reference.png = COLOR REFERENCE ONLY (never tiled as photo).
-   Pattern on site: CSS serape stripes + SVG diamond weave.
+   Pattern on site: whisper diamond weave on ivory — no rainbow serape stripes.
    Jewel palette · calm ivory canvas · readable cloth-tag buttons.
    ============================================================================= */
 
@@ -33,30 +33,22 @@ body.site-huipil {
   /* Photo is palette reference only — never used as a background tile */
   --tex-cloth-photo: none;
 
-  /* Fine serape border — thin hairlines like the cloth edge */
-  --tex-serape-border: linear-gradient(
-    180deg,
-    var(--tex-navy-deep) 0%, var(--tex-navy-deep) 3%,
-    var(--tex-navy) 3%, var(--tex-navy) 9%,
-    var(--tex-magenta) 9%, var(--tex-magenta) 15%,
-    var(--tex-teal) 15%, var(--tex-teal) 21%,
-    var(--tex-red) 21%, var(--tex-red) 27%,
-    var(--tex-orange) 27%, var(--tex-orange) 33%,
-    var(--tex-yellow) 33%, var(--tex-yellow) 39%,
-    var(--tex-green) 39%, var(--tex-green) 45%,
-    var(--tex-navy-deep) 45%, var(--tex-navy-deep) 48%,
-    var(--tex-navy) 48%, var(--tex-navy) 54%,
-    var(--tex-magenta) 54%, var(--tex-magenta) 60%,
-    var(--tex-teal) 60%, var(--tex-teal) 66%,
-    var(--tex-red) 66%, var(--tex-red) 72%,
-    var(--tex-orange) 72%, var(--tex-orange) 78%,
-    var(--tex-yellow) 78%, var(--tex-yellow) 84%,
-    var(--tex-green) 84%, var(--tex-green) 90%,
-    var(--tex-navy-deep) 90%, var(--tex-navy-deep) 100%
+  /* Calm accent lines — gold / wood, never rainbow serape */
+  --tex-accent-bar: var(--tex-gold);
+  --tex-accent-line: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 160, 74, 0.35) 12%,
+    var(--tex-gold) 50%,
+    rgba(201, 160, 74, 0.35) 88%,
+    transparent 100%
   );
 
-  /* SVG diamond field — backup + blend */
-  --tex-weave-svg: url("data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' fill='%23f6f0e6'/%3E%3Cpath d='M32 8 L56 32 L32 56 L8 32 Z' fill='none' stroke='%231a2844' stroke-width='0.85' opacity='0.28'/%3E%3Cpath d='M32 14 L50 32 L32 50 L14 32 Z' fill='none' stroke='%23d43832' stroke-width='0.7' opacity='0.24'/%3E%3Cpath d='M32 20 L44 32 L32 44 L20 32 Z' fill='none' stroke='%231a6b72' stroke-width='0.6' opacity='0.2'/%3E%3Cpath d='M32 26 L38 32 L32 38 L26 32 Z' fill='%23c9a04a' fill-opacity='0.08'/%3E%3Cpath d='M0 32 H64 M32 0 V64' stroke='%23c9a04a' stroke-width='0.3' opacity='0.12'/%3E%3C/svg%3E");
+  /* Neutralize legacy rainbow --textile from styles.css */
+  --textile: linear-gradient(90deg, var(--tex-gold), var(--tex-gold));
+
+  /* SVG diamond field — whisper weave only */
+  --tex-weave-svg: url("data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' fill='%23f6f0e6'/%3E%3Cpath d='M32 8 L56 32 L32 56 L8 32 Z' fill='none' stroke='%233d2618' stroke-width='0.55' opacity='0.07'/%3E%3Cpath d='M32 14 L50 32 L32 50 L14 32 Z' fill='none' stroke='%233d2618' stroke-width='0.45' opacity='0.05'/%3E%3Cpath d='M32 20 L44 32 L32 44 L20 32 Z' fill='none' stroke='%23c9a04a' stroke-width='0.4' opacity='0.06'/%3E%3Cpath d='M32 26 L38 32 L32 38 L26 32 Z' fill='%23c9a04a' fill-opacity='0.04'/%3E%3Cpath d='M0 32 H64 M32 0 V64' stroke='%23c9a04a' stroke-width='0.25' opacity='0.05'/%3E%3C/svg%3E");
 
   --tex-weave: var(--tex-weave-svg);
 
@@ -67,7 +59,7 @@ body.site-huipil {
   --tex-shadow-lift: 0 14px 48px rgba(38, 28, 22, 0.12);
   --tex-shadow-chrome: 0 3px 24px rgba(38, 28, 22, 0.22);
   --tex-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --tex-trim-h: 40px;
+  --tex-trim-h: 14px;
 
   --huipil-red: var(--tex-red);
   --huipil-red-deep: var(--tex-red-deep);
@@ -123,24 +115,22 @@ body.site-huipil.has-topbar .tex-serape-trim {
 }
 
 body.site-huipil .tex-serape-trim__line {
-  display: block;
-  width: 100%;
-  height: 13px;
-  background: var(--tex-serape-border);
+  display: none !important;
 }
 
 body.site-huipil .tex-serape-trim__weave {
   display: block;
   width: 100%;
-  height: 14px;
+  height: var(--tex-trim-h);
   background-color: var(--tex-linen);
   background-image: var(--tex-weave-svg);
   background-size: 48px 48px;
   background-position: center;
   background-repeat: repeat;
-  opacity: 0.55;
-  border-top: 1px solid rgba(61, 38, 24, 0.1);
-  border-bottom: 1px solid rgba(61, 38, 24, 0.1);
+  opacity: 0.42;
+  border-top: 1px solid rgba(201, 160, 74, 0.22);
+  border-bottom: 1px solid rgba(61, 38, 24, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 252, 247, 0.65);
 }
 
 body.site-huipil.has-topbar .header + .tex-serape-trim + .hero,
@@ -237,7 +227,7 @@ body.site-huipil .social-topbar::after {
   right: 0 !important;
   bottom: 0 !important;
   height: 4px !important;
-  background: var(--tex-serape-border) !important;
+  background: var(--tex-accent-bar) !important;
   z-index: 1 !important;
 }
 
@@ -319,7 +309,7 @@ body.site-huipil .header .nav a:not(.nav-menu-cta):hover::after {
   right: 0;
   bottom: -4px;
   height: 3px;
-  background: var(--tex-serape-border);
+  background: var(--tex-accent-bar);
   border-radius: 2px;
 }
 
@@ -468,7 +458,7 @@ body.site-huipil .feat-ribbon::after {
   right: 0 !important;
   bottom: 0 !important;
   height: 6px !important;
-  background: var(--tex-serape-border) !important;
+  background: var(--tex-accent-bar) !important;
 }
 
 body.site-huipil .feat-ribbon__inner {
@@ -501,7 +491,7 @@ body.site-huipil .feat-stats::before {
   left: 0 !important;
   right: 0 !important;
   height: 7px !important;
-  background: var(--tex-serape-border) !important;
+  background: var(--tex-accent-bar) !important;
 }
 
 body.site-huipil .feat-stats::after {
@@ -524,7 +514,7 @@ body.site-huipil .feat-stat::before {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--tex-serape-border);
+  background: var(--tex-accent-bar);
 }
 
 body.site-huipil .feat-stat__num {
@@ -545,12 +535,12 @@ body.site-huipil .reviews-section::before,
 body.site-huipil .visit-section::before {
   content: '';
   display: block;
-  width: min(90%, 720px);
-  height: 10px;
+  width: min(72%, 520px);
+  height: 2px;
   margin: 0 auto 1.35rem;
-  background: var(--tex-serape-border);
-  border-radius: 4px;
-  box-shadow: var(--tex-shadow-soft);
+  background: var(--tex-accent-line);
+  border-radius: 2px;
+  box-shadow: none;
 }
 
 body.site-huipil .section-tag {
@@ -650,7 +640,7 @@ body.site-huipil .fav-card::before {
   left: 0;
   right: 0;
   height: 5px;
-  background: var(--tex-serape-border);
+  background: var(--tex-accent-bar);
   z-index: 3;
   pointer-events: none;
 }
@@ -720,7 +710,7 @@ body.site-huipil .story-spin__frame::before {
   left: 0 !important;
   right: 0 !important;
   height: 6px !important;
-  background: var(--tex-serape-border) !important;
+  background: var(--tex-accent-bar) !important;
   z-index: 3 !important;
 }
 
@@ -771,7 +761,7 @@ body.site-huipil .story-spin__roulette-label::before {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--tex-serape-border);
+  background: var(--tex-accent-bar);
 }
 
 body.site-huipil .story-spin__roulette-eyebrow {
@@ -957,8 +947,8 @@ body.site-huipil .reviews-section {
 body.site-huipil .review-card {
   background: var(--tex-cream-light) !important;
   border: 1px solid rgba(61, 38, 24, 0.1) !important;
-  border-top: 4px solid transparent !important;
-  border-image: var(--tex-serape-border) 1 !important;
+  border-top: 3px solid var(--tex-gold) !important;
+  border-image: none !important;
   box-shadow: var(--tex-shadow-soft) !important;
 }
 
@@ -985,7 +975,7 @@ body.site-huipil.menu-page .order-strip::before {
   left: 0;
   right: 0;
   height: 7px;
-  background: var(--tex-serape-border);
+  background: var(--tex-accent-bar);
 }
 
 body.site-huipil.menu-page .menu-view-tabs {
@@ -1009,7 +999,7 @@ body.site-huipil .menu-card::before {
   content: '';
   display: block;
   height: 3px;
-  background: var(--tex-serape-border);
+  background: var(--tex-accent-bar);
   margin: -1px -1px 0;
   border-radius: var(--tex-radius-sm) var(--tex-radius-sm) 0 0;
 }
@@ -1110,7 +1100,7 @@ body.site-huipil.menu-page .order-strip::before {
   left: 0;
   right: 0;
   height: 6px;
-  background: var(--tex-serape-border);
+  background: var(--tex-accent-bar);
 }
 
 body.site-huipil.menu-page .order-strip h2,
@@ -1546,7 +1536,7 @@ body.site-huipil footer.footer--slim::before {
   display: block !important;
   content: '' !important;
   height: 10px !important;
-  background: var(--tex-serape-border) !important;
+  background: var(--tex-accent-bar) !important;
 }
 
 body.site-huipil .footer,
@@ -1714,7 +1704,7 @@ body.site-huipil .visit-flow::before {
   content: '' !important;
   display: block !important;
   height: 6px !important;
-  background: var(--tex-serape-border) !important;
+  background: var(--tex-accent-bar) !important;
 }
 
 body.site-huipil .visit-flow__head {
@@ -1967,12 +1957,8 @@ body.site-huipil.has-mobile-cta {
     min-height: auto !important;
   }
 
-  body.site-huipil .tex-serape-trim__line {
-    height: 11px;
-  }
-
   body.site-huipil .tex-serape-trim__weave {
-    height: 12px;
+    height: var(--tex-trim-h);
   }
 }
 
@@ -2330,4 +2316,20 @@ body.site-huipil .story-spin-section .section {
   body.site-huipil .hero-floater--snap {
     animation: none !important;
   }
+}
+
+/* ── v34 · kill rainbow serape / legacy textile bleed ── */
+body.site-huipil .specials-banner,
+body.site-huipil .menu-hero__trim,
+body.site-huipil .food-wall__banner {
+  border-image: none !important;
+}
+
+body.site-huipil .specials-banner {
+  border-top: 3px solid var(--tex-gold) !important;
+  border-bottom: 3px solid var(--tex-gold) !important;
+}
+
+body.site-huipil .menu-hero__trim {
+  background: var(--tex-accent-line) !important;
 }
