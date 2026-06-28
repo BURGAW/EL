@@ -167,7 +167,14 @@
 
   /* ── Ambient gold dust (hero + top of page) ── */
   function initGoldDust() {
-    if (!isHome || reducedMotion || document.body.classList.contains('site-coastal') || document.body.classList.contains('site-clase-azul') || document.body.classList.contains('site-oaxaca')) return;
+    if (
+      !isHome ||
+      reducedMotion ||
+      document.body.classList.contains('site-huipil') ||
+      document.body.classList.contains('site-coastal') ||
+      document.body.classList.contains('site-clase-azul') ||
+      document.body.classList.contains('site-oaxaca')
+    ) return;
 
     const canvas = document.createElement('canvas');
     canvas.className = 'fiesta-gold-dust';
