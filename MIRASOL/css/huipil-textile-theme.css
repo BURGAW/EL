@@ -1,5 +1,5 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v31 · Runner Reference (single theme)
+   El Mirasol — Textile Theme v32 · Runner Reference (single theme)
    woven-runner-reference.png = COLOR REFERENCE ONLY (never tiled as photo).
    Pattern on site: CSS serape stripes + SVG diamond weave.
    Jewel palette · calm ivory canvas · readable cloth-tag buttons.
@@ -392,7 +392,7 @@ body.site-huipil .hero-overlay {
 
 body.site-huipil .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 body.site-huipil .hero-eyebrow {
@@ -560,13 +560,74 @@ body.site-huipil h2 em {
   font-style: normal;
 }
 
-/* ── Signature cards ── */
+/* ── Signature cards (photo layout — was in removed coastal-theme.css) ── */
+body.site-huipil .favorites-showcase {
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 4vw, 2rem) !important;
+}
+
+body.site-huipil .favorites-showcase__head {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 1.75rem;
+}
+
+body.site-huipil .favorites-showcase__head p {
+  color: var(--tex-ink-soft) !important;
+  margin-top: 0.45rem;
+}
+
+body.site-huipil .fav-cards {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1rem !important;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 body.site-huipil .fav-card {
   position: relative;
   border-radius: var(--tex-radius-md) !important;
   box-shadow: var(--tex-shadow-soft) !important;
   border: 1px solid rgba(61, 38, 24, 0.1) !important;
   overflow: hidden;
+  min-height: 280px !important;
+  display: flex !important;
+  align-items: flex-end !important;
+}
+
+body.site-huipil .fav-card__bg {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: transform 0.5s ease;
+}
+
+body.site-huipil .fav-card:hover .fav-card__bg {
+  transform: scale(1.04);
+}
+
+body.site-huipil .fav-card__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background: linear-gradient(
+    0deg,
+    rgba(38, 28, 22, 0.94) 0%,
+    rgba(38, 28, 22, 0.68) 42%,
+    rgba(38, 28, 22, 0.22) 72%,
+    transparent 100%
+  ) !important;
+}
+
+body.site-huipil .fav-card__body {
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 1.35rem !important;
+  color: #fff !important;
+  width: 100% !important;
 }
 
 body.site-huipil .fav-card::before {
@@ -575,9 +636,10 @@ body.site-huipil .fav-card::before {
   top: 0;
   left: 0;
   right: 0;
-  height: 6px;
+  height: 5px;
   background: var(--tex-serape-border);
-  z-index: 2;
+  z-index: 3;
+  pointer-events: none;
 }
 
 body.site-huipil .fav-card__tag {
@@ -587,8 +649,33 @@ body.site-huipil .fav-card__tag {
   letter-spacing: 0.1em !important;
 }
 
+body.site-huipil .fav-card h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 1.55rem !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  margin-bottom: 0.3rem !important;
+  color: #fff !important;
+}
+
+body.site-huipil .fav-card p {
+  font-size: 0.88rem !important;
+  line-height: 1.5 !important;
+  color: rgba(255, 252, 247, 0.92) !important;
+}
+
+body.site-huipil .fav-card__trending {
+  display: none !important;
+}
+
 body.site-huipil .favorites-showcase__head h2 {
   color: var(--tex-red-deep) !important;
+}
+
+@media (max-width: 900px) {
+  body.site-huipil .fav-cards {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ── Story + Dish Roulette ── */
@@ -1816,22 +1903,14 @@ body.site-huipil .fiesta-gold-dust {
   display: none !important;
 }
 
-body.site-huipil .hero-floaters {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  overflow: hidden;
-}
-
+body.site-huipil .hero-floaters,
 body.site-huipil .hero-floater {
-  position: absolute;
+  display: none !important;
 }
 
-body.site-huipil .hero-floater:nth-child(1) { top: 18%; left: 6%; }
-body.site-huipil .hero-floater:nth-child(2) { top: 22%; right: 5%; }
-body.site-huipil .hero-floater:nth-child(3) { bottom: 22%; left: 8%; }
-body.site-huipil .hero-floater:nth-child(4) { bottom: 18%; right: 7%; }
+body.site-huipil .hero--single .hero-rotator__slide {
+  opacity: 1 !important;
+}
 
 body.site-huipil .hero-scroll {
   position: absolute;
@@ -1906,7 +1985,30 @@ body.site-huipil .reviews-carousel__track:hover {
 }
 
 body.site-huipil .story-spin__story {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.85rem !important;
   border-right-color: rgba(61, 38, 24, 0.1) !important;
+}
+
+body.site-huipil .story-spin__img {
+  margin: 0 !important;
+  border-radius: var(--tex-radius-sm) !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(61, 38, 24, 0.12) !important;
+  box-shadow: var(--tex-shadow-soft) !important;
+}
+
+body.site-huipil .story-spin__img::before {
+  display: none !important;
+}
+
+body.site-huipil .story-spin__img img {
+  display: block !important;
+  width: 100% !important;
+  height: clamp(168px, 22vw, 210px) !important;
+  object-fit: cover !important;
+  object-position: center 40% !important;
 }
 
 body.site-huipil .story-spin__lead,
@@ -1926,10 +2028,8 @@ body.site-huipil.menu-page .menu-online-tab.is-active {
   color: #fff !important;
 }
 
-@media (max-width: 900px) {
-  body.site-huipil .hero-floater {
-    display: none !important;
-  }
+body.site-huipil .reviews-grid[aria-hidden="true"] {
+  display: none !important;
 }
 
 @media (max-width: 767px) {

@@ -450,7 +450,7 @@
 
   /* ── Trending badges on signature cards ── */
   function initTrendingBadges() {
-    if (!isHome) return;
+    if (!isHome || document.body.classList.contains('site-huipil')) return;
     const tags = ['🔥 Trending', '★ #1 Ordered', 'Guest Favorite'];
     document.querySelectorAll('.fav-card').forEach((card, i) => {
       if (card.querySelector('.fav-card__trending')) return;

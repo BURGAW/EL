@@ -20,6 +20,11 @@
   }
 
   function initHeroFloaters() {
+    if (
+      document.body.classList.contains('site-huipil') ||
+      document.querySelector('.hero--single')
+    ) return;
+
     const root = document.getElementById('hero-floaters');
     if (!root) return;
 
