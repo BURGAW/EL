@@ -1,5 +1,5 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v36 · Editorial Ivory Loom (single theme)
+   El Mirasol — Textile Theme v37 · Editorial Ivory Loom (single theme)
    woven-runner-reference.png = COLOR REFERENCE ONLY (never tiled as photo).
    Design: warm ivory canvas · whisper diamond weave · champagne selvedge thread.
    Type: Cormorant display · Dancing Script warmth · Jakarta body · Montserrat UI.
@@ -67,14 +67,18 @@ body.site-huipil {
   --tex-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --tex-trim-h: 12px;
 
+  /* Layout rhythm */
+  --tex-content-max: 1100px;
+  --tex-prose-max: 40rem;
+
   /* Selvedge button system */
   --btn-radius: 8px;
   --btn-radius-pill: 999px;
-  --btn-h: 48px;
-  --btn-h-sm: 42px;
-  --btn-h-xs: 36px;
-  --btn-pad-x: 1.35rem;
-  --btn-pad-x-sm: 1rem;
+  --btn-h: 44px;
+  --btn-h-sm: 40px;
+  --btn-h-xs: 32px;
+  --btn-pad-x: 1.15rem;
+  --btn-pad-x-sm: 0.9rem;
   --btn-font: var(--tex-font-ui);
   --btn-shadow: 0 1px 2px rgba(38, 28, 22, 0.06), 0 4px 14px rgba(38, 28, 22, 0.08);
   --btn-shadow-hover: 0 2px 6px rgba(38, 28, 22, 0.08), 0 8px 22px rgba(38, 28, 22, 0.1);
@@ -101,6 +105,8 @@ body.site-huipil {
 
   scroll-behavior: smooth;
   font-family: var(--tex-font-body);
+  font-size: 1rem;
+  line-height: 1.65;
   color: var(--tex-ink);
   -webkit-font-smoothing: antialiased;
 }
@@ -417,10 +423,11 @@ body.site-huipil .hero-content {
   position: relative;
   z-index: 4;
   width: 100% !important;
-  max-width: min(34rem, 68vw) !important;
+  max-width: min(36rem, 72vw) !important;
   margin: 0 auto !important;
-  padding-left: clamp(0.75rem, 10vw, 8.5rem) !important;
-  padding-right: clamp(0.75rem, 10vw, 8.5rem) !important;
+  padding-left: clamp(1rem, 5vw, 3rem) !important;
+  padding-right: clamp(1rem, 5vw, 3rem) !important;
+  text-align: center !important;
 }
 
 body.site-huipil .hero-eyebrow {
@@ -559,13 +566,7 @@ body.site-huipil .visit-section::before {
   position: relative;
 }
 
-body.site-huipil .section-tag {
-  color: var(--tex-wood-mid) !important;
-  letter-spacing: 0.22em !important;
-  font-weight: 700 !important;
-  padding-left: 1rem !important;
-  border-left: 4px solid var(--tex-gold) !important;
-}
+
 
 body.site-huipil h1,
 body.site-huipil h2,
@@ -1322,13 +1323,13 @@ body.site-huipil .cart-back-btn {
   justify-content: center !important;
   gap: 0.4rem;
   min-height: var(--btn-h) !important;
-  padding: 0.72rem var(--btn-pad-x) !important;
+  padding: 0.62rem var(--btn-pad-x) !important;
   font-family: var(--btn-font) !important;
-  font-size: 0.875rem !important;
+  font-size: 0.8125rem !important;
   font-weight: 600 !important;
-  letter-spacing: 0.06em !important;
-  line-height: 1.2 !important;
-  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  line-height: 1.25 !important;
+  text-transform: none !important;
   border-radius: var(--btn-radius) !important;
   border: 1.5px solid transparent !important;
   cursor: pointer !important;
@@ -1409,7 +1410,6 @@ body.site-huipil .cart-back-btn {
   color: var(--tex-red-deep) !important;
   border-color: rgba(61, 38, 24, 0.28) !important;
   box-shadow: var(--btn-shadow) !important;
-  text-transform: uppercase !important;
 }
 
 body.site-huipil .lang-toggle-btn[aria-pressed="true"] {
@@ -1740,14 +1740,29 @@ body.site-huipil .story-spin-section {
 }
 
 body.site-huipil .section-tag {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
   color: var(--tex-wood-mid) !important;
-  font-size: 0.68rem !important;
-  letter-spacing: 0.22em !important;
-  margin-bottom: 0.45rem !important;
-  padding-bottom: 0 !important;
-  padding-left: 1rem !important;
-  border-left: 4px solid var(--tex-gold) !important;
+  font-family: var(--tex-font-ui) !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 0.5rem !important;
+  padding: 0 !important;
+  border: none !important;
   background: none !important;
+}
+
+body.site-huipil .section-tag::after {
+  content: '' !important;
+  display: block !important;
+  width: 2.25rem !important;
+  height: 2px !important;
+  margin: 0.4rem auto 0 !important;
+  background: var(--tex-gold) !important;
+  border-radius: 1px !important;
 }
 
 body.site-huipil:not(.menu-page) .section-tag {
@@ -1759,6 +1774,7 @@ body.site-huipil h2 {
   margin-bottom: 0.55rem !important;
   font-size: clamp(1.55rem, 3.5vw, 2.1rem) !important;
   line-height: 1.12 !important;
+  text-align: center !important;
 }
 
 body.site-huipil:not(.menu-page) h2 em {
@@ -1783,9 +1799,11 @@ body.site-huipil .feat-stat__num--text {
 
 body.site-huipil .section-lead {
   color: var(--tex-ink-soft) !important;
-  margin-bottom: 0.85rem !important;
-  font-size: 0.95rem !important;
-  line-height: 1.55 !important;
+  margin: 0 auto 0.85rem !important;
+  max-width: var(--tex-prose-max) !important;
+  font-size: 0.9375rem !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
 }
 
 body.site-huipil .feature,
@@ -1830,7 +1848,7 @@ body.site-huipil:not(.menu-page) .hero-sub {
 }
 
 body.site-huipil:not(.menu-page) .hero-content {
-  max-width: 42rem !important;
+  max-width: 36rem !important;
 }
 
 body.site-huipil:not(.menu-page) .mobile-quick {
@@ -2654,4 +2672,270 @@ body.site-huipil .menu-page .order-strip__actions .btn-order.is-live {
   background: var(--tex-red) !important;
   color: #fffefb !important;
   box-shadow: var(--btn-shadow), var(--btn-thread) !important;
+}
+
+/* ── v37 · centered flow, type scale, button sizing ── */
+body.site-huipil .header {
+  justify-content: center !important;
+  gap: clamp(0.75rem, 3vw, 2rem) !important;
+  padding-left: clamp(0.85rem, 3vw, 2rem) !important;
+  padding-right: clamp(0.85rem, 3vw, 2rem) !important;
+}
+
+body.site-huipil .header .logo {
+  margin-right: 0 !important;
+  flex: 0 1 auto !important;
+}
+
+body.site-huipil .header .nav {
+  flex: 0 0 auto !important;
+  margin-left: 0 !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+}
+
+body.site-huipil .header .nav a:not(.nav-menu-cta) {
+  font-family: var(--tex-font-ui) !important;
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  padding: 0.45rem 0.75rem !important;
+  min-height: var(--btn-h-sm) !important;
+}
+
+body.site-huipil:not(.menu-page) main#main {
+  width: 100% !important;
+  max-width: var(--tex-content-max) !important;
+  margin-inline: auto !important;
+}
+
+body.site-huipil .feat-ribbon__inner {
+  justify-content: center !important;
+  text-align: center !important;
+  flex-wrap: wrap !important;
+  gap: 0.35rem 0.85rem !important;
+  padding: 0.6rem 1rem 0.6rem calc(1rem + 6px) !important;
+}
+
+body.site-huipil .feat-ribbon__right {
+  justify-content: center !important;
+  margin-left: 0 !important;
+  flex-wrap: wrap !important;
+}
+
+body.site-huipil .feat-stats {
+  padding: 0.75rem clamp(0.65rem, 2vw, 1rem) !important;
+}
+
+body.site-huipil .feat-stat {
+  text-align: center !important;
+  padding: 0.65rem 0.45rem 0.6rem !important;
+}
+
+body.site-huipil .feat-stat__label,
+body.site-huipil .feat-stat__hint {
+  text-align: center !important;
+}
+
+body.site-huipil .feat-stat__num--text {
+  font-family: var(--tex-font-display) !important;
+}
+
+body.site-huipil .story-spin-section {
+  padding-left: clamp(1rem, 3vw, 1.5rem) !important;
+  padding-right: clamp(1rem, 3vw, 1.5rem) !important;
+}
+
+body.site-huipil .story-spin__story-head {
+  text-align: center !important;
+}
+
+body.site-huipil .story-spin__lead {
+  margin-inline: auto !important;
+  max-width: 38ch !important;
+  text-align: center !important;
+  font-size: 0.9375rem !important;
+  line-height: 1.6 !important;
+}
+
+body.site-huipil .story-spin__copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+body.site-huipil .story-spin__copy p {
+  max-width: 38ch !important;
+  margin-inline: auto !important;
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+}
+
+body.site-huipil .story-spin__copy .btn {
+  width: auto !important;
+  min-width: min(100%, 14rem) !important;
+  margin-top: 0.15rem !important;
+}
+
+body.site-huipil .reviews-section__inner {
+  text-align: center !important;
+  padding-inline: clamp(0.5rem, 2vw, 1rem) !important;
+}
+
+body.site-huipil .reviews-stats {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.5rem 1rem !important;
+}
+
+body.site-huipil .reviews-cta {
+  justify-content: center !important;
+  align-items: stretch !important;
+  max-width: 28rem !important;
+  margin-inline: auto !important;
+}
+
+body.site-huipil .reviews-cta .btn {
+  flex: 1 1 calc(50% - 0.25rem) !important;
+  min-width: min(100%, 10.5rem) !important;
+  max-width: 100% !important;
+}
+
+body.site-huipil .visit-flow__info {
+  text-align: center !important;
+  align-items: center !important;
+}
+
+body.site-huipil .visit-flow__contact {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  text-align: center !important;
+}
+
+body.site-huipil .visit-flow__phones {
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+
+body.site-huipil .visit-flow__actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+}
+
+body.site-huipil .visit-flow__share,
+body.site-huipil .feat-share-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+}
+
+body.site-huipil .visit-flow__share .btn,
+body.site-huipil .feat-share-row .btn {
+  flex: 0 1 auto !important;
+  min-width: min(100%, 7.5rem) !important;
+}
+
+body.site-huipil .footer-bottom {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.35rem 0.85rem !important;
+  text-align: center !important;
+  font-size: 0.8125rem !important;
+}
+
+body.site-huipil .mobile-cta {
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  gap: 0.4rem !important;
+  padding: 0.5rem clamp(0.5rem, 2vw, 0.85rem) calc(0.5rem + var(--safe-bottom, 0px)) !important;
+}
+
+body.site-huipil .mobile-cta a {
+  flex: 1 1 0 !important;
+  max-width: 11rem !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+}
+
+/* Menu page — centered headings, balanced toolbar */
+body.site-huipil.menu-page .menu-online__heading {
+  text-align: center !important;
+}
+
+body.site-huipil.menu-page .menu-online__heading h2 {
+  text-align: center !important;
+}
+
+body.site-huipil.menu-page .menu-online__note,
+body.site-huipil.menu-page .menu-online__fine {
+  text-align: center !important;
+  margin-inline: auto !important;
+  max-width: var(--tex-prose-max) !important;
+}
+
+body.site-huipil.menu-page .order-strip {
+  text-align: center !important;
+}
+
+body.site-huipil.menu-page .order-strip__actions {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+body.site-huipil.menu-page .order-strip__actions .btn-order {
+  max-width: 16rem !important;
+}
+
+body.site-huipil.menu-page .menu-view-tabs,
+body.site-huipil.menu-page .menu-online__tabs {
+  justify-content: center !important;
+}
+
+body.site-huipil.menu-page .menu-online__toolbar {
+  justify-content: center !important;
+}
+
+body.site-huipil.menu-page .menu-online__lang {
+  margin-inline: auto 0 !important;
+}
+
+@media (max-width: 768px) {
+  body.site-huipil .header {
+    flex-wrap: nowrap !important;
+  }
+
+  body.site-huipil .header .logo {
+    max-width: min(48vw, 200px) !important;
+  }
+
+  body.site-huipil .header .logo__title {
+    font-size: 1.2rem !important;
+  }
+
+  body.site-huipil .header .nav a:not(.nav-menu-cta) {
+    font-size: 0.75rem !important;
+    padding: 0.4rem 0.55rem !important;
+  }
+
+  body.site-huipil .reviews-cta .btn {
+    flex: 1 1 100% !important;
+  }
+
+  body.site-huipil .visit-flow__share .btn,
+  body.site-huipil .feat-share-row .btn {
+    flex: 1 1 calc(50% - 0.25rem) !important;
+  }
 }
