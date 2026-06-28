@@ -1,5 +1,5 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v29 · Runner Reference (single theme)
+   El Mirasol — Textile Theme v30 · Runner Reference (single theme)
    woven-runner-reference.png = COLOR REFERENCE ONLY (never tiled as photo).
    Pattern on site: CSS serape stripes + SVG diamond weave.
    Jewel palette · calm ivory canvas · readable cloth-tag buttons.
@@ -335,19 +335,79 @@ body.site-huipil .header .nav a.nav-menu-cta {
   letter-spacing: 0.07em !important;
 }
 
-/* ── Hero ── */
+/* ── Hero · storefront photo + readable type ── */
+body.site-huipil .hero-rotator {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+body.site-huipil .hero-rotator__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1.2s ease, transform 6s ease;
+}
+
+body.site-huipil .hero-rotator__slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+body.site-huipil .hero--single .hero-rotator {
+  background-color: var(--tex-navy-deep);
+}
+
+body.site-huipil .hero--single .hero-rotator__slide {
+  transform: scale(1) !important;
+  transition: none !important;
+  background-size: cover !important;
+  background-position: center 42% !important;
+}
+
+@media (max-width: 768px) {
+  body.site-huipil .hero--single .hero-rotator__slide {
+    background-position: center 48% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.site-huipil .hero--single .hero-rotator__slide {
+    background-position: center 40% !important;
+  }
+}
+
 body.site-huipil .hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background:
-    linear-gradient(125deg, rgba(26, 40, 68, 0.35) 0%, transparent 45%),
-    linear-gradient(180deg, rgba(61, 38, 24, 0.15) 0%, rgba(38, 28, 22, 0.5) 55%, rgba(184, 40, 36, 0.52) 100%) !important;
+    linear-gradient(125deg, rgba(26, 40, 68, 0.2) 0%, transparent 42%),
+    linear-gradient(180deg, rgba(61, 38, 24, 0.06) 0%, rgba(38, 28, 22, 0.28) 52%, rgba(184, 40, 36, 0.38) 100%) !important;
+}
+
+body.site-huipil .hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 body.site-huipil .hero-eyebrow {
-  color: var(--tex-gold-pale) !important;
-  letter-spacing: 0.22em !important;
-  font-weight: 700 !important;
-  text-transform: uppercase;
-  font-size: 0.7rem !important;
+  display: block !important;
+  font-family: 'Dancing Script', 'Pinyon Script', cursive !important;
+  font-size: clamp(1.55rem, 4.5vw, 2.4rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+  text-transform: none !important;
+  color: var(--tex-gold-light) !important;
+  text-shadow:
+    0 2px 18px rgba(15, 26, 46, 0.55),
+    0 1px 8px rgba(38, 28, 22, 0.45) !important;
+  margin-bottom: 0.35rem !important;
+  line-height: 1.15 !important;
 }
 
 body.site-huipil .oax-craft-band {
@@ -1470,7 +1530,23 @@ body.site-huipil h2 {
 }
 
 body.site-huipil:not(.menu-page) h2 em {
-  color: var(--tex-gold) !important;
+  font-family: 'Dancing Script', 'Pinyon Script', cursive !important;
+  font-size: clamp(1.35rem, 3.2vw, 1.9rem) !important;
+  font-weight: 600 !important;
+  color: var(--tex-red) !important;
+  display: block !important;
+  margin-bottom: 0.12rem !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.2 !important;
+}
+
+body.site-huipil .feat-stat__num--text {
+  font-family: Montserrat, system-ui, sans-serif !important;
+  font-size: clamp(1.35rem, 3.5vw, 1.95rem) !important;
+  font-weight: 800 !important;
+  color: var(--tex-red-deep) !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.1 !important;
 }
 
 body.site-huipil .section-lead {
@@ -1501,6 +1577,7 @@ body.site-huipil:not(.menu-page).has-topbar .hero {
 }
 
 body.site-huipil:not(.menu-page) .hero h1 {
+  color: #fff !important;
   font-size: clamp(2.2rem, 6vw, 3.5rem) !important;
   text-shadow:
     0 2px 18px rgba(15, 26, 46, 0.45),
