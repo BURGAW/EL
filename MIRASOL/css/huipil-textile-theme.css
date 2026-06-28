@@ -3792,3 +3792,13 @@ body.site-huipil .visit-flow__panel--location .visit-flow__actions .btn {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ── v43 · map band at bottom ── */
+body.site-huipil .visit-flow__details {
+  border-top: none !important;
+  border-bottom: 1px solid rgba(61, 38, 24, 0.08) !important;
+}
+
+body.site-huipil .visit-flow__map-band {
+  padding: clamp(1rem, 2.5vw, 1.35rem) clamp(1rem, 2.5vw, 1.5rem) clamp(1.15rem, 2.5vw, 1.55rem) !important;
+}
