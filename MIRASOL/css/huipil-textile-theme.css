@@ -65,7 +65,7 @@ body.site-huipil {
   --tex-shadow-lift: 0 8px 32px rgba(38, 28, 22, 0.08), 0 20px 56px rgba(38, 28, 22, 0.06);
   --tex-shadow-chrome: 0 2px 16px rgba(16, 28, 48, 0.28);
   --tex-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --tex-trim-h: 12px;
+  --tex-trim-h: 15px;
 
   /* Layout rhythm */
   --tex-content-max: 1100px;
@@ -97,6 +97,19 @@ body.site-huipil {
   --oax-gold-pale: #f2e6cc;
   --oax-ivory: var(--tex-cream-light);
   --oax-pearl: var(--tex-cream);
+
+  /* Oaxacan red craft — serape · zigzag · greca · flores (red + gold only) */
+  --tex-oax-serape: linear-gradient(
+    90deg,
+    var(--tex-red-deep) 0%,
+    var(--tex-red) 38%,
+    var(--tex-gold) 72%,
+    var(--tex-gold-light) 100%
+  );
+  --tex-oax-zigzag-h: url("data:image/svg+xml,%3Csvg width='72' height='9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4.5 L9 1.5 L18 4.5 L27 1.5 L36 4.5 L45 1.5 L54 4.5 L63 1.5 L72 4.5' fill='none' stroke='%23c4a055' stroke-width='0.9' stroke-opacity='0.55'/%3E%3Cpath d='M0 7 L9 4 L18 7 L27 4 L36 7 L45 4 L54 7 L63 4 L72 7' fill='none' stroke='%23c8322e' stroke-width='0.7' stroke-opacity='0.28'/%3E%3C/svg%3E");
+  --tex-oax-flores: url("data:image/svg+xml,%3Csvg width='88' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='16' r='2.2' fill='%23c8322e' fill-opacity='0.06'/%3E%3Ccircle cx='30' cy='11' r='1.5' fill='%23c4a055' fill-opacity='0.07'/%3E%3Ccircle cx='48' cy='19' r='1.9' fill='%23c8322e' fill-opacity='0.05'/%3E%3Ccircle cx='66' cy='12' r='1.4' fill='%23c4a055' fill-opacity='0.06'/%3E%3Ccircle cx='80' cy='17' r='1.6' fill='%23c8322e' fill-opacity='0.045'/%3E%3Cpath d='M12 16 Q21 10 30 11 T48 19 T66 12 T80 17' fill='none' stroke='%23c4a055' stroke-opacity='0.05' stroke-width='0.85'/%3E%3C/svg%3E");
+  --tex-oax-greca: url("data:image/svg+xml,%3Csvg width='48' height='48' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='48' height='48' fill='%23f6f0e6'/%3E%3Cpath d='M24 4 L44 24 L24 44 L4 24 Z' fill='none' stroke='%23c8322e' stroke-width='0.65' opacity='0.09'/%3E%3Cpath d='M24 10 L38 24 L24 38 L10 24 Z' fill='%23c8322e' fill-opacity='0.035'/%3E%3Cpath d='M24 16 L32 24 L24 32 L16 24 Z' fill='none' stroke='%23c4a055' stroke-width='0.5' opacity='0.08'/%3E%3C/svg%3E");
+  --tex-oax-star: url("data:image/svg+xml,%3Csvg width='120' height='120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 6l8 19L86 16l-3 25 23 6-18 17L93 90l-22-8L60 103l-14-21L24 90l12-26L18 47l23-6L34 16l20 8z' fill='%23c8322e' fill-opacity='0.04'/%3E%3Cpath d='M60 22l4.8 11L76 28l-8 8 2.8 20-14-8L52 64l3-20-10-8 11-1z' fill='%23c4a055' fill-opacity='0.045'/%3E%3C/svg%3E");
 
   --fire-red: var(--tex-red);
   --fire-red-deep: var(--tex-red-deep);
@@ -143,22 +156,29 @@ body.site-huipil.has-topbar .tex-serape-trim {
 }
 
 body.site-huipil .tex-serape-trim__line {
-  display: none !important;
+  display: block !important;
+  width: 100%;
+  height: 3px;
+  background: var(--tex-oax-serape);
+  box-shadow: 0 1px 0 rgba(255, 252, 247, 0.35) inset;
 }
 
 body.site-huipil .tex-serape-trim__weave {
   display: block;
   width: 100%;
-  height: var(--tex-trim-h);
+  height: 9px;
   background-color: var(--tex-linen);
-  background-image: var(--tex-weave-svg);
-  background-size: 40px 40px;
-  background-position: center;
-  background-repeat: repeat;
-  opacity: 0.5;
-  border-top: 1px solid rgba(196, 160, 85, 0.35);
+  background-image:
+    var(--tex-oax-zigzag-h),
+    var(--tex-oax-flores),
+    var(--tex-weave-svg);
+  background-size: 72px 9px, 88px 32px, 40px 40px;
+  background-position: center, center, center;
+  background-repeat: repeat-x, repeat, repeat;
+  opacity: 0.92;
+  border-top: 1px solid rgba(200, 50, 46, 0.1);
   border-bottom: 1px solid rgba(61, 38, 24, 0.07);
-  box-shadow: inset 0 1px 0 rgba(255, 252, 247, 0.8);
+  box-shadow: inset 0 1px 0 rgba(255, 252, 247, 0.75);
 }
 
 body.site-huipil.has-topbar .header + .tex-serape-trim + .hero,
@@ -255,8 +275,9 @@ body.site-huipil .social-topbar::after {
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  height: 1px !important;
-  background: rgba(196, 160, 85, 0.45) !important;
+  height: 3px !important;
+  background: var(--tex-oax-serape) !important;
+  box-shadow: 0 1px 0 rgba(255, 252, 247, 0.2) inset !important;
   z-index: 1 !important;
 }
 
@@ -1758,11 +1779,12 @@ body.site-huipil .section-tag {
 body.site-huipil .section-tag::after {
   content: '' !important;
   display: block !important;
-  width: 2.25rem !important;
-  height: 2px !important;
-  margin: 0.4rem auto 0 !important;
-  background: var(--tex-gold) !important;
-  border-radius: 1px !important;
+  width: 3.25rem !important;
+  height: 3px !important;
+  margin: 0.45rem auto 0 !important;
+  background: var(--tex-oax-serape) !important;
+  border-radius: 2px !important;
+  box-shadow: 0 1px 0 rgba(255, 252, 247, 0.5) inset !important;
 }
 
 body.site-huipil:not(.menu-page) .section-tag {
@@ -3801,4 +3823,131 @@ body.site-huipil .visit-flow__details {
 
 body.site-huipil .visit-flow__map-band {
   padding: clamp(1rem, 2.5vw, 1.35rem) clamp(1rem, 2.5vw, 1.5rem) clamp(1.15rem, 2.5vw, 1.55rem) !important;
+}
+
+/* ── v44 · red Oaxacan textile accents ── */
+body.site-huipil .header::after {
+  content: '' !important;
+  display: block !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 6px !important;
+  background: var(--tex-oax-zigzag-h) repeat-x center !important;
+  background-size: 72px 9px !important;
+  opacity: 0.72 !important;
+  pointer-events: none !important;
+}
+
+body.site-huipil.pattern::before,
+body.site-huipil.menu-page.pattern::before,
+body.site-huipil.pay-page.pattern::before {
+  display: block !important;
+  content: '' !important;
+  position: fixed !important;
+  top: -28px !important;
+  right: -32px !important;
+  width: 130px !important;
+  height: 130px !important;
+  background: var(--tex-oax-star) no-repeat center / contain !important;
+  opacity: 0.38 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+body.site-huipil.pattern::after,
+body.site-huipil.menu-page.pattern::after,
+body.site-huipil.pay-page.pattern::after {
+  display: block !important;
+  content: '' !important;
+  position: fixed !important;
+  bottom: -36px !important;
+  left: -36px !important;
+  width: 110px !important;
+  height: 110px !important;
+  background: var(--tex-oax-star) no-repeat center / contain !important;
+  transform: rotate(16deg) !important;
+  opacity: 0.28 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+body.site-huipil .feat-ribbon::before {
+  background-image:
+    var(--tex-oax-flores),
+    var(--tex-weave-svg) !important;
+  background-size: 88px 32px, 48px 48px !important;
+  opacity: 0.14 !important;
+}
+
+body.site-huipil .visit-section.visit-section--flow::before {
+  content: '' !important;
+  display: block !important;
+  width: min(var(--tex-content-max), 100%) !important;
+  max-width: calc(100% - 2rem) !important;
+  height: 4px !important;
+  margin: 0 auto 0.65rem !important;
+  background: var(--tex-oax-serape) !important;
+  border-radius: 2px !important;
+  box-shadow: 0 1px 0 rgba(255, 252, 247, 0.45) inset !important;
+}
+
+body.site-huipil .visit-flow__head {
+  background:
+    var(--tex-oax-flores),
+    var(--tex-cream-light) !important;
+  background-size: 88px 32px, 100% 100% !important;
+  border-bottom: 1px solid rgba(200, 50, 46, 0.1) !important;
+}
+
+body.site-huipil .visit-flow__panel--hours {
+  background-image:
+    var(--tex-oax-greca),
+    var(--tex-oax-flores),
+    var(--tex-weave-svg) !important;
+  background-size: 48px 48px, 88px 32px, 56px 56px !important;
+}
+
+body.site-huipil .visit-flow__tile {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+body.site-huipil .visit-flow__tile::before {
+  content: '' !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 2px !important;
+  background: var(--tex-oax-serape) !important;
+}
+
+body.site-huipil .visit-flow__tile--closed::before {
+  background: linear-gradient(90deg, var(--tex-red-deep), var(--tex-red)) !important;
+}
+
+body.site-huipil .visit-flow__map-band {
+  background:
+    var(--tex-oax-flores),
+    var(--tex-linen) !important;
+  background-size: 88px 32px, 100% 100% !important;
+}
+
+body.site-huipil .visit-flow__map-band::before {
+  content: '' !important;
+  display: block !important;
+  width: 100% !important;
+  height: 6px !important;
+  margin-bottom: 0.65rem !important;
+  background: var(--tex-oax-zigzag-h) repeat-x center !important;
+  background-size: 72px 9px !important;
+  opacity: 0.7 !important;
+}
+
+body.site-huipil .visit-flow::before {
+  width: 4px !important;
+  background: var(--tex-oax-serape) !important;
 }
