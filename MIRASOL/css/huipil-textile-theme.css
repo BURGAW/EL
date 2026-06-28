@@ -1,5 +1,5 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v35 · Editorial Ivory Loom (single theme)
+   El Mirasol — Textile Theme v36 · Editorial Ivory Loom (single theme)
    woven-runner-reference.png = COLOR REFERENCE ONLY (never tiled as photo).
    Design: warm ivory canvas · whisper diamond weave · champagne selvedge thread.
    Type: Cormorant display · Dancing Script warmth · Jakarta body · Montserrat UI.
@@ -66,6 +66,19 @@ body.site-huipil {
   --tex-shadow-chrome: 0 2px 16px rgba(16, 28, 48, 0.28);
   --tex-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --tex-trim-h: 12px;
+
+  /* Selvedge button system */
+  --btn-radius: 8px;
+  --btn-radius-pill: 999px;
+  --btn-h: 48px;
+  --btn-h-sm: 42px;
+  --btn-h-xs: 36px;
+  --btn-pad-x: 1.35rem;
+  --btn-pad-x-sm: 1rem;
+  --btn-font: var(--tex-font-ui);
+  --btn-shadow: 0 1px 2px rgba(38, 28, 22, 0.06), 0 4px 14px rgba(38, 28, 22, 0.08);
+  --btn-shadow-hover: 0 2px 6px rgba(38, 28, 22, 0.08), 0 8px 22px rgba(38, 28, 22, 0.1);
+  --btn-thread: inset 0 -2px 0 var(--tex-gold);
 
   --huipil-red: var(--tex-red);
   --huipil-red-deep: var(--tex-red-deep);
@@ -915,11 +928,9 @@ body.site-huipil .fiesta-card--roulette-hero .fiesta-spin-btn {
 
 /* Menu-page floating roulette */
 body.site-huipil.menu-page .roulette-fab {
-  background: var(--tex-red) !important;
-  border: 2px solid var(--tex-red-deep) !important;
-  border-top-color: var(--tex-gold) !important;
-  color: #fff !important;
-  box-shadow: 0 4px 16px rgba(184, 40, 36, 0.28) !important;
+  border-radius: 50% !important;
+  min-width: var(--btn-h) !important;
+  padding: 0 !important;
 }
 
 body.site-huipil.menu-page .roulette-panel__inner,
@@ -1285,7 +1296,7 @@ body.site-huipil.menu-page .footer .logo__sub {
   }
 }
 
-/* ── Buttons v26 · cloth-tag (readable, jewel palette) ── */
+/* ── Buttons v36 · Selvedge system (all interactive controls) ── */
 body.site-huipil .btn,
 body.site-huipil .fiesta-spin-btn,
 body.site-huipil .fiesta-stamp-btn,
@@ -1298,31 +1309,43 @@ body.site-huipil .lang-toggle-btn,
 body.site-huipil .menu-chip,
 body.site-huipil .menu-filter-btn,
 body.site-huipil .cart-fab,
-body.site-huipil .visit-flow__chip {
+body.site-huipil .visit-flow__chip,
+body.site-huipil .roulette-fab,
+body.site-huipil .fiesta-roulette__menu-link,
+body.site-huipil .tuesday-closed-modal__btn,
+body.site-huipil .pay-submit,
+body.site-huipil .social-btn,
+body.site-huipil .cart-clear-btn,
+body.site-huipil .cart-back-btn {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 0.35rem;
-  min-height: 46px !important;
-  padding: 0.7rem 1.25rem !important;
-  font-family: Montserrat, system-ui, sans-serif !important;
-  font-size: 0.9rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.04em !important;
-  line-height: 1.25 !important;
-  text-transform: none !important;
-  border-radius: var(--tex-radius-sm) !important;
-  border: 2px solid transparent !important;
+  gap: 0.4rem;
+  min-height: var(--btn-h) !important;
+  padding: 0.72rem var(--btn-pad-x) !important;
+  font-family: var(--btn-font) !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+  border-radius: var(--btn-radius) !important;
+  border: 1.5px solid transparent !important;
   cursor: pointer !important;
   text-decoration: none !important;
-  box-shadow: none !important;
+  box-shadow: var(--btn-shadow) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   -webkit-text-fill-color: unset !important;
   text-shadow: none !important;
   -webkit-tap-highlight-color: transparent !important;
   touch-action: manipulation !important;
-  transition: background 0.18s var(--tex-ease), border-color 0.18s var(--tex-ease), color 0.18s var(--tex-ease), box-shadow 0.18s var(--tex-ease) !important;
+  transition:
+    background 0.2s var(--tex-ease),
+    border-color 0.2s var(--tex-ease),
+    color 0.2s var(--tex-ease),
+    box-shadow 0.2s var(--tex-ease),
+    transform 0.15s var(--tex-ease) !important;
 }
 
 body.site-huipil .btn::before,
@@ -1332,32 +1355,21 @@ body.site-huipil .fiesta-spin-btn::after,
 body.site-huipil .fiesta-stamp-btn::before,
 body.site-huipil .fiesta-stamp-btn::after,
 body.site-huipil .header .nav a.nav-menu-cta::before,
-body.site-huipil .header .nav a.nav-menu-cta::after {
+body.site-huipil .header .nav a.nav-menu-cta::after,
+body.site-huipil .tuesday-closed-modal__btn::before,
+body.site-huipil .tuesday-closed-modal__btn::after {
   content: none !important;
   display: none !important;
 }
 
-body.site-huipil .header .nav a.nav-menu-cta {
-  min-height: 40px !important;
-  padding: 0.45rem 1rem !important;
-  font-size: 0.82rem !important;
+body.site-huipil .btn:active:not(:disabled),
+body.site-huipil .fiesta-spin-btn:active:not([aria-busy="true"]),
+body.site-huipil .btn-order:active,
+body.site-huipil .popup__btn:active {
+  transform: scale(0.98) !important;
 }
 
-body.site-huipil .visit-card__toolbar .btn,
-body.site-huipil .visit-flow__actions .btn,
-body.site-huipil .visit-flow__share .btn {
-  min-height: 40px !important;
-  padding: 0.45rem 0.65rem !important;
-  font-size: 0.75rem !important;
-}
-
-body.site-huipil .fiesta-spin-btn,
-body.site-huipil .fiesta-stamp-btn {
-  width: 100% !important;
-  margin-top: 0 !important;
-}
-
-/* Primary — runner red + gold top thread */
+/* Fill — runner red + gold selvedge thread */
 body.site-huipil .btn-primary,
 body.site-huipil .btn-red,
 body.site-huipil .fiesta-spin-btn,
@@ -1369,92 +1381,97 @@ body.site-huipil .visit-flow__actions .btn-red,
 body.site-huipil .header .nav a.nav-menu-cta,
 body.site-huipil .mobile-cta .cta-menu,
 body.site-huipil .cart-fab,
-body.site-huipil .menu-view-tab.is-active,
-body.site-huipil .menu-online-tab.is-active,
-body.site-huipil .menu-chip.is-active,
-body.site-huipil .menu-filter-btn.is-active,
 body.site-huipil .popup__btn,
-body.site-huipil .fiesta-roulette__menu-link {
-  background: linear-gradient(180deg, var(--tex-red) 0%, var(--tex-red-deep) 100%) !important;
-  color: #fff !important;
+body.site-huipil .fiesta-roulette__menu-link,
+body.site-huipil .roulette-fab,
+body.site-huipil .tuesday-closed-modal__btn--primary,
+body.site-huipil .pay-submit:not(:disabled),
+body.site-huipil .cart-checkout-btn,
+body.site-huipil .cart-pay-btn,
+body.site-huipil .cart-place-btn:not(.cart-place-btn--secondary) {
+  background: var(--tex-red) !important;
+  color: #fffefb !important;
   border-color: var(--tex-red-deep) !important;
-  border-top-color: rgba(228, 200, 120, 0.85) !important;
-  border-top-width: 2px !important;
-  box-shadow: 0 2px 10px rgba(168, 40, 36, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  box-shadow: var(--btn-shadow), var(--btn-thread), inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
 }
 
-/* Outline — cream tag on ivory pages */
+/* Outline — ivory label */
 body.site-huipil .btn-outline,
 body.site-huipil .item-modal__actions .btn-outline,
 body.site-huipil .visit-card__toolbar .btn-outline,
 body.site-huipil .feat-share-row .btn-outline,
 body.site-huipil .btn-copy-addr,
 body.site-huipil .mobile-cta .cta-call,
-body.site-huipil .lang-toggle-btn:not([aria-pressed="true"]) {
-  background: #fff !important;
+body.site-huipil .lang-toggle-btn:not([aria-pressed="true"]),
+body.site-huipil .cart-place-btn--secondary,
+body.site-huipil .cart-back-btn {
+  background: var(--tex-cream-light) !important;
   color: var(--tex-red-deep) !important;
-  border-color: rgba(61, 38, 24, 0.32) !important;
-  box-shadow: 0 2px 10px rgba(61, 38, 24, 0.07) !important;
+  border-color: rgba(61, 38, 24, 0.28) !important;
+  box-shadow: var(--btn-shadow) !important;
+  text-transform: uppercase !important;
 }
 
 body.site-huipil .lang-toggle-btn[aria-pressed="true"] {
   background: var(--tex-linen) !important;
   color: var(--tex-red-deep) !important;
-  border-color: var(--tex-red) !important;
+  border-color: var(--tex-gold) !important;
+  box-shadow: var(--btn-shadow), inset 0 0 0 1px rgba(196, 160, 85, 0.25) !important;
+}
+
+/* Chips & tabs — pill controls */
+body.site-huipil .menu-view-tab,
+body.site-huipil .menu-online-tab,
+body.site-huipil .menu-chip,
+body.site-huipil .menu-filter-btn,
+body.site-huipil .lang-toggle-btn {
+  min-height: var(--btn-h-xs) !important;
+  padding: 0.42rem 0.9rem !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.08em !important;
+  border-radius: var(--btn-radius-pill) !important;
+  border-width: 1.5px !important;
+  box-shadow: none !important;
+  text-transform: uppercase !important;
 }
 
 body.site-huipil .menu-online-tab:not(.is-active),
 body.site-huipil .menu-view-tab:not(.is-active),
 body.site-huipil .menu-chip:not(.is-active),
 body.site-huipil .menu-filter-btn:not(.is-active) {
-  background: #fff !important;
+  background: var(--tex-cream-light) !important;
   color: var(--tex-ink-soft) !important;
-  border-color: rgba(61, 38, 24, 0.18) !important;
-}
-
-/* Menu tabs — compact chips (not full-size cloth-tag buttons) */
-body.site-huipil .menu-view-tab,
-body.site-huipil .menu-online-tab {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 0 !important;
-  padding: 0.48rem 0.8rem !important;
-  font-family: Montserrat, system-ui, sans-serif !important;
-  font-size: 0.72rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.04em !important;
-  line-height: 1.2 !important;
-  text-transform: uppercase !important;
-  border-radius: 100px !important;
-  border: 1px solid rgba(61, 38, 24, 0.18) !important;
-  border-top-width: 1px !important;
-  box-shadow: none !important;
-  white-space: nowrap !important;
-  flex: 0 0 auto !important;
+  border-color: rgba(61, 38, 24, 0.2) !important;
 }
 
 body.site-huipil .menu-view-tab.is-active,
-body.site-huipil .menu-online-tab.is-active {
-  border-top-width: 3px !important;
-  box-shadow: 0 3px 14px rgba(184, 40, 36, 0.24) !important;
+body.site-huipil .menu-online-tab.is-active,
+body.site-huipil .menu-chip.is-active,
+body.site-huipil .menu-filter-btn.is-active {
+  background: var(--tex-red) !important;
+  color: #fffefb !important;
+  border-color: var(--tex-red-deep) !important;
+  box-shadow: var(--btn-shadow), var(--btn-thread) !important;
 }
 
 @media (min-width: 640px) {
-  body.site-huipil .menu-view-tab {
-    font-size: 0.78rem !important;
-    padding: 0.55rem 0.85rem !important;
+  body.site-huipil .menu-view-tab,
+  body.site-huipil .menu-online-tab {
+    font-size: 0.74rem !important;
+    padding: 0.48rem 1rem !important;
   }
 }
 
+/* Brand & utility fills */
 body.site-huipil a[href*="facebook.com/elmirasolburgaw"].btn,
 body.site-huipil .btn-social--facebook,
-body.site-huipil .visit-flow__chip--fb {
+body.site-huipil .visit-flow__chip--fb,
+body.site-huipil .social-btn--facebook {
   background: #1877f2 !important;
-  border-color: #1464d0 !important;
+  border-color: #1256b8 !important;
   color: #fff !important;
-  border-top-color: #1464d0 !important;
-  box-shadow: 0 3px 12px rgba(24, 119, 242, 0.28) !important;
+  box-shadow: var(--btn-shadow) !important;
+  text-transform: uppercase !important;
 }
 
 body.site-huipil a[href*="google.com/maps/dir"].btn,
@@ -1463,63 +1480,189 @@ body.site-huipil .mobile-cta .cta-directions,
 body.site-huipil .visit-card__toolbar .btn-social--directions {
   background: var(--tex-navy) !important;
   border-color: var(--tex-navy-deep) !important;
-  color: #fff !important;
-  border-top-color: var(--tex-teal) !important;
-  box-shadow: 0 3px 12px rgba(26, 40, 68, 0.24) !important;
+  color: #fffefb !important;
+  box-shadow: var(--btn-shadow), inset 0 -2px 0 rgba(26, 107, 114, 0.65) !important;
+  text-transform: uppercase !important;
 }
 
-body.site-huipil .visit-flow__chip--ig {
-  background: var(--tex-magenta) !important;
-  border-color: #8a2868 !important;
+body.site-huipil .visit-flow__chip--ig,
+body.site-huipil .social-btn--instagram {
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 35%, #dc2743 68%, #bc1888 100%) !important;
+  border-color: #a8327a !important;
   color: #fff !important;
+  box-shadow: var(--btn-shadow) !important;
+}
+
+/* Size variants */
+body.site-huipil .header .nav a.nav-menu-cta {
+  min-height: var(--btn-h-sm) !important;
+  padding: 0.5rem 1.1rem !important;
+  font-size: 0.78rem !important;
+  border-radius: var(--btn-radius-pill) !important;
+}
+
+body.site-huipil .visit-card__toolbar .btn,
+body.site-huipil .visit-flow__actions .btn,
+body.site-huipil .visit-flow__share .btn,
+body.site-huipil .visit-flow__chip {
+  min-height: var(--btn-h-sm) !important;
+  padding: 0.5rem 0.85rem !important;
+  font-size: 0.72rem !important;
+}
+
+body.site-huipil .fiesta-spin-btn,
+body.site-huipil .fiesta-stamp-btn,
+body.site-huipil .popup__btn,
+body.site-huipil .btn-order,
+body.site-huipil .order-cart-checkout {
+  width: 100% !important;
+  margin-top: 0 !important;
 }
 
 body.site-huipil .mobile-cta {
   background: var(--tex-cream-light) !important;
-  border-top: 3px solid var(--tex-gold) !important;
-  box-shadow: 0 -4px 20px rgba(38, 28, 22, 0.1) !important;
+  border-top: 2px solid rgba(196, 160, 85, 0.45) !important;
+  box-shadow: 0 -6px 24px rgba(38, 28, 22, 0.08) !important;
 }
 
 body.site-huipil .mobile-cta a {
-  min-height: 44px !important;
-  padding: 0.55rem 0.5rem !important;
-  font-size: 0.82rem !important;
-  border-radius: var(--tex-radius-sm) !important;
+  min-height: var(--btn-h-sm) !important;
+  padding: 0.55rem 0.65rem !important;
+  font-size: 0.74rem !important;
+  flex: 1 1 0 !important;
+}
+
+body.site-huipil .cart-fab {
+  min-height: var(--btn-h) !important;
+  min-width: var(--btn-h) !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  font-size: 1.1rem !important;
+}
+
+/* Text / ghost controls */
+body.site-huipil .cart-clear-btn,
+body.site-huipil .fiesta-stamps__toggle,
+body.site-huipil .fiesta-stamps__signout {
+  min-height: auto !important;
+  padding: 0.35rem 0.5rem !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--tex-red) !important;
+  font-family: var(--btn-font) !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  text-transform: none !important;
+}
+
+body.site-huipil .cart-back-btn {
+  min-height: auto !important;
+  padding: 0.45rem 0.65rem !important;
+  font-size: 0.78rem !important;
+  text-transform: none !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Stepper & icon controls */
+body.site-huipil .qty-stepper__btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border-radius: var(--btn-radius) !important;
+  border: 1.5px solid rgba(61, 38, 24, 0.22) !important;
+  background: var(--tex-cream-light) !important;
+  color: var(--tex-red-deep) !important;
+  font-family: var(--btn-font) !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  transition: background 0.18s var(--tex-ease), border-color 0.18s var(--tex-ease) !important;
+}
+
+body.site-huipil .pay-submit:disabled,
+body.site-huipil .fiesta-spin-btn[aria-busy="true"],
+body.site-huipil .fiesta-stamp-btn:disabled,
+body.site-huipil .btn:disabled,
+body.site-huipil .cart-checkout-btn:disabled {
+  opacity: 0.48 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 @media (hover: hover) {
-  body.site-huipil .btn-primary:hover,
+  body.site-huipil .btn-primary:hover:not(:disabled),
   body.site-huipil .btn-red:hover,
-  body.site-huipil .fiesta-spin-btn:hover:not([aria-busy="true"]),
+  body.site-huipil .fiesta-spin-btn:hover:not([aria-busy="true"]):not(:disabled),
   body.site-huipil .fiesta-stamp-btn:hover:not(:disabled),
   body.site-huipil .btn-order:hover,
   body.site-huipil .header .nav a.nav-menu-cta:hover,
   body.site-huipil .mobile-cta .cta-menu:hover,
-  body.site-huipil .popup__btn:hover {
+  body.site-huipil .popup__btn:hover,
+  body.site-huipil .cart-fab:hover,
+  body.site-huipil .roulette-fab:hover,
+  body.site-huipil .pay-submit:hover:not(:disabled),
+  body.site-huipil .cart-checkout-btn:hover:not(:disabled),
+  body.site-huipil .cart-pay-btn:hover,
+  body.site-huipil .tuesday-closed-modal__btn--primary:hover {
     background: var(--tex-red-bright) !important;
-    box-shadow: 0 5px 18px rgba(212, 56, 50, 0.32) !important;
+    box-shadow: var(--btn-shadow-hover), var(--btn-thread), inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
   }
 
   body.site-huipil .btn-outline:hover,
   body.site-huipil .btn-copy-addr:hover,
   body.site-huipil .mobile-cta .cta-call:hover,
-  body.site-huipil .lang-toggle-btn:hover {
+  body.site-huipil .cart-back-btn:hover,
+  body.site-huipil .cart-place-btn--secondary:hover,
+  body.site-huipil .lang-toggle-btn:hover:not([aria-pressed="true"]) {
     background: var(--tex-cream) !important;
     border-color: var(--tex-gold) !important;
+    color: var(--tex-red-deep) !important;
   }
 
   body.site-huipil .menu-online-tab:not(.is-active):hover,
   body.site-huipil .menu-view-tab:not(.is-active):hover,
-  body.site-huipil .menu-chip:not(.is-active):hover {
+  body.site-huipil .menu-chip:not(.is-active):hover,
+  body.site-huipil .menu-filter-btn:not(.is-active):hover {
     border-color: var(--tex-gold) !important;
     color: var(--tex-red-deep) !important;
+    background: #fffefb !important;
   }
-}
 
-body.site-huipil .fiesta-spin-btn[aria-busy="true"],
-body.site-huipil .fiesta-stamp-btn:disabled {
-  opacity: 0.55 !important;
-  cursor: wait !important;
+  body.site-huipil a[href*="facebook.com/elmirasolburgaw"].btn:hover,
+  body.site-huipil .btn-social--facebook:hover,
+  body.site-huipil .social-btn--facebook:hover {
+    background: #1a85ff !important;
+    box-shadow: var(--btn-shadow-hover) !important;
+  }
+
+  body.site-huipil a[href*="google.com/maps/dir"].btn:hover,
+  body.site-huipil .btn-social--directions:hover,
+  body.site-huipil .mobile-cta .cta-directions:hover {
+    background: #243a5c !important;
+    box-shadow: var(--btn-shadow-hover), inset 0 -2px 0 rgba(26, 107, 114, 0.65) !important;
+  }
+
+  body.site-huipil .qty-stepper__btn:hover {
+    background: var(--tex-linen) !important;
+    border-color: var(--tex-gold) !important;
+  }
+
+  body.site-huipil .cart-clear-btn:hover,
+  body.site-huipil .fiesta-stamps__toggle:hover,
+  body.site-huipil .fiesta-stamps__signout:hover {
+    color: var(--tex-red-bright) !important;
+  }
 }
 
 body.site-huipil :focus-visible {
@@ -1986,13 +2129,12 @@ body.site-huipil.has-mobile-cta {
   }
 }
 
-/* Kill coastal / fiesta button bleed on huipil pages */
+/* Strip legacy fiesta/coastal gradient bleed — keep selvedge fills */
 body.site-huipil .btn-primary,
 body.site-huipil .btn-red,
 body.site-huipil .btn-outline,
 body.site-huipil .fiesta-spin-btn,
 body.site-huipil .fiesta-stamp-btn {
-  background-image: none !important;
   -webkit-background-clip: border-box !important;
   background-clip: border-box !important;
 }
@@ -2442,4 +2584,74 @@ body.site-huipil.menu-page .menu-card {
 
 body.site-huipil .footer .logo__title {
   font-family: var(--tex-font-display) !important;
+}
+
+/* ── v36 · selvedge buttons — final sweep ── */
+body.site-huipil .header .nav a:not(.nav-menu-cta):hover,
+body.site-huipil .header .nav a:not(.nav-menu-cta).active {
+  background: rgba(196, 160, 85, 0.1) !important;
+}
+
+body.site-huipil .header .nav a.nav-menu-cta,
+body.site-huipil .header .nav a.nav-menu-cta:hover,
+body.site-huipil .header .nav a.nav-menu-cta.active {
+  background: var(--tex-red) !important;
+  color: #fffefb !important;
+  box-shadow: var(--btn-shadow), var(--btn-thread) !important;
+}
+
+body.site-huipil .story-spin__copy .btn,
+body.site-huipil .reviews-cta .btn,
+body.site-huipil .contact-actions .btn,
+body.site-huipil .hero-btns .btn,
+body.site-huipil .page-hero-actions .btn {
+  min-height: var(--btn-h) !important;
+}
+
+body.site-huipil .reviews-cta .btn {
+  flex: 1 1 auto !important;
+  min-width: min(100%, 11rem) !important;
+}
+
+body.site-huipil .visit-flow__share .btn[data-share],
+body.site-huipil .visit-flow__share .btn[data-sms] {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+}
+
+body.site-huipil .social-btn {
+  min-height: var(--btn-h-sm) !important;
+  padding: 0.55rem 1rem !important;
+  font-size: 0.78rem !important;
+  border-radius: var(--btn-radius-pill) !important;
+  gap: 0.45rem !important;
+}
+
+body.site-huipil .social-btn svg {
+  width: 1rem !important;
+  height: 1rem !important;
+  flex-shrink: 0 !important;
+}
+
+body.site-huipil .order-cart-panel .btn,
+body.site-huipil .item-modal__actions .btn {
+  width: 100% !important;
+}
+
+body.site-huipil .item-modal__actions {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+}
+
+body.site-huipil .btn-social.btn-social--facebook {
+  background: #1877f2 !important;
+  border-color: #1256b8 !important;
+  color: #fff !important;
+}
+
+body.site-huipil .menu-page .order-strip__actions .btn-order.is-live {
+  background: var(--tex-red) !important;
+  color: #fffefb !important;
+  box-shadow: var(--btn-shadow), var(--btn-thread) !important;
 }
