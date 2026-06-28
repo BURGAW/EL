@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="css/clover-ordering.css?v=clover1">
   <link rel="stylesheet" href="css/tuesday-closed.css?v=design17">
   <link rel="stylesheet" href="css/google-sites-embed.css?v=scrollnav1">
-  <link rel="stylesheet" href="css/huipil-textile-theme.css?v=textilemaster40">
+  <link rel="stylesheet" href="css/huipil-textile-theme.css?v=textilemaster42">
 
   <link rel="preload" as="image" href="assets/images/hero/el-mirasol-hero.jpg?v=storefront1">
   <meta property="og:image" content="https://burgaw.github.io/EL/MIRASOL/assets/images/hero/el-mirasol-hero.jpg?v=storefront1">
@@ -72,7 +72,7 @@
   }
   </script>
 </head>
-<body class="pattern has-topbar site-huipil" data-build="textilemaster40">
+<body class="pattern has-topbar site-huipil" data-build="textilemaster42">
   <a href="#main" class="skip-link">Skip to content</a>
 
   <div class="social-topbar">
@@ -328,44 +328,53 @@
           <h2>Hours &amp; Location</h2>
         </header>
 
-        <div class="visit-flow__hours" aria-label="Restaurant hours">
-          <div class="visit-flow__hour">
-            <span class="visit-flow__days">Mon · Wed · Thu · Sun</span>
-            <span class="visit-flow__time">8 AM – 9 PM</span>
-          </div>
-          <div class="visit-flow__hour">
-            <span class="visit-flow__days">Fri · Sat</span>
-            <span class="visit-flow__time">8 AM – 9:30 PM</span>
-          </div>
-          <div class="visit-flow__hour visit-flow__hour--closed">
-            <span class="visit-flow__days">Tuesday</span>
-            <span class="visit-flow__time">Closed</span>
-          </div>
-        </div>
-
-        <div class="visit-flow__map">
-          <div class="map-wrap visit-flow__map-frame" id="site-map">
-            <div class="map-wrap__frame">
-              <iframe
-                id="site-map-iframe"
-                src="https://maps.google.com/maps?cid=9919601015129450221&amp;ll=34.551919,-77.913414&amp;z=18&amp;hl=en&amp;t=m&amp;output=embed"
-                title="El Mirasol on Google Maps"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen>
-              </iframe>
+        <div class="visit-flow__stack">
+          <div class="visit-flow__map-band">
+            <div class="map-wrap visit-flow__map-frame" id="site-map">
+              <div class="map-wrap__frame">
+                <iframe
+                  id="site-map-iframe"
+                  src="https://maps.google.com/maps?cid=9919601015129450221&amp;ll=34.551919,-77.913414&amp;z=18&amp;hl=en&amp;t=m&amp;output=embed"
+                  title="El Mirasol on Google Maps"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen>
+                </iframe>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="visit-flow__card">
-          <address class="visit-flow__contact">
-            <span class="visit-flow__addr">211 U.S. Hwy 117 S, Burgaw, NC 28425</span>
-            <a href="tel:9107891154" class="visit-flow__phone">(910) 789-1154</a>
-          </address>
-          <div class="visit-flow__actions">
-            <a href="tel:9107891154" class="btn btn-red">Call</a>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=34.551919,-77.913414" class="btn btn-social--directions" data-map-directions target="_blank" rel="noopener noreferrer">Directions</a>
+          <div class="visit-flow__details">
+            <article class="visit-flow__panel visit-flow__panel--hours">
+              <h3 class="visit-flow__label">Kitchen hours</h3>
+              <ul class="visit-flow__tiles" aria-label="Restaurant hours">
+                <li class="visit-flow__tile">
+                  <span class="visit-flow__tile-days">Mon · Wed · Thu · Sun</span>
+                  <span class="visit-flow__tile-time">8 AM – 9 PM</span>
+                </li>
+                <li class="visit-flow__tile">
+                  <span class="visit-flow__tile-days">Fri · Sat</span>
+                  <span class="visit-flow__tile-time">8 AM – 9:30 PM</span>
+                </li>
+                <li class="visit-flow__tile visit-flow__tile--closed">
+                  <span class="visit-flow__tile-days">Tuesday</span>
+                  <span class="visit-flow__tile-time">Closed</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="visit-flow__panel visit-flow__panel--location">
+              <h3 class="visit-flow__label">Address</h3>
+              <address class="visit-flow__contact">
+                <span class="visit-flow__addr">211 U.S. Hwy 117 S</span>
+                <span class="visit-flow__city">Burgaw, NC 28425</span>
+                <a href="tel:9107891154" class="visit-flow__phone">(910) 789-1154</a>
+              </address>
+              <div class="visit-flow__actions">
+                <a href="tel:9107891154" class="btn btn-red">Call</a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=34.551919,-77.913414" class="btn btn-social--directions" data-map-directions target="_blank" rel="noopener noreferrer">Directions</a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
