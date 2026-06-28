@@ -1,5 +1,5 @@
 /**
- * El Mirasol vibe — single hero image + Polaroid floaters, review carousel
+ * El Mirasol vibe — single hero image + Polaroid floaters
  */
 (function () {
   const HERO_IMAGE = 'assets/images/hero/el-mirasol-hero.jpg?v=storefront1';
@@ -38,43 +38,10 @@
     ).join('');
   }
 
-  function initReviewCarousel() {
-    const wrap = document.getElementById('reviews-carousel-wrap');
-    const grid = document.getElementById('reviews-grid');
-    if (!wrap || !grid || !grid.children.length || wrap.querySelector('.reviews-carousel__track')) return;
-
-    const track = document.createElement('div');
-    track.className = 'reviews-carousel__track';
-    track.id = 'reviews-carousel-track';
-
-    const cards = [...grid.children];
-    grid.style.display = 'none';
-    grid.setAttribute('aria-hidden', 'true');
-
-    const cloneSet = () => cards.map((c) => c.cloneNode(true)).forEach((c) => track.appendChild(c));
-    cloneSet();
-    cloneSet();
-
-    const duration = Math.max(280, Math.min(560, Math.round(cards.length * 5)));
-    track.style.animationDuration = `${duration}s`;
-
-    wrap.appendChild(track);
-  }
-
   function init() {
     initHeroRotator();
     initHeroFloaters();
-    if (window.ElMirasolReviews) {
-      const grid = document.getElementById('reviews-grid');
-      if (grid && grid.dataset.rendered !== '1') {
-        window.ElMirasolReviews.init();
-      } else {
-        window.ElMirasolReviews.updateReviewStats?.();
-      }
-      requestAnimationFrame(() => requestAnimationFrame(initReviewCarousel));
-    } else {
-      setTimeout(() => requestAnimationFrame(() => requestAnimationFrame(initReviewCarousel)), 100);
-    }
+    window.ElMirasolReviews?.updateReviewStats?.();
   }
 
   if (document.readyState === 'loading') {

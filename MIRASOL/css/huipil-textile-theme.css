@@ -4251,3 +4251,13 @@ body.site-huipil.welcome-page .popup {
     display: none !important;
   }
 }
+
+/* ── v47 · acclaim — no scrolling review carousel ── */
+body.site-huipil .reviews-grid,
+body.site-huipil .reviews-carousel-wrap {
+  display: none !important;
+}
+
+body.site-huipil .reviews-cta {
+  margin-top: 1rem !important;
+}
