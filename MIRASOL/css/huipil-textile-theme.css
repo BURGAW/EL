@@ -3358,3 +3358,12 @@ body.site-huipil .visit-flow__map-frame .map-wrap__frame {
     max-width: 16rem !important;
   }
 }
+
+/* ── v40 · no duplicate bottom chrome ── */
+body.site-huipil .mobile-cta {
+  display: none !important;
+}
+
+body.site-huipil.has-mobile-cta {
+  padding-bottom: var(--safe-bottom, 0px) !important;
+}
