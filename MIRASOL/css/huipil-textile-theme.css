@@ -1,5 +1,5 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v38 · Editorial Ivory Loom (single theme)
+   El Mirasol — Textile Theme v39 · Editorial Ivory Loom (single theme)
    woven-runner-reference.png = COLOR REFERENCE ONLY (never tiled as photo).
    Design: warm ivory canvas · whisper diamond weave · champagne selvedge thread.
    Type: Cormorant display · Dancing Script warmth · Jakarta body · Montserrat UI.
@@ -3281,5 +3281,80 @@ body.site-huipil .visit-flow__share .btn {
   body.site-huipil .visit-flow__share .btn {
     flex: 1 1 100% !important;
     max-width: 18rem !important;
+  }
+}
+
+/* ── v39 · visit section calm — essentials only ── */
+body.site-huipil .visit-flow__head {
+  padding-bottom: 0.65rem !important;
+}
+
+body.site-huipil .visit-flow__lead,
+body.site-huipil .visit-flow__status,
+body.site-huipil .visit-flow__share,
+body.site-huipil .visit-flow__actions--secondary,
+body.site-huipil .visit-flow__city,
+body.site-huipil .visit-flow__phones,
+body.site-huipil .visit-flow .map-wrap__toolbar {
+  display: none !important;
+}
+
+body.site-huipil .visit-flow__card {
+  gap: 0.75rem !important;
+  padding: 1.1rem clamp(1rem, 3vw, 1.35rem) 1.25rem !important;
+  border-bottom: none !important;
+}
+
+body.site-huipil .visit-flow__contact {
+  gap: 0.45rem !important;
+}
+
+body.site-huipil .visit-flow__addr {
+  font-family: var(--tex-font-body) !important;
+  font-size: 0.9375rem !important;
+  font-weight: 600 !important;
+  color: var(--tex-ink) !important;
+  line-height: 1.45 !important;
+}
+
+body.site-huipil .visit-flow__phone {
+  min-height: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: var(--tex-navy) !important;
+}
+
+body.site-huipil .visit-flow__phone:hover {
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-huipil .visit-flow__actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0.5rem !important;
+  width: 100% !important;
+  max-width: 22rem !important;
+  margin: 0 auto !important;
+}
+
+body.site-huipil .visit-flow__actions .btn {
+  width: 100% !important;
+  min-height: var(--btn-h-sm) !important;
+}
+
+body.site-huipil .visit-flow__map-frame .map-wrap__frame {
+  height: clamp(220px, 38vw, 300px) !important;
+  min-height: 220px !important;
+}
+
+@media (max-width: 640px) {
+  body.site-huipil .visit-flow__actions {
+    grid-template-columns: 1fr !important;
+    max-width: 16rem !important;
   }
 }
