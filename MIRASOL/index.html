@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="css/clover-ordering.css?v=clover1">
   <link rel="stylesheet" href="css/tuesday-closed.css?v=design17">
   <link rel="stylesheet" href="css/google-sites-embed.css?v=scrollnav1">
-  <link rel="stylesheet" href="css/huipil-textile-theme.css?v=textilemaster37">
+  <link rel="stylesheet" href="css/huipil-textile-theme.css?v=textilemaster38">
 
   <link rel="preload" as="image" href="assets/images/hero/el-mirasol-hero.jpg?v=storefront1">
   <meta property="og:image" content="https://burgaw.github.io/EL/MIRASOL/assets/images/hero/el-mirasol-hero.jpg?v=storefront1">
@@ -72,7 +72,7 @@
   }
   </script>
 </head>
-<body class="pattern has-topbar site-huipil" data-build="textilemaster37">
+<body class="pattern has-topbar site-huipil" data-build="textilemaster38">
   <a href="#main" class="skip-link">Skip to content</a>
 
   <div class="social-topbar">
@@ -324,9 +324,18 @@
     <section id="visit" class="section visit-section visit-section--flow">
       <div class="visit-flow reveal">
         <header class="visit-flow__head">
-          <span class="section-tag">Find Us</span>
+          <p class="section-tag">Find Us</p>
           <h2>Hours &amp; Location</h2>
+          <p class="visit-flow__lead">On U.S. Hwy 117 in Burgaw — call ahead, pull up, or tap directions. We&rsquo;re here six days a week (closed Tuesdays).</p>
         </header>
+
+        <div class="visit-flow__status" aria-live="polite">
+          <span class="visit-flow__status-dot" data-visit-dot aria-hidden="true"></span>
+          <span class="visit-flow__status-copy">
+            <strong class="visit-flow__status-label" data-visit-status>Kitchen open now</strong>
+            <span class="visit-flow__status-sub" data-visit-sub>See hours below</span>
+          </span>
+        </div>
 
         <div class="visit-flow__hours" aria-label="Restaurant hours">
           <div class="visit-flow__hour">
@@ -338,53 +347,56 @@
             <span class="visit-flow__time">8 AM – 9:30 PM</span>
           </div>
           <div class="visit-flow__hour visit-flow__hour--closed">
-            <span class="visit-flow__days">Tue</span>
+            <span class="visit-flow__days">Tuesday</span>
             <span class="visit-flow__time">Closed</span>
           </div>
         </div>
 
-        <div class="visit-flow__body">
-          <div class="visit-flow__info">
-            <address class="visit-flow__contact">
-              <span class="visit-flow__addr">211 U.S. Hwy 117 S, Burgaw, NC 28425</span>
-              <span class="visit-flow__phones">
-                <a href="tel:9107891154">(910) 789-1154</a>
-                <span class="visit-flow__dot" aria-hidden="true">·</span>
-                <a href="tel:9103006198">(910) 300-6198</a>
-              </span>
-            </address>
-            <div class="visit-flow__actions">
-              <a href="https://www.google.com/maps/dir/?api=1&destination=34.551919,-77.913414" class="btn btn-social--directions" data-map-directions target="_blank" rel="noopener noreferrer">Directions</a>
-              <button type="button" class="btn btn-outline btn-copy-addr" data-copy-addr>Copy</button>
-              <a href="https://www.facebook.com/elmirasolburgaw/" class="visit-flow__chip visit-flow__chip--fb" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>
-              <a href="https://www.instagram.com/elmirasolburgaw/" class="visit-flow__chip visit-flow__chip--ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        <div class="visit-flow__map">
+          <div class="map-wrap visit-flow__map-frame" id="site-map">
+            <div class="map-wrap__toolbar" role="group" aria-label="Map view">
+              <button type="button" class="map-wrap__type is-active" data-map-type="roadmap" aria-pressed="true">Map</button>
+              <button type="button" class="map-wrap__type" data-map-type="satellite" aria-pressed="false">Satellite</button>
             </div>
-          </div>
-
-          <div class="visit-flow__map">
-            <div class="map-wrap visit-flow__map-frame" id="site-map">
-              <div class="map-wrap__toolbar" role="group" aria-label="Map view">
-                <button type="button" class="map-wrap__type is-active" data-map-type="roadmap" aria-pressed="true">Map</button>
-                <button type="button" class="map-wrap__type" data-map-type="satellite" aria-pressed="false">Satellite</button>
-              </div>
-              <div class="map-wrap__frame">
-                <iframe
-                  id="site-map-iframe"
-                  src="https://maps.google.com/maps?cid=9919601015129450221&amp;ll=34.551919,-77.913414&amp;z=18&amp;hl=en&amp;t=m&amp;output=embed"
-                  title="El Mirasol on Google Maps"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  allowfullscreen>
-                </iframe>
-              </div>
+            <div class="map-wrap__frame">
+              <iframe
+                id="site-map-iframe"
+                src="https://maps.google.com/maps?cid=9919601015129450221&amp;ll=34.551919,-77.913414&amp;z=18&amp;hl=en&amp;t=m&amp;output=embed"
+                title="El Mirasol on Google Maps"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
             </div>
           </div>
         </div>
 
+        <div class="visit-flow__card">
+          <address class="visit-flow__contact">
+            <span class="visit-flow__addr">211 U.S. Hwy 117 S</span>
+            <span class="visit-flow__city">Burgaw, NC 28425</span>
+            <span class="visit-flow__phones">
+              <a href="tel:9107891154" class="visit-flow__phone">(910) 789-1154</a>
+              <a href="tel:9103006198" class="visit-flow__phone">(910) 300-6198</a>
+            </span>
+          </address>
+
+          <div class="visit-flow__actions visit-flow__actions--primary">
+            <a href="tel:9107891154" class="btn btn-red">Call to order</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=34.551919,-77.913414" class="btn btn-social--directions" data-map-directions target="_blank" rel="noopener noreferrer">Get directions</a>
+          </div>
+          <div class="visit-flow__actions visit-flow__actions--secondary">
+            <button type="button" class="btn btn-outline btn-copy-addr" data-copy-addr>Copy address</button>
+            <a href="menu.html" class="btn btn-outline">View menu</a>
+            <a href="https://www.facebook.com/elmirasolburgaw/" class="btn btn-outline btn-social--facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/elmirasolburgaw/" class="btn btn-outline visit-flow__social-ig" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+
         <div class="visit-flow__share feat-share-row" id="feat-share-row">
-          <button type="button" class="btn btn-primary" data-share>Share</button>
-          <button type="button" class="btn btn-outline" data-sms>Text Friend</button>
-          <a href="https://www.google.com/maps?cid=9919601015129450221" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Review</a>
+          <button type="button" class="btn btn-primary" data-share>Share restaurant</button>
+          <button type="button" class="btn btn-outline" data-sms>Text a friend</button>
+          <a href="https://www.google.com/maps?cid=9919601015129450221" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Leave a review</a>
         </div>
       </div>
     </section>
@@ -420,7 +432,7 @@
   <script src="js/slideshow-fit.js?v=fiesta3"></script>
   <script src="js/vibe.js?v=polaroidcorners1"></script>
   <script src="js/friend-text.js?v=elm1"></script>
-  <script src="js/features-pack.js?v=herosingle1"></script>
+  <script src="js/features-pack.js?v=visitflow1"></script>
 
   <script src="js/fiesta-alive.js?v=huipilguard1"></script>
   <script src="js/main.js?v=grevfix1"></script>

@@ -157,10 +157,16 @@
     }
   }
 
-  function copyAddress() {
+  function copyAddress(ev) {
     const addr = '211 U.S. Hwy 117 S, Burgaw, NC 28425';
+    const btn = ev?.currentTarget;
+    const prevLabel = btn?.textContent;
     navigator.clipboard?.writeText(addr).then(() => {
       toast('Address copied — see you soon');
+      if (btn) {
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = prevLabel || 'Copy address'; }, 2000);
+      }
     }).catch(() => toast('211 U.S. Hwy 117 S, Burgaw, NC 28425'));
   }
 
@@ -195,6 +201,15 @@
     else document.body.prepend(ribbon);
   }
 
+  function updateVisitStatus(status) {
+    const statusEl = document.querySelector('[data-visit-status]');
+    const subEl = document.querySelector('[data-visit-sub]');
+    const dotEl = document.querySelector('[data-visit-dot]');
+    if (statusEl) statusEl.textContent = status.label;
+    if (subEl) subEl.textContent = status.sub;
+    if (dotEl) dotEl.classList.toggle('is-closed', !status.open);
+  }
+
   function initRibbon() {
     if (document.body.classList.contains('menu-page')) return;
     ensureRibbon();
@@ -212,6 +227,7 @@
       const dot = el.querySelector('.feat-ribbon__dot');
       if (statusEl) statusEl.textContent = status.label;
       if (dot) dot.classList.toggle('feat-ribbon__dot--closed', !status.open);
+      updateVisitStatus(status);
       if (clockEl) clockEl.textContent = formatTime(nowInBurgaw()) + ' · Burgaw';
       if (mealEl) {
         if (isTuesday()) {
@@ -510,7 +526,7 @@
       });
     }
     document.querySelectorAll('[data-copy-addr]').forEach((el) => {
-      el.addEventListener('click', copyAddress);
+      el.addEventListener('click', (e) => copyAddress(e));
     });
   }
 
@@ -689,9 +705,16 @@
     hero.addEventListener('mouseleave', () => { rotator.style.transform = ''; });
   }
 
+  function initVisitStatus() {
+    if (!document.querySelector('[data-visit-status]')) return;
+    updateVisitStatus(getKitchenStatus());
+    setInterval(() => updateVisitStatus(getKitchenStatus()), 30000);
+  }
+
   function init() {
     initScrollProgress();
     initRibbon();
+    initVisitStatus();
     if (isHome) {
       initHeroCaptions();
       initStats();

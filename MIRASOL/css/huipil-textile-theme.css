@@ -1,5 +1,5 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v37 · Editorial Ivory Loom (single theme)
+   El Mirasol — Textile Theme v38 · Editorial Ivory Loom (single theme)
    woven-runner-reference.png = COLOR REFERENCE ONLY (never tiled as photo).
    Design: warm ivory canvas · whisper diamond weave · champagne selvedge thread.
    Type: Cormorant display · Dancing Script warmth · Jakarta body · Montserrat UI.
@@ -2937,5 +2937,349 @@ body.site-huipil.menu-page .menu-online__lang {
   body.site-huipil .visit-flow__share .btn,
   body.site-huipil .feat-share-row .btn {
     flex: 1 1 calc(50% - 0.25rem) !important;
+  }
+}
+
+/* ── v38 · visit section — useful, on-theme, stacked flow ── */
+body.site-huipil .visit-section--flow {
+  padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 3vw, 1.5rem) !important;
+}
+
+body.site-huipil .visit-flow {
+  max-width: var(--tex-content-max) !important;
+  margin-inline: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  border: 1px solid rgba(61, 38, 24, 0.1) !important;
+  border-radius: var(--tex-radius-lg) !important;
+  background: var(--tex-cream-light) !important;
+  box-shadow: var(--tex-shadow-lift) !important;
+  overflow: hidden !important;
+}
+
+body.site-huipil .visit-flow::before {
+  display: none !important;
+}
+
+body.site-huipil .visit-flow__head {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1rem, 3vw, 1.5rem) 0.85rem !important;
+  border-bottom: none !important;
+  background: transparent !important;
+}
+
+body.site-huipil .visit-flow__head .section-tag {
+  margin-bottom: 0.15rem !important;
+}
+
+body.site-huipil .visit-flow__head h2 {
+  font-size: clamp(1.45rem, 3.5vw, 2rem) !important;
+  margin: 0 !important;
+}
+
+body.site-huipil .visit-flow__lead {
+  margin: 0.35rem auto 0 !important;
+  max-width: 36rem !important;
+  font-size: 0.9375rem !important;
+  line-height: 1.6 !important;
+  color: var(--tex-ink-soft) !important;
+  text-align: center !important;
+}
+
+body.site-huipil .visit-flow__status {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.55rem !important;
+  margin: 0 clamp(1rem, 3vw, 1.5rem) 0.85rem !important;
+  padding: 0.65rem 0.85rem !important;
+  background: var(--tex-linen) !important;
+  background-image: var(--tex-weave-svg) !important;
+  background-size: 48px 48px !important;
+  border: 1px solid rgba(61, 38, 24, 0.08) !important;
+  border-radius: var(--tex-radius-sm) !important;
+  text-align: left !important;
+}
+
+body.site-huipil .visit-flow__status-dot {
+  flex-shrink: 0 !important;
+  width: 9px !important;
+  height: 9px !important;
+  border-radius: 50% !important;
+  background: #4ade80 !important;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.55) !important;
+}
+
+body.site-huipil .visit-flow__status-dot.is-closed {
+  background: var(--tex-red) !important;
+  box-shadow: 0 0 8px rgba(200, 50, 46, 0.45) !important;
+}
+
+body.site-huipil .visit-flow__status-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.1rem !important;
+  min-width: 0 !important;
+}
+
+body.site-huipil .visit-flow__status-label {
+  font-family: var(--tex-font-ui) !important;
+  font-size: 0.8125rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  color: var(--tex-ink) !important;
+}
+
+body.site-huipil .visit-flow__status-sub {
+  font-size: 0.75rem !important;
+  color: var(--tex-ink-soft) !important;
+  line-height: 1.35 !important;
+}
+
+body.site-huipil .visit-flow__hours {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  border-top: 1px solid rgba(61, 38, 24, 0.08) !important;
+  border-bottom: 1px solid rgba(61, 38, 24, 0.08) !important;
+  background: var(--tex-cream) !important;
+}
+
+body.site-huipil .visit-flow__hour {
+  padding: 0.85rem 0.65rem !important;
+  gap: 0.25rem !important;
+  border-right: 1px solid rgba(61, 38, 24, 0.07) !important;
+}
+
+body.site-huipil .visit-flow__days {
+  font-family: var(--tex-font-ui) !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  line-height: 1.3 !important;
+}
+
+body.site-huipil .visit-flow__time {
+  font-family: var(--tex-font-display) !important;
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem) !important;
+  font-weight: 600 !important;
+  color: var(--tex-red-deep) !important;
+  line-height: 1.1 !important;
+}
+
+body.site-huipil .visit-flow__hour--closed {
+  background: rgba(200, 50, 46, 0.06) !important;
+}
+
+body.site-huipil .visit-flow__hour--closed .visit-flow__time {
+  font-family: var(--tex-font-ui) !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+}
+
+body.site-huipil .visit-flow__map {
+  display: block !important;
+  width: 100% !important;
+  border-bottom: 1px solid rgba(61, 38, 24, 0.08) !important;
+}
+
+body.site-huipil .visit-flow__map-frame {
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: var(--tex-linen) !important;
+}
+
+body.site-huipil .visit-flow__map-frame .map-wrap__toolbar {
+  justify-content: center !important;
+  gap: 0.4rem !important;
+  padding: 0.5rem 0.75rem !important;
+  background: var(--tex-cream-light) !important;
+  border-bottom: 1px solid rgba(61, 38, 24, 0.08) !important;
+}
+
+body.site-huipil .map-wrap__type {
+  font-family: var(--tex-font-ui) !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: none !important;
+  padding: 0.38rem 0.85rem !important;
+  border-radius: var(--tex-radius-pill) !important;
+  border: 1.5px solid rgba(61, 38, 24, 0.18) !important;
+  background: var(--tex-cream-light) !important;
+  color: var(--tex-ink-soft) !important;
+}
+
+body.site-huipil .map-wrap__type.is-active {
+  background: var(--tex-navy) !important;
+  border-color: var(--tex-navy-deep) !important;
+  color: #fffefb !important;
+}
+
+body.site-huipil .map-wrap__type:hover {
+  border-color: var(--tex-gold) !important;
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-huipil .visit-flow__map-frame .map-wrap__frame,
+body.site-huipil .map-wrap__frame {
+  min-height: 240px !important;
+  height: clamp(240px, 42vw, 340px) !important;
+  background: var(--tex-linen) !important;
+}
+
+body.site-huipil .visit-flow__card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+  padding: clamp(1.1rem, 3vw, 1.5rem) !important;
+  text-align: center !important;
+  background: var(--tex-cream-light) !important;
+  border-bottom: 1px solid rgba(61, 38, 24, 0.08) !important;
+}
+
+body.site-huipil .visit-flow__contact {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.3rem !important;
+  margin: 0 !important;
+  font-style: normal !important;
+}
+
+body.site-huipil .visit-flow__addr {
+  font-family: var(--tex-font-display) !important;
+  font-size: clamp(1.15rem, 2.8vw, 1.35rem) !important;
+  font-weight: 600 !important;
+  color: var(--tex-red-deep) !important;
+  line-height: 1.15 !important;
+}
+
+body.site-huipil .visit-flow__city {
+  font-size: 0.9375rem !important;
+  color: var(--tex-ink-soft) !important;
+  font-weight: 500 !important;
+}
+
+body.site-huipil .visit-flow__phones {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.5rem 0.85rem !important;
+  margin-top: 0.25rem !important;
+}
+
+body.site-huipil .visit-flow__phone {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: var(--btn-h-sm) !important;
+  padding: 0.45rem 0.9rem !important;
+  font-family: var(--tex-font-ui) !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  color: var(--tex-navy) !important;
+  text-decoration: none !important;
+  background: #fffefb !important;
+  border: 1.5px solid rgba(61, 38, 24, 0.14) !important;
+  border-radius: var(--tex-radius-pill) !important;
+  box-shadow: var(--btn-shadow) !important;
+  transition: border-color 0.18s var(--tex-ease), color 0.18s var(--tex-ease) !important;
+}
+
+body.site-huipil .visit-flow__phone:hover {
+  border-color: var(--tex-gold) !important;
+  color: var(--tex-red-deep) !important;
+}
+
+body.site-huipil .visit-flow__actions--primary {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0.5rem !important;
+  width: 100% !important;
+  max-width: 28rem !important;
+}
+
+body.site-huipil .visit-flow__actions--primary .btn {
+  width: 100% !important;
+  min-height: var(--btn-h) !important;
+}
+
+body.site-huipil .visit-flow__actions--secondary {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+  width: 100% !important;
+  max-width: 32rem !important;
+}
+
+body.site-huipil .visit-flow__actions--secondary .btn {
+  flex: 1 1 calc(50% - 0.25rem) !important;
+  min-width: min(100%, 9.5rem) !important;
+  min-height: var(--btn-h-sm) !important;
+  font-size: 0.78rem !important;
+}
+
+body.site-huipil .visit-flow__social-ig {
+  color: var(--tex-red-deep) !important;
+  border-color: rgba(154, 50, 116, 0.35) !important;
+}
+
+body.site-huipil .visit-flow__social-ig:hover {
+  background: linear-gradient(135deg, rgba(240, 148, 51, 0.12), rgba(188, 24, 136, 0.1)) !important;
+  border-color: var(--tex-magenta) !important;
+  color: var(--tex-magenta) !important;
+}
+
+body.site-huipil .visit-flow__share {
+  padding: 0.85rem clamp(0.85rem, 3vw, 1.25rem) 1rem !important;
+  background: var(--tex-linen) !important;
+  border-top: 1px solid rgba(61, 38, 24, 0.08) !important;
+}
+
+body.site-huipil .visit-flow__share .btn {
+  min-height: var(--btn-h-sm) !important;
+  font-size: 0.78rem !important;
+  flex: 1 1 auto !important;
+  min-width: min(100%, 8.5rem) !important;
+  max-width: 11rem !important;
+}
+
+@media (max-width: 640px) {
+  body.site-huipil .visit-flow__hours {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.site-huipil .visit-flow__hour {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(61, 38, 24, 0.07) !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  body.site-huipil .visit-flow__hour:last-child {
+    border-bottom: none !important;
+  }
+
+  body.site-huipil .visit-flow__actions--primary {
+    grid-template-columns: 1fr !important;
+    max-width: 18rem !important;
+  }
+
+  body.site-huipil .visit-flow__actions--secondary .btn {
+    flex: 1 1 100% !important;
+    max-width: 18rem !important;
+  }
+
+  body.site-huipil .visit-flow__share .btn {
+    flex: 1 1 100% !important;
+    max-width: 18rem !important;
   }
 }
