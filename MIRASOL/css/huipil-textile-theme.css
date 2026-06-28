@@ -1,5 +1,5 @@
 /* =============================================================================
-   El Mirasol — Textile Theme v32 · Runner Reference (single theme)
+   El Mirasol — Textile Theme v33 · Runner Reference (single theme)
    woven-runner-reference.png = COLOR REFERENCE ONLY (never tiled as photo).
    Pattern on site: CSS serape stripes + SVG diamond weave.
    Jewel palette · calm ivory canvas · readable cloth-tag buttons.
@@ -386,13 +386,26 @@ body.site-huipil .hero-overlay {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(125deg, rgba(26, 40, 68, 0.2) 0%, transparent 42%),
+    linear-gradient(90deg, rgba(15, 26, 46, 0.42) 0%, transparent 22%, transparent 78%, rgba(15, 26, 46, 0.42) 100%),
+    linear-gradient(125deg, rgba(26, 40, 68, 0.18) 0%, transparent 42%),
     linear-gradient(180deg, rgba(61, 38, 24, 0.06) 0%, rgba(38, 28, 22, 0.28) 52%, rgba(184, 40, 36, 0.38) 100%) !important;
+}
+
+body.site-huipil:not(.menu-page) .hero {
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  overflow: hidden !important;
 }
 
 body.site-huipil .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 4;
+  width: 100% !important;
+  max-width: min(34rem, 68vw) !important;
+  margin: 0 auto !important;
+  padding-left: clamp(0.75rem, 10vw, 8.5rem) !important;
+  padding-right: clamp(0.75rem, 10vw, 8.5rem) !important;
 }
 
 body.site-huipil .hero-eyebrow {
@@ -1735,6 +1748,144 @@ body.site-huipil .visit-flow__map-frame .map-wrap__frame {
   border-color: rgba(61, 38, 24, 0.12) !important;
 }
 
+/* Visit flow layout (was in removed coastal-oax-fusion.css) */
+body.site-huipil .visit-section--flow {
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 1.5rem) !important;
+}
+
+body.site-huipil .visit-flow {
+  max-width: 52rem !important;
+  margin-inline: auto !important;
+}
+
+body.site-huipil .visit-flow__head {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: baseline !important;
+  justify-content: center !important;
+  gap: 0.3rem 0.5rem !important;
+  text-align: center !important;
+}
+
+body.site-huipil .visit-flow__head h2 {
+  margin: 0 !important;
+  font-size: clamp(1.2rem, 3.2vw, 1.55rem) !important;
+}
+
+body.site-huipil .visit-flow__hours {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+}
+
+body.site-huipil .visit-flow__hour {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.15rem !important;
+  padding: 0.55rem 0.5rem !important;
+  text-align: center !important;
+  border-right: 1px solid rgba(61, 38, 24, 0.08) !important;
+}
+
+body.site-huipil .visit-flow__hour:last-child {
+  border-right: none !important;
+}
+
+body.site-huipil .visit-flow__hour--closed {
+  background: rgba(184, 40, 36, 0.05) !important;
+}
+
+body.site-huipil .visit-flow__days {
+  font-size: clamp(0.62rem, 1.6vw, 0.72rem) !important;
+  font-weight: 700 !important;
+  color: var(--tex-ink) !important;
+}
+
+body.site-huipil .visit-flow__time {
+  font-size: clamp(0.68rem, 1.8vw, 0.8rem) !important;
+  font-weight: 800 !important;
+  color: var(--tex-navy) !important;
+}
+
+body.site-huipil .visit-flow__hour--closed .visit-flow__days,
+body.site-huipil .visit-flow__hour--closed .visit-flow__time {
+  color: var(--tex-red) !important;
+}
+
+body.site-huipil .visit-flow__body {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr) !important;
+  align-items: stretch !important;
+}
+
+body.site-huipil .visit-flow__info {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+  padding: 0.65rem 0.75rem !important;
+  border-right: 1px solid rgba(61, 38, 24, 0.08) !important;
+}
+
+body.site-huipil .visit-flow__contact {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.2rem !important;
+  margin: 0 !important;
+  font-style: normal !important;
+  font-size: clamp(0.72rem, 1.9vw, 0.82rem) !important;
+  line-height: 1.4 !important;
+  color: var(--tex-ink-soft) !important;
+}
+
+body.site-huipil .visit-flow__addr {
+  font-weight: 600 !important;
+  color: var(--tex-ink) !important;
+}
+
+body.site-huipil .visit-flow__phones {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 0.25rem 0.4rem !important;
+}
+
+body.site-huipil .visit-flow__phones a {
+  color: var(--tex-navy) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+body.site-huipil .visit-flow__actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.35rem !important;
+}
+
+body.site-huipil .visit-flow__map {
+  display: flex !important;
+  min-height: 0 !important;
+}
+
+body.site-huipil .visit-flow__map-frame {
+  flex: 1 !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body.site-huipil .visit-flow__share {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  margin: 0 !important;
+}
+
 body.site-huipil .review-card__name--head {
   color: var(--tex-red-deep) !important;
 }
@@ -1903,10 +2054,28 @@ body.site-huipil .fiesta-gold-dust {
   display: none !important;
 }
 
-body.site-huipil .hero-floaters,
-body.site-huipil .hero-floater {
-  display: none !important;
+/* Hero polaroids — corners only, never over center title */
+body.site-huipil .hero-floaters {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
 }
+
+body.site-huipil .hero-floater {
+  position: absolute;
+  pointer-events: none;
+}
+
+body.site-huipil .hero-floater--snap {
+  --snap-w: clamp(68px, 8.5vw, 108px);
+}
+
+body.site-huipil .hero-floater:nth-child(1) { top: 11%; left: 1.5%; }
+body.site-huipil .hero-floater:nth-child(2) { top: 10%; right: 1.5%; }
+body.site-huipil .hero-floater:nth-child(3) { bottom: 14%; left: 2%; }
+body.site-huipil .hero-floater:nth-child(4) { bottom: 12%; right: 2%; }
 
 body.site-huipil .hero--single .hero-rotator__slide {
   opacity: 1 !important;
@@ -1914,7 +2083,10 @@ body.site-huipil .hero--single .hero-rotator__slide {
 
 body.site-huipil .hero-scroll {
   position: absolute;
-  z-index: 2;
+  z-index: 4;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 body.site-huipil .reviews-carousel-wrap {
@@ -2036,6 +2208,117 @@ body.site-huipil .reviews-grid[aria-hidden="true"] {
   body.site-huipil.menu-page .menu-online__toolbar {
     position: sticky !important;
     top: calc(var(--topbar-stack) + var(--header-h) + var(--tex-trim-h) + var(--safe-top, 0px) - 1px) !important;
+  }
+}
+
+/* ── v33 · home page rhythm — no overlap ── */
+body.site-huipil:not(.menu-page) main#main {
+  position: relative;
+  z-index: 1;
+}
+
+body.site-huipil:not(.menu-page) .section {
+  padding-left: clamp(1rem, 3vw, 1.5rem) !important;
+  padding-right: clamp(1rem, 3vw, 1.5rem) !important;
+}
+
+body.site-huipil .feat-stats {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0.55rem !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+}
+
+body.site-huipil .feat-stat {
+  min-width: 0 !important;
+}
+
+body.site-huipil .reviews-section__inner {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body.site-huipil .reviews-stats {
+  margin: 0.75rem auto 1rem !important;
+  gap: 0.45rem 0.75rem !important;
+}
+
+body.site-huipil .reviews-cta {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  margin-top: 0.75rem !important;
+}
+
+body.site-huipil .story-spin-section .section {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  body.site-huipil .hero-floater:nth-child(3),
+  body.site-huipil .hero-floater:nth-child(4) {
+    display: none !important;
+  }
+
+  body.site-huipil .hero-floater--snap {
+    --snap-w: clamp(62px, 7.5vw, 92px);
+  }
+
+  body.site-huipil .hero-content {
+    max-width: min(32rem, 78vw) !important;
+    padding-left: clamp(0.75rem, 6vw, 5rem) !important;
+    padding-right: clamp(0.75rem, 6vw, 5rem) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  body.site-huipil .feat-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body.site-huipil .visit-flow__body {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.site-huipil .visit-flow__info {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(61, 38, 24, 0.08) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body.site-huipil .hero-floater {
+    display: none !important;
+  }
+
+  body.site-huipil .hero-content {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  body.site-huipil .visit-flow__hours {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.site-huipil .visit-flow__hour {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(61, 38, 24, 0.08) !important;
+  }
+
+  body.site-huipil .visit-flow__hour:last-child {
+    border-bottom: none !important;
+  }
+}
+
+@media (max-width: 380px) {
+  body.site-huipil .feat-stats {
+    grid-template-columns: 1fr 1fr !important;
   }
 }
 
