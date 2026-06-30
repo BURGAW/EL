@@ -178,6 +178,32 @@ window.SITE_CONFIG = {
   },
 
   /**
+   * Digital tip links for servers — paste each person's Venmo / Cash App URL in url.
+   * Example: 'https://venmo.com/u/YourHandle' or 'https://cash.app/$YourCashtag'
+   */
+  staffTips: {
+    enabled: true,
+    heading: 'Tip our servers',
+    lead: 'Enjoyed your visit? Cash and card tips are welcome at the register — or send a digital tip below.',
+    members: [
+      {
+        id: 'autumn',
+        name: 'Autumn',
+        role: 'Server',
+        cta: 'Tip Autumn',
+        url: '',
+      },
+      {
+        id: 'karina',
+        name: 'Karina',
+        role: 'Server',
+        cta: 'Tip Karina',
+        url: '',
+      },
+    ],
+  },
+
+  /**
    * Google Sites embed — Insert → Embed → By URL:
    *   Home: https://YOUR-SITE/index.html?embed=1
    *   Menu: https://YOUR-SITE/menu.html?embed=1
