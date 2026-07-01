@@ -104,7 +104,7 @@ const MENU_DATA = [
     id: 'tacos',
     title: 'Tacos',
     items: [
-      { name: 'Taco', price: '$3.12', desc: 'Soft corn taco topped with cilantro, onions, and a lime.', meats: true },
+      { name: 'Taco', price: '$3.12 each', desc: 'One soft corn taco with cilantro, onions, and a lime. Photo shows four — each $3.12.', meats: true },
       { name: 'Order of Tacos', price: '$14.99', desc: 'Soft corn tacos topped with cilantro and onions. Served with rice and beans.', meats: true },
       { name: 'Crunchy Tacos', price: '$13.99', desc: 'Deep-fried corn tortillas with choice of meat, lettuce, sour cream, and pico.', meats: true },
       { name: 'Tacos Dorados', price: '$13.99', desc: 'Rolled fried corn tortillas with shredded chicken, sour cream and cheese, lettuce, pico and rice.' },

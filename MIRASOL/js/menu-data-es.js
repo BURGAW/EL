@@ -103,7 +103,7 @@ const MENU_DATA_ES = [
     id: 'tacos',
     title: 'Tacos',
     items: [
-      { name: 'Taco', price: '$3.12 c/u', desc: 'Taco de maíz con cilantro, cebolla y limón.', meats: true },
+      { name: 'Taco', price: '$3.12 c/u', desc: 'Un taco de maíz con cilantro, cebolla y limón. La foto muestra cuatro — $3.12 cada uno.', meats: true },
       { name: 'Orden de Tacos', price: '$14.99', desc: 'Tacos de maíz con cilantro y cebolla. Con arroz y frijoles.', meats: true },
       { name: 'Tacos Crunchy', price: '$13.99', desc: 'Tortillas de maíz fritas con su carne, lechuga, crema y pico.', meats: true },
       { name: 'Tacos Dorados', price: '$13.99', desc: 'Tortillas enrolladas fritas con pollo deshebrado, crema, queso, lechuga, pico y arroz.' },

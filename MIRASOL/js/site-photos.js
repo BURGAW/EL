@@ -155,7 +155,7 @@
     [photoKey('appetizers', 'Guacamole')]: g('nachos', 'Guacamole with chips'),
 
     /* tacos */
-    [photoKey('tacos', 'Taco')]: g('tacos', 'Street taco'),
+    [photoKey('tacos', 'Taco')]: g('tacos', 'Four tacos shown — $3.12 each'),
     [photoKey('tacos', 'Order of Tacos')]: g('order-of-tacos', 'Order of tacos'),
     [photoKey('tacos', 'Crunchy Tacos')]: g('crunchy-tacos', 'Crunchy tacos'),
     [photoKey('tacos', 'Tacos Dorados')]: g('tacos-dorados', 'Tacos dorados'),
