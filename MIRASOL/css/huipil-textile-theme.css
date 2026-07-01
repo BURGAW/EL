@@ -411,18 +411,18 @@ body.site-huipil .hero--single .hero-rotator__slide {
   transform: scale(1) !important;
   transition: none !important;
   background-size: cover !important;
-  background-position: center 42% !important;
+  background-position: center 28% !important;
 }
 
 @media (max-width: 768px) {
   body.site-huipil .hero--single .hero-rotator__slide {
-    background-position: center 48% !important;
+    background-position: center 34% !important;
   }
 }
 
 @media (min-width: 1200px) {
   body.site-huipil .hero--single .hero-rotator__slide {
-    background-position: center 40% !important;
+    background-position: center 24% !important;
   }
 }
 
