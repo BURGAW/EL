@@ -148,7 +148,7 @@
     [photoKey('appetizers', 'Huarache')]: g('huarache', 'Huarache'),
     [photoKey('appetizers', 'Gorditas')]: g('masita', 'Gorditas'),
     [photoKey('appetizers', 'Tamales')]: g('ls-tamles', 'Tamales'),
-    [photoKey('appetizers', 'Tostada')]: g('4-tostadas', 'Tostada'),
+    [photoKey('appetizers', 'Tostada')]: g('4-tostadas', 'Four tostadas shown — $5 each'),
     [photoKey('appetizers', 'Empanadas')]: g('empandas', 'Empanadas'),
     [photoKey('appetizers', 'Esquite')]: g('street-corn-with-no-chile-powder', 'Esquite'),
     [photoKey('appetizers', 'Street Corn')]: g('street-corn-with-no-chile-powder', 'Street corn'),
