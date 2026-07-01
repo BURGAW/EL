@@ -144,14 +144,14 @@
     [photoKey('daily-lunch', 'Birria Tacos')]: g('birria-tacos', 'Birria tacos'),
 
     /* appetizers */
-    [photoKey('appetizers', 'Sope')]: g('2-sopes', 'Sopes'),
+    [photoKey('appetizers', 'Sope')]: g('2-sopes', 'Two sopes shown — $8.50 each'),
     [photoKey('appetizers', 'Huarache')]: g('huarache', 'Huarache'),
     [photoKey('appetizers', 'Gorditas')]: g('masita', 'Gorditas'),
     [photoKey('appetizers', 'Tamales')]: g('ls-tamles', 'Tamales'),
     [photoKey('appetizers', 'Tostada')]: g('4-tostadas', 'Four tostadas shown — $5 each'),
     [photoKey('appetizers', 'Empanadas')]: g('empandas', 'Empanadas'),
     [photoKey('appetizers', 'Esquite')]: g('street-corn-with-no-chile-powder', 'Esquite'),
-    [photoKey('appetizers', 'Street Corn')]: g('street-corn-with-no-chile-powder', 'Street corn'),
+    [photoKey('appetizers', 'Street Corn')]: g('street-corn-with-no-chile-powder', 'Street corn — $4.50 each'),
     [photoKey('appetizers', 'Guacamole')]: g('nachos', 'Guacamole with chips'),
 
     /* tacos */
