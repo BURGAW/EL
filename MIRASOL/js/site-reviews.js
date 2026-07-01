@@ -66,6 +66,16 @@
     grid.dataset.loadedCount = String(reviews.length);
   }
 
+  function renderHomeReviewsCarousel() {
+    const wrap = document.getElementById('reviews-carousel-wrap');
+    if (!wrap || wrap.dataset.rendered === '1') return;
+    const reviews = getReviews();
+    if (!reviews.length) return;
+    const track = reviews.concat(reviews).map(reviewCard).join('');
+    wrap.innerHTML = `<div class="reviews-carousel__track">${track}</div>`;
+    wrap.dataset.rendered = '1';
+  }
+
   function renderMenuReviews() {
     const strip = document.getElementById('menu-reviews-strip');
     if (!strip || strip.dataset.rendered === '1') return;
@@ -98,6 +108,7 @@
 
   function init() {
     renderHomeReviews();
+    renderHomeReviewsCarousel();
     renderMenuReviews();
     updateReviewStats();
   }
@@ -113,6 +124,7 @@
     getReviews,
     getMinRating,
     renderHomeReviews,
+    renderHomeReviewsCarousel,
     renderMenuReviews,
     updateReviewStats,
   };

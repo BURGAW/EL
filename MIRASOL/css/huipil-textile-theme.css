@@ -4252,118 +4252,32 @@ body.site-huipil.welcome-page .popup {
   }
 }
 
-/* ── v47 · acclaim — no scrolling review carousel ── */
-body.site-huipil .reviews-grid,
-body.site-huipil .reviews-carousel-wrap {
+/* ── v47 · acclaim — scrolling carousel visible; grid hidden (JS populates both) ── */
+body.site-huipil .reviews-section {
+  position: relative !important;
+  z-index: 2 !important;
+  overflow: visible !important;
+}
+
+body.site-huipil .reviews-grid {
   display: none !important;
+}
+
+body.site-huipil .reviews-carousel-wrap {
+  display: block !important;
+  visibility: visible !important;
+  min-height: 7.5rem !important;
+  margin: 0.75rem 0 1.15rem !important;
+  overflow: hidden !important;
 }
 
 body.site-huipil .reviews-cta {
   margin-top: 1rem !important;
 }
 
-/* ── v48 · staff tips — Autumn & Karina ── */
-body.site-huipil .staff-tips-section {
-  padding: clamp(1.35rem, 3vw, 2rem) clamp(1rem, 3vw, 1.5rem) !important;
-  background-image: var(--tex-oax-flores), var(--tex-oax-greca) !important;
-  background-size: 88px 32px, 48px 48px !important;
-}
-
-body.site-huipil .staff-tips-section__inner {
-  max-width: var(--tex-content-max) !important;
-  margin: 0 auto !important;
-  text-align: center !important;
-}
-
-body.site-huipil .staff-tips__title {
-  margin: 0 0 0.45rem !important;
-  font-family: var(--tex-font-display) !important;
-  font-size: clamp(1.45rem, 3.2vw, 1.95rem) !important;
-  font-weight: 600 !important;
-  color: var(--tex-red-deep) !important;
-  line-height: 1.12 !important;
-}
-
-body.site-huipil .staff-tips__lead {
-  margin: 0 auto 1rem !important;
-  max-width: var(--tex-prose-max) !important;
-  font-size: 0.9375rem !important;
-  line-height: 1.58 !important;
-  color: var(--tex-ink-soft) !important;
-}
-
-body.site-huipil .staff-tips__grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 0.65rem !important;
-  max-width: 34rem !important;
-  margin: 0 auto !important;
-}
-
-body.site-huipil .staff-tips__card {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 0.35rem !important;
-  padding: 1rem 0.85rem 1.05rem !important;
-  background: var(--tex-cream-light) !important;
-  background-image: var(--tex-oax-greca), var(--tex-weave-svg) !important;
-  background-size: 48px 48px, 56px 56px !important;
-  border: 1px solid rgba(200, 50, 46, 0.14) !important;
-  border-radius: var(--tex-radius-md) !important;
-  box-shadow: var(--tex-shadow-soft) !important;
+body.site-huipil .visit-section.visit-section--flow {
   position: relative !important;
-  overflow: hidden !important;
+  z-index: 1 !important;
+  margin-top: 0 !important;
 }
 
-body.site-huipil .staff-tips__card::before {
-  content: '' !important;
-  display: block !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 3px !important;
-  background: var(--tex-oax-serape) !important;
-}
-
-body.site-huipil .staff-tips__name {
-  margin: 0.15rem 0 0 !important;
-  font-family: var(--tex-font-display) !important;
-  font-size: 1.25rem !important;
-  font-weight: 600 !important;
-  color: var(--tex-red-deep) !important;
-  line-height: 1.1 !important;
-}
-
-body.site-huipil .staff-tips__role {
-  margin: 0 !important;
-  font-family: var(--tex-font-ui) !important;
-  font-size: 0.65rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase !important;
-  color: var(--tex-wood-mid) !important;
-}
-
-body.site-huipil .staff-tips__btn {
-  width: 100% !important;
-  max-width: 12rem !important;
-  margin-top: 0.35rem !important;
-  min-height: var(--btn-h-sm) !important;
-}
-
-body.site-huipil .staff-tips__fallback {
-  margin: 0.35rem 0 0 !important;
-  font-size: 0.8125rem !important;
-  line-height: 1.45 !important;
-  color: var(--tex-ink-soft) !important;
-  font-weight: 500 !important;
-}
-
-@media (max-width: 520px) {
-  body.site-huipil .staff-tips__grid {
-    grid-template-columns: 1fr !important;
-    max-width: 16rem !important;
-  }
-}
