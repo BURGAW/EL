@@ -160,6 +160,7 @@
     [photoKey('tacos', 'Crunchy Tacos')]: g('crunchy-tacos', 'Crunchy tacos'),
     [photoKey('tacos', 'Tacos Dorados')]: g('tacos-dorados', 'Tacos dorados'),
     [photoKey('tacos', 'Birria Tacos')]: g('birria-tacos', 'Birria tacos with consommé'),
+    [photoKey('tacos', 'Tacos de Birria')]: g('birria-tacos', 'Birria tacos with consommé'),
     [photoKey('tacos', 'Chicken Birria Tacos')]: g('birria-tacos', 'Birria tacos with consommé'),
     [photoKey('tacos', 'Tacos de Birria de Pollo')]: g('birria-tacos', 'Birria tacos with consommé'),
     [photoKey('tacos', 'Shrimp Tacos')]: g('shrimp-tacos-on-flour', 'Shrimp tacos'),
