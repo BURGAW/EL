@@ -95,7 +95,7 @@ const MENU_DATA = [
       { name: 'Sope', price: '$8.50', desc: 'Chicken, steak, shrimp, grilled onions and peppers.', meats: true },
       { name: 'Huarache', price: '$14.99', desc: 'Steak with grilled onions and peppers.' },
       { name: 'Gorditas', price: '$15.99', desc: 'Steak and chorizo, mozzarella, rice and beans.' },
-      { name: 'Tamales', price: '$10.99', desc: 'With rice, beans, and salad.' },
+      { name: 'Tamales', price: '$12.99', desc: 'With rice, beans, and salad.' },
       { name: 'Tostada', price: '$5.00', desc: 'Beans, your choice of meat, lettuce, sour cream, cheese and pico de gallo.', meats: true },
       { name: 'Empanadas', price: '$16.50', desc: 'Deep fried corn tortillas filled with chicken or cheese.', lunchProtein3: true }
     ]

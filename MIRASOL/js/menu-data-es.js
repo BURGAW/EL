@@ -94,7 +94,7 @@ const MENU_DATA_ES = [
       { name: 'Sope', price: '$8.50', desc: 'Pollo, asada, camarones, cebolla y chile asados.', meats: true },
       { name: 'Huarache', price: '$14.99', desc: 'Asada con cebolla y chile asados.' },
       { name: 'Gorditas', price: '$15.99', desc: 'Asada y chorizo, queso mozzarella, arroz y frijoles.' },
-      { name: 'Tamales', price: '$10.99', desc: 'Con arroz, frijoles y ensalada.' },
+      { name: 'Tamales', price: '$12.99', desc: 'Con arroz, frijoles y ensalada.' },
       { name: 'Tostada', price: '$5.00', desc: 'Frijoles, su carne preferida, lechuga, crema, queso y pico de gallo.', meats: true },
       { name: 'Empanadas', price: '$16.50', desc: 'Tortillas de maíz fritas rellenas de pollo o queso.', lunchProtein3: true }
     ]
