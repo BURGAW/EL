@@ -11,6 +11,26 @@
     'assets/images/facebook/pozole.jpg?v=vibe1',
   ];
 
+  function floaterHtml(src, i) {
+    return (
+      `<div class="hero-floater hero-floater--snap" style="--snap-i:${i}">` +
+      `<article class="hero-snap">` +
+      `<div class="hero-snap__paper">` +
+      `<div class="hero-snap__photo">` +
+      `<img src="${src}" alt="" loading="lazy" width="72" height="72">` +
+      `</div>` +
+      `</div>` +
+      `<span class="hero-snap__shadow" aria-hidden="true"></span>` +
+      `</article>` +
+      `</div>`
+    );
+  }
+
+  function fillFloaters(root, images, indexOffset) {
+    if (!root) return;
+    root.innerHTML = images.map((src, i) => floaterHtml(src, indexOffset + i)).join('');
+  }
+
   function initHeroRotator() {
     const root = document.getElementById('hero-rotator');
     if (!root) return;
@@ -20,22 +40,17 @@
   }
 
   function initHeroFloaters() {
-    const root = document.getElementById('hero-floaters');
-    if (!root) return;
+    const left = document.getElementById('hero-floaters-left');
+    const right = document.getElementById('hero-floaters-right');
+    const legacy = document.getElementById('hero-floaters');
 
-    root.innerHTML = FLOATERS.map(
-      (src, i) =>
-        `<div class="hero-floater hero-floater--snap" style="--snap-i:${i}">` +
-        `<article class="hero-snap">` +
-        `<div class="hero-snap__paper">` +
-        `<div class="hero-snap__photo">` +
-        `<img src="${src}" alt="" loading="lazy" width="140" height="140">` +
-        `</div>` +
-        `</div>` +
-        `<span class="hero-snap__shadow" aria-hidden="true"></span>` +
-        `</article>` +
-        `</div>`
-    ).join('');
+    if (left || right) {
+      fillFloaters(left, FLOATERS.slice(0, 2), 0);
+      fillFloaters(right, FLOATERS.slice(2, 4), 2);
+      return;
+    }
+
+    fillFloaters(legacy, FLOATERS, 0);
   }
 
   function init() {

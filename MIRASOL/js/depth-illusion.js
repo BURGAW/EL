@@ -102,7 +102,11 @@
     const hero = document.querySelector('.hero');
     const content = document.querySelector('.hero-content');
     const rotator = document.getElementById('hero-rotator');
-    const floaters = document.getElementById('hero-floaters');
+    const floaterNodes = [
+      document.getElementById('hero-floaters-left'),
+      document.getElementById('hero-floaters-right'),
+      document.getElementById('hero-floaters'),
+    ].filter(Boolean);
     if (!hero || !content) return;
 
     hero.addEventListener(
@@ -120,10 +124,10 @@
             `translateZ(-80px) scale(1.08) translate(${x * 18}px, ${y * 12}px)`;
         }
 
-        if (floaters) {
+        floaterNodes.forEach((floaters) => {
           floaters.style.transform =
             `translateZ(96px) translate(${x * -22}px, ${y * -16}px)`;
-        }
+        });
       },
       { passive: true }
     );
@@ -131,7 +135,9 @@
     hero.addEventListener('mouseleave', () => {
       content.style.transform = '';
       if (rotator) rotator.style.transform = '';
-      if (floaters) floaters.style.transform = '';
+      floaterNodes.forEach((floaters) => {
+        floaters.style.transform = '';
+      });
     });
   }
 
