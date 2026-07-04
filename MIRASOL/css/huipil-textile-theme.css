@@ -412,29 +412,29 @@ body.site-huipil .hero--single .hero-rotator__slide {
   transform: scale(1) !important;
   transition: none !important;
   top: 0 !important;
-  left: -4% !important;
-  right: -4% !important;
-  bottom: -8% !important;
+  left: -2% !important;
+  right: -2% !important;
+  bottom: -5% !important;
   background-size: cover !important;
-  background-position: center top !important;
+  background-position: center 3% !important;
   background-repeat: no-repeat !important;
 }
 
 @media (max-width: 768px) {
   body.site-huipil .hero--single .hero-rotator__slide {
-    left: -3% !important;
-    right: -3% !important;
-    bottom: -6% !important;
-    background-position: center top !important;
+    left: -2% !important;
+    right: -2% !important;
+    bottom: -4% !important;
+    background-position: center 5% !important;
   }
 }
 
 @media (min-width: 1200px) {
   body.site-huipil .hero--single .hero-rotator__slide {
-    left: -5% !important;
-    right: -5% !important;
-    bottom: -9% !important;
-    background-position: center top !important;
+    left: -3% !important;
+    right: -3% !important;
+    bottom: -6% !important;
+    background-position: center 2% !important;
   }
 }
 
@@ -443,9 +443,9 @@ body.site-huipil .hero-overlay {
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(ellipse 68% 58% at 50% 44%, rgba(16, 28, 48, 0.34) 0%, rgba(16, 28, 48, 0.12) 48%, transparent 72%),
-    linear-gradient(90deg, rgba(16, 28, 48, 0.38) 0%, transparent 20%, transparent 80%, rgba(16, 28, 48, 0.38) 100%),
-    linear-gradient(180deg, rgba(38, 28, 22, 0.12) 0%, rgba(38, 28, 22, 0.22) 55%, rgba(168, 40, 36, 0.32) 100%) !important;
+    radial-gradient(ellipse 62% 52% at 50% 46%, rgba(16, 28, 48, 0.32) 0%, rgba(16, 28, 48, 0.1) 50%, transparent 74%),
+    linear-gradient(90deg, rgba(16, 28, 48, 0.28) 0%, transparent 24%, transparent 76%, rgba(16, 28, 48, 0.28) 100%),
+    linear-gradient(180deg, rgba(38, 28, 22, 0.08) 0%, rgba(38, 28, 22, 0.2) 55%, rgba(168, 40, 36, 0.3) 100%) !important;
 }
 
 body.site-huipil:not(.menu-page) .hero {
@@ -2246,42 +2246,63 @@ body.site-huipil .fiesta-gold-dust {
   display: none !important;
 }
 
-/* Hero polaroids — 2 per side, anchored to hero edges */
-body.site-huipil:not(.menu-page) .hero-content {
+/* Hero layout — centered copy, 2 polaroids per side, no overlap */
+body.site-huipil:not(.menu-page) .hero-layout {
   position: relative;
   z-index: 5;
-  max-width: min(34rem, 62vw) !important;
-  padding-left: clamp(5.5rem, 14vw, 9rem) !important;
-  padding-right: clamp(5.5rem, 14vw, 9rem) !important;
+  display: grid;
+  grid-template-columns: minmax(4.75rem, 1fr) minmax(0, 32rem) minmax(4.75rem, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: clamp(0.45rem, 1.4vw, 1.1rem);
+  width: 100%;
+  max-width: min(56rem, 94vw);
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+body.site-huipil:not(.menu-page) .hero-layout .hero-content {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  z-index: 5;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding-left: clamp(0.35rem, 1.5vw, 1rem) !important;
+  padding-right: clamp(0.35rem, 1.5vw, 1rem) !important;
+  text-align: center !important;
 }
 
 body.site-huipil .hero-floaters {
-  position: absolute !important;
+  position: relative !important;
   inset: auto !important;
-  top: 50% !important;
+  top: auto !important;
   z-index: 4;
   pointer-events: none;
   overflow: visible !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center;
-  gap: clamp(0.4rem, 1.2vh, 0.75rem);
+  gap: clamp(0.35rem, 1vh, 0.65rem);
   padding: 0;
   margin: 0;
   width: auto !important;
   height: auto !important;
-  transform: translateY(-50%);
+  transform: none !important;
 }
 
 body.site-huipil .hero-floaters--left {
-  left: clamp(0.65rem, 2.8vw, 2.25rem) !important;
-  right: auto !important;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
   align-items: flex-end;
 }
 
 body.site-huipil .hero-floaters--right {
-  right: clamp(0.65rem, 2.8vw, 2.25rem) !important;
-  left: auto !important;
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: start;
   align-items: flex-start;
 }
 
@@ -2534,18 +2555,10 @@ body.site-huipil .story-spin-section .section {
 }
 
 @media (max-width: 1024px) {
-  body.site-huipil:not(.menu-page) .hero-content {
-    max-width: min(30rem, 72vw) !important;
-    padding-left: clamp(4.5rem, 12vw, 7rem) !important;
-    padding-right: clamp(4.5rem, 12vw, 7rem) !important;
-  }
-
-  body.site-huipil .hero-floaters--left {
-    left: clamp(0.45rem, 2vw, 1.25rem) !important;
-  }
-
-  body.site-huipil .hero-floaters--right {
-    right: clamp(0.45rem, 2vw, 1.25rem) !important;
+  body.site-huipil:not(.menu-page) .hero-layout {
+    grid-template-columns: minmax(4rem, 1fr) minmax(0, 28rem) minmax(4rem, 1fr);
+    max-width: min(50rem, 96vw);
+    gap: clamp(0.3rem, 1vw, 0.75rem);
   }
 
   body.site-huipil .hero-floaters {
@@ -2579,11 +2592,17 @@ body.site-huipil .story-spin-section .section {
 }
 
 @media (max-width: 768px) {
+  body.site-huipil:not(.menu-page) .hero-layout {
+    display: block;
+    max-width: 100%;
+  }
+
   body.site-huipil .hero-floaters,
   body.site-huipil .hero-floater {
     display: none !important;
   }
 
+  body.site-huipil:not(.menu-page) .hero-layout .hero-content,
   body.site-huipil .hero-content {
     max-width: 100% !important;
     padding-left: 1rem !important;
@@ -4064,29 +4083,21 @@ body.site-huipil .visit-flow::before {
   background: var(--tex-oax-serape) !important;
 }
 
-/* ── v60 · polaroids pinned left/right of hero ── */
+/* ── v61 · roof at top · grid-centered hero copy ── */
 @media (min-width: 901px) {
-  body.site-huipil:not(.menu-page) .hero-content {
-    padding-left: clamp(6.5rem, 15vw, 10rem) !important;
-    padding-right: clamp(6.5rem, 15vw, 10rem) !important;
-  }
-
-  body.site-huipil .hero-floaters--left {
-    left: clamp(1rem, 3.5vw, 3rem) !important;
-  }
-
-  body.site-huipil .hero-floaters--right {
-    right: clamp(1rem, 3.5vw, 3rem) !important;
+  body.site-huipil:not(.menu-page) .hero-layout {
+    grid-template-columns: minmax(5.5rem, 1fr) minmax(0, 34rem) minmax(5.5rem, 1fr);
+    max-width: min(58rem, 92vw);
   }
 
   body.site-huipil:not(.menu-page) .hero-floater--snap {
-    --snap-w: clamp(52px, 5vw, 72px);
+    --snap-w: clamp(50px, 4.6vw, 68px);
     width: var(--snap-w) !important;
     max-width: var(--snap-w) !important;
   }
 
   body.site-huipil .hero-floaters .hero-snap__paper {
-    padding: 6px 6px 18px;
+    padding: 5px 5px 16px;
   }
 }
 
