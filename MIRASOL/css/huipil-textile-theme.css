@@ -2246,49 +2246,42 @@ body.site-huipil .fiesta-gold-dust {
   display: none !important;
 }
 
-/* Hero stage — title centered, 2 polaroids per side */
-body.site-huipil:not(.menu-page) .hero-stage {
+/* Hero polaroids — 2 per side, anchored to hero edges */
+body.site-huipil:not(.menu-page) .hero-content {
   position: relative;
-  z-index: 4;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(0.65rem, 2.2vw, 1.5rem);
-  width: 100%;
-  max-width: min(54rem, 96vw);
-  margin: 0 auto;
-  pointer-events: none;
-}
-
-body.site-huipil:not(.menu-page) .hero-stage .hero-content {
-  flex: 0 1 auto;
-  width: auto !important;
-  max-width: min(30rem, 50vw) !important;
-  margin: 0 !important;
-  padding-left: clamp(0.35rem, 1.5vw, 1rem) !important;
-  padding-right: clamp(0.35rem, 1.5vw, 1rem) !important;
+  z-index: 5;
+  max-width: min(34rem, 62vw) !important;
+  padding-left: clamp(5.5rem, 14vw, 9rem) !important;
+  padding-right: clamp(5.5rem, 14vw, 9rem) !important;
 }
 
 body.site-huipil .hero-floaters {
-  position: relative !important;
+  position: absolute !important;
   inset: auto !important;
-  z-index: 3;
-  flex: 0 0 auto;
+  top: 50% !important;
+  z-index: 4;
   pointer-events: none;
   overflow: visible !important;
   display: flex !important;
-  flex-direction: column;
+  flex-direction: column !important;
   justify-content: center;
-  gap: clamp(0.35rem, 1vh, 0.65rem);
+  gap: clamp(0.4rem, 1.2vh, 0.75rem);
   padding: 0;
+  margin: 0;
+  width: auto !important;
+  height: auto !important;
+  transform: translateY(-50%);
 }
 
 body.site-huipil .hero-floaters--left {
+  left: clamp(0.65rem, 2.8vw, 2.25rem) !important;
+  right: auto !important;
   align-items: flex-end;
 }
 
 body.site-huipil .hero-floaters--right {
+  right: clamp(0.65rem, 2.8vw, 2.25rem) !important;
+  left: auto !important;
   align-items: flex-start;
 }
 
@@ -2541,13 +2534,18 @@ body.site-huipil .story-spin-section .section {
 }
 
 @media (max-width: 1024px) {
-  body.site-huipil:not(.menu-page) .hero-stage {
-    gap: clamp(0.45rem, 1.6vw, 0.9rem);
-    max-width: min(48rem, 98vw);
+  body.site-huipil:not(.menu-page) .hero-content {
+    max-width: min(30rem, 72vw) !important;
+    padding-left: clamp(4.5rem, 12vw, 7rem) !important;
+    padding-right: clamp(4.5rem, 12vw, 7rem) !important;
   }
 
-  body.site-huipil:not(.menu-page) .hero-stage .hero-content {
-    max-width: min(26rem, 46vw) !important;
+  body.site-huipil .hero-floaters--left {
+    left: clamp(0.45rem, 2vw, 1.25rem) !important;
+  }
+
+  body.site-huipil .hero-floaters--right {
+    right: clamp(0.45rem, 2vw, 1.25rem) !important;
   }
 
   body.site-huipil .hero-floaters {
@@ -2581,6 +2579,7 @@ body.site-huipil .story-spin-section .section {
 }
 
 @media (max-width: 768px) {
+  body.site-huipil .hero-floaters,
   body.site-huipil .hero-floater {
     display: none !important;
   }
@@ -4065,10 +4064,19 @@ body.site-huipil .visit-flow::before {
   background: var(--tex-oax-serape) !important;
 }
 
-/* ── v59 · roof flush top · 2 polaroids per side ── */
+/* ── v60 · polaroids pinned left/right of hero ── */
 @media (min-width: 901px) {
-  body.site-huipil:not(.menu-page) .hero-stage {
-    gap: clamp(0.85rem, 2.8vw, 1.85rem);
+  body.site-huipil:not(.menu-page) .hero-content {
+    padding-left: clamp(6.5rem, 15vw, 10rem) !important;
+    padding-right: clamp(6.5rem, 15vw, 10rem) !important;
+  }
+
+  body.site-huipil .hero-floaters--left {
+    left: clamp(1rem, 3.5vw, 3rem) !important;
+  }
+
+  body.site-huipil .hero-floaters--right {
+    right: clamp(1rem, 3.5vw, 3rem) !important;
   }
 
   body.site-huipil:not(.menu-page) .hero-floater--snap {
