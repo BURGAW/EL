@@ -139,6 +139,10 @@
     [photoKey('daily-lunch', 'LS Birria Tacos')]: blank(),
 
     /* appetizers */
+    [photoKey('appetizers', 'Queso')]: blank(),
+    [photoKey('appetizers', 'Choriqueso')]: blank(),
+    [photoKey('appetizers', 'Bean Dip')]: blank(),
+    [photoKey('appetizers', 'Frijoles con Queso')]: blank(),
     [photoKey('appetizers', 'Sope')]: blank(),
     [photoKey('appetizers', 'Huarache')]: blank(),
     [photoKey('appetizers', 'Gorditas')]: blank(),
