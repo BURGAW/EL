@@ -185,7 +185,7 @@
 
     /* fajitas — Campechanas / Mix photo removed (wrong fajita-mix image; replace later) */
     [photoKey('fajitas', 'Shrimp Fajitas')]: g('shrimp-fajitas', 'Shrimp fajitas'),
-    [photoKey('fajitas', 'Steak Fajitas')]: g('steak-aca', 'Steak fajitas'),
+    /* Steak Fajitas photo removed (wrong steak-aca image; replace later) */
     [photoKey('fajitas', 'Chicken Fajitas')]: g('grilled-chicken-platter', 'Chicken fajitas'),
 
     /* enchiladas */
@@ -207,8 +207,7 @@
     [photoKey('platters', 'Molcajete')]: g('molcajete', 'Molcajete'),
     /* Cazuelón photo removed (was wrong davey-special image; replace later) */
     [photoKey('platters', 'Tlayuda')]: g('tylayuda', 'Tlayuda'),
-    /* Nachos photo removed (wrong image; replace later) */
-    [photoKey('platters', 'Fried Steak')]: g('steak-aca', 'Fried steak'),
+    /* Nachos / Fried Steak photos removed (wrong images; replace later) */
     [photoKey('platters', 'Grilled or Fried Chicken')]: g('grilled-chicken-platter', 'Grilled chicken platter'),
     [photoKey('platters', 'Parrillada')]: g('parrilliada', 'Parrillada'),
     [photoKey('platters', 'Camarones Empanizados')]: g('fried-shrimp-platter', 'Breaded shrimp'),
