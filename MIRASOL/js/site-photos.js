@@ -67,14 +67,14 @@
       'daily-lunch': { src: groky('multi-item'), alt: 'Daily lunch favorites' },
       appetizers: { src: groky('empandas'), alt: 'Sopes and antojitos' },
       tacos: { src: groky('birria-tacos'), alt: 'Birria tacos with consommé' },
-      burritos: { src: groky('burrito-meal'), alt: 'Burrito plate' },
+      burritos: { src: groky('califorina-burrito'), alt: 'Burrito plate' },
       chimichangas: { src: groky('chimichanga'), alt: 'Chimichanga' },
       quesadillas: { src: groky('quesadilla-de-maiz'), alt: 'Quesadilla' },
       tortas: { src: groky('torta'), alt: 'Torta' },
       fajitas: { src: groky('shrimp-fajitas'), alt: 'Sizzling fajitas' },
       enchiladas: { src: groky('chilaquiles'), alt: 'Queso enchiladas' },
       platters: { src: groky('carne-asada'), alt: 'Combo platters' },
-      kids: { src: groky('burrito-meal'), alt: 'Kids plate' },
+      kids: { src: groky('torta'), alt: 'Kids plate' },
       broths: { src: groky('menudo'), alt: 'Menudo' },
       desserts: { src: groky('fruit-cups'), alt: 'Fresh fruit cups' },
       drinks: { src: groky('fruit-cups'), alt: 'Aguas frescas' },
@@ -151,13 +151,9 @@
     [photoKey('tacos', 'Tacos Campechanos')]: g('order-of-tacos-2', 'Tacos campechanos'),
     /* Tacos Albañil photo removed (wrong huevos-con-chorizo image; replace later) */
 
-    /* burritos */
-    [photoKey('burritos', 'Burrito Meal')]: g('burrito-meal', 'Burrito meal'),
+    /* burritos — Burrito Meal / Campechano / Shrimp / Veggie photos removed (wrong burrito-meal.jpg; replace later) */
     /* Fajita Burrito / Choripollo Burrito photos removed (wrong images; replace later) */
-    [photoKey('burritos', 'Burrito Campechano')]: g('burrito-meal', 'Burrito campechano'),
     [photoKey('burritos', 'California Burrito')]: g('califorina-burrito', 'California burrito'),
-    [photoKey('burritos', 'Shrimp Burrito')]: g('burrito-meal', 'Shrimp burrito'),
-    [photoKey('burritos', 'Veggie Burrito')]: g('burrito-meal', 'Veggie burrito'),
     /* Burrito Huevos a la Mexicana photo removed (wrong image; replace later) */
 
     /* chimichangas */
@@ -206,8 +202,7 @@
     [photoKey('platters', 'Huevos Enchilados')]: g('huevos-enchilados', 'Huevos enchilados'),
 
     /* kids */
-    /* Kids Quesadilla photo removed (wrong quesadilla.jpg; replace later) */
-    [photoKey('kids', 'Kids Burrito')]: g('burrito-meal', 'Kids burrito'),
+    /* Kids Quesadilla / Kids Burrito photos removed (wrong images; replace later) */
     /* kids ACP / Scrambled Eggs photos removed (wrong images; replace later) */
 
     /* broths */
@@ -238,14 +233,14 @@
     'daily-lunch': g('multi-item', 'Daily lunch'),
     appetizers: g('empandas', 'Appetizers'),
     tacos: g('birria-tacos', 'Tacos'),
-    burritos: g('burrito-meal', 'Burritos'),
+    burritos: g('califorina-burrito', 'Burritos'),
     chimichangas: g('chimichanga', 'Chimichangas'),
     quesadillas: g('quesadilla-de-maiz', 'Quesadillas'),
     tortas: g('torta', 'Tortas'),
     fajitas: g('shrimp-fajitas', 'Fajitas'),
     enchiladas: g('chilaquiles', 'Enchiladas'),
     platters: g('carne-asada', 'Platters'),
-    kids: g('burrito-meal', 'Kids menu'),
+    kids: g('torta', 'Kids menu'),
     broths: g('menudo', 'Weekend broths'),
     drinks: g('fruit-cups', 'Drinks'),
     alcohol: g('mango-margarita', 'Bar drinks'),
