@@ -29,7 +29,6 @@
       { src: groky('mango-margarita'), alt: 'Mango margarita', caption: 'Margaritas' },
       { src: groky('chilaquiles'), alt: 'Chilaquiles platter', caption: 'Chilaquiles' },
       { src: groky('torta'), alt: 'Mexican torta', caption: 'Torta' },
-      { src: groky('quesadilla'), alt: 'Quesadilla plate', caption: 'Quesadilla' },
       { src: groky('chimichanga'), alt: 'Chimichanga', caption: 'Chimichanga' },
       { src: groky('mojara'), alt: 'Fried tilapia platter', caption: 'Mojarra Frita' },
       { src: groky('breakfast-platters'), alt: 'Breakfast platters', caption: 'Breakfast' },
@@ -53,7 +52,6 @@
       'daily-lunch': [
         { src: groky('birria-tacos'), alt: 'Birria tacos' },
         { src: groky('crunchy-tacos'), alt: 'Crunchy tacos' },
-        { src: groky('quesadilla'), alt: 'Quesadilla' },
       ],
       dinner: [
         { src: groky('carne-asada'), alt: 'Carne asada' },
@@ -71,12 +69,12 @@
       tacos: { src: groky('birria-tacos'), alt: 'Birria tacos with consommé' },
       burritos: { src: groky('burrito-meal'), alt: 'Burrito plate' },
       chimichangas: { src: groky('chimichanga'), alt: 'Chimichanga' },
-      quesadillas: { src: groky('quesadilla'), alt: 'Quesadilla' },
+      quesadillas: { src: groky('quesadilla-de-maiz'), alt: 'Quesadilla' },
       tortas: { src: groky('torta'), alt: 'Torta' },
       fajitas: { src: groky('shrimp-fajitas'), alt: 'Sizzling fajitas' },
       enchiladas: { src: groky('chilaquiles'), alt: 'Queso enchiladas' },
       platters: { src: groky('carne-asada'), alt: 'Combo platters' },
-      kids: { src: groky('quesadilla'), alt: 'Kids plate' },
+      kids: { src: groky('burrito-meal'), alt: 'Kids plate' },
       broths: { src: groky('menudo'), alt: 'Menudo' },
       desserts: { src: groky('fruit-cups'), alt: 'Fresh fruit cups' },
       drinks: { src: groky('fruit-cups'), alt: 'Aguas frescas' },
@@ -125,8 +123,7 @@
     [photoKey('daily-lunch', 'Crunchy Tacos')]: g('crunchy-tacos', 'Crunchy tacos'),
     [photoKey('daily-lunch', 'Tacos')]: g('order-of-tacos', 'Tacos with rice and beans'),
     [photoKey('daily-lunch', 'Empanadas')]: g('empandas', 'Empanadas'),
-    /* daily-lunch Enchiladas photo removed (wrong queso-enchiladas image; replace later) */
-    [photoKey('daily-lunch', 'Quesadilla')]: g('quesadilla', 'Quesadilla'),
+    /* daily-lunch Enchiladas / Quesadilla photos removed (wrong images; replace later) */
     [photoKey('daily-lunch', 'Half-Size Torta')]: g('torta', 'Half-size torta'),
     [photoKey('daily-lunch', 'Tamales')]: g('ls-tamles', 'Tamales'),
     /* daily-lunch Fajitas / Fried Eggs / Small ACP photos removed (wrong images; replace later) */
@@ -168,9 +165,7 @@
     [photoKey('chimichangas', 'Shrimp Chimichanga')]: g('chimi', 'Shrimp chimichanga'),
     [photoKey('chimichangas', 'Burrito Mummia')]: g('burrito-mommia', 'Burrito mummia'),
 
-    /* quesadillas */
-    [photoKey('quesadillas', 'Quesadilla Meal')]: g('quesadilla', 'Quesadilla meal'),
-    [photoKey('quesadillas', 'Shrimp Quesadilla')]: g('quesadilla', 'Shrimp quesadilla'),
+    /* quesadillas — Quesadilla Meal / Shrimp Quesadilla photo removed (wrong quesadilla.jpg; replace later) */
     [photoKey('quesadillas', 'Veggie Quesadilla')]: g('quesadilla-de-maiz', 'Veggie quesadilla'),
     /* Fajita Quesadilla photo removed (wrong fajita-mix image; replace later) */
     [photoKey('quesadillas', 'Quesadilla de Maíz')]: g('quesadilla-de-maiz', 'Quesadilla de maíz'),
@@ -211,7 +206,7 @@
     [photoKey('platters', 'Huevos Enchilados')]: g('huevos-enchilados', 'Huevos enchilados'),
 
     /* kids */
-    [photoKey('kids', 'Kids Quesadilla')]: g('quesadilla', 'Kids quesadilla'),
+    /* Kids Quesadilla photo removed (wrong quesadilla.jpg; replace later) */
     [photoKey('kids', 'Kids Burrito')]: g('burrito-meal', 'Kids burrito'),
     /* kids ACP / Scrambled Eggs photos removed (wrong images; replace later) */
 
@@ -245,12 +240,12 @@
     tacos: g('birria-tacos', 'Tacos'),
     burritos: g('burrito-meal', 'Burritos'),
     chimichangas: g('chimichanga', 'Chimichangas'),
-    quesadillas: g('quesadilla', 'Quesadillas'),
+    quesadillas: g('quesadilla-de-maiz', 'Quesadillas'),
     tortas: g('torta', 'Tortas'),
     fajitas: g('shrimp-fajitas', 'Fajitas'),
     enchiladas: g('chilaquiles', 'Enchiladas'),
     platters: g('carne-asada', 'Platters'),
-    kids: g('quesadilla', 'Kids menu'),
+    kids: g('burrito-meal', 'Kids menu'),
     broths: g('menudo', 'Weekend broths'),
     drinks: g('fruit-cups', 'Drinks'),
     alcohol: g('mango-margarita', 'Bar drinks'),
