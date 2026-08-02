@@ -76,7 +76,7 @@
       fajitas: { src: groky('shrimp-fajitas'), alt: 'Sizzling fajitas' },
       enchiladas: { src: groky('queso-enchiladas'), alt: 'Queso enchiladas' },
       platters: { src: groky('carne-asada'), alt: 'Combo platters' },
-      kids: { src: groky('grilled-chicken-platter'), alt: 'Kids plate' },
+      kids: { src: groky('quesadilla'), alt: 'Kids plate' },
       broths: { src: groky('menudo'), alt: 'Menudo' },
       desserts: { src: groky('fruit-cups'), alt: 'Fresh fruit cups' },
       drinks: { src: groky('fruit-cups'), alt: 'Aguas frescas' },
@@ -129,8 +129,7 @@
     [photoKey('daily-lunch', 'Quesadilla')]: g('quesadilla', 'Quesadilla'),
     [photoKey('daily-lunch', 'Half-Size Torta')]: g('torta', 'Half-size torta'),
     [photoKey('daily-lunch', 'Tamales')]: g('ls-tamles', 'Tamales'),
-    /* daily-lunch Fajitas / Fried Eggs photos removed (wrong images; replace later) */
-    [photoKey('daily-lunch', 'Small ACP')]: g('grilled-chicken-platter', 'Arroz con pollo'),
+    /* daily-lunch Fajitas / Fried Eggs / Small ACP photos removed (wrong images; replace later) */
     /* Davey's Special photo removed (wrong image; replace later) */
     [photoKey('daily-lunch', 'Birria Tacos')]: g('birria-tacos', 'Birria tacos'),
 
@@ -185,8 +184,7 @@
 
     /* fajitas — Campechanas / Mix photo removed (wrong fajita-mix image; replace later) */
     [photoKey('fajitas', 'Shrimp Fajitas')]: g('shrimp-fajitas', 'Shrimp fajitas'),
-    /* Steak Fajitas photo removed (wrong steak-aca image; replace later) */
-    [photoKey('fajitas', 'Chicken Fajitas')]: g('grilled-chicken-platter', 'Chicken fajitas'),
+    /* Steak Fajitas / Chicken Fajitas photos removed (wrong images; replace later) */
 
     /* enchiladas */
     [photoKey('enchiladas', 'Enchiladas')]: g('queso-enchiladas', 'Enchiladas'),
@@ -194,8 +192,7 @@
     [photoKey('enchiladas', 'Enchiladas Campechanas')]: g('queso-enchiladas', 'Enchiladas campechanas'),
 
     /* platters */
-    [photoKey('platters', 'ACP (Arroz Con Pollo)')]: g('grilled-chicken-platter', 'Arroz con pollo'),
-    /* Davey's Special photo removed (wrong image; replace later) */
+    /* ACP / Davey's Special photos removed (wrong images; replace later) */
     [photoKey('platters', 'Carne Asada')]: g('carne-asada', 'Carne asada'),
     [photoKey('platters', 'Oaxaqueño')]: g('platilla-oaxacaqueno', 'Oaxaqueño platter'),
     [photoKey('platters', 'Oaxaqueño de Pollo')]: g('platillo', 'Oaxaqueño de pollo'),
@@ -207,8 +204,7 @@
     [photoKey('platters', 'Molcajete')]: g('molcajete', 'Molcajete'),
     /* Cazuelón photo removed (was wrong davey-special image; replace later) */
     [photoKey('platters', 'Tlayuda')]: g('tylayuda', 'Tlayuda'),
-    /* Nachos / Fried Steak photos removed (wrong images; replace later) */
-    [photoKey('platters', 'Grilled or Fried Chicken')]: g('grilled-chicken-platter', 'Grilled chicken platter'),
+    /* Nachos / Fried Steak / Grilled or Fried Chicken photos removed (wrong images; replace later) */
     [photoKey('platters', 'Parrillada')]: g('parrilliada', 'Parrillada'),
     [photoKey('platters', 'Camarones Empanizados')]: g('fried-shrimp-platter', 'Breaded shrimp'),
     [photoKey('platters', 'Coctel de Camarones')]: g('coctel-de-camaron', 'Coctel de camarones'),
@@ -219,8 +215,7 @@
     /* kids */
     [photoKey('kids', 'Kids Quesadilla')]: g('quesadilla', 'Kids quesadilla'),
     [photoKey('kids', 'Kids Burrito')]: g('burrito-meal', 'Kids burrito'),
-    [photoKey('kids', 'Kids ACP')]: g('grilled-chicken-platter', 'Kids ACP'),
-    /* kids Scrambled Eggs photo removed (wrong huevos-a-la-mexicana image; replace later) */
+    /* kids ACP / Scrambled Eggs photos removed (wrong images; replace later) */
 
     /* broths */
     [photoKey('broths', 'Caldo de Res')]: g('caldo-de-res', 'Caldo de res'),
@@ -257,7 +252,7 @@
     fajitas: g('shrimp-fajitas', 'Fajitas'),
     enchiladas: g('queso-enchiladas', 'Enchiladas'),
     platters: g('carne-asada', 'Platters'),
-    kids: g('grilled-chicken-platter', 'Kids menu'),
+    kids: g('quesadilla', 'Kids menu'),
     broths: g('menudo', 'Weekend broths'),
     drinks: g('fruit-cups', 'Drinks'),
     alcohol: g('mango-margarita', 'Bar drinks'),
