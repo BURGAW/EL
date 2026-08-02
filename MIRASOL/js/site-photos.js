@@ -45,7 +45,7 @@
         { src: groky('chilaquiles-2'), alt: 'Chilaquiles' },
       ],
       'daily-lunch': [
-        { src: groky('crunchy-tacos'), alt: 'Crunchy tacos' },
+        { src: groky('order-of-tacos'), alt: 'Tacos' },
       ],
       dinner: [
         { src: groky('shrimp-fajitas'), alt: 'Fajitas' },
@@ -59,7 +59,7 @@
       breakfast: { src: groky('chilaquiles-2'), alt: 'Breakfast at El Mirasol' },
       'daily-lunch': { src: groky('multi-item'), alt: 'Daily lunch favorites' },
       appetizers: { src: groky('empandas'), alt: 'Sopes and antojitos' },
-      tacos: { src: groky('crunchy-tacos'), alt: 'Tacos' },
+      tacos: { src: groky('order-of-tacos'), alt: 'Tacos' },
       burritos: { src: groky('califorina-burrito'), alt: 'Burrito plate' },
       chimichangas: { src: groky('chimichanga'), alt: 'Chimichanga' },
       quesadillas: { src: groky('quesabirria'), alt: 'Quesadilla' },
@@ -124,7 +124,8 @@
     [photoKey('breakfast', 'Aguas Frescas')]: blank(),
 
     /* daily lunch */
-    [photoKey('daily-lunch', 'Crunchy Tacos')]: g('crunchy-tacos', 'Crunchy tacos'),
+    [photoKey('daily-lunch', 'Crunchy Tacos')]: blank(),
+    [photoKey('daily-lunch', 'Tacos Crunchy')]: blank(),
     [photoKey('daily-lunch', 'Tacos')]: g('order-of-tacos', 'Tacos with rice and beans'),
     [photoKey('daily-lunch', 'Empanadas')]: g('empandas', 'Empanadas'),
     [photoKey('daily-lunch', 'Enchiladas')]: blank(),
@@ -151,7 +152,8 @@
     /* tacos */
     [photoKey('tacos', 'Taco')]: g('tacos', 'Four tacos shown — $3.12 each'),
     [photoKey('tacos', 'Order of Tacos')]: g('order-of-tacos', 'Order of tacos'),
-    [photoKey('tacos', 'Crunchy Tacos')]: g('crunchy-tacos', 'Crunchy tacos'),
+    [photoKey('tacos', 'Crunchy Tacos')]: blank(),
+    [photoKey('tacos', 'Tacos Crunchy')]: blank(),
     [photoKey('tacos', 'Tacos Dorados')]: g('tacos-dorados', 'Tacos dorados'),
     [photoKey('tacos', 'Birria Tacos')]: blank(),
     [photoKey('tacos', 'Tacos de Birria')]: blank(),
@@ -296,7 +298,7 @@
     breakfast: g('chilaquiles-2', 'Breakfast at El Mirasol'),
     'daily-lunch': g('multi-item', 'Daily lunch'),
     appetizers: g('empandas', 'Appetizers'),
-    tacos: g('crunchy-tacos', 'Tacos'),
+    tacos: g('order-of-tacos', 'Tacos'),
     burritos: g('califorina-burrito', 'Burritos'),
     chimichangas: g('chimichanga', 'Chimichangas'),
     quesadillas: g('quesabirria', 'Quesadillas'),
