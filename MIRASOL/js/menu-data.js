@@ -65,8 +65,8 @@ const MENU_DATA = [
   },
   {
     id: 'daily-lunch',
-    title: 'Daily Lunch',
-    note: 'Our daily lunch menu — served 10 AM – 3 PM.',
+    title: 'Daily Lunch (LS)',
+    note: 'LS = Lunch Size · Served 10 AM – 3 PM.',
     items: [
       { name: 'Crunchy Tacos', price: '$11.99', desc: 'Ground beef or chicken with rice and beans.', lunchProtein2: true },
       { name: 'Tacos', price: '$11.99', desc: 'Ground beef or chicken with rice and beans.', lunchProtein2: true },

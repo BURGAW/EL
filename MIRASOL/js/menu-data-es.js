@@ -64,8 +64,8 @@ const MENU_DATA_ES = [
   },
   {
     id: 'daily-lunch',
-    title: 'Almuerzo del Día',
-    note: 'Menú de almuerzo diario — de 10 AM a 3 PM.',
+    title: 'Almuerzo del Día (LS)',
+    note: 'LS = Tamaño de almuerzo (Lunch Size) · De 10 AM a 3 PM.',
     items: [
       { name: 'Tacos Crunchy', price: '$11.99', desc: 'Res molida o pollo con arroz y frijoles.', lunchProtein2: true },
       { name: 'Tacos', price: '$11.99', desc: 'Res molida o pollo con arroz y frijoles.', lunchProtein2: true },
