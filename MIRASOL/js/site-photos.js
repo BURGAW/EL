@@ -72,7 +72,7 @@
     categorySpotlight: {
       breakfast: { src: groky('breakfast-platters'), alt: 'Breakfast at El Mirasol' },
       'daily-lunch': { src: groky('multi-item'), alt: 'Daily lunch favorites' },
-      appetizers: { src: groky('2-sopes'), alt: 'Sopes and antojitos' },
+      appetizers: { src: groky('street-corn-with-no-chile-powder'), alt: 'Sopes and antojitos' },
       tacos: { src: groky('birria-tacos'), alt: 'Birria tacos with consommé' },
       burritos: { src: groky('burrito-meal'), alt: 'Burrito plate' },
       chimichangas: { src: groky('chimichanga'), alt: 'Chimichanga' },
@@ -143,8 +143,7 @@
     [photoKey('daily-lunch', "Davey's Special")]: g('davey-special', "Davey's Special"),
     [photoKey('daily-lunch', 'Birria Tacos')]: g('birria-tacos', 'Birria tacos'),
 
-    /* appetizers */
-    [photoKey('appetizers', 'Sope')]: g('2-sopes', 'Two sopes shown — $8.50 each'),
+    /* appetizers — Sope photo removed (wrong image; replace later) */
     [photoKey('appetizers', 'Huarache')]: g('huarache', 'Huarache'),
     [photoKey('appetizers', 'Gorditas')]: g('masita', 'Gorditas'),
     [photoKey('appetizers', 'Tamales')]: g('ls-tamles', 'Tamales'),
@@ -264,7 +263,7 @@
   const sectionDefaultPhotos = {
     breakfast: g('breakfast-platters', 'Breakfast at El Mirasol'),
     'daily-lunch': g('multi-item', 'Daily lunch'),
-    appetizers: g('2-sopes', 'Appetizers'),
+    appetizers: g('street-corn-with-no-chile-powder', 'Appetizers'),
     tacos: g('birria-tacos', 'Tacos'),
     burritos: g('burrito-meal', 'Burritos'),
     chimichangas: g('chimichanga', 'Chimichangas'),
