@@ -2249,18 +2249,19 @@ body.site-huipil .fiesta-gold-dust {
   display: none !important;
 }
 
-/* Hero layout — centered copy, 2 polaroids per side, no overlap */
+/* Hero layout — centered copy; polaroids drop low, tuck in, clear EL MIRASOL sign */
 body.site-huipil:not(.menu-page) .hero-layout {
   position: relative;
   z-index: 5;
   display: grid;
-  grid-template-columns: minmax(4.75rem, 1fr) minmax(0, 32rem) minmax(4.75rem, 1fr);
-  align-items: center;
+  grid-template-columns: minmax(3.25rem, 0.72fr) minmax(0, 34rem) minmax(3.25rem, 0.72fr);
+  align-items: end;
   justify-items: center;
-  gap: clamp(0.45rem, 1.4vw, 1.1rem);
+  gap: clamp(0.2rem, 0.8vw, 0.55rem);
   width: 100%;
-  max-width: min(56rem, 94vw);
+  max-width: min(52rem, 92vw);
   margin: 0 auto;
+  padding-bottom: clamp(0.35rem, 1.5vh, 0.85rem);
   pointer-events: none;
 }
 
@@ -2269,6 +2270,7 @@ body.site-huipil:not(.menu-page) .hero-layout .hero-content {
   grid-row: 1;
   position: relative;
   z-index: 5;
+  align-self: center;
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
@@ -2286,8 +2288,8 @@ body.site-huipil .hero-floaters {
   overflow: visible !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center;
-  gap: clamp(0.35rem, 1vh, 0.65rem);
+  justify-content: flex-end;
+  gap: 0.2rem;
   padding: 0;
   margin: 0;
   width: auto !important;
@@ -2299,26 +2301,37 @@ body.site-huipil .hero-floaters--left {
   grid-column: 1;
   grid-row: 1;
   justify-self: end;
+  align-self: end;
   align-items: flex-end;
+  /* Drop below the hung EL MIRASOL sign on the left porch */
+  margin-top: clamp(4.5rem, 14vh, 7.5rem);
+  margin-right: -0.15rem;
 }
 
 body.site-huipil .hero-floaters--right {
   grid-column: 3;
   grid-row: 1;
   justify-self: start;
+  align-self: end;
   align-items: flex-start;
+  margin-top: clamp(3.75rem, 12vh, 6.5rem);
+  margin-left: -0.15rem;
+}
+
+body.site-huipil .hero-floaters--left .hero-floater:nth-child(1) {
+  margin-right: 0.55rem;
 }
 
 body.site-huipil .hero-floaters--left .hero-floater:nth-child(2) {
-  margin-right: 0.35rem;
+  margin-right: 0.1rem;
 }
 
 body.site-huipil .hero-floaters--right .hero-floater:nth-child(1) {
-  margin-left: 0.25rem;
+  margin-left: 0.1rem;
 }
 
 body.site-huipil .hero-floaters--right .hero-floater:nth-child(2) {
-  margin-left: 0.55rem;
+  margin-left: 0.5rem;
 }
 
 body.site-huipil .hero-floater {
@@ -2333,25 +2346,26 @@ body.site-huipil .hero-floater {
 }
 
 body.site-huipil .hero-floater--snap {
-  --snap-w: clamp(48px, 4.8vw, 68px);
+  --snap-w: clamp(44px, 4.4vw, 62px);
   width: var(--snap-w) !important;
   max-width: var(--snap-w) !important;
 }
 
+/* Stronger angles, tucked stack */
 body.site-huipil .hero-floaters--left .hero-floater--snap:nth-child(1) {
-  --snap-tilt: -9deg;
+  --snap-tilt: -14deg;
 }
 
 body.site-huipil .hero-floaters--left .hero-floater--snap:nth-child(2) {
-  --snap-tilt: -5deg;
+  --snap-tilt: -7deg;
 }
 
 body.site-huipil .hero-floaters--right .hero-floater--snap:nth-child(1) {
-  --snap-tilt: 6deg;
+  --snap-tilt: 8deg;
 }
 
 body.site-huipil .hero-floaters--right .hero-floater--snap:nth-child(2) {
-  --snap-tilt: 9deg;
+  --snap-tilt: 13deg;
 }
 
 body.site-huipil .hero-floaters .hero-snap__paper {
@@ -2559,17 +2573,26 @@ body.site-huipil .story-spin-section .section {
 
 @media (max-width: 1024px) {
   body.site-huipil:not(.menu-page) .hero-layout {
-    grid-template-columns: minmax(4rem, 1fr) minmax(0, 28rem) minmax(4rem, 1fr);
-    max-width: min(50rem, 96vw);
-    gap: clamp(0.3rem, 1vw, 0.75rem);
+    grid-template-columns: minmax(2.75rem, 0.7fr) minmax(0, 28rem) minmax(2.75rem, 0.7fr);
+    max-width: min(48rem, 94vw);
+    gap: clamp(0.15rem, 0.7vw, 0.4rem);
+    align-items: end;
   }
 
   body.site-huipil .hero-floaters {
-    gap: clamp(0.25rem, 0.8vh, 0.5rem);
+    gap: 0.15rem;
+  }
+
+  body.site-huipil .hero-floaters--left {
+    margin-top: clamp(3.5rem, 12vh, 5.5rem);
+  }
+
+  body.site-huipil .hero-floaters--right {
+    margin-top: clamp(3rem, 10vh, 5rem);
   }
 
   body.site-huipil .hero-floater--snap {
-    --snap-w: clamp(40px, 4.2vw, 56px);
+    --snap-w: clamp(38px, 4vw, 52px);
     width: var(--snap-w) !important;
     max-width: var(--snap-w) !important;
   }
