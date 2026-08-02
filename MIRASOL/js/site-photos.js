@@ -205,9 +205,7 @@
     /* Kids Quesadilla / Kids Burrito photos removed (wrong images; replace later) */
     /* kids ACP / Scrambled Eggs photos removed (wrong images; replace later) */
 
-    /* broths */
-    [photoKey('broths', 'Caldo de Res')]: g('caldo-de-res', 'Caldo de res'),
-    [photoKey('broths', 'Caldo de Borrego')]: g('caldo-de-res', 'Caldo de borrego'),
+    /* broths — Caldo de Res / Caldo de Borrego photos removed (wrong caldo-de-res.jpg; replace later) */
     [photoKey('broths', 'Menudo')]: g('menudo', 'Menudo'),
     [photoKey('broths', 'Siete Mares')]: g('7-mares', 'Siete mares'),
 
