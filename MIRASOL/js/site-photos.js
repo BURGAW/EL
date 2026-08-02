@@ -32,7 +32,6 @@
       { src: groky('quesadilla'), alt: 'Quesadilla plate', caption: 'Quesadilla' },
       { src: groky('chimichanga'), alt: 'Chimichanga', caption: 'Chimichanga' },
       { src: groky('mojara'), alt: 'Fried tilapia platter', caption: 'Mojarra Frita' },
-      { src: groky('street-corn-with-no-chile-powder'), alt: 'Street corn', caption: 'Street Corn' },
       { src: groky('breakfast-platters'), alt: 'Breakfast platters', caption: 'Breakfast' },
       { src: groky('7-mares'), alt: 'Seven seas seafood soup', caption: 'Siete Mares' },
     ],
@@ -70,7 +69,7 @@
     categorySpotlight: {
       breakfast: { src: groky('breakfast-platters'), alt: 'Breakfast at El Mirasol' },
       'daily-lunch': { src: groky('multi-item'), alt: 'Daily lunch favorites' },
-      appetizers: { src: groky('street-corn-with-no-chile-powder'), alt: 'Sopes and antojitos' },
+      appetizers: { src: groky('empandas'), alt: 'Sopes and antojitos' },
       tacos: { src: groky('birria-tacos'), alt: 'Birria tacos with consommé' },
       burritos: { src: groky('burrito-meal'), alt: 'Burrito plate' },
       chimichangas: { src: groky('chimichanga'), alt: 'Chimichanga' },
@@ -147,9 +146,7 @@
     [photoKey('appetizers', 'Tamales')]: g('ls-tamles', 'Tamales'),
     [photoKey('appetizers', 'Tostada')]: g('4-tostadas', 'Four tostadas shown — $5 each'),
     [photoKey('appetizers', 'Empanadas')]: g('empandas', 'Empanadas'),
-    [photoKey('appetizers', 'Esquite')]: g('street-corn-with-no-chile-powder', 'Esquite'),
-    [photoKey('appetizers', 'Street Corn')]: g('street-corn-with-no-chile-powder', 'Street corn — $4.50 each'),
-    /* Guacamole photo removed (was wrong nachos image; replace later) */
+    /* Esquite / Street Corn / Guacamole photos removed (wrong images; replace later) */
 
     /* tacos */
     [photoKey('tacos', 'Taco')]: g('tacos', 'Four tacos shown — $3.12 each'),
@@ -261,7 +258,7 @@
   const sectionDefaultPhotos = {
     breakfast: g('breakfast-platters', 'Breakfast at El Mirasol'),
     'daily-lunch': g('multi-item', 'Daily lunch'),
-    appetizers: g('street-corn-with-no-chile-powder', 'Appetizers'),
+    appetizers: g('empandas', 'Appetizers'),
     tacos: g('birria-tacos', 'Tacos'),
     burritos: g('burrito-meal', 'Burritos'),
     chimichangas: g('chimichanga', 'Chimichangas'),
