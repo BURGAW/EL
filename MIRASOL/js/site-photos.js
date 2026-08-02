@@ -20,7 +20,6 @@
     version: GROKY_V,
 
     gallery: [
-      { src: groky('birria-tacos'), alt: 'Birria tacos with consommé', caption: 'Birria Tacos' },
       { src: groky('menudo'), alt: 'Menudo with garnishes', caption: 'Menudo' },
       { src: groky('shrimp-fajitas'), alt: 'Shrimp fajitas sizzling', caption: 'Shrimp Fajitas' },
       { src: groky('carne-asada'), alt: 'Carne asada platter', caption: 'Carne Asada' },
@@ -36,7 +35,6 @@
     ],
 
     followBand: [
-      { src: groky('birria-tacos'), alt: 'Birria tacos' },
       { src: groky('shrimp-fajitas'), alt: 'Fajitas' },
       { src: groky('menudo'), alt: 'Menudo' },
       { src: groky('mango-margarita'), alt: 'Margarita' },
@@ -50,7 +48,6 @@
         { src: groky('omlete'), alt: 'Omelette' },
       ],
       'daily-lunch': [
-        { src: groky('birria-tacos'), alt: 'Birria tacos' },
         { src: groky('crunchy-tacos'), alt: 'Crunchy tacos' },
       ],
       dinner: [
@@ -66,7 +63,7 @@
       breakfast: { src: groky('breakfast-platters'), alt: 'Breakfast at El Mirasol' },
       'daily-lunch': { src: groky('multi-item'), alt: 'Daily lunch favorites' },
       appetizers: { src: groky('empandas'), alt: 'Sopes and antojitos' },
-      tacos: { src: groky('birria-tacos'), alt: 'Birria tacos with consommé' },
+      tacos: { src: groky('crunchy-tacos'), alt: 'Tacos' },
       burritos: { src: groky('califorina-burrito'), alt: 'Burrito plate' },
       chimichangas: { src: groky('chimichanga'), alt: 'Chimichanga' },
       quesadillas: { src: groky('quesadilla-de-maiz'), alt: 'Quesadilla' },
@@ -126,8 +123,7 @@
     [photoKey('daily-lunch', 'Half-Size Torta')]: g('torta', 'Half-size torta'),
     [photoKey('daily-lunch', 'Tamales')]: g('ls-tamles', 'Tamales'),
     /* daily-lunch Fajitas / Fried Eggs / Small ACP photos removed (wrong images; replace later) */
-    /* Davey's Special photo removed (wrong image; replace later) */
-    [photoKey('daily-lunch', 'Birria Tacos')]: g('birria-tacos', 'Birria tacos'),
+    /* Davey's Special / Birria Tacos photos removed (wrong images; replace later) */
 
     /* appetizers — Sope photo removed (wrong image; replace later) */
     [photoKey('appetizers', 'Huarache')]: g('huarache', 'Huarache'),
@@ -142,10 +138,7 @@
     [photoKey('tacos', 'Order of Tacos')]: g('order-of-tacos', 'Order of tacos'),
     [photoKey('tacos', 'Crunchy Tacos')]: g('crunchy-tacos', 'Crunchy tacos'),
     [photoKey('tacos', 'Tacos Dorados')]: g('tacos-dorados', 'Tacos dorados'),
-    [photoKey('tacos', 'Birria Tacos')]: g('birria-tacos', 'Birria tacos with consommé'),
-    [photoKey('tacos', 'Tacos de Birria')]: g('birria-tacos', 'Birria tacos with consommé'),
-    [photoKey('tacos', 'Chicken Birria Tacos')]: g('birria-tacos', 'Birria tacos with consommé'),
-    [photoKey('tacos', 'Tacos de Birria de Pollo')]: g('birria-tacos', 'Birria tacos with consommé'),
+    /* Birria Tacos / Chicken Birria photos removed (wrong birria-tacos.jpg; replace later) */
     [photoKey('tacos', 'Shrimp Tacos')]: g('shrimp-tacos-on-flour', 'Shrimp tacos'),
     [photoKey('tacos', 'Tacos Campechanos')]: g('order-of-tacos-2', 'Tacos campechanos'),
     /* Tacos Albañil photo removed (wrong huevos-con-chorizo image; replace later) */
@@ -217,7 +210,7 @@
     breakfast: g('breakfast-platters', 'Breakfast at El Mirasol'),
     'daily-lunch': g('multi-item', 'Daily lunch'),
     appetizers: g('empandas', 'Appetizers'),
-    tacos: g('birria-tacos', 'Tacos'),
+    tacos: g('crunchy-tacos', 'Tacos'),
     burritos: g('califorina-burrito', 'Burritos'),
     chimichangas: g('chimichanga', 'Chimichangas'),
     quesadillas: g('quesadilla-de-maiz', 'Quesadillas'),
@@ -232,7 +225,7 @@
   };
 
   const skuPhotos = {
-    'taco-birria': g('birria-tacos', 'Birria tacos'),
+    /* taco-birria photo removed (wrong birria-tacos.jpg; replace later) */
     'plt-oaxaqueno': g('platilla-oaxacaqueno', 'Oaxaqueño'),
     'plt-molcajete': g('molcajete', 'Molcajete'),
     'broth-menudo': g('menudo', 'Menudo'),
