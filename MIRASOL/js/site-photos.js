@@ -74,7 +74,7 @@
       quesadillas: { src: groky('quesadilla'), alt: 'Quesadilla' },
       tortas: { src: groky('torta'), alt: 'Torta' },
       fajitas: { src: groky('shrimp-fajitas'), alt: 'Sizzling fajitas' },
-      enchiladas: { src: groky('queso-enchiladas'), alt: 'Queso enchiladas' },
+      enchiladas: { src: groky('chilaquiles'), alt: 'Queso enchiladas' },
       platters: { src: groky('carne-asada'), alt: 'Combo platters' },
       kids: { src: groky('quesadilla'), alt: 'Kids plate' },
       broths: { src: groky('menudo'), alt: 'Menudo' },
@@ -125,7 +125,7 @@
     [photoKey('daily-lunch', 'Crunchy Tacos')]: g('crunchy-tacos', 'Crunchy tacos'),
     [photoKey('daily-lunch', 'Tacos')]: g('order-of-tacos', 'Tacos with rice and beans'),
     [photoKey('daily-lunch', 'Empanadas')]: g('empandas', 'Empanadas'),
-    [photoKey('daily-lunch', 'Enchiladas')]: g('queso-enchiladas', 'Enchiladas'),
+    /* daily-lunch Enchiladas photo removed (wrong queso-enchiladas image; replace later) */
     [photoKey('daily-lunch', 'Quesadilla')]: g('quesadilla', 'Quesadilla'),
     [photoKey('daily-lunch', 'Half-Size Torta')]: g('torta', 'Half-size torta'),
     [photoKey('daily-lunch', 'Tamales')]: g('ls-tamles', 'Tamales'),
@@ -186,10 +186,8 @@
     [photoKey('fajitas', 'Shrimp Fajitas')]: g('shrimp-fajitas', 'Shrimp fajitas'),
     /* Steak Fajitas / Chicken Fajitas photos removed (wrong images; replace later) */
 
-    /* enchiladas */
-    [photoKey('enchiladas', 'Enchiladas')]: g('queso-enchiladas', 'Enchiladas'),
+    /* enchiladas — Enchiladas / Enchiladas Campechanas photo removed (wrong queso-enchiladas image; replace later) */
     [photoKey('enchiladas', 'Queso Enchiladas')]: g('quesoenchiladas', 'Queso enchiladas'),
-    [photoKey('enchiladas', 'Enchiladas Campechanas')]: g('queso-enchiladas', 'Enchiladas campechanas'),
 
     /* platters */
     /* ACP / Davey's Special photos removed (wrong images; replace later) */
@@ -250,7 +248,7 @@
     quesadillas: g('quesadilla', 'Quesadillas'),
     tortas: g('torta', 'Tortas'),
     fajitas: g('shrimp-fajitas', 'Fajitas'),
-    enchiladas: g('queso-enchiladas', 'Enchiladas'),
+    enchiladas: g('chilaquiles', 'Enchiladas'),
     platters: g('carne-asada', 'Platters'),
     kids: g('quesadilla', 'Kids menu'),
     broths: g('menudo', 'Weekend broths'),
