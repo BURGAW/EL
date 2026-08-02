@@ -148,12 +148,8 @@
     const ariaLabel = [item.name, dualSize ? null : item.price, hint].filter(Boolean).join(' — ');
     attrs.push(`aria-label="${escapeHtml(ariaLabel)}"`);
 
-    const photo = window.SITE_PHOTOS?.resolveItemPhoto?.(sectionId, item);
-    const hasPhoto = Boolean(photo?.src);
-    let html = `<button type="button" class="menu-card menu-card--btn menu-item${customizable ? ' menu-card--customizable' : ''}${hasPhoto ? ' menu-card--has-photo' : ''}" data-item-key="${escapeHtml(key)}"${attrs.length ? ' ' + attrs.join(' ') : ''}>`;
-    if (hasPhoto) {
-      html += `<div class="menu-card__photo"><img src="${escapeHtml(photo.src)}" alt="" loading="lazy" decoding="async" width="320" height="200"></div>`;
-    }
+    // Photos only in the item modal on click — keep list cards text-only
+    let html = `<button type="button" class="menu-card menu-card--btn menu-item${customizable ? ' menu-card--customizable' : ''}" data-item-key="${escapeHtml(key)}"${attrs.length ? ' ' + attrs.join(' ') : ''}>`;
     html += '<div class="menu-card__head">';
     html += `<span class="menu-card__name">${escapeHtml(item.name)}</span>`;
     if (item.price && !dualSize) {
