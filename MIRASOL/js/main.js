@@ -290,10 +290,70 @@ function initGallerySlideshow() {
   startAuto();
 }
 
+/** Our Story — rotating premium / higher-priced plates */
+function initStoryMealSlideshow() {
+  const root = document.getElementById('story-meal-slideshow');
+  const slides = root ? [...root.querySelectorAll('.story-spin__slide')] : [];
+  const cap = document.getElementById('story-meal-caption');
+  if (!root || slides.length < 2) return;
+
+  let index = slides.findIndex((s) => s.classList.contains('is-active'));
+  if (index < 0) index = 0;
+
+  let timer = null;
+  const delay = 4200;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function show(next) {
+    index = (next + slides.length) % slides.length;
+    slides.forEach((slide, i) => {
+      const on = i === index;
+      slide.classList.toggle('is-active', on);
+      slide.setAttribute('aria-hidden', on ? 'false' : 'true');
+    });
+    if (cap) {
+      const text = slides[index].getAttribute('data-cap') || slides[index].getAttribute('aria-label') || '';
+      cap.textContent = text;
+    }
+  }
+
+  function next() {
+    show(index + 1);
+  }
+
+  function startAuto() {
+    if (reduced) return;
+    if (timer) clearInterval(timer);
+    timer = setInterval(next, delay);
+  }
+
+  function stopAuto() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  root.addEventListener('mouseenter', stopAuto);
+  root.addEventListener('mouseleave', startAuto);
+  root.addEventListener('focusin', stopAuto);
+  root.addEventListener('focusout', (e) => {
+    if (!root.contains(e.relatedTarget)) startAuto();
+  });
+
+  slides.forEach((s, i) => s.setAttribute('aria-hidden', i === index ? 'false' : 'true'));
+  show(index);
+  startAuto();
+}
+
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initGallerySlideshow);
+  document.addEventListener('DOMContentLoaded', () => {
+    initGallerySlideshow();
+    initStoryMealSlideshow();
+  });
 } else {
   initGallerySlideshow();
+  initStoryMealSlideshow();
 }
 
 function renderFollowBandPhotos() {

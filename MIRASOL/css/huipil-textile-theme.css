@@ -2495,6 +2495,48 @@ body.site-huipil .story-spin__img img {
   object-position: center 40% !important;
 }
 
+/* Premium plates rotating slideshow (replaces breakfast-platters still) */
+body.site-huipil .story-spin__slideshow {
+  position: relative !important;
+  display: block !important;
+}
+
+body.site-huipil .story-spin__slides {
+  position: relative !important;
+  width: 100% !important;
+  height: clamp(180px, 24vw, 240px) !important;
+  background: var(--tex-navy-deep, #101c30) !important;
+}
+
+body.site-huipil .story-spin__slide {
+  position: absolute !important;
+  inset: 0 !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  opacity: 0 !important;
+  transition: opacity 0.9s ease !important;
+  z-index: 0 !important;
+}
+
+body.site-huipil .story-spin__slide.is-active {
+  opacity: 1 !important;
+  z-index: 1 !important;
+}
+
+body.site-huipil .story-spin__slide-cap {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0.45rem 0.65rem 0.5rem !important;
+  font-family: var(--tex-font-body, inherit) !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  color: var(--tex-ink-soft, #4a3a2e) !important;
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.98), var(--tex-cream-light, #faf6ef)) !important;
+  border-top: 1px solid rgba(61, 38, 24, 0.08) !important;
+}
+
 body.site-huipil .story-spin__lead,
 body.site-huipil .story-spin__copy p {
   color: var(--tex-ink-soft) !important;
@@ -4109,21 +4151,30 @@ body.site-huipil .visit-flow::before {
   background: var(--tex-oax-serape) !important;
 }
 
-/* ── v61 · roof at top · grid-centered hero copy ── */
+/* ── polaroids drop · clear left sign · tuck in ── */
 @media (min-width: 901px) {
   body.site-huipil:not(.menu-page) .hero-layout {
-    grid-template-columns: minmax(5.5rem, 1fr) minmax(0, 34rem) minmax(5.5rem, 1fr);
-    max-width: min(58rem, 92vw);
+    grid-template-columns: minmax(3.5rem, 0.7fr) minmax(0, 34rem) minmax(3.5rem, 0.7fr);
+    max-width: min(54rem, 90vw);
+    align-items: end;
   }
 
   body.site-huipil:not(.menu-page) .hero-floater--snap {
-    --snap-w: clamp(50px, 4.6vw, 68px);
+    --snap-w: clamp(46px, 4.2vw, 60px);
     width: var(--snap-w) !important;
     max-width: var(--snap-w) !important;
   }
 
   body.site-huipil .hero-floaters .hero-snap__paper {
-    padding: 5px 5px 16px;
+    padding: 5px 5px 15px;
+  }
+
+  body.site-huipil .hero-floaters--left {
+    margin-top: clamp(5rem, 15vh, 8rem);
+  }
+
+  body.site-huipil .hero-floaters--right {
+    margin-top: clamp(4.25rem, 13vh, 7rem);
   }
 }
 
