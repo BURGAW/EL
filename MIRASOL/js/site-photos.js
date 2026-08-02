@@ -101,61 +101,86 @@
     return { src: groky(slug), alt };
   }
 
+  /** Explicit blank — blocks section-default fallback (user-flagged wrong photos) */
+  function blank() {
+    return { src: null };
+  }
+
   const itemPhotos = {
     /* breakfast */
     [photoKey('breakfast', 'Bacon & Eggs')]: g('breakfast-platters', 'Bacon and eggs'),
     [photoKey('breakfast', 'Huevo con Jamón')]: g('breakfast-platters', 'Huevo con jamón'),
     [photoKey('breakfast', 'Pancake Tacos')]: g('pancake', 'Pancake tacos'),
     [photoKey('breakfast', 'Carne Asada con Huevo')]: g('carne-asada', 'Carne asada con huevo'),
-    /* Huevo con Chorizo / chorizo burritos photo removed (wrong image; replace later) */
+    [photoKey('breakfast', 'Huevo con Chorizo')]: blank(),
     [photoKey('breakfast', 'Strawberry Pancakes')]: g('pancake', 'Strawberry pancakes'),
-    /* Huevos Ahogados / Burrito Huevo a la Mexicana photo removed (wrong image; replace later) */
+    [photoKey('breakfast', 'Huevos Ahogados')]: blank(),
     [photoKey('breakfast', 'Chilaquiles en Salsa Verde')]: g('chilaquiles-2', 'Chilaquiles en salsa verde'),
+    [photoKey('breakfast', 'Burrito de Papas con Chorizo')]: blank(),
+    [photoKey('breakfast', 'Burrito Huevo a la Mexicana')]: blank(),
     [photoKey('breakfast', 'Burrito de Huevo con Jamón')]: g('breakfast-platters', 'Burrito de huevo con jamón'),
+    [photoKey('breakfast', 'Burrito Huevo con Chorizo y Papas')]: blank(),
     [photoKey('breakfast', 'Pancakes')]: g('pancake', 'Pancakes'),
-    /* breakfast Aguas Frescas photo removed (wrong fruit-cups.jpg; replace later) */
+    [photoKey('breakfast', 'Aguas Frescas')]: blank(),
 
     /* daily lunch */
     [photoKey('daily-lunch', 'Crunchy Tacos')]: g('crunchy-tacos', 'Crunchy tacos'),
     [photoKey('daily-lunch', 'Tacos')]: g('order-of-tacos', 'Tacos with rice and beans'),
     [photoKey('daily-lunch', 'Empanadas')]: g('empandas', 'Empanadas'),
-    /* daily-lunch Enchiladas / Quesadilla photos removed (wrong images; replace later) */
+    [photoKey('daily-lunch', 'Enchiladas')]: blank(),
+    [photoKey('daily-lunch', 'Quesadilla')]: blank(),
     [photoKey('daily-lunch', 'Half-Size Torta')]: g('torta', 'Half-size torta'),
     [photoKey('daily-lunch', 'Tamales')]: g('ls-tamles', 'Tamales'),
-    /* daily-lunch Fajitas / Fried Eggs / Small ACP photos removed (wrong images; replace later) */
-    /* Davey's Special / Birria Tacos photos removed (wrong images; replace later) */
+    [photoKey('daily-lunch', 'Fajitas')]: blank(),
+    [photoKey('daily-lunch', 'Fried Eggs')]: blank(),
+    [photoKey('daily-lunch', 'Small ACP')]: blank(),
+    [photoKey('daily-lunch', "Davey's Special")]: blank(),
+    [photoKey('daily-lunch', 'Birria Tacos')]: blank(),
 
-    /* appetizers — Sope photo removed (wrong image; replace later) */
+    /* appetizers */
+    [photoKey('appetizers', 'Sope')]: blank(),
     [photoKey('appetizers', 'Huarache')]: g('huarache', 'Huarache'),
-    /* Gorditas photo removed (wrong masita image; replace later) */
+    [photoKey('appetizers', 'Gorditas')]: blank(),
     [photoKey('appetizers', 'Tamales')]: g('ls-tamles', 'Tamales'),
     [photoKey('appetizers', 'Tostada')]: g('4-tostadas', 'Four tostadas shown — $5 each'),
     [photoKey('appetizers', 'Empanadas')]: g('empandas', 'Empanadas'),
-    /* Esquite / Street Corn / Guacamole photos removed (wrong images; replace later) */
+    [photoKey('appetizers', 'Esquite')]: blank(),
+    [photoKey('appetizers', 'Street Corn')]: blank(),
+    [photoKey('appetizers', 'Guacamole')]: blank(),
 
     /* tacos */
     [photoKey('tacos', 'Taco')]: g('tacos', 'Four tacos shown — $3.12 each'),
     [photoKey('tacos', 'Order of Tacos')]: g('order-of-tacos', 'Order of tacos'),
     [photoKey('tacos', 'Crunchy Tacos')]: g('crunchy-tacos', 'Crunchy tacos'),
     [photoKey('tacos', 'Tacos Dorados')]: g('tacos-dorados', 'Tacos dorados'),
-    /* Birria Tacos / Chicken Birria photos removed (wrong birria-tacos.jpg; replace later) */
+    [photoKey('tacos', 'Birria Tacos')]: blank(),
+    [photoKey('tacos', 'Tacos de Birria')]: blank(),
+    [photoKey('tacos', 'Chicken Birria Tacos')]: blank(),
+    [photoKey('tacos', 'Tacos de Birria de Pollo')]: blank(),
     [photoKey('tacos', 'Shrimp Tacos')]: g('shrimp-tacos-on-flour', 'Shrimp tacos'),
     [photoKey('tacos', 'Tacos Campechanos')]: g('order-of-tacos-2', 'Tacos campechanos'),
-    /* Tacos Albañil photo removed (wrong huevos-con-chorizo image; replace later) */
+    [photoKey('tacos', 'Tacos Albañil')]: blank(),
 
-    /* burritos — Burrito Meal / Campechano / Shrimp / Veggie photos removed (wrong burrito-meal.jpg; replace later) */
-    /* Fajita Burrito / Choripollo Burrito photos removed (wrong images; replace later) */
+    /* burritos */
+    [photoKey('burritos', 'Burrito Meal')]: blank(),
+    [photoKey('burritos', 'Fajita Burrito')]: blank(),
+    [photoKey('burritos', 'Choripollo Burrito')]: blank(),
+    [photoKey('burritos', 'Burrito Campechano')]: blank(),
     [photoKey('burritos', 'California Burrito')]: g('califorina-burrito', 'California burrito'),
-    /* Burrito Huevos a la Mexicana photo removed (wrong image; replace later) */
+    [photoKey('burritos', 'Shrimp Burrito')]: blank(),
+    [photoKey('burritos', 'Veggie Burrito')]: blank(),
+    [photoKey('burritos', 'Burrito Huevos a la Mexicana')]: blank(),
 
     /* chimichangas */
     [photoKey('chimichangas', 'Chimichanga Meal')]: g('chimichanga', 'Chimichanga'),
     [photoKey('chimichangas', 'Shrimp Chimichanga')]: g('chimi', 'Shrimp chimichanga'),
     [photoKey('chimichangas', 'Burrito Mummia')]: g('burrito-mommia', 'Burrito mummia'),
 
-    /* quesadillas — Quesadilla Meal / Shrimp Quesadilla photo removed (wrong quesadilla.jpg; replace later) */
+    /* quesadillas */
+    [photoKey('quesadillas', 'Quesadilla Meal')]: blank(),
+    [photoKey('quesadillas', 'Shrimp Quesadilla')]: blank(),
     [photoKey('quesadillas', 'Veggie Quesadilla')]: g('quesadilla-de-maiz', 'Veggie quesadilla'),
-    /* Fajita Quesadilla photo removed (wrong fajita-mix image; replace later) */
+    [photoKey('quesadillas', 'Fajita Quesadilla')]: blank(),
     [photoKey('quesadillas', 'Quesadilla de Maíz')]: g('quesadilla-de-maiz', 'Quesadilla de maíz'),
     [photoKey('quesadillas', 'Quesadilla de Birria')]: g('quesabirria', 'Quesadilla de birria'),
 
@@ -165,15 +190,21 @@
     [photoKey('tortas', 'Fried Steak Torta')]: g('torta', 'Fried steak torta'),
     [photoKey('tortas', 'Fried Chicken Torta')]: g('torta-2', 'Fried chicken torta'),
 
-    /* fajitas — Campechanas / Mix photo removed (wrong fajita-mix image; replace later) */
+    /* fajitas */
+    [photoKey('fajitas', 'Campechanas Fajitas')]: blank(),
+    [photoKey('fajitas', 'Mix Fajitas')]: blank(),
     [photoKey('fajitas', 'Shrimp Fajitas')]: g('shrimp-fajitas', 'Shrimp fajitas'),
-    /* Steak Fajitas / Chicken Fajitas photos removed (wrong images; replace later) */
+    [photoKey('fajitas', 'Steak Fajitas')]: blank(),
+    [photoKey('fajitas', 'Chicken Fajitas')]: blank(),
 
-    /* enchiladas — Enchiladas / Enchiladas Campechanas photo removed (wrong queso-enchiladas image; replace later) */
+    /* enchiladas */
+    [photoKey('enchiladas', 'Enchiladas')]: blank(),
     [photoKey('enchiladas', 'Queso Enchiladas')]: g('quesoenchiladas', 'Queso enchiladas'),
+    [photoKey('enchiladas', 'Enchiladas Campechanas')]: blank(),
 
     /* platters */
-    /* ACP / Davey's Special photos removed (wrong images; replace later) */
+    [photoKey('platters', 'ACP (Arroz Con Pollo)')]: blank(),
+    [photoKey('platters', "Davey's Special")]: blank(),
     [photoKey('platters', 'Carne Asada')]: g('carne-asada', 'Carne asada'),
     [photoKey('platters', 'Oaxaqueño')]: g('platilla-oaxacaqueno', 'Oaxaqueño platter'),
     [photoKey('platters', 'Oaxaqueño de Pollo')]: g('platillo', 'Oaxaqueño de pollo'),
@@ -183,9 +214,11 @@
     [photoKey('platters', 'Chilaquiles')]: g('chilaquiles', 'Chilaquiles'),
     [photoKey('platters', 'Mar y Tierra')]: g('carne-asada', 'Mar y tierra'),
     [photoKey('platters', 'Molcajete')]: g('molcajete', 'Molcajete'),
-    /* Cazuelón photo removed (was wrong davey-special image; replace later) */
+    [photoKey('platters', 'Cazuelón')]: blank(),
     [photoKey('platters', 'Tlayuda')]: g('tylayuda', 'Tlayuda'),
-    /* Nachos / Fried Steak / Grilled or Fried Chicken photos removed (wrong images; replace later) */
+    [photoKey('platters', 'Nachos')]: blank(),
+    [photoKey('platters', 'Fried Steak')]: blank(),
+    [photoKey('platters', 'Grilled or Fried Chicken')]: blank(),
     [photoKey('platters', 'Parrillada')]: g('parrilliada', 'Parrillada'),
     [photoKey('platters', 'Camarones Empanizados')]: g('fried-shrimp-platter', 'Breaded shrimp'),
     [photoKey('platters', 'Coctel de Camarones')]: g('coctel-de-camaron', 'Coctel de camarones'),
@@ -194,16 +227,37 @@
     [photoKey('platters', 'Huevos Enchilados')]: g('huevos-enchilados', 'Huevos enchilados'),
 
     /* kids */
-    /* Kids Quesadilla / Kids Burrito photos removed (wrong images; replace later) */
-    /* kids ACP / Scrambled Eggs photos removed (wrong images; replace later) */
+    [photoKey('kids', 'Kids Quesadilla')]: blank(),
+    [photoKey('kids', 'Kids Burrito')]: blank(),
+    [photoKey('kids', 'Kids ACP')]: blank(),
+    [photoKey('kids', 'Scrambled Eggs')]: blank(),
 
-    /* broths — Caldo de Res / Caldo de Borrego photos removed (wrong caldo-de-res.jpg; replace later) */
+    /* broths */
+    [photoKey('broths', 'Caldo de Res')]: blank(),
+    [photoKey('broths', 'Caldo de Borrego')]: blank(),
     [photoKey('broths', 'Menudo')]: g('menudo', 'Menudo'),
     [photoKey('broths', 'Siete Mares')]: g('7-mares', 'Siete mares'),
 
-    /* drinks — Aguas Frescas / Jarritos photos removed (wrong fruit-cups.jpg; replace later) */
+    /* drinks */
+    [photoKey('drinks', 'Aguas Frescas')]: blank(),
+    [photoKey('drinks', 'Jarritos & Squirt')]: blank(),
 
-    /* alcohol / Beer & Mixed Drinks — all photos removed (replace later) */
+    /* alcohol / Beer & Mixed Drinks — all blank */
+    [photoKey('alcohol', 'Beer (12 oz)')]: blank(),
+    [photoKey('alcohol', 'Beer (24 oz)')]: blank(),
+    [photoKey('alcohol', 'Beer (32 oz)')]: blank(),
+    [photoKey('alcohol', 'Michelada Cheladas')]: blank(),
+    [photoKey('alcohol', 'Micheladas')]: blank(),
+    [photoKey('alcohol', 'Margarita')]: blank(),
+    [photoKey('alcohol', 'Tequila Sunrise')]: blank(),
+    [photoKey('alcohol', 'Mojito')]: blank(),
+    [photoKey('alcohol', 'Irish Trash Can')]: blank(),
+    [photoKey('alcohol', 'Mary Jane')]: blank(),
+    [photoKey('alcohol', 'Piña Colada')]: blank(),
+    [photoKey('alcohol', 'Paloma')]: blank(),
+    [photoKey('alcohol', 'Spiked Horchata')]: blank(),
+    [photoKey('alcohol', 'Rum and Coke')]: blank(),
+    [photoKey('alcohol', 'Jack and Coke')]: blank(),
   };
 
   const sectionDefaultPhotos = {
@@ -225,11 +279,11 @@
   };
 
   const skuPhotos = {
-    /* taco-birria photo removed (wrong birria-tacos.jpg; replace later) */
+    'taco-birria': blank(),
     'plt-oaxaqueno': g('platilla-oaxacaqueno', 'Oaxaqueño'),
     'plt-molcajete': g('molcajete', 'Molcajete'),
     'broth-menudo': g('menudo', 'Menudo'),
-    /* drk-margarita photo removed with beer & mixed drinks */
+    'drk-margarita': blank(),
   };
 
   function lookupFeaturedPhoto(sectionId, itemName) {
@@ -254,12 +308,16 @@
     if (!item) return null;
     if (item.image) return photoResult({ src: item.image, alt: item.name }, item.name);
 
-    if (item.sku && skuPhotos[item.sku]?.src) {
+    // Explicit sku mapping (including blank) — do not fall through
+    if (item.sku && Object.prototype.hasOwnProperty.call(skuPhotos, item.sku)) {
       return photoResult(skuPhotos[item.sku], item.name);
     }
 
-    const mapped = itemPhotos[photoKey(sectionId, item.name)];
-    if (mapped?.src) return photoResult(mapped, item.name);
+    // Explicit item mapping (including blank) — blocks section-default fallback
+    const key = photoKey(sectionId, item.name);
+    if (Object.prototype.hasOwnProperty.call(itemPhotos, key)) {
+      return photoResult(itemPhotos[key], item.name);
+    }
 
     const featured = lookupFeaturedPhoto(sectionId, item.name);
     if (featured?.src) return photoResult(featured, item.name);
