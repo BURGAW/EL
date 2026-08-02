@@ -76,14 +76,13 @@
       platters: { src: groky('carne-asada'), alt: 'Combo platters' },
       kids: { src: groky('torta'), alt: 'Kids plate' },
       broths: { src: groky('menudo'), alt: 'Menudo' },
-      desserts: { src: groky('fruit-cups'), alt: 'Fresh fruit cups' },
-      drinks: { src: groky('fruit-cups'), alt: 'Aguas frescas' },
+      desserts: { src: groky('mangonada'), alt: 'Fresh fruit cups' },
+      drinks: { src: groky('mango-margarita'), alt: 'Aguas frescas' },
       alcohol: { src: groky('mango-margarita'), alt: 'Margaritas at the bar' },
     },
 
     desserts: [
       { src: groky('mango-margarita'), alt: 'Margarita' },
-      { src: groky('fruit-cups'), alt: 'Fruit cups' },
       { src: groky('mangonada'), alt: 'Mangonada' },
     ],
   };
@@ -117,7 +116,7 @@
     [photoKey('breakfast', 'Chilaquiles en Salsa Verde')]: g('chilaquiles-2', 'Chilaquiles en salsa verde'),
     [photoKey('breakfast', 'Burrito de Huevo con Jamón')]: g('breakfast-platters', 'Burrito de huevo con jamón'),
     [photoKey('breakfast', 'Pancakes')]: g('pancake', 'Pancakes'),
-    [photoKey('breakfast', 'Aguas Frescas')]: g('fruit-cups', 'Aguas frescas'),
+    /* breakfast Aguas Frescas photo removed (wrong fruit-cups.jpg; replace later) */
 
     /* daily lunch */
     [photoKey('daily-lunch', 'Crunchy Tacos')]: g('crunchy-tacos', 'Crunchy tacos'),
@@ -209,9 +208,7 @@
     [photoKey('broths', 'Menudo')]: g('menudo', 'Menudo'),
     [photoKey('broths', 'Siete Mares')]: g('7-mares', 'Siete mares'),
 
-    /* drinks */
-    [photoKey('drinks', 'Aguas Frescas')]: g('fruit-cups', 'Aguas frescas'),
-    [photoKey('drinks', 'Jarritos & Squirt')]: g('fruit-cups', 'Jarritos'),
+    /* drinks — Aguas Frescas / Jarritos photos removed (wrong fruit-cups.jpg; replace later) */
 
     /* alcohol */
     [photoKey('alcohol', 'Margarita')]: g('mango-margarita', 'Margarita'),
@@ -240,7 +237,7 @@
     platters: g('carne-asada', 'Platters'),
     kids: g('torta', 'Kids menu'),
     broths: g('menudo', 'Weekend broths'),
-    drinks: g('fruit-cups', 'Drinks'),
+    drinks: g('mango-margarita', 'Drinks'),
     alcohol: g('mango-margarita', 'Bar drinks'),
   };
 
