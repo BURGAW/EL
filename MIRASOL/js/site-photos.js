@@ -242,7 +242,7 @@
     [photoKey('drinks', 'Aguas Frescas')]: blank(),
     [photoKey('drinks', 'Jarritos & Squirt')]: blank(),
 
-    /* alcohol / Beer & Mixed Drinks — all blank */
+    /* alcohol / Beer & Mixed Drinks — all blank (EN) */
     [photoKey('alcohol', 'Beer (12 oz)')]: blank(),
     [photoKey('alcohol', 'Beer (24 oz)')]: blank(),
     [photoKey('alcohol', 'Beer (32 oz)')]: blank(),
@@ -258,6 +258,37 @@
     [photoKey('alcohol', 'Spiked Horchata')]: blank(),
     [photoKey('alcohol', 'Rum and Coke')]: blank(),
     [photoKey('alcohol', 'Jack and Coke')]: blank(),
+
+    /* Spanish name keys for the same blank items (ES menu) */
+    [photoKey('daily-lunch', 'Huevos Fritos')]: blank(),
+    [photoKey('daily-lunch', 'ACP Pequeño')]: blank(),
+    [photoKey('daily-lunch', 'Especial Davey')]: blank(),
+    [photoKey('daily-lunch', 'Tacos de Birria')]: blank(),
+    [photoKey('appetizers', 'Elote')]: blank(),
+    [photoKey('burritos', 'Burrito Fajita')]: blank(),
+    [photoKey('burritos', 'Burrito Choripollo')]: blank(),
+    [photoKey('burritos', 'Burrito de Camarones')]: blank(),
+    [photoKey('burritos', 'Burrito Vegetariano')]: blank(),
+    [photoKey('quesadillas', 'Quesadilla de Camarones')]: blank(),
+    [photoKey('quesadillas', 'Quesadilla Fajita')]: blank(),
+    [photoKey('fajitas', 'Fajitas Campechanas')]: blank(),
+    [photoKey('fajitas', 'Fajitas Mixtas')]: blank(),
+    [photoKey('fajitas', 'Fajitas de Res')]: blank(),
+    [photoKey('fajitas', 'Fajitas de Pollo')]: blank(),
+    [photoKey('platters', 'Especial de Davey')]: blank(),
+    [photoKey('platters', 'Bistec Frito')]: blank(),
+    [photoKey('platters', 'Pollo Asado o Frito')]: blank(),
+    [photoKey('kids', 'Quesadilla Infantil')]: blank(),
+    [photoKey('kids', 'Burrito Infantil')]: blank(),
+    [photoKey('kids', 'ACP Infantil')]: blank(),
+    [photoKey('kids', 'Huevos Revueltos')]: blank(),
+    [photoKey('drinks', 'Jarritos y Squirt')]: blank(),
+    [photoKey('alcohol', 'Cerveza (12 oz)')]: blank(),
+    [photoKey('alcohol', 'Cerveza (24 oz)')]: blank(),
+    [photoKey('alcohol', 'Cerveza (32 oz)')]: blank(),
+    [photoKey('alcohol', 'Horchata con Licor')]: blank(),
+    [photoKey('alcohol', 'Ron con Coca')]: blank(),
+    [photoKey('alcohol', 'Jack con Coca')]: blank(),
   };
 
   const sectionDefaultPhotos = {
