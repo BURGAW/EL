@@ -142,7 +142,7 @@
 
     /* appetizers — Sope photo removed (wrong image; replace later) */
     [photoKey('appetizers', 'Huarache')]: g('huarache', 'Huarache'),
-    [photoKey('appetizers', 'Gorditas')]: g('masita', 'Gorditas'),
+    /* Gorditas photo removed (wrong masita image; replace later) */
     [photoKey('appetizers', 'Tamales')]: g('ls-tamles', 'Tamales'),
     [photoKey('appetizers', 'Tostada')]: g('4-tostadas', 'Four tostadas shown — $5 each'),
     [photoKey('appetizers', 'Empanadas')]: g('empandas', 'Empanadas'),
