@@ -77,8 +77,8 @@
       kids: { src: groky('torta'), alt: 'Kids plate' },
       broths: { src: groky('menudo'), alt: 'Menudo' },
       desserts: { src: groky('mangonada'), alt: 'Fresh fruit cups' },
-      drinks: { src: groky('mango-margarita'), alt: 'Aguas frescas' },
-      alcohol: { src: groky('mango-margarita'), alt: 'Margaritas at the bar' },
+      drinks: { src: groky('mangonada'), alt: 'Aguas frescas' },
+      /* alcohol section: no photos (beer & mixed drinks) */
     },
 
     desserts: [
@@ -210,17 +210,7 @@
 
     /* drinks — Aguas Frescas / Jarritos photos removed (wrong fruit-cups.jpg; replace later) */
 
-    /* alcohol */
-    [photoKey('alcohol', 'Margarita')]: g('mango-margarita', 'Margarita'),
-    [photoKey('alcohol', 'Mojito')]: g('mojitos', 'Mojito'),
-    [photoKey('alcohol', 'Michelada Cheladas')]: g('coco-azul', 'Michelada'),
-    [photoKey('alcohol', 'Micheladas')]: g('coco-azul', 'Michelada'),
-    [photoKey('alcohol', 'Piña Colada')]: g('pinaapple-habiscus-margarita', 'Piña colada'),
-    [photoKey('alcohol', 'Paloma')]: g('mixed-drinks', 'Paloma'),
-    [photoKey('alcohol', 'Tequila Sunrise')]: g('mixed-drinks', 'Tequila sunrise'),
-    [photoKey('alcohol', 'Beer (12 oz)')]: g('mixed-drinks', 'Mexican beer'),
-    [photoKey('alcohol', 'Beer (24 oz)')]: g('mixed-drinks', 'Mexican beer'),
-    [photoKey('alcohol', 'Beer (32 oz)')]: g('mixed-drinks', 'Mexican beer'),
+    /* alcohol / Beer & Mixed Drinks — all photos removed (replace later) */
   };
 
   const sectionDefaultPhotos = {
@@ -237,8 +227,8 @@
     platters: g('carne-asada', 'Platters'),
     kids: g('torta', 'Kids menu'),
     broths: g('menudo', 'Weekend broths'),
-    drinks: g('mango-margarita', 'Drinks'),
-    alcohol: g('mango-margarita', 'Bar drinks'),
+    drinks: g('mangonada', 'Drinks'),
+    /* alcohol: no section default photo */
   };
 
   const skuPhotos = {
@@ -246,7 +236,7 @@
     'plt-oaxaqueno': g('platilla-oaxacaqueno', 'Oaxaqueño'),
     'plt-molcajete': g('molcajete', 'Molcajete'),
     'broth-menudo': g('menudo', 'Menudo'),
-    'drk-margarita': g('mango-margarita', 'Margarita'),
+    /* drk-margarita photo removed with beer & mixed drinks */
   };
 
   function lookupFeaturedPhoto(sectionId, itemName) {

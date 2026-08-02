@@ -31,7 +31,7 @@ const FEATURED_ITEMS = [
     name: 'Margarita',
     headline: 'Craft Margaritas',
     blurb: 'Fresh-squeezed lime, fruit flavors, and your choice of salt or Tajín rim.',
-    image: 'assets/images/menu/groky/mango-margarita.jpg?v=groky2',
+    /* image removed with beer & mixed drinks photos */
     tag: 'popular',
   },
 ];

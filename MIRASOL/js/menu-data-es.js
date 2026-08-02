@@ -30,7 +30,7 @@ const FEATURED_ITEMS_ES = [
     name: 'Margarita',
     headline: 'Margaritas Artesanales',
     blurb: 'Limón recién exprimido, frutas frescas y su elección de sal o Tajín.',
-    image: 'assets/images/menu/groky/mango-margarita.jpg?v=groky2',
+    /* image removed with beer & mixed drinks photos */
     tag: 'popular',
   },
 ];
