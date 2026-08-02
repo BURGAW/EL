@@ -66,7 +66,7 @@
       tacos: { src: groky('crunchy-tacos'), alt: 'Tacos' },
       burritos: { src: groky('califorina-burrito'), alt: 'Burrito plate' },
       chimichangas: { src: groky('chimichanga'), alt: 'Chimichanga' },
-      quesadillas: { src: groky('quesadilla-de-maiz'), alt: 'Quesadilla' },
+      quesadillas: { src: groky('quesabirria'), alt: 'Quesadilla' },
       tortas: { src: groky('torta'), alt: 'Torta' },
       fajitas: { src: groky('shrimp-fajitas'), alt: 'Sizzling fajitas' },
       enchiladas: { src: groky('chilaquiles'), alt: 'Queso enchiladas' },
@@ -179,9 +179,10 @@
     /* quesadillas */
     [photoKey('quesadillas', 'Quesadilla Meal')]: blank(),
     [photoKey('quesadillas', 'Shrimp Quesadilla')]: blank(),
-    [photoKey('quesadillas', 'Veggie Quesadilla')]: g('quesadilla-de-maiz', 'Veggie quesadilla'),
+    [photoKey('quesadillas', 'Veggie Quesadilla')]: blank(),
+    [photoKey('quesadillas', 'Quesadilla Vegetariana')]: blank(),
     [photoKey('quesadillas', 'Fajita Quesadilla')]: blank(),
-    [photoKey('quesadillas', 'Quesadilla de Maíz')]: g('quesadilla-de-maiz', 'Quesadilla de maíz'),
+    [photoKey('quesadillas', 'Quesadilla de Maíz')]: blank(),
     [photoKey('quesadillas', 'Quesadilla de Birria')]: g('quesabirria', 'Quesadilla de birria'),
 
     /* tortas */
@@ -298,7 +299,7 @@
     tacos: g('crunchy-tacos', 'Tacos'),
     burritos: g('califorina-burrito', 'Burritos'),
     chimichangas: g('chimichanga', 'Chimichangas'),
-    quesadillas: g('quesadilla-de-maiz', 'Quesadillas'),
+    quesadillas: g('quesabirria', 'Quesadillas'),
     tortas: g('torta', 'Tortas'),
     fajitas: g('shrimp-fajitas', 'Fajitas'),
     enchiladas: g('chilaquiles', 'Enchiladas'),
