@@ -2274,9 +2274,13 @@ body.site-huipil:not(.menu-page) .hero-layout .hero-content {
   text-align: center !important;
 }
 
+/* Polaroids fully disabled */
 body.site-huipil .hero-floaters,
-body.site-huipil .hero-floater {
+body.site-huipil .hero-floater,
+body.site-huipil .hero-floater--snap {
   display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 body.site-huipil .hero-floaters {
@@ -2286,7 +2290,7 @@ body.site-huipil .hero-floaters {
   z-index: 4;
   pointer-events: none;
   overflow: visible !important;
-  display: flex !important;
+  /* display kept none above — do not re-enable */
   flex-direction: column !important;
   justify-content: flex-end;
   gap: 0.2rem;
@@ -4506,4 +4510,19 @@ body.site-huipil:not(.menu-page) .hero--single .hero-rotator__slide.is-active {
     background-size: 88% auto !important;
     background-position: center 60% !important;
   }
+}
+
+/* === nopol1: polaroids off (final) === */
+body.site-huipil .hero-floaters,
+body.site-huipil .hero-floaters--left,
+body.site-huipil .hero-floaters--right,
+body.site-huipil .hero-floater,
+body.site-huipil .hero-floater--snap {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
 }
