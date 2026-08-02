@@ -2249,34 +2249,34 @@ body.site-huipil .fiesta-gold-dust {
   display: none !important;
 }
 
-/* Hero layout — centered copy; polaroids drop low, tuck in, clear EL MIRASOL sign */
+/* Hero layout — centered copy only (polaroids removed) */
 body.site-huipil:not(.menu-page) .hero-layout {
   position: relative;
   z-index: 5;
-  display: grid;
-  grid-template-columns: minmax(3.25rem, 0.72fr) minmax(0, 34rem) minmax(3.25rem, 0.72fr);
-  align-items: end;
-  justify-items: center;
-  gap: clamp(0.2rem, 0.8vw, 0.55rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  max-width: min(52rem, 92vw);
+  max-width: min(40rem, 92vw);
   margin: 0 auto;
   padding-bottom: clamp(0.35rem, 1.5vh, 0.85rem);
   pointer-events: none;
 }
 
 body.site-huipil:not(.menu-page) .hero-layout .hero-content {
-  grid-column: 2;
-  grid-row: 1;
   position: relative;
   z-index: 5;
-  align-self: center;
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
   padding-left: clamp(0.35rem, 1.5vw, 1rem) !important;
   padding-right: clamp(0.35rem, 1.5vw, 1rem) !important;
   text-align: center !important;
+}
+
+body.site-huipil .hero-floaters,
+body.site-huipil .hero-floater {
+  display: none !important;
 }
 
 body.site-huipil .hero-floaters {
