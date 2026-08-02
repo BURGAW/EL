@@ -29,7 +29,6 @@
       { src: groky('torta'), alt: 'Mexican torta', caption: 'Torta' },
       { src: groky('chimichanga'), alt: 'Chimichanga', caption: 'Chimichanga' },
       { src: groky('mojara'), alt: 'Fried tilapia platter', caption: 'Mojarra Frita' },
-      { src: groky('breakfast-platters'), alt: 'Breakfast platters', caption: 'Breakfast' },
       { src: groky('7-mares'), alt: 'Seven seas seafood soup', caption: 'Siete Mares' },
     ],
 
@@ -42,7 +41,6 @@
 
     menuStrip: {
       breakfast: [
-        { src: groky('breakfast-platters'), alt: 'Breakfast platters' },
         { src: groky('pancake'), alt: 'Pancakes' },
         { src: groky('omlete'), alt: 'Omelette' },
       ],
@@ -58,7 +56,7 @@
     },
 
     categorySpotlight: {
-      breakfast: { src: groky('breakfast-platters'), alt: 'Breakfast at El Mirasol' },
+      breakfast: { src: groky('pancake'), alt: 'Breakfast at El Mirasol' },
       'daily-lunch': { src: groky('multi-item'), alt: 'Daily lunch favorites' },
       appetizers: { src: groky('empandas'), alt: 'Sopes and antojitos' },
       tacos: { src: groky('crunchy-tacos'), alt: 'Tacos' },
@@ -106,8 +104,9 @@
 
   const itemPhotos = {
     /* breakfast */
-    [photoKey('breakfast', 'Bacon & Eggs')]: g('breakfast-platters', 'Bacon and eggs'),
-    [photoKey('breakfast', 'Huevo con Jamón')]: g('breakfast-platters', 'Huevo con jamón'),
+    [photoKey('breakfast', 'Bacon & Eggs')]: blank(),
+    [photoKey('breakfast', 'Bacon y Huevos')]: blank(),
+    [photoKey('breakfast', 'Huevo con Jamón')]: blank(),
     [photoKey('breakfast', 'Pancake Tacos')]: g('pancake', 'Pancake tacos'),
     [photoKey('breakfast', 'Carne Asada con Huevo')]: blank(),
     [photoKey('breakfast', 'Huevo con Chorizo')]: blank(),
@@ -116,7 +115,7 @@
     [photoKey('breakfast', 'Chilaquiles en Salsa Verde')]: g('chilaquiles-2', 'Chilaquiles en salsa verde'),
     [photoKey('breakfast', 'Burrito de Papas con Chorizo')]: blank(),
     [photoKey('breakfast', 'Burrito Huevo a la Mexicana')]: blank(),
-    [photoKey('breakfast', 'Burrito de Huevo con Jamón')]: g('breakfast-platters', 'Burrito de huevo con jamón'),
+    [photoKey('breakfast', 'Burrito de Huevo con Jamón')]: blank(),
     [photoKey('breakfast', 'Burrito Huevo con Chorizo y Papas')]: blank(),
     [photoKey('breakfast', 'Pancakes')]: g('pancake', 'Pancakes'),
     [photoKey('breakfast', 'Aguas Frescas')]: blank(),
@@ -291,7 +290,7 @@
   };
 
   const sectionDefaultPhotos = {
-    breakfast: g('breakfast-platters', 'Breakfast at El Mirasol'),
+    breakfast: g('pancake', 'Breakfast at El Mirasol'),
     'daily-lunch': g('multi-item', 'Daily lunch'),
     appetizers: g('empandas', 'Appetizers'),
     tacos: g('crunchy-tacos', 'Tacos'),
