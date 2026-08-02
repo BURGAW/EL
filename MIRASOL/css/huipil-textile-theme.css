@@ -412,29 +412,32 @@ body.site-huipil .hero--single .hero-rotator__slide {
   transform: scale(1) !important;
   transition: none !important;
   top: 0 !important;
-  left: -2% !important;
-  right: -2% !important;
-  bottom: -5% !important;
-  background-size: cover !important;
-  background-position: center 3% !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  /* Zoom out so roof + fence + lot fit; navy shows at edges */
+  background-size: 90% auto !important;
+  background-position: center 58% !important;
   background-repeat: no-repeat !important;
 }
 
 @media (max-width: 768px) {
   body.site-huipil .hero--single .hero-rotator__slide {
-    left: -2% !important;
-    right: -2% !important;
-    bottom: -4% !important;
-    background-position: center 5% !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-size: 94% auto !important;
+    background-position: center 54% !important;
   }
 }
 
 @media (min-width: 1200px) {
   body.site-huipil .hero--single .hero-rotator__slide {
-    left: -3% !important;
-    right: -3% !important;
-    bottom: -6% !important;
-    background-position: center 2% !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-size: 88% auto !important;
+    background-position: center 60% !important;
   }
 }
 
@@ -4408,3 +4411,25 @@ body.site-huipil .visit-section.visit-section--flow {
   margin-top: 0 !important;
 }
 
+
+/* === herolot3: zoom out + roof + lot (do not override) === */
+body.site-huipil:not(.menu-page) .hero--single .hero-rotator__slide,
+body.site-huipil:not(.menu-page) .hero--single .hero-rotator__slide.is-active {
+  background-size: 90% auto !important;
+  background-position: center 58% !important;
+  background-repeat: no-repeat !important;
+}
+@media (max-width: 768px) {
+  body.site-huipil:not(.menu-page) .hero--single .hero-rotator__slide,
+  body.site-huipil:not(.menu-page) .hero--single .hero-rotator__slide.is-active {
+    background-size: 94% auto !important;
+    background-position: center 54% !important;
+  }
+}
+@media (min-width: 1200px) {
+  body.site-huipil:not(.menu-page) .hero--single .hero-rotator__slide,
+  body.site-huipil:not(.menu-page) .hero--single .hero-rotator__slide.is-active {
+    background-size: 88% auto !important;
+    background-position: center 60% !important;
+  }
+}

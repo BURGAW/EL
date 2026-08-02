@@ -3,6 +3,9 @@
  */
 (function () {
   const HERO_IMAGE = 'assets/images/hero/el-mirasol-hero.jpg?v=storefront1';
+  /* Keep lot + fence in frame when JS rewrites the hero slide */
+  const HERO_POSITION = 'center 58%';
+  const HERO_SIZE = '90% auto';
 
   const FLOATERS = [
     'assets/images/facebook/nachos.jpg?v=vibe1',
@@ -36,7 +39,7 @@
     if (!root) return;
 
     root.innerHTML =
-      `<div class="hero-rotator__slide is-active" style="background-image:url('${HERO_IMAGE}')" role="img" aria-label="El Mirasol Mexican Restaurant storefront at dusk in Burgaw, NC"></div>`;
+      `<div class="hero-rotator__slide is-active" style="background-image:url('${HERO_IMAGE}');background-position:${HERO_POSITION};background-size:${HERO_SIZE}" role="img" aria-label="El Mirasol Mexican Restaurant storefront at dusk in Burgaw, NC"></div>`;
   }
 
   function initHeroFloaters() {
