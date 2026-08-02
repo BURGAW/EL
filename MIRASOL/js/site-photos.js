@@ -21,7 +21,6 @@
 
     gallery: [
       { src: groky('birria-tacos'), alt: 'Birria tacos with consommé', caption: 'Birria Tacos' },
-      { src: groky('nachos'), alt: 'Loaded nachos', caption: 'Nachos' },
       { src: groky('menudo'), alt: 'Menudo with garnishes', caption: 'Menudo' },
       { src: groky('shrimp-fajitas'), alt: 'Shrimp fajitas sizzling', caption: 'Shrimp Fajitas' },
       { src: groky('carne-asada'), alt: 'Carne asada platter', caption: 'Carne Asada' },
@@ -39,7 +38,6 @@
     ],
 
     followBand: [
-      { src: groky('nachos'), alt: 'Nachos' },
       { src: groky('birria-tacos'), alt: 'Birria tacos' },
       { src: groky('shrimp-fajitas'), alt: 'Fajitas' },
       { src: groky('menudo'), alt: 'Menudo' },
@@ -151,7 +149,7 @@
     [photoKey('appetizers', 'Empanadas')]: g('empandas', 'Empanadas'),
     [photoKey('appetizers', 'Esquite')]: g('street-corn-with-no-chile-powder', 'Esquite'),
     [photoKey('appetizers', 'Street Corn')]: g('street-corn-with-no-chile-powder', 'Street corn — $4.50 each'),
-    [photoKey('appetizers', 'Guacamole')]: g('nachos', 'Guacamole with chips'),
+    /* Guacamole photo removed (was wrong nachos image; replace later) */
 
     /* tacos */
     [photoKey('tacos', 'Taco')]: g('tacos', 'Four tacos shown — $3.12 each'),
@@ -221,7 +219,7 @@
     [photoKey('platters', 'Molcajete')]: g('molcajete', 'Molcajete'),
     [photoKey('platters', 'Cazuelón')]: g('davey-special', 'Cazuelón'),
     [photoKey('platters', 'Tlayuda')]: g('tylayuda', 'Tlayuda'),
-    [photoKey('platters', 'Nachos')]: g('nachos', 'Loaded nachos'),
+    /* Nachos photo removed (wrong image; replace later) */
     [photoKey('platters', 'Fried Steak')]: g('steak-aca', 'Fried steak'),
     [photoKey('platters', 'Grilled or Fried Chicken')]: g('grilled-chicken-platter', 'Grilled chicken platter'),
     [photoKey('platters', 'Parrillada')]: g('parrilliada', 'Parrillada'),

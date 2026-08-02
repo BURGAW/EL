@@ -7,7 +7,7 @@ const FEATURED_ITEMS = [
     name: 'Nachos',
     headline: 'Loaded Nachos',
     blurb: 'Crispy chips piled with seasoned chicken, melted queso, pico, avocado, and fresh toppings.',
-    image: 'assets/images/menu/groky/nachos.jpg?v=groky2',
+    /* image removed — wrong photo; replace later */
     tag: 'popular',
   },
   {

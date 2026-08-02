@@ -6,7 +6,7 @@ const FEATURED_ITEMS_ES = [
     name: 'Nachos',
     headline: 'Nachos Cargados',
     blurb: 'Totopos crujientes con pollo sazonado, queso derretido, pico, aguacate y toppings frescos.',
-    image: 'assets/images/menu/groky/nachos.jpg?v=groky2',
+    /* image removed — wrong photo; replace later */
     tag: 'popular',
   },
   {
