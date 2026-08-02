@@ -131,7 +131,7 @@
     [photoKey('daily-lunch', 'Quesadilla')]: g('quesadilla', 'Quesadilla'),
     [photoKey('daily-lunch', 'Half-Size Torta')]: g('torta', 'Half-size torta'),
     [photoKey('daily-lunch', 'Tamales')]: g('ls-tamles', 'Tamales'),
-    [photoKey('daily-lunch', 'Fajitas')]: g('fajita-mix', 'Chicken fajitas'),
+    /* daily-lunch Fajitas photo removed (wrong fajita-mix image; replace later) */
     [photoKey('daily-lunch', 'Fried Eggs')]: g('huevos-a-la-mexicana', 'Fried eggs plate'),
     [photoKey('daily-lunch', 'Small ACP')]: g('grilled-chicken-platter', 'Arroz con pollo'),
     [photoKey('daily-lunch', "Davey's Special")]: g('davey-special', "Davey's Special"),
@@ -160,7 +160,7 @@
 
     /* burritos */
     [photoKey('burritos', 'Burrito Meal')]: g('burrito-meal', 'Burrito meal'),
-    [photoKey('burritos', 'Fajita Burrito')]: g('fajita-mix', 'Fajita burrito'),
+    /* Fajita Burrito photo removed (wrong fajita-mix image; replace later) */
     [photoKey('burritos', 'Choripollo Burrito')]: g('davey-special', 'Choripollo burrito'),
     [photoKey('burritos', 'Burrito Campechano')]: g('burrito-meal', 'Burrito campechano'),
     [photoKey('burritos', 'California Burrito')]: g('califorina-burrito', 'California burrito'),
@@ -177,7 +177,7 @@
     [photoKey('quesadillas', 'Quesadilla Meal')]: g('quesadilla', 'Quesadilla meal'),
     [photoKey('quesadillas', 'Shrimp Quesadilla')]: g('quesadilla', 'Shrimp quesadilla'),
     [photoKey('quesadillas', 'Veggie Quesadilla')]: g('quesadilla-de-maiz', 'Veggie quesadilla'),
-    [photoKey('quesadillas', 'Fajita Quesadilla')]: g('fajita-mix', 'Fajita quesadilla'),
+    /* Fajita Quesadilla photo removed (wrong fajita-mix image; replace later) */
     [photoKey('quesadillas', 'Quesadilla de Maíz')]: g('quesadilla-de-maiz', 'Quesadilla de maíz'),
     [photoKey('quesadillas', 'Quesadilla de Birria')]: g('quesabirria', 'Quesadilla de birria'),
 
@@ -187,9 +187,7 @@
     [photoKey('tortas', 'Fried Steak Torta')]: g('torta', 'Fried steak torta'),
     [photoKey('tortas', 'Fried Chicken Torta')]: g('torta-2', 'Fried chicken torta'),
 
-    /* fajitas */
-    [photoKey('fajitas', 'Campechanas Fajitas')]: g('fajita-mix', 'Campechanas fajitas'),
-    [photoKey('fajitas', 'Mix Fajitas')]: g('fajita-mix', 'Mix fajitas'),
+    /* fajitas — Campechanas / Mix photo removed (wrong fajita-mix image; replace later) */
     [photoKey('fajitas', 'Shrimp Fajitas')]: g('shrimp-fajitas', 'Shrimp fajitas'),
     [photoKey('fajitas', 'Steak Fajitas')]: g('steak-aca', 'Steak fajitas'),
     [photoKey('fajitas', 'Chicken Fajitas')]: g('grilled-chicken-platter', 'Chicken fajitas'),
