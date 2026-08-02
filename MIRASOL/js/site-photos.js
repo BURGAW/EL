@@ -57,7 +57,7 @@
     categorySpotlight: {
       breakfast: { src: groky('chilaquiles-2'), alt: 'Breakfast at El Mirasol' },
       'daily-lunch': { src: groky('multi-item'), alt: 'Daily lunch favorites' },
-      appetizers: { src: groky('huarache'), alt: 'Sopes and antojitos' },
+      appetizers: { src: groky('4-tostadas'), alt: 'Sopes and antojitos' },
       tacos: { src: groky('tacos-dorados'), alt: 'Tacos' },
       burritos: { src: groky('califorina-burrito'), alt: 'Burrito plate' },
       chimichangas: { src: groky('chimichanga'), alt: 'Chimichanga' },
@@ -140,7 +140,7 @@
 
     /* appetizers */
     [photoKey('appetizers', 'Sope')]: blank(),
-    [photoKey('appetizers', 'Huarache')]: g('huarache', 'Huarache'),
+    [photoKey('appetizers', 'Huarache')]: blank(),
     [photoKey('appetizers', 'Gorditas')]: blank(),
     [photoKey('appetizers', 'Tamales')]: blank(),
     [photoKey('appetizers', 'Tostada')]: g('4-tostadas', 'Four tostadas shown — $5 each'),
@@ -308,7 +308,7 @@
   const sectionDefaultPhotos = {
     breakfast: g('chilaquiles-2', 'Breakfast at El Mirasol'),
     'daily-lunch': g('multi-item', 'Daily lunch'),
-    appetizers: g('huarache', 'Appetizers'),
+    appetizers: g('4-tostadas', 'Appetizers'),
     tacos: g('tacos-dorados', 'Tacos'),
     burritos: g('califorina-burrito', 'Burritos'),
     chimichangas: g('chimichanga', 'Chimichangas'),
