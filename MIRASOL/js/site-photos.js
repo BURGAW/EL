@@ -53,7 +53,6 @@
       'daily-lunch': [
         { src: groky('birria-tacos'), alt: 'Birria tacos' },
         { src: groky('crunchy-tacos'), alt: 'Crunchy tacos' },
-        { src: groky('davey-special'), alt: "Davey's Special" },
         { src: groky('quesadilla'), alt: 'Quesadilla' },
       ],
       dinner: [
@@ -134,7 +133,7 @@
     /* daily-lunch Fajitas photo removed (wrong fajita-mix image; replace later) */
     [photoKey('daily-lunch', 'Fried Eggs')]: g('huevos-a-la-mexicana', 'Fried eggs plate'),
     [photoKey('daily-lunch', 'Small ACP')]: g('grilled-chicken-platter', 'Arroz con pollo'),
-    [photoKey('daily-lunch', "Davey's Special")]: g('davey-special', "Davey's Special"),
+    /* Davey's Special photo removed (wrong image; replace later) */
     [photoKey('daily-lunch', 'Birria Tacos')]: g('birria-tacos', 'Birria tacos'),
 
     /* appetizers — Sope photo removed (wrong image; replace later) */
@@ -160,8 +159,7 @@
 
     /* burritos */
     [photoKey('burritos', 'Burrito Meal')]: g('burrito-meal', 'Burrito meal'),
-    /* Fajita Burrito photo removed (wrong fajita-mix image; replace later) */
-    [photoKey('burritos', 'Choripollo Burrito')]: g('davey-special', 'Choripollo burrito'),
+    /* Fajita Burrito / Choripollo Burrito photos removed (wrong images; replace later) */
     [photoKey('burritos', 'Burrito Campechano')]: g('burrito-meal', 'Burrito campechano'),
     [photoKey('burritos', 'California Burrito')]: g('califorina-burrito', 'California burrito'),
     [photoKey('burritos', 'Shrimp Burrito')]: g('burrito-meal', 'Shrimp burrito'),
@@ -199,7 +197,7 @@
 
     /* platters */
     [photoKey('platters', 'ACP (Arroz Con Pollo)')]: g('grilled-chicken-platter', 'Arroz con pollo'),
-    [photoKey('platters', "Davey's Special")]: g('davey-special', "Davey's Special"),
+    /* Davey's Special photo removed (wrong image; replace later) */
     [photoKey('platters', 'Carne Asada')]: g('carne-asada', 'Carne asada'),
     [photoKey('platters', 'Oaxaqueño')]: g('platilla-oaxacaqueno', 'Oaxaqueño platter'),
     [photoKey('platters', 'Oaxaqueño de Pollo')]: g('platillo', 'Oaxaqueño de pollo'),
@@ -209,7 +207,7 @@
     [photoKey('platters', 'Chilaquiles')]: g('chilaquiles', 'Chilaquiles'),
     [photoKey('platters', 'Mar y Tierra')]: g('carne-asada', 'Mar y tierra'),
     [photoKey('platters', 'Molcajete')]: g('molcajete', 'Molcajete'),
-    [photoKey('platters', 'Cazuelón')]: g('davey-special', 'Cazuelón'),
+    /* Cazuelón photo removed (was wrong davey-special image; replace later) */
     [photoKey('platters', 'Tlayuda')]: g('tylayuda', 'Tlayuda'),
     /* Nachos photo removed (wrong image; replace later) */
     [photoKey('platters', 'Fried Steak')]: g('steak-aca', 'Fried steak'),
