@@ -49,7 +49,6 @@
         { src: groky('breakfast-platters'), alt: 'Breakfast platters' },
         { src: groky('pancake'), alt: 'Pancakes' },
         { src: groky('omlete'), alt: 'Omelette' },
-        { src: groky('huevos-con-chorizo-platter'), alt: 'Huevos con chorizo' },
       ],
       'daily-lunch': [
         { src: groky('birria-tacos'), alt: 'Birria tacos' },
@@ -115,14 +114,12 @@
     [photoKey('breakfast', 'Huevo con Jamón')]: g('breakfast-platters', 'Huevo con jamón'),
     [photoKey('breakfast', 'Pancake Tacos')]: g('pancake', 'Pancake tacos'),
     [photoKey('breakfast', 'Carne Asada con Huevo')]: g('carne-asada', 'Carne asada con huevo'),
-    [photoKey('breakfast', 'Huevo con Chorizo')]: g('huevos-con-chorizo-platter', 'Huevo con chorizo'),
+    /* Huevo con Chorizo / chorizo burritos photo removed (wrong image; replace later) */
     [photoKey('breakfast', 'Strawberry Pancakes')]: g('pancake', 'Strawberry pancakes'),
     [photoKey('breakfast', 'Huevos Ahogados')]: g('huevos-a-la-mexicana', 'Huevos ahogados'),
     [photoKey('breakfast', 'Chilaquiles en Salsa Verde')]: g('chilaquiles-2', 'Chilaquiles en salsa verde'),
-    [photoKey('breakfast', 'Burrito de Papas con Chorizo')]: g('huevos-con-chorizo-platter', 'Burrito de papas con chorizo'),
     [photoKey('breakfast', 'Burrito Huevo a la Mexicana')]: g('huevos-a-la-mexicana', 'Burrito huevo a la mexicana'),
     [photoKey('breakfast', 'Burrito de Huevo con Jamón')]: g('breakfast-platters', 'Burrito de huevo con jamón'),
-    [photoKey('breakfast', 'Burrito Huevo con Chorizo y Papas')]: g('huevos-con-chorizo-platter', 'Burrito huevo con chorizo y papas'),
     [photoKey('breakfast', 'Pancakes')]: g('pancake', 'Pancakes'),
     [photoKey('breakfast', 'Aguas Frescas')]: g('fruit-cups', 'Aguas frescas'),
 
@@ -159,7 +156,7 @@
     [photoKey('tacos', 'Tacos de Birria de Pollo')]: g('birria-tacos', 'Birria tacos with consommé'),
     [photoKey('tacos', 'Shrimp Tacos')]: g('shrimp-tacos-on-flour', 'Shrimp tacos'),
     [photoKey('tacos', 'Tacos Campechanos')]: g('order-of-tacos-2', 'Tacos campechanos'),
-    [photoKey('tacos', 'Tacos Albañil')]: g('huevos-con-chorizo-platter', 'Tacos albañil'),
+    /* Tacos Albañil photo removed (wrong huevos-con-chorizo image; replace later) */
 
     /* burritos */
     [photoKey('burritos', 'Burrito Meal')]: g('burrito-meal', 'Burrito meal'),
