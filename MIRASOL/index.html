@@ -21,21 +21,16 @@
   <link rel="apple-touch-icon" href="assets/images/facebook/logo.jpg?v=brand1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Dancing+Script:wght@500;600;700&family=Montserrat:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=mobilepass1">
-  <link rel="stylesheet" href="css/features-pack.css?v=ribboncenter1">
-  <link rel="stylesheet" href="css/mobile.css?v=mobilepass1">
-  <link rel="stylesheet" href="css/brand-nav.css?v=navends1">
-  <link rel="stylesheet" href="css/fiesta-alive.css?v=pickupread1">
-  <link rel="stylesheet" href="css/no-cutoff.css?v=ribboncenter1">
-  <link rel="stylesheet" href="css/hero-snaps.css?v=classicsnap4">
-  <link rel="stylesheet" href="css/google-review-tab.css?v=mobilepass1">
-  <link rel="stylesheet" href="css/clover-ordering.css?v=clover1">
-  <link rel="stylesheet" href="css/tuesday-closed.css?v=design17">
-  <link rel="stylesheet" href="css/google-sites-embed.css?v=scrollnav1">
-  <link rel="stylesheet" href="css/huipil-textile-theme.css?v=dinnerslide1">
+  <!-- Speed: 2 font families only (was 5) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=fast2">
+  <link rel="stylesheet" href="css/mobile.css?v=fast2">
+  <link rel="stylesheet" href="css/brand-nav.css?v=fast2">
+  <link rel="stylesheet" href="css/tuesday-closed.css?v=fast2">
+  <link rel="stylesheet" href="css/google-sites-embed.css?v=fast2">
+  <link rel="stylesheet" href="css/huipil-textile-theme.css?v=fast2">
 
-  <link rel="preload" as="image" href="assets/images/hero/el-mirasol-hero.jpg?v=storefront1">
+  <link rel="preload" as="image" href="assets/images/hero/el-mirasol-hero.jpg?v=storefront1" fetchpriority="high">
   <meta property="og:image" content="https://burgaw.github.io/EL/MIRASOL/assets/images/hero/el-mirasol-hero.jpg?v=storefront1">
   <script type="application/ld+json">
   {
@@ -72,7 +67,7 @@
   }
   </script>
 </head>
-<body class="pattern has-topbar site-huipil" data-build="dinnerslide1">
+<body class="pattern has-topbar site-huipil" data-build="fast2">
   <a href="#main" class="skip-link">Skip to content</a>
 
   <div class="social-topbar">
@@ -128,78 +123,7 @@
     </div>
   </section>
 
-  <div class="feat-ribbon" id="feat-ribbon" aria-live="polite">
-    <div class="feat-ribbon__inner">
-      <span class="feat-ribbon__specials" data-feat-special>Tonight: Birria consommé — ask for extra</span>
-      <div class="feat-ribbon__right">
-        <span class="feat-ribbon__status"><span class="feat-ribbon__dot" aria-hidden="true"></span> <span data-feat-status>Kitchen open</span></span>
-        <span class="feat-ribbon__meal" data-feat-meal>Now serving: Dinner</span>
-        <span class="feat-ribbon__clock" data-feat-clock></span>
-      </div>
-    </div>
-  </div>
 
-  <div id="fiesta-stamps-mount" hidden aria-hidden="true">
-      <article class="fiesta-card fiesta-card--stamps" id="fiesta-stamps">
-        <div class="fiesta-card__icon" aria-hidden="true">✦</div>
-        <h3>Fiesta Pass</h3>
-        <p class="fiesta-card__lead">A punch on every visit. Five holes filled earns a complimentary dessert at the register.</p>
-
-        <div class="fiesta-stamps__pass fiesta-stamps__pass--preview" aria-hidden="true">
-          <div class="fiesta-stamps__pass-head">
-            <span class="fiesta-stamps__pass-brand">El Mirasol</span>
-            <span class="fiesta-stamps__pass-type">Fiesta Pass</span>
-          </div>
-          <div class="fiesta-stamps__row fiesta-stamps__row--preview">
-            <div class="fiesta-stamp-slot"><span class="fiesta-stamp-slot__ring"></span><span class="fiesta-stamp-slot__core"></span><span class="fiesta-stamp-slot__num">1</span></div>
-            <div class="fiesta-stamp-slot"><span class="fiesta-stamp-slot__ring"></span><span class="fiesta-stamp-slot__core"></span><span class="fiesta-stamp-slot__num">2</span></div>
-            <div class="fiesta-stamp-slot"><span class="fiesta-stamp-slot__ring"></span><span class="fiesta-stamp-slot__core"></span><span class="fiesta-stamp-slot__num">3</span></div>
-            <div class="fiesta-stamp-slot"><span class="fiesta-stamp-slot__ring"></span><span class="fiesta-stamp-slot__core"></span><span class="fiesta-stamp-slot__num">4</span></div>
-            <div class="fiesta-stamp-slot is-reward"><span class="fiesta-stamp-slot__ring"></span><span class="fiesta-stamp-slot__core"></span><span class="fiesta-stamp-slot__reward">★</span><span class="fiesta-stamp-slot__num">5</span></div>
-          </div>
-          <p class="fiesta-stamps__pass-foot">One punch per order · Present at register</p>
-        </div>
-
-        <div class="fiesta-stamps__auth" id="fiesta-stamps-auth">
-          <form class="fiesta-stamps__form" id="fiesta-stamps-form" novalidate>
-            <div class="fiesta-stamps__field fiesta-stamps__field--register">
-              <label for="stamp-name">Name</label>
-              <input type="text" id="stamp-name" name="name" autocomplete="name" required>
-            </div>
-            <div class="fiesta-stamps__field fiesta-stamps__field--register">
-              <label for="stamp-phone">Phone</label>
-              <input type="tel" id="stamp-phone" name="phone" autocomplete="tel" inputmode="tel" required>
-            </div>
-            <div class="fiesta-stamps__field">
-              <label for="stamp-username">Username</label>
-              <input type="text" id="stamp-username" name="username" autocomplete="username" required>
-            </div>
-            <div class="fiesta-stamps__field">
-              <label for="stamp-password">Password</label>
-              <input type="password" id="stamp-password" name="password" autocomplete="new-password" required minlength="6">
-            </div>
-            <p class="fiesta-stamps__form-error" id="fiesta-stamps-form-error" role="alert" hidden></p>
-            <button type="submit" class="fiesta-stamp-btn" id="fiesta-stamp-submit">Create My Stamp Card</button>
-            <button type="button" class="fiesta-stamps__toggle" id="fiesta-stamps-toggle">Already have a card? Sign in</button>
-          </form>
-        </div>
-
-        <div class="fiesta-stamps__member" id="fiesta-stamps-member" hidden>
-          <p class="fiesta-stamps__account" id="fiesta-stamps-account"></p>
-          <div class="fiesta-stamps__pass">
-            <div class="fiesta-stamps__pass-head">
-              <span class="fiesta-stamps__pass-brand">El Mirasol</span>
-              <span class="fiesta-stamps__pass-type">Fiesta Pass</span>
-            </div>
-            <div class="fiesta-stamps__row" aria-label="Visit punches"></div>
-            <p class="fiesta-stamps__pass-foot">One punch per order · Present at register</p>
-          </div>
-          <p class="fiesta-stamps__reward">Five punches — complimentary dessert</p>
-          <button type="button" class="fiesta-stamp-btn" id="fiesta-stamp-btn">Stamp Added at Checkout</button>
-          <button type="button" class="fiesta-stamps__signout" id="fiesta-stamps-signout">Sign Out</button>
-        </div>
-      </article>
-  </div>
 
   <div class="feat-stats" aria-label="By the numbers">
     <div class="feat-stat">
@@ -408,23 +332,15 @@
     <img id="lightbox-img" src="" alt="">
   </div>
 
-  <script src="js/site-config.js?v=mirasol1"></script>
-  <script src="js/clover-checkout.js?v=cloverpay1"></script>
-  <script src="js/clover-ordering.js?v=nativepickup1"></script>
-  <script src="js/google-reviews-data.js?v=rev4plus1"></script>
-  <script src="js/account-auth.js?v=audit1"></script>
-  <script src="js/stamp-card.js?v=passoff1"></script>
-  <script src="js/site-map.js?v=mirasolmap1"></script>
-  <script src="js/site-reviews.js?v=revrestore1"></script>
-  <script src="js/site-photos.js?v=rmdips1"></script>
-  <script src="js/slideshow-fit.js?v=fiesta3"></script>
-  <script src="js/vibe.js?v=herolot3"></script>
-  <script src="js/friend-text.js?v=elm1"></script>
-  <script src="js/features-pack.js?v=visitflow1"></script>
-
-  <script src="js/fiesta-alive.js?v=huipilguard1"></script>
-  <script src="js/main.js?v=dinnerslide1"></script>
-  <script src="js/google-sites-embed.js?v=tuesdayfix1"></script>
-  <script src="js/tuesday-closed.js?v=hourscompact3"></script>
+  <!-- Core only: no Clover/cart (ordering off), no stamps/gallery/features unused on home -->
+  <script src="js/site-config.js?v=fast2" defer></script>
+  <script src="js/google-reviews-data.js?v=fast2" defer></script>
+  <script src="js/site-reviews.js?v=fast2" defer></script>
+  <script src="js/site-map.js?v=fast2" defer></script>
+  <script src="js/vibe.js?v=fast2" defer></script>
+  <script src="js/fiesta-alive.js?v=fast2" defer></script>
+  <script src="js/main.js?v=fast2" defer></script>
+  <script src="js/google-sites-embed.js?v=fast2" defer></script>
+  <script src="js/tuesday-closed.js?v=fast2" defer></script>
 </body>
 </html>
