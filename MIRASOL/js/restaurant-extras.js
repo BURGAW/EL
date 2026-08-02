@@ -175,24 +175,6 @@
     bookmark.textContent = '☆';
     closeBtn?.before(bookmark);
 
-    const actions = modal.querySelector('.item-modal__actions');
-    if (actions) {
-      const copyBtn = document.createElement('button');
-      copyBtn.type = 'button';
-      copyBtn.className = 'btn btn-outline';
-      copyBtn.id = 'item-modal-copy-phone';
-      copyBtn.textContent = 'Copy phone order';
-      actions.prepend(copyBtn);
-
-      copyBtn.addEventListener('click', () => {
-        const state = window.MenuOrder?.getModalState?.();
-        if (!state?.key) return;
-        const line = window.RestaurantExtras?.buildPhoneLineFromModal?.();
-        if (!line) return;
-        navigator.clipboard?.writeText(line).then(() => toast('Copied — paste when you call!'));
-      });
-    }
-
     bookmark.addEventListener('click', () => {
       const state = window.MenuOrder?.getModalState?.();
       if (!state?.key) return;

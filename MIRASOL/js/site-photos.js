@@ -294,6 +294,15 @@
     [photoKey('alcohol', 'Horchata con Licor')]: blank(),
     [photoKey('alcohol', 'Ron con Coca')]: blank(),
     [photoKey('alcohol', 'Jack con Coca')]: blank(),
+
+    /* Spanish names for dishes that still have real photos (not user-blanked) */
+    [photoKey('chimichangas', 'Chimichanga de Camarones')]: g('chimi', 'Chimichanga de camarones'),
+    [photoKey('burritos', 'Burrito California')]: g('califorina-burrito', 'Burrito California'),
+    [photoKey('fajitas', 'Fajitas de Camarones')]: g('shrimp-fajitas', 'Fajitas de camarones'),
+    [photoKey('enchiladas', 'Enchiladas con Queso')]: g('quesoenchiladas', 'Enchiladas con queso'),
+    [photoKey('tacos', 'Tacos de Camarones')]: g('shrimp-tacos-on-flour', 'Tacos de camarones'),
+    [photoKey('tortas', 'Torta de Pollo Frito')]: g('torta-2', 'Torta de pollo frito'),
+    [photoKey('platters', 'Pollo con Espagueti')]: g('spaghetti', 'Pollo con espagueti'),
   };
 
   const sectionDefaultPhotos = {
