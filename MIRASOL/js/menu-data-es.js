@@ -67,18 +67,18 @@ const MENU_DATA_ES = [
     title: 'Almuerzo del Día (LS)',
     note: 'LS = Tamaño de almuerzo (Lunch Size) · De 10 AM a 3 PM.',
     items: [
-      { name: 'Tacos Crunchy', price: '$11.99', desc: 'Res molida o pollo con arroz y frijoles.', lunchProtein2: true },
-      { name: 'Tacos', price: '$11.99', desc: 'Res molida o pollo con arroz y frijoles.', lunchProtein2: true },
-      { name: 'Empanadas', price: '$13.50', desc: 'Pollo o queso con crema, queso, arroz y frijoles.', lunchProtein3: true },
-      { name: 'Enchiladas', price: '$12.99', desc: 'Pollo, res molida o queso con aguacate, arroz y frijoles.', lunchProtein3: true },
-      { name: 'Quesadilla', price: '$10.99', desc: 'Res molida o pollo con lechuga, pico y arroz.', lunchProtein2: true },
-      { name: 'Torta Mediana', price: '$12.99', desc: 'Pollo o res molida con frijoles, lechuga, queso fresco y aguacate.', lunchProtein2: true },
-      { name: 'Tamales', price: '$12.99', desc: 'Pollo con salsa verde y/o roja, arroz y frijoles.', salsaChoice: true },
-      { name: 'Fajitas', price: '$13.99', desc: 'Pollo con pimientos y cebolla, arroz, frijoles y tortillas. Asada +$2.', lunchFajita: true },
-      { name: 'Huevos Fritos', price: '$10.99', desc: 'Con arroz, frijoles y tortillas de harina.', tortilla: true },
-      { name: 'ACP Pequeño', price: '$11.99', desc: 'Pollo a la plancha, arroz, queso y tortillas.', tortilla: true },
-      { name: 'Especial Davey', price: '$13.99', desc: 'Pollo y chorizo con queso, arroz y tortillas.', tortilla: true },
-      { name: 'Tacos de Birria', price: '$12.99', desc: 'Tortillas de maíz con birria de res, cebolla, cilantro, arroz y caldo.' }
+      { name: 'LS Tacos Crunchy', price: '$11.99', desc: 'Res molida o pollo con arroz y frijoles.', lunchProtein2: true },
+      { name: 'LS Tacos', price: '$11.99', desc: 'Res molida o pollo con arroz y frijoles.', lunchProtein2: true },
+      { name: 'LS Empanadas', price: '$13.50', desc: 'Pollo o queso con crema, queso, arroz y frijoles.', lunchProtein3: true },
+      { name: 'LS Enchiladas', price: '$12.99', desc: 'Pollo, res molida o queso con aguacate, arroz y frijoles.', lunchProtein3: true },
+      { name: 'LS Quesadilla', price: '$10.99', desc: 'Res molida o pollo con lechuga, pico y arroz.', lunchProtein2: true },
+      { name: 'LS Torta Mediana', price: '$12.99', desc: 'Pollo o res molida con frijoles, lechuga, queso fresco y aguacate.', lunchProtein2: true },
+      { name: 'LS Tamales', price: '$12.99', desc: 'Pollo con salsa verde y/o roja, arroz y frijoles.', salsaChoice: true },
+      { name: 'LS Fajitas', price: '$13.99', desc: 'Pollo con pimientos y cebolla, arroz, frijoles y tortillas. Asada +$2.', lunchFajita: true },
+      { name: 'LS Huevos Fritos', price: '$10.99', desc: 'Con arroz, frijoles y tortillas de harina.', tortilla: true },
+      { name: 'LS ACP Pequeño', price: '$11.99', desc: 'Pollo a la plancha, arroz, queso y tortillas.', tortilla: true },
+      { name: 'LS Especial Davey', price: '$13.99', desc: 'Pollo y chorizo con queso, arroz y tortillas.', tortilla: true },
+      { name: 'LS Tacos de Birria', price: '$12.99', desc: 'Tortillas de maíz con birria de res, cebolla, cilantro, arroz y caldo.' }
     ]
   },
   {

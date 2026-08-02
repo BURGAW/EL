@@ -68,18 +68,18 @@ const MENU_DATA = [
     title: 'Daily Lunch (LS)',
     note: 'LS = Lunch Size · Served 10 AM – 3 PM.',
     items: [
-      { name: 'Crunchy Tacos', price: '$11.99', desc: 'Ground beef or chicken with rice and beans.', lunchProtein2: true },
-      { name: 'Tacos', price: '$11.99', desc: 'Ground beef or chicken with rice and beans.', lunchProtein2: true },
-      { name: 'Empanadas', price: '$13.50', desc: 'Chicken or cheese, sour cream and cheese, with rice and beans.', lunchProtein3: true },
-      { name: 'Enchiladas', price: '$12.99', desc: 'Chicken, ground beef, or cheese with cheese and avocado, rice and beans.', lunchProtein3: true },
-      { name: 'Quesadilla', price: '$10.99', desc: 'Ground beef or chicken with lettuce, pico, and rice.', lunchProtein2: true },
-      { name: 'Half-Size Torta', price: '$12.99', desc: 'Chicken or ground beef with beans, lettuce, queso fresco, and avocado.', lunchProtein2: true },
-      { name: 'Tamales', price: '$12.99', desc: 'Chicken with green and/or red salsa, rice and beans.', salsaChoice: true },
-      { name: 'Fajitas', price: '$13.99', desc: 'Chicken with grilled peppers and onions, rice, beans, and flour tortillas. Sub steak +$2.', lunchFajita: true },
-      { name: 'Fried Eggs', price: '$10.99', desc: 'Fried eggs with rice, beans, and flour tortillas.', tortilla: true },
-      { name: 'Small ACP', price: '$11.99', desc: 'Grilled chicken, rice, queso sauce, and tortillas.', tortilla: true },
-      { name: "Davey's Special", price: '$13.99', desc: 'Grilled chicken and chorizo with queso sauce, rice, and tortillas.', tortilla: true },
-      { name: 'Birria Tacos', price: '$12.99', desc: 'Handmade corn tortillas with birria beef, onion, cilantro, rice, and birria broth.' }
+      { name: 'LS Crunchy Tacos', price: '$11.99', desc: 'Ground beef or chicken with rice and beans.', lunchProtein2: true },
+      { name: 'LS Tacos', price: '$11.99', desc: 'Ground beef or chicken with rice and beans.', lunchProtein2: true },
+      { name: 'LS Empanadas', price: '$13.50', desc: 'Chicken or cheese, sour cream and cheese, with rice and beans.', lunchProtein3: true },
+      { name: 'LS Enchiladas', price: '$12.99', desc: 'Chicken, ground beef, or cheese with cheese and avocado, rice and beans.', lunchProtein3: true },
+      { name: 'LS Quesadilla', price: '$10.99', desc: 'Ground beef or chicken with lettuce, pico, and rice.', lunchProtein2: true },
+      { name: 'LS Half-Size Torta', price: '$12.99', desc: 'Chicken or ground beef with beans, lettuce, queso fresco, and avocado.', lunchProtein2: true },
+      { name: 'LS Tamales', price: '$12.99', desc: 'Chicken with green and/or red salsa, rice and beans.', salsaChoice: true },
+      { name: 'LS Fajitas', price: '$13.99', desc: 'Chicken with grilled peppers and onions, rice, beans, and flour tortillas. Sub steak +$2.', lunchFajita: true },
+      { name: 'LS Fried Eggs', price: '$10.99', desc: 'Fried eggs with rice, beans, and flour tortillas.', tortilla: true },
+      { name: 'LS Small ACP', price: '$11.99', desc: 'Grilled chicken, rice, queso sauce, and tortillas.', tortilla: true },
+      { name: "LS Davey's Special", price: '$13.99', desc: 'Grilled chicken and chorizo with queso sauce, rice, and tortillas.', tortilla: true },
+      { name: 'LS Birria Tacos', price: '$12.99', desc: 'Handmade corn tortillas with birria beef, onion, cilantro, rice, and birria broth.' }
     ]
   },
   {
