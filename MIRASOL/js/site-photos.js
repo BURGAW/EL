@@ -115,9 +115,8 @@
     [photoKey('breakfast', 'Carne Asada con Huevo')]: g('carne-asada', 'Carne asada con huevo'),
     /* Huevo con Chorizo / chorizo burritos photo removed (wrong image; replace later) */
     [photoKey('breakfast', 'Strawberry Pancakes')]: g('pancake', 'Strawberry pancakes'),
-    [photoKey('breakfast', 'Huevos Ahogados')]: g('huevos-a-la-mexicana', 'Huevos ahogados'),
+    /* Huevos Ahogados / Burrito Huevo a la Mexicana photo removed (wrong image; replace later) */
     [photoKey('breakfast', 'Chilaquiles en Salsa Verde')]: g('chilaquiles-2', 'Chilaquiles en salsa verde'),
-    [photoKey('breakfast', 'Burrito Huevo a la Mexicana')]: g('huevos-a-la-mexicana', 'Burrito huevo a la mexicana'),
     [photoKey('breakfast', 'Burrito de Huevo con Jamón')]: g('breakfast-platters', 'Burrito de huevo con jamón'),
     [photoKey('breakfast', 'Pancakes')]: g('pancake', 'Pancakes'),
     [photoKey('breakfast', 'Aguas Frescas')]: g('fruit-cups', 'Aguas frescas'),
@@ -130,8 +129,7 @@
     [photoKey('daily-lunch', 'Quesadilla')]: g('quesadilla', 'Quesadilla'),
     [photoKey('daily-lunch', 'Half-Size Torta')]: g('torta', 'Half-size torta'),
     [photoKey('daily-lunch', 'Tamales')]: g('ls-tamles', 'Tamales'),
-    /* daily-lunch Fajitas photo removed (wrong fajita-mix image; replace later) */
-    [photoKey('daily-lunch', 'Fried Eggs')]: g('huevos-a-la-mexicana', 'Fried eggs plate'),
+    /* daily-lunch Fajitas / Fried Eggs photos removed (wrong images; replace later) */
     [photoKey('daily-lunch', 'Small ACP')]: g('grilled-chicken-platter', 'Arroz con pollo'),
     /* Davey's Special photo removed (wrong image; replace later) */
     [photoKey('daily-lunch', 'Birria Tacos')]: g('birria-tacos', 'Birria tacos'),
@@ -164,7 +162,7 @@
     [photoKey('burritos', 'California Burrito')]: g('califorina-burrito', 'California burrito'),
     [photoKey('burritos', 'Shrimp Burrito')]: g('burrito-meal', 'Shrimp burrito'),
     [photoKey('burritos', 'Veggie Burrito')]: g('burrito-meal', 'Veggie burrito'),
-    [photoKey('burritos', 'Burrito Huevos a la Mexicana')]: g('huevos-a-la-mexicana', 'Burrito huevos a la mexicana'),
+    /* Burrito Huevos a la Mexicana photo removed (wrong image; replace later) */
 
     /* chimichangas */
     [photoKey('chimichangas', 'Chimichanga Meal')]: g('chimichanga', 'Chimichanga'),
@@ -223,7 +221,7 @@
     [photoKey('kids', 'Kids Quesadilla')]: g('quesadilla', 'Kids quesadilla'),
     [photoKey('kids', 'Kids Burrito')]: g('burrito-meal', 'Kids burrito'),
     [photoKey('kids', 'Kids ACP')]: g('grilled-chicken-platter', 'Kids ACP'),
-    [photoKey('kids', 'Scrambled Eggs')]: g('huevos-a-la-mexicana', 'Scrambled eggs'),
+    /* kids Scrambled Eggs photo removed (wrong huevos-a-la-mexicana image; replace later) */
 
     /* broths */
     [photoKey('broths', 'Caldo de Res')]: g('caldo-de-res', 'Caldo de res'),
