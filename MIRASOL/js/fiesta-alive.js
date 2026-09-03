@@ -30,7 +30,7 @@
     { name: 'Torta', desc: 'Large sandwich with meat, mozzarella, lettuce, cheese, avocado, and mayo.', tag: 'Torta' },
     { name: 'Torta Cubana', desc: 'Steak, ham, chorizo, fried egg, cheese, lettuce, tomato, avocado, and mayo.', tag: 'Torta' },
     { name: 'Fried Chicken Torta', desc: 'Fried chicken with mozzarella, lettuce, cheese, avocado, and mayo.', tag: 'Torta' },
-    { name: 'Huarache', desc: 'Steak with grilled onions and peppers.', tag: 'Platter' },
+    { name: 'Huarache', desc: 'Corn tortilla topped with beans, your choice of meat, lettuce, cheese, and avocado. Served with pico de gallo.', tag: 'Platter' },
     { name: 'Gorditas', desc: 'Steak and chorizo with mozzarella, rice, and beans.', tag: 'Antojitos' },
     { name: 'Empanadas', desc: 'Fried corn empanadas filled with chicken or cheese.', tag: 'Antojitos' },
     { name: "Davey's Special", desc: 'Grilled chicken and chorizo with queso sauce, rice, and tortillas.', tag: 'Platter' },
