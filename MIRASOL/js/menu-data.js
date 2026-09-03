@@ -94,7 +94,7 @@ const MENU_DATA = [
       { name: 'Street Corn', price: '$4.50 each', desc: 'One ear of corn on the cob with mayo, cheese, and chili powder. Each $4.50.', },
       { name: 'Sope', price: '$8.50 each', desc: 'Thick tortilla topped with beans, your choice of meat, lettuce, sour cream, and cheese. Served with pico de gallo.', meats: true },
       { name: 'Huarache', price: '$14.99', desc: 'Corn tortilla topped with beans, your choice of meat, lettuce, cheese, and avocado. Served with pico de gallo.', meats: true },
-      { name: 'Gorditas', price: '$15.99', desc: 'Steak and chorizo, mozzarella, rice and beans.' },
+      { name: 'Gorditas', price: '$15.99', desc: 'Thick tortilla stuffed with your choice of meat, beans, lettuce, tomato, sour cream, and cheese.', meats: true },
       { name: 'Tamales', price: '$12.99', desc: 'With rice, beans, and salad.' },
       { name: 'Tostada', price: '$5 each', desc: 'One tostada with beans, your choice of meat, lettuce, sour cream, cheese and pico de gallo. Photo shows four — each $5.', meats: true },
       { name: 'Empanadas', price: '$16.50', desc: 'Deep fried corn tortillas filled with chicken or cheese.', lunchProtein3: true }
