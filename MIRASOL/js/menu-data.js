@@ -124,7 +124,7 @@ const MENU_DATA = [
       { name: 'Fajita Burrito', price: '$16.00', desc: 'Steak or chicken with grilled onions and peppers, mozzarella, rice and beans.', fajitaProtein2: true },
       { name: 'Choripollo Burrito', price: '$15.80', desc: 'Chicken and chorizo, mozzarella, rice and beans.' },
       { name: 'Burrito Campechano', price: '$15.80', desc: 'Steak and chorizo, mozzarella, rice and beans.' },
-      { name: 'California Burrito', price: '$16.00', desc: 'Large flour tortilla with meat, cheese, beans and rice.', meats: true },
+      { name: 'California Burrito', price: '$16.00', desc: 'Large flour tortilla with meat, cheese, beans and rice. Covered in queso sauce.', meats: true },
       { name: 'Shrimp Burrito', price: '$17.75', desc: 'Shrimp, mozzarella, rice and beans in a large flour tortilla.' },
       { name: 'Veggie Burrito', price: '$14.05', desc: 'Bell peppers, mushrooms or cactus, mozzarella, rice and beans.', veggieChoice: true },
       { name: 'Burrito Huevos a la Mexicana', price: '$14.00', desc: 'Scrambled eggs with tomatoes, onions, cilantro, rice and beans.' }
