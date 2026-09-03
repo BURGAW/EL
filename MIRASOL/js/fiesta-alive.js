@@ -20,7 +20,7 @@
     { name: 'Burrito Campechano', desc: 'Steak and chorizo with mozzarella, rice, and beans.', tag: 'Burrito' },
     { name: 'California Burrito', desc: 'Flour tortilla with meat, cheese, beans, and rice.', tag: 'Burrito' },
     { name: 'Choripollo Burrito', desc: 'Chicken and chorizo with mozzarella, rice, and beans.', tag: 'Burrito' },
-    { name: 'Shrimp Burrito', desc: 'Shrimp, mozzarella, rice, and beans, covered in queso sauce.', tag: 'Seafood' },
+    { name: 'Shrimp Burrito', desc: 'Shrimp, mozzarella, rice, and beans in a large flour tortilla.', tag: 'Seafood' },
     { name: 'Burrito Mummia', desc: 'Steak and shrimp in a flour tortilla, wrapped in bacon, fried, with queso and chipotle.', tag: 'Burrito' },
     { name: 'Chimichanga Meal', desc: 'Fried flour tortilla with meat, mozzarella, and queso sauce.', tag: 'Chimichanga' },
     { name: 'Shrimp Chimichanga', desc: 'Fried flour tortilla with shrimp, mozzarella, and queso sauce.', tag: 'Seafood' },

@@ -124,7 +124,7 @@ const MENU_DATA_ES = [
       { name: 'Burrito Choripollo', price: '$15.80', desc: 'Pollo y chorizo, mozzarella, arroz y frijoles.' },
       { name: 'Burrito Campechano', price: '$15.80', desc: 'Asada y chorizo, mozzarella, arroz y frijoles.' },
       { name: 'Burrito California', price: '$16.00', desc: 'Tortilla de harina grande con carne, queso, frijoles y arroz.', meats: true },
-      { name: 'Burrito de Camarones', price: '$17.75', desc: 'Camarones, mozzarella, arroz y frijoles. Cubierto con salsa de queso.' },
+      { name: 'Burrito de Camarones', price: '$17.75', desc: 'Camarones, mozzarella, arroz y frijoles en tortilla de harina grande.' },
       { name: 'Burrito Vegetariano', price: '$14.05', desc: 'Chile, champiñones o nopales, mozzarella, arroz y frijoles.', veggieChoice: true },
       { name: 'Burrito Huevos a la Mexicana', price: '$14.00', desc: 'Huevos revueltos con tomates, cebollas, cilantro, arroz y frijoles.' }
     ]
