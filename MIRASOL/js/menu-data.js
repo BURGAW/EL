@@ -92,7 +92,7 @@ const MENU_DATA = [
       { name: 'Guacamole', price: 'Small $5 · Large $8', desc: 'Fresh guacamole dip.', sizeSmallLarge: true, sizePrices: { Small: 5, Large: 8 } },
       { name: 'Esquite', price: '$6.00', desc: 'Sweet corn with mayo, cheese, chili powder, and lime — served in a cup.' },
       { name: 'Street Corn', price: '$4.50 each', desc: 'One ear of corn on the cob with mayo, cheese, and chili powder. Each $4.50.', },
-      { name: 'Sope', price: '$8.50 each', desc: 'One sope with chicken, steak, or shrimp, grilled onions and peppers. Each $8.50.', meats: true },
+      { name: 'Sope', price: '$8.50 each', desc: 'Thick tortilla topped with beans, your choice of meat, lettuce, sour cream, and cheese. Served with pico de gallo.', meats: true },
       { name: 'Huarache', price: '$14.99', desc: 'Corn tortilla topped with beans, your choice of meat, lettuce, cheese, and avocado. Served with pico de gallo.', meats: true },
       { name: 'Gorditas', price: '$15.99', desc: 'Steak and chorizo, mozzarella, rice and beans.' },
       { name: 'Tamales', price: '$12.99', desc: 'With rice, beans, and salad.' },

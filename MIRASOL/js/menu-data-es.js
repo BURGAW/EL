@@ -91,7 +91,7 @@ const MENU_DATA_ES = [
       { name: 'Guacamole', price: 'Chico $5 · Grande $8', desc: 'Guacamole fresco.', sizeSmallLarge: true, sizePrices: { Small: 5, Large: 8 } },
       { name: 'Esquite', price: '$6.00', desc: 'Elote en vaso con mayonesa, queso, chile en polvo y limón.' },
       { name: 'Elote', price: '$4.50 c/u', desc: 'Un elote en la mazarca con mayonesa, queso y chile en polvo. $4.50 cada uno.' },
-      { name: 'Sope', price: '$8.50 c/u', desc: 'Un sope con pollo, asada o camarones, cebolla y chile asados. $8.50 cada uno.', meats: true },
+      { name: 'Sope', price: '$8.50 c/u', desc: 'Tortilla gruesa con frijoles, su carne preferida, lechuga, crema y queso. Con pico de gallo al lado.', meats: true },
       { name: 'Huarache', price: '$14.99', desc: 'Tortilla de maíz con frijoles, su carne preferida, lechuga, queso y aguacate. Con pico de gallo al lado.', meats: true },
       { name: 'Gorditas', price: '$15.99', desc: 'Asada y chorizo, queso mozzarella, arroz y frijoles.' },
       { name: 'Tamales', price: '$12.99', desc: 'Con arroz, frijoles y ensalada.' },
