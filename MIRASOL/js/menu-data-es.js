@@ -179,9 +179,9 @@ const MENU_DATA_ES = [
     title: 'Enchiladas',
     note: 'Servidas con ensalada y pico de gallo.',
     items: [
-      { name: 'Enchiladas', price: '$16.50', desc: 'Tortillas de maíz con su carne, salsa poblana, crema y queso desmoronado.', meats: true },
-      { name: 'Enchiladas con Queso', price: '$17.50', desc: 'Cuatro tortillas de maíz con su carne, cubiertas con salsa de queso, crema y queso desmoronado. Servidas con lechuga y pico de gallo.', meats: true },
-      { name: 'Enchiladas Campechanas', price: '$17.99', desc: 'Asada y chorizo con salsa poblana, crema y queso desmoronado.' }
+      { name: 'Enchiladas', price: '$16.50', desc: 'Tortillas de maíz con su carne, salsa poblana y queso desmoronado.', meats: true },
+      { name: 'Enchiladas con Queso', price: '$17.50', desc: 'Cuatro tortillas de maíz con su carne, cubiertas con salsa de queso y queso desmoronado. Servidas con lechuga y pico de gallo.', meats: true },
+      { name: 'Enchiladas Campechanas', price: '$17.99', desc: 'Asada y chorizo con salsa poblana y queso desmoronado.' }
     ]
   },
   {
