@@ -133,10 +133,10 @@ const MENU_DATA = [
   {
     id: 'chimichangas',
     title: 'Chimichangas',
-    note: 'Served with rice, beans, salad, and pico.',
+    note: 'Served with rice, beans, lettuce, and pico.',
     items: [
-      { name: 'Chimichanga Meal', price: '$15.49', desc: 'Fried flour tortilla with meat, mozzarella, covered in queso sauce.', meats: true },
-      { name: 'Shrimp Chimichanga', price: '$17.99', desc: 'Fried flour tortilla with shrimp, mozzarella, covered in queso sauce.' },
+      { name: 'Chimichanga Meal', price: '$15.49', desc: 'Fried flour tortilla with meat, mozzarella, covered in queso sauce. Served with rice, beans, lettuce, and pico.', meats: true },
+      { name: 'Shrimp Chimichanga', price: '$17.99', desc: 'Fried flour tortilla with shrimp, mozzarella, covered in queso sauce. Served with rice, beans, lettuce, and pico.' },
       { name: 'Burrito Mummia', price: '$17.99', desc: 'Flour tortilla with steak and shrimp, mozzarella and beans, wrapped in bacon, deep fried, covered in queso and chipotle sauce, pico and avocado. No sides.' }
     ]
   },

@@ -132,10 +132,10 @@ const MENU_DATA_ES = [
   {
     id: 'chimichangas',
     title: 'Chimichangas',
-    note: 'Servidas con arroz, frijoles, ensalada y pico de gallo.',
+    note: 'Servidas con arroz, frijoles, lechuga y pico de gallo.',
     items: [
-      { name: 'Chimichanga Meal', price: '$15.49', desc: 'Tortilla de harina frita con carne y mozzarella, cubierta con salsa de queso.', meats: true },
-      { name: 'Chimichanga de Camarones', price: '$17.99', desc: 'Tortilla de harina frita con camarones y mozzarella, cubierta con salsa de queso.' },
+      { name: 'Chimichanga Meal', price: '$15.49', desc: 'Tortilla de harina frita con carne y mozzarella, cubierta con salsa de queso. Servida con arroz, frijoles, lechuga y pico de gallo.', meats: true },
+      { name: 'Chimichanga de Camarones', price: '$17.99', desc: 'Tortilla de harina frita con camarones y mozzarella, cubierta con salsa de queso. Servida con arroz, frijoles, lechuga y pico de gallo.' },
       { name: 'Burrito Mummia', price: '$17.99', desc: 'Tortilla con asada y camarones, mozzarella y frijoles, envuelta en tocino, frita, con queso y chipotle, pico y aguacate. Sin acompañamientos.' }
     ]
   },
