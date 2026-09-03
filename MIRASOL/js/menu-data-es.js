@@ -142,14 +142,14 @@ const MENU_DATA_ES = [
   {
     id: 'quesadillas',
     title: 'Quesadillas',
-    note: 'Servidas con arroz, ensalada y pico de gallo.',
+    note: 'Servidas con arroz, lechuga y pico de gallo.',
     items: [
-      { name: 'Quesadilla Meal', price: '$13.99', desc: 'Tortilla de harina grande con carne y mozzarella.', meats: true },
-      { name: 'Quesadilla de Camarones', price: '$15.50', desc: 'Tortilla de harina grande con camarones y mozzarella.' },
-      { name: 'Quesadilla Vegetariana', price: '$13.51', desc: 'Cebollas, chiles, champiñones o nopales asados con mozzarella.', veggieChoice: true },
-      { name: 'Quesadilla Fajita', price: '$16.99', desc: 'Asada o pollo con cebolla y chile asados y mozzarella.', fajitaProtein2: true },
-      { name: 'Quesadilla de Maíz', price: '$14.55', desc: 'Tortilla de maíz con su proteína y mozzarella.', meats: true },
-      { name: 'Quesadilla de Birria', price: '$15.99', desc: 'Birria de res y mozzarella, bañada en caldo de birria. Con caldo extra, arroz, cilantro, cebolla y limones.' }
+      { name: 'Quesadilla Meal', price: '$13.99', desc: 'Tortilla de harina grande con carne y mozzarella. Servida con arroz, lechuga y pico de gallo.', meats: true },
+      { name: 'Quesadilla de Camarones', price: '$15.50', desc: 'Tortilla de harina grande con camarones y mozzarella. Servida con arroz, lechuga y pico de gallo.' },
+      { name: 'Quesadilla Vegetariana', price: '$13.51', desc: 'Cebollas, chiles, champiñones o nopales asados con mozzarella. Servida con arroz, lechuga y pico de gallo.', veggieChoice: true },
+      { name: 'Quesadilla Fajita', price: '$16.99', desc: 'Asada o pollo con cebolla y chile asados y mozzarella. Servida con arroz, lechuga y pico de gallo.', fajitaProtein2: true },
+      { name: 'Quesadilla de Maíz', price: '$14.55', desc: 'Tortilla de maíz con su proteína y mozzarella. Servida con arroz, lechuga y pico de gallo.', meats: true },
+      { name: 'Quesadilla de Birria', price: '$15.99', desc: 'Birria de res y mozzarella, bañada en caldo de birria. Servida con arroz, lechuga, pico de gallo, caldo extra, cilantro, cebolla y limones.' }
     ]
   },
   {

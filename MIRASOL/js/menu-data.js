@@ -143,14 +143,14 @@ const MENU_DATA = [
   {
     id: 'quesadillas',
     title: 'Quesadillas',
-    note: 'Served with rice, salad, and pico.',
+    note: 'Served with rice, lettuce, and pico.',
     items: [
-      { name: 'Quesadilla Meal', price: '$13.99', desc: 'Large flour tortilla with meat and mozzarella.', meats: true },
-      { name: 'Shrimp Quesadilla', price: '$15.50', desc: 'Large flour tortilla with shrimp and mozzarella.' },
-      { name: 'Veggie Quesadilla', price: '$13.51', desc: 'Grilled onions, peppers, mushrooms or cactus with mozzarella.', veggieChoice: true },
-      { name: 'Fajita Quesadilla', price: '$16.99', desc: 'Steak or chicken with grilled onions, peppers and mozzarella.', fajitaProtein2: true },
-      { name: 'Quesadilla de Maíz', price: '$14.55', desc: 'Corn tortilla with choice of protein and mozzarella.', meats: true },
-      { name: 'Quesadilla de Birria', price: '$15.99', desc: 'Birria beef and mozzarella, dipped in birria broth. Served with extra broth, rice, cilantro, onions and limes.' }
+      { name: 'Quesadilla Meal', price: '$13.99', desc: 'Large flour tortilla with meat and mozzarella. Served with rice, lettuce, and pico.', meats: true },
+      { name: 'Shrimp Quesadilla', price: '$15.50', desc: 'Large flour tortilla with shrimp and mozzarella. Served with rice, lettuce, and pico.' },
+      { name: 'Veggie Quesadilla', price: '$13.51', desc: 'Grilled onions, peppers, mushrooms or cactus with mozzarella. Served with rice, lettuce, and pico.', veggieChoice: true },
+      { name: 'Fajita Quesadilla', price: '$16.99', desc: 'Steak or chicken with grilled onions, peppers and mozzarella. Served with rice, lettuce, and pico.', fajitaProtein2: true },
+      { name: 'Quesadilla de Maíz', price: '$14.55', desc: 'Corn tortilla with choice of protein and mozzarella. Served with rice, lettuce, and pico.', meats: true },
+      { name: 'Quesadilla de Birria', price: '$15.99', desc: 'Birria beef and mozzarella, dipped in birria broth. Served with rice, lettuce, pico, extra broth, cilantro, onions, and limes.' }
     ]
   },
   {

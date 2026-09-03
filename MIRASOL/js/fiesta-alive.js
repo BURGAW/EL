@@ -15,7 +15,7 @@
     { name: 'Tacos Campechanos', desc: 'Soft corn tacos with steak, chorizo, onion, cilantro, rice, and beans.', tag: 'Tacos' },
     { name: 'Tacos Dorados', desc: 'Rolled fried tacos with chicken, crema, cheese, lettuce, pico, and rice.', tag: 'Tacos' },
     { name: 'Shrimp Tacos', desc: 'Soft corn tacos with grilled shrimp, onion, and cilantro.', tag: 'Seafood' },
-    { name: 'Quesadilla de Birria', desc: 'Birria beef and mozzarella with extra broth, rice, cilantro, onions, and limes.', tag: 'Birria' },
+    { name: 'Quesadilla de Birria', desc: 'Birria beef and mozzarella, dipped in birria broth. Served with rice, lettuce, pico, extra broth, cilantro, onions, and limes.', tag: 'Birria' },
     { name: 'Campechanas Fajitas', desc: 'Chicken, steak, shrimp, and chorizo with grilled onions and peppers.', tag: 'Fajitas' },
     { name: 'Burrito Campechano', desc: 'Steak and chorizo with mozzarella, rice, and beans. Served with rice, beans, lettuce, and pico.', tag: 'Burrito' },
     { name: 'California Burrito', desc: 'Flour tortilla with meat, cheese, beans, and rice. Covered in queso sauce. Served with rice, beans, lettuce, and pico.', tag: 'Burrito' },
