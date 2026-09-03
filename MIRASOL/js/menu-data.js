@@ -118,16 +118,16 @@ const MENU_DATA = [
   {
     id: 'burritos',
     title: 'Burritos',
-    note: 'Served with rice, beans, salad, and pico.',
+    note: 'Served with rice, beans, lettuce, and pico.',
     items: [
-      { name: 'Burrito Meal', price: '$13.51', desc: 'Large flour tortilla filled with meat, cheese, beans and rice.', meats: true },
-      { name: 'Fajita Burrito', price: '$16.00', desc: 'Steak or chicken with grilled onions and peppers, mozzarella, rice and beans.', fajitaProtein2: true },
-      { name: 'Choripollo Burrito', price: '$15.80', desc: 'Chicken and chorizo, mozzarella, rice and beans.' },
-      { name: 'Burrito Campechano', price: '$15.80', desc: 'Steak and chorizo, mozzarella, rice and beans.' },
-      { name: 'California Burrito', price: '$16.00', desc: 'Large flour tortilla with meat, cheese, beans and rice. Covered in queso sauce.', meats: true },
-      { name: 'Shrimp Burrito', price: '$17.75', desc: 'Shrimp, mozzarella, rice and beans in a large flour tortilla.' },
-      { name: 'Veggie Burrito', price: '$14.05', desc: 'Bell peppers, mushrooms or cactus, mozzarella, rice and beans.', veggieChoice: true },
-      { name: 'Burrito Huevos a la Mexicana', price: '$14.00', desc: 'Scrambled eggs with tomatoes, onions, cilantro, rice and beans.' }
+      { name: 'Burrito Meal', price: '$13.51', desc: 'Large flour tortilla filled with meat, cheese, beans and rice. Served with rice, beans, lettuce, and pico.', meats: true },
+      { name: 'Fajita Burrito', price: '$16.00', desc: 'Steak or chicken with grilled onions and peppers, mozzarella, rice and beans. Served with rice, beans, lettuce, and pico.', fajitaProtein2: true },
+      { name: 'Choripollo Burrito', price: '$15.80', desc: 'Chicken and chorizo, mozzarella, rice and beans. Served with rice, beans, lettuce, and pico.' },
+      { name: 'Burrito Campechano', price: '$15.80', desc: 'Steak and chorizo, mozzarella, rice and beans. Served with rice, beans, lettuce, and pico.' },
+      { name: 'California Burrito', price: '$16.00', desc: 'Large flour tortilla with meat, cheese, beans and rice. Covered in queso sauce. Served with rice, beans, lettuce, and pico.', meats: true },
+      { name: 'Shrimp Burrito', price: '$17.75', desc: 'Shrimp, mozzarella, rice and beans in a large flour tortilla. Served with rice, beans, lettuce, and pico.' },
+      { name: 'Veggie Burrito', price: '$14.05', desc: 'Bell peppers, mushrooms or cactus, mozzarella, rice and beans. Served with rice, beans, lettuce, and pico.', veggieChoice: true },
+      { name: 'Burrito Huevos a la Mexicana', price: '$14.00', desc: 'Scrambled eggs with tomatoes, onions, cilantro, rice and beans. Served with rice, beans, lettuce, and pico.' }
     ]
   },
   {

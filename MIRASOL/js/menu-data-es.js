@@ -117,16 +117,16 @@ const MENU_DATA_ES = [
   {
     id: 'burritos',
     title: 'Burritos',
-    note: 'Servidos con arroz, frijoles, ensalada y pico de gallo.',
+    note: 'Servidos con arroz, frijoles, lechuga y pico de gallo.',
     items: [
-      { name: 'Burrito Meal', price: '$13.51', desc: 'Tortilla de harina grande con carne, queso, frijoles y arroz.', meats: true },
-      { name: 'Burrito Fajita', price: '$16.00', desc: 'Asada o pollo con cebolla y chile asados, mozzarella, arroz y frijoles.', fajitaProtein2: true },
-      { name: 'Burrito Choripollo', price: '$15.80', desc: 'Pollo y chorizo, mozzarella, arroz y frijoles.' },
-      { name: 'Burrito Campechano', price: '$15.80', desc: 'Asada y chorizo, mozzarella, arroz y frijoles.' },
-      { name: 'Burrito California', price: '$16.00', desc: 'Tortilla de harina grande con carne, queso, frijoles y arroz. Cubierto con salsa de queso.', meats: true },
-      { name: 'Burrito de Camarones', price: '$17.75', desc: 'Camarones, mozzarella, arroz y frijoles en tortilla de harina grande.' },
-      { name: 'Burrito Vegetariano', price: '$14.05', desc: 'Chile, champiñones o nopales, mozzarella, arroz y frijoles.', veggieChoice: true },
-      { name: 'Burrito Huevos a la Mexicana', price: '$14.00', desc: 'Huevos revueltos con tomates, cebollas, cilantro, arroz y frijoles.' }
+      { name: 'Burrito Meal', price: '$13.51', desc: 'Tortilla de harina grande con carne, queso, frijoles y arroz. Servido con arroz, frijoles, lechuga y pico de gallo.', meats: true },
+      { name: 'Burrito Fajita', price: '$16.00', desc: 'Asada o pollo con cebolla y chile asados, mozzarella, arroz y frijoles. Servido con arroz, frijoles, lechuga y pico de gallo.', fajitaProtein2: true },
+      { name: 'Burrito Choripollo', price: '$15.80', desc: 'Pollo y chorizo, mozzarella, arroz y frijoles. Servido con arroz, frijoles, lechuga y pico de gallo.' },
+      { name: 'Burrito Campechano', price: '$15.80', desc: 'Asada y chorizo, mozzarella, arroz y frijoles. Servido con arroz, frijoles, lechuga y pico de gallo.' },
+      { name: 'Burrito California', price: '$16.00', desc: 'Tortilla de harina grande con carne, queso, frijoles y arroz. Cubierto con salsa de queso. Servido con arroz, frijoles, lechuga y pico de gallo.', meats: true },
+      { name: 'Burrito de Camarones', price: '$17.75', desc: 'Camarones, mozzarella, arroz y frijoles en tortilla de harina grande. Servido con arroz, frijoles, lechuga y pico de gallo.' },
+      { name: 'Burrito Vegetariano', price: '$14.05', desc: 'Chile, champiñones o nopales, mozzarella, arroz y frijoles. Servido con arroz, frijoles, lechuga y pico de gallo.', veggieChoice: true },
+      { name: 'Burrito Huevos a la Mexicana', price: '$14.00', desc: 'Huevos revueltos con tomates, cebollas, cilantro, arroz y frijoles. Servido con arroz, frijoles, lechuga y pico de gallo.' }
     ]
   },
   {
