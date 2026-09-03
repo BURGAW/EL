@@ -26,7 +26,7 @@
     { name: 'Shrimp Chimichanga', desc: 'Fried flour tortilla with shrimp, mozzarella, and queso sauce. Served with rice, beans, lettuce, and pico.', tag: 'Seafood' },
     { name: 'Enchiladas', desc: 'Corn tortillas with your choice of meat, poblano salsa, sour cream, and cheese.', tag: 'Enchiladas' },
     { name: 'Enchiladas Campechanas', desc: 'Enchiladas with steak, chorizo, poblano salsa, sour cream, and cheese.', tag: 'Enchiladas' },
-    { name: 'Queso Enchiladas', desc: 'Enchiladas with queso sauce, sour cream, and cheese.', tag: 'Enchiladas' },
+    { name: 'Queso Enchiladas', desc: 'Four corn tortillas with your choice of meat, covered in queso sauce, topped with sour cream and crumbled cheese. Served with lettuce and pico.', tag: 'Enchiladas' },
     { name: 'Torta', desc: 'Large sandwich with meat, mozzarella, lettuce, cheese, avocado, and mayo.', tag: 'Torta' },
     { name: 'Torta Cubana', desc: 'Steak, ham, chorizo, fried egg, cheese, lettuce, tomato, avocado, and mayo.', tag: 'Torta' },
     { name: 'Fried Chicken Torta', desc: 'Fried chicken with mozzarella, lettuce, cheese, avocado, and mayo.', tag: 'Torta' },

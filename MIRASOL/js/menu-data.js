@@ -181,7 +181,7 @@ const MENU_DATA = [
     note: 'Served with salad and pico.',
     items: [
       { name: 'Enchiladas', price: '$16.50', desc: 'Corn tortillas with choice of meat, poblano salsa, sour cream and crumbled cheese.', meats: true },
-      { name: 'Queso Enchiladas', price: '$17.50', desc: 'Enchiladas with queso sauce, sour cream and crumbled cheese.', meats: true },
+      { name: 'Queso Enchiladas', price: '$17.50', desc: 'Four corn tortillas filled with your choice of meat, covered in queso sauce, and topped with sour cream and crumbled cheese. Served with lettuce and pico.', meats: true },
       { name: 'Enchiladas Campechanas', price: '$17.99', desc: 'Steak and chorizo with poblano salsa, sour cream and crumbled cheese.' }
     ]
   },
