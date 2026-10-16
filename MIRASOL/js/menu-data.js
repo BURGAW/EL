@@ -210,7 +210,7 @@ const MENU_DATA = [
       { name: 'Camarones Empanizados', price: '$21.00', desc: 'Breaded shrimp with rice, beans, lettuce and pico.', tortilla: true },
       { name: 'Coctel de Camarones', price: '$21.00', desc: 'Shrimp, calamari, pico, avocado and cucumbers served in house-made michelada salsa.' },
       { name: 'Chicken and Spaghetti', price: '$15.00', desc: 'Chicken breast with spaghetti in chipotle salsa, lettuce and pico.' },
-      { name: 'Phil', price: '$13.51', desc: 'Mozzarella, steak, bell peppers and onions served with fries.' },
+      { name: 'Phil', price: '$15.99', desc: 'Mozzarella, steak, bell peppers and onions served with fries.' },
       { name: 'Huevos Enchilados', price: '$16.00', desc: 'Scrambled eggs in spicy salsa with steak, beans and cheese.' }
     ]
   },

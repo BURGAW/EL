@@ -209,7 +209,7 @@ const MENU_DATA_ES = [
       { name: 'Camarones Empanizados', price: '$21.00', desc: 'Camarones empanizados con arroz, frijoles, lechuga y pico.', tortilla: true },
       { name: 'Coctel de Camarones', price: '$21.00', desc: 'Camarones, calamari, pico, aguacate y pepinos en salsa michelada de la casa.' },
       { name: 'Pollo con Espagueti', price: '$15.00', desc: 'Pechuga de pollo con espagueti en salsa chipotle, lechuga y pico.' },
-      { name: 'Phil', price: '$13.51', desc: 'Mozzarella, bistec, pimientos y cebollas con papas fritas.' },
+      { name: 'Phil', price: '$15.99', desc: 'Mozzarella, bistec, pimientos y cebollas con papas fritas.' },
       { name: 'Huevos Enchilados', price: '$16.00', desc: 'Huevos revueltos en salsa picante con bistec, frijoles y queso.' }
     ]
   },
